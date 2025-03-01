@@ -11,3 +11,7 @@ edition by Joel Miller.
 This version is being updated by Joel C. Miller using to align it with the current order of the subject material.  It is being created with `jupyter-book` because of a long-term aim to incorporate interactive code.
 
 The copyright for the material in these notes resides with the authors, the Department of Mathematics and with La Trobe University, and as such reproduction of this material may be done only with their express permission. 
+
+
+The 2025 year is the first year this version will be used.  There will almost certainly be typos, including possibly Algebra errors.  **Please report any errors or things that are unclear to**
+https://github.com/joelmiller/Laplace/issues
