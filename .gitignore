@@ -1,0 +1,6 @@
+# ignore ALL .log files
+*.log
+
+# ignore files created while building book
+_build
+

@@ -1,0 +1,20 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+options: 
+  numbered: True
+chapters:
+  - file: notebooks/LaplaceIntro
+    sections:
+    - file: notebooks/LaplaceDef
+    - file: notebooks/LaplaceRules
+    - file: notebooks/LaplaceTShift
+    - file: notebooks/LaplaceSShift
+    - file: notebooks/LaplaceTable
+#- file: Laplace
+# - file: intro
+# - file: markdown
+# - file: notebooks
+# - file: markdown-notebooks
