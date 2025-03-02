@@ -489,7 +489,7 @@ H_a(t) = H_0(t-a)
 \mathcal{L}[H_a(t) f(t-a)](s) = e^{-sa} \tilde{f}(s)
 \]</div>
 <section id="the-transform-of-h-a-t-f-t">
-<h3><span class="section-number">1.4.3.1. </span>The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span><a class="headerlink" href="#the-transform-of-h-a-t-f-t" title="Link to this heading">#</a></h3>
+<span id="untshift-transform"></span><h3><span class="section-number">1.4.3.1. </span>The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span><a class="headerlink" href="#the-transform-of-h-a-t-f-t" title="Link to this heading">#</a></h3>
 <p>In many applications we encounter effects that suddenly turn on at some time <span class="math notranslate nohighlight">\(t=a\)</span>.  We account for these mathematically by multiplying a function by <span class="math notranslate nohighlight">\(H_a(t)\)</span>.</p>
 <p>Sometimes it is more natural to think of the effect in terms of time since it was turned on.  In this case, we typically encounter <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span>.</p>
 <p>Sometimes it is more natural to think of the effect in terms of time since the entire system started.  In this case we typically encounter <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span>.</p>
@@ -664,7 +664,7 @@ f(s) = \frac{1}{s-2} - 2e^{-s} \frac{1}{s-2} + 3 e^{-2s} \frac{1}{s-3}
 </ol>
 </li>
 <li><ol class="arabic simple" start="2">
-<li><p>(*) In <a class="reference internal" href="#tshift-transform"><span class="std std-numref">Section 1.4.3</span></a>, we derived the transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span>, which uses a shifted function <span class="math notranslate nohighlight">\(f\)</span>.  What would happen if instead you tried to calculate the transform of <span class="math notranslate nohighlight">\(H_a(t) k(t)\)</span> for an unshifted function <span class="math notranslate nohighlight">\(k(t)\)</span> using the same basic derivation?</p></li>
+<li><p>(*) In <a class="reference internal" href="#tshift-transform"><span class="std std-numref">Section 1.4.3</span></a>, we derived the transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span>, which uses a shifted function <span class="math notranslate nohighlight">\(f\)</span>.  What would happen if instead you tried to calculate the transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span> for an unshifted function <span class="math notranslate nohighlight">\(f(t)\)</span> using the same basic derivation?  You should arrive at the result in <a class="reference internal" href="#untshift-transform"><span class="std std-numref">Section 1.4.3.1</span></a>.</p></li>
 </ol>
 </li>
 </ul>
