@@ -388,11 +388,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-functions">1.6.1. Rational Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-quadratic">1.6.2. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is quadratic.</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classifying-the-factorizations-of-q-s">1.6.2. Classifying the factorizations of <span class="math notranslate nohighlight">\(q(s)\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-the-square">1.6.2.1. Completing the square</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.6.2.2. </a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-r-1-s-r-2">1.6.3. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-r_1)(s-r_2)\)</span></a></li>
 </ul>
             </nav>
         </div>
@@ -422,8 +422,8 @@ f(x) = \frac{p(x)}{q(x)}
 </div><p>We can always assume that the leading coefficient of <span class="math notranslate nohighlight">\(q(x)\)</span> is <span class="math notranslate nohighlight">\(1\)</span>, because if it is not, we can divide both <span class="math notranslate nohighlight">\(p(x)\)</span> and <span class="math notranslate nohighlight">\(q(x)\)</span> by that coefficient to make it <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <p>We will often need to find <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{p(s)}{q(s)}\)</span> where <span class="math notranslate nohighlight">\(p(s)\)</span> and <span class="math notranslate nohighlight">\(q(s)\)</span> are both polynomials and the highest degree of <span class="math notranslate nohighlight">\(p(s)\)</span> is less than the highest degree of <span class="math notranslate nohighlight">\(q(s)\)</span>.</p>
 </section>
-<section id="finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-quadratic">
-<h2><span class="section-number">1.6.2. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is quadratic.<a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-quadratic" title="Link to this heading">#</a></h2>
+<section id="classifying-the-factorizations-of-q-s">
+<h2><span class="section-number">1.6.2. </span>Classifying the factorizations of <span class="math notranslate nohighlight">\(q(s)\)</span><a class="headerlink" href="#classifying-the-factorizations-of-q-s" title="Link to this heading">#</a></h2>
 <p>Consider</p>
 <div class="math notranslate nohighlight">
 \[
@@ -434,10 +434,10 @@ f(x) = \frac{p(x)}{q(x)}
 <p>There are three possibilities for <span class="math notranslate nohighlight">\(q(s)\)</span>:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(q(s) = (s-r_1)(s-r_2)\)</span> with <span class="math notranslate nohighlight">\(r_1 \neq r_2\)</span>: there are two real unequal roots to the equation <span class="math notranslate nohighlight">\(q(s)=0\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(q(s) = (s-r)^2\)</span>: there is a signle repeated real root to the equation <span class="math notranslate nohighlight">\(q(s) = 0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(q(s) = (s-r)^2\)</span>: there is a single repeated real root to the equation <span class="math notranslate nohighlight">\(q(s) = 0\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(q(s) = (s-a)^2 + \omega^2\)</span>: there are no real roots to the equation <span class="math notranslate nohighlight">\(q(s)=0\)</span>.</p></li>
 </ul>
-<p>We will use completing the square or direct factorization to determine which of these three cases applies.</p>
+<p>We will use completing the square or direct factorization to determine which of these three cases applies.  Once we have classified <span class="math notranslate nohighlight">\(q(s)\)</span> based on this, we will be able to set up Partial Fractions to find <span class="math notranslate nohighlight">\(f(t) = \mathcal{L}^{-1}[p(s)/q(s)](t)\)</span>.</p>
 <section id="completing-the-square">
 <h3><span class="section-number">1.6.2.1. </span>Completing the square<a class="headerlink" href="#completing-the-square" title="Link to this heading">#</a></h3>
 <p>An important step in our process will be to take a quadratic polynomial and use “completing the square” to change its structure.  The goal is to first convert the quadratic formula into the form <span class="math notranslate nohighlight">\((s+c_1)^2 + c_2\)</span>.  From there we will be able to convert it to one of the three forms identified above.  Rather than trying to memorize a formula for this we will try to learn a process, starting with an example.</p>
@@ -464,7 +464,7 @@ find <span class="math notranslate nohighlight">\(c_1\)</span> so that the coeff
 (s+c_1)^2 + c_2 &amp;= s^2-11s+28\\
 s^2+2c_1 s+c_1^2 + c_2 &amp;= s^2-11s+28
 \end{align*}\]</div>
-<p>So <span class="math notranslate nohighlight">\(c_1=11/2\)</span>.</p>
+<p>So <span class="math notranslate nohighlight">\(c_1=-11/2\)</span>.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 (s-11/2)^2 + c_2 &amp;= s^2-11s+28\\
@@ -508,9 +508,9 @@ q(s) = (s-5)^2
 </section>
 </div><p>Using this process on any quadratic polynomial <span class="math notranslate nohighlight">\(q(s)\)</span> with leading coefficient <span class="math notranslate nohighlight">\(1\)</span> will lead to a factorization of <span class="math notranslate nohighlight">\(q(s)\)</span> or to converting it into the form <span class="math notranslate nohighlight">\((s-a)^2 + \omega^2\)</span>.</p>
 </section>
-<section id="id1">
-<h3><span class="section-number">1.6.2.2. </span><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 </section>
+<section id="finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-r-1-s-r-2">
+<h2><span class="section-number">1.6.3. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-r_1)(s-r_2)\)</span><a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-r-1-s-r-2" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -579,11 +579,11 @@ q(s) = (s-5)^2
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-functions">1.6.1. Rational Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-quadratic">1.6.2. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is quadratic.</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classifying-the-factorizations-of-q-s">1.6.2. Classifying the factorizations of <span class="math notranslate nohighlight">\(q(s)\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-the-square">1.6.2.1. Completing the square</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.6.2.2. </a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-r-1-s-r-2">1.6.3. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-r_1)(s-r_2)\)</span></a></li>
 </ul>
   </nav></div>
 
