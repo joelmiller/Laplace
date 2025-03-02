@@ -393,6 +393,9 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-r-1-s-r-2">1.6.3. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-r_1)(s-r_2)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-r-2">1.6.4. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-r)^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2-omega-2">1.6.5. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2+\omega^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-for-f-t-mathcal-l-1-p-s-q-s-t-when-q-s-is-cubic-or-higher-order">1.6.6. Solving for <span class="math notranslate nohighlight">\(f(t) = \mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order</a></li>
 </ul>
             </nav>
         </div>
@@ -507,11 +510,194 @@ s^2 - 10s + 25 + c_2 = s^2-10s+25
 q(s) = (s-5)^2
 \]</div>
 </section>
-</div><p>Using this process on any quadratic polynomial <span class="math notranslate nohighlight">\(q(s)\)</span> with leading coefficient <span class="math notranslate nohighlight">\(1\)</span> will lead to a factorization of <span class="math notranslate nohighlight">\(q(s)\)</span> or to converting it into the form <span class="math notranslate nohighlight">\((s-a)^2 + \omega^2\)</span>.</p>
+</div><p>Using this process on any quadratic polynomial <span class="math notranslate nohighlight">\(q(s)\)</span> with leading coefficient <span class="math notranslate nohighlight">\(1\)</span> will lead to a factorization of <span class="math notranslate nohighlight">\(q(s)\)</span> (if <span class="math notranslate nohighlight">\(c_2&lt;0\)</span>) or to converting it into the form <span class="math notranslate nohighlight">\((s-a)^2 + \omega^2\)</span>.</p>
 </section>
 </section>
 <section id="finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-r-1-s-r-2">
 <h2><span class="section-number">1.6.3. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-r_1)(s-r_2)\)</span><a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-r-1-s-r-2" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(s)}{q(s)} = \frac{A}{s-r_1} + \frac{B}{s-r_2}
+\]</div>
+<div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 1.18 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{s-7}{s^2-8s+15}\)</span>.  From completing the square (not shown) or other factorization methods we get <span class="math notranslate nohighlight">\(s^2-8s+15 = (s-3)(s-5)\)</span>.  Expanding <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> with partial fractions:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{s-7}{(s-3)(s-5)} &amp;= \frac{A}{s-3} + \frac{B}{s-5}\\
+\Rightarrow \quad s-7 &amp;= A(s-5) + B(s-3)\\
+\end{align*}\]</div>
+<p>These equations are true for all values of <span class="math notranslate nohighlight">\(s\)</span>.  If we choose some convenient values, namely we can find <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> easily.</p>
+<p>For <span class="math notranslate nohighlight">\(s=3\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+-4 = A(-2) \quad \Rightarrow \quad A = 2
+\]</div>
+<p>and for <span class="math notranslate nohighlight">\(s=5\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+-2 = B(2) \quad \Rightarrow \quad B =-1
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{f}(s) = \frac{2}{s-3} - \frac{1}{s-5}
+\]</div>
+<p>and taking the inverse transform we have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(t) &amp;= \mathcal{L}^{-1}\left[\frac{2}{s-3} - \frac{1}{s-5}\right](t)\\
+&amp;= 2 \mathcal{L}^{-1} \left[\frac{2}{s-3}\right](t) - \mathcal{L}^{-1} \left[\frac{1}{s-5}\right](t)\\
+&amp;= 2e^{3t} - e^{5t}
+\end{align*}\]</div>
+</section>
+</div><p>The general approach (as above) when <span class="math notranslate nohighlight">\(q(s) = (s-r_1)(s-r_2)\)</span> is to</p>
+<ul class="simple">
+<li><p>Write</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(s)}{q(s)} = \frac{A}{s-r_1} + \frac{B}{s-r_2}
+\]</div>
+<ul class="simple">
+<li><p>Multiply through by <span class="math notranslate nohighlight">\(q(s)\)</span> to get</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p(s) = A(s-r_2)+B(s-r_1)\]</div>
+<ul class="simple">
+<li><p>set <span class="math notranslate nohighlight">\(s=r_1\)</span> and solve for <span class="math notranslate nohighlight">\(A\)</span> and set <span class="math notranslate nohighlight">\(s=r_2\)</span> and solve for <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+<li><p>Invert the transform of the resulting sum.</p></li>
+</ul>
+</section>
+<section id="finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-r-2">
+<h2><span class="section-number">1.6.4. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-r)^2\)</span><a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-r-2" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(s)}{q(s)} = \frac{A}{(s-r)^2}  + \frac{B}{s-r}
+\]</div>
+<div class="proof example admonition" id="example-5">
+<p class="admonition-title"><span class="caption-number">Example 1.19 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{3s+14}{s^2+8s+16}\)</span>.  From completing the square (not shown) or other factorization methods we get <span class="math notranslate nohighlight">\(s^2+8s+16 = (s+4)^2\)</span>.  Expanding <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> with partial fractions:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{3s+14}{(s+4)^2} &amp;= \frac{A}{(s+4)^2} + \frac{B}{s+4}\\
+\Rightarrow \quad 3s+14 &amp;= A + B(s+4)\\
+\end{align*}\]</div>
+<p>These equations are true for all values of <span class="math notranslate nohighlight">\(s\)</span>.  The value <span class="math notranslate nohighlight">\(s=-4\)</span> is convenient to try.</p>
+<p>For <span class="math notranslate nohighlight">\(s=-4\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+2 = A
+\]</div>
+<p>We could try another value of <span class="math notranslate nohighlight">\(s\)</span> (say <span class="math notranslate nohighlight">\(s=0\)</span>) which would yield <span class="math notranslate nohighlight">\(B\)</span> with just a little Algebra.  However, it is easier at this stage to note that the coefficient of <span class="math notranslate nohighlight">\(s\)</span> must be the same on both sides, so <span class="math notranslate nohighlight">\(B=3\)</span>.</p>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{f}(s) = \frac{2}{(s+4)^2} + \frac{3}{s+4}
+\]</div>
+<p>and taking the inverse transform we have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(t) &amp;= \mathcal{L}^{-1}\left[\frac{2}{(s+4)^2} + \frac{3}{s+4}\right](t)\\
+&amp;= 2 \mathcal{L}^{-1} \left[\frac{2}{(s+4)^2}\right](t) + 3\mathcal{L}^{-1} \left[\frac{1}{s+4}\right](t)\\
+&amp;= 2 e^{-4t} \mathcal{L}^{-1}\left[\frac{1}{s^2}\right](t) + 3 e^{4t}\\
+&amp;= 2te^{-4t} + 3e^{4t}
+\end{align*}\]</div>
+<p>using the <span class="math notranslate nohighlight">\(s\)</span>-shift to get the first term in the next to last line and <span class="math notranslate nohighlight">\(t = \mathcal{L}^{-1}[1/s^2](t)\)</span>.</p>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+f(t) = 2te^{-4t} + 3e^{4t}
+\]</div>
+</section>
+</div><p>The general approach (as above) when <span class="math notranslate nohighlight">\(q(s) = (s-r)^2\)</span> is to</p>
+<ul class="simple">
+<li><p>Write</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(s)}{q(s)} = \frac{A}{(s-r)^2} + \frac{B}{(s-r)}
+\]</div>
+<ul class="simple">
+<li><p>Multiply through by <span class="math notranslate nohighlight">\(q(s)\)</span> to get</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p(s) = A + B(s-r)\]</div>
+<ul class="simple">
+<li><p>Set <span class="math notranslate nohighlight">\(s=r\)</span> to find <span class="math notranslate nohighlight">\(A\)</span>.  Match the coefficients of <span class="math notranslate nohighlight">\(s\)</span> to find <span class="math notranslate nohighlight">\(B\)</span> (or use another value of <span class="math notranslate nohighlight">\(s\)</span> and solve the resulting equation).</p></li>
+<li><p>Invert the transform of the resulting sum (likely using the <span class="math notranslate nohighlight">\(s\)</span>-shift).</p></li>
+</ul>
+</section>
+<section id="finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2-omega-2">
+<h2><span class="section-number">1.6.5. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2+\omega^2\)</span><a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2-omega-2" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(s)}{q(s)} = \frac{A(s-a)}{(s-a)^2+\omega^2}  + \frac{B\cdot \omega}{(s-a)^2+\omega^2}
+\]</div>
+<div class="proof example admonition" id="example-6">
+<p class="admonition-title"><span class="caption-number">Example 1.20 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{4s+3}{s^2+4s+29}\)</span>.  From completing the square (not shown) we get <span class="math notranslate nohighlight">\(s^2+4s+29 = (s+2)^2+25\)</span>.  Expanding <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> with partial fractions:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{4s+3}{(s+2)^2 + 25} &amp;= \frac{A}{(s+2)^2+25} + \frac{B\cdot 5}{(s+2)^2+25}\\
+\Rightarrow \quad 4s+3 &amp;= A(s+2) + 5B\\
+\end{align*}\]</div>
+<p>We can look at the coefficient of <span class="math notranslate nohighlight">\(s\)</span> and quickly conclude that</p>
+<div class="math notranslate nohighlight">
+\[A=4\]</div>
+<p>To find <span class="math notranslate nohighlight">\(B\)</span>, there are multiple options.  A good choice is to set <span class="math notranslate nohighlight">\(s=-2\)</span> which yields <span class="math notranslate nohighlight">\(-5=5B\)</span> so</p>
+<div class="math notranslate nohighlight">
+\[B= -1\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{f}(s) = \frac{4(s+2)-5}{(s+2)^2+25}
+\]</div>
+<p>and taking the inverse transform we have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(t) &amp;= \mathcal{L}^{-1}\left[\frac{4(s+2)-5}{(s+2)^2+25}\right](t)\\
+&amp;= 4 \mathcal{L}^{-1} \left[\frac{s+2}{(s+2)^2+25}\right](t) - \mathcal{L}^{-1} \left[\frac{5}{(s+2)^2+25}\right](t)\\
+&amp;= 4e^{-2t}\cos(5t) - e^{-2t}\cos(5t)
+\end{align*}\]</div>
+<p>using the <span class="math notranslate nohighlight">\(s\)</span>-shift to get the first term in the next to last line and <span class="math notranslate nohighlight">\(t = \mathcal{L}^{-1}[1/s^2](t)\)</span>.</p>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+f(t) = 4e^{-2t}\cos(5t) - e^{-2t}\cos(5t)
+\]</div>
+</section>
+</div><p>The general approach (as above) when <span class="math notranslate nohighlight">\(q(s) = (s-a)^2+\omega^2\)</span> is to</p>
+<ul class="simple">
+<li><p>Write</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(s)}{q(s)} = \frac{A(s-a) + B\omega}{(s-a)^2+\omega^2} 
+\]</div>
+<ul class="simple">
+<li><p>Multiply through by <span class="math notranslate nohighlight">\(q(s)\)</span> to get</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p(s) = A(s-a) + B\cdot\omega\]</div>
+<ul class="simple">
+<li><p>Match the coefficients of <span class="math notranslate nohighlight">\(s\)</span> to find <span class="math notranslate nohighlight">\(A\)</span>.  Then set <span class="math notranslate nohighlight">\(s=a\)</span> to find <span class="math notranslate nohighlight">\(B\)</span>.  We can also use another value of <span class="math notranslate nohighlight">\(s\)</span> to find <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>Invert the transform of the resulting sum.</p></li>
+</ul>
+</section>
+<section id="solving-for-f-t-mathcal-l-1-p-s-q-s-t-when-q-s-is-cubic-or-higher-order">
+<h2><span class="section-number">1.6.6. </span>Solving for <span class="math notranslate nohighlight">\(f(t) = \mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order<a class="headerlink" href="#solving-for-f-t-mathcal-l-1-p-s-q-s-t-when-q-s-is-cubic-or-higher-order" title="Link to this heading">#</a></h2>
+<p>When <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{p(s)}{q(s)}\)</span> where <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order we again factor <span class="math notranslate nohighlight">\(q(s)\)</span>.  It is likely that we will be able to identify some of the factors of <span class="math notranslate nohighlight">\(q(s)\)</span> directly by observing how <span class="math notranslate nohighlight">\(q(s)\)</span> was constructed up to this point, but otherwise we may need to use more complicated methods to find the factors.</p>
+<p>We will assume for now that we know the factorization of <span class="math notranslate nohighlight">\(q(s)\)</span>.  In general the factorization may have multiple real roots, multiple complex roots, and multiple repeated roots.  We will assume for our purposes that no complex roots are repeated, so only the real roots are repeated.</p>
+<p>In this case,</p>
+<div class="math notranslate nohighlight">
+\[
+q(s) = 
+\]</div>
+<p>To be continued.</p>
 </section>
 </section>
 
@@ -585,6 +771,9 @@ q(s) = (s-5)^2
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-r-1-s-r-2">1.6.3. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-r_1)(s-r_2)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-r-2">1.6.4. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-r)^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2-omega-2">1.6.5. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2+\omega^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-for-f-t-mathcal-l-1-p-s-q-s-t-when-q-s-is-cubic-or-higher-order">1.6.6. Solving for <span class="math notranslate nohighlight">\(f(t) = \mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order</a></li>
 </ul>
   </nav></div>
 
