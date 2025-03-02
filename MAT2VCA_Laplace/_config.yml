@@ -37,7 +37,7 @@ parse:
     # including those that are enabled by default!
     - amsmath
     - dollarmath
-
+  myst_url_schemes: [mailto, http, https]
 sphinx:
   extra_extensions:
     - sphinx_proof

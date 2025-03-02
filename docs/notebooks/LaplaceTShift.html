@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -391,7 +391,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-heaviside-function-computationally">1.4.2. Implementing the Heaviside Function Computationally</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t-a">1.4.3. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t-a">1.4.3. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t">1.4.3.1. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-a-piecewise-continuous-function-for-the-laplace-transform">1.4.4. Preparing a piecewise continuous function for the Laplace Transform</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-laplace-transform-of-a-piecewise-continuous-function">1.4.4.1. The Laplace Transform of a Piecewise Continuous Function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-procedure-for-the-laplace-transform-of-a-piecewise-continuous-function">1.4.4.2. General procedure for the Laplace Transform of a Piecewise Continuous Function</a></li>
@@ -466,7 +469,7 @@ H_a(t) = H_0(t-a)
 <p>Notice that although the function is discontinuous at <span class="math notranslate nohighlight">\(t=3\)</span>, Matlab will still draw a line from the last point before <span class="math notranslate nohighlight">\(t=3\)</span> to the first point with <span class="math notranslate nohighlight">\(t \geq 3\)</span>.</p>
 </section>
 <section id="the-transform-of-h-a-t-f-t-a">
-<h2><span class="section-number">1.4.3. </span>The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span><a class="headerlink" href="#the-transform-of-h-a-t-f-t-a" title="Link to this heading">#</a></h2>
+<span id="tshift-transform"></span><h2><span class="section-number">1.4.3. </span>The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span><a class="headerlink" href="#the-transform-of-h-a-t-f-t-a" title="Link to this heading">#</a></h2>
 <p>We encounter functions like <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span> when a switch is abruptly flipped at time <span class="math notranslate nohighlight">\(a\)</span>.  When we later solve Equation <a class="reference internal" href="LaplaceIntro.html#equation-eq-basic-driven-ode">(1.1)</a>, we will take the Laplace Transform of both sides.  If the right hand side is discontinuous, then we need to be able to calculate its transform.  We have from the definition of the Laplace Transform:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -485,6 +488,17 @@ H_a(t) = H_0(t-a)
 \[
 \mathcal{L}[H_a(t) f(t-a)](s) = e^{-sa} \tilde{f}(s)
 \]</div>
+<section id="the-transform-of-h-a-t-f-t">
+<h3><span class="section-number">1.4.3.1. </span>The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span><a class="headerlink" href="#the-transform-of-h-a-t-f-t" title="Link to this heading">#</a></h3>
+<p>In many applications we encounter effects that suddenly turn on at some time <span class="math notranslate nohighlight">\(t=a\)</span>.  We account for these mathematically by multiplying a function by <span class="math notranslate nohighlight">\(H_a(t)\)</span>.</p>
+<p>Sometimes it is more natural to think of the effect in terms of time since it was turned on.  In this case, we typically encounter <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span>.</p>
+<p>Sometimes it is more natural to think of the effect in terms of time since the entire system started.  In this case we typically encounter <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span>.</p>
+<p>To determine the transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span>, we find a function <span class="math notranslate nohighlight">\(g(t)\)</span> such that <span class="math notranslate nohighlight">\(f\)</span> is a shift of <span class="math notranslate nohighlight">\(g\)</span>, so that <span class="math notranslate nohighlight">\(f(t) = g(t-a)\)</span> and then apply the rule derived above.  It turns out that the function <span class="math notranslate nohighlight">\(g\)</span> for which <span class="math notranslate nohighlight">\(f(t) = g(t-a)\)</span> is <span class="math notranslate nohighlight">\(g(t) = f(t+a)\)</span>.</p>
+<p>From this,
+$<span class="math notranslate nohighlight">\(
+\mathcal{L}[H_a(t) f(t)](s) = e^{-sa} \mathcal{L}[f(t+a)](s)
+\)</span>$(eq:Lap_Ha_ft)</p>
+</section>
 </section>
 <section id="preparing-a-piecewise-continuous-function-for-the-laplace-transform">
 <h2><span class="section-number">1.4.4. </span>Preparing a piecewise continuous function for the Laplace Transform<a class="headerlink" href="#preparing-a-piecewise-continuous-function-for-the-laplace-transform" title="Link to this heading">#</a></h2>
@@ -509,9 +523,9 @@ f(t) = \begin{cases}
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">61</span><span class="p">);</span>
 <span class="n">t2</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span> <span class="mi">61</span><span class="p">);</span>
 
-<span class="nb">plot</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t1</span><span class="p">)</span>       <span class="c">#notice that if we don&#39;t specify color, these end up different</span>
-<span class="nb">hold</span> <span class="n">on</span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t2</span><span class="o">-</span> <span class="n">t2</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t1</span><span class="p">)</span>        <span class="c"># notice that if we don&#39;t specify color, </span>
+<span class="nb">hold</span> <span class="n">on</span>             <span class="c"># the two plots will be given </span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t2</span><span class="o">-</span> <span class="n">t2</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span> <span class="c"># different colors</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -541,25 +555,32 @@ t-t^2 = t + f_1(t)
 <p>We arrive at the compact form</p>
 <div class="math notranslate nohighlight">
 \[
-f(t) = t - H_3(t) t^2
+f(t) = t + H_3(t) (-t^2)
 \]</div>
-<p>If we attempt to take the Laplace Transform of this using <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.6</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> the second term gives us trouble.  The table tells us that <span class="math notranslate nohighlight">\(\mathcal{L}[H_3(t) g(t-3)](s) = e^{-3s} \tilde{g}(s)\)</span>, but we don’t have a function of <span class="math notranslate nohighlight">\(t-3\)</span>, we have a function of <span class="math notranslate nohighlight">\(t\)</span>.  So we need to rewrite <span class="math notranslate nohighlight">\(t^2\)</span> as <span class="math notranslate nohighlight">\(g(t-3)\)</span> for some <span class="math notranslate nohighlight">\(g(t)\)</span>.  We have <span class="math notranslate nohighlight">\(g(t-3) = t^2\)</span>, so substituting in <span class="math notranslate nohighlight">\(t+3\)</span> for <span class="math notranslate nohighlight">\(t\)</span>, we get <span class="math notranslate nohighlight">\(g(t+3-3) = (t+3)^2\)</span>, and so <span class="math notranslate nohighlight">\(g(t) = (t+3)^2\)</span>.</p>
-<p>Then</p>
+<p>which is demonstrated visually in <a class="reference internal" href="#fig-piecewise-decomp"><span class="std std-numref">Fig. 1.4</span></a>.</p>
+<figure class="align-default" id="fig-piecewise-decomp">
+<a class="reference internal image-reference" href="../_images/piecewise_decomposition.png"><img alt="../_images/piecewise_decomposition.png" src="../_images/piecewise_decomposition.png" style="height: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.4 </span><span class="caption-text">The relation between <span class="math notranslate nohighlight">\(f(t)\)</span>, <span class="math notranslate nohighlight">\(f_0(t)\)</span>, and <span class="math notranslate nohighlight">\(f_1(t)\)</span>.</span><a class="headerlink" href="#fig-piecewise-decomp" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we attempt to take the Laplace Transform of <span class="math notranslate nohighlight">\(t+H_3(t) (-t^2)\)</span>  using <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.6</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> the second term gives us trouble.  The table tells us that <span class="math notranslate nohighlight">\(\mathcal{L}[H_3(t) g(t-3)](s) = e^{-3s} \tilde{g}(s)\)</span>, but we don’t have a function of <span class="math notranslate nohighlight">\(t-3\)</span>, we have a function directly of <span class="math notranslate nohighlight">\(t\)</span>.  So we need to rewrite <span class="math notranslate nohighlight">\(-t^2\)</span> as <span class="math notranslate nohighlight">\(g(t-3)\)</span> for some <span class="math notranslate nohighlight">\(g(t)\)</span>.</p>
+<p>As noted in <code class="xref std std-numref docutils literal notranslate"><span class="pre">sec_Lap_Ha_ft</span></code> the correct <span class="math notranslate nohighlight">\(g(t)\)</span> is <span class="math notranslate nohighlight">\(f(t+3)\)</span>.  Then</p>
 <div class="math notranslate nohighlight">
 \[
-f(t) = t - H_3(t) g(t-3)
+f(t) = t + H_3(t) g(t-3)
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(g(t) = (t+3)^2 = t^2+6t+9\)</span>.  For the Laplace Transform, we have</p>
+<p>where <span class="math notranslate nohighlight">\(g(t) = f(t+3) = -(t+3)^2 = -(t^2+6t+9)\)</span>.  For the Laplace Transform, we have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\mathcal{L}[f(t)](s) = \mathcal{L}[t](s) - \mathcal{L}[H_3(t)g(t-3)](s)\\
+\mathcal{L}[f(t)](s) = \mathcal{L}[t](s) + \mathcal{L}[H_3(t)g(t-3)](s)\\
 \end{split}\]</div>
-<p>From <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.6</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a>, the transform of <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(1/s^2\)</span>, while the transform of <span class="math notranslate nohighlight">\(H_3(t)g(t)\)</span> is</p>
+<p>From <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.6</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a>, the transform of <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(1/s^2\)</span>, so</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-\mathcal{L}[f(t)](s) &amp;= \frac{1}{s^2} - \mathcal{L}[H_3(t)g(t-3)](s)\\
- &amp;= \frac{1}{s^2} - e^{-3s}\mathcal{L}[g(t)](s)\\
-&amp;= \frac{1}{s^2} - e^{-3s} \mathcal{L}[t^2+6t+9]\\
+\mathcal{L}[f(t)](s) &amp;= \frac{1}{s^2} + \mathcal{L}[H_3(t)g(t-3)](s)\\
+ &amp;= \frac{1}{s^2} + e^{-3s}\mathcal{L}[g(t)](s)\\
+&amp;= \frac{1}{s^2} + e^{-3s} \mathcal{L}[-(t^2+6t+9)]\\
 &amp;= \frac{1}{s^2} - e^{-3s} \left( \frac{2!}{s^3} + \frac{6}{s^2} + \frac{9}{s}\right)
 \end{align*}\]</div>
 <p>and so</p>
@@ -636,8 +657,16 @@ f(s) = \frac{1}{s-2} - 2e^{-s} \frac{1}{s-2} + 3 e^{-2s} \frac{1}{s-3}
 </section>
 <section id="self-test">
 <h2><span class="section-number">1.4.6. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
+<p>Under construction</p>
 <ul class="simple">
-<li><p>1 (*) We derived the transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span>, which uses a shifted function <span class="math notranslate nohighlight">\(f\)</span>.  What would happen if instead you tried to calculate the transform of <span class="math notranslate nohighlight">\(H_a(t) g(t)\)</span> using the same basic derivation?</p></li>
+<li><ol class="arabic simple">
+<li></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>(*) In <a class="reference internal" href="#tshift-transform"><span class="std std-numref">Section 1.4.3</span></a>, we derived the transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span>, which uses a shifted function <span class="math notranslate nohighlight">\(f\)</span>.  What would happen if instead you tried to calculate the transform of <span class="math notranslate nohighlight">\(H_a(t) k(t)\)</span> for an unshifted function <span class="math notranslate nohighlight">\(k(t)\)</span> using the same basic derivation?</p></li>
+</ol>
+</li>
 </ul>
 </section>
 </section>
@@ -711,7 +740,10 @@ f(s) = \frac{1}{s-2} - 2e^{-s} \frac{1}{s-2} + 3 e^{-2s} \frac{1}{s-3}
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-heaviside-function-computationally">1.4.2. Implementing the Heaviside Function Computationally</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t-a">1.4.3. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t-a">1.4.3. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t">1.4.3.1. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-a-piecewise-continuous-function-for-the-laplace-transform">1.4.4. Preparing a piecewise continuous function for the Laplace Transform</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-laplace-transform-of-a-piecewise-continuous-function">1.4.4.1. The Laplace Transform of a Piecewise Continuous Function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-procedure-for-the-laplace-transform-of-a-piecewise-continuous-function">1.4.4.2. General procedure for the Laplace Transform of a Piecewise Continuous Function</a></li>

@@ -14,4 +14,6 @@ The copyright for the material in these notes resides with the authors, the Depa
 
 
 The 2025 year is the first year this version will be used.  There will almost certainly be typos, including possibly Algebra errors.  **Please report any errors or things that are unclear to**
-https://github.com/joelmiller/Laplace/issues
+[https://github.com/joelmiller/Laplace/issues](https://github.com/joelmiller/Laplace/issues)
+
+The current version covers lecture 1A and about half of lecture 1B.
