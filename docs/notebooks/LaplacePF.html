@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Notes &#8212; My sample book</title>
+    <title>1.6. Inverting the Laplace Transform with Partial Fractions &#8212; My sample book</title>
   
   
   
@@ -58,9 +58,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/LaplaceNotes';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/LaplacePF';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.7. A table of Laplace Transforms" href="LaplaceTable.html" />
+    <link rel="prev" title="1.5. The \(s\)-shift" href="LaplaceSShift.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -180,13 +182,13 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.6. Inverting the Laplace Transform with Partial Fractions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.7. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
@@ -261,7 +263,7 @@
       
       
       
-      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2Fnotebooks/LaplaceNotes.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2Fnotebooks/LaplacePF.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -291,7 +293,7 @@
       
       
       
-      <li><a href="../_sources/notebooks/LaplaceNotes.ipynb" target="_blank"
+      <li><a href="../_sources/notebooks/LaplacePF.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -375,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Notes</h1>
+    <h1>Inverting the Laplace Transform with Partial Fractions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,8 +387,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-formula">Quadratic Formula</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts">Integration by Parts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-functions">1.6.1. Rational Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-quadratic">1.6.2. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is quadratic.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-the-square">1.6.2.1. Completing the square</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.6.2.2. </a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -398,48 +404,111 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="notes">
-<h1>Notes<a class="headerlink" href="#notes" title="Link to this heading">#</a></h1>
-<p>This section is used for explanatory points.</p>
-<!-- 
-(LimitsAndInfinity)=
-## Infinity and limits
-In 
-{ref}`LaplaceDefIntro`
-we went through some trouble to find limits as $b \to \infty$, rather than just using $b=\infty$.  Then we effectively said, "we won't go through that trouble any more".  Indeed, you may have never encountered a case where that effort is needed.  
-This could lead to the question, "why do we ever bother to go through that trouble?"  The fact is, we are taking a mathematical shortcut.  When you take a shortcut on any procedure, it's important to know what could go wrong. -->
-<section id="quadratic-formula">
-<h2>Quadratic Formula<a class="headerlink" href="#quadratic-formula" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="inverting-the-laplace-transform-with-partial-fractions">
+<h1><span class="section-number">1.6. </span>Inverting the Laplace Transform with Partial Fractions<a class="headerlink" href="#inverting-the-laplace-transform-with-partial-fractions" title="Link to this heading">#</a></h1>
+<p>under construction</p>
+<section id="rational-functions">
+<h2><span class="section-number">1.6.1. </span>Rational Functions<a class="headerlink" href="#rational-functions" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="def_rational_fxn">
+<p class="admonition-title"><span class="caption-number">Definition 1.4 </span> (Rational Function)</p>
+<section class="definition-content" id="proof-content">
+<p>A <strong>rational function</strong> is a function that can be written in the form</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{p(x)}{q(x)}
+\]</div>
+<p>where both <span class="math notranslate nohighlight">\(p(x)\)</span> and <span class="math notranslate nohighlight">\(q(x)\)</span> are polynomials.</p>
 </section>
-<section id="integration-by-parts">
-<h2>Integration by Parts<a class="headerlink" href="#integration-by-parts" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
-<span class="kn">import</span> <span class="nn">matplotlip.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Failed</span> <span class="n">to</span> <span class="n">start</span> <span class="n">the</span> <span class="n">Kernel</span><span class="o">.</span> 
-
-<span class="n">The</span> <span class="n">kernel</span> <span class="n">died</span><span class="o">.</span> <span class="n">Error</span><span class="p">:</span> <span class="o">...</span> <span class="n">View</span> <span class="n">Jupyter</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;command:jupyter.viewOutput&#39;</span><span class="o">&gt;</span><span class="n">log</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">further</span> <span class="n">details</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-</pre></div>
-</div>
-</div>
-</div>
+</div><p>We can always assume that the leading coefficient of <span class="math notranslate nohighlight">\(q(x)\)</span> is <span class="math notranslate nohighlight">\(1\)</span>, because if it is not, we can divide both <span class="math notranslate nohighlight">\(p(x)\)</span> and <span class="math notranslate nohighlight">\(q(x)\)</span> by that coefficient to make it <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>We will often need to find <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{p(s)}{q(s)}\)</span> where <span class="math notranslate nohighlight">\(p(s)\)</span> and <span class="math notranslate nohighlight">\(q(s)\)</span> are both polynomials and the highest degree of <span class="math notranslate nohighlight">\(p(s)\)</span> is less than the highest degree of <span class="math notranslate nohighlight">\(q(s)\)</span>.</p>
+</section>
+<section id="finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-quadratic">
+<h2><span class="section-number">1.6.2. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is quadratic.<a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-quadratic" title="Link to this heading">#</a></h2>
+<p>Consider</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{f}(s) = \frac{p(s)}{q(s)}
+\]</div>
+<p>where the highest degree of <span class="math notranslate nohighlight">\(p(s)\)</span> is <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(1\)</span> and the highest degree of <span class="math notranslate nohighlight">\(q(s)\)</span> is <span class="math notranslate nohighlight">\(2\)</span> and the leading coefficient of <span class="math notranslate nohighlight">\(q(s)\)</span> is <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>Our goal will be to find <span class="math notranslate nohighlight">\(f(t)\)</span>.  Typically under these assumptions, <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> will not appear in our Laplace Transform Table.  We will find a way to write <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> as the sum of two functions that do appear in the table.  Our first step is to find two candidate functions and the next step is to determine the appropriate coefficients.</p>
+<p>There are three possibilities for <span class="math notranslate nohighlight">\(q(s)\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(q(s) = (s-r_1)(s-r_2)\)</span> with <span class="math notranslate nohighlight">\(r_1 \neq r_2\)</span>: there are two real unequal roots to the equation <span class="math notranslate nohighlight">\(q(s)=0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(q(s) = (s-r)^2\)</span>: there is a signle repeated real root to the equation <span class="math notranslate nohighlight">\(q(s) = 0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(q(s) = (s-a)^2 + \omega^2\)</span>: there are no real roots to the equation <span class="math notranslate nohighlight">\(q(s)=0\)</span>.</p></li>
+</ul>
+<p>We will use completing the square or direct factorization to determine which of these three cases applies.</p>
+<section id="completing-the-square">
+<h3><span class="section-number">1.6.2.1. </span>Completing the square<a class="headerlink" href="#completing-the-square" title="Link to this heading">#</a></h3>
+<p>An important step in our process will be to take a quadratic polynomial and use “completing the square” to change its structure.  The goal is to first convert the quadratic formula into the form <span class="math notranslate nohighlight">\((s+c_1)^2 + c_2\)</span>.  From there we will be able to convert it to one of the three forms identified above.  Rather than trying to memorize a formula for this we will try to learn a process, starting with an example.</p>
+<div class="proof example admonition" id="example:ssqp6sp13">
+<p class="admonition-title"><span class="caption-number">Example 1.15 </span> (Completing the square with <span class="math notranslate nohighlight">\(q(s) = s^2 + 6s + 13\)</span>)</p>
+<section class="example-content" id="proof-content">
+<p>We have <span class="math notranslate nohighlight">\(q(s) = s^2 + 6s+13\)</span>, and we want to write it in the form <span class="math notranslate nohighlight">\((s+c_1)^2 + c_2\)</span>.  We make the observation that <span class="math notranslate nohighlight">\((s+c_1)^2 = s^2 + 2c_1 s + c_1^2\)</span>.  So for the coefficient of <span class="math notranslate nohighlight">\(s\)</span> to match, <span class="math notranslate nohighlight">\(2c_1\)</span> must be <span class="math notranslate nohighlight">\(6\)</span>.  So <span class="math notranslate nohighlight">\(c_1=3\)</span>.</p>
+<p>Now we have <span class="math notranslate nohighlight">\(s^2 + 6s + 12 = (s+3)^2 + c_2\)</span>.  If we expand <span class="math notranslate nohighlight">\((s+3)^2 = s^2 + 6s + 9\)</span>, we see that to match the constant term, we need <span class="math notranslate nohighlight">\(9+c_2=13\)</span> so <span class="math notranslate nohighlight">\(c_2=4\)</span>.</p>
+<p>So we now have <span class="math notranslate nohighlight">\(q(s) = (s+3)^2 + 4\)</span>.  We convert the <span class="math notranslate nohighlight">\(4\)</span> into a square and we have</p>
+<div class="math notranslate nohighlight">
+\[
+q(s) = (s+3)^2 + 2^2
+\]</div>
+<p>Because this is a sum of squares rather than a difference of squares, we cannot do any more factoring (with real numbers).</p>
+</section>
+</div><p>The process we use will follow <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">example:ssqp6sp12</span></code>
+find <span class="math notranslate nohighlight">\(c_1\)</span> so that the coefficient of <span class="math notranslate nohighlight">\(s\)</span> is correct.  Then use the result to find <span class="math notranslate nohighlight">\(c_2\)</span> so that the constant term is correct.</p>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 1.16 </span> (Completing the square with <span class="math notranslate nohighlight">\(q(s) = s^2-11s+28\)</span>)</p>
+<section class="example-content" id="proof-content">
+<p>To complete the square for <span class="math notranslate nohighlight">\(q(s) = s^2-11s+28\)</span>, we follow the steps again:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(s+c_1)^2 + c_2 &amp;= s^2-11s+28\\
+s^2+2c_1 s+c_1^2 + c_2 &amp;= s^2-11s+28
+\end{align*}\]</div>
+<p>So <span class="math notranslate nohighlight">\(c_1=11/2\)</span>.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(s-11/2)^2 + c_2 &amp;= s^2-11s+28\\
+s^2-11s + \frac{121}{4} + c_2 &amp;= s^2 - 11s+28
+\end{align*}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(28=112/4\)</span> we have
+<span class="math notranslate nohighlight">\(\frac{121}{4} + c_2 = \frac{112}{4}\)</span> and <span class="math notranslate nohighlight">\(c_2 = -9/4\)</span>.<br />
+Thus we have arrived at</p>
+<div class="math notranslate nohighlight">
+\[
+q(s) = (s-11/2)^2 - 9/4
+\]</div>
+<p>Unlike the previous example, this has a difference rather than a sum.  We can think of <span class="math notranslate nohighlight">\(9/4\)</span> as <span class="math notranslate nohighlight">\((3/2)^2\)</span>.  We can use the difference of squares factorization: <span class="math notranslate nohighlight">\(a^2-b^2 = (a-b)(a+b)\)</span>.</p>
+<p>So</p>
+<p>\begin{align*}
+q(s) &amp;= \left( s- \frac{11}{2} - \frac{3}{2}\right) \left( s- \frac{11}{2} + \frac{3}{2} \right)\
+&amp;= (s- 7)(s-4)</p>
+</section>
+</div><div class="proof example admonition" id="example:ssqm10sp25">
+<p class="admonition-title"><span class="caption-number">Example 1.17 </span> (Completing the square for <span class="math notranslate nohighlight">\(q(s) = s^2 - 10s+25\)</span>)</p>
+<section class="example-content" id="proof-content">
+<p>To complete the square for <span class="math notranslate nohighlight">\(q(s) = s^2 - 10s + 25\)</span> we follow the same basic steps:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(s+c_1)^2 + c_2 &amp;= s^2 - 10s + 25\\
+s^2 + 2c_1 s + c_1^2 + c_2 &amp;= s^2 - 10s + 25
+\end{align*}\]</div>
+<p>matching coefficients of <span class="math notranslate nohighlight">\(s\)</span>, we see <span class="math notranslate nohighlight">\(c_1=-5\)</span>.  This yields</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+s^2 - 10s + 25 + c_2 = s^2-10s+25
+\end{align*}\]</div>
+<p>This leads to the conclusion <span class="math notranslate nohighlight">\(c_2=0\)</span>.</p>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+q(s) = (s-5)^2
+\]</div>
+</section>
+</div><p>Using this process on any quadratic polynomial <span class="math notranslate nohighlight">\(q(s)\)</span> with leading coefficient <span class="math notranslate nohighlight">\(1\)</span> will lead to a factorization of <span class="math notranslate nohighlight">\(q(s)\)</span> or to converting it into the form <span class="math notranslate nohighlight">\((s-a)^2 + \omega^2\)</span>.</p>
+</section>
+<section id="id1">
+<h3><span class="section-number">1.6.2.2. </span><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+</section>
 </section>
 </section>
 
@@ -452,16 +521,16 @@ This could lead to the question, "why do we ever bother to go through that troub
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "octave"
+            mode: "python"
         },
         kernelOptions: {
-            name: "octave",
+            name: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'octave'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -473,6 +542,24 @@ This could lead to the question, "why do we ever bother to go through that troub
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="LaplaceSShift.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.5. </span>The <span class="math notranslate nohighlight">\(s\)</span>-shift</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="LaplaceTable.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.7. </span>A table of Laplace Transforms</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -489,8 +576,12 @@ This could lead to the question, "why do we ever bother to go through that troub
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-formula">Quadratic Formula</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts">Integration by Parts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-functions">1.6.1. Rational Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-quadratic">1.6.2. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is quadratic.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-the-square">1.6.2.1. Completing the square</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.6.2.2. </a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

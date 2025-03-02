@@ -192,7 +192,8 @@
 <li class="toctree-l2"><a class="reference internal" href="notebooks/LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/LaplaceTable.html">1.6. A table of Laplace Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/LaplaceTable.html">1.7. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
 </ul>
@@ -352,16 +353,23 @@ document.write(`
    <a href="#cap-Def_Laplace"><strong>Def_Laplace</strong></a> | 
    <a href="#cap-Example:H1"><strong>Example:H1</strong></a> | 
    <a href="#cap-LapPolynomialproduct"><strong>LapPolynomialproduct</strong></a> | 
+   <a href="#cap-def_rational_fxn"><strong>def_rational_fxn</strong></a> | 
    <a href="#cap-ex:Lap_cos4t"><strong>ex:Lap_cos4t</strong></a> | 
    <a href="#cap-ex:Lap_cos_omegat"><strong>ex:Lap_cos_omegat</strong></a> | 
    <a href="#cap-ex:Lap_e^at"><strong>ex:Lap_e^at</strong></a> | 
    <a href="#cap-ex:Lap_e^t"><strong>ex:Lap_e^t</strong></a> | 
    <a href="#cap-example-1"><strong>example-1</strong></a> | 
+   <a href="#cap-example-2"><strong>example-2</strong></a> | 
+   <a href="#cap-example-3"><strong>example-3</strong></a> | 
+   <a href="#cap-example:e2tsin3t"><strong>example:e2tsin3t</strong></a> | 
    <a href="#cap-example:invert_to_exponential"><strong>example:invert_to_exponential</strong></a> | 
    <a href="#cap-example:invert_to_exponential_times_sin"><strong>example:invert_to_exponential_times_sin</strong></a> | 
    <a href="#cap-example:invert_with_t_shift"><strong>example:invert_with_t_shift</strong></a> | 
+   <a href="#cap-example:ssqm10sp25"><strong>example:ssqm10sp25</strong></a> | 
+   <a href="#cap-example:ssqp6sp13"><strong>example:ssqp6sp13</strong></a> | 
    <a href="#cap-example_Lap_e^-t"><strong>example_Lap_e^-t</strong></a> | 
    <a href="#cap-thm:linearity"><strong>thm:linearity</strong></a> | 
+   <a href="#cap-thm:s-shift"><strong>thm:s-shift</strong></a> | 
    <a href="#cap-thm:unique"><strong>thm:unique</strong></a>
    </div>
 
@@ -398,6 +406,14 @@ document.write(`
        <td>
        <a href="notebooks/LaplaceRules.html#LapPolynomialproduct"><code class="xref">LapPolynomialproduct</code></a> <em>(notebooks/LaplaceRules)</em></td><td>
        <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def_rational_fxn"><td></td><td>
+       <strong>def_rational_fxn</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="notebooks/LaplacePF.html#def_rational_fxn"><code class="xref">def_rational_fxn</code></a> <em>(notebooks/LaplacePF)</em></td><td>
+       <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-ex:Lap_cos4t"><td></td><td>
        <strong>ex:Lap_cos4t</strong></td><td></td></tr>
@@ -439,6 +455,30 @@ document.write(`
        <a href="notebooks/LaplaceTShift.html#example-1"><code class="xref">example-1</code></a> <em>(notebooks/LaplaceTShift)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-2"><td></td><td>
+       <strong>example-2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="notebooks/LaplacePF.html#example-2"><code class="xref">example-2</code></a> <em>(notebooks/LaplacePF)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-3"><td></td><td>
+       <strong>example-3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="notebooks/LaplaceSShift.html#example-3"><code class="xref">example-3</code></a> <em>(notebooks/LaplaceSShift)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example:e2tsin3t"><td></td><td>
+       <strong>example:e2tsin3t</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="notebooks/LaplaceSShift.html#example:e2tsin3t"><code class="xref">example:e2tsin3t</code></a> <em>(notebooks/LaplaceSShift)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example:invert_to_exponential"><td></td><td>
        <strong>example:invert_to_exponential</strong></td><td></td></tr>
      <tr>
@@ -463,6 +503,22 @@ document.write(`
        <a href="notebooks/LaplaceTShift.html#example:invert_with_t_shift"><code class="xref">example:invert_with_t_shift</code></a> <em>(notebooks/LaplaceTShift)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example:ssqm10sp25"><td></td><td>
+       <strong>example:ssqm10sp25</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="notebooks/LaplacePF.html#example:ssqm10sp25"><code class="xref">example:ssqm10sp25</code></a> <em>(notebooks/LaplacePF)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example:ssqp6sp13"><td></td><td>
+       <strong>example:ssqp6sp13</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="notebooks/LaplacePF.html#example:ssqp6sp13"><code class="xref">example:ssqp6sp13</code></a> <em>(notebooks/LaplacePF)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example_Lap_e^-t"><td></td><td>
        <strong>example_Lap_e^-t</strong></td><td></td></tr>
      <tr>
@@ -477,6 +533,14 @@ document.write(`
        <td></td>
        <td>
        <a href="notebooks/LaplaceRules.html#thm:linearity"><code class="xref">thm:linearity</code></a> <em>(notebooks/LaplaceRules)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm:s-shift"><td></td><td>
+       <strong>thm:s-shift</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="notebooks/LaplaceSShift.html#thm:s-shift"><code class="xref">thm:s-shift</code></a> <em>(notebooks/LaplaceSShift)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-thm:unique"><td></td><td>

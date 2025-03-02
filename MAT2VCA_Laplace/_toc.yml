@@ -12,6 +12,7 @@ chapters:
     - file: notebooks/LaplaceRules
     - file: notebooks/LaplaceTShift
     - file: notebooks/LaplaceSShift
+    - file: notebooks/LaplacePF
     - file: notebooks/LaplaceTable
 #- file: Laplace
 # - file: intro

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.6. A table of Laplace Transforms &#8212; My sample book</title>
+    <title>1.7. A table of Laplace Transforms &#8212; My sample book</title>
   
   
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/LaplaceTable';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="1.5. The \(s\)-shift" href="LaplaceSShift.html" />
+    <link rel="prev" title="1.6. Inverting the Laplace Transform with Partial Fractions" href="LaplacePF.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,7 +187,8 @@
 <li class="toctree-l2"><a class="reference internal" href="LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.6. A table of Laplace Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.7. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
 </ul>
@@ -388,8 +389,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="a-table-of-laplace-transforms">
-<span id="lap-table"></span><h1><span class="section-number">1.6. </span>A table of Laplace Transforms<a class="headerlink" href="#a-table-of-laplace-transforms" title="Link to this heading">#</a></h1>
+<span id="lap-table"></span><h1><span class="section-number">1.7. </span>A table of Laplace Transforms<a class="headerlink" href="#a-table-of-laplace-transforms" title="Link to this heading">#</a></h1>
 <p>In previous sections, we have derived a number of transforms.  These (and a few additional transforms) are collected in this table.</p>
+<p>Some of the rows show the same information but in different form.  This is because it depending on whether one is finding the transform or inverting the transform it is sometimes easier to use one form over the other.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Function</p></th>
@@ -454,19 +456,23 @@ document.write(`
 <td><p><span class="math notranslate nohighlight">\(\tilde{f}(s-a)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(s\)</span>-shift</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(H_a(t)f(t-a)\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(e^{at}f(t)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{L}[f(t)](s-a)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(s\)</span>-shift</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(H_a(t)f(t-a)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(e^{-as}\tilde{f}(s)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(t\)</span>-shift, <span class="math notranslate nohighlight">\(a&gt;0\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(H_a(t)\mathcal{L}^{-1}[\tilde{f}(s)](t-a)\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(H_a(t)\mathcal{L}^{-1}[\tilde{f}(s)](t-a)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(e^{-as}\tilde{f}(s)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(t\)</span>-shift, <span class="math notranslate nohighlight">\(a&gt;0\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(af(t)\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(af(t)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(a\tilde{f}(s)\)</span></p></td>
 <td><p>Linearity</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(a f(t)+bg(t)\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(a f(t)+bg(t)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(a \tilde{f}(s)+b\tilde{g}(s)\)</span></p></td>
 <td><p>Linearity</p></td>
 </tr>
@@ -506,12 +512,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="LaplaceSShift.html"
+       href="LaplacePF.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.5. </span>The <span class="math notranslate nohighlight">\(s\)</span>-shift</p>
+        <p class="prev-next-title"><span class="section-number">1.6. </span>Inverting the Laplace Transform with Partial Fractions</p>
       </div>
     </a>
 </div>
