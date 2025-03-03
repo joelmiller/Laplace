@@ -439,7 +439,7 @@ H_a(t) = \begin{cases} 0 &amp; t &lt; a\\
 <div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 1.10 </span> (Plots of functions involving <span class="math notranslate nohighlight">\(H_a(t)\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>To see how we use <span class="math notranslate nohighlight">\(H_a(t)\)</span> to create discontinuous functions in practice, we will plot <span class="math notranslate nohighlight">\(aH_a(t)\)</span> for <span class="math notranslate nohighlight">\(a=1, 2, 3, 4\)</span> and then plot <span class="math notranslate nohighlight">\((a +\sin(t)) H_a(t)\)</span>.</p>
+<p>To see how we use <span class="math notranslate nohighlight">\(H_a(t)\)</span> to create discontinuous functions in practice, we will plot <span class="math notranslate nohighlight">\(aH_a(t)\)</span> for <span class="math notranslate nohighlight">\(a=1, 3, 5\)</span> and then plot <span class="math notranslate nohighlight">\((a +\sin(t)) H_a(t)\)</span>.</p>
 <p>The code below performs this action.  Do not worry about the details of how <span class="math notranslate nohighlight">\(H_a(t)\)</span> is defined - that is discussed further below.</p>
 </section>
 </div><div class="cell docutils container">
@@ -694,12 +694,59 @@ f(s) = \frac{1}{s-2} - 2e^{-s} \frac{1}{s-2} + 3 e^{-2s} \frac{1}{s-3}
 <section id="self-test">
 <h2><span class="section-number">1.4.6. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
 <p>Under construction</p>
-<ul class="simple">
+<ul>
 <li><ol class="arabic simple">
-<li></li>
+<li><p>Sketch and convert the function</p></li>
 </ol>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+    f(t) =  \begin{cases} 
+                t &amp; t &lt;1\\
+                t+t^2 &amp; t \geq 1
+            \end{cases}
+    \end{split}\]</div>
+<p>into an expression of the form <span class="math notranslate nohighlight">\(f_0(t) + H_a(t)f_1(t)\)</span>.</p>
 </li>
 <li><ol class="arabic simple" start="2">
+<li><p>Sketch and convert the function</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+    f(t) =  \begin{cases} 
+                t &amp; t &lt;1\\
+                t^2 &amp; t \geq 1
+            \end{cases}
+    \end{split}\]</div>
+<p>into an expression of the form <span class="math notranslate nohighlight">\(f_0(t) + H_a(t)f_1(t)\)</span>.</p>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>Sketch <span class="math notranslate nohighlight">\(f(t) = H_2(t)(t-2)\)</span> and find <span class="math notranslate nohighlight">\(\mathcal{L}[f(t)](s)\)</span>.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p>Find the Laplace Transform of</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+    f(t) =  \begin{cases} 
+                t &amp; t &lt;1\\
+                t+t^2 &amp; t \geq 1
+            \end{cases}
+    \end{split}\]</div>
+<p>(an earlier question asked you to write it as <span class="math notranslate nohighlight">\(f_0(t) + H_a(t)f_1(t)\)</span>).</p>
+</li>
+<li><ol class="arabic simple" start="5">
+<li><p>Sketch and find the Laplace Transform of</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    f(t) =  \begin{cases} 
+                0 &amp; t&lt;1 \text{ or }  2 \leq t \\
+                1 &amp; 1 \leq t &lt; 2
+            \end{cases}
+    \end{split}\]</div>
+</li>
+<li><ol class="arabic simple" start="5">
 <li><p>(*) In <a class="reference internal" href="#tshift-transform"><span class="std std-numref">Section 1.4.3</span></a>, we derived the transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span>, which uses a shifted function <span class="math notranslate nohighlight">\(f\)</span>.  What would happen if instead you tried to calculate the transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span> for an unshifted function <span class="math notranslate nohighlight">\(f(t)\)</span> using the same basic derivation?  You should arrive at the result in <a class="reference internal" href="#untshift-transform"><span class="std std-numref">Section 1.4.3.1</span></a>.</p></li>
 </ol>
 </li>
