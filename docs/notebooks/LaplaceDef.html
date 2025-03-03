@@ -427,13 +427,13 @@ document.write(`
 <p>The Laplace Transform is an <em>integral transform</em> that takes as input a piecewise continuous function <span class="math notranslate nohighlight">\(f(t)\)</span> that is defined for non-negative <span class="math notranslate nohighlight">\(t\)</span>: <span class="math notranslate nohighlight">\(f:[0,\infty) \to \mathbb{R}\)</span> and produces a new function <span class="math notranslate nohighlight">\(\tilde{f}(s) = \mathcal{L}[f(t)](s)\)</span> using the integral</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{L}[f(t)](s) = \int_0^\infty e^{-st} f(t) \, dt
+\mathcal{L}[f(t)](s) = \int_0^\infty f(t) e^{-st} \, dt
 \]</div>
 <p>The Laplace Transform is only defined if this integral exists (that is, if the integral is finite).</p>
 </section>
 </div><p>For some functions <span class="math notranslate nohighlight">\(f(t)\)</span> the Laplace Transform will only be defined for <span class="math notranslate nohighlight">\(s\)</span> above some threshold.  For other functions it may not be defined at all.</p>
 <p>We will use the notation <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> as a short-hand for <span class="math notranslate nohighlight">\(\mathcal{L}[f(t)](s)\)</span>.  Usually it will be easier to use <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>, but sometimes the longer notation with <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is used, especially if we are dealing with the transform of the sum or product of two functions.</p>
-<p>We usually won’t use the definition of the Laplace Transform to find the Laplace Transform of a function.  Just like we can compile derivative rules into a table, we can create a table with Laplace Transforms.  We now work out some of the things that go in the table.</p>
+<p>We usually won’t use the definition of the Laplace Transform to find the Laplace Transform of a function.  Just like we don’t usually use the definition of the derivative to compute a derivative, but rather we use a set of derivative rules, we will create a table of  Laplace Transforms rules to use.</p>
 <section id="introductory-example">
 <h2><span class="section-number">1.2.1. </span>Introductory example<a class="headerlink" href="#introductory-example" title="Link to this heading">#</a></h2>
 <p>Consider the function <span class="math notranslate nohighlight">\(f(t)=e^{-t}\)</span>.  We will try to find the Laplace Transform of <span class="math notranslate nohighlight">\(f(t)\)</span> for <span class="math notranslate nohighlight">\(s=3\)</span></p>
