@@ -486,9 +486,9 @@ document.write(`
 <h3><span class="section-number">1.2.1.2. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-t}](s)\)</span> for general <span class="math notranslate nohighlight">\(s\)</span><a class="headerlink" href="#finding-mathcal-l-e-t-s-for-general-s" title="Link to this heading">#</a></h3>
 <p>We could try to repeat this integral with <span class="math notranslate nohighlight">\(e^{-2t}\)</span>, <span class="math notranslate nohighlight">\(e^{0t}\)</span>, <span class="math notranslate nohighlight">\(e^{t/2}\)</span>, and every other exponent, but it would take forever. Rather than repeating over and over, we use <span class="math notranslate nohighlight">\(-s\)</span> to replace <span class="math notranslate nohighlight">\(-3\)</span> as the coefficient of <span class="math notranslate nohighlight">\(t\)</span> so that we only have to integrate once.  The steps are the same.</p>
 <div class="proof example admonition" id="example_Lap_e^-t">
-<p class="admonition-title"><span class="caption-number">Example 1.1 </span> (<span class="math notranslate nohighlight">\(\mathcal{L}[e^{-t}](s)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.1 </span> (The Laplace Transform of <span class="math notranslate nohighlight">\(e^{-t}\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>We use the integral in <a class="reference internal" href="#Def_Laplace">Definition 1.1</a>:</p>
+<p>To find the Laplace Transform of <span class="math notranslate nohighlight">\(e^{-t}\)</span>, we use the integral in <a class="reference internal" href="#Def_Laplace">Definition 1.1</a>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathcal{L}[f(t)](s) &amp;= \int_0^\infty  f(t) e^{-st} \, dt\\
@@ -508,8 +508,8 @@ document.write(`
 \infty  &amp; s \leq -1
 \end{cases}
 \end{align*}\]</div>
-<p>So we conclude that this integral is <span class="math notranslate nohighlight">\(1/(s+1)\)</span> if <span class="math notranslate nohighlight">\(s&gt;-1\)</span> and infinite otherwise.<br />
-We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)</span> to verify this:</p>
+<p>So we conclude that <span class="math notranslate nohighlight">\(\tilde{f}(s) = 1/(s+1)\)</span> if <span class="math notranslate nohighlight">\(s&gt;-1\)</span> and infinite otherwise.<br />
+We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)</span> to verify where the integral is finite/infinite:</p>
 </section>
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -537,7 +537,7 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 <section id="examples">
 <h2><span class="section-number">1.2.2. </span>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
 <div class="proof example admonition" id="ex:Lap_e^t">
-<p class="admonition-title"><span class="caption-number">Example 1.2 </span> (<span class="math notranslate nohighlight">\(\mathcal{L}[e^t](s)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.2 </span> (The Laplace Transform of <span class="math notranslate nohighlight">\(e^t\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To find the Laplace Transform of <span class="math notranslate nohighlight">\(e^t\)</span> we take the integral</p>
 <div class="amsmath math notranslate nohighlight">
@@ -551,7 +551,7 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 \end{align*}\]</div>
 </section>
 </div><div class="proof example admonition" id="ex:Lap_cos4t">
-<p class="admonition-title"><span class="caption-number">Example 1.3 </span> (<span class="math notranslate nohighlight">\(\mathcal{L}[\cos(4t)](s)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.3 </span> (The Laplace Transform of <span class="math notranslate nohighlight">\(\cos(4t)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To find the Laplace Transform of <span class="math notranslate nohighlight">\(\cos(4t)\)</span> we calculate the integral in
 <a class="reference internal" href="#Def_Laplace">Definition 1.1</a></p>
@@ -632,10 +632,9 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
 \end{align*}\]</div>
 </section>
 </div><div class="proof example admonition" id="ex:Lap_cos_omegat">
-<p class="admonition-title"><span class="caption-number">Example 1.6 </span> (<span class="math notranslate nohighlight">\(\mathcal{L}[\cos(\omega t)](s)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.6 </span> (The Laplace Transform of <span class="math notranslate nohighlight">\(f(t) = \cos(\omega t)\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>The Laplace Transform of <span class="math notranslate nohighlight">\(f(t) = \cos(\omega t)\)</span>
-To find the Laplace Transform of <span class="math notranslate nohighlight">\(\cos(\omega t)\)</span> we follow the steps we used for <span class="math notranslate nohighlight">\(\cos(4t)\)</span></p>
+<p>To find the Laplace Transform of <span class="math notranslate nohighlight">\(\cos(\omega t)\)</span> we follow the steps we used for <span class="math notranslate nohighlight">\(\cos(4t)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 \tilde{f}(s) = \int_0^\infty \cos(\omega t)e^{-st} \, dt
