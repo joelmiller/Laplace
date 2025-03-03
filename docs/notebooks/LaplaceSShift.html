@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.5. The \(s\)-shift &#8212; My sample book</title>
+    <title>1.5. The \(s\)-shift &#8212; The Laplace Transform and Differential Equations</title>
   
   
   
@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/LaplaceSShift';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.6. Inverting the Laplace Transform with Partial Fractions" href="LaplacePF.html" />
+    <link rel="next" title="1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators" href="LaplacePF.html" />
     <link rel="prev" title="1.4. The Laplace Transform and Discontinuous Functions" href="LaplaceTShift.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -156,8 +156,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="The Laplace Transform and Differential Equations - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Laplace Transform and Differential Equations - Home"/>`);</script>
   
   
 </a></div>
@@ -188,8 +188,10 @@
 <li class="toctree-l2"><a class="reference internal" href="LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.7. A table of Laplace Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.7. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.8. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.9. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
 </ul>
@@ -408,7 +410,7 @@ document.write(`
 </ul>
 <p>It turns out that the transform of <span class="math notranslate nohighlight">\(e^{at} f(t)\)</span> is closely related to the transform of <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
 <div class="proof theorem admonition" id="thm:s-shift">
-<p class="admonition-title"><span class="caption-number">Theorem 1.3 </span> (The <span class="math notranslate nohighlight">\(s\)</span>-shift)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 1.4 </span> (The <span class="math notranslate nohighlight">\(s\)</span>-shift)</p>
 <section class="theorem-content" id="proof-content">
 <p>If the Laplace Transform of <span class="math notranslate nohighlight">\(f(t)\)</span> is <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>, then</p>
 <div class="math notranslate nohighlight">
@@ -435,9 +437,9 @@ document.write(`
 <p>We now look at several examples using the <span class="math notranslate nohighlight">\(s\)</span>-shift.</p>
 <p>It is generally better practice when taking the transform to use <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}f(t)](s) = \mathcal{L}[f(t)](s-a)\)</span> rather than using the equivalent statment <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}f(t)](s) = \tilde{f}(s-a)\)</span>.  This second option requires shifting <span class="math notranslate nohighlight">\(s\)</span> and finding the transform of <span class="math notranslate nohighlight">\(f\)</span> in one step, which is prone to error.</p>
 <div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 1.12 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-2t}t^2](s)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.13 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-2t}t^2](s)\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>To find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-2t}t^2](s)\)</span>, we use the <span class="math notranslate nohighlight">\(s\)</span>-shift and the rule from <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.7</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> that <span class="math notranslate nohighlight">\(\mathcal{L}[t^n](s) = n!/s^{n+1}\)</span>.</p>
+<p>To find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-2t}t^2](s)\)</span>, we use the <span class="math notranslate nohighlight">\(s\)</span>-shift and the rule from <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.9</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> that <span class="math notranslate nohighlight">\(\mathcal{L}[t^n](s) = n!/s^{n+1}\)</span>.</p>
 <p>We have</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -446,7 +448,7 @@ document.write(`
 \end{align*}\]</div>
 </section>
 </div><div class="proof example admonition" id="example:e2tsin3t">
-<p class="admonition-title"><span class="caption-number">Example 1.13 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{2t}\sin(3t)](s)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.14 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{2t}\sin(3t)](s)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>We will find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{2t}\sin(3t)](s)\)</span> <em>without</em> using the entry in the table for <span class="math notranslate nohighlight">\(e^{at}\sin(\omega t)\)</span>.  Instead we will use the <span class="math notranslate nohighlight">\(s\)</span>-shift and the fact that <span class="math notranslate nohighlight">\(\mathcal{L}[\sin(\omega t)] = \omega/(s^2+\omega^2)\)</span></p>
 <p>We have</p>
@@ -458,14 +460,43 @@ document.write(`
 \end{align*}\]</div>
 </section>
 </div><div class="proof example admonition" id="example-3">
-<p class="admonition-title"><span class="caption-number">Example 1.14 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}\cos(\omega t)](s)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.15 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}\cos(\omega t)](s)\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>To find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}\cos(\omega t)](s)\)</span> using the <span class="math notranslate nohighlight">\(s\)</span>-shift we follow similar steps to <a class="reference internal" href="#example:e2tsin3t">Example 1.13</a> using <span class="math notranslate nohighlight">\(\mathcal{L}[\cos(\omega t)](s) = s/(s^2+\omega^2)\)</span>.</p>
+<p>To find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}\cos(\omega t)](s)\)</span> using the <span class="math notranslate nohighlight">\(s\)</span>-shift we follow similar steps to <a class="reference internal" href="#example:e2tsin3t">Example 1.14</a> using <span class="math notranslate nohighlight">\(\mathcal{L}[\cos(\omega t)](s) = s/(s^2+\omega^2)\)</span>.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathcal{L}[e^{at}\cos(\omega t)](s) &amp;=\mathcal{L}[\cos(\omega t)](s-a)\\
 &amp;= \frac{s-a}{(s-a)^2 + \omega^2}
 \end{align*}\]</div>
+</section>
+</div><div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 1.16 </span> (Using the <span class="math notranslate nohighlight">\(s\)</span> shift to invert: <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[(s)/((s-2)^2+9)](t)\)</span>)</p>
+<section class="example-content" id="proof-content">
+<p>To find <span class="math notranslate nohighlight">\(f(t)\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[\tilde{f}(s) = \frac{s}{(s-2)^2+3^2}\]</div>
+<p>we could use the Laplace transform table entry for <span class="math notranslate nohighlight">\(e^{at}\cos(\omega t)\)</span> and <span class="math notranslate nohighlight">\(e^{at}\sin(\omega t)\)</span>.  However, let’s assume that we don’t have that, and instead we just have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathcal{L}[\cos(\omega t)](s) &amp;= \frac{s}{s^2+\omega^2}\\
+\mathcal{L}[\sin(\omega t)](s) &amp;= \frac{\omega}{s^2+\omega^2}
+\end{align*}\]</div>
+<p>To use the <span class="math notranslate nohighlight">\(s\)</span>-shift, we need every appearance of <span class="math notranslate nohighlight">\(s\)</span> to be in the form <span class="math notranslate nohighlight">\(s-a\)</span>.  The easiest way to do this is to take <span class="math notranslate nohighlight">\(a=2\)</span> and make the numerator of <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> into <span class="math notranslate nohighlight">\((s-2)+2\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{f}(s) = \frac{s-2}{(s-2)^2 + 3^2} + \frac{2}{(s-2)^2+3^2}
+\]</div>
+<p>Then the first term looks like the transform of <span class="math notranslate nohighlight">\(\cos(3t)\)</span> but with <span class="math notranslate nohighlight">\(s-2\)</span> everywhere <span class="math notranslate nohighlight">\(s\)</span> appears.  The second term can be made to look like the transform of <span class="math notranslate nohighlight">\(\sin(3t)\)</span> if we rewrite it as <span class="math notranslate nohighlight">\((2/3) \frac{3}{(s-2)^2+3^2}\)</span>.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(t) &amp;= \mathcal{L}^{-1}[\tilde{f}(s)](t)\\
+&amp;= \mathcal{L}^{-1}\left[\frac{s-2}{(s-2)^2 + 3^2} + \frac{2}{3}\frac{3}{(s-2)^2+3^2}\right](t)\\
+&amp;= e^{2t} \mathcal{L}^{-1}\left[\frac{s}{s^2+3^2}\right](t) +  \frac{2e^{2t}}{3}\mathcal{L}^{-1}\left[\frac{3}{s^2+3^2}\right](t)\\
+&amp;= e^{2t}\cos(3t) + \frac{2e^{2t}}{3}\sin(3t)
+\end{align*}\]</div>
+<p>In
+<a class="reference internal" href="LaplacePF.html#sec-quadpf"><span class="std std-numref">Section 1.6</span></a>
+we will learn another way to get to <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{(s-2) + (2/3) 3}{(s-2)^2+3^2}\)</span>.</p>
 </section>
 </div></section>
 </section>
@@ -514,7 +545,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.6. </span>Inverting the Laplace Transform with Partial Fractions</p>
+        <p class="prev-next-title"><span class="section-number">1.6. </span>Inverting the Laplace Transform with Partial Fractions — quadratic denominators</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -549,7 +580,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By LaTrobe University MAPS staff (present and past)
 </p>
 
   </div>

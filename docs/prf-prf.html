@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proof Index &#8212; My sample book</title>
+    <title>Proof Index &#8212; The Laplace Transform and Differential Equations</title>
   
   
   
@@ -160,8 +160,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="The Laplace Transform and Differential Equations - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="The Laplace Transform and Differential Equations - Home"/>`);</script>
   
   
 </a></div>
@@ -192,8 +192,10 @@
 <li class="toctree-l2"><a class="reference internal" href="notebooks/LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/LaplaceTable.html">1.7. A table of Laplace Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/LaplaceDEsoln.html">1.7. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/LaplacePF2.html">1.8. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/LaplaceTable.html">1.9. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
 </ul>
@@ -362,17 +364,19 @@ document.write(`
    <a href="#cap-example-2"><strong>example-2</strong></a> | 
    <a href="#cap-example-3"><strong>example-3</strong></a> | 
    <a href="#cap-example-4"><strong>example-4</strong></a> | 
-   <a href="#cap-example-5"><strong>example-5</strong></a> | 
    <a href="#cap-example-6"><strong>example-6</strong></a> | 
+   <a href="#cap-example:distinct"><strong>example:distinct</strong></a> | 
    <a href="#cap-example:e2tsin3t"><strong>example:e2tsin3t</strong></a> | 
    <a href="#cap-example:invert_to_exponential"><strong>example:invert_to_exponential</strong></a> | 
    <a href="#cap-example:invert_to_exponential_times_sin"><strong>example:invert_to_exponential_times_sin</strong></a> | 
    <a href="#cap-example:invert_with_t_shift"><strong>example:invert_with_t_shift</strong></a> | 
+   <a href="#cap-example:repeated_root"><strong>example:repeated_root</strong></a> | 
    <a href="#cap-example:ssqm10sp25"><strong>example:ssqm10sp25</strong></a> | 
    <a href="#cap-example:ssqp6sp13"><strong>example:ssqp6sp13</strong></a> | 
    <a href="#cap-example_Lap_e^-t"><strong>example_Lap_e^-t</strong></a> | 
    <a href="#cap-thm:linearity"><strong>thm:linearity</strong></a> | 
    <a href="#cap-thm:s-shift"><strong>thm:s-shift</strong></a> | 
+   <a href="#cap-thm:t-shift"><strong>thm:t-shift</strong></a> | 
    <a href="#cap-thm:unique"><strong>thm:unique</strong></a>
    </div>
 
@@ -471,7 +475,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="notebooks/LaplaceSShift.html#example-3"><code class="xref">example-3</code></a> <em>(notebooks/LaplaceSShift)</em></td><td>
+       <a href="notebooks/LaplaceTShift.html#example-3"><code class="xref">example-3</code></a> <em>(notebooks/LaplaceTShift)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-4"><td></td><td>
@@ -479,15 +483,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="notebooks/LaplacePF.html#example-4"><code class="xref">example-4</code></a> <em>(notebooks/LaplacePF)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-5"><td></td><td>
-       <strong>example-5</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="notebooks/LaplacePF.html#example-5"><code class="xref">example-5</code></a> <em>(notebooks/LaplacePF)</em></td><td>
+       <a href="notebooks/LaplaceSShift.html#example-4"><code class="xref">example-4</code></a> <em>(notebooks/LaplaceSShift)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-6"><td></td><td>
@@ -496,6 +492,14 @@ document.write(`
        <td></td>
        <td>
        <a href="notebooks/LaplacePF.html#example-6"><code class="xref">example-6</code></a> <em>(notebooks/LaplacePF)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example:distinct"><td></td><td>
+       <strong>example:distinct</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="notebooks/LaplacePF2.html#example:distinct"><code class="xref">example:distinct</code></a> <em>(notebooks/LaplacePF2)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example:e2tsin3t"><td></td><td>
@@ -528,6 +532,14 @@ document.write(`
        <td></td>
        <td>
        <a href="notebooks/LaplaceTShift.html#example:invert_with_t_shift"><code class="xref">example:invert_with_t_shift</code></a> <em>(notebooks/LaplaceTShift)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example:repeated_root"><td></td><td>
+       <strong>example:repeated_root</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="notebooks/LaplacePF.html#example:repeated_root"><code class="xref">example:repeated_root</code></a> <em>(notebooks/LaplacePF)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example:ssqm10sp25"><td></td><td>
@@ -570,6 +582,14 @@ document.write(`
        <a href="notebooks/LaplaceSShift.html#thm:s-shift"><code class="xref">thm:s-shift</code></a> <em>(notebooks/LaplaceSShift)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm:t-shift"><td></td><td>
+       <strong>thm:t-shift</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="notebooks/LaplaceTShift.html#thm:t-shift"><code class="xref">thm:t-shift</code></a> <em>(notebooks/LaplaceTShift)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-thm:unique"><td></td><td>
        <strong>thm:unique</strong></td><td></td></tr>
      <tr>
@@ -606,7 +626,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By LaTrobe University MAPS staff (present and past)
 </p>
 
   </div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Laplace Transforms and Differential Equations &#8212; The Laplace Transform and Differential Equations</title>
+    <title>1.8. Inverting the Laplace Transform with Partial Fractions — higher order denominators &#8212; The Laplace Transform and Differential Equations</title>
   
   
   
@@ -60,11 +60,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/LaplaceIntro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/LaplacePF2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.2. Laplace Transform Definition" href="LaplaceDef.html" />
-    <link rel="prev" title="The Laplace Transform" href="../intro.html" />
+    <link rel="next" title="1.9. A table of Laplace Transforms" href="LaplaceTable.html" />
+    <link rel="prev" title="1.7. Using the Laplace Transform to solve Differential Equations" href="LaplaceDEsoln.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,14 +183,14 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. Laplace Transforms and Differential Equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.7. Using the Laplace Transform to solve Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.8. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.8. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.9. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
@@ -265,7 +265,7 @@
       
       
       
-      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2Fnotebooks/LaplaceIntro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2Fnotebooks/LaplacePF2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +295,7 @@
       
       
       
-      <li><a href="../_sources/notebooks/LaplaceIntro.ipynb" target="_blank"
+      <li><a href="../_sources/notebooks/LaplacePF2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +379,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Laplace Transforms and Differential Equations</h1>
+    <h1>Inverting the Laplace Transform with Partial Fractions — higher order denominators</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,7 +389,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">1.1. Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-cubic-or-higher-order">1.8.1. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-real-roots">1.8.1.1. Distinct real roots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-roots">1.8.1.2. Repeated roots</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -401,47 +405,72 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="laplace-transforms-and-differential-equations">
-<h1><span class="section-number">1. </span>Laplace Transforms and Differential Equations<a class="headerlink" href="#laplace-transforms-and-differential-equations" title="Link to this heading">#</a></h1>
-<p>In previous subjects, we learned to solve second order, constant coefficient ordinary differential equations of the form</p>
-<div class="math notranslate nohighlight" id="equation-eq-basic-driven-ode">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-eq-basic-driven-ode" title="Link to this equation">#</a></span>\[
-f'' + a f' + bf = g(t)
+  <section class="tex2jax_ignore mathjax_ignore" id="inverting-the-laplace-transform-with-partial-fractions-higher-order-denominators">
+<h1><span class="section-number">1.8. </span>Inverting the Laplace Transform with Partial Fractions — higher order denominators<a class="headerlink" href="#inverting-the-laplace-transform-with-partial-fractions-higher-order-denominators" title="Link to this heading">#</a></h1>
+<section id="finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-cubic-or-higher-order">
+<h2><span class="section-number">1.8.1. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order<a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-cubic-or-higher-order" title="Link to this heading">#</a></h2>
+<p>When <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{p(s)}{q(s)}\)</span> where <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order the process is similar.  We must again factor <span class="math notranslate nohighlight">\(q(s)\)</span>.  It is likely that we will be able to identify some of the factors of <span class="math notranslate nohighlight">\(q(s)\)</span> directly by observing how <span class="math notranslate nohighlight">\(q(s)\)</span> was constructed, but otherwise we may need to use more complicated methods to find the factors.</p>
+<p>We will assume for now that we know the factorization of <span class="math notranslate nohighlight">\(q(s)\)</span>.  In general the factorization may have multiple real roots, multiple complex roots, and multiple repeated roots.  We will <strong>assume</strong> that no complex roots are repeated, so only the real roots may be repeated.</p>
+<p>Similarly to when <span class="math notranslate nohighlight">\(q(s)\)</span> is quadratic, we will write <span class="math notranslate nohighlight">\(q(s)\)</span> as a partial fraction deocmposition that depends on how <span class="math notranslate nohighlight">\(q(s)\)</span> factors.  We will start with examples and then give the full approach.</p>
+<section id="distinct-real-roots">
+<h3><span class="section-number">1.8.1.1. </span>Distinct real roots<a class="headerlink" href="#distinct-real-roots" title="Link to this heading">#</a></h3>
+<p>Assume we want to find <span class="math notranslate nohighlight">\(f(t)\)</span> where <span class="math notranslate nohighlight">\(\tilde{f}(s) = p(s)/q(s)\)</span> and <span class="math notranslate nohighlight">\(q(s)\)</span> factors into terms of the form <span class="math notranslate nohighlight">\((s-a)\)</span>.  Further assume all of these factors are <em>distinct</em> (that is, none are repeated).</p>
+<p>For example, consider <span class="math notranslate nohighlight">\(q(s) = (s-a)(s-b)(s-c)\)</span>.  Then we take</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(s)}{q(s)} = \frac{A}{s-a} + \frac{B}{s-b} + \frac{C}{s-c}
 \]</div>
-<p>for a limited set of functions <span class="math notranslate nohighlight">\(g(t)\)</span> on the right hand side. Differential equations of this form arise in many physical situations.</p>
-<p>The Method of Undetermined Coefficients we learned previously requires first solving Equation <a class="reference internal" href="#equation-eq-basic-driven-ode">(1.1)</a> with <span class="math notranslate nohighlight">\(g(t)\)</span> replaced by <span class="math notranslate nohighlight">\(0\)</span> (the <strong>homogeneous solution <span class="math notranslate nohighlight">\(f_h\)</span></strong>), and then finding a solution with the given <span class="math notranslate nohighlight">\(g(t)\)</span> (the <strong>particular solution <span class="math notranslate nohighlight">\(f_p\)</span></strong>).  The method we learned for finding <span class="math notranslate nohighlight">\(f_p\)</span> required <span class="math notranslate nohighlight">\(g(t)\)</span> to be a polynomial, an exponential, a <span class="math notranslate nohighlight">\(\sin\)</span> or <span class="math notranslate nohighlight">\(\cos\)</span>, or products of these.</p>
-<p>In many important cases, the right hand side is not continuous.  A child pushed on a swing, the current when a light switch is flipped, a hydraulic system when a valve is opened/closed, and a car’s shock absorber when hitting a pothole can all be modeled using Equation
-<a class="reference internal" href="#equation-eq-basic-driven-ode">(1.1)</a> with a discontinuous driving function <span class="math notranslate nohighlight">\(g(t)\)</span>.</p>
-<p>We will learn a new technique for solving Equation <a class="reference internal" href="#equation-eq-basic-driven-ode">(1.1)</a> based on <strong>Laplace Transforms</strong> which will work in the cases we have studied previously and also handle discontinuities in <span class="math notranslate nohighlight">\(g(t)\)</span>.  It is also a first introduction to a large family of integral transform techniques used in applied mathematics, physics, electronics, engineering, etc.</p>
-<section id="prerequisites">
-<h2><span class="section-number">1.1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
-<p>This chapter builds on material from previous subjects.</p>
-<p>We will assume you know:</p>
+<p>The steps from here proceed as in the quadratic case.</p>
 <ul class="simple">
-<li><p>How to factor a quadratic polynomial</p></li>
-<li><p>Given the plot of the function <span class="math notranslate nohighlight">\(f(t)\)</span>, what does the plot of <span class="math notranslate nohighlight">\(f(t-a)\)</span> look like for some constant <span class="math notranslate nohighlight">\(a\)</span>?</p></li>
-<li><p>Integration by Parts</p></li>
+<li><p>We multiply by <span class="math notranslate nohighlight">\(q(s)\)</span></p></li>
+<li><p>We set <span class="math notranslate nohighlight">\(s=a\)</span>, <span class="math notranslate nohighlight">\(s=b\)</span>, and <span class="math notranslate nohighlight">\(s=c\)</span> to identify each coefficient.</p></li>
+<li><p>Finally we take the Inverse Laplace Transform of the resulting sum to find <span class="math notranslate nohighlight">\(f(t)\)</span>.</p></li>
 </ul>
-<p>I (Joel) will try to add a section at the end of this text explaining these skills.  As of 2025/02/28 I have not done this.</p>
-<p>We will also use the following skills from previous subjects, but there will be time spent reviewing them within the main text:</p>
-<ul class="simple">
-<li><p>Partial fractions</p></li>
-<li><p>Completing the square</p></li>
-<li><p>Integration by parts</p></li>
-</ul>
-<!--- ## Overview
-
-The Laplace Transform is an important tool of applied mathematics, particularly within Engineering.  It is included at the start of MAT2VCA to prepare students for its use within the second-year engineering curriculum.
-
-The Laplace Transform takes a function $f(t)$ and transforms it into a function of a new variable $s$.  The transform has some important properties which we will learn to use to solve constant coefficient linear differential equations.  We have already learned the method of undetermined coefficients which can also be applied to solving these differential equations.  Why should we learn a new method.  There are two reasons.  
-
-- The Laplace Transfrom allows us to handle driving functions that are discontinuous, which are difficult to handle with the method of undetermined coefficients.  So for example, if we care about electrical flow through a circuit and someone is opening and closing a switch, the Laplace Transform gives us a clean way to handle this.  Similar advantages occur for fluid flow if valves are opened and closed.
-- The Laplace Transform converts a differential equation into an Algebraic equation.  For many people, the solving Algebra equations is so much easier that it is worth the extra overhead of using the Laplace Transfrom to get the Algebra problem, and then inverting the Laplace Transform to get the solution.
-
-**ADD FIGURE HERE**
----></section>
-<div class="toctree-wrapper compound">
-</div>
+<div class="proof example admonition" id="example:distinct">
+<p class="admonition-title"><span class="caption-number">Example 1.23 </span> (Distinct real roots)</p>
+<section class="example-content" id="proof-content">
+<p>Consider</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(s)}{q(s)} = \frac{}{(s-1)(s-2)(s-3)}
+\]</div>
+<p>We set
+\begin{align*}
+\frac{p(s)}{q(s)} &amp;= \frac{A}{s-1} + \frac{B}{s-2} + \frac{C}{s-3}\
+\Rightarrow \quad
+4s^2-17s+… &amp;= A(s-2)(s-3) + B(s-1)(s-3) + C(s-1)(s-2)
+\end{align*}#3, -1, 2</p>
+<p>Now we set <span class="math notranslate nohighlight">\(s=1\)</span> and get</p>
+<div class="math notranslate nohighlight">
+\[
+6 = A(-1)(-2) \quad \Rightarrow \quad A= 3
+\]</div>
+<p>Next we set <span class="math notranslate nohighlight">\(s=2\)</span> and get</p>
+<div class="math notranslate nohighlight">
+\[
+1 = B(1)(-1)  \quad \Rightarrow \quad B = -1
+\]</div>
+<p>Finally we set <span class="math notranslate nohighlight">\(s=3\)</span> and get</p>
+<div class="math notranslate nohighlight">
+\[ 
+4= C(2)(1) \quad \Rightarrow \quad C=2
+\]</div>
+</section>
+</div></section>
+<section id="repeated-roots">
+<h3><span class="section-number">1.8.1.2. </span>Repeated roots<a class="headerlink" href="#repeated-roots" title="Link to this heading">#</a></h3>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 1.24 </span> (Repeated Roots)</p>
+<section class="example-content" id="proof-content">
+<p>If a factor <span class="math notranslate nohighlight">\((s-a)\)</span> is repeated <span class="math notranslate nohighlight">\(n\)</span> times, then we include <span class="math notranslate nohighlight">\(\frac{1}{(s-a)^j}\)</span> for every <span class="math notranslate nohighlight">\(j\)</span> from <span class="math notranslate nohighlight">\(1\)</span> up to and including <span class="math notranslate nohighlight">\(n\)</span>.  So for example if <span class="math notranslate nohighlight">\(q(s) = (s-a)^3(s-b)^2(s-c)\)</span>, then we take</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(s)}{q(s)} = \frac{A}{(s-a)^3} + \frac{B}{(s-a)^2} + \frac{C}{s-a} + \frac{D}{(s-b)^2} + \frac{E}{s-b} + \frac{F}{s-c}
+\]</div>
+<p>Again we multiple</p>
+</section>
+</div></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -475,20 +504,20 @@ The Laplace Transform takes a function $f(t)$ and transforms it into a function 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="LaplaceDEsoln.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The Laplace Transform</p>
+        <p class="prev-next-title"><span class="section-number">1.7. </span>Using the Laplace Transform to solve Differential Equations</p>
       </div>
     </a>
     <a class="right-next"
-       href="LaplaceDef.html"
+       href="LaplaceTable.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.2. </span>Laplace Transform Definition</p>
+        <p class="prev-next-title"><span class="section-number">1.9. </span>A table of Laplace Transforms</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -508,7 +537,11 @@ The Laplace Transform takes a function $f(t)$ and transforms it into a function 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">1.1. Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-cubic-or-higher-order">1.8.1. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-real-roots">1.8.1.1. Distinct real roots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-roots">1.8.1.2. Repeated roots</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
