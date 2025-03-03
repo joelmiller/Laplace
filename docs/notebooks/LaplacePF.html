@@ -721,13 +721,13 @@ f(t) = 4e^{-2t}\cos(5t) - e^{-2t}\cos(5t)
 <div class="proof example admonition" id="example-7">
 <p class="admonition-title"><span class="caption-number">Example 1.23 </span> (Finding <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{e^{-3s}(3s+14)}{s^2+8s+16}\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>For <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{e^{-3s}(3s+14)}{s^2+8s+16}\)</span>, when we try to find <span class="math notranslate nohighlight">\(f(t)\)</span>, we will first use the <span class="math notranslate nohighlight">\(s\)</span>-shift:</p>
+<p>For <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{e^{-3s}(3s+14)}{s^2+8s+16}\)</span>, when we try to find <span class="math notranslate nohighlight">\(f(t)\)</span>, we will first use the <span class="math notranslate nohighlight">\(t\)</span>-shift:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 f(t) &amp;= \mathcal{L}^{-1}\left[\frac{e^{-3s}(3s+14)}{s^2+8s+16}\right](t)\\ 
 &amp;=  H_3(t)\mathcal{L}^{-1}\left[\frac{3s+14}{s^2+8s+16}\right](t-3)
 \end{align*}\]</div>
-<p>Now, if we can find <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{3s+14}{s^2+8s+16}\right](t)\)</span>, then we just have to substitute <span class="math notranslate nohighlight">\(t-3\)</span> and multiply by <span class="math notranslate nohighlight">\(H_3(t)\)</span> to get the solution to the original problem.  This is a rational function, and the techniques we leared above apply.</p>
+<p>Now, if we can find <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{3s+14}{s^2+8s+16}\right](t)\)</span>, then we just have to substitute <span class="math notranslate nohighlight">\(t-3\)</span> and multiply by <span class="math notranslate nohighlight">\(H_3(t)\)</span> to get the solution to the original problem.  This is a rational function, and the techniques we learned above apply.</p>
 <p>We can use Partial Fractions to complete this.
 In fact, in <a class="reference internal" href="#example:repeated_root">Example 1.21</a> we saw this example already and we found that</p>
 <div class="math notranslate nohighlight">
