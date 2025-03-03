@@ -432,7 +432,7 @@ f(x) = \frac{p(x)}{q(x)}
 <p>We will often need to find <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{p(s)}{q(s)}\)</span> where <span class="math notranslate nohighlight">\(p(s)\)</span> and <span class="math notranslate nohighlight">\(q(s)\)</span> are both polynomials and the highest degree of <span class="math notranslate nohighlight">\(p(s)\)</span> is less than the highest degree of <span class="math notranslate nohighlight">\(q(s)\)</span>.</p>
 </section>
 <section id="classifying-the-factorizations-of-q-s">
-<h2><span class="section-number">1.6.2. </span>Classifying the factorizations of <span class="math notranslate nohighlight">\(q(s)\)</span><a class="headerlink" href="#classifying-the-factorizations-of-q-s" title="Link to this heading">#</a></h2>
+<span id="sec-classification"></span><h2><span class="section-number">1.6.2. </span>Classifying the factorizations of <span class="math notranslate nohighlight">\(q(s)\)</span><a class="headerlink" href="#classifying-the-factorizations-of-q-s" title="Link to this heading">#</a></h2>
 <p>Consider</p>
 <div class="math notranslate nohighlight">
 \[
@@ -716,7 +716,7 @@ f(t) = 4e^{-2t}\cos(5t) - e^{-2t}\cos(5t)
 <p>As in the previous example, trying to match the coefficient of <span class="math notranslate nohighlight">\(s\)</span> is faster than solving an equation for an additional value of <span class="math notranslate nohighlight">\(s\)</span>.  However, again will not be as simple when our denominators are no longer quadratic.</p>
 </section>
 <section id="rational-functions-with-the-t-shift">
-<h2><span class="section-number">1.6.6. </span>Rational Functions with the <span class="math notranslate nohighlight">\(t\)</span>-shift<a class="headerlink" href="#rational-functions-with-the-t-shift" title="Link to this heading">#</a></h2>
+<span id="sec-rational-tshift"></span><h2><span class="section-number">1.6.6. </span>Rational Functions with the <span class="math notranslate nohighlight">\(t\)</span>-shift<a class="headerlink" href="#rational-functions-with-the-t-shift" title="Link to this heading">#</a></h2>
 <p>Sometimes we encounter functions like <span class="math notranslate nohighlight">\(\tilde{f}(s) = e^{-as}p(s)/q(s)\)</span> where <span class="math notranslate nohighlight">\(p(s)\)</span> and <span class="math notranslate nohighlight">\(q(s)\)</span> are polynomials.  We will still approach this using Partial Fractions, but first we need to apply the <span class="math notranslate nohighlight">\(t\)</span>-shift.</p>
 <p>In general when <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> is an exponential times a rational function, we apply the <span class="math notranslate nohighlight">\(t\)</span>-shift first, and then we use Partial Fractions on the remaining part.
 If <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> involves a sum of rational functions times exponentials, we apply this to each term separately.</p>
@@ -724,8 +724,236 @@ If <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> involves a
 <section id="self-test">
 <h2><span class="section-number">1.6.7. </span>Self-Test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>under construction</p></li>
-<li></li>
+<li><p>Use completing the square to rewrite the denominator of each of the following functions into one of the forms in <a class="reference internal" href="#sec-classification"><span class="std std-numref">Section 1.6.2</span></a>:</p></li>
+</ol>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Q1</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{2s-3}{s^2-6s+13}\)</span></p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+A1</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((s-3)^2 + 2^2\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Q2</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{5s+8}{s^2-8s+2}\)</span></p>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+A3</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((s+4)(s-2)\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Q3</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{2}{s^2+6s+8}\)</span></p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+A3</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((s+2)(s+4)\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Q4</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{3s+3}{s^2+4s+4}\)</span></p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+A4</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((s+2)^2\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Q5</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{-2s}{s^2+2s+10}\)</span></p>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+A5</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((s+1)^2+3^2\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Q6</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{3s+1}{s^2-3s-28}\)</span></p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+A6</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((s-7)(s+4)\)</span></p>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Write down the appropriate partial fraction expansion (with unknown coefficients <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>) for each of the functions in the previous question.</p></li>
+</ol>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+Q1</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{2s-3}{s^2-6s+13}\)</span></p>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+A1</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\frac{A(s-3)}{(s-3)^2 + 2^2} + \frac{2B}{(s-3)^2+2^2}\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+Q2</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{5s+8}{s^2-8s+2}\)</span></p>
+</div>
+<input id="sd-tab-item-15" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+A3</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\frac{A}{s+4} + \frac{B}{s-2}\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+Q3</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{2}{s^2+6s+8}\)</span></p>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+A3</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\frac{A}{s+2} + \frac{B}{s+4}\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-18">
+Q4</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{3s+3}{s^2+4s+4}\)</span></p>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-19">
+A4</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\frac{A}{(s+2)^2} + \frac{B}{s+2}\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-20">
+Q5</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{-2s}{s^2+2s+10}\)</span></p>
+</div>
+<input id="sd-tab-item-21" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+A5</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\frac{A(s+1)}{(s+1)^2+3^2} + \frac{3B}{(s+1)^2+3^2}\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-22" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-22">
+Q6</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{3s+1}{s^2-3s-28}\)</span></p>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-23">
+A6</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\frac{A}{s-7} + \frac{B}{s+4}\)</span></p>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Find the coefficients for each of the functions above and find <span class="math notranslate nohighlight">\(f(t)\)</span>.</p></li>
+</ol>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-24" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-24">
+Q1</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{2s-3}{s^2-6s+13}\)</span></p>
+</div>
+<input id="sd-tab-item-25" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-25">
+A1</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(A=2\)</span>,  <span class="math notranslate nohighlight">\(B=-3\)</span>,  <span class="math notranslate nohighlight">\(f(t) = 2 e^{3t} \cos(2t) - 3 e^{3t}\sin(2t)\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-26" name="sd-tab-set-13" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-26">
+Q2</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{5s+8}{s^2-8s+2}\)</span></p>
+</div>
+<input id="sd-tab-item-27" name="sd-tab-set-13" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-27">
+A3</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(A=2\)</span>,  <span class="math notranslate nohighlight">\(B=3\)</span>,  <span class="math notranslate nohighlight">\(f(t) = 2e^{-4t} + 3 e^{2t}\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-28" name="sd-tab-set-14" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-28">
+Q3</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{2}{s^2+6s+8}\)</span></p>
+</div>
+<input id="sd-tab-item-29" name="sd-tab-set-14" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-29">
+A3</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(A=1\)</span>,  <span class="math notranslate nohighlight">\(B=-1\)</span>,  <span class="math notranslate nohighlight">\(f(t) = e^{-2t} - e^{-4t}\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-30" name="sd-tab-set-15" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-30">
+Q4</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{3s+3}{s^2+4s+4}\)</span></p>
+</div>
+<input id="sd-tab-item-31" name="sd-tab-set-15" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-31">
+A4</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(A=-3\)</span>,  <span class="math notranslate nohighlight">\(B=3\)</span>, <span class="math notranslate nohighlight">\(f(t) = -3te^{-2t} + 3e^{-2t}\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-32" name="sd-tab-set-16" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-32">
+Q5</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{-2s}{s^2+2s+10}\)</span></p>
+</div>
+<input id="sd-tab-item-33" name="sd-tab-set-16" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-33">
+A5</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(A=-2\)</span>,  <span class="math notranslate nohighlight">\(B=\frac{2}{3}\)</span>,  <span class="math notranslate nohighlight">\(f(t) = -2e^{-t}\cos(3t) + \frac{2}{3}e^{-t} \sin(3t)\)</span></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-34" name="sd-tab-set-17" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-34">
+Q6</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\tilde{f}(s)=\frac{3s+1}{s^2-3s-28}\)</span></p>
+</div>
+<input id="sd-tab-item-35" name="sd-tab-set-17" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-35">
+A6</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(A=2\)</span>,  <span class="math notranslate nohighlight">\(B=1\)</span>,  <span class="math notranslate nohighlight">\(f(t) = 2e^{7t} + e^{-4t}\)</span></p>
+</div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Find <span class="math notranslate nohighlight">\(f(t)\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[ \tilde{f}(s) = \frac{2s-4}{s^2-6s+10} + e^{-3s}\frac{2}{s^2+6s+8} -2 e^{-s}\frac{3s+1}{s^2-3s-28}\]</div>
+<p>Your answers in the earlier questions should be helpful.  If you have trouble, revisit <a class="reference internal" href="#sec-rational-tshift"><span class="std std-numref">Section 1.6.6</span></a>.</p>
+</li>
 <li><p>Using techniques we will learn soon, Susan applies the Laplace Transform to <span class="math notranslate nohighlight">\(f''(t) - f(t) = 0\)</span> with <span class="math notranslate nohighlight">\(f(0)=-1\)</span> and <span class="math notranslate nohighlight">\(f'(0)=5\)</span>.  She finds that <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{s-5}{s^2-1}\)</span>, but she has forgotten how to do Partial Fractions.  Find <span class="math notranslate nohighlight">\(f(t)\)</span> for Susan.</p></li>
 </ol>
 </section>
