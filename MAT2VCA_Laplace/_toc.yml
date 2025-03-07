@@ -13,8 +13,9 @@ chapters:
     - file: notebooks/LaplaceTShift
     - file: notebooks/LaplaceSShift
     - file: notebooks/LaplacePF
-    - file: notebooks/LaplaceDEsoln
     - file: notebooks/LaplacePF2
+    - file: notebooks/LaplaceDEsoln
+    - file: notebooks/LaplaceExtra
     - file: notebooks/LaplaceTable
 #- file: Laplace
 # - file: intro

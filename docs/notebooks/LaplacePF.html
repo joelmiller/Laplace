@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/LaplacePF';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.7. Using the Laplace Transform to solve Differential Equations" href="LaplaceDEsoln.html" />
+    <link rel="next" title="1.7. Inverting the Laplace Transform with Partial Fractions — higher order denominators" href="LaplacePF2.html" />
     <link rel="prev" title="1.5. The \(s\)-shift" href="LaplaceSShift.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -189,9 +189,10 @@
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.7. Using the Laplace Transform to solve Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.8. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.9. A table of Laplace Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceExtra.html">1.9. Optional Extenstions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
 </ul>
@@ -543,8 +544,8 @@ q(s) = (s-5)^2
 \frac{s-7}{(s-3)(s-5)} &amp;= \frac{A}{s-3} + \frac{B}{s-5}\qquad \text{multiply by $q(s)=(s-3)(s-5)$}\\
 \Rightarrow \quad s-7 &amp;= A(s-5) + B(s-3) \\
 \end{align*}\]</div>
-<p>These equations are true for all values of <span class="math notranslate nohighlight">\(s\)</span>.  If we choose some convenient values, namely we can find <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> easily.</p>
-<p>For <span class="math notranslate nohighlight">\(s=3\)</span>:</p>
+<p>These equations are true for all values of <span class="math notranslate nohighlight">\(s\)</span>.  If we choose some convenient values, namely s=3<span class="math notranslate nohighlight">\( and \)</span>s=5<span class="math notranslate nohighlight">\( we can find \)</span>A<span class="math notranslate nohighlight">\( and \)</span>B<span class="math notranslate nohighlight">\( easily because these each make a term on the right hand side become \)</span>0$.</p>
+<p>For <span class="math notranslate nohighlight">\(s=3\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 -4 = A(-2) \quad \Rightarrow \quad A = 2
@@ -584,6 +585,7 @@ f(t) &amp;= \mathcal{L}^{-1}\left[\frac{2}{s-3} - \frac{1}{s-5}\right](t)\\
 <li><p>set <span class="math notranslate nohighlight">\(s=a\)</span> and solve for <span class="math notranslate nohighlight">\(A\)</span> and set <span class="math notranslate nohighlight">\(s=b\)</span> and solve for <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
 <li><p>Invert the transform of the resulting sum.</p></li>
 </ul>
+<p>Notice that we leave all of the expressions in factored form.  We never expand a product of polynomials in these steps.</p>
 </section>
 <section id="finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2">
 <h2><span class="section-number">1.6.4. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2\)</span><a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2" title="Link to this heading">#</a></h2>
@@ -600,13 +602,13 @@ f(t) &amp;= \mathcal{L}^{-1}\left[\frac{2}{s-3} - \frac{1}{s-5}\right](t)\\
 \frac{3s+14}{(s+4)^2} &amp;= \frac{A}{(s+4)^2} + \frac{B}{s+4}\\
 \Rightarrow \quad 3s+14 &amp;= A + B(s+4)\\
 \end{align*}\]</div>
-<p>These equations are true for all values of <span class="math notranslate nohighlight">\(s\)</span>.  The value <span class="math notranslate nohighlight">\(s=-4\)</span> is convenient to try.</p>
+<p>These equations are true for all values of <span class="math notranslate nohighlight">\(s\)</span>.  The value <span class="math notranslate nohighlight">\(s=-4\)</span> is convenient to try because it makes the coefficient of <span class="math notranslate nohighlight">\(B\)</span> become <span class="math notranslate nohighlight">\(0\)</span>.</p>
 <p>For <span class="math notranslate nohighlight">\(s=-4\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 2 = A
 \]</div>
-<p>Next we use another value of <span class="math notranslate nohighlight">\(s\)</span>.  There is no really good choice like there was for the previous example, but <span class="math notranslate nohighlight">\(s=0\)</span> is often convenient.</p>
+<p>Next we use another value of <span class="math notranslate nohighlight">\(s\)</span>.  There is no really good second choice like there was for the previous example, but <span class="math notranslate nohighlight">\(s=0\)</span> is often convenient.</p>
 <p>So</p>
 <div class="math notranslate nohighlight">
 \[
@@ -646,10 +648,10 @@ f(t) = 2te^{-4t} + 3e^{-4t}
 <div class="math notranslate nohighlight">
 \[p(s) = A + B(s-a)\]</div>
 <ul class="simple">
-<li><p>Set <span class="math notranslate nohighlight">\(s=a\)</span> to find <span class="math notranslate nohighlight">\(A\)</span>.  Then use a different value of <span class="math notranslate nohighlight">\(s\)</span> to find an equation with <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> and solve for <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+<li><p>Set <span class="math notranslate nohighlight">\(s=a\)</span> to make the coefficient of <span class="math notranslate nohighlight">\(B\)</span> zero and find <span class="math notranslate nohighlight">\(A\)</span>.  Then use a different value of <span class="math notranslate nohighlight">\(s\)</span> to find an equation with <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> and solve for <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
 <li><p>Invert the transform of the resulting sum (likely using the <span class="math notranslate nohighlight">\(s\)</span>-shift).</p></li>
 </ul>
-<p>Note - in the step to find <span class="math notranslate nohighlight">\(B\)</span>, a more convenient approach is to look at the leading coefficient of <span class="math notranslate nohighlight">\(s\)</span>.  This gives <span class="math notranslate nohighlight">\(B\)</span> directly, but the approach won’t work as well when the denominator is not quadratic.</p>
+<p>Note - in the step to find <span class="math notranslate nohighlight">\(B\)</span>, a more efficient approach is to look at the leading coefficient of <span class="math notranslate nohighlight">\(s\)</span>.  This gives <span class="math notranslate nohighlight">\(B\)</span> directly, but the approach won’t work as well when the denominator is not quadratic.</p>
 </section>
 <section id="finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2-omega-2">
 <h2><span class="section-number">1.6.5. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2+\omega^2\)</span><a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2-omega-2" title="Link to this heading">#</a></h2>
@@ -713,7 +715,7 @@ f(t) = 4e^{-2t}\cos(5t) - e^{-2t}\cos(5t)
 <li><p>Set <span class="math notranslate nohighlight">\(s=a\)</span> to find <span class="math notranslate nohighlight">\(B\)</span>.  Then use another value of <span class="math notranslate nohighlight">\(s\)</span> to find <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
 <li><p>Invert the transform of the resulting sum.</p></li>
 </ul>
-<p>As in the previous example, trying to match the coefficient of <span class="math notranslate nohighlight">\(s\)</span> is faster than solving an equation for an additional value of <span class="math notranslate nohighlight">\(s\)</span>.  However, again will not be as simple when our denominators are no longer quadratic.</p>
+<p>As in the previous example, trying to match the coefficient of <span class="math notranslate nohighlight">\(s\)</span> is more efficient than solving the equation for the second value of <span class="math notranslate nohighlight">\(s\)</span>.  However, again it will not be as simple when our denominators are no longer quadratic.</p>
 </section>
 <section id="rational-functions-with-the-t-shift">
 <span id="sec-rational-tshift"></span><h2><span class="section-number">1.6.6. </span>Rational Functions with the <span class="math notranslate nohighlight">\(t\)</span>-shift<a class="headerlink" href="#rational-functions-with-the-t-shift" title="Link to this heading">#</a></h2>
@@ -1022,11 +1024,11 @@ A6</label><div class="sd-tab-content docutils">
       </div>
     </a>
     <a class="right-next"
-       href="LaplaceDEsoln.html"
+       href="LaplacePF2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.7. </span>Using the Laplace Transform to solve Differential Equations</p>
+        <p class="prev-next-title"><span class="section-number">1.7. </span>Inverting the Laplace Transform with Partial Fractions — higher order denominators</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -189,9 +189,10 @@
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.7. Using the Laplace Transform to solve Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.8. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.9. A table of Laplace Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceExtra.html">1.9. Optional Extenstions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
 </ul>
@@ -390,6 +391,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">1.5.1. Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.5.2. Self Test</a></li>
 </ul>
             </nav>
         </div>
@@ -439,7 +441,7 @@ document.write(`
 <div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 1.13 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-2t}t^2](s)\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>To find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-2t}t^2](s)\)</span>, we use the <span class="math notranslate nohighlight">\(s\)</span>-shift and the rule from <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.9</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> that <span class="math notranslate nohighlight">\(\mathcal{L}[t^n](s) = n!/s^{n+1}\)</span>.</p>
+<p>To find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-2t}t^2](s)\)</span>, we use the <span class="math notranslate nohighlight">\(s\)</span>-shift and the rule from <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> that <span class="math notranslate nohighlight">\(\mathcal{L}[t^n](s) = n!/s^{n+1}\)</span>.</p>
 <p>We have</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -499,6 +501,15 @@ f(t) &amp;= \mathcal{L}^{-1}[\tilde{f}(s)](t)\\
 we will learn another way to get to <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{(s-2) + (2/3) 3}{(s-2)^2+3^2}\)</span>.</p>
 </section>
 </div></section>
+<section id="self-test">
+<h2><span class="section-number">1.5.2. </span>Self Test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Use the <span class="math notranslate nohighlight">\(s\)</span>-shift and the transform of <span class="math notranslate nohighlight">\(\cos(\omega t)\)</span> to verify the formula in the transform table for <span class="math notranslate nohighlight">\(e^{at}\cos(\omega t)\)</span></p></li>
+<li><p>Use the <span class="math notranslate nohighlight">\(s\)</span>-shift and the transform of <span class="math notranslate nohighlight">\(1\)</span> to verify the formula in the transform table for <span class="math notranslate nohighlight">\(e^{at}\)</span>.</p></li>
+<li><p>Apply the <span class="math notranslate nohighlight">\(s\)</span>-shift and the transform of <span class="math notranslate nohighlight">\(t^n\)</span> to find
+<span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{1}{(s-4)^3}\right](t)\)</span>.</p></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -566,6 +577,7 @@ we will learn another way to get to <span class="math notranslate nohighlight">\
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">1.5.1. Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.5.2. Self Test</a></li>
 </ul>
   </nav></div>
 

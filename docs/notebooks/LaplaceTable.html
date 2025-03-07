@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.9. A table of Laplace Transforms &#8212; The Laplace Transform and Differential Equations</title>
+    <title>1.10. A table of Laplace Transforms &#8212; The Laplace Transform and Differential Equations</title>
   
   
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/LaplaceTable';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="1.8. Inverting the Laplace Transform with Partial Fractions — higher order denominators" href="LaplacePF2.html" />
+    <link rel="prev" title="1.9. Optional Extenstions" href="LaplaceExtra.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,9 +188,10 @@
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.7. Using the Laplace Transform to solve Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.8. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.9. A table of Laplace Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceExtra.html">1.9. Optional Extenstions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.10. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
 </ul>
@@ -391,7 +392,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="a-table-of-laplace-transforms">
-<span id="lap-table"></span><h1><span class="section-number">1.9. </span>A table of Laplace Transforms<a class="headerlink" href="#a-table-of-laplace-transforms" title="Link to this heading">#</a></h1>
+<span id="lap-table"></span><h1><span class="section-number">1.10. </span>A table of Laplace Transforms<a class="headerlink" href="#a-table-of-laplace-transforms" title="Link to this heading">#</a></h1>
 <p>In previous sections, we have derived a number of transforms.  These (and a few additional transforms) are collected in this table.</p>
 <p>Some of the rows show the same information but in different form.  This is because it depending on whether one is finding the transform or inverting the transform it is sometimes easier to use one form over the other.</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -463,20 +464,28 @@ document.write(`
 <td><p><span class="math notranslate nohighlight">\(s\)</span>-shift</p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(H_a(t)f(t-a)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{-as}\tilde{f}(s)\)</span><br> or equivalently <br> <span class="math notranslate nohighlight">\(e^{-as} \mathcal{L}[f(t)](s)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(t\)</span>-shift, <span class="math notranslate nohighlight">\(a&gt;0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(H_a(t)f(t)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{-as}\mathcal{L}[f(t+a)](s)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(t\)</span>-shift, <span class="math notranslate nohighlight">\(a&gt;0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(H_a(t)\mathcal{L}^{-1}[\tilde{f}(s)](t-a)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(e^{-as}\tilde{f}(s)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(t\)</span>-shift, <span class="math notranslate nohighlight">\(a&gt;0\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(H_a(t)\mathcal{L}^{-1}[\tilde{f}(s)](t-a)\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(e^{-as}\tilde{f}(s)\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(t\)</span>-shift, <span class="math notranslate nohighlight">\(a&gt;0\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(af(t)\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(af(t)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(a\tilde{f}(s)\)</span></p></td>
 <td><p>Linearity</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(a f(t)+bg(t)\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(a f(t)+bg(t)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(a \tilde{f}(s)+b\tilde{g}(s)\)</span></p></td>
 <td><p>Linearity</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(tf(t)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\frac{d}{ds} \tilde{f}(s)\)</span></p></td>
+<td><p>from optional <a class="reference internal" href="LaplaceExtra.html#sec-lapmult-t"><span class="std std-numref">Section 1.9.1</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -514,12 +523,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="LaplacePF2.html"
+       href="LaplaceExtra.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.8. </span>Inverting the Laplace Transform with Partial Fractions — higher order denominators</p>
+        <p class="prev-next-title"><span class="section-number">1.9. </span>Optional Extenstions</p>
       </div>
     </a>
 </div>
