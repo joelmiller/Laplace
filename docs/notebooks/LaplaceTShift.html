@@ -189,9 +189,10 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4. The Laplace Transform and Discontinuous Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.7. Using the Laplace Transform to solve Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.8. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.9. A table of Laplace Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceExtra.html">1.9. Optional Extenstions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
 </ul>
@@ -505,7 +506,7 @@ H_a(t) = H_0(t-a)
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathcal{L}[H_a(t)f(t-a)](s) &amp;= \int_0^\infty H_a(t) f(t-a) e^{-st} \, dt\\
-&amp;= \int_0^a 0 \, dt + \int_0^a f(t-a)e^{-st} \, dt
+&amp;= \int_0^a 0 \, dt + \int_a^\infty f(t-a)e^{-st} \, dt
 \end{align*}\]</div>
 <p>using the fact that <span class="math notranslate nohighlight">\(H_a(t)=0\)</span> for <span class="math notranslate nohighlight">\(t&lt;a\)</span> and <span class="math notranslate nohighlight">\(1\)</span> for <span class="math notranslate nohighlight">\(t&gt;a\)</span>.  Now we do a <span class="math notranslate nohighlight">\(u\)</span>-substitution, with <span class="math notranslate nohighlight">\(u = t-a\)</span>.  So <span class="math notranslate nohighlight">\(du/dt = 1\)</span> and <span class="math notranslate nohighlight">\(du=dt\)</span>.  When <span class="math notranslate nohighlight">\(t=a\)</span>, <span class="math notranslate nohighlight">\(u=0\)</span> and as <span class="math notranslate nohighlight">\(t \to \infty\)</span>, we also have <span class="math notranslate nohighlight">\(u \to \infty\)</span>.  So</p>
 <div class="amsmath math notranslate nohighlight">
@@ -539,7 +540,7 @@ H_a(t) = H_0(t-a)
 </section>
 <section id="preparing-a-piecewise-continuous-function-so-that-we-can-apply-the-laplace-transform">
 <h2><span class="section-number">1.4.4. </span>Preparing a piecewise continuous function so that we can apply the Laplace Transform<a class="headerlink" href="#preparing-a-piecewise-continuous-function-so-that-we-can-apply-the-laplace-transform" title="Link to this heading">#</a></h2>
-<p>In <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.9</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a>, we have</p>
+<p>In <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a>, we have</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L}[H_a(t) f(t-a)](s) = e^{-as} \tilde{f}(s)
@@ -601,7 +602,7 @@ f(t) = t + H_3(t) (-t^2)
 <p><span class="caption-number">Fig. 1.4 </span><span class="caption-text">The relation between <span class="math notranslate nohighlight">\(f(t)\)</span>, <span class="math notranslate nohighlight">\(f_0(t)\)</span>, and <span class="math notranslate nohighlight">\(f_1(t)\)</span> for <span class="math notranslate nohighlight">\(f(t) = f_0(t) + H_a(t) f_1(t)\)</span>.</span><a class="headerlink" href="#fig-piecewise-decomp" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>If we attempt to take the Laplace Transform of <span class="math notranslate nohighlight">\(t+H_3(t) (-t^2)\)</span>  using <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.9</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> the second term gives us trouble.  The table tells us that <span class="math notranslate nohighlight">\(\mathcal{L}[H_3(t) g(t-3)](s) = e^{-3s} \tilde{g}(s)\)</span>, but we don’t have a function of <span class="math notranslate nohighlight">\(t-3\)</span>, we have a function directly of <span class="math notranslate nohighlight">\(t\)</span>.  So we follow <a class="reference internal" href="#untshift-transform"><span class="std std-numref">Section 1.4.3.1</span></a>:</p>
+<p>If we attempt to take the Laplace Transform of <span class="math notranslate nohighlight">\(t+H_3(t) (-t^2)\)</span>  using <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> the second term gives us trouble.  The table tells us that <span class="math notranslate nohighlight">\(\mathcal{L}[H_3(t) g(t-3)](s) = e^{-3s} \tilde{g}(s)\)</span>, but we don’t have a function of <span class="math notranslate nohighlight">\(t-3\)</span>, we have a function directly of <span class="math notranslate nohighlight">\(t\)</span>.  So we follow <a class="reference internal" href="#untshift-transform"><span class="std std-numref">Section 1.4.3.1</span></a>:</p>
 <div class="math notranslate nohighlight">
 \[
 f(t) = t + H_3(t) g(t-3)
@@ -611,7 +612,7 @@ f(t) = t + H_3(t) g(t-3)
 \[\begin{split}
 \mathcal{L}[f(t)](s) = \mathcal{L}[t](s) + \mathcal{L}[H_3(t)g(t-3)](s)\\
 \end{split}\]</div>
-<p>From <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.9</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a>, the transform of <span class="math notranslate nohighlight">\(t^n\)</span> is <span class="math notranslate nohighlight">\(n!/s^{n+1}\)</span>, so</p>
+<p>From <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a>, the transform of <span class="math notranslate nohighlight">\(t^n\)</span> is <span class="math notranslate nohighlight">\(n!/s^{n+1}\)</span>, so</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathcal{L}[f(t)](s) &amp;= \frac{1}{s^2} + \mathcal{L}[H_3(t)g(t-3)](s)\\
