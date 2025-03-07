@@ -507,7 +507,7 @@ f(t) &amp;= \mathcal{L}^{-1} [\tilde{f}(s)](t)\\
 </div><div class="proof example admonition" id="example:invert_to_exponential_times_sin">
 <p class="admonition-title"><span class="caption-number">Example 1.9 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{8}{(s-2)^2 + 16}\right](t)\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>To find the Inverse Transform of <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{2}{(s-2)^2 + 16}\)</span> we look in the Table for a similar function.  We find  <span class="math notranslate nohighlight">\(\frac{\omega}{(s-a)^2 + \omega^2}\)</span> which resembles our function for <span class="math notranslate nohighlight">\(a=2\)</span> and <span class="math notranslate nohighlight">\(\omega = 4\)</span>.  We have</p>
+<p>To find the Inverse Transform of <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{2}{(s-2)^2 + 16}\)</span> we look in the Table for a similar function (up to a constant multiple).  We find  <span class="math notranslate nohighlight">\(\frac{\omega}{(s-a)^2 + \omega^2}\)</span> which resembles our function for <span class="math notranslate nohighlight">\(a=2\)</span> and <span class="math notranslate nohighlight">\(\omega = 4\)</span>.  We have</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L}\left[e^{2t}\sin(4t)\right](s) = \frac{4}{(s-2)^2 + 4^2}
@@ -520,7 +520,7 @@ f(t) &amp;= \mathcal{L}^{-1} [\tilde{f}(s)](t)\\
 &amp;= \frac{1}{2} \mathcal{L}^{-1}\left[ \frac{4}{(s-2)^2 + 4^2} \right](t)\\
 &amp;= \frac{1}{2} e^{2t}\sin(4t)
 \end{align*}\]</div>
-<p>Notice that in order to get a numerator of <span class="math notranslate nohighlight">\(4\)</span> (which is required to match the function appearing in the transform column of the Table) we had to factor out a <span class="math notranslate nohighlight">\(1/2\)</span>.  We conclude that</p>
+<p>Notice that in order to get a numerator of <span class="math notranslate nohighlight">\(4\)</span> (which is required to match the function appearing in the transform column of the Table) we had to factor out a <span class="math notranslate nohighlight">\(1/2\)</span>, or equivalently multiply by <span class="math notranslate nohighlight">\(2/2\)</span>.  We conclude that</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{1}{2} e^{2t} \sin(4t) = \mathcal{L}^{-1}\left[\frac{8}{(s-2)^2 + 16}\right](t)
