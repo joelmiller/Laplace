@@ -456,23 +456,15 @@ document.write(`
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(e^{at}f(t)\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\tilde{f}(s-a)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tilde{f}(s-a)\)</span><br> or equivalently <br>  <span class="math notranslate nohighlight">\(\mathcal{L}[f(t)](s-a)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(s\)</span>-shift</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(e^{at}f(t)\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\mathcal{L}[f(t)](s-a)\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(s\)</span>-shift</p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(H_a(t)f(t-a)\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(e^{-as}\tilde{f}(s)\)</span><br> or equivalently <br> <span class="math notranslate nohighlight">\(e^{-as} \mathcal{L}[f(t)](s)\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(H_a(t)f(t-a)\)</span> <br> or equivalently <br> <span class="math notranslate nohighlight">\(H_a(t)\mathcal{L}^{-1}[\tilde{f}(s)](t-a)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{-as} \mathcal{L}[f(t)](s)\)</span><br> or equivalently <br> <span class="math notranslate nohighlight">\(e^{-as}\tilde{f}(s)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(t\)</span>-shift, <span class="math notranslate nohighlight">\(a&gt;0\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(H_a(t)f(t)\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(H_a(t)f(t)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(e^{-as}\mathcal{L}[f(t+a)](s)\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(t\)</span>-shift, <span class="math notranslate nohighlight">\(a&gt;0\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(H_a(t)\mathcal{L}^{-1}[\tilde{f}(s)](t-a)\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(e^{-as}\tilde{f}(s)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(t\)</span>-shift, <span class="math notranslate nohighlight">\(a&gt;0\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(af(t)\)</span></p></td>
