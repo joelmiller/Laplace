@@ -394,8 +394,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.9.1.1. Self-test</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-physical-interpretation-of-the-laplace-transform">1.9.2. A physical interpretation of the Laplace Transform</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#financial-context">1.9.2.1. Financial context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-concrete-interpretation-of-the-laplace-transform">1.9.2. A more concrete interpretation of the Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#financial-and-biological-context">1.9.2.1. Financial and Biological context</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.9.2.2. Self Test</a></li>
 </ul>
 </li>
@@ -446,11 +446,11 @@ document.write(`
 </ol>
 </section>
 </section>
-<section id="a-physical-interpretation-of-the-laplace-transform">
-<h2><span class="section-number">1.9.2. </span>A physical interpretation of the Laplace Transform<a class="headerlink" href="#a-physical-interpretation-of-the-laplace-transform" title="Link to this heading">#</a></h2>
+<section id="a-more-concrete-interpretation-of-the-laplace-transform">
+<h2><span class="section-number">1.9.2. </span>A more concrete interpretation of the Laplace Transform<a class="headerlink" href="#a-more-concrete-interpretation-of-the-laplace-transform" title="Link to this heading">#</a></h2>
 <p>The benefit of the Laplace Transform for solving differential equations relates to the fact that it transforms differential equations to algebraic equations.  I am not aware of a good interpretation of the numerical value of <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> in this context.  However, the Laplace Transform shows up in other real-world settings.  It may be useful to think about this, if for no other reason than to clarify that <span class="math notranslate nohighlight">\(s\)</span> really is a completely different variable from <span class="math notranslate nohighlight">\(t\)</span>.</p>
-<section id="financial-context">
-<h3><span class="section-number">1.9.2.1. </span>Financial context<a class="headerlink" href="#financial-context" title="Link to this heading">#</a></h3>
+<section id="financial-and-biological-context">
+<h3><span class="section-number">1.9.2.1. </span>Financial and Biological context<a class="headerlink" href="#financial-and-biological-context" title="Link to this heading">#</a></h3>
 <p>Assume that someone is offering to sell you an offer: for a price of <span class="math notranslate nohighlight">\(X\)</span> dollars now, he will give you money at some rate <span class="math notranslate nohighlight">\(f(t)\)</span> for as long as you live.  We’d like to decide if this is a good deal or not.</p>
 <p>Having $ 1 today is generally worth more now than having $ 1 on some day in the future.  There are multiple reasons for this:</p>
 <ul class="simple">
@@ -468,8 +468,10 @@ document.write(`
 <ol class="arabic simple">
 <li><p>For a given offer <span class="math notranslate nohighlight">\(f(t)\)</span>, can you see intuitively why someone with a higher discount rate would be less interested (and less willing to pay for it)?  Look at the Transform Table and note how the transforms behave as <span class="math notranslate nohighlight">\(s\)</span> gets large and verify that this is consistent with your intuition.</p></li>
 <li><p>Can you see why for a given function <span class="math notranslate nohighlight">\(f(t) = e^{at}\)</span>, if <span class="math notranslate nohighlight">\(a\)</span> is greater than your discount rate, you would find this offer incredibly valuable?</p></li>
-<li><p>Assume someone plans to make you an offer like this at some future time <span class="math notranslate nohighlight">\(a\)</span>.  Then at time <span class="math notranslate nohighlight">\(a\)</span>, it would be worth <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> in terms of time <span class="math notranslate nohighlight">\(a\)</span> dollars.  However, those time <span class="math notranslate nohighlight">\(a\)</span> dollars are each worth <span class="math notranslate nohighlight">\(e^{-sa}\)</span> to you right now.  Can you relate how much this future offer is worth to you now to the <span class="math notranslate nohighlight">\(t\)</span>-shift?</p></li>
-<li><p>To make the offer worth more to you, the person decides to make an offer that increases at a constant rate over time, so that it grows at rate <span class="math notranslate nohighlight">\(a\)</span>.  Thus he is offering you <span class="math notranslate nohighlight">\(f(t) e^{at}\)</span>.  Your own personal discount rate is <span class="math notranslate nohighlight">\(s\)</span>.  Look back at the integral to calculate the value to you.  Now consider Alexis who has a personal discount rate that is smaller than your, so that her discount rate is <span class="math notranslate nohighlight">\(s-a\)</span>.  Can you see that the current value of the offer <span class="math notranslate nohighlight">\(f(t) e^{at}\)</span> to you is the same as the value of the offer <span class="math notranslate nohighlight">\(f(t)\)</span> to Alexis?  Can you relate this to the <span class="math notranslate nohighlight">\(s\)</span> shift?</p></li>
+<li><p>Assume someone plans to make you an offer like this at some future time <span class="math notranslate nohighlight">\(a\)</span>.  Then at time <span class="math notranslate nohighlight">\(a\)</span>, it would be worth <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> in terms of time <span class="math notranslate nohighlight">\(a\)</span> dollars.  However, those time <span class="math notranslate nohighlight">\(a\)</span> dollars are each worth <span class="math notranslate nohighlight">\(e^{-sa}\)</span> to you right now.  What is the value of this future offer in current dollars?  Can you relate the current value to the <span class="math notranslate nohighlight">\(t\)</span>-shift?</p></li>
+<li><p>To make the offer worth more to you, the person decides to make an offer that increases at a constant rate over time, so that it grows at rate <span class="math notranslate nohighlight">\(a\)</span>.  Thus he is offering you payment at rate <span class="math notranslate nohighlight">\(f(t) e^{at}\)</span>.  Your own personal discount rate is <span class="math notranslate nohighlight">\(s\)</span>.   Now consider Alexis who has a personal discount rate that is smaller than yours, so that her discount rate is <span class="math notranslate nohighlight">\(s-a\)</span>.  By looking at the integral used to calculate the current value of the offer, explain why the current value of the offer <span class="math notranslate nohighlight">\(f(t) e^{at}\)</span> to you is the same as the value of the offer <span class="math notranslate nohighlight">\(f(t)\)</span> to Alexis.  Can you relate this to the <span class="math notranslate nohighlight">\(s\)</span> shift?</p></li>
+<li><p>Consider an animal species that has offspring at rate <span class="math notranslate nohighlight">\(f(t)\)</span> where <span class="math notranslate nohighlight">\(t\)</span> is measured as time since birth.  The mortality rate for this species is constant, at rate <span class="math notranslate nohighlight">\(s\)</span>, so that the probability of still being alive at time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(e^{-st}\)</span>.  Following the techniques in deriving the financial value of the offer <span class="math notranslate nohighlight">\(f(t)\)</span>, explain why the expected number of offspring during a lifetime is <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(s\)</span> is large, use biological reasoning to explain why the species would tend to evolve towards a function <span class="math notranslate nohighlight">\(f(t)\)</span> that is larger at smaller values of <span class="math notranslate nohighlight">\(t\)</span>, even if it means reducing <span class="math notranslate nohighlight">\(f(t)\)</span> for larger <span class="math notranslate nohighlight">\(t\)</span>.  Explain why industrial scale fishing might alter fish so that they begin having offspring at a younger age at the cost of reduced adult size (resulting in laying fewer eggs later in life).</p></li>
 </ol>
 </section>
 </section>
@@ -543,8 +545,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.9.1.1. Self-test</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-physical-interpretation-of-the-laplace-transform">1.9.2. A physical interpretation of the Laplace Transform</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#financial-context">1.9.2.1. Financial context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-concrete-interpretation-of-the-laplace-transform">1.9.2. A more concrete interpretation of the Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#financial-and-biological-context">1.9.2.1. Financial and Biological context</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.9.2.2. Self Test</a></li>
 </ul>
 </li>
