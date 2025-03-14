@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.9. Optional Extenstions &#8212; The Laplace Transform and Differential Equations</title>
+    <title>1.9. Optional Extensions &#8212; The Laplace Transform and Differential Equations</title>
   
   
   
@@ -191,7 +191,7 @@
 <li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.9. Optional Extenstions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.9. Optional Extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
@@ -380,7 +380,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Optional Extenstions</h1>
+    <h1>Optional Extensions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -410,9 +410,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="optional-extenstions">
-<h1><span class="section-number">1.9. </span>Optional Extenstions<a class="headerlink" href="#optional-extenstions" title="Link to this heading">#</a></h1>
-<p>This section consists of extra material which is considered optional for MAT2VCA.  However, it might be of interest to more advanced students.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="optional-extensions">
+<h1><span class="section-number">1.9. </span>Optional Extensions<a class="headerlink" href="#optional-extensions" title="Link to this heading">#</a></h1>
+<p>This section consists of extra material which is considered optional for MAT2VCA.  However, it might be of interest to students who want to expand their understanding of the Laplace Transform.</p>
 <section id="multiplication-by-t">
 <span id="sec-lapmult-t"></span><h2><span class="section-number">1.9.1. </span>Multiplication by <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#multiplication-by-t" title="Link to this heading">#</a></h2>
 <p>If the function <span class="math notranslate nohighlight">\(f(t)\)</span> has transform <span class="math notranslate nohighlight">\(\mathcal{L}[f(t)](s) = \int_0^\infty f(t)e^{-st} \, dt\)</span>, we can find the transform of <span class="math notranslate nohighlight">\(t f(t)\)</span>.  Typically we would see the integral</p>
@@ -471,14 +471,15 @@ document.write(`
 <li><p>Assume someone plans to make you an offer like this at some future time <span class="math notranslate nohighlight">\(a\)</span>.  Then at time <span class="math notranslate nohighlight">\(a\)</span>, it would be worth <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> in terms of time <span class="math notranslate nohighlight">\(a\)</span> dollars.  However, those time <span class="math notranslate nohighlight">\(a\)</span> dollars are each worth <span class="math notranslate nohighlight">\(e^{-sa}\)</span> to you right now.  What is the value of this future offer in current dollars?  Can you relate the current value to the <span class="math notranslate nohighlight">\(t\)</span>-shift?</p></li>
 <li><p>To make the offer worth more to you, the person decides to make an offer that increases at a constant rate over time, so that it grows at rate <span class="math notranslate nohighlight">\(a\)</span>.  Thus he is offering you payment at rate <span class="math notranslate nohighlight">\(f(t) e^{at}\)</span>.  Your own personal discount rate is <span class="math notranslate nohighlight">\(s\)</span>.   Now consider Alexis who has a personal discount rate that is smaller than yours, so that her discount rate is <span class="math notranslate nohighlight">\(s-a\)</span>.  By looking at the integral used to calculate the current value of the offer, explain why the current value of the offer <span class="math notranslate nohighlight">\(f(t) e^{at}\)</span> to you is the same as the value of the offer <span class="math notranslate nohighlight">\(f(t)\)</span> to Alexis.  Can you relate this to the <span class="math notranslate nohighlight">\(s\)</span> shift?</p></li>
 <li><p>Consider an animal species that has offspring at rate <span class="math notranslate nohighlight">\(f(t)\)</span> where <span class="math notranslate nohighlight">\(t\)</span> is measured as time since birth.  The mortality rate for this species is constant, at rate <span class="math notranslate nohighlight">\(s\)</span>, so that the probability of still being alive at time <span class="math notranslate nohighlight">\(t\)</span> is <span class="math notranslate nohighlight">\(e^{-st}\)</span>.  Following the techniques in deriving the financial value of the offer <span class="math notranslate nohighlight">\(f(t)\)</span>, explain why the expected number of offspring during a lifetime is <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(s\)</span> is large, use biological reasoning to explain why the species would tend to evolve towards a function <span class="math notranslate nohighlight">\(f(t)\)</span> (where <span class="math notranslate nohighlight">\(t\)</span> is the time since hatching) that is larger at smaller values of <span class="math notranslate nohighlight">\(t\)</span>, even if it means reducing <span class="math notranslate nohighlight">\(f(t)\)</span> for larger <span class="math notranslate nohighlight">\(t\)</span>.  Assume that a fish species produces offspring at rate <span class="math notranslate nohighlight">\(a H_a(t)\)</span> and over time can evolve to have a smaller or larger value of <span class="math notranslate nohighlight">\(a\)</span>, but is constrained to keep this general form.</p></li>
-</ol>
+<li><p>If <span class="math notranslate nohighlight">\(s\)</span> is large, use biological reasoning to explain why the species would tend to evolve towards a function <span class="math notranslate nohighlight">\(f(t)\)</span> (where <span class="math notranslate nohighlight">\(t\)</span> is the time since hatching) that is larger at smaller values of <span class="math notranslate nohighlight">\(t\)</span>, even if it means reducing <span class="math notranslate nohighlight">\(f(t)\)</span> for larger <span class="math notranslate nohighlight">\(t\)</span>.  Assume that a fish species produces offspring at rate <span class="math notranslate nohighlight">\(a H_a(t)\)</span> and over time can evolve to have a smaller or larger value of <span class="math notranslate nohighlight">\(a\)</span>, but is constrained to keep this general form.</p>
 <ul class="simple">
 <li><p>Explain why smaller <span class="math notranslate nohighlight">\(a\)</span> corresponds to earlier production of offspring, but less offspring if the fish lives for a long period of time.</p></li>
 <li><p>Industrial scale fishing for this species begins, resulting in an increased mortality rate <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
 <li><p>Calculate the expected number of offspring as a function of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
 <li><p>For a given fixed value of <span class="math notranslate nohighlight">\(s\)</span>, determine the value of <span class="math notranslate nohighlight">\(a\)</span> that maximizes offspring.  Show that <span class="math notranslate nohighlight">\(a\)</span> decreases if <span class="math notranslate nohighlight">\(s\)</span> increases.</p></li>
 </ul>
+</li>
+</ol>
 <p>This explains an observation that following large-scale fishing, the fish species tend to evolve to mature faster and have smaller adult sizes.</p>
 </section>
 </section>
