@@ -191,7 +191,7 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceExtra.html">1.9. Optional Extenstions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceExtra.html">1.9. Optional Extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
@@ -452,7 +452,7 @@ f(x) = \frac{p(x)}{q(x)}
 <p>An important step in our process will be to take a quadratic polynomial and use “completing the square” to change its structure.  The goal is to first convert the quadratic formula into the form <span class="math notranslate nohighlight">\((s+c_1)^2 + c_2\)</span>.  From there we will be able to convert it to one of the three forms identified above, depending on whether <span class="math notranslate nohighlight">\(c_2&lt;0\)</span>, <span class="math notranslate nohighlight">\(c_2=0\)</span>, or <span class="math notranslate nohighlight">\(c_2&gt;0\)</span>.  Rather than trying to memorize a formula for completing the square we will learn a process, starting with an example.</p>
 <p>Before you go further, please remind yourself of a common error: <span class="math notranslate nohighlight">\((a+b)^2 \neq a^2 + b^2\)</span>.  Instead <span class="math notranslate nohighlight">\((a+b)^2 = a^2 + 2ab + b^2\)</span>.  The <span class="math notranslate nohighlight">\(2ab\)</span> term plays an important role in what follows.</p>
 <div class="proof example admonition" id="example:ssqp6sp13">
-<p class="admonition-title"><span class="caption-number">Example 1.17 </span> (Completing the square when <span class="math notranslate nohighlight">\(q\)</span> does not factor: <span class="math notranslate nohighlight">\(q(s) = s^2 + 6s + 13\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.18 </span> (Completing the square when <span class="math notranslate nohighlight">\(q\)</span> does not factor: <span class="math notranslate nohighlight">\(q(s) = s^2 + 6s + 13\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>We have <span class="math notranslate nohighlight">\(q(s) = s^2 + 6s+13\)</span>, and we want to write it in the form <span class="math notranslate nohighlight">\((s+c_1)^2 + c_2\)</span>.  We make the observation that <span class="math notranslate nohighlight">\((s+c_1)^2 = s^2 + 2c_1 s + c_1^2\)</span>.  So for the coefficient of <span class="math notranslate nohighlight">\(s\)</span> to match, <span class="math notranslate nohighlight">\(2c_1\)</span> must be <span class="math notranslate nohighlight">\(6\)</span>.  So <span class="math notranslate nohighlight">\(c_1=3\)</span>.</p>
 <p>Now we have <span class="math notranslate nohighlight">\(s^2 + 6s + 13 = (s+3)^2 + c_2\)</span>.  If we expand <span class="math notranslate nohighlight">\((s+3)^2 = s^2 + 6s + 9\)</span>, then we have</p>
@@ -468,13 +468,13 @@ q(s) = (s+3)^2 + 2^2
 \]</div>
 <p>Because this is a sum of squares rather than a difference of squares, we cannot do any more factoring (with real numbers).</p>
 </section>
-</div><p>The process we use will follow <a class="reference internal" href="#example:ssqp6sp13">Example 1.17</a>:</p>
+</div><p>The process we use will follow <a class="reference internal" href="#example:ssqp6sp13">Example 1.18</a>:</p>
 <ol class="arabic simple">
 <li><p>Find <span class="math notranslate nohighlight">\(c_1\)</span> so that the coefficient of <span class="math notranslate nohighlight">\(s\)</span> is correct.</p></li>
 <li><p>Use the result to find the value of <span class="math notranslate nohighlight">\(c_2\)</span> so that the constant term is correct.</p></li>
 </ol>
 <div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 1.18 </span> (Completing the square when <span class="math notranslate nohighlight">\(q\)</span> has two distinct factors: <span class="math notranslate nohighlight">\(q(s) = s^2-11s+28\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.19 </span> (Completing the square when <span class="math notranslate nohighlight">\(q\)</span> has two distinct factors: <span class="math notranslate nohighlight">\(q(s) = s^2-11s+28\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To complete the square for <span class="math notranslate nohighlight">\(q(s) = s^2-11s+28\)</span>, we follow the steps again:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -504,7 +504,7 @@ q(s) &amp;= \left( s- \frac{11}{2} - \frac{3}{2}\right) \left( s- \frac{11}{2} +
 \end{align*}\]</div>
 </section>
 </div><div class="proof example admonition" id="example:ssqm10sp25">
-<p class="admonition-title"><span class="caption-number">Example 1.19 </span> (Completing the square when <span class="math notranslate nohighlight">\(q\)</span> is a perfect square: <span class="math notranslate nohighlight">\(q(s) = s^2 - 10s+25\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.20 </span> (Completing the square when <span class="math notranslate nohighlight">\(q\)</span> is a perfect square: <span class="math notranslate nohighlight">\(q(s) = s^2 - 10s+25\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To complete the square for <span class="math notranslate nohighlight">\(q(s) = s^2 - 10s + 25\)</span> we follow the same basic steps:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -536,7 +536,7 @@ q(s) = (s-5)^2
 \]</div>
 <p>Then we use Algebraic techniques to find <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.  We lead by example, and then summarize the steps:</p>
 <div class="proof example admonition" id="example-4">
-<p class="admonition-title"><span class="caption-number">Example 1.20 </span> (Finding <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{s-7}{s^2-8s+15}\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.21 </span> (Finding <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{s-7}{s^2-8s+15}\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>Consider <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{s-7}{s^2-8s+15}\)</span>.  From completing the square (not shown) or other factorization methods we get <span class="math notranslate nohighlight">\(s^2-8s+15 = (s-3)(s-5)\)</span>.  Expanding <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> with partial fractions:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -594,7 +594,7 @@ f(t) &amp;= \mathcal{L}^{-1}\left[\frac{2}{s-3} - \frac{1}{s-5}\right](t)\\
 \frac{p(s)}{q(s)} = \frac{A}{(s-a)^2}  + \frac{B}{s-a}
 \]</div>
 <div class="proof example admonition" id="example:repeated_root">
-<p class="admonition-title"><span class="caption-number">Example 1.21 </span> (Finding <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{3s+14}{s^2+8s+16}\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.22 </span> (Finding <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{3s+14}{s^2+8s+16}\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>Consider <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{3s+14}{s^2+8s+16}\)</span>.  From completing the square (not shown) or other factorization methods we get <span class="math notranslate nohighlight">\(s^2+8s+16 = (s+4)^2\)</span>.  Expanding <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> with partial fractions:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -660,7 +660,7 @@ f(t) = 2te^{-4t} + 3e^{-4t}
 \frac{p(s)}{q(s)} = \frac{A(s-a)}{(s-a)^2+\omega^2}  + \frac{B\cdot \omega}{(s-a)^2+\omega^2}
 \]</div>
 <div class="proof example admonition" id="example-6">
-<p class="admonition-title"><span class="caption-number">Example 1.22 </span> (Finding <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{4s+3}{s^2+4s+29}\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.23 </span> (Finding <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{4s+3}{s^2+4s+29}\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>Consider <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{4s+3}{s^2+4s+29}\)</span>.  From completing the square (not shown) we get <span class="math notranslate nohighlight">\(s^2+4s+29 = (s+2)^2+25\)</span>.  Expanding <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> with partial fractions:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -721,7 +721,7 @@ f(t) = 4e^{-2t}\cos(5t) - e^{-2t}\cos(5t)
 <span id="sec-rational-tshift"></span><h2><span class="section-number">1.6.6. </span>Rational Functions with the <span class="math notranslate nohighlight">\(t\)</span>-shift<a class="headerlink" href="#rational-functions-with-the-t-shift" title="Link to this heading">#</a></h2>
 <p>Sometimes we encounter functions like <span class="math notranslate nohighlight">\(\tilde{f}(s) = e^{-as}p(s)/q(s)\)</span> where <span class="math notranslate nohighlight">\(p(s)\)</span> and <span class="math notranslate nohighlight">\(q(s)\)</span> are polynomials.  We will still approach this using Partial Fractions, but first we need to apply the <span class="math notranslate nohighlight">\(t\)</span>-shift.</p>
 <div class="proof example admonition" id="example-7">
-<p class="admonition-title"><span class="caption-number">Example 1.23 </span> (Finding <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{e^{-3s}(3s+14)}{s^2+8s+16}\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.24 </span> (Finding <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{e^{-3s}(3s+14)}{s^2+8s+16}\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>For <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{e^{-3s}(3s+14)}{s^2+8s+16}\)</span>, when we try to find <span class="math notranslate nohighlight">\(f(t)\)</span>, we will first use the <span class="math notranslate nohighlight">\(t\)</span>-shift:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -731,7 +731,7 @@ f(t) &amp;= \mathcal{L}^{-1}\left[\frac{e^{-3s}(3s+14)}{s^2+8s+16}\right](t)\\
 \end{align*}\]</div>
 <p>Now, if we can find <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{3s+14}{s^2+8s+16}\right](t)\)</span>, then we just have to substitute <span class="math notranslate nohighlight">\(t-3\)</span> and multiply by <span class="math notranslate nohighlight">\(H_3(t)\)</span> to get the solution to the original problem.  This is a rational function, and the techniques we learned above apply.</p>
 <p>We can use Partial Fractions to complete this.
-In fact, in <a class="reference internal" href="#example:repeated_root">Example 1.21</a> we saw this example already and we found that</p>
+In fact, in <a class="reference internal" href="#example:repeated_root">Example 1.22</a> we saw this example already and we found that</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L}^{-1}\left[\frac{3s+14}{s^2+8s+16}\right](t) = 2te^{-4t} + 3e^{-4t}

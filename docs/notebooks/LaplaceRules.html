@@ -191,7 +191,7 @@
 <li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceExtra.html">1.9. Optional Extenstions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceExtra.html">1.9. Optional Extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
@@ -449,9 +449,9 @@ document.write(`
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathcal{L}[f(t)](s) &amp;= \mathcal{L}\left[ t^2\left(\frac{t}{2}-7\right)\right](s)\\
-&amp;= \mathcal{L}\left[\frac{t^3}{2} - 7t^2\right](s)\\
-&amp;= \frac{1}{2} \mathcal{L}[t^3](s) - 7 \mathcal{L}[t^2](s)\\
-&amp;= \frac{1}{2} \frac{3!}{s^{3+1}} - 7 \frac{2!}{s^{2+1}}\\
+&amp;= \mathcal{L}\left[\frac{t^3}{2} - 7t^2\right](s) \\
+&amp;= \frac{1}{2} \mathcal{L}[t^3](s) - 7 \mathcal{L}[t^2](s)\quad &amp; \text{by linearity}\\
+&amp;= \frac{1}{2} \frac{3!}{s^{3+1}} - 7 \frac{2!}{s^{2+1}}\quad &amp; \text{by transform of $t^n$}\\
 &amp;= \frac{3}{s^4} - \frac{14}{s^3} 
 \end{align*}\]</div>
 </section>
@@ -504,8 +504,31 @@ f(t) &amp;= \mathcal{L}^{-1} [\tilde{f}(s)](t)\\
 3e^{2t}= \mathcal{L}^{-1}\left[ \frac{3}{(s-2)} \right](t)
 \]</div>
 </section>
+</div><div class="proof example admonition" id="example:invert_to_exponential_neg_coeff">
+<p class="admonition-title"><span class="caption-number">Example 1.9 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1} \left[ \frac{3}{(s+2)} \right](t)\)</span>)</p>
+<section class="example-content" id="proof-content">
+<p>This example follows , but with <span class="math notranslate nohighlight">\(s+2\)</span> in the denominator, not <span class="math notranslate nohighlight">\(s-2\)</span>.  The table gives us <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}] = 1/(s-a)\)</span>.  To use the table we must first rewrite <span class="math notranslate nohighlight">\(s+2\)</span> in the form <span class="math notranslate nohighlight">\(s-a\)</span>, so we use <span class="math notranslate nohighlight">\(s+2= s-(-2)\)</span>.</p>
+<p>We use the table entry with <span class="math notranslate nohighlight">\(a=-2\)</span> and we get</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}[e^{-2t}](s) = \frac{1}{s+2}
+\]</div>
+<p>Then we get</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(t) &amp;= \mathcal{L}^{-1} [\tilde{f}(s)](t)\\
+&amp;= \mathcal{L}^{-1}\left[ \frac{3}{(s+2)} \right](t)\\
+&amp;= 3 \mathcal{L}^{-1} \left[ \frac{1}{(s+2)} \right](t)  &amp;\text{by linearity}\\
+&amp;= 3 e^{-2t} &amp; \text{by Transform of $e^{at}$}
+\end{align*}\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[ 
+3e^{-2t}= \mathcal{L}^{-1}\left[ \frac{3}{(s+2)} \right](t)
+\]</div>
+</section>
 </div><div class="proof example admonition" id="example:invert_to_exponential_times_sin">
-<p class="admonition-title"><span class="caption-number">Example 1.9 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{8}{(s-2)^2 + 16}\right](t)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.10 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{8}{(s-2)^2 + 16}\right](t)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To find the Inverse Transform of <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{2}{(s-2)^2 + 16}\)</span> we look in the Table for a similar function (up to a constant multiple).  We find  <span class="math notranslate nohighlight">\(\frac{\omega}{(s-a)^2 + \omega^2}\)</span> which resembles our function for <span class="math notranslate nohighlight">\(a=2\)</span> and <span class="math notranslate nohighlight">\(\omega = 4\)</span>.  We have</p>
 <div class="math notranslate nohighlight">
