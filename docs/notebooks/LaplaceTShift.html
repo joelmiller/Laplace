@@ -455,9 +455,9 @@ H_a(t) = \begin{cases} 0 &amp; t &lt; a\\
 <span class="n">t</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span><span class="mi">1001</span><span class="p">);</span>
 <span class="k">for</span> <span class="n">a</span><span class="p">=[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
     <span class="n">Ha</span> <span class="p">=</span> <span class="n">t</span><span class="o">&gt;</span><span class="n">a</span><span class="p">;</span>  <span class="c">#defines Ha(t) = 1 for t&gt;a, 0 otherwise</span>
-    <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">a</span><span class="o">.*</span><span class="n">Ha</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;a*H_a(t): a = &#39;</span><span class="p">,</span> <span class="n">num2str</span><span class="p">(</span><span class="n">a</span><span class="p">)]</span> <span class="p">)</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">a</span><span class="o">.*</span><span class="n">Ha</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;%d*H_%d(t)&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>  <span class="p">)</span>
     <span class="nb">hold</span> <span class="n">on</span>
-    <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,(</span><span class="n">a</span><span class="o">+</span><span class="nb">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">.*</span><span class="n">Ha</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;(a + sin(t))*H_a(t) for a = &#39;</span><span class="p">,</span> <span class="n">num2str</span><span class="p">(</span><span class="n">a</span><span class="p">)]</span> <span class="p">)</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,(</span><span class="n">a</span><span class="o">+</span><span class="nb">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">.*</span><span class="n">Ha</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;(%d + sin(t))*H_%d(t)&#39;</span><span class="p">,</span> <span class="n">a</span> <span class="p">,</span><span class="n">a</span><span class="p">))</span>
 <span class="k">end</span>
 <span class="nb">legend</span><span class="p">(</span><span class="s">&#39;location&#39;</span><span class="p">,</span> <span class="s">&#39;northwest&#39;</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">6.1</span><span class="p">])</span>
@@ -465,7 +465,7 @@ H_a(t) = \begin{cases} 0 &amp; t &lt; a\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/260662e81a8e0b6f5fd609f46b829fec142aab4c91b8b3c005258cdfb5ffa01f.png" src="../_images/260662e81a8e0b6f5fd609f46b829fec142aab4c91b8b3c005258cdfb5ffa01f.png" />
+<img alt="../_images/32f6b75c86f36f404788dd4641bc616502e511b54ef4665f31fd750c013d51fa.png" src="../_images/32f6b75c86f36f404788dd4641bc616502e511b54ef4665f31fd750c013d51fa.png" />
 </div>
 </div>
 <section id="alternate-definitions-of-h-a-t">
