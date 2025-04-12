@@ -585,7 +585,7 @@ f(t) &amp;= \mathcal{L}^{-1}\left[\frac{2}{s-3} - \frac{1}{s-5}\right](t)\\
 <li><p>set <span class="math notranslate nohighlight">\(s=a\)</span> and solve for <span class="math notranslate nohighlight">\(A\)</span> and set <span class="math notranslate nohighlight">\(s=b\)</span> and solve for <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
 <li><p>Invert the transform of the resulting sum.</p></li>
 </ul>
-<p>Notice that we leave all of the expressions in factored form.  We never expand a product of polynomials in these steps.</p>
+<p>Notice that we leave all of the expressions in Rewritten Denominator form.  We never expand a product of polynomials in these steps.</p>
 </section>
 <section id="finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2">
 <h2><span class="section-number">1.6.4. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2\)</span><a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2" title="Link to this heading">#</a></h2>
@@ -750,12 +750,12 @@ If <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> involves a
 <h2><span class="section-number">1.6.7. </span>Self-Test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>For each of the following functions:</p>
-<ol class="arabic simple">
+<ul class="simple">
 <li><p>Use completing the square to rewrite the denominator of each of the following functions into one of the forms <span class="math notranslate nohighlight">\((s-a)(s-b)\)</span>,  <span class="math notranslate nohighlight">\((s-a)^2\)</span>, or <span class="math notranslate nohighlight">\((s-a)^2+\omega^2\)</span>.</p></li>
 <li><p>Write down the appropriate partial fraction expansion (with unknown coefficients <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>).</p></li>
 <li><p>Find the coefficients.</p></li>
 <li><p>Find <span class="math notranslate nohighlight">\(f(t)\)</span>.</p></li>
-</ol>
+</ul>
 </li>
 </ol>
 <div class="sd-tab-set docutils">
@@ -766,7 +766,7 @@ Function 1</label><div class="sd-tab-content docutils">
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
-Factored</label><div class="sd-tab-content docutils">
+Rewritten Denominator</label><div class="sd-tab-content docutils">
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
@@ -850,7 +850,7 @@ Function 2</label><div class="sd-tab-content docutils">
 </div>
 <input id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-12">
-Factored</label><div class="sd-tab-content docutils">
+Rewritten Denominator</label><div class="sd-tab-content docutils">
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-16" name="sd-tab-set-5" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-16">
@@ -938,7 +938,7 @@ Function 3</label><div class="sd-tab-content docutils">
 </div>
 <input id="sd-tab-item-23" name="sd-tab-set-8" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-23">
-Factored</label><div class="sd-tab-content docutils">
+Rewritten Denominator</label><div class="sd-tab-content docutils">
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-27" name="sd-tab-set-9" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-27">
@@ -1025,7 +1025,7 @@ Function 4</label><div class="sd-tab-content docutils">
 </div>
 <input id="sd-tab-item-34" name="sd-tab-set-12" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-34">
-Factored</label><div class="sd-tab-content docutils">
+Rewritten Denominator</label><div class="sd-tab-content docutils">
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-38" name="sd-tab-set-13" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-38">
@@ -1111,7 +1111,7 @@ Function 5</label><div class="sd-tab-content docutils">
 </div>
 <input id="sd-tab-item-45" name="sd-tab-set-16" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-45">
-Factored</label><div class="sd-tab-content docutils">
+Rewritten Denominator</label><div class="sd-tab-content docutils">
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-49" name="sd-tab-set-17" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-49">
@@ -1151,7 +1151,7 @@ Worked solution</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \frac{-2s}{(s+1)^2+3^2} &amp;= \frac{A(s+1) + 3B}{(s+1)^2+3^2}\\
--2s &amp;+ A(s+1) + 3B
+-2s &amp;= A(s+1) + 3B
 \end{align*}\]</div>
 <p><span class="math notranslate nohighlight">\(s=-1\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1195,7 +1195,7 @@ Function 6</label><div class="sd-tab-content docutils">
 </div>
 <input id="sd-tab-item-56" name="sd-tab-set-20" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-56">
-Factored</label><div class="sd-tab-content docutils">
+Rewritten Denominator</label><div class="sd-tab-content docutils">
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-60" name="sd-tab-set-21" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-60">
