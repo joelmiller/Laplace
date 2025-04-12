@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.7. Inverting the Laplace Transform with Partial Fractions — higher order denominators &#8212; The Laplace Transform and Differential Equations</title>
+    <title>1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators &#8212; The Laplace Transform and Differential Equations</title>
   
   
   
@@ -189,7 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.7. Inverting the Laplace Transform with Partial Fractions — higher order denominators</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceExtra.html">1.9. Optional Extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
@@ -380,7 +380,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Inverting the Laplace Transform with Partial Fractions — higher order denominators</h1>
+    <h1>Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -390,11 +390,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-cubic-or-higher-order">1.7.1. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-roots">1.7.1.1. Repeated roots</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.7.2. Self-Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-real-roots">1.7.1. Distinct Real Roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-roots">1.7.2. Repeated roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quadratic-factor-that-does-not-factor-further">1.7.3. A quadratic factor that does not factor further.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.7.4. Self-Test</a></li>
 </ul>
             </nav>
         </div>
@@ -406,10 +405,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="inverting-the-laplace-transform-with-partial-fractions-higher-order-denominators">
-<h1><span class="section-number">1.7. </span>Inverting the Laplace Transform with Partial Fractions — higher order denominators<a class="headerlink" href="#inverting-the-laplace-transform-with-partial-fractions-higher-order-denominators" title="Link to this heading">#</a></h1>
-<section id="finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-cubic-or-higher-order">
-<h2><span class="section-number">1.7.1. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order<a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-cubic-or-higher-order" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="inverting-the-laplace-transform-with-partial-fractions-cubic-and-higher-order-denominators">
+<h1><span class="section-number">1.7. </span>Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators<a class="headerlink" href="#inverting-the-laplace-transform-with-partial-fractions-cubic-and-higher-order-denominators" title="Link to this heading">#</a></h1>
 <p>When <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{p(s)}{q(s)}\)</span> where <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order and <span class="math notranslate nohighlight">\(p(s)\)</span> has lower order than <span class="math notranslate nohighlight">\(q(s)\)</span>, the process is similar to the quadratic case.  We will assume that we know the factored version of <span class="math notranslate nohighlight">\(q(s)\)</span> and build up a partial fractions expansion for <span class="math notranslate nohighlight">\(p(s)/q(s)\)</span>.</p>
 <p>We will consider three cases for the factors of <span class="math notranslate nohighlight">\(q(s)\)</span>:</p>
 <ul class="simple">
@@ -430,6 +427,9 @@ document.write(`
 <p>We are ignoring the possibility that <span class="math notranslate nohighlight">\((s-a)^2 + \omega^2\)</span> is repeated.  We will address this case in an extension exercise.</p>
 <p>Once we have built up the full Partial Fraction expansion with terms from all factors of <span class="math notranslate nohighlight">\(q(s)\)</span>, we use the same approach to find the coefficients.  Then we can invert the transform to find <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
 <p>Notice that in all of the examples, we leave all of the expressions in factored form.  We never expand the product of polynomials.</p>
+<section id="distinct-real-roots">
+<h2><span class="section-number">1.7.1. </span>Distinct Real Roots<a class="headerlink" href="#distinct-real-roots" title="Link to this heading">#</a></h2>
+<p>When all roots are distinct, we can easily find all coefficients in the partial fractions expansion.</p>
 <div class="proof example admonition" id="example:distinct">
 <p class="admonition-title"><span class="caption-number">Example 1.25 </span> (Distinct real roots)</p>
 <section class="example-content" id="proof-content">
@@ -471,10 +471,18 @@ document.write(`
 f(t) = 6e^t - 2 e^{2t} + 3e^{3t}
 \]</div>
 </section>
-</div><section id="repeated-roots">
-<h3><span class="section-number">1.7.1.1. </span>Repeated roots<a class="headerlink" href="#repeated-roots" title="Link to this heading">#</a></h3>
+</div></section>
+<section id="repeated-roots">
+<h2><span class="section-number">1.7.2. </span>Repeated roots<a class="headerlink" href="#repeated-roots" title="Link to this heading">#</a></h2>
+<p>When we have a repeated root, the technique of guessing a value of <span class="math notranslate nohighlight">\(s\)</span> to quickly get an equation for just a single coefficient will not be sufficient.  It is advisable to use this trick where possible to get as many coefficients as feasible.  However, we will need additional equations.</p>
+<p>We have several possible sources for these equations.  The most common are</p>
+<ul class="simple">
+<li><p>Substitute different values of <span class="math notranslate nohighlight">\(s\)</span> that seem convenient to get equations with more than one of the unknown coefficients.</p></li>
+<li><p>Match coefficients of powers of <span class="math notranslate nohighlight">\(s\)</span> (usually it is advisable to start with the highest powers).</p></li>
+</ul>
+<p>Ultimately, we need as many equations as coefficients.<a class="footnote-reference brackets" href="#lin-indep-note" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 1.26 </span> (Repeated Roots)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.26 </span> (Repeated Roots, using multiple values of <span class="math notranslate nohighlight">\(s\)</span> to find coefficients.)</p>
 <section class="example-content" id="proof-content">
 <p>Find <span class="math notranslate nohighlight">\(f(t)\)</span> if</p>
 <div class="math notranslate nohighlight">
@@ -484,11 +492,12 @@ f(t) = 6e^t - 2 e^{2t} + 3e^{3t}
 \[
 \frac{3s^3 + 10s^2 + 10s +2}{(s+1)^3(s+2)} = \frac{A}{(s+1)^3} + \frac{B}{(s+1)^2} + \frac{C}{s+1} + \frac{D}{(s+2)} 
 \]</div>
-<p>Again we multiply by the denominator <span class="math notranslate nohighlight">\(p(s)\)</span>:</p>
+<p>As always, we multiply by the denominator <span class="math notranslate nohighlight">\(p(s)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 3s^3 + 10s^2 + 10s +2 = A(s+2) + B(s+1)(s+2) + C(s+1)^2(s+2) + D(s+1)^3
 \]</div>
+<p>By using <span class="math notranslate nohighlight">\(s=-1\)</span> and <span class="math notranslate nohighlight">\(s=-2\)</span> we can quickly get the coefficients <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(D\)</span>:</p>
 <p>If we set <span class="math notranslate nohighlight">\(s=-1\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -499,7 +508,8 @@ f(t) = 6e^t - 2 e^{2t} + 3e^{3t}
 \[
 -2 = -D \Rightarrow D=2
 \]</div>
-<p>THere are no longer obvious choices for what value of <span class="math notranslate nohighlight">\(s\)</span>.  We need two more equations to find the remaining two coefficients.  We can find equations by matching coefficients of powers of <span class="math notranslate nohighlight">\(s\)</span> or by trying other values of <span class="math notranslate nohighlight">\(s\)</span>.  It is convenient to try <span class="math notranslate nohighlight">\(s=0\)</span> (which is equivalent to matching the coefficient of <span class="math notranslate nohighlight">\(s^0\)</span>).</p>
+<p>There are no longer obvious choices for what values of <span class="math notranslate nohighlight">\(s\)</span> to use to find <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(C\)</span>.  We need two more equations to find the remaining two coefficients.</p>
+<p>We will try other values of <span class="math notranslate nohighlight">\(s\)</span>.  It is convenient to try <span class="math notranslate nohighlight">\(s=0\)</span> (which is equivalent to matching the coefficient of <span class="math notranslate nohighlight">\(s^0\)</span>).</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 2 &amp;= 2A + 2B + 2C + D\\
@@ -513,7 +523,7 @@ f(t) = 6e^t - 2 e^{2t} + 3e^{3t}
     &amp;= -3 + 6B + 12C +16 \\
 \Rightarrow 6B+12C &amp;= 12
 \end{align*}\]</div>
-<p>Solving this system gives <span class="math notranslate nohighlight">\(B=0\)</span> and <span class="math notranslate nohighlight">\(C=1\)</span>.  So</p>
+<p>Solving this system gives <span class="math notranslate nohighlight">\(B=0\)</span> and <span class="math notranslate nohighlight">\(C=1\)</span>. Thus</p>
 <div class="math notranslate nohighlight">
 \[
 \tilde{f}(s) = \frac{-1}{(s+1)^3} + \frac{1}{s+1} + \frac{2}{s+2}
@@ -533,15 +543,65 @@ f(t) &amp;= -e^{-t} \mathcal{L}^{-1}\left[\frac{1}{s^3}\right](t)  + e^{-t} + 2 
      &amp;= \frac{-1}{2} e^{-t} t^2 + e^{-t} + 2 e^{-2t}
 \end{align*}\]</div>
 </section>
-</div><div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 1.27 </span> (A quadratic factor that does not factor further)</p>
+</div><p>We now consider another example, using the same function, but a different approach to getting the final two coefficients:</p>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 1.27 </span> (Repeated Roots, matching coefficients of <span class="math notranslate nohighlight">\(s\)</span> to solve the partial fractions.)</p>
+<section class="example-content" id="proof-content">
+<p>Find <span class="math notranslate nohighlight">\(f(t)\)</span> for the same <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> as before:</p>
+<div class="math notranslate nohighlight">
+\[\tilde{f}(s) = \frac{3s^3 + 10s^2 + 10s +2}{(s+1)^3(s+2)}\]</div>
+<p>We have the partial fraction expansion</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{3s^3 + 10s^2 + 10s +2}{(s+1)^3(s+2)} = \frac{A}{(s+1)^3} + \frac{B}{(s+1)^2} + \frac{C}{s+1} + \frac{D}{(s+2)} 
+\]</div>
+<p>Following the same steps we get</p>
+<div class="math notranslate nohighlight">
+\[
+3s^3 + 10s^2 + 10s +2 = A(s+2) + B(s+1)(s+2) + C(s+1)^2(s+2) + D(s+1)^3
+\]</div>
+<p>and by setting <span class="math notranslate nohighlight">\(s=-1\)</span> and <span class="math notranslate nohighlight">\(s=-2\)</span> as before we have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+A &amp;= -1\\
+D&amp;=2
+\end{align*}\]</div>
+<p>We need two more equations to find <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<p>The coefficients of each power of <span class="math notranslate nohighlight">\(s\)</span> must be the same on both sides of the equation.  Taking the coefficient of <span class="math notranslate nohighlight">\(s^3\)</span>, we have <span class="math notranslate nohighlight">\(3\)</span> on the left hand side and <span class="math notranslate nohighlight">\(C+D\)</span> on the right hand side, and we know <span class="math notranslate nohighlight">\(D=2\)</span>.  Thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+3 &amp;= C+D\\
+\Rightarrow C &amp;= 1
+\end{align*}\]</div>
+<p>Another equation can come from matching the coefficient of <span class="math notranslate nohighlight">\(s^2\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+10 &amp;= B + 4C + 3D\\
+\Rightarrow B &amp;= 10 - 4-6\\
+&amp;= 0
+\end{align*}\]</div>
+<p>Alternately, another coefficient that is easy to find is the coefficient of <span class="math notranslate nohighlight">\(s^0\)</span>, which is equivalent to setting <span class="math notranslate nohighlight">\(s=0\)</span>.  This would have given <span class="math notranslate nohighlight">\(2 = 2A+2B+2C+D\)</span>, which would also lead to <span class="math notranslate nohighlight">\(B=0\)</span>.  This equation would not be useful if we have already used <span class="math notranslate nohighlight">\(s=0\)</span> to find another coefficient.</p>
+<p>From this point, we can return to the solution method in the previous example to find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(t) &amp;= -e^{-t} \mathcal{L}^{-1}\left[\frac{1}{s^3}\right](t)  + e^{-t} + 2 e^{-2t}\\
+     &amp;= -e^{-t}\frac{1}{2} \mathcal{L}^{-1}\left[ \frac{2}{s^3}\right](t) + e^{-t} + 2 e^{-2t}\\
+     &amp;= \frac{-1}{2} e^{-t} t^2 + e^{-t} + 2 e^{-2t}
+\end{align*}\]</div>
+</section>
+</div></section>
+<section id="a-quadratic-factor-that-does-not-factor-further">
+<h2><span class="section-number">1.7.3. </span>A quadratic factor that does not factor further.<a class="headerlink" href="#a-quadratic-factor-that-does-not-factor-further" title="Link to this heading">#</a></h2>
+<p>We will also consider cases where a quadratic term appears that does not factor.</p>
+<div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 1.28 </span> (A quadratic factor that does not factor further)</p>
 <section class="example-content" id="proof-content">
 <p>Find <span class="math notranslate nohighlight">\(f(t)\)</span> if</p>
 <div class="math notranslate nohighlight">
 \[
 \tilde{f}(s) = \frac{6s^2-30s+40}{(s-1)\left((s-3)^2+2^2\right)}
 \]</div>
-<p>The Partial Fractions expansion we use is:</p>
+<p>The quadratic <span class="math notranslate nohighlight">\((s-3)^2+2^2\)</span> does not factor further using real coefficients.  The Partial Fractions expansion we use is:</p>
 <div class="math notranslate nohighlight">
 \[
 \tilde{f}(s) = \frac{A}{s-1} + \frac{B(s-3) + 2C}{(s-3)^2 + 2^2}
@@ -580,16 +640,20 @@ f(t) = 2e^{t} + 4 e^{3t} \cos(2t) - e^{3t} \sin(2t)
 \]</div>
 </section>
 </div></section>
-</section>
 <section id="self-test">
-<h2><span class="section-number">1.7.2. </span>Self-Test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.7.4. </span>Self-Test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Write out the correct form of the partial fractions (no need to find the coefficients) for inverting the Laplace Transform of each of the following:</p></li>
+<li><p>For each of the following:</p></li>
 </ol>
+<ul class="simple">
+<li><p>write out the correct form of the partial fractions for inverting the Laplace Transform</p></li>
+<li><p>find the coefficients of the partial fractions expansion</p></li>
+<li><p>invert the transform to find <span class="math notranslate nohighlight">\(f(t)\)</span>.</p></li>
+</ul>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
-Q1</label><div class="sd-tab-content docutils">
+Function 1</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \tilde{f}(s) = \frac{2s^2+12s+22}{(s+1)(s+4)(s+5)}
@@ -597,110 +661,98 @@ Q1</label><div class="sd-tab-content docutils">
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
-A1 (click tab to see answer)</label><div class="sd-tab-content docutils">
+Partial Fractions</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \tilde{f}(s) = \frac{A}{s+1} + \frac{B}{s+4} + \frac{C}{s+5}
 \]</div>
 </div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Coefficients</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+A=1 ,\quad  B=-2, \quad C=3
+\]</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+<span class="math notranslate nohighlight">\(f(t)\)</span></label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f(t) = e^{-t} - 2e^{-4t} + 3e^{-5t}
+\]</div>
+</div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
-Q2</label><div class="sd-tab-content docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Function 2</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \tilde{f}(s) = \frac{s^2+2s-35}{(s+3)((s+3)^2+4^2)}
 \]</div>
 </div>
-<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
-A2 (click tab to see answer)</label><div class="sd-tab-content docutils">
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Partial Fractions</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \tilde{f}(s) = \frac{A}{s+3} + \frac{B(s+3) + 4C}{(s+3)^2+4^2}
 \]</div>
 </div>
+<input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Coefficients</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+A=-2, \quad B = 3, \quad  C=-1
+\]</div>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+<span class="math notranslate nohighlight">\(f(t)\)</span></label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f(t) = -2e^{-3t} + 3e^{-3t}\cos(4t) - e^{-3t}\sin(4t)
+\]</div>
+</div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
-Q3</label><div class="sd-tab-content docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Function 3</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \tilde{f}(s) = \frac{s^4 + 10 s^3 + 38 s^2 + 56 s + 40}{(s+2)^3(s^2+2^2)}
 \]</div>
 </div>
-<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-5">
-A3 (click tab to see answer)</label><div class="sd-tab-content docutils">
+<input id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Partial Fractions</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \tilde{f}(s) = \frac{A}{(s+2)^3} + \frac{B}{(s+2)^2} + \frac{C}{(s+2)} + \frac{Ds+2E}{s^2+2^2}
 \]</div>
 </div>
+<input id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Coefficients</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+A=2, \quad B=0,  \quad C=0, \quad D= 1, \quad E=2
+\]</div>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+<span class="math notranslate nohighlight">\(f(t)\)</span></label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f(t) = t^2e^{-2t}+ \cos(2t) + 2 \sin(2t) 
+\]</div>
+</div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>Find the coefficients of the Partial Fraction Expansion and find <span class="math notranslate nohighlight">\(f(t) = \mathcal{L}^{-1}[f(s)](t)\)</span>.</p></li>
-</ol>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-6">
-Q1</label><div class="sd-tab-content docutils">
-<div class="math notranslate nohighlight">
-\[
-\tilde{f}(s) = \frac{2s^2+12s+22}{(s+1)(s+4)(s+5)}
-\]</div>
-</div>
-<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-7">
-A1 (click tab to see answer)</label><div class="sd-tab-content docutils">
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\tilde{f}(s) &amp;= \frac{1}{s+1} + \frac{-2}{s+4} + \frac{3}{s+5}\\
-f(t) &amp;= e^{-t} - 2e^{-4t} + 3e^{-5t}
-\end{align*}\]</div>
-</div>
-</div>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-8">
-Q2</label><div class="sd-tab-content docutils">
-<div class="math notranslate nohighlight">
-\[
-\tilde{f}(s) = \frac{s^2+2s-35}{(s+3)((s+3)^2+4^2)}
-\]</div>
-</div>
-<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-9">
-A2 (click tab to see answer)</label><div class="sd-tab-content docutils">
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\tilde{f}(s) &amp;= \frac{-2}{s+3} + \frac{3(s+3) -1\cdot 4}{(s+3)^2+4^2}\\
-f(t) &amp;= -2e^{-3t} + 3e^{-3t}\cos(4t) - e^{-3t}\sin(4t)
-\end{align*}\]</div>
-</div>
-</div>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-10">
-Q3</label><div class="sd-tab-content docutils">
-<div class="math notranslate nohighlight">
-\[
-\tilde{f}(s) = \frac{s^4 + 10 s^3 + 38 s^2 + 56 s + 40}{(s+2)^3(s^2+2^2)}
-\]</div>
-</div>
-<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-11">
-A3 (click tab to see answer)</label><div class="sd-tab-content docutils">
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\tilde{f}(s) &amp;= \frac{2}{(s+2)^3} + \frac{0}{(s+2)^2} + \frac{0}{(s+2)} + \frac{1s+2\cdot 2}{s^2+2^2}\\
-f(t) &amp;= t^2e^{-2t}+ \cos(2t) + 2 \sin(2t) 
-\end{align*}\]</div>
-</div>
-</div>
-<ol class="arabic simple" start="3">
 <li><p>(*) The Laplace Transform of <span class="math notranslate nohighlight">\(t\cos(\omega t)\)</span> and of <span class="math notranslate nohighlight">\(t \sin(\omega t)\)</span> are</p></li>
 </ol>
 <div class="amsmath math notranslate nohighlight">
@@ -710,12 +762,12 @@ f(t) &amp;= t^2e^{-2t}+ \cos(2t) + 2 \sin(2t)
 \end{align*}\]</div>
 <p>While solving <span class="math notranslate nohighlight">\(f''(t) + 9f(t) = \cos(3t)\)</span> with <span class="math notranslate nohighlight">\(f(0)=0\)</span> and <span class="math notranslate nohighlight">\(f'(0)=1\)</span> a student discovers that <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{s^2+s+9}{(s^2+3^2)^2}\)</span>.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-12">
 Q1</label><div class="sd-tab-content docutils">
 <p>What do you think would be a good choice for a Partial Fraction expansion of <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>?</p>
 </div>
-<input id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
+<input id="sd-tab-item-13" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-13">
 A1 (click tab to see answer)</label><div class="sd-tab-content docutils">
 <p>More than one reasonable answer exists, but</p>
@@ -727,12 +779,12 @@ A1 (click tab to see answer)</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-7" type="radio">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-14">
 Q2</label><div class="sd-tab-content docutils">
 <p>Using the partial fraction expansion given in Q1, find the coefficients and <span class="math notranslate nohighlight">\(f(t)\)</span>.  It would help to try matching coefficients of <span class="math notranslate nohighlight">\(s\)</span> to get some of the terms.</p>
 </div>
-<input id="sd-tab-item-15" name="sd-tab-set-7" type="radio">
+<input id="sd-tab-item-15" name="sd-tab-set-4" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-15">
 A2 (click tab to see answer)</label><div class="sd-tab-content docutils">
 <p>Multiplying up by <span class="math notranslate nohighlight">\((s^2+3^2)^2\)</span> we get</p>
@@ -759,6 +811,13 @@ f(t) = \frac{1}{6} t \sin(3t) + \frac{1}{2} \sin(3t)
 \]</div>
 </div>
 </div>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="lin-indep-note" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Specifically we need the same number of <em>linearly independent</em> equations as we have coefficients.  If we are matching <span class="math notranslate nohighlight">\(9s^2 + 18s+1 = A(s+1)^2 + B(s+1)\)</span> and we happen to choose <span class="math notranslate nohighlight">\(s=0\)</span> to find <span class="math notranslate nohighlight">\(A+B=1\)</span> and then choose to match the coefficient of <span class="math notranslate nohighlight">\(s^0\)</span>, we will again get <span class="math notranslate nohighlight">\(A+B=1\)</span>, and this new equation is not linearly independent: it gives us no additional information.  So another equation is still needed.</p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -826,11 +885,10 @@ f(t) = \frac{1}{6} t \sin(3t) + \frac{1}{2} \sin(3t)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-when-q-s-is-cubic-or-higher-order">1.7.1. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-roots">1.7.1.1. Repeated roots</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.7.2. Self-Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-real-roots">1.7.1. Distinct Real Roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-roots">1.7.2. Repeated roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quadratic-factor-that-does-not-factor-further">1.7.3. A quadratic factor that does not factor further.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.7.4. Self-Test</a></li>
 </ul>
   </nav></div>
 

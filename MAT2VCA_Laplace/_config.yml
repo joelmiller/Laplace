@@ -37,6 +37,8 @@ parse:
     # including those that are enabled by default!
     - amsmath
     - dollarmath
+    - html_admonition
+    - colon_fence
   myst_url_schemes: [mailto, http, https]
 sphinx:
   extra_extensions:
