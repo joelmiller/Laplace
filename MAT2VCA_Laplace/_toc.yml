@@ -17,6 +17,9 @@ chapters:
     - file: notebooks/LaplaceDEsoln
     - file: notebooks/LaplaceExtra
     - file: notebooks/LaplaceTable
+  - file: Differential_Calculus/DifferentialIntro
+    sections: 
+    - file: Differential_Calculus/Lagrange
 #- file: Laplace
 # - file: intro
 # - file: markdown

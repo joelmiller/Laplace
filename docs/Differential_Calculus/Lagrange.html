@@ -1,0 +1,822 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2.1. Lagrange Multipliers &#8212; The Laplace Transform and Differential Equations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Differential_Calculus/Lagrange';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="2. Derivatives in higher dimension and their applications" href="DifferentialIntro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="The Laplace Transform and Differential Equations - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Laplace Transform and Differential Equations - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Laplace Transform
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceExtra.html">1.9. Optional Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1. Lagrange Multipliers</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2FDifferential_Calculus/Lagrange.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Differential_Calculus/Lagrange.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lagrange Multipliers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maximising-and-minimising-a-function-given-a-constraint">2.1.1. Maximising and minimising a function given a constraint.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraint-and-contours-are-tangent-at-minimum-maximum">2.1.2. Constraint and contours are tangent at minimum/maximum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-lagrange-multipliers-in-2d">2.1.3. Method of Lagrange Multipliers in 2D:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizations-to-higher-dimension">2.1.4. Generalizations to higher dimension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caveats">2.1.5. Caveats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-application">2.1.6. Further application</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.1.6.1. Self-test</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lagrange-multipliers">
+<h1><span class="section-number">2.1. </span>Lagrange Multipliers<a class="headerlink" href="#lagrange-multipliers" title="Link to this heading">#</a></h1>
+<p>Before beginning this section, it is important to remind yourself that the gradient of a function is perpendicular to level sets.</p>
+<p>For example, given the function <span class="math notranslate nohighlight">\(f(x) = x^2+y^2\)</span>, the level sets are circles centred at the origin.  The gradient is</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f = 2x \vec{i} + 2 y \vec{j}
+\]</div>
+<p>which points in the same direction as <span class="math notranslate nohighlight">\(x \vec{i} + y \vec{j}\)</span>, so it points directly away from the origin.</p>
+<section id="maximising-and-minimising-a-function-given-a-constraint">
+<h2><span class="section-number">2.1.1. </span>Maximising and minimising a function given a constraint.<a class="headerlink" href="#maximising-and-minimising-a-function-given-a-constraint" title="Link to this heading">#</a></h2>
+<p>Let us consider the following question:</p>
+<ul class="simple">
+<li><p>Find the maximum and minimum values of the function <span class="math notranslate nohighlight">\(f(x,y) = x^2+y^2\)</span> and their locations subject to the constraint that <span class="math notranslate nohighlight">\(g(x,y) = 0\)</span> where <span class="math notranslate nohighlight">\(g(x,y) = 5x^2/8 + 5y^2/8 - 3xy/4-1\)</span>.</p></li>
+</ul>
+<p>That is, if we consider all points <span class="math notranslate nohighlight">\((x,y)\)</span> on the contour <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>, which points have the largest and smallest values of <span class="math notranslate nohighlight">\(f\)</span> and what are those values?</p>
+<p>To help visualize this, we use a 2D plot with the points where <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> in red and contours of <span class="math notranslate nohighlight">\(f\)</span> in dashed blue.  The contour having the largest value on the constraint and the contour with the minimum value are shown in solid magenta.</p>
+<p>We also plot the corresponding curves of constant <span class="math notranslate nohighlight">\(f\)</span> in a 3D plot in blue and the values of <span class="math notranslate nohighlight">\(f\)</span> at the points where <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> in red.  In dash-dot red in the <span class="math notranslate nohighlight">\(xy\)</span> plane, we plot the constraint <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">graphics_toolkit</span><span class="p">(</span><span class="s">&quot;gnuplot&quot;</span><span class="p">)</span> <span class="c"># gnuplot is currently the only way I can get </span>
+                            <span class="c"># matlab/octave to display using this format</span>
+                            <span class="c"># However, it is not ideal - there is no control over</span>
+                            <span class="c"># font sizes, line widths, or ability to interact</span>
+                            <span class="c"># with the plot.</span>
+
+
+<span class="c">% rho = [0:0.1:2];</span>
+<span class="n">theta</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">20</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span>
+<span class="c">% [Rho,Theta] = meshgrid(rho, theta);</span>
+<span class="c">% X = Rho.*cos(Theta);</span>
+<span class="c">% Y = Rho.*sin(Theta);</span>
+
+<span class="n">x</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">y</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span>
+<span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+
+<span class="n">G</span> <span class="p">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">X</span><span class="o">.^</span><span class="mi">2</span><span class="o">/</span><span class="mi">8</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">Y</span><span class="o">.^</span><span class="mi">2</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">X</span><span class="o">.*</span><span class="n">Y</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c">%the following command plots the points given by the constraint g(x,y)=0</span>
+<span class="c">%and it creates a list of the x and y coordinates.</span>
+<span class="p">[</span><span class="n">constraint_coords</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="p">=</span> <span class="nb">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">G</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;g(x,y)=0);</span>
+<span class="s">constraint_x = constraint_coords(1,2:end); %x coordinates of the constraint points</span>
+<span class="s">constraint_y = constraint_coords(2,2:end); %y coordinates of the constraint points</span>
+<span class="s">daspect([1,1])</span>
+<span class="s">xlabel(&#39;</span><span class="n">x</span><span class="o">&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">hold</span> <span class="n">on</span> 
+<span class="c">%contour(X,Y,F, [0.25,1,2.25,4])</span>
+
+<span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">constraint_x</span><span class="p">,</span> <span class="n">constraint_y</span><span class="p">,</span> <span class="n">constraint_x</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">constraint_y</span><span class="o">.^</span><span class="mi">2</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;The values of f(x,y) where g(x,y)=0&#39;</span><span class="p">)</span> <span class="c">#plot values on the constraint</span>
+<span class="nb">hold</span> <span class="n">on</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">constraint_x</span><span class="p">,</span> <span class="n">constraint_y</span><span class="p">,</span> <span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">constraint_x</span><span class="p">)),</span><span class="s">&#39;r-.&#39;</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;The locations where g(x,y)=0&#39;</span><span class="p">)</span> <span class="c">#plot the constraint points</span>
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">zlabel</span><span class="p">(</span><span class="s">&#39;z&#39;</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">radius</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.25</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span> <span class="c">#radius of the contour</span>
+    <span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">radius</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">radius</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">)</span>
+    <span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plot3</span><span class="p">((</span><span class="n">radius</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="p">(</span><span class="n">radius</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">radius</span>^<span class="mi">2</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">)),</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">)</span>
+    <span class="nb">hold</span> <span class="n">on</span>
+<span class="k">endfor</span>
+
+<span class="k">for</span> <span class="n">radius</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+    <span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">radius</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">radius</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plot3</span><span class="p">((</span><span class="n">radius</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="p">(</span><span class="n">radius</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">radius</span>^<span class="mi">2</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">)),</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">)</span>
+<span class="k">endfor</span>
+
+<span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">grid</span> <span class="n">on</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Contours of f(x,y)=x^2+y^2 and the constraint g(x,y)=5x^2/8+5y^2/8-3xy/4=0&#39;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="s">&#39;northeast&#39;</span><span class="p">,</span> <span class="s">&#39;FontSize&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">grid</span> <span class="n">on</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;The values of f(x,y)=x^2+y^2 on the contours\n and on the constraint g(x,y)=5x^2/8+5y^2/8-3xy/4=0&#39;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="s">&#39;northeast&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>error: parse error:
+
+  syntax error
+
+&gt;&gt;&gt; [constraint_coords,c] = contour(X,Y,G, [0,0], &#39;r&#39;, &#39;DisplayName&#39;, &#39;g(x,y)=0);
+                                                                                ^
+error: legend: expecting label to be a string
+error: called from
+    __gnuplot_legend__ at line 472 column 11
+    legend at line 201 column 7
+</pre></div>
+</div>
+<img alt="../_images/fc602bc0929b26fbbb89dabef601d8d8252dcb0944814f5a062fbd02ee92cd85.png" src="../_images/fc602bc0929b26fbbb89dabef601d8d8252dcb0944814f5a062fbd02ee92cd85.png" />
+<img alt="../_images/88963110579c4871be075be9a35d1314c9be8cec468babc3264765cecf0d7c42.png" src="../_images/88963110579c4871be075be9a35d1314c9be8cec468babc3264765cecf0d7c42.png" />
+</div>
+</div>
+</section>
+<section id="constraint-and-contours-are-tangent-at-minimum-maximum">
+<h2><span class="section-number">2.1.2. </span>Constraint and contours are tangent at minimum/maximum<a class="headerlink" href="#constraint-and-contours-are-tangent-at-minimum-maximum" title="Link to this heading">#</a></h2>
+<p>If we look at the 2D plot, an interesting property emerges.  The contour of <span class="math notranslate nohighlight">\(f\)</span> corresponding to the largest value on the constraint <span class="math notranslate nohighlight">\(f(x,y)=2^2=4\)</span> (the farthest out from the origin) and the contour corresponding to the smallest value <span class="math notranslate nohighlight">\(f(x,y)=1^2=1\)</span> are both tangent to the constraint curve at the points of intersection.</p>
+<p>This is not coincidence.  It is most easily seen by looking at a contour of <span class="math notranslate nohighlight">\(f\)</span> that intersects the constraint curve, and is not tangent to the constraint curve.  Typically, to one side of the contour are contours corresponding to larger values of <span class="math notranslate nohighlight">\(f\)</span> while to the other side are contours corresponding to smaller values of <span class="math notranslate nohighlight">\(f\)</span>.  Since the constraint crosses the contour of <span class="math notranslate nohighlight">\(f\)</span>, this means that to one side it encounters larger values of <span class="math notranslate nohighlight">\(f\)</span> and to the other side it encounters smaller values.</p>
+<p>To illustrate this, we plot the constraint again with the contours <span class="math notranslate nohighlight">\(f(x,y)=1\)</span> (the minimum) <span class="math notranslate nohighlight">\(f(x,y)=1.5^2\)</span> (an intermediate value), and <span class="math notranslate nohighlight">\(f(x,y)=4\)</span> (the maximum).  At the intersections of the contours and <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> we plot <span class="math notranslate nohighlight">\(\nabla g\)</span> and <span class="math notranslate nohighlight">\(\nabla f\)</span>.  We will be particularly interested in the intersections of <span class="math notranslate nohighlight">\(f(x,y)=1.5^2\)</span> and <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> to see how we can tell they are not local maxima or minima.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">graphics_toolkit</span><span class="p">(</span><span class="s">&quot;gnuplot&quot;</span><span class="p">)</span> <span class="c"># gnuplot is currently the only way I can get </span>
+                            <span class="c"># matlab/octave to display using this format</span>
+                            <span class="c"># However, it is not ideal - there is no control over</span>
+                            <span class="c"># font sizes, line widths, or ability to interact</span>
+                            <span class="c"># with the plot.</span>
+
+
+<span class="n">theta</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">20</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span>
+
+<span class="n">x</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">y</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span>
+<span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+
+<span class="n">G</span> <span class="p">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">X</span><span class="o">.^</span><span class="mi">2</span><span class="o">/</span><span class="mi">8</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">Y</span><span class="o">.^</span><span class="mi">2</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">X</span><span class="o">.*</span><span class="n">Y</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c">%the following command plots the points given by the constraint g(x,y)=0</span>
+<span class="c">%and it creates a list of the x and y coordinates.</span>
+<span class="p">[</span><span class="n">constraint_coords</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="p">=</span> <span class="nb">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">G</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">constraint_x</span> <span class="p">=</span> <span class="n">constraint_coords</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">);</span> <span class="c">%x coordinates of the constraint points</span>
+<span class="n">constraint_y</span> <span class="p">=</span> <span class="n">constraint_coords</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">);</span> <span class="c">%y coordinates of the constraint points</span>
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">hold</span> <span class="n">on</span> 
+<span class="c">%contour(X,Y,F, [0.25,1,2.25,4])</span>
+
+<span class="k">for</span> <span class="n">radius</span> <span class="p">=</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">];</span> <span class="c">#radius of the contour</span>
+    <span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">radius</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">radius</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">)</span>
+<span class="k">endfor</span>
+
+<span class="k">for</span> <span class="n">radius</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+    <span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">radius</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">radius</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">)</span>
+<span class="k">endfor</span>
+
+<span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">grid</span> <span class="n">on</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Contours of f(x,y)=x^2+y^2 and the constraint g(x,y)=5x^2/8+5y^2/8-3xy/4=0\n </span>
+<span class="s">showing the gradients of f and g at the intersection points&#39;</span><span class="p">)</span> 
+<span class="c">%legend(&quot;location&quot;, &#39;northeast&#39;, &#39;FontSize&#39;, 10)</span>
+
+<span class="c">%the constraint can be written xi=2cos(phi), eta = sin(phi)</span>
+<span class="c">%with x = cos(alpha) xi - sin(alpha) eta</span>
+<span class="c">%and y = sin(alpha) xi + cos(alpha) eta</span>
+<span class="c">%where alpha is the angle of the ellipse, in this case pi/4</span>
+<span class="c">%after algebra, we learn cos^2(phi) = 5/12.</span>
+<span class="c">%taking phi = acos(sqrt(5/12)), </span>
+<span class="n">alpha</span> <span class="p">=</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span>
+<span class="n">phi</span> <span class="p">=</span> <span class="nb">acos</span><span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">12</span><span class="p">));</span>
+<span class="n">xi</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">);</span>
+<span class="n">eta</span> <span class="p">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">);</span>
+<span class="n">intersection_x</span> <span class="p">=</span> <span class="nb">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">xi</span> <span class="o">-</span> <span class="nb">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">eta</span><span class="p">;</span>
+<span class="n">intersection_y</span> <span class="p">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">xi</span> <span class="o">+</span> <span class="nb">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">eta</span><span class="p">;</span>
+
+<span class="n">gradf</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">intersection_x</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">intersection_y</span><span class="p">];</span> <span class="c">%gradient of f at the intersection point</span>
+<span class="n">gradg</span> <span class="p">=</span> <span class="p">[</span><span class="mi">5</span><span class="o">*</span><span class="n">intersection_x</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">intersection_y</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">intersection_y</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">intersection_x</span><span class="o">/</span><span class="mi">4</span><span class="p">];</span> <span class="c">%gradient of g at the intersection point</span>
+<span class="nb">quiver</span><span class="p">(</span><span class="n">intersection_x</span><span class="p">,</span> <span class="n">intersection_y</span><span class="p">,</span> <span class="n">gradf</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">gradf</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mf">0.15</span><span class="p">,</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;grad f(x,y)&#39;</span><span class="p">)</span>
+<span class="nb">quiver</span><span class="p">(</span><span class="n">intersection_x</span><span class="p">,</span> <span class="n">intersection_y</span><span class="p">,</span> <span class="n">gradg</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">gradg</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mf">0.15</span><span class="p">,</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;grad g(x,y)&#39;</span><span class="p">)</span>
+
+<span class="c">%now we add the arrows at the other intersection points, but without labels.</span>
+<span class="k">for</span> <span class="n">phi</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="nb">acos</span><span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">12</span><span class="p">)),</span> <span class="nb">acos</span><span class="p">(</span><span class="o">-</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">12</span><span class="p">)),</span> <span class="o">-</span><span class="nb">acos</span><span class="p">(</span><span class="o">-</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">12</span><span class="p">)),</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nb">pi</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">xi</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">);</span>
+    <span class="n">eta</span> <span class="p">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">);</span>
+    <span class="n">intersection_x</span> <span class="p">=</span> <span class="nb">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">xi</span> <span class="o">-</span> <span class="nb">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">eta</span><span class="p">;</span>
+    <span class="n">intersection_y</span> <span class="p">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">xi</span> <span class="o">+</span> <span class="nb">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">eta</span><span class="p">;</span>
+
+    <span class="n">gradf</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">intersection_x</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">intersection_y</span><span class="p">];</span> <span class="c">%gradient of f at the intersection point</span>
+    <span class="n">gradg</span> <span class="p">=</span> <span class="p">[</span><span class="mi">5</span><span class="o">*</span><span class="n">intersection_x</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">intersection_y</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">intersection_y</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">intersection_x</span><span class="o">/</span><span class="mi">4</span><span class="p">];</span> <span class="c">%gradient of g at the intersection point</span>
+    <span class="nb">quiver</span><span class="p">(</span><span class="n">intersection_x</span><span class="p">,</span> <span class="n">intersection_y</span><span class="p">,</span> <span class="n">gradf</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">gradf</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mf">0.15</span><span class="p">,</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">)</span>
+    <span class="nb">quiver</span><span class="p">(</span><span class="n">intersection_x</span><span class="p">,</span> <span class="n">intersection_y</span><span class="p">,</span> <span class="n">gradg</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">gradg</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mf">0.15</span><span class="p">,</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="k">endfor</span>
+
+
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="s">&#39;northeast&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/711e4618fb61dce9eba184ec20b5651cb5c622d67fd63df8b8b3b25547d7b41d.png" src="../_images/711e4618fb61dce9eba184ec20b5651cb5c622d67fd63df8b8b3b25547d7b41d.png" />
+</div>
+</div>
+<p>(note, in the plot above, the gradients at the minima are exactly equal, so only one appears)</p>
+<p>If we change <span class="math notranslate nohighlight">\((x,y)\)</span> slightly from the top point of intersection of <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> with <span class="math notranslate nohighlight">\(f(x,y)=(3/2)^2\)</span> by moving in the clockwise direction, we increase <span class="math notranslate nohighlight">\(f\)</span>.  If we move in the counter-clockwise direction, we decrease <span class="math notranslate nohighlight">\(f\)</span>.  Inevitably, if <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> crosses the contour of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((x_0,y_0)\)</span>, it will encounter contours on either side of the contour of <span class="math notranslate nohighlight">\(f\)</span> through <span class="math notranslate nohighlight">\((x_0,y_0)\)</span>.  So to avoid crossing the contour we require that the contour and <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> be tangent.</p>
+<p>If the constraint and the contour are tangent to each other, there gradients must be parallel. This means that <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span> for some scalar <span class="math notranslate nohighlight">\(\lambda\)</span> (which will typically depend on the point in space).</p>
+</section>
+<section id="method-of-lagrange-multipliers-in-2d">
+<h2><span class="section-number">2.1.3. </span>Method of Lagrange Multipliers in 2D:<a class="headerlink" href="#method-of-lagrange-multipliers-in-2d" title="Link to this heading">#</a></h2>
+<p>To use Lagrange Multipliers to find local minima and maxima of <span class="math notranslate nohighlight">\(f(x,y)\)</span> subject to the constraint <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>, we follow these steps:</p>
+<ul class="simple">
+<li><p>Calculate <span class="math notranslate nohighlight">\(\nabla f\)</span> and <span class="math notranslate nohighlight">\(\nabla g\)</span></p></li>
+<li><p>Set <span class="math notranslate nohighlight">\(\nabla f= \lambda \nabla g\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is a scalar.</p></li>
+<li><p>Each component of <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span> gives an equation.  Add <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>, to these equations to get three equations for the three unknowns at each point: <span class="math notranslate nohighlight">\(x, y, \lambda\)</span>.</p></li>
+<li><p>Solve the three equations for the three unknowns (there is no set recipe for doing this calculation, and for some cases it can only be solved using numerical approximation methods).</p></li>
+<li><p>Calculate <span class="math notranslate nohighlight">\(f\)</span> at the points.</p></li>
+</ul>
+<p>This procedure will find all local minima and maxima of <span class="math notranslate nohighlight">\(f\)</span> subject to the constraint.  If the curve <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> is a closed curve (like an ellipse or a circle), then the global maxima and minima must be among these local minima and maxima.</p>
+</section>
+<section id="generalizations-to-higher-dimension">
+<h2><span class="section-number">2.1.4. </span>Generalizations to higher dimension<a class="headerlink" href="#generalizations-to-higher-dimension" title="Link to this heading">#</a></h2>
+<p>In higher dimensions, given the constraint <span class="math notranslate nohighlight">\(g(x_1, x_2, \ldots, x_n) = 0\)</span> we find the local maxima and minima of <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span> by the same approach.  We set</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f = \lambda \nabla g
+\]</div>
+<p>which yields <span class="math notranslate nohighlight">\(n\)</span> equations (one equation for each <span class="math notranslate nohighlight">\(\partial/\partial x_i\)</span>).  We have <span class="math notranslate nohighlight">\(n+1\)</span> variables (<span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, \ldots, <span class="math notranslate nohighlight">\(x_n\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span>), so we also use the equation <span class="math notranslate nohighlight">\(g(x_1,x_2, \ldots, x_n)=0\)</span>.</p>
+<p>We then solve these <span class="math notranslate nohighlight">\(n+1\)</span> equations, which yields <span class="math notranslate nohighlight">\((x_1, x_2, \ldots, x_n)\)</span>.  We check the value of <span class="math notranslate nohighlight">\(f\)</span> at each of these.</p>
+</section>
+<section id="caveats">
+<h2><span class="section-number">2.1.5. </span>Caveats<a class="headerlink" href="#caveats" title="Link to this heading">#</a></h2>
+<p>Note:</p>
+<ul class="simple">
+<li><p>if the curve <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> goes off to infinity, then it may be the case that the global minimum or global maximum is only in the limit at infinity.</p></li>
+<li><p>if the curve <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> ends abruptly (say we had the constraint above with the additional condition <span class="math notranslate nohighlight">\(|x|\leq 1\)</span>), then the global maximum or minimum may occur at the end points.</p></li>
+</ul>
+</section>
+<section id="further-application">
+<h2><span class="section-number">2.1.6. </span>Further application<a class="headerlink" href="#further-application" title="Link to this heading">#</a></h2>
+<p>In the argument above, we implicitly assumed that given a contour of <span class="math notranslate nohighlight">\(f\)</span>, the values of <span class="math notranslate nohighlight">\(f\)</span> on one side of the contour are larger and on the other side they are smaller.</p>
+<p>It could be that the contours on both sides are smaller or on both sides are larger.  For example, we might have</p>
+<div class="math notranslate nohighlight">
+\[
+f(x,y) = \sqrt{x^2+y^2} - (x^2+y^2)
+\]</div>
+<p>This increases as the distance from the origin increases until that distance is <span class="math notranslate nohighlight">\(\sqrt{x^2+y^2}=1/2\)</span>, at which point it begins to decrease again.  This is easier to see in polar coordinates.  If we set <span class="math notranslate nohighlight">\(r = \sqrt{x^2+y^2}\)</span> then  <span class="math notranslate nohighlight">\(f(x,y) = r-r^2\)</span>, which has its maximum at <span class="math notranslate nohighlight">\(r=1/2\)</span></p>
+<p>Luckily in this case the method still works.  We can show that where <span class="math notranslate nohighlight">\(\sqrt{x^2+y^2} = 1/2\)</span> the gradient of <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\vec{0}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\nabla f(x,y) &amp;= \frac{\partial \sqrt{x^2+y^2} - (x^2+y^2)}{\partial x} \vec{i} + \frac{ \partial \sqrt{x^2+y^2} - (x^2+y^2)}{ \partial y} \vec{j}\\
+&amp;= \left(\frac{1}{2}\frac{2x}{\sqrt{x^2+y^2}} - 2x \right) \vec{i} + \left(\frac{1}{2}\frac{2y}{\sqrt{x^2+y^2}} - 2y \right) \vec{j}\\
+\end{align*}\]</div>
+<p>As <span class="math notranslate nohighlight">\(\sqrt{x^2+y^2} = 1/2\)</span>, this becomes</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\nabla f(x,y) &amp;= \left(\frac{x}{1/2} - 2x \right)\vec{i} + \left(\frac{y}{1/2} - 2y \right) \vec{j}\\
+&amp;= \vec{0}
+\end{align*}\]</div>
+<p>And so we would still find such a point by setting <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span>, where in this case we would find <span class="math notranslate nohighlight">\(\lambda = 0\)</span>.</p>
+<section id="self-test">
+<h3><span class="section-number">2.1.6.1. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li></li>
+<li></li>
+<li></li>
+<li><p>what if constraint crosses <span class="math notranslate nohighlight">\(f\)</span> at a local maximum/minimum/other critical point?  Answer: At this point, even if it crosses the contour, the gradient of <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\vec{0}\)</span>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">acos</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">pi</span><span class="o">/</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 1.1410
+ans = 0.7854
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "octave"
+        },
+        kernelOptions: {
+            name: "octave",
+            path: "./Differential_Calculus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'octave'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="DifferentialIntro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Derivatives in higher dimension and their applications</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maximising-and-minimising-a-function-given-a-constraint">2.1.1. Maximising and minimising a function given a constraint.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraint-and-contours-are-tangent-at-minimum-maximum">2.1.2. Constraint and contours are tangent at minimum/maximum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-lagrange-multipliers-in-2d">2.1.3. Method of Lagrange Multipliers in 2D:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizations-to-higher-dimension">2.1.4. Generalizations to higher dimension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caveats">2.1.5. Caveats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-application">2.1.6. Further application</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.1.6.1. Self-test</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LaTrobe University MAPS staff (present and past)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
