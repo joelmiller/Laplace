@@ -395,7 +395,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maximising-and-minimising-a-function-given-a-constraint">2.1.1. Maximising and minimising a function given a constraint.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraint-and-contours-are-tangent-at-minimum-maximum">2.1.2. Constraint and contours are tangent at minimum/maximum</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-lagrange-multipliers-in-2d">2.1.3. Method of Lagrange Multipliers in 2D:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-lagrange-multipliers-in-2d">2.1.3. Method of Lagrange Multipliers in 2D:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">2.1.3.1. Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-example">2.1.3.2. Second Example</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizations-to-higher-dimension">2.1.4. Generalizations to higher dimension</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caveats">2.1.5. Caveats</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-application">2.1.6. Further application</a><ul class="nav section-nav flex-column">
@@ -459,11 +463,11 @@ document.write(`
 
 <span class="c">%the following command plots the points given by the constraint g(x,y)=0</span>
 <span class="c">%and it creates a list of the x and y coordinates.</span>
-<span class="p">[</span><span class="n">constraint_coords</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="p">=</span> <span class="nb">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">G</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;g(x,y)=0);</span>
-<span class="s">constraint_x = constraint_coords(1,2:end); %x coordinates of the constraint points</span>
-<span class="s">constraint_y = constraint_coords(2,2:end); %y coordinates of the constraint points</span>
-<span class="s">daspect([1,1])</span>
-<span class="s">xlabel(&#39;</span><span class="n">x</span><span class="o">&#39;</span><span class="p">)</span>
+<span class="p">[</span><span class="n">constraint_coords</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="p">=</span> <span class="nb">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">G</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;g(x,y)=0&#39;</span><span class="p">);</span>
+<span class="n">constraint_x</span> <span class="p">=</span> <span class="n">constraint_coords</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">);</span> <span class="c">%x coordinates of the constraint points</span>
+<span class="n">constraint_y</span> <span class="p">=</span> <span class="n">constraint_coords</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">);</span> <span class="c">%y coordinates of the constraint points</span>
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
 <span class="nb">hold</span> <span class="n">on</span> 
 <span class="c">%contour(X,Y,F, [0.25,1,2.25,4])</span>
@@ -495,32 +499,20 @@ document.write(`
 
 <span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">grid</span> <span class="n">on</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Contours of f(x,y)=x^2+y^2 and the constraint g(x,y)=5x^2/8+5y^2/8-3xy/4=0&#39;</span><span class="p">)</span>
-<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="s">&#39;northeast&#39;</span><span class="p">,</span> <span class="s">&#39;FontSize&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Contours of f(x,y)=x^2+y^2 and the constraint g(x,y)=5x^2/8+5y^2/8-3xy/4-1=0&#39;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="s">&#39;northeast&#39;</span><span class="p">)</span>
 
 <span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">grid</span> <span class="n">on</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;The values of f(x,y)=x^2+y^2 on the contours\n and on the constraint g(x,y)=5x^2/8+5y^2/8-3xy/4=0&#39;</span><span class="p">)</span>
-<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="s">&#39;northeast&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;The values of f(x,y)=x^2+y^2 on the contours\n and on the constraint g(x,y)=5x^2/8+5y^2/8-3xy/4-1=0&#39;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="s">&#39;northeastoutside&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>error: parse error:
-
-  syntax error
-
-&gt;&gt;&gt; [constraint_coords,c] = contour(X,Y,G, [0,0], &#39;r&#39;, &#39;DisplayName&#39;, &#39;g(x,y)=0);
-                                                                                ^
-error: legend: expecting label to be a string
-error: called from
-    __gnuplot_legend__ at line 472 column 11
-    legend at line 201 column 7
-</pre></div>
-</div>
-<img alt="../_images/fc602bc0929b26fbbb89dabef601d8d8252dcb0944814f5a062fbd02ee92cd85.png" src="../_images/fc602bc0929b26fbbb89dabef601d8d8252dcb0944814f5a062fbd02ee92cd85.png" />
-<img alt="../_images/88963110579c4871be075be9a35d1314c9be8cec468babc3264765cecf0d7c42.png" src="../_images/88963110579c4871be075be9a35d1314c9be8cec468babc3264765cecf0d7c42.png" />
+<img alt="../_images/751ef35f31276bb71a9557b37fc6a96fa265261e6353a816bfb5a42e35d9152e.png" src="../_images/751ef35f31276bb71a9557b37fc6a96fa265261e6353a816bfb5a42e35d9152e.png" />
+<img alt="../_images/85d5af0e9be15171225d3b09a80b05a1a299af8125d6d36efb97b91aa9f56dd2.png" src="../_images/85d5af0e9be15171225d3b09a80b05a1a299af8125d6d36efb97b91aa9f56dd2.png" />
 </div>
 </div>
 </section>
@@ -574,8 +566,7 @@ error: called from
 
 <span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">grid</span> <span class="n">on</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Contours of f(x,y)=x^2+y^2 and the constraint g(x,y)=5x^2/8+5y^2/8-3xy/4=0\n </span>
-<span class="s">showing the gradients of f and g at the intersection points&#39;</span><span class="p">)</span> 
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Contours of f(x,y)=x^2+y^2 and the constraint g(x,y)=5x^2/8+5y^2/8-3xy/4-1=0\n showing the gradients of f and g at the intersection points&#39;</span><span class="p">)</span> 
 <span class="c">%legend(&quot;location&quot;, &#39;northeast&#39;, &#39;FontSize&#39;, 10)</span>
 
 <span class="c">%the constraint can be written xi=2cos(phi), eta = sin(phi)</span>
@@ -610,13 +601,13 @@ error: called from
 <span class="k">endfor</span>
 
 
-<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="s">&#39;northeast&#39;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="s">&#39;northwest&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/711e4618fb61dce9eba184ec20b5651cb5c622d67fd63df8b8b3b25547d7b41d.png" src="../_images/711e4618fb61dce9eba184ec20b5651cb5c622d67fd63df8b8b3b25547d7b41d.png" />
+<img alt="../_images/c5cf2157d598d5f122de4f9e661991ba2ea017ec92bd2deb11467cf847193859.png" src="../_images/c5cf2157d598d5f122de4f9e661991ba2ea017ec92bd2deb11467cf847193859.png" />
 </div>
 </div>
 <p>(note, in the plot above, the gradients at the minima are exactly equal, so only one appears)</p>
@@ -634,10 +625,174 @@ error: called from
 <li><p>Calculate <span class="math notranslate nohighlight">\(f\)</span> at the points.</p></li>
 </ul>
 <p>This procedure will find all local minima and maxima of <span class="math notranslate nohighlight">\(f\)</span> subject to the constraint.  If the curve <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> is a closed curve (like an ellipse or a circle), then the global maxima and minima must be among these local minima and maxima.</p>
+<section id="examples">
+<h3><span class="section-number">2.1.3.1. </span>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<p>Consider the example investigated graphically above <span class="math notranslate nohighlight">\(f(x,y) = x^2+y^2\)</span> with the constraint <span class="math notranslate nohighlight">\(g(x,y) = 5x^2/8 + 5y^2/8 -3xy/4 - 1= 0\)</span>.  We have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\nabla f &amp;= 2x \vec{i} + 2 y \vec{j}\\ 
+\nabla g &amp;= \frac{5x-3y}{4} \vec{i} + \frac{5y-3x}{4} \vec{j}
+\end{align*}\]</div>
+<p>Setting <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+2x &amp;= \lambda \frac{5x-3y}{4}\\
+2y &amp;= \lambda \frac{5y-3x}{4}
+\end{align*}\]</div>
+<p>We use the first equation to solve for <span class="math notranslate nohighlight">\(\lambda\)</span>.  We can be confident that <span class="math notranslate nohighlight">\(5x-3y \neq 0\)</span> because if it were, the equation would imply <span class="math notranslate nohighlight">\(x=0\)</span> which in turn would imply <span class="math notranslate nohighlight">\(y=0\)</span>, and <span class="math notranslate nohighlight">\(g(0,0)=-1\)</span> which is not on the constraint.  So we have
+$<span class="math notranslate nohighlight">\(
+\lambda = \frac{8x}{5x-3y}
+\)</span>$
+The second equation then yields</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+2y &amp;= \frac{8x}{5x-3y}\frac{5y-3x}{4}\\
+  &amp; = \frac{2x(5y-3x)}{5x-3y}\\
+  \Rightarrow \quad  y(5x-3y) &amp;= x(5y-3x)\\
+  \Rightarrow \quad  -y^2 &amp;= -x^2\\
+  \Rightarrow \quad  y &amp;= \pm x
+\end{align*}\]</div>
+<p>Now using the constraint <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> with <span class="math notranslate nohighlight">\(y = \pm x\)</span>, we get</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{5x^2}{8} + \frac{5x^2}{8} \pm \frac{3x^2}{4} -1 &amp;= 0\\
+\Rightarrow \quad  \frac{5x^2 \pm 3x^2}{4} &amp;= 1
+\end{align*}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\pm\)</span> being <span class="math notranslate nohighlight">\(+\)</span> if <span class="math notranslate nohighlight">\(x =-y\)</span> and <span class="math notranslate nohighlight">\(-\)</span> if <span class="math notranslate nohighlight">\(x=y\)</span>.
+So <span class="math notranslate nohighlight">\(2x^2 = 1\)</span> for <span class="math notranslate nohighlight">\(x=-y\)</span> or <span class="math notranslate nohighlight">\(x^2 = 2\)</span> for <span class="math notranslate nohighlight">\(x=y\)</span>.  The final points are
+<span class="math notranslate nohighlight">\((\sqrt{2}, \sqrt{2})\)</span>, <span class="math notranslate nohighlight">\((-\sqrt{2}, -\sqrt{2})\)</span>, <span class="math notranslate nohighlight">\((1/\sqrt{2}, -1/\sqrt{2})\)</span>, and <span class="math notranslate nohighlight">\((-1/\sqrt{2}, 1/\sqrt{2})\)</span>.  We have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(\sqrt{2},\sqrt{2}) &amp;= 4\\
+f(-\sqrt{2},-\sqrt{2}) &amp;= 4\\
+f(1/\sqrt{2},-1/\sqrt{2}) &amp;= 1\\
+f(-1/\sqrt{2},-1/\sqrt{2}) &amp;= 1
+\end{align*}\]</div>
+</section>
+<section id="second-example">
+<h3><span class="section-number">2.1.3.2. </span>Second Example<a class="headerlink" href="#second-example" title="Link to this heading">#</a></h3>
+<p>Consider the same constraint, but this time with</p>
+<div class="math notranslate nohighlight">
+\[f(x,y) = x^2-y^2\]</div>
+<p>We have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\nabla f &amp;= 2x \vec{i} - 2y\vec{j}\\
+\nabla g &amp;= \frac{5x-3y}{4} \vec{i} + \frac{5y-3x}{4} \vec{j}
+\end{align*}\]</div>
+<p>Setting <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span> yields</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+2x &amp;= \lambda \frac{5x-3y}{4}\\
+-2y &amp;= \lambda \frac{5y-3x}{4}
+\end{align*}\]</div>
+<p>As in the previous example, we can assume <span class="math notranslate nohighlight">\(5x-3y\neq 0\)</span> so we have
+$<span class="math notranslate nohighlight">\(
+\lambda = \frac{8x}{5x-3y}
+\)</span>$
+The second equation then yields</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+-2y &amp;= \frac{8x}{5x-3y}\frac{5y-3x}{4}\\
+  &amp; = \frac{2x(5y-3x)}{5x-3y}\\
+  \Rightarrow \quad  -y(5x-3y) &amp;= x(5y-3x)\\
+  \Rightarrow \quad  3y^2 -10xy +3x^2&amp;= 0\\
+  \Rightarrow \quad  y &amp;= \frac{10x \pm \sqrt{100x^2 - 36x^2}}{6}\\
+  &amp;=\frac{10x \pm 8x}{6}\\
+  &amp;= 3x \text{ or } \frac{x}{3}
+\end{align*}\]</div>
+<p>Substituting <span class="math notranslate nohighlight">\(y=3x\)</span> into <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> yields</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{5x^2}{8} + \frac{45x^2}{8} - \frac{9x^2}{4} - 1 &amp;= 0\\
+\Rightarrow \quad \frac{32x^2}{8}&amp;= 1\\
+\Rightarrow \quad x &amp;= \pm \frac{1}{2}
+\end{align*}\]</div>
+<p>Substituting <span class="math notranslate nohighlight">\(y = x/3\)</span> into <span class="math notranslate nohighlight">\(g(x,y) = 0\)</span> yields</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{5x^2}{8} + \frac{5x^2}{72} - \frac{x^2}{4} -1 &amp;= 0\\
+\Rightarrow \quad \frac{32x^2}{72} &amp;= 1\\
+\Rightarrow \quad \frac{4x^2}{9} &amp;= 1\\
+\Rightarrow \quad x &amp;= \pm \frac{3}{2}
+\end{align*}\]</div>
+<p>So our final points are <span class="math notranslate nohighlight">\((1/2, 3/2)\)</span>, <span class="math notranslate nohighlight">\((-1/2, -3/2)\)</span>, <span class="math notranslate nohighlight">\((3/2, 1/2)\)</span> and <span class="math notranslate nohighlight">\((-3/2, -1/2)\)</span>.  At these values we have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(1/2,3/2) &amp;= (1/2)^2-(3/2)^2 \\
+&amp;= 1/4-9/4\\ 
+&amp;= -2\\
+f(-1/2, -3/2) &amp;= (-1/2)^2 - (-3/2)^2\\
+&amp;= -2\\
+f(3/2, 1/2) &amp;= (3/2)^2 - (1/2)^2\\
+&amp;= 2\\
+f(-3/2, -1/2) &amp;= (-3/2)^2 - (-1/2)^2\\
+&amp;= 2
+\end{align*}\]</div>
+<p>For reference we plot the contours of <span class="math notranslate nohighlight">\(f\)</span> for <span class="math notranslate nohighlight">\(-2\)</span>, <span class="math notranslate nohighlight">\(-1\)</span>, <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, and <span class="math notranslate nohighlight">\(2\)</span> along with the constraint <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>.  The constraint is just tangent to the contours of <span class="math notranslate nohighlight">\(f(x,y)=-2\)</span> (the minimum) and <span class="math notranslate nohighlight">\(f(x,y)=2\)</span> (the maximum)</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">graphics_toolkit</span><span class="p">(</span><span class="s">&quot;gnuplot&quot;</span><span class="p">)</span> <span class="c"># gnuplot is currently the only way I can get </span>
+                            <span class="c"># matlab/octave to display using this format</span>
+                            <span class="c"># However, it is not ideal - there is no control over</span>
+                            <span class="c"># font sizes, line widths, or ability to interact</span>
+                            <span class="c"># with the plot.</span>
+
+
+
+<span class="n">x</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">y</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span>
+<span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+
+<span class="n">G</span> <span class="p">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">X</span><span class="o">.^</span><span class="mi">2</span><span class="o">/</span><span class="mi">8</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">Y</span><span class="o">.^</span><span class="mi">2</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">X</span><span class="o">.*</span><span class="n">Y</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c">%the following command plots the points given by the constraint g(x,y)=0</span>
+<span class="c">%and it creates a list of the x and y coordinates.</span>
+<span class="p">[</span><span class="n">constraint_coords</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="p">=</span> <span class="nb">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">G</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">constraint_x</span> <span class="p">=</span> <span class="n">constraint_coords</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">);</span> <span class="c">%x coordinates of the constraint points</span>
+<span class="n">constraint_y</span> <span class="p">=</span> <span class="n">constraint_coords</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">);</span> <span class="c">%y coordinates of the constraint points</span>
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">hold</span> <span class="n">on</span> 
+
+<span class="n">F</span> <span class="p">=</span> <span class="n">X</span><span class="o">.^</span><span class="mi">2</span> <span class="o">-</span> <span class="n">Y</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span> 
+<span class="nb">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">F</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="nb">colorbar</span><span class="p">(</span><span class="s">&#39;location&#39;</span><span class="p">,</span> <span class="s">&#39;eastoutside&#39;</span><span class="p">)</span>
+
+<span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">grid</span> <span class="n">on</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Contours of f(x,y)=x^2-y^2 and the constraint g(x,y)=5x^2/8+5y^2/8-3xy/4-1=0&#39;</span><span class="p">)</span> 
+
+<span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">F</span><span class="p">)</span>
+<span class="nb">hold</span> <span class="n">on</span>
+<span class="c">%in plotting the curve, we add a small value to it to make it visible above the surface.</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">constraint_x</span><span class="p">,</span> <span class="n">constraint_y</span><span class="p">,</span> <span class="n">constraint_x</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="n">constraint_y</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="mf">0.01</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;The values of f(x,y) where g(x,y)=0&#39;</span><span class="p">)</span> <span class="c">#plot values on the constraint</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">zlabel</span><span class="p">(</span><span class="s">&#39;z&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;surface plot of f(x,y)=x^2-y^2 and values \n of f for points satisfying the constraint g(x,y)=5x^2/8+5y^2/8-3xy/4-1=0&#39;</span><span class="p">)</span>
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/d52ae1ce13b14d1a96155991f0a0c8209a64871582609a25473160606abb31af.png" src="../_images/d52ae1ce13b14d1a96155991f0a0c8209a64871582609a25473160606abb31af.png" />
+<img alt="../_images/eaa25dde30a508acb28781db6dd6c4108a1512eb48f0c03e249ed8e1a2b4a1aa.png" src="../_images/eaa25dde30a508acb28781db6dd6c4108a1512eb48f0c03e249ed8e1a2b4a1aa.png" />
+</div>
+</div>
+</section>
 </section>
 <section id="generalizations-to-higher-dimension">
 <h2><span class="section-number">2.1.4. </span>Generalizations to higher dimension<a class="headerlink" href="#generalizations-to-higher-dimension" title="Link to this heading">#</a></h2>
-<p>In higher dimensions, given the constraint <span class="math notranslate nohighlight">\(g(x_1, x_2, \ldots, x_n) = 0\)</span> we find the local maxima and minima of <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span> by the same approach.  We set</p>
+<p>In higher dimensions, given the constraint <span class="math notranslate nohighlight">\(g(x_1, x_2, \ldots, x_n) = 0\)</span> we find the local maxima and minima of <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span> by the same approach as in the <span class="math notranslate nohighlight">\(2\)</span>-dimensional case.  We set</p>
 <div class="math notranslate nohighlight">
 \[
 \nabla f = \lambda \nabla g
@@ -678,25 +833,270 @@ f(x,y) = \sqrt{x^2+y^2} - (x^2+y^2)
 <section id="self-test">
 <h3><span class="section-number">2.1.6.1. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li></li>
-<li></li>
-<li></li>
-<li><p>what if constraint crosses <span class="math notranslate nohighlight">\(f\)</span> at a local maximum/minimum/other critical point?  Answer: At this point, even if it crosses the contour, the gradient of <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\vec{0}\)</span>.</p></li>
+<li><p>Consider the constraint <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> and the given function <span class="math notranslate nohighlight">\(f(x,y)\)</span>.  Find <span class="math notranslate nohighlight">\(\nabla f\)</span> and <span class="math notranslate nohighlight">\(\nabla g\)</span>.  Find the equations from <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span> and <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>.  Solve for all points <span class="math notranslate nohighlight">\((x,y)\)</span> satisfying this relation.  Find <span class="math notranslate nohighlight">\(f(x,y)\)</span> at each point.</p></li>
 </ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">acos</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>
-<span class="nb">pi</span><span class="o">/</span><span class="mi">4</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Function/Constraint 1</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(x,y) &amp;= 4x^2 - y^2\\
+g(x,y) &amp;= x^2 + y^2 - 9 = 0
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Gradients</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ \nabla f &amp;= 8x \vec{i} - 2y \vec{j}\\
+ \nabla g &amp;= 2x \vec{i} + 2y \vec{j}
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Equations</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+  8x &amp;= 2\lambda x\\
+  -2y &amp;= 2\lambda y\\
+  x^2+y^2-9 &amp;= 0
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Coordinates</label><div class="sd-tab-content docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((3,0)\)</span>, <span class="math notranslate nohighlight">\((-3,0)\)</span>, <span class="math notranslate nohighlight">\((0,3)\)</span>, <span class="math notranslate nohighlight">\((0,-3)\)</span></p>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>If <span class="math notranslate nohighlight">\(8x=2\lambda x\)</span>, then <span class="math notranslate nohighlight">\(\lambda = 4\)</span> or <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(\lambda=4\)</span>, then the second equation becomes <span class="math notranslate nohighlight">\(-2y = 8y\)</span> which requires <span class="math notranslate nohighlight">\(y=0\)</span>.  In turn this and <span class="math notranslate nohighlight">\(x^2+y^2-9=0\)</span> requires <span class="math notranslate nohighlight">\(x=\pm 3\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(x=0\)</span>, and <span class="math notranslate nohighlight">\(\lambda\)</span> is left free, then <span class="math notranslate nohighlight">\(x^2+y^2-9=0\)</span> becomes <span class="math notranslate nohighlight">\(y= \pm 3\)</span>.</p>
+<p>So the solutions are <span class="math notranslate nohighlight">\(x=\pm 3\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span> or <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(y=\pm 3\)</span>.</p>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Values of <span class="math notranslate nohighlight">\(f\)</span>:</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(3,0) &amp;= 4 \cdot 3^2 = 36\\
+f(-3,0) &amp;= 36\\
+f(0,3) &amp;= -3^2 = -9\\
+f(0,-3) &amp;= -9
+\end{align*}\]</div>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Function/Constraint 2</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(x,y) &amp;= 4x^2 + y^2\\
+g(x,y) &amp;= x^2 + 4y^2 - 16 = 0
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Gradients</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ \nabla f &amp;= 8x \vec{i} + 2y \vec{j}\\
+ \nabla g &amp;= 2x \vec{i} + 8y \vec{j}
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Equations</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+  8x &amp;= 2\lambda x\\
+  2y &amp;= 8\lambda y\\
+  x^2+4y^2-16 &amp;= 0
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Coordinates</label><div class="sd-tab-content docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+Solution</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((4,0)\)</span>, <span class="math notranslate nohighlight">\((-4,0)\)</span>, <span class="math notranslate nohighlight">\((0,2)\)</span>, <span class="math notranslate nohighlight">\((0,-2)\)</span></p>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>If <span class="math notranslate nohighlight">\(8x=2\lambda x\)</span>, then <span class="math notranslate nohighlight">\(\lambda = 4\)</span> or <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(\lambda=4\)</span>, then the second equation becomes <span class="math notranslate nohighlight">\(2y = 8\lambda y\)</span> which requires <span class="math notranslate nohighlight">\(y=0\)</span>.  In turn this and <span class="math notranslate nohighlight">\(x^2+4y^2-16=0\)</span> requires <span class="math notranslate nohighlight">\(x=\pm 4\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(x=0\)</span>, and <span class="math notranslate nohighlight">\(\lambda\)</span> is left free, then <span class="math notranslate nohighlight">\(x^2+4y^2-16=0\)</span> becomes <span class="math notranslate nohighlight">\(y= \pm 2\)</span>.</p>
+<p>So the solutions are <span class="math notranslate nohighlight">\(x=\pm 4\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span> or <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(y=\pm 2\)</span>.</p>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+Values of <span class="math notranslate nohighlight">\(f\)</span>:</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(4,0) &amp;= 4 \cdot 4^2 = 64\\
+f(-4,0) &amp;= 64\\
+f(0,3) &amp;= 3^2 = 9\\
+f(0,-3) &amp;= 9
+\end{align*}\]</div>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+Function/Constraint 3</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(x,y) &amp;= (x-1)^2 + (y-2)^2\\
+g(x,y) &amp;= x^2 + y^2 - 9 = 0
+\end{align*}\]</div>
+<p>Note: these functions are not chosen to make the numbers work out nice, but rather to change from the previous problems and the examples where both <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> had some symmetry about the origin.  Now they do not share the same symmetry.</p>
+</div>
+<input id="sd-tab-item-15" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+Gradients</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ \nabla f &amp;= 2(x-1) \vec{i} + 2(y-2) \vec{j}\\
+ \nabla g &amp;= 2x \vec{i} + 2y \vec{j}
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-16" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+Equations</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+  2(x-1) &amp;= 2\lambda x\\
+  2(y-2) &amp;= 2\lambda y\\
+  x^2+y^2-9 &amp;= 0
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+Coordinates</label><div class="sd-tab-content docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-19" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-19">
+Solution</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(
+  \left(\frac{3}{\sqrt{5}}, \frac{6}{\sqrt{5}}\right)\)</span>, <span class="math notranslate nohighlight">\(\left(\frac{-3}{\sqrt{5}}, \frac{-6}{\sqrt{5}}\right)
+  \)</span></p>
+</div>
+<input id="sd-tab-item-20" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-20">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>From the first equation, <span class="math notranslate nohighlight">\((x-1) = \lambda x\)</span>.  It follows that <span class="math notranslate nohighlight">\((1-\lambda)x=1\)</span> and <span class="math notranslate nohighlight">\(x = 1/(1-\lambda)\)</span>.  Note <span class="math notranslate nohighlight">\(\lambda=1\)</span> is impossible since that would result in <span class="math notranslate nohighlight">\(0x=1\)</span>.</p>
+<p>The second equation then gives <span class="math notranslate nohighlight">\((y-2) = \lambda y\)</span>.  It follows that <span class="math notranslate nohighlight">\((1-\lambda)y = 2\)</span> and <span class="math notranslate nohighlight">\(y = 2/(1-\lambda)\)</span>.</p>
+<p>Rather than substituting these into <span class="math notranslate nohighlight">\(x^2+y^2-9=0\)</span>, it is easier to take <span class="math notranslate nohighlight">\(y=2x\)</span> and substitute it.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ x^2 + (2x)^2 - 9&amp;=0\\
+ \Rightarrow \quad 5x^2 &amp;= 9\\
+ \Rightarrow \quad x^2 &amp;= \frac{9}{5}\\
+ \Rightarrow \quad x &amp;= \pm \frac{3}{\sqrt{5}}
+\end{align*}\]</div>
+<p>and <span class="math notranslate nohighlight">\(y = 2x\)</span>.</p>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-18" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-18">
+Values of <span class="math notranslate nohighlight">\(f\)</span>:</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f\left(\frac{3}{\sqrt{5}}, \frac{6}{\sqrt{5}}\right) &amp;=\left(\frac{3}{\sqrt{5}}-1\right)^2 + \left(\frac{6}{\sqrt{5}}-2\right)^2\\
+&amp;= \frac{9}{5}+1 - \frac{6}{\sqrt{5}} + \frac{36}{5} +4 - \frac{24}{\sqrt{5}}\\
+&amp;= \frac{45}{5} + 5 - \frac{30}{\sqrt{5}}\\ 
+&amp;= 14 - 6\sqrt{5}\\
+f\left(-\frac{3}{\sqrt{5}}, -\frac{6}{\sqrt{5}}\right) &amp;= \left(\frac{-3}{\sqrt{5}}-1\right)^2 + \left(\frac{-6}{\sqrt{5}}-2\right)^2\\
+&amp;= \frac{9}{5}+1 + \frac{6}{\sqrt{5}} + \frac{36}{5} +4 + \frac{24}{\sqrt{5}}\\
+&amp;= 14 + 6 \sqrt{5}
+\end{align*}\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 1.1410
-ans = 0.7854
-</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+Function/Constraint 4</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(x,y) &amp;= xy+z^2\\
+g(x,y) &amp;= x^2 + y^2 + \frac{z^2}{9} -1 = 0
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-22" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-22">
+Gradients</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ \nabla f &amp;= y \vec{i} + x \vec{j} +  2z\vec{k}\\
+ \nabla g &amp;= 2x \vec{i} + 2y \vec{j} + \frac{2}{9}z \vec{k}
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-23">
+Equations</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+  y &amp;= 2\lambda x\\
+  x &amp;= 2\lambda y\\
+  2z &amp;= 2\lambda z/9\\
+  x^2 + y^2 + \frac{z^2}{9} -1 &amp;= 0
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-24" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-24">
+Coordinates</label><div class="sd-tab-content docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-26" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-26">
+Solution</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((0,0,3)\)</span>, <span class="math notranslate nohighlight">\((0,0,-3)\)</span>, <span class="math notranslate nohighlight">\((1/\sqrt{2}, 1/\sqrt{2},0)\)</span>, and <span class="math notranslate nohighlight">\((-1/\sqrt{2},-1/\sqrt{2},0)\)</span>, <span class="math notranslate nohighlight">\((1/\sqrt{2}, -1/\sqrt{2},0)\)</span>, and <span class="math notranslate nohighlight">\((-1/\sqrt{2},1/\sqrt{2},0)\)</span>.</p>
+</div>
+<input id="sd-tab-item-27" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-27">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>We start by observing that the third equation gives <span class="math notranslate nohighlight">\(z=0\)</span> or <span class="math notranslate nohighlight">\(\lambda = 9\)</span>.  Studying these two cases:</p>
+<p><span class="math notranslate nohighlight">\(\lambda = 9\)</span> gives <span class="math notranslate nohighlight">\(x=18y\)</span> and <span class="math notranslate nohighlight">\(y=18x\)</span> in the first two equations, which is only possible if <span class="math notranslate nohighlight">\(x=y=0\)</span>.  So the final equation becomes <span class="math notranslate nohighlight">\(z^2/9-1=0\)</span>, so <span class="math notranslate nohighlight">\(z= \pm 3\)</span>.  The coordinates are <span class="math notranslate nohighlight">\((0,0,\pm 3)\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(z=0\)</span>, then <span class="math notranslate nohighlight">\(\lambda\)</span> not yet restricted.  The first two equations become <span class="math notranslate nohighlight">\(y = 4\lambda^2 y\)</span>.  So <span class="math notranslate nohighlight">\(y=0\)</span> or <span class="math notranslate nohighlight">\(\lambda = \pm 1/2\)</span>.  If <span class="math notranslate nohighlight">\(y=0\)</span>, then <span class="math notranslate nohighlight">\(x=0\)</span> as well, but the constraint would then be <span class="math notranslate nohighlight">\(-1=0\)</span>.  So we must have <span class="math notranslate nohighlight">\(\lambda = \pm 1/2\)</span>.  In this case <span class="math notranslate nohighlight">\(x= \pm y\)</span>.</p>
+<p>So <span class="math notranslate nohighlight">\(z=0\)</span> implies <span class="math notranslate nohighlight">\(x=\pm y\)</span>. The third equation becomes <span class="math notranslate nohighlight">\(2x^2 =1\)</span>, so <span class="math notranslate nohighlight">\(x = \pm y = \pm 1/\sqrt{2}\)</span>.  The coordinates are <span class="math notranslate nohighlight">\((1/\sqrt{2}, 1/\sqrt{2}, 0)\)</span>, <span class="math notranslate nohighlight">\((1/\sqrt{2}, - 1/\sqrt{2},0)\)</span>, <span class="math notranslate nohighlight">\((-1/\sqrt{2}, 1/\sqrt{2}, 0)\)</span>, and <span class="math notranslate nohighlight">\((-1/\sqrt{2}, - 1/\sqrt{2},0)\)</span>.</p>
 </div>
 </div>
 </div>
+<input id="sd-tab-item-25" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-25">
+Values of <span class="math notranslate nohighlight">\(f\)</span>:</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ f(0,0,3) &amp;= 9\\
+ f(0,0,-3) &amp;= 9\\
+ f\left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}},0\right) &amp;= 1/2\\
+ f\left(-\frac{1}{\sqrt{2}}, 0\frac{1}{\sqrt{2}},0\right) &amp;= 1/2\\
+ f\left(\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}},0\right) &amp;= -1/2\\
+ f\left(-\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}},0\right) &amp;= -1/2
+\end{align*}\]</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>(*) (not yet completed problem, just some notes.  The goal is to investigate a case where gradient of <span class="math notranslate nohighlight">\(f\)</span> goes to zero at a point.) what if constraint crosses <span class="math notranslate nohighlight">\(f\)</span> at a local maximum/minimum/other critical point?  Answer: At this point, even if it crosses the contour, the gradient of <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\vec{0}\)</span>.</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -758,7 +1158,11 @@ ans = 0.7854
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maximising-and-minimising-a-function-given-a-constraint">2.1.1. Maximising and minimising a function given a constraint.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraint-and-contours-are-tangent-at-minimum-maximum">2.1.2. Constraint and contours are tangent at minimum/maximum</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-lagrange-multipliers-in-2d">2.1.3. Method of Lagrange Multipliers in 2D:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-lagrange-multipliers-in-2d">2.1.3. Method of Lagrange Multipliers in 2D:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">2.1.3.1. Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-example">2.1.3.2. Second Example</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizations-to-higher-dimension">2.1.4. Generalizations to higher dimension</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caveats">2.1.5. Caveats</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-application">2.1.6. Further application</a><ul class="nav section-nav flex-column">
