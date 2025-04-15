@@ -1039,7 +1039,7 @@ f\left(-\frac{3}{\sqrt{5}}, -\frac{6}{\sqrt{5}}\right) &amp;= \left(\frac{-3}{\s
 Function/Constraint 4</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-f(x,y) &amp;= xy+z^2\\
+f(x,y) &amp;= 5xy+z^2\\
 g(x,y) &amp;= x^2 + y^2 + \frac{z^2}{9} -1 = 0
 \end{align*}\]</div>
 </div>
@@ -1048,7 +1048,7 @@ g(x,y) &amp;= x^2 + y^2 + \frac{z^2}{9} -1 = 0
 Gradients</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
- \nabla f &amp;= y \vec{i} + x \vec{j} +  2z\vec{k}\\
+ \nabla f &amp;= 5y \vec{i} + 5x \vec{j} +  2z\vec{k}\\
  \nabla g &amp;= 2x \vec{i} + 2y \vec{j} + \frac{2}{9}z \vec{k}
 \end{align*}\]</div>
 </div>
@@ -1057,8 +1057,8 @@ Gradients</label><div class="sd-tab-content docutils">
 Equations</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-  y &amp;= 2\lambda x\\
-  x &amp;= 2\lambda y\\
+  5y &amp;= 2\lambda x\\
+  5x &amp;= 2\lambda y\\
   2z &amp;= 2\lambda z/9\\
   x^2 + y^2 + \frac{z^2}{9} -1 &amp;= 0
 \end{align*}\]</div>
@@ -1076,8 +1076,8 @@ Solution</label><div class="sd-tab-content docutils">
 <label class="sd-tab-label" for="sd-tab-item-27">
 Worked Solution</label><div class="sd-tab-content docutils">
 <p>We start by observing that the third equation gives <span class="math notranslate nohighlight">\(z=0\)</span> or <span class="math notranslate nohighlight">\(\lambda = 9\)</span>.  Studying these two cases:</p>
-<p><span class="math notranslate nohighlight">\(\lambda = 9\)</span> gives <span class="math notranslate nohighlight">\(x=18y\)</span> and <span class="math notranslate nohighlight">\(y=18x\)</span> in the first two equations, which is only possible if <span class="math notranslate nohighlight">\(x=y=0\)</span>.  So the final equation becomes <span class="math notranslate nohighlight">\(z^2/9-1=0\)</span>, so <span class="math notranslate nohighlight">\(z= \pm 3\)</span>.  The coordinates are <span class="math notranslate nohighlight">\((0,0,\pm 3)\)</span>.</p>
-<p>If <span class="math notranslate nohighlight">\(z=0\)</span>, then <span class="math notranslate nohighlight">\(\lambda\)</span> not yet restricted.  The first two equations become <span class="math notranslate nohighlight">\(y = 4\lambda^2 y\)</span>.  So <span class="math notranslate nohighlight">\(y=0\)</span> or <span class="math notranslate nohighlight">\(\lambda = \pm 1/2\)</span>.  If <span class="math notranslate nohighlight">\(y=0\)</span>, then <span class="math notranslate nohighlight">\(x=0\)</span> as well, but the constraint would then be <span class="math notranslate nohighlight">\(-1=0\)</span>.  So we must have <span class="math notranslate nohighlight">\(\lambda = \pm 1/2\)</span>.  In this case <span class="math notranslate nohighlight">\(x= \pm y\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\lambda = 9\)</span> gives <span class="math notranslate nohighlight">\(x=45y\)</span> and <span class="math notranslate nohighlight">\(y=45x\)</span> in the first two equations, which is only possible if <span class="math notranslate nohighlight">\(x=y=0\)</span>.  So the final equation becomes <span class="math notranslate nohighlight">\(z^2/9-1=0\)</span>, so <span class="math notranslate nohighlight">\(z= \pm 3\)</span>.  The coordinates are <span class="math notranslate nohighlight">\((0,0,\pm 3)\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(z=0\)</span>, then <span class="math notranslate nohighlight">\(\lambda\)</span> not yet restricted.  The first two equations become <span class="math notranslate nohighlight">\(y = \frac{4\lambda^2}{25} y\)</span>.  So <span class="math notranslate nohighlight">\(y=0\)</span> or <span class="math notranslate nohighlight">\(\lambda = \pm 5/2\)</span>.  If <span class="math notranslate nohighlight">\(y=0\)</span>, then <span class="math notranslate nohighlight">\(x=0\)</span> as well, but the constraint would then be <span class="math notranslate nohighlight">\(-1=0\)</span>.  So we must have <span class="math notranslate nohighlight">\(\lambda = \pm 5/2\)</span>.  In this case <span class="math notranslate nohighlight">\(x= \pm y\)</span>.</p>
 <p>So <span class="math notranslate nohighlight">\(z=0\)</span> implies <span class="math notranslate nohighlight">\(x=\pm y\)</span>. The third equation becomes <span class="math notranslate nohighlight">\(2x^2 =1\)</span>, so <span class="math notranslate nohighlight">\(x = \pm y = \pm 1/\sqrt{2}\)</span>.  The coordinates are <span class="math notranslate nohighlight">\((1/\sqrt{2}, 1/\sqrt{2}, 0)\)</span>, <span class="math notranslate nohighlight">\((1/\sqrt{2}, - 1/\sqrt{2},0)\)</span>, <span class="math notranslate nohighlight">\((-1/\sqrt{2}, 1/\sqrt{2}, 0)\)</span>, and <span class="math notranslate nohighlight">\((-1/\sqrt{2}, - 1/\sqrt{2},0)\)</span>.</p>
 </div>
 </div>
@@ -1089,11 +1089,47 @@ Values of <span class="math notranslate nohighlight">\(f\)</span>:</label><div c
 \[\begin{align*}
  f(0,0,3) &amp;= 9\\
  f(0,0,-3) &amp;= 9\\
- f\left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}},0\right) &amp;= 1/2\\
- f\left(-\frac{1}{\sqrt{2}}, 0\frac{1}{\sqrt{2}},0\right) &amp;= 1/2\\
- f\left(\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}},0\right) &amp;= -1/2\\
- f\left(-\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}},0\right) &amp;= -1/2
+ f\left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}},0\right) &amp;= 5/2\\
+ f\left(-\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}},0\right) &amp;= 5/2\\
+ f\left(\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}},0\right) &amp;= -5/2\\
+ f\left(-\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}},0\right) &amp;= -5/2
 \end{align*}\]</div>
+</div>
+</div>
+<p>For reference, here is a heat map plot of <span class="math notranslate nohighlight">\(f(x,y,z)\)</span> for the final part on the points on the surface <span class="math notranslate nohighlight">\(g(x,y,z)=0\)</span>.  The intermediate points turn out to be saddles.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">3</span><span class="p">];</span>
+<span class="n">theta</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">20</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">Theta</span><span class="p">,</span> <span class="n">Z</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
+<span class="n">Rho</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">Z</span><span class="o">.^</span><span class="mi">2</span><span class="o">/</span><span class="mi">9</span><span class="p">);</span>
+<span class="n">X</span> <span class="p">=</span> <span class="n">Rho</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="n">Theta</span><span class="p">);</span>
+<span class="n">Y</span> <span class="p">=</span> <span class="n">Rho</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">Theta</span><span class="p">);</span>
+
+<span class="n">F</span> <span class="p">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">X</span><span class="o">.*</span><span class="n">Y</span> <span class="o">+</span> <span class="n">Z</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+
+<span class="nb">surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span><span class="p">,</span><span class="n">F</span><span class="p">);</span>
+<span class="c">%colormap(turbo)</span>
+<span class="nb">colormap</span><span class="p">(</span><span class="n">lines</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+<span class="nb">hold</span> <span class="n">on</span> 
+<span class="nb">colorbar</span><span class="p">(</span><span class="s">&#39;location&#39;</span><span class="p">,</span> <span class="s">&#39;eastoutside&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">zlabel</span><span class="p">(</span><span class="s">&#39;z&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;surface plot of the constraint g(x,y,z)=x^2+y^2+z^2/9-1=0 colored by the value of f(x,y,z)=xy+z^2&#39;</span><span class="p">)</span>
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/7afbe4eca0b1dac7e266a4f4ca082cf761c3f4b4ea38f4011cb73eb6f651fa48.png" src="../_images/7afbe4eca0b1dac7e266a4f4ca082cf761c3f4b4ea38f4011cb73eb6f651fa48.png" />
 </div>
 </div>
 <ol class="arabic simple" start="2">
