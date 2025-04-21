@@ -20,6 +20,8 @@ chapters:
   - file: Differential_Calculus/DifferentialIntro
     sections: 
     - file: Differential_Calculus/Lagrange
+    - file: Differential_Calculus/Lagrange_Extensions
+    
 #- file: Laplace
 # - file: intro
 # - file: markdown

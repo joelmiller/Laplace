@@ -63,6 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Differential_Calculus/Lagrange';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.2. Extensions to Lagrange Multipliers" href="Lagrange_Extensions.html" />
     <link rel="prev" title="2. Derivatives in higher dimension and their applications" href="DifferentialIntro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -196,6 +197,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Lagrange_Extensions.html">2.2. Extensions to Lagrange Multipliers</a></li>
 </ul>
 </details></li>
 </ul>
@@ -402,8 +404,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizations-to-higher-dimension">2.1.4. Generalizations to higher dimension</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caveats">2.1.5. Caveats</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-application">2.1.6. Further application</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.1.7. Self-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.1.6. Self-test</a></li>
 </ul>
             </nav>
         </div>
@@ -426,7 +427,13 @@ document.write(`
 <p>which points in the same direction as <span class="math notranslate nohighlight">\(x \vec{i} + y \vec{j}\)</span>, so it points directly away from the origin.</p>
 <section id="maximising-and-minimising-a-function-given-a-constraint">
 <h2><span class="section-number">2.1.1. </span>Maximising and minimising a function given a constraint.<a class="headerlink" href="#maximising-and-minimising-a-function-given-a-constraint" title="Link to this heading">#</a></h2>
-<p>Let us consider the following question:</p>
+<p>Our goal in this section is to learn how to maximize or minimize a function subject to some constraint.  This arises when we want the best possible solution to a problem that depends on multiple variables, and resource limitations constrain the solutions we can achieve.</p>
+<ul class="simple">
+<li><p>In an engineering context, examples occur where we want to design a product that maximizes some measurable quantity but we have a fixed budget to spend on the components.</p></li>
+<li><p>Examples from my own research include “how does one distribute a fixed number of vaccines across a heterogeneous population in order to minimize the rate of spread an epidemic or to minimize the number of infections, or to minimize the number of deaths.”</p></li>
+<li><p>More broadly, these show up frequently in economics and data science applications.</p></li>
+</ul>
+<p>Let us consider the following example which yields a nice geometric interpretation:</p>
 <ul class="simple">
 <li><p>Find the maximum and minimum values of the function <span class="math notranslate nohighlight">\(f(x,y) = x^2+y^2\)</span> and their locations subject to the constraint that <span class="math notranslate nohighlight">\(g(x,y) = 0\)</span> where <span class="math notranslate nohighlight">\(g(x,y) = 5x^2/8 + 5y^2/8 - 3xy/4-1\)</span>.</p></li>
 </ul>
@@ -610,7 +617,7 @@ document.write(`
 </div>
 <p>(note, in the plot above, the gradients at the minima are exactly equal, so only one appears)</p>
 <p>If we change <span class="math notranslate nohighlight">\((x,y)\)</span> slightly from the top point of intersection of <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> with <span class="math notranslate nohighlight">\(f(x,y)=(3/2)^2\)</span> by moving in the clockwise direction, we increase <span class="math notranslate nohighlight">\(f\)</span>.  If we move in the counter-clockwise direction, we decrease <span class="math notranslate nohighlight">\(f\)</span>.  Inevitably, if <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> crosses the contour of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((x_0,y_0)\)</span>, it will encounter contours on either side of the contour of <span class="math notranslate nohighlight">\(f\)</span> through <span class="math notranslate nohighlight">\((x_0,y_0)\)</span>.  So to avoid crossing the contour we require that the contour and <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> be tangent.</p>
-<p>If the constraint and the contour are tangent to each other, there gradients must be parallel. This means that <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span> for some scalar <span class="math notranslate nohighlight">\(\lambda\)</span> (which will typically depend on the point in space).</p>
+<p>If the constraint and the contour are tangent to each other, their gradients must be parallel. This means that <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span> for some scalar <span class="math notranslate nohighlight">\(\lambda\)</span> (which will typically depend on the point in space).  The scalar <span class="math notranslate nohighlight">\(\lambda\)</span> is known as a Lagrange multiplier.</p>
 </section>
 <section id="method-of-lagrange-multipliers-in-2d">
 <h2><span class="section-number">2.1.3. </span>Method of Lagrange Multipliers in 2D:<a class="headerlink" href="#method-of-lagrange-multipliers-in-2d" title="Link to this heading">#</a></h2>
@@ -622,11 +629,15 @@ document.write(`
 <li><p>Solve the three equations for the three unknowns (there is no set recipe for doing this calculation, and for some cases it can only be solved using numerical approximation methods).</p></li>
 <li><p>Calculate <span class="math notranslate nohighlight">\(f\)</span> at the points.</p></li>
 </ul>
-<p>This procedure will find all local minima and maxima of <span class="math notranslate nohighlight">\(f\)</span> subject to the constraint.  If the curve <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> is a closed curve (like an ellipse or a circle), then the global maxima and minima must be among these local minima and maxima.</p>
+<p>This procedure will find all local minima and maxima of <span class="math notranslate nohighlight">\(f\)</span> subject to the constraint.  If the curve <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> is a closed curve (like an ellipse or a circle), then the global maxima and minima must be contained in these local minima and maxima.</p>
 <p>Note - in the stage where we are solving the equations for the unknowns, we often end up dividing by something.  When we do this, we <strong>always</strong> have to consider the possibility that the thing we are dividing by is zero.  So before dividing by, say <span class="math notranslate nohighlight">\(x\)</span>, we need to check what would happen if <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
 <section id="examples">
 <h3><span class="section-number">2.1.3.1. </span>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
-<p>Consider the example investigated graphically above <span class="math notranslate nohighlight">\(f(x,y) = x^2+y^2\)</span> with the constraint <span class="math notranslate nohighlight">\(g(x,y) = 5x^2/8 + 5y^2/8 -3xy/4 - 1= 0\)</span>.  We have</p>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 2.1 </span> (Local maxima and minima of <span class="math notranslate nohighlight">\(f(x,y) = x^2+y^2\)</span> subject to <span class="math notranslate nohighlight">\(g(x,y)=5x^2/8+5y^2/8-3xy/4-1=0\)</span>.)</p>
+<section class="example-content" id="proof-content">
+<p>:label: example:Lagrange_ex1</p>
+<p>Consider the example investigated graphically above: <span class="math notranslate nohighlight">\(f(x,y) = x^2+y^2\)</span> with the constraint <span class="math notranslate nohighlight">\(g(x,y) = 5x^2/8 + 5y^2/8 -3xy/4 - 1= 0\)</span>.  We have</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \nabla f &amp;= 2x \vec{i} + 2 y \vec{j}\\ 
@@ -638,7 +649,11 @@ document.write(`
 2x &amp;= \lambda \frac{5x-3y}{4}\\
 2y &amp;= \lambda \frac{5y-3x}{4}
 \end{align*}\]</div>
-<p>We use the first equation to solve for <span class="math notranslate nohighlight">\(\lambda\)</span>.  We can be confident that <span class="math notranslate nohighlight">\(5x-3y \neq 0\)</span> because if it were, the equation would imply <span class="math notranslate nohighlight">\(x=0\)</span> which in turn would imply <span class="math notranslate nohighlight">\(y=0\)</span>, and <span class="math notranslate nohighlight">\(g(0,0)=-1\)</span> which is not on the constraint.  So we have</p>
+<p>We use the first equation to solve for <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<ul class="simple">
+<li><p>To do this we will divide by <span class="math notranslate nohighlight">\(5x-3y\)</span>.  We need to consider the possibility that <span class="math notranslate nohighlight">\(5x-3y=0\)</span> before we can do so.  If <span class="math notranslate nohighlight">\(5x-3y=0\)</span>, then the first equation will give <span class="math notranslate nohighlight">\(x=0\)</span>.  Further, since we are assuming <span class="math notranslate nohighlight">\(5x-3y=0\)</span>, if <span class="math notranslate nohighlight">\(x=0\)</span> we also have <span class="math notranslate nohighlight">\(y=0\)</span>.  However, if <span class="math notranslate nohighlight">\(x=y=0\)</span>, then <span class="math notranslate nohighlight">\(g(0,0)=-1\)</span>. This contradicts the constraint <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>.  Thus we conclude that <span class="math notranslate nohighlight">\(5x-3y \neq 0\)</span>.</p></li>
+<li><p>Thus we can be confident that <span class="math notranslate nohighlight">\(5x-3y \neq 0\)</span>, and safely divide by it.  So we have</p></li>
+</ul>
 <div class="math notranslate nohighlight">
 \[
 \lambda = \frac{8x}{5x-3y}
@@ -658,8 +673,12 @@ document.write(`
 \frac{5x^2}{8} + \frac{5x^2}{8} \pm \frac{3x^2}{4} -1 &amp;= 0\\
 \Rightarrow \quad  \frac{5x^2 \pm 3x^2}{4} &amp;= 1
 \end{align*}\]</div>
-<p>with <span class="math notranslate nohighlight">\(\pm\)</span> being <span class="math notranslate nohighlight">\(+\)</span> if <span class="math notranslate nohighlight">\(x =-y\)</span> and <span class="math notranslate nohighlight">\(-\)</span> if <span class="math notranslate nohighlight">\(x=y\)</span>.
-So <span class="math notranslate nohighlight">\(2x^2 = 1\)</span> for <span class="math notranslate nohighlight">\(x=-y\)</span> or <span class="math notranslate nohighlight">\(x^2 = 2\)</span> for <span class="math notranslate nohighlight">\(x=y\)</span>.  The final points are
+<p>with <span class="math notranslate nohighlight">\(\pm\)</span> being <span class="math notranslate nohighlight">\(+\)</span> if <span class="math notranslate nohighlight">\(x =-y\)</span> and <span class="math notranslate nohighlight">\(-\)</span> if <span class="math notranslate nohighlight">\(x=y\)</span>.</p>
+<ul class="simple">
+<li><p>So <span class="math notranslate nohighlight">\(2x^2 = 1\)</span> for <span class="math notranslate nohighlight">\(x=-y\)</span>.  Then <span class="math notranslate nohighlight">\(x = \pm 1/\sqrt{2}\)</span> and <span class="math notranslate nohighlight">\(y=-x\)</span>.</p></li>
+<li><p>or <span class="math notranslate nohighlight">\(x^2 = 2\)</span> for <span class="math notranslate nohighlight">\(x=y\)</span>.  Then <span class="math notranslate nohighlight">\(x \pm \sqrt{2}\)</span> and <span class="math notranslate nohighlight">\(y = x\)</span>.</p></li>
+</ul>
+<p>The final points are
 <span class="math notranslate nohighlight">\((\sqrt{2}, \sqrt{2})\)</span>, <span class="math notranslate nohighlight">\((-\sqrt{2}, -\sqrt{2})\)</span>, <span class="math notranslate nohighlight">\((1/\sqrt{2}, -1/\sqrt{2})\)</span>, and <span class="math notranslate nohighlight">\((-1/\sqrt{2}, 1/\sqrt{2})\)</span>.  We have</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -669,8 +688,12 @@ f(1/\sqrt{2},-1/\sqrt{2}) &amp;= 1\\
 f(-1/\sqrt{2},-1/\sqrt{2}) &amp;= 1
 \end{align*}\]</div>
 </section>
+</div></section>
 <section id="second-example">
 <h3><span class="section-number">2.1.3.2. </span>Second Example<a class="headerlink" href="#second-example" title="Link to this heading">#</a></h3>
+<div class="proof example admonition" id="example:Lagrange_ex2">
+<p class="admonition-title"><span class="caption-number">Example 2.2 </span> (Finding local maxima/minima of <span class="math notranslate nohighlight">\(f(x,y)=x^2-y^2\)</span> subject to <span class="math notranslate nohighlight">\(g(x,y) = 5x^2/8 + 5y^2/8 - 3xy/4-1=0\)</span>.)</p>
+<section class="example-content" id="proof-content">
 <p>Consider the same constraint, but this time with</p>
 <div class="math notranslate nohighlight">
 \[f(x,y) = x^2-y^2\]</div>
@@ -729,7 +752,8 @@ f(3/2, 1/2) &amp;= (3/2)^2 - (1/2)^2\\
 f(-3/2, -1/2) &amp;= (-3/2)^2 - (-1/2)^2\\
 &amp;= 2
 \end{align*}\]</div>
-<p>For reference we plot the contours of <span class="math notranslate nohighlight">\(f\)</span> for <span class="math notranslate nohighlight">\(-2\)</span>, <span class="math notranslate nohighlight">\(-1\)</span>, <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, and <span class="math notranslate nohighlight">\(2\)</span> along with the constraint <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>.  The constraint is just tangent to the contours of <span class="math notranslate nohighlight">\(f(x,y)=-2\)</span> (the minimum) and <span class="math notranslate nohighlight">\(f(x,y)=2\)</span> (the maximum)</p>
+</section>
+</div><p>For reference we plot the contours of <span class="math notranslate nohighlight">\(f\)</span> for <span class="math notranslate nohighlight">\(-2\)</span>, <span class="math notranslate nohighlight">\(-1\)</span>, <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, and <span class="math notranslate nohighlight">\(2\)</span> along with the constraint <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>.  The constraint is just tangent to the contours of <span class="math notranslate nohighlight">\(f(x,y)=-2\)</span> (the minimum) and <span class="math notranslate nohighlight">\(f(x,y)=2\)</span> (the maximum)</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -806,33 +830,11 @@ f(-3/2, -1/2) &amp;= (-3/2)^2 - (-1/2)^2\\
 <ul class="simple">
 <li><p>if the curve <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> goes off to infinity, then it may be the case that the global minimum or global maximum is only in the limit at infinity.</p></li>
 <li><p>if the curve <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> ends abruptly (say we had the constraint above with the additional condition <span class="math notranslate nohighlight">\(|x|\leq 1\)</span>), then the global maximum or minimum may occur at the end points.</p></li>
+<li><p>We have implicitly assumed <span class="math notranslate nohighlight">\(\nabla f \neq \vec{0}\)</span> when we made the argument about contours and the constraint being tangent.  The method still works if <span class="math notranslate nohighlight">\(\nabla f = \vec{0}\)</span> and finds a local maximum/minimum, but the contour and constraint may cross at such a point.  (see next section).</p></li>
 </ul>
 </section>
-<section id="further-application">
-<h2><span class="section-number">2.1.6. </span>Further application<a class="headerlink" href="#further-application" title="Link to this heading">#</a></h2>
-<p>In the argument above, we implicitly assumed that given a contour of <span class="math notranslate nohighlight">\(f\)</span>, the values of <span class="math notranslate nohighlight">\(f\)</span> on one side of the contour are larger and on the other side they are smaller.</p>
-<p>It could be that the contours on both sides are smaller or on both sides are larger.  For example, we might have</p>
-<div class="math notranslate nohighlight">
-\[
-f(x,y) = \sqrt{x^2+y^2} - (x^2+y^2)
-\]</div>
-<p>This increases as the distance from the origin increases until that distance is <span class="math notranslate nohighlight">\(\sqrt{x^2+y^2}=1/2\)</span>, at which point it begins to decrease again.  This is easier to see in polar coordinates.  If we set <span class="math notranslate nohighlight">\(r = \sqrt{x^2+y^2}\)</span> then  <span class="math notranslate nohighlight">\(f(x,y) = r-r^2\)</span>, which has its maximum at <span class="math notranslate nohighlight">\(r=1/2\)</span></p>
-<p>Luckily in this case the method still works.  We can show that where <span class="math notranslate nohighlight">\(\sqrt{x^2+y^2} = 1/2\)</span> the gradient of <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\vec{0}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\nabla f(x,y) &amp;= \frac{\partial \sqrt{x^2+y^2} - (x^2+y^2)}{\partial x} \vec{i} + \frac{ \partial \sqrt{x^2+y^2} - (x^2+y^2)}{ \partial y} \vec{j}\\
-&amp;= \left(\frac{1}{2}\frac{2x}{\sqrt{x^2+y^2}} - 2x \right) \vec{i} + \left(\frac{1}{2}\frac{2y}{\sqrt{x^2+y^2}} - 2y \right) \vec{j}\\
-\end{align*}\]</div>
-<p>As <span class="math notranslate nohighlight">\(\sqrt{x^2+y^2} = 1/2\)</span>, this becomes</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\nabla f(x,y) &amp;= \left(\frac{x}{1/2} - 2x \right)\vec{i} + \left(\frac{y}{1/2} - 2y \right) \vec{j}\\
-&amp;= \vec{0}
-\end{align*}\]</div>
-<p>And so we would still find such a point by setting <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span>, where in this case we would find <span class="math notranslate nohighlight">\(\lambda = 0\)</span>.</p>
-</section>
 <section id="self-test">
-<h2><span class="section-number">2.1.7. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.1.6. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Consider the constraint <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> and the given function <span class="math notranslate nohighlight">\(f(x,y)\)</span>.  Find <span class="math notranslate nohighlight">\(\nabla f\)</span> and <span class="math notranslate nohighlight">\(\nabla g\)</span>.  Find the equations from <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span> and <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>.  Solve for all points <span class="math notranslate nohighlight">\((x,y)\)</span> satisfying this relation.  Find <span class="math notranslate nohighlight">\(f(x,y)\)</span> at each point.</p></li>
 </ol>
@@ -1190,6 +1192,15 @@ Values of <span class="math notranslate nohighlight">\(f\)</span>:</label><div c
         <p class="prev-next-title"><span class="section-number">2. </span>Derivatives in higher dimension and their applications</p>
       </div>
     </a>
+    <a class="right-next"
+       href="Lagrange_Extensions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.2. </span>Extensions to Lagrange Multipliers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1215,8 +1226,7 @@ Values of <span class="math notranslate nohighlight">\(f\)</span>:</label><div c
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizations-to-higher-dimension">2.1.4. Generalizations to higher dimension</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caveats">2.1.5. Caveats</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-application">2.1.6. Further application</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.1.7. Self-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.1.6. Self-test</a></li>
 </ul>
   </nav></div>
 
