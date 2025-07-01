@@ -21,6 +21,10 @@ chapters:
     sections: 
     - file: Differential_Calculus/Lagrange
     - file: Differential_Calculus/Lagrange_Extensions
+  - file: Integral_Calculus/IntegralIntro
+    sections: 
+    - file: Integral_Calculus/MultipleIntegrals
+    - file: Integral_Calculus/MultipleIntegralsDefineRegion
     
 #- file: Laplace
 # - file: intro

@@ -1,0 +1,752 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3.1. Multiple Integrals &#8212; The Laplace Transform and Differential Equations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Integral_Calculus/MultipleIntegrals';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.2. Systematically finding the terminals" href="MultipleIntegralsDefineRegion.html" />
+    <link rel="prev" title="3. Integral Calculus" href="IntegralIntro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="The Laplace Transform and Differential Equations - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Laplace Transform and Differential Equations - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Laplace Transform
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceExtra.html">1.9. Optional Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">2.1. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">2.2. Extensions to Lagrange Multipliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="IntegralIntro.html">3. Integral Calculus</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.1. Multiple Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MultipleIntegralsDefineRegion.html">3.2. Systematically finding the terminals</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2FIntegral_Calculus/MultipleIntegrals.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Integral_Calculus/MultipleIntegrals.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Multiple Integrals</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder-of-1d-integration-and-riemann-sums">3.1.1. Reminder of 1D integration and Riemann sums</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#riemann-sums">3.1.1.1. Riemann sums</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-integration">3.1.2. 2D integration</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="multiple-integrals">
+<h1><span class="section-number">3.1. </span>Multiple Integrals<a class="headerlink" href="#multiple-integrals" title="Link to this heading">#</a></h1>
+<section id="reminder-of-1d-integration-and-riemann-sums">
+<h2><span class="section-number">3.1.1. </span>Reminder of 1D integration and Riemann sums<a class="headerlink" href="#reminder-of-1d-integration-and-riemann-sums" title="Link to this heading">#</a></h2>
+<p>In one dimension, an integral measures the total amount of some quantity that depends on one variable (usually <span class="math notranslate nohighlight">\(x\)</span>).  We can interpret this as the area under a curve (treating negative values as giving negative area), but its meaning does not have to be area.  For example, if <span class="math notranslate nohighlight">\(f(t)\)</span> is income rate (dollars per day) of a company at time <span class="math notranslate nohighlight">\(t\)</span> (measured in days) then the `area’ under the curve of <span class="math notranslate nohighlight">\(f\)</span> is the total income (in this case the vertical axis is in dollars per day and the horizontal axis is days, so the area has units of dollars).</p>
+<section id="riemann-sums">
+<h3><span class="section-number">3.1.1.1. </span>Riemann sums<a class="headerlink" href="#riemann-sums" title="Link to this heading">#</a></h3>
+<p>The analytic integration techniques we have learned are very useful for calculating integrals.  However, Riemann sums are important for understanding the physical interpretation of an integral.  When we go to 2 or more dimensions, having this understanding will be very helpful when we try to determine how to set up the terminals for an integral.</p>
+<p>Let’s consider a function <span class="math notranslate nohighlight">\(f(x)\)</span>.  We want to know the area under the curve from <span class="math notranslate nohighlight">\(x=a\)</span> to <span class="math notranslate nohighlight">\(x=b\)</span>.  We divide the interval into subintervals with</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x_0 &amp;= a \\
+  x_1 &amp;= x_0 + \Delta x\\
+  &amp;\vdots\\
+  x_{i+1} &amp;= x_i + \Delta x\\
+  &amp; \vdots\\
+  x_{N-1} &amp;= b - \Delta x\\
+  x_N&amp;=b
+\end{align*}\]</div>
+<p>and we approximate the function as constant in each subinterval, equal to <span class="math notranslate nohighlight">\(f(x_i)\)</span> and sum up the area under this approximation.</p>
+<p>In the figure below, we take <span class="math notranslate nohighlight">\(a=1\)</span> and <span class="math notranslate nohighlight">\(b=3\)</span>.  We see that as <span class="math notranslate nohighlight">\(\Delta x\)</span> shrinks, the total white region below the curve and blue region above the curve both shrink to zero, so this sum will approach the area in the small <span class="math notranslate nohighlight">\(\Delta x\)</span> limit.  (in fact, halving the step size approximately halves the error).</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">graphics_toolkit</span><span class="p">(</span><span class="s">&quot;gnuplot&quot;</span><span class="p">)</span> <span class="c"># gnuplot is currently the only way I can get </span>
+                            <span class="c"># matlab/octave to display using this format</span>
+                            <span class="c"># However, it is not ideal - there is no control over</span>
+                            <span class="c"># font sizes, line widths, or ability to interact</span>
+                            <span class="c"># with the plot.</span>
+
+<span class="n">a</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">b</span><span class="p">=</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">dx</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span>
+<span class="n">x</span> <span class="p">=</span> <span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">dx</span><span class="p">:</span><span class="n">b</span><span class="p">];</span>
+<span class="n">f</span> <span class="p">=</span> <span class="mi">1</span><span class="o">+</span><span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+
+
+
+<span class="n">high_res_x</span> <span class="p">=</span> <span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="n">b</span><span class="p">];</span>
+<span class="n">high_res_f</span> <span class="p">=</span> <span class="mi">1</span><span class="o">+</span><span class="nb">cos</span><span class="p">(</span><span class="n">high_res_x</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">for</span> <span class="nb">index</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+   <span class="nb">area</span> <span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="nb">index</span><span class="p">:</span><span class="nb">index</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="nb">index</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="nb">index</span><span class="p">)],</span> <span class="s">&#39;FaceColor&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;FaceAlpha&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s">&#39;EdgeColor&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;EdgeAlpha&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="nb">hold</span> <span class="n">on</span>
+<span class="k">end</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">high_res_x</span><span class="p">,</span> <span class="n">high_res_f</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Area under the curve using a a larger step size dx = 1/4&#39;</span><span class="p">)</span>
+
+<span class="n">dx</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">;</span>
+<span class="n">x</span> <span class="p">=</span> <span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">dx</span><span class="p">:</span><span class="n">b</span><span class="p">];</span>
+<span class="n">f</span> <span class="p">=</span> <span class="mi">1</span><span class="o">+</span><span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="k">for</span> <span class="nb">index</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+   <span class="nb">area</span> <span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="nb">index</span><span class="p">:</span><span class="nb">index</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="nb">index</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="nb">index</span><span class="p">)],</span> <span class="s">&#39;FaceColor&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;FaceAlpha&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s">&#39;EdgeColor&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;EdgeAlpha&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="nb">hold</span> <span class="n">on</span>
+<span class="k">end</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">high_res_x</span><span class="p">,</span> <span class="n">high_res_f</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Area under the curve using step size dx = 1/8&#39;</span><span class="p">)</span>
+
+<span class="n">dx</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">16</span><span class="p">;</span>
+<span class="n">x</span> <span class="p">=</span> <span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">dx</span><span class="p">:</span><span class="n">b</span><span class="p">];</span>
+<span class="n">f</span> <span class="p">=</span> <span class="mi">1</span><span class="o">+</span><span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="k">for</span> <span class="nb">index</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+   <span class="nb">area</span> <span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="nb">index</span><span class="p">:</span><span class="nb">index</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="nb">index</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="nb">index</span><span class="p">)],</span> <span class="s">&#39;FaceColor&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;FaceAlpha&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s">&#39;EdgeColor&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;EdgeAlpha&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="nb">hold</span> <span class="n">on</span>
+<span class="k">end</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">high_res_x</span><span class="p">,</span> <span class="n">high_res_f</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Area under the curve using a smaller step size dx = 1/16&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/d067534889bb115028282dcf87d111e9ccc552545a4c5fd03b0dd0006a0ca089.png" src="../_images/d067534889bb115028282dcf87d111e9ccc552545a4c5fd03b0dd0006a0ca089.png" />
+</div>
+</div>
+<p>If we take <span class="math notranslate nohighlight">\(x_0 = 1\)</span>, <span class="math notranslate nohighlight">\(x_1 = 1+\Delta x\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(x_i = 1 + i \Delta x\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(x_N = 3\)</span>, then we can write the area of the rectangles as</p>
+<div class="math notranslate nohighlight">
+\[
+\int_1^3 f(x) \, dx \approx \sum_{i=0}^{N-1} f(x_i) \Delta x
+\]</div>
+<p>We will write this sum in a slightly different manner which will help us avoid having to explicitly include <span class="math notranslate nohighlight">\(N\)</span> in the expression.  Once the region is divided up we write it as</p>
+<div class="math notranslate nohighlight">
+\[
+\int_1^3 f(x) \, dx \approx \sum_{1\leq x_i &lt; 3} f(x_i) \Delta x
+\]</div>
+<p>This uses the same values of <span class="math notranslate nohighlight">\(x_i\)</span>, but it makes it clearer how the terminals of the integral correspond to the limits of the summation.</p>
+</section>
+</section>
+<section id="d-integration">
+<h2><span class="section-number">3.1.2. </span>2D integration<a class="headerlink" href="#d-integration" title="Link to this heading">#</a></h2>
+<p>In two dimensions an integral again measures the total amount of some quantity, but this time it depends on two variables.  Typically the region we integrate over is not something as simple as an interval like we had for the 1D case.  This will take some more consideration to handle the terminals of our integrals.</p>
+<p>SKETCH</p>
+<p>Consider the region <span class="math notranslate nohighlight">\(S\)</span> bounded between the curves
+<span class="math notranslate nohighlight">\(y = x^2-1\)</span> and <span class="math notranslate nohighlight">\(y = 3(x^2-1)\)</span>.  Both of these curves are <span class="math notranslate nohighlight">\(0\)</span> at <span class="math notranslate nohighlight">\(x = \pm 1\)</span>, and the region of interest occurs between these values of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Let us imagine that this marks out a region of land where a solar farm will be built.  Due to the slope of the land, we assume that the amount of solar energy collected per unit area is given by a function <span class="math notranslate nohighlight">\(f(x,y)\)</span>.  We would like to determine the total amount of solar energy to be collected from this entire parcel of land.</p>
+<p>To approximate this, we will divide the region into many small rectangles with sides of length <span class="math notranslate nohighlight">\(\Delta x\)</span> and <span class="math notranslate nohighlight">\(\Delta y\)</span>.  Based on the area of a rectangle and the value of the function at one point <span class="math notranslate nohighlight">\((x_*,y_*)\)</span> in the rectangle, we approximate the solar energy collected from the rectangle as <span class="math notranslate nohighlight">\(f(x_*, y_*) \Delta x \Delta y\)</span>.  If we add up the values for all rectangles in the region, we anticipate that we will get a reasonable approximation to the total of solar energy.  For simplicity, we take <span class="math notranslate nohighlight">\((x_*,y_*)\)</span> to be the bottom left corner of the rectangle.</p>
+<p>As this can be thought of as the height <span class="math notranslate nohighlight">\(f(x,y)\)</span> (in units of solar energy per unit area) times the area <span class="math notranslate nohighlight">\(\Delta x \Delta y\)</span>, of each rectangle, we can think of this as calculating the volume under the surface <span class="math notranslate nohighlight">\(f(x,y)\)</span> over the region <span class="math notranslate nohighlight">\(S\)</span>.  We will call this volume <span class="math notranslate nohighlight">\(\iint_S f(x,y) \, dS\)</span>.</p>
+<p>We can write</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_S f(x,y) \, dS \approx \sum_{(x_i,y_j) \in S} f(x_i, y_j) \Delta x \Delta y
+\]</div>
+<p>We look for a systematic way to add up the volumes over each rectangle.</p>
+<ul class="simple">
+<li><p>We could choose to look at each column in turn and add its values up and then add up these results.</p></li>
+<li><p>We could choose to look at each row in turn and add its values up and then add up these results.</p></li>
+</ul>
+<p>By looking at the shape of <span class="math notranslate nohighlight">\(S\)</span>, you might spot that something awkward could happen in the second case (for <span class="math notranslate nohighlight">\(y&gt;-1\)</span>).  We will focus initially on the first option.</p>
+<p><strong>Sketch showing division, with <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y_j\)</span> labelled.</strong></p>
+<p>In this case, what we are doing is</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_S f(x,y)  \approx \sum_{-1 \leq x_i &lt; 1} \left[ \sum_{3x_i^2-3 \leq y_j \leq x_i^2-1} f(x,y) \, \Delta y \, \Delta x \right]
+\]</div>
+<p>By factoring out <span class="math notranslate nohighlight">\(\Delta x\)</span> we get:</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_S f(x,y) \, dS \approx \sum_{-1 \leq x_i &lt; 1} \left[ \sum_{3x_i^2-3 \leq y_j \leq x_i^2-1} f(x_i,y_j) \, \Delta y \right] \, \Delta x 
+\]</div>
+<p>We now shrink <span class="math notranslate nohighlight">\(\Delta y\)</span> to <span class="math notranslate nohighlight">\(0\)</span>.  The inner sum becomes <span class="math notranslate nohighlight">\(\int_{3x_i^2-3}^{x_i^2-1} f(x_i,y) \, dy\)</span>.  So we have</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_S f(x,y) \, dS \approx \sum_{-1 \leq x_i &lt; 1} \left[ \int_{3x_i^2-3}^{x_i^2-1} f(x_i,y) \, dy \right] \, \Delta x 
+\]</div>
+<p>Now taking <span class="math notranslate nohighlight">\(\Delta x\)</span> to <span class="math notranslate nohighlight">\(0\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_S f(x,y) \, dS = \int_{-1}^{1} \left[ \int_{3x^2-3}^{x^2-1} f(x,y) \, dy \right] \, dx 
+\]</div>
+<p>which we often write without the brackets</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_S f(x,y) \, dS = \int_{-1}^{1} \int_{3x^2-3}^{x^2-1} f(x,y) \, dy \, dx 
+\]</div>
+<p>and we say that in this case <span class="math notranslate nohighlight">\(dS = dy \, dx\)</span>.</p>
+<p>Had we chosen the opposite order of doing our sums (that is, looking at rows) we would have encountered a little more difficulty.</p>
+<p>For each <span class="math notranslate nohighlight">\(y_j&lt;-1\)</span> it would be reasonable to sum up the volumes from the left-most value of <span class="math notranslate nohighlight">\(x\)</span> to the right-most value of <span class="math notranslate nohighlight">\(x\)</span>.  However, for <span class="math notranslate nohighlight">\(y_j&gt;-1\)</span> there would be two separate regions to consider.</p>
+<p>What we will do in this case is divide up the original region <span class="math notranslate nohighlight">\(S\)</span> into three subregions:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+S_1 &amp;= \{ (x,y) \in S| -3&lt; y &lt; -1\}\\
+S_2 &amp;= \{ (x,y) \in S| -1 \leq y \leq 0, x&lt;0\}\\
+S_3 &amp;= \{ (x,y) \in S| -1 \leq y \leq 0, x&gt;0\}
+\end{align*}\]</div>
+<p>and our overall integral becomes</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\iint_S f(x,y) \, dS &amp;= \iint_{S_1} f(x,y) \, dS_1 + \iint_{S_2} f(x,y) \, dS_2 + \iint_{S_3} f(x,y) \, dS_3\\
+&amp;\approx  \quad \sum_{(x_i,y_j)\in S_1} f(x_i,y_j) \, \Delta x \, \Delta y\\
+&amp;\qquad + \sum_{(x_i,y_j)\in S_2 }f(x_i,y_j)\, \Delta x \, \Delta y\\
+&amp;\qquad  + \sum_{(x_i,y_j) \in S_3} f(x_i,y_j) \, \Delta x \, \Delta y
+\end{align*}\]</div>
+<p>To do our sums for each row (that is, keeping <span class="math notranslate nohighlight">\(y_j\)</span> fixed, but varying <span class="math notranslate nohighlight">\(x_i\)</span>) we will need to determine the left and right boundary of each region as a function of <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>The boundaries are the parabolas <span class="math notranslate nohighlight">\(y = x^2-1\)</span> and <span class="math notranslate nohighlight">\(y= 3x^2-3\)</span>.  We rewrite these as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+y &amp;= x^2-1\\
+\Rightarrow y+1 &amp;= x^2\\
+\Rightarrow x &amp;= \pm \sqrt{y+1}\\[12pt]
+y &amp;= 3x^2-3\\
+\Rightarrow y+3 &amp;= 3x^2\\
+\Rightarrow \frac{y+3}{3} &amp;= x^2\\
+\Rightarrow x &amp;= \pm \sqrt{\frac{y}{3} + 1}
+\end{align*}\]</div>
+<ul class="simple">
+<li><p>For <span class="math notranslate nohighlight">\(S_1\)</span>, we have <span class="math notranslate nohighlight">\(-\sqrt{\frac{y}{3} + 1} \leq x \leq \sqrt{\frac{y}{3} + 1}\)</span>.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(S_2\)</span>, we have <span class="math notranslate nohighlight">\(-\sqrt{\frac{y}{3} + 1} \leq x \leq -\sqrt{y+1}\)</span>.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(S_3\)</span>, we have <span class="math notranslate nohighlight">\(\sqrt{y + 1} \leq x \leq \sqrt{\frac{y}{3} + 1}\)</span>.</p></li>
+</ul>
+<p>So we write our approximate volume as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\iint_S f(x,y) \, dS \approx \quad &amp; \sum_{-3 \leq y_j &lt; -1} \left[ \sum_{-\sqrt{\frac{y_j}{3} + 1} \leq x_i &lt; \sqrt{\frac{y_j}{3} + 1}} f(x_i, y_j) \,\Delta x \,\Delta y \right]\\
+&amp;+\sum_{-1 \leq y_j&lt;0} \left[ \sum_{-\sqrt{\frac{y_j}{3} + 1} \leq x_i &lt;-\sqrt{y_j+1}}f(x_i,y_j)\,\Delta x \,\Delta y \right]\\
+&amp;+  \sum_{-1 \leq y_j &lt; 0} \left[ \sum_{\sqrt{y_j + 1} \leq x_i &lt; \sqrt{\frac{y_j}{3} + 1}} f(x_i, y_j) \,\Delta x \,\Delta y \right]
+\end{align*}\]</div>
+<p>Factoring <span class="math notranslate nohighlight">\(\Delta y\)</span> out of the inner sums and taking <span class="math notranslate nohighlight">\(\Delta x \to 0\)</span> each of the inner sums becomes an integral:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\iint_S f(x,y) \, dS \approx \quad &amp; \sum_{-3 \leq y_j &lt; -1} \left[ \int_{-\sqrt{\frac{y_j}{3} + 1}}^{\sqrt{\frac{y_j}{3} + 1}} f(x, y_j) \, dx  \right]\, \Delta y\\
+&amp;+\sum_{-1 \leq y_j&lt;0} \left[ \int_{-\sqrt{\frac{y_j}{3} + 1}}^{-\sqrt{y_j+1}}f(x,y_j)\, dx \right]\, \Delta y\\
+&amp;+  \sum_{-1 \leq y_j &lt; 0} \left[ \int_{\sqrt{y_j + 1}} ^{\sqrt{\frac{y_j}{3} + 1}} f(x, y_j) \,dx \right]\,\Delta y
+\end{align*}\]</div>
+<p>Finally taking <span class="math notranslate nohighlight">\(\Delta y \to 0\)</span> gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\iint_S f(x,y) \, dS &amp;= \iint_{S_1} f(x,y) \, dS_1 + \iint_{S_2} f(x,y) \, dS_2 + \iint_{S_3} f(x,y) \, dS_3\\
+ &amp; \quad =\int_{-3}^{-1} \int_{-\sqrt{\frac{y}{3} + 1}}^{\sqrt{\frac{y}{3} + 1}} f(x, y) \, dx  \, dy\\
+&amp;\qquad+\int_{-1}^{0}  \int_{-\sqrt{\frac{y}{3} + 1}}^{-\sqrt{y+1}}f(x,y)\, dx \, dy\\
+&amp;\qquad+  \int_{-1}^{0}  \int_{\sqrt{y + 1}} ^{\sqrt{\frac{y}{3} + 1}} f(x, y) \,dx \, dy
+\end{align*}\]</div>
+<p>We can think of</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "octave"
+        },
+        kernelOptions: {
+            name: "octave",
+            path: "./Integral_Calculus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'octave'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="IntegralIntro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Integral Calculus</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="MultipleIntegralsDefineRegion.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Systematically finding the terminals</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder-of-1d-integration-and-riemann-sums">3.1.1. Reminder of 1D integration and Riemann sums</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#riemann-sums">3.1.1.1. Riemann sums</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-integration">3.1.2. 2D integration</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LaTrobe University MAPS staff (present and past)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
