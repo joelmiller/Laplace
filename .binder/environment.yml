@@ -4,10 +4,10 @@ channels:
 dependencies:
   - python=3.11
   - jupyterlab
-  - notebook
+  #- notebook
   - xeus-octave        # the Octave kernel (kernelspec name: xoctave)
-  - jupyter-book       # optional; useful if if ever build inside Binder
-  - nbgitpuller        # optional convenience
+  #- jupyter-book       # optional; useful if if ever build inside Binder
+  #- nbgitpuller        # optional convenience
   # interactive plots with the 'plotly' toolkit:
   - plotly
   - ipywidgets
