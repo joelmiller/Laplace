@@ -1,11 +1,16 @@
 #!/bin/bash
 set -e
 
-# Start a virtual X server so xeus-octave's renderer works in headless Binder
 export DISPLAY=:99
-Xvfb :99 -screen 0 1280x1024x24 +extension GLX +render -noreset >/dev/null 2>&1 &
 
-# Helpful in software rendering contexts
+# Start Xvfb if available; don’t crash if it isn’t
+if command -v Xvfb >/dev/null 2>&1; then
+  Xvfb :99 -screen 0 1280x1024x24 +extension GLX +render -noreset >/dev/null 2>&1 &
+else
+  echo "Warning: Xvfb not found; proceeding without virtual X."
+fi
+
+# Optional: hint to software GL if present
 export MESA_GL_VERSION_OVERRIDE=3.3
 
 exec "$@"
