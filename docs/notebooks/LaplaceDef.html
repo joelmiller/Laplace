@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -426,7 +426,8 @@ document.write(`
 <p>The Laplace Transform is an operation that converts a function <span class="math notranslate nohighlight">\(f(t)\)</span> of (non-negative) time <span class="math notranslate nohighlight">\(t \geq 0\)</span> into a function <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> of a new variable <span class="math notranslate nohighlight">\(s\)</span>  The properties of the Laplace Transform mean that if we take the Laplace Transform of both sides of the <em>differential equation</em> for <span class="math notranslate nohighlight">\(f(t)\)</span>, Equation <a class="reference internal" href="LaplaceIntro.html#equation-eq-basic-driven-ode">(1.1)</a>, then the result is a new <em>algebraic equation</em> for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.</p>
 <p>Once we solve this algebraic equation and find <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> we will be able to invert the transform to find <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
 <figure class="align-default" id="fig-laplace-solution-diagram">
-<a class="reference internal image-reference" href="../_images/Laplace_solution_diagram.png"><img alt="../_images/Laplace_solution_diagram.png" src="../_images/Laplace_solution_diagram.png" style="height: 250px;" /></a>
+<a class="reference internal image-reference" href="../_images/Laplace_solution_diagram.png"><img alt="../_images/Laplace_solution_diagram.png" src="../_images/Laplace_solution_diagram.png" style="height: 250px;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Given a constant coefficient linear differential equation for <span class="math notranslate nohighlight">\(f(t)\)</span>, we can use methods of Calculus to find <span class="math notranslate nohighlight">\(f(t)\)</span> directly, or we can use the Laplace Transform to convert the differential equation into an Algebraic equation for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.  Then we can solve the Algebraic equation for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> and then invert the Laplace Transform to find <span class="math notranslate nohighlight">\(f(t)\)</span>.</span><a class="headerlink" href="#fig-laplace-solution-diagram" title="Link to this image">#</a></p>
 </figcaption>
@@ -572,7 +573,8 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 \]</div>
 <p>We now integrate by parts.  In MAT1002, an optional tabular approach was taught for integration by parts.</p>
 <figure class="align-default" id="fig-tabular-int-by-parts">
-<a class="reference internal image-reference" href="../_images/int_by_parts_tabular_cos4t.png"><img alt="../_images/int_by_parts_tabular_cos4t.png" src="../_images/int_by_parts_tabular_cos4t.png" style="height: 150px;" /></a>
+<a class="reference internal image-reference" href="../_images/int_by_parts_tabular_cos4t.png"><img alt="../_images/int_by_parts_tabular_cos4t.png" src="../_images/int_by_parts_tabular_cos4t.png" style="height: 150px;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">The tabular approach for integrating <span class="math notranslate nohighlight">\(\cos( 4t) e^{-st}\)</span> by parts.</span><a class="headerlink" href="#fig-tabular-int-by-parts" title="Link to this image">#</a></p>
 </figcaption>
@@ -652,7 +654,8 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
 \]</div>
 <p>We now integrate by parts.  It proceeds very much as in the case of <span class="math notranslate nohighlight">\(\omega=4\)</span>:</p>
 <figure class="align-default" id="fig-tabular-int-by-parts-general">
-<a class="reference internal image-reference" href="../_images/int_by_parts_tabular_cos_omega_t.png"><img alt="../_images/int_by_parts_tabular_cos_omega_t.png" src="../_images/int_by_parts_tabular_cos_omega_t.png" style="height: 150px;" /></a>
+<a class="reference internal image-reference" href="../_images/int_by_parts_tabular_cos_omega_t.png"><img alt="../_images/int_by_parts_tabular_cos_omega_t.png" src="../_images/int_by_parts_tabular_cos_omega_t.png" style="height: 150px;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">The tabular approach for integrating <span class="math notranslate nohighlight">\(\cos(\omega t) e^{-st}\)</span> by parts.</span><a class="headerlink" href="#fig-tabular-int-by-parts-general" title="Link to this image">#</a></p>
 </figcaption>
@@ -696,16 +699,16 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "octave"
+            mode: "xoctave"
         },
         kernelOptions: {
-            name: "octave",
+            name: "xoctave",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'octave'</script>
+    <script>kernelName = 'xoctave'</script>
 
                 </article>
               

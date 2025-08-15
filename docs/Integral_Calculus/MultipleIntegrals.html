@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -438,10 +438,10 @@ x_0 &amp;= a \\
 <p>and we approximate the function as constant in each subinterval, equal to <span class="math notranslate nohighlight">\(f(x_i)\)</span> and sum up the area under this approximation.</p>
 <p>In the figure below, we take <span class="math notranslate nohighlight">\(a=1\)</span> and <span class="math notranslate nohighlight">\(b=3\)</span>.  We see that as <span class="math notranslate nohighlight">\(\Delta x\)</span> shrinks, the total white region below the curve and blue region above the curve both shrink to zero, so this sum will approach the area in the small <span class="math notranslate nohighlight">\(\Delta x\)</span> limit.  (in fact, halving the step size approximately halves the error).</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">graphics_toolkit</span><span class="p">(</span><span class="s">&quot;gnuplot&quot;</span><span class="p">)</span> <span class="c"># gnuplot is currently the only way I can get </span>
@@ -635,16 +635,16 @@ y &amp;= 3x^2-3\\
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "octave"
+            mode: "xoctave"
         },
         kernelOptions: {
-            name: "octave",
+            name: "xoctave",
             path: "./Integral_Calculus"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'octave'</script>
+    <script>kernelName = 'xoctave'</script>
 
                 </article>
               

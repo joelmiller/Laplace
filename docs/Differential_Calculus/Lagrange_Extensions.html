@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -488,10 +488,10 @@ y &amp;= \pm \frac{1}{2\sqrt{2}}
 </section>
 </div><p>For reference, we plot the constraint in red and the contours of <span class="math notranslate nohighlight">\(f\)</span>.  The ones corresponding to local minima and maxima are in magenta.  The constraint crosses the contour <span class="math notranslate nohighlight">\(f(x,y)=1/2\)</span> without being tangent, but on this contour <span class="math notranslate nohighlight">\(\nabla f=\vec{0}\)</span>, so we still have <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span> where <span class="math notranslate nohighlight">\(\lambda = 0\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">graphics_toolkit</span><span class="p">(</span><span class="s">&quot;gnuplot&quot;</span><span class="p">)</span> <span class="c"># gnuplot is currently the only way I can get </span>
@@ -535,9 +535,9 @@ y &amp;= \pm \frac{1}{2\sqrt{2}}
 
 
 <span class="n">r</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
-<span class="n">plot3</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">r</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">+</span><span class="p">.</span><span class="mi">00075</span><span class="p">,</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">)</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">r</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">+</span><span class="p">.</span><span class="mi">00075</span><span class="p">,</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">)</span>
 <span class="n">r</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span>
-<span class="n">plot3</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">r</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">+</span><span class="p">.</span><span class="mi">00075</span><span class="p">,</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">)</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">r</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">+</span><span class="p">.</span><span class="mi">00075</span><span class="p">,</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">)</span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">constraint_x</span><span class="p">,</span> <span class="n">constraint_y</span><span class="p">,</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">constraint_x</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">constraint_y</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">constraint_x</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">constraint_y</span><span class="o">.^</span><span class="mi">2</span><span class="p">),</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;The values of f(x,y) where g(x,y)=0&#39;</span><span class="p">)</span> <span class="c">#plot values on the constraint</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
@@ -568,16 +568,16 @@ y &amp;= \pm \frac{1}{2\sqrt{2}}
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "octave"
+            mode: "xoctave"
         },
         kernelOptions: {
-            name: "octave",
+            name: "xoctave",
             path: "./Differential_Calculus"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'octave'</script>
+    <script>kernelName = 'xoctave'</script>
 
                 </article>
               

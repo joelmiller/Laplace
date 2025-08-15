@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -446,10 +446,10 @@ document.write(`
 <p>To help visualize this, we use a 2D plot with the points where <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> in red and contours of <span class="math notranslate nohighlight">\(f\)</span> in dashed blue.  The contour having the largest value on the constraint and the contour with the minimum value are shown in solid magenta.</p>
 <p>We also plot the corresponding curves of constant <span class="math notranslate nohighlight">\(f\)</span> in a 3D plot in blue and the values of <span class="math notranslate nohighlight">\(f\)</span> at the points where <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> in red.  In dash-dot red in the <span class="math notranslate nohighlight">\(xy\)</span> plane, we plot the constraint <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">graphics_toolkit</span><span class="p">(</span><span class="s">&quot;gnuplot&quot;</span><span class="p">)</span> <span class="c"># gnuplot is currently the only way I can get </span>
@@ -496,7 +496,7 @@ document.write(`
     <span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="nb">plot</span><span class="p">(</span><span class="n">radius</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">radius</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">)</span>
     <span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">plot3</span><span class="p">((</span><span class="n">radius</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="p">(</span><span class="n">radius</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">radius</span>^<span class="mi">2</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">)),</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">)</span>
+    <span class="n">plot3</span><span class="p">((</span><span class="n">radius</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="p">(</span><span class="n">radius</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">radius</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">)),</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">)</span>
     <span class="nb">hold</span> <span class="n">on</span>
 <span class="k">endfor</span>
 
@@ -504,7 +504,7 @@ document.write(`
     <span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="nb">plot</span><span class="p">(</span><span class="n">radius</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">radius</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">)</span>
     <span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">plot3</span><span class="p">((</span><span class="n">radius</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="p">(</span><span class="n">radius</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">radius</span>^<span class="mi">2</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">)),</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">plot3</span><span class="p">((</span><span class="n">radius</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="p">(</span><span class="n">radius</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">radius</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">)),</span> <span class="s">&#39;Color&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">)</span>
 <span class="k">endfor</span>
 
 <span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -532,10 +532,10 @@ document.write(`
 <p>This is not coincidence.  It is most easily seen by looking at a contour of <span class="math notranslate nohighlight">\(f\)</span> that intersects the constraint curve, and is not tangent to the constraint curve.  Typically, to one side of the contour are contours corresponding to larger values of <span class="math notranslate nohighlight">\(f\)</span> while to the other side are contours corresponding to smaller values of <span class="math notranslate nohighlight">\(f\)</span>.  Since the constraint crosses the contour of <span class="math notranslate nohighlight">\(f\)</span>, this means that to one side it encounters larger values of <span class="math notranslate nohighlight">\(f\)</span> and to the other side it encounters smaller values.</p>
 <p>To illustrate this, we plot the constraint again with the contours <span class="math notranslate nohighlight">\(f(x,y)=1\)</span> (the minimum) <span class="math notranslate nohighlight">\(f(x,y)=1.5^2\)</span> (an intermediate value), and <span class="math notranslate nohighlight">\(f(x,y)=4\)</span> (the maximum).  At the intersections of the contours and <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> we plot <span class="math notranslate nohighlight">\(\nabla g\)</span> and <span class="math notranslate nohighlight">\(\nabla f\)</span>.  We will be particularly interested in the intersections of <span class="math notranslate nohighlight">\(f(x,y)=1.5^2\)</span> and <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> to see how we can tell they are not local maxima or minima.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">graphics_toolkit</span><span class="p">(</span><span class="s">&quot;gnuplot&quot;</span><span class="p">)</span> <span class="c"># gnuplot is currently the only way I can get </span>
@@ -760,10 +760,10 @@ f(-3/2, -1/2) &amp;= (-3/2)^2 - (-1/2)^2\\
 </section>
 </div><p>For reference we plot the contours of <span class="math notranslate nohighlight">\(f\)</span> for <span class="math notranslate nohighlight">\(-2\)</span>, <span class="math notranslate nohighlight">\(-1\)</span>, <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, and <span class="math notranslate nohighlight">\(2\)</span> along with the constraint <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>.  The constraint is just tangent to the contours of <span class="math notranslate nohighlight">\(f(x,y)=-2\)</span> (the minimum) and <span class="math notranslate nohighlight">\(f(x,y)=2\)</span> (the maximum)</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">graphics_toolkit</span><span class="p">(</span><span class="s">&quot;gnuplot&quot;</span><span class="p">)</span> <span class="c"># gnuplot is currently the only way I can get </span>
@@ -1110,10 +1110,10 @@ Values of <span class="math notranslate nohighlight">\(f\)</span>:</label><div c
 </div>
 <p>For reference, here is a heat map plot of <span class="math notranslate nohighlight">\(f(x,y,z)\)</span> for the final part on the points on the surface <span class="math notranslate nohighlight">\(g(x,y,z)=0\)</span>.  The intermediate points turn out to be saddles.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">graphics_toolkit</span><span class="p">(</span><span class="s">&quot;gnuplot&quot;</span><span class="p">)</span> <span class="c"># gnuplot is currently the only way I can get </span>

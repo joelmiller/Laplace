@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+# Start a virtual X server so xeus-octave's renderer works in headless Binder
+export DISPLAY=:99
+Xvfb :99 -screen 0 1280x1024x24 +extension GLX +render -noreset >/dev/null 2>&1 &
+
+# Helpful in software rendering contexts
+export MESA_GL_VERSION_OVERRIDE=3.3
+
+exec "$@"
