@@ -1,0 +1,13 @@
+name: laplace-book
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - jupyterlab
+  - notebook
+  - xeus-octave        # the Octave kernel (kernelspec name: xoctave)
+  - jupyter-book       # optional; useful if if ever build inside Binder
+  - nbgitpuller        # optional convenience
+  # interactive plots with the 'plotly' toolkit:
+  - plotly
+  - ipywidgets

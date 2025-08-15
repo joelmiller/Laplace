@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: pin-xoctave
+        name: Pin notebooks to xoctave
+        entry: python tools/pin_xoctave.py
+        language: system
+        files: \.ipynb$
