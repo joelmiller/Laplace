@@ -449,10 +449,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-real-roots">1.7.1. Distinct Real Roots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-roots">1.7.2. Repeated roots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quadratic-factor-that-does-not-factor-further">1.7.3. A quadratic factor that does not factor further.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.7.4. Self-Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.7.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.7.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-real-roots">1.7.3. Distinct Real Roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-roots">1.7.4. Repeated roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quadratic-factor-that-does-not-factor-further">1.7.5. A quadratic factor that does not factor further.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.7.6. Self-Test</a></li>
 </ul>
             </nav>
         </div>
@@ -466,6 +468,24 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="inverting-the-laplace-transform-with-partial-fractions-cubic-and-higher-order-denominators">
 <h1><span class="section-number">1.7. </span>Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators<a class="headerlink" href="#inverting-the-laplace-transform-with-partial-fractions-cubic-and-higher-order-denominators" title="Link to this heading">#</a></h1>
+<section id="intended-learning-outcomes">
+<h2><span class="section-number">1.7.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
+<p>By the end of this section, you should be able to:</p>
+<ul class="simple">
+<li><p>Identify the appropriate Partial Fractions expansion of <span class="math notranslate nohighlight">\(\tilde{f}(s) = p(s)/q(s)\)</span> where <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order and the degree of <span class="math notranslate nohighlight">\(p\)</span> is less than the degree of <span class="math notranslate nohighlight">\(q\)</span>.</p></li>
+<li><p>Set up the appropriate partial fraction expansion by recognizing and matching different types of denominator factors:</p>
+<ul>
+<li><p>Simple real roots: <span class="math notranslate nohighlight">\(s-a\)</span></p></li>
+<li><p>Repeated real roots: <span class="math notranslate nohighlight">\((s-a)^n\)</span></p></li>
+<li><p>Irreducible quadratic factors: <span class="math notranslate nohighlight">\((s-a)^2 + \omega^2\)</span></p></li>
+</ul>
+</li>
+<li><p>Solve for the unknown partial fraction coefficients</p></li>
+<li><p>Use known Laplace transform pairs to invert each term—combining results to find <span class="math notranslate nohighlight">\(f(t) = \mathcal{L}^{-1}[\tilde{f}(s)](t)\)</span></p></li>
+</ul>
+</section>
+<section id="introduction">
+<h2><span class="section-number">1.7.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>When <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{p(s)}{q(s)}\)</span> where <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order and <span class="math notranslate nohighlight">\(p(s)\)</span> has lower order than <span class="math notranslate nohighlight">\(q(s)\)</span>, the process is similar to the quadratic case.  We will assume that we know the factored version of <span class="math notranslate nohighlight">\(q(s)\)</span> and build up a partial fractions expansion for <span class="math notranslate nohighlight">\(p(s)/q(s)\)</span>.</p>
 <p>We will consider three cases for the factors of <span class="math notranslate nohighlight">\(q(s)\)</span>:</p>
 <ul class="simple">
@@ -485,12 +505,13 @@ document.write(`
 \[ \frac{A(s-a) + B\omega}{(s-a)^2+\omega^2}\]</div>
 <p>We are ignoring the possibility that <span class="math notranslate nohighlight">\((s-a)^2 + \omega^2\)</span> is repeated.  We will address this case in an extension exercise.</p>
 <p>Once we have built up the full Partial Fraction expansion with terms from all factors of <span class="math notranslate nohighlight">\(q(s)\)</span>, we use the same approach to find the coefficients.  Then we can invert the transform to find <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
-<p>Notice that in all of the examples, we leave all of the expressions in factored form.  We never expand the product of polynomials.</p>
+<p>Notice that in all of the examples, we leave all of the expressions in factored form.  We never expand the product of polynomials.  Often we will use <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, etc rather than <span class="math notranslate nohighlight">\(A_1\)</span>, <span class="math notranslate nohighlight">\(A_2\)</span>, <span class="math notranslate nohighlight">\(A_3\)</span> etc.  As long as we use a different symbol for each term, it is unimportant whether we use subscripts or different letters.</p>
+</section>
 <section id="distinct-real-roots">
-<h2><span class="section-number">1.7.1. </span>Distinct Real Roots<a class="headerlink" href="#distinct-real-roots" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.7.3. </span>Distinct Real Roots<a class="headerlink" href="#distinct-real-roots" title="Link to this heading">#</a></h2>
 <p>When all roots are distinct, we can easily find all coefficients in the partial fractions expansion.</p>
 <div class="proof example admonition" id="example:distinct">
-<p class="admonition-title"><span class="caption-number">Example 1.25 </span> (Distinct real roots)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.26 </span> (Distinct real roots)</p>
 <section class="example-content" id="proof-content">
 <p>Find <span class="math notranslate nohighlight">\(f(t)\)</span> if <span class="math notranslate nohighlight">\(\tilde{f}(s) =  \frac{7s^2-31s+36}{(s-1)(s-2)(s-3)}\)</span></p>
 <div class="math notranslate nohighlight">
@@ -532,7 +553,7 @@ f(t) = 6e^t - 2 e^{2t} + 3e^{3t}
 </section>
 </div></section>
 <section id="repeated-roots">
-<h2><span class="section-number">1.7.2. </span>Repeated roots<a class="headerlink" href="#repeated-roots" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.7.4. </span>Repeated roots<a class="headerlink" href="#repeated-roots" title="Link to this heading">#</a></h2>
 <p>When we have a repeated root, the technique of guessing a value of <span class="math notranslate nohighlight">\(s\)</span> to quickly get an equation for just a single coefficient will not be sufficient.  It is advisable to use this trick where possible to get as many coefficients as feasible.  However, we will need additional equations.</p>
 <p>We have several possible sources for these equations.  The most common are</p>
 <ul class="simple">
@@ -541,7 +562,7 @@ f(t) = 6e^t - 2 e^{2t} + 3e^{3t}
 </ul>
 <p>Ultimately, we need as many equations as coefficients.<a class="footnote-reference brackets" href="#lin-indep-note" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 1.26 </span> (Repeated Roots, using multiple values of <span class="math notranslate nohighlight">\(s\)</span> to find coefficients.)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.27 </span> (Repeated Roots, using multiple values of <span class="math notranslate nohighlight">\(s\)</span> to find coefficients.)</p>
 <section class="example-content" id="proof-content">
 <p>Find <span class="math notranslate nohighlight">\(f(t)\)</span> if</p>
 <div class="math notranslate nohighlight">
@@ -604,7 +625,7 @@ f(t) &amp;= -e^{-t} \mathcal{L}^{-1}\left[\frac{1}{s^3}\right](t)  + e^{-t} + 2 
 </section>
 </div><p>We now consider another example, using the same function, but a different approach to getting the final two coefficients:</p>
 <div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 1.27 </span> (Repeated Roots, matching coefficients of <span class="math notranslate nohighlight">\(s\)</span> to solve the partial fractions.)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.28 </span> (Repeated Roots, matching coefficients of <span class="math notranslate nohighlight">\(s\)</span> to solve the partial fractions.)</p>
 <section class="example-content" id="proof-content">
 <p>Find <span class="math notranslate nohighlight">\(f(t)\)</span> for the same <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> as before:</p>
 <div class="math notranslate nohighlight">
@@ -650,10 +671,10 @@ f(t) &amp;= -e^{-t} \mathcal{L}^{-1}\left[\frac{1}{s^3}\right](t)  + e^{-t} + 2 
 </section>
 </div></section>
 <section id="a-quadratic-factor-that-does-not-factor-further">
-<h2><span class="section-number">1.7.3. </span>A quadratic factor that does not factor further.<a class="headerlink" href="#a-quadratic-factor-that-does-not-factor-further" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.7.5. </span>A quadratic factor that does not factor further.<a class="headerlink" href="#a-quadratic-factor-that-does-not-factor-further" title="Link to this heading">#</a></h2>
 <p>We will also consider cases where a quadratic term appears that does not factor.</p>
 <div class="proof example admonition" id="example-3">
-<p class="admonition-title"><span class="caption-number">Example 1.28 </span> (A quadratic factor that does not factor further)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.29 </span> (A quadratic factor that does not factor further)</p>
 <section class="example-content" id="proof-content">
 <p>Find <span class="math notranslate nohighlight">\(f(t)\)</span> if</p>
 <div class="math notranslate nohighlight">
@@ -700,7 +721,7 @@ f(t) = 2e^{t} + 4 e^{3t} \cos(2t) - e^{3t} \sin(2t)
 </section>
 </div></section>
 <section id="self-test">
-<h2><span class="section-number">1.7.4. </span>Self-Test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.7.6. </span>Self-Test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>For each of the following:</p></li>
 </ol>
@@ -944,10 +965,12 @@ f(t) = \frac{1}{6} t \sin(3t) + \frac{1}{2} \sin(3t)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-real-roots">1.7.1. Distinct Real Roots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-roots">1.7.2. Repeated roots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quadratic-factor-that-does-not-factor-further">1.7.3. A quadratic factor that does not factor further.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.7.4. Self-Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.7.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.7.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-real-roots">1.7.3. Distinct Real Roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-roots">1.7.4. Repeated roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quadratic-factor-that-does-not-factor-further">1.7.5. A quadratic factor that does not factor further.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.7.6. Self-Test</a></li>
 </ul>
   </nav></div>
 

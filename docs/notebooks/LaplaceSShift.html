@@ -449,8 +449,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">1.5.1. Examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.5.2. Self Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.5.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.5.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">1.5.3. Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.5.4. Self Test</a></li>
 </ul>
             </nav>
         </div>
@@ -464,6 +466,24 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-s-shift">
 <h1><span class="section-number">1.5. </span>The <span class="math notranslate nohighlight">\(s\)</span>-shift<a class="headerlink" href="#the-s-shift" title="Link to this heading">#</a></h1>
+<section id="intended-learning-outcomes">
+<h2><span class="section-number">1.5.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
+<p>By the end of this section, you should be able to:</p>
+<ul class="simple">
+<li><p>State and apply the <span class="math notranslate nohighlight">\(s\)</span>-shift theorem:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+    \mathcal{L}[e^{at}f(t)](s) = \tilde{f}(s-a)
+\]</div>
+<ul class="simple">
+<li><p>Explain the reasoning behind the <span class="math notranslate nohighlight">\(s\)</span>-shift using the definition of the transform.</p></li>
+<li><p>Use the <span class="math notranslate nohighlight">\(s\)</span>-shift property to compute transforms like <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-6t}t^2](s)\)</span> in terms of the transform of <span class="math notranslate nohighlight">\(\mathcal{L}[t^2](s)\)</span>.
+-Apply the <span class="math notranslate nohighlight">\(s\)</span>-shift approach in reverse to find <span class="math notranslate nohighlight">\(f(t)\)</span> from functions of <span class="math notranslate nohighlight">\(s-a\)</span> for some <span class="math notranslate nohighlight">\(a\)</span>.</p></li>
+</ul>
+</section>
+<section id="introduction">
+<h2><span class="section-number">1.5.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>In differential equations solutions, we often encounter functions that are the product of an exponential and another function.  For example,</p>
 <ul class="simple">
 <li><p>one solution to the differential equation <span class="math notranslate nohighlight">\(f''(t)-4f'(t) + 4f(t)=0\)</span> is <span class="math notranslate nohighlight">\(te^{2t}\)</span>.</p></li>
@@ -493,10 +513,11 @@ document.write(`
 &amp;= \tilde{f}(s-a)
 \end{align*}\]</div>
 <p>To get the next-to-last line, we observe that the integral looks exactly like the definition of the Laplace Transform, but with <span class="math notranslate nohighlight">\(s^*\)</span> rather than <span class="math notranslate nohighlight">\(s\)</span>.  Then we substitute for <span class="math notranslate nohighlight">\(s^*\)</span> in terms of <span class="math notranslate nohighlight">\(s\)</span>.</p>
+</section>
 <section id="examples">
-<h2><span class="section-number">1.5.1. </span>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.5.3. </span>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
 <p>We now look at several examples using the <span class="math notranslate nohighlight">\(s\)</span>-shift.</p>
-<p>It is generally better practice when taking the transform to use <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}f(t)](s) = \mathcal{L}[f(t)](s-a)\)</span> rather than using the equivalent statment <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}f(t)](s) = \tilde{f}(s-a)\)</span>.  This second option requires shifting <span class="math notranslate nohighlight">\(s\)</span> and finding the transform of <span class="math notranslate nohighlight">\(f\)</span> in one step, which is prone to error.</p>
+<p>It is generally better practice when taking the transform to use <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}f(t)](s) = \mathcal{L}[f(t)](s-a)\)</span> Then find <span class="math notranslate nohighlight">\(\mathcal{L}[f(t)](s)\)</span> but use <span class="math notranslate nohighlight">\(s-a\)</span>.  You could use the equivalent statment <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}f(t)](s) = \tilde{f}(s-a)\)</span>.  This second option requires shifting <span class="math notranslate nohighlight">\(s\)</span> and finding the transform of <span class="math notranslate nohighlight">\(f\)</span> in one step, which often leads to Algebra errors.</p>
 <div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 1.14 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-2t}t^2](s)\)</span>)</p>
 <section class="example-content" id="proof-content">
@@ -561,7 +582,7 @@ we will learn another way to get to <span class="math notranslate nohighlight">\
 </section>
 </div></section>
 <section id="self-test">
-<h2><span class="section-number">1.5.2. </span>Self Test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.5.4. </span>Self Test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Use the <span class="math notranslate nohighlight">\(s\)</span>-shift and the transform of <span class="math notranslate nohighlight">\(\cos(\omega t)\)</span> to verify the formula in the transform table for <span class="math notranslate nohighlight">\(e^{at}\cos(\omega t)\)</span></p></li>
 <li><p>Use the <span class="math notranslate nohighlight">\(s\)</span>-shift and the transform of <span class="math notranslate nohighlight">\(1\)</span> to verify the formula in the transform table for <span class="math notranslate nohighlight">\(e^{at}\)</span>.</p></li>
@@ -635,8 +656,10 @@ we will learn another way to get to <span class="math notranslate nohighlight">\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">1.5.1. Examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.5.2. Self Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.5.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.5.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">1.5.3. Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.5.4. Self Test</a></li>
 </ul>
   </nav></div>
 

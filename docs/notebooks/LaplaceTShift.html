@@ -449,24 +449,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heaviside-step-function">1.4.1. The Heaviside Step Function</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternate-definitions-of-h-a-t">1.4.1.1. Alternate definitions of <span class="math notranslate nohighlight">\(H_a(t)\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h-a-t-as-a-shifted-version-of-h-0-t">1.4.1.2. <span class="math notranslate nohighlight">\(H_a(t)\)</span> as a shifted version of <span class="math notranslate nohighlight">\(H_0(t)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.4.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.4.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heaviside-step-function">1.4.3. The Heaviside Step Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternate-definitions-of-h-a-t">1.4.3.1. Alternate definitions of <span class="math notranslate nohighlight">\(H_a(t)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h-a-t-as-a-shifted-version-of-h-0-t">1.4.3.2. <span class="math notranslate nohighlight">\(H_a(t)\)</span> as a shifted version of <span class="math notranslate nohighlight">\(H_0(t)\)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-heaviside-function-computationally">1.4.2. Implementing the Heaviside Function Computationally</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t-a">1.4.3. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t">1.4.3.1. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-heaviside-function-computationally">1.4.4. Implementing the Heaviside Function Computationally</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t-a">1.4.5. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t">1.4.5.1. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-a-piecewise-continuous-function-so-that-we-can-apply-the-laplace-transform">1.4.4. Preparing a piecewise continuous function so that we can apply the Laplace Transform</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-laplace-transform-of-a-piecewise-continuous-function">1.4.4.1. The Laplace Transform of a Piecewise Continuous Function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure-for-the-laplace-transform-of-a-function-with-a-single-point-of-discontinuity">1.4.4.2. Procedure for the Laplace Transform of a function with a single point of discontinuity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-procedure-for-the-laplace-transform-of-a-piecewise-continuous-function">1.4.4.3. General procedure for the Laplace Transform of a Piecewise Continuous Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-a-piecewise-continuous-function-so-that-we-can-apply-the-laplace-transform">1.4.6. Preparing a piecewise continuous function so that we can apply the Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-laplace-transform-of-a-piecewise-continuous-function">1.4.6.1. The Laplace Transform of a Piecewise Continuous Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure-for-the-laplace-transform-of-a-function-with-a-single-point-of-discontinuity">1.4.6.2. Procedure for the Laplace Transform of a function with a single point of discontinuity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-procedure-for-the-laplace-transform-of-a-piecewise-continuous-function">1.4.6.3. General procedure for the Laplace Transform of a Piecewise Continuous Function</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverting-functions-involving-the-t-shift">1.4.5. Inverting functions involving the <span class="math notranslate nohighlight">\(t\)</span>-shift</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.4.6. Self-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverting-functions-involving-the-t-shift">1.4.7. Inverting functions involving the <span class="math notranslate nohighlight">\(t\)</span>-shift</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.4.8. Self-test</a></li>
 </ul>
             </nav>
         </div>
@@ -480,10 +482,24 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-laplace-transform-and-discontinuous-functions">
 <h1><span class="section-number">1.4. </span>The Laplace Transform and Discontinuous Functions<a class="headerlink" href="#the-laplace-transform-and-discontinuous-functions" title="Link to this heading">#</a></h1>
+<section id="intended-learning-outcomes">
+<h2><span class="section-number">1.4.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
+<p>By the end of this section, you should be able to:</p>
+<ul class="simple">
+<li><p>Define the Heaviside (unit step) function <span class="math notranslate nohighlight">\(H_a(t)\)</span> and explain how it models discontinuities.</p></li>
+<li><p>Express <span class="math notranslate nohighlight">\(H_a(t)\)</span> as a shift of <span class="math notranslate nohighlight">\(H_0(t)\)</span> and understand why its precise value at <span class="math notranslate nohighlight">\(t=a\)</span> does not affect the Laplace Transform.</p></li>
+<li><p>Derive and apply the <span class="math notranslate nohighlight">\(t\)</span>-shift property of the Laplace transform.</p></li>
+<li><p>Rewrite discontinuous functions using step functions to simplify Laplace analysis.</p></li>
+<li><p>Use the inverse <span class="math notranslate nohighlight">\(t\)</span>-shift rule to interpret expressions like <span class="math notranslate nohighlight">\(e^{-as}\tilde{f}(s)\)</span> when finding inverse transforms.</p></li>
+</ul>
+</section>
+<section id="introduction">
+<h2><span class="section-number">1.4.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>An important use of the Laplace Transform is that it provides a relatively clean method to handle physical systems that have discontinuous inputs, such as switches that turn on and off or collisions between objects.  Before we can use it for this, we need to build up some mathematical tools.</p>
 <p>The main tool we will use is the Heaviside Step Function.  The Heaviside Step Function is used to ``turn a function on’’ at a specified time.</p>
+</section>
 <section id="the-heaviside-step-function">
-<h2><span class="section-number">1.4.1. </span>The Heaviside Step Function<a class="headerlink" href="#the-heaviside-step-function" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.4.3. </span>The Heaviside Step Function<a class="headerlink" href="#the-heaviside-step-function" title="Link to this heading">#</a></h2>
 <p>A useful tool to study discontinuities is the <em>Heaviside Step Function</em>, sometimes called the <em>unit step function</em>.</p>
 <div class="proof definition admonition" id="Def_Heaviside">
 <p class="admonition-title"><span class="caption-number">Definition 1.2 </span></p>
@@ -528,7 +544,7 @@ H_a(t) = \begin{cases} 0 &amp; t &lt; a\\
 </div>
 </div>
 <section id="alternate-definitions-of-h-a-t">
-<h3><span class="section-number">1.4.1.1. </span>Alternate definitions of <span class="math notranslate nohighlight">\(H_a(t)\)</span><a class="headerlink" href="#alternate-definitions-of-h-a-t" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.4.3.1. </span>Alternate definitions of <span class="math notranslate nohighlight">\(H_a(t)\)</span><a class="headerlink" href="#alternate-definitions-of-h-a-t" title="Link to this heading">#</a></h3>
 <p>The choice that <span class="math notranslate nohighlight">\(H_a(t)\)</span> is continuous from the right at <span class="math notranslate nohighlight">\(t=a\)</span> is arbitrary.  Others could define</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -550,7 +566,7 @@ H_a(t) = \begin{cases}
 <p>The value of a finite function at a single point has no impact on the integral, and so the Laplace Transform of all of these definitions will be the same.  The solutions to our differential equations will be the same regardless of how we choose to define <span class="math notranslate nohighlight">\(H_a(t)\)</span>.  They are all equivalent for our purposes<a class="footnote-reference brackets" href="#equivalence-note" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 </section>
 <section id="h-a-t-as-a-shifted-version-of-h-0-t">
-<h3><span class="section-number">1.4.1.2. </span><span class="math notranslate nohighlight">\(H_a(t)\)</span> as a shifted version of <span class="math notranslate nohighlight">\(H_0(t)\)</span><a class="headerlink" href="#h-a-t-as-a-shifted-version-of-h-0-t" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.4.3.2. </span><span class="math notranslate nohighlight">\(H_a(t)\)</span> as a shifted version of <span class="math notranslate nohighlight">\(H_0(t)\)</span><a class="headerlink" href="#h-a-t-as-a-shifted-version-of-h-0-t" title="Link to this heading">#</a></h3>
 <p>It will be convenient for our analysis to use <span class="math notranslate nohighlight">\(H_a(t)\)</span> in our equations.  However, most computer programming languages that have a built-in Heaviside Function only define <span class="math notranslate nohighlight">\(H_0(t)\)</span>, a function that is <span class="math notranslate nohighlight">\(0\)</span> for <span class="math notranslate nohighlight">\(t&lt;0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> for <span class="math notranslate nohighlight">\(t&gt;1\)</span> (with varying choices about how to handle <span class="math notranslate nohighlight">\(t=0\)</span>).</p>
 <p>So it will be useful to know how <span class="math notranslate nohighlight">\(H_a(t)\)</span> and <span class="math notranslate nohighlight">\(H_0(t)\)</span> are related.  Since <span class="math notranslate nohighlight">\(H_a(t)\)</span> is simply a shift of <span class="math notranslate nohighlight">\(H_0(t)\)</span> by a distance <span class="math notranslate nohighlight">\(a\)</span>, we have</p>
 <div class="math notranslate nohighlight">
@@ -566,7 +582,7 @@ H_a(t) = H_0(t-a)
 </section>
 </section>
 <section id="implementing-the-heaviside-function-computationally">
-<h2><span class="section-number">1.4.2. </span>Implementing the Heaviside Function Computationally<a class="headerlink" href="#implementing-the-heaviside-function-computationally" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.4.4. </span>Implementing the Heaviside Function Computationally<a class="headerlink" href="#implementing-the-heaviside-function-computationally" title="Link to this heading">#</a></h2>
 <p>A common way (and the method used by <code class="docutils literal notranslate"><span class="pre">Matlab</span></code>) to implement the Heaviside Function in Matlab without using special toolboxes is described here: <a class="reference external" href="https://au.mathworks.com/help/signal/gs/impulse-step-and-ramp-functions.html">https://au.mathworks.com/help/signal/gs/impulse-step-and-ramp-functions.html</a>.</p>
 <p>Typically when the Heaviside function is plotted (by <code class="docutils literal notranslate"><span class="pre">Matlab</span></code>) you will get an almost vertical line connecting the two ends.  This is because the plotting algorithm simply draws a line between “adjacent” points.  To plot it without this vertical line requires more effort.  To keep the code used in this text easier to reed, we will not typically do this.</p>
 <p>The code cell below implements <span class="math notranslate nohighlight">\(H_3(t)\)</span> and plots it.</p>
@@ -588,7 +604,7 @@ H_a(t) = H_0(t-a)
 <p>Notice that although the function is discontinuous at <span class="math notranslate nohighlight">\(t=3\)</span>, Matlab will still draw a line from the last point before <span class="math notranslate nohighlight">\(t=3\)</span> to the first point with <span class="math notranslate nohighlight">\(t \geq 3\)</span>.  If there is a large step size, then this line will not appear vertical.</p>
 </section>
 <section id="the-transform-of-h-a-t-f-t-a">
-<span id="tshift-transform"></span><h2><span class="section-number">1.4.3. </span>The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span><a class="headerlink" href="#the-transform-of-h-a-t-f-t-a" title="Link to this heading">#</a></h2>
+<span id="tshift-transform"></span><h2><span class="section-number">1.4.5. </span>The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span><a class="headerlink" href="#the-transform-of-h-a-t-f-t-a" title="Link to this heading">#</a></h2>
 <p>We encounter functions like <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span> when a switch is abruptly flipped at time <span class="math notranslate nohighlight">\(a\)</span>.  When we later solve Equation <a class="reference internal" href="LaplaceIntro.html#equation-eq-basic-driven-ode">(1.1)</a>, we will take the Laplace Transform of both sides.  If the right hand side is discontinuous, then we need to be able to calculate its transform.  We have from the definition of the Laplace Transform:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -613,7 +629,7 @@ H_a(t) = H_0(t-a)
 \]</div>
 </section>
 </div><section id="the-transform-of-h-a-t-f-t">
-<span id="untshift-transform"></span><h3><span class="section-number">1.4.3.1. </span>The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span><a class="headerlink" href="#the-transform-of-h-a-t-f-t" title="Link to this heading">#</a></h3>
+<span id="untshift-transform"></span><h3><span class="section-number">1.4.5.1. </span>The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span><a class="headerlink" href="#the-transform-of-h-a-t-f-t" title="Link to this heading">#</a></h3>
 <p>In many applications we encounter effects that suddenly turn on at some time <span class="math notranslate nohighlight">\(t=a\)</span>.  We account for these mathematically by multiplying a function by <span class="math notranslate nohighlight">\(H_a(t)\)</span>.</p>
 <p>Sometimes it is more natural to think of the effect in terms of time since it was turned on.  In this case, we typically encounter <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span>, and we have just seen the Laplace Transform for this.</p>
 <p>Sometimes it is more natural to think of the effect in terms of time since the entire system started.  In this case we typically encounter <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span>.</p>
@@ -626,7 +642,7 @@ H_a(t) = H_0(t-a)
 </section>
 </section>
 <section id="preparing-a-piecewise-continuous-function-so-that-we-can-apply-the-laplace-transform">
-<h2><span class="section-number">1.4.4. </span>Preparing a piecewise continuous function so that we can apply the Laplace Transform<a class="headerlink" href="#preparing-a-piecewise-continuous-function-so-that-we-can-apply-the-laplace-transform" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.4.6. </span>Preparing a piecewise continuous function so that we can apply the Laplace Transform<a class="headerlink" href="#preparing-a-piecewise-continuous-function-so-that-we-can-apply-the-laplace-transform" title="Link to this heading">#</a></h2>
 <p>In <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a>, we have</p>
 <div class="math notranslate nohighlight">
 \[
@@ -660,7 +676,7 @@ f(t) = \begin{cases}
 </div>
 </div>
 <section id="the-laplace-transform-of-a-piecewise-continuous-function">
-<h3><span class="section-number">1.4.4.1. </span>The Laplace Transform of a Piecewise Continuous Function<a class="headerlink" href="#the-laplace-transform-of-a-piecewise-continuous-function" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.4.6.1. </span>The Laplace Transform of a Piecewise Continuous Function<a class="headerlink" href="#the-laplace-transform-of-a-piecewise-continuous-function" title="Link to this heading">#</a></h3>
 <p>Now we introduce a procedure that will convert <span class="math notranslate nohighlight">\(f(t)\)</span> into the sum of functions that can be transformed using the Laplace Transform Table.  We’ll introduce it through an example with a single discontinuity and then give the method.</p>
 <div class="proof example admonition" id="example-3">
 <p class="admonition-title"><span class="caption-number">Example 1.12 </span> (Finding the Laplace Transform of <span class="math notranslate nohighlight">\(f(t) = \begin{cases} t &amp;  0 \leq t &lt; 3\\ t - t^2 &amp; 3 \leq t \end{cases}\)</span>)</p>
@@ -690,7 +706,7 @@ f(t) = t + H_3(t) (-t^2)
 <p><span class="caption-number">Fig. 1.4 </span><span class="caption-text">The relation between <span class="math notranslate nohighlight">\(f(t)\)</span>, <span class="math notranslate nohighlight">\(f_0(t)\)</span>, and <span class="math notranslate nohighlight">\(f_1(t)\)</span> for <span class="math notranslate nohighlight">\(f(t) = f_0(t) + H_a(t) f_1(t)\)</span>.</span><a class="headerlink" href="#fig-piecewise-decomp" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>If we attempt to take the Laplace Transform of <span class="math notranslate nohighlight">\(t+H_3(t) (-t^2)\)</span>  using <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> the second term gives us trouble.  The table tells us that <span class="math notranslate nohighlight">\(\mathcal{L}[H_3(t) g(t-3)](s) = e^{-3s} \tilde{g}(s)\)</span>, but we don’t have a function of <span class="math notranslate nohighlight">\(t-3\)</span>, we have a function directly of <span class="math notranslate nohighlight">\(t\)</span>.  So we follow <a class="reference internal" href="#untshift-transform"><span class="std std-numref">Section 1.4.3.1</span></a>:</p>
+<p>If we attempt to take the Laplace Transform of <span class="math notranslate nohighlight">\(t+H_3(t) (-t^2)\)</span>  using <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> the second term gives us trouble.  The table tells us that <span class="math notranslate nohighlight">\(\mathcal{L}[H_3(t) g(t-3)](s) = e^{-3s} \tilde{g}(s)\)</span>, but we don’t have a function of <span class="math notranslate nohighlight">\(t-3\)</span>, we have a function directly of <span class="math notranslate nohighlight">\(t\)</span>.  So we follow <a class="reference internal" href="#untshift-transform"><span class="std std-numref">Section 1.4.5.1</span></a>:</p>
 <div class="math notranslate nohighlight">
 \[
 f(t) = t + H_3(t) g(t-3)
@@ -738,7 +754,7 @@ f(t) = t + H_3(t) g(t-3)
 </div>
 </section>
 <section id="procedure-for-the-laplace-transform-of-a-function-with-a-single-point-of-discontinuity">
-<h3><span class="section-number">1.4.4.2. </span>Procedure for the Laplace Transform of a function with a single point of discontinuity<a class="headerlink" href="#procedure-for-the-laplace-transform-of-a-function-with-a-single-point-of-discontinuity" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.4.6.2. </span>Procedure for the Laplace Transform of a function with a single point of discontinuity<a class="headerlink" href="#procedure-for-the-laplace-transform-of-a-function-with-a-single-point-of-discontinuity" title="Link to this heading">#</a></h3>
 <p>If we have a function <span class="math notranslate nohighlight">\(f(t)\)</span> that has a jump discontinuity at the point <span class="math notranslate nohighlight">\(t=a&gt;0\)</span>, then we will be able to rewrite <span class="math notranslate nohighlight">\(f(t) = f_0(t) + H_a(t) f_1(t)\)</span>  through the following steps:</p>
 <ul class="simple">
 <li><p>Set <span class="math notranslate nohighlight">\(f_0(t)\)</span> to be a function that matches <span class="math notranslate nohighlight">\(f(t)\)</span> for <span class="math notranslate nohighlight">\(t&lt;a\)</span>.  For <span class="math notranslate nohighlight">\(t&lt;a\)</span>, we have <span class="math notranslate nohighlight">\(f(t)=f_0(t)\)</span>.  However <span class="math notranslate nohighlight">\(f(t)\)</span> does not match the continuation of <span class="math notranslate nohighlight">\(f_0(t)\)</span> for <span class="math notranslate nohighlight">\(t&gt;a\)</span>.</p></li>
@@ -749,7 +765,7 @@ f(t) = t + H_3(t) g(t-3)
 <p>You can check that these steps are consistent with the example above.</p>
 </section>
 <section id="general-procedure-for-the-laplace-transform-of-a-piecewise-continuous-function">
-<h3><span class="section-number">1.4.4.3. </span>General procedure for the Laplace Transform of a Piecewise Continuous Function<a class="headerlink" href="#general-procedure-for-the-laplace-transform-of-a-piecewise-continuous-function" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.4.6.3. </span>General procedure for the Laplace Transform of a Piecewise Continuous Function<a class="headerlink" href="#general-procedure-for-the-laplace-transform-of-a-piecewise-continuous-function" title="Link to this heading">#</a></h3>
 <p>If we want to take the Laplace Transform of a piecewise continuous function <span class="math notranslate nohighlight">\(f(t)\)</span> with a discontinuity at <span class="math notranslate nohighlight">\(t=a\)</span>, we can follow a procedure.  The basic idea is that at a jump at <span class="math notranslate nohighlight">\(t=a\)</span> we need to find the function that gives the difference between <span class="math notranslate nohighlight">\(f\)</span> on the right and <span class="math notranslate nohighlight">\(f\)</span> on the left of the jump.  Then the function can be written as whatever it is known to be on the left plus the difference times <span class="math notranslate nohighlight">\(H_a(t)\)</span>.  The example above did this with a single discontinuity, but this can be repeated.</p>
 <p>The general procedure is:</p>
 <ul class="simple">
@@ -763,7 +779,7 @@ f(t) = t + H_3(t) g(t-3)
 </section>
 </section>
 <section id="inverting-functions-involving-the-t-shift">
-<h2><span class="section-number">1.4.5. </span>Inverting functions involving the <span class="math notranslate nohighlight">\(t\)</span>-shift<a class="headerlink" href="#inverting-functions-involving-the-t-shift" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.4.7. </span>Inverting functions involving the <span class="math notranslate nohighlight">\(t\)</span>-shift<a class="headerlink" href="#inverting-functions-involving-the-t-shift" title="Link to this heading">#</a></h2>
 <p>When inverting a function <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>, you will know you need to use the <span class="math notranslate nohighlight">\(t\)</span>-shift if <span class="math notranslate nohighlight">\(e^{-as}\)</span> appears for some constant <span class="math notranslate nohighlight">\(a\)</span>.  If the original function <span class="math notranslate nohighlight">\(f(t)\)</span> is discontinuous, then we some terms may have different exponentials (or no exponential).  We will have to do each one of these separately.</p>
 <p>The inverse transform of <span class="math notranslate nohighlight">\(e^{-as}\tilde{f}(s)\)</span> is</p>
 <div class="amsmath math notranslate nohighlight">
@@ -792,7 +808,7 @@ f(s) = \frac{1}{s-2} - 2e^{-s} \frac{1}{s-2} + 3 e^{-2s} \frac{1}{s-3}
 </div><p>Notice that each time we remove an exponential <span class="math notranslate nohighlight">\(e^{-sa}\)</span> from inside <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[\cdot](t)\)</span>, we get a factor of <span class="math notranslate nohighlight">\(H_a(t)\)</span> and the argument of the Inverse Transform becomes <span class="math notranslate nohighlight">\(t-a\)</span>.</p>
 </section>
 <section id="self-test">
-<h2><span class="section-number">1.4.6. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.4.8. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
 <p>Under construction</p>
 <ul>
 <li><ol class="arabic simple">
@@ -847,7 +863,7 @@ f(s) = \frac{1}{s-2} - 2e^{-s} \frac{1}{s-2} + 3 e^{-2s} \frac{1}{s-3}
     \end{split}\]</div>
 </li>
 <li><ol class="arabic simple" start="6">
-<li><p>(*) In <a class="reference internal" href="#tshift-transform"><span class="std std-numref">Section 1.4.3</span></a>, we derived the transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span>, which uses a shifted function <span class="math notranslate nohighlight">\(f\)</span>.  What would happen if instead you tried to calculate the transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span> for an unshifted function <span class="math notranslate nohighlight">\(f(t)\)</span> using the same basic derivation?  You should arrive at the result in <a class="reference internal" href="#untshift-transform"><span class="std std-numref">Section 1.4.3.1</span></a>.</p></li>
+<li><p>(*) In <a class="reference internal" href="#tshift-transform"><span class="std std-numref">Section 1.4.5</span></a>, we derived the transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span>, which uses a shifted function <span class="math notranslate nohighlight">\(f\)</span>.  What would happen if instead you tried to calculate the transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span> for an unshifted function <span class="math notranslate nohighlight">\(f(t)\)</span> using the same basic derivation?  You should arrive at the result in <a class="reference internal" href="#untshift-transform"><span class="std std-numref">Section 1.4.5.1</span></a>.</p></li>
 </ol>
 </li>
 </ul>
@@ -870,16 +886,16 @@ f(s) = \frac{1}{s-2} - 2e^{-s} \frac{1}{s-2} + 3 e^{-2s} \frac{1}{s-3}
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "octave"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "octave",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'octave'</script>
 
                 </article>
               
@@ -925,24 +941,26 @@ f(s) = \frac{1}{s-2} - 2e^{-s} \frac{1}{s-2} + 3 e^{-2s} \frac{1}{s-3}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heaviside-step-function">1.4.1. The Heaviside Step Function</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternate-definitions-of-h-a-t">1.4.1.1. Alternate definitions of <span class="math notranslate nohighlight">\(H_a(t)\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h-a-t-as-a-shifted-version-of-h-0-t">1.4.1.2. <span class="math notranslate nohighlight">\(H_a(t)\)</span> as a shifted version of <span class="math notranslate nohighlight">\(H_0(t)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.4.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.4.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heaviside-step-function">1.4.3. The Heaviside Step Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternate-definitions-of-h-a-t">1.4.3.1. Alternate definitions of <span class="math notranslate nohighlight">\(H_a(t)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h-a-t-as-a-shifted-version-of-h-0-t">1.4.3.2. <span class="math notranslate nohighlight">\(H_a(t)\)</span> as a shifted version of <span class="math notranslate nohighlight">\(H_0(t)\)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-heaviside-function-computationally">1.4.2. Implementing the Heaviside Function Computationally</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t-a">1.4.3. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t">1.4.3.1. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-the-heaviside-function-computationally">1.4.4. Implementing the Heaviside Function Computationally</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t-a">1.4.5. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transform-of-h-a-t-f-t">1.4.5.1. The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t)\)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-a-piecewise-continuous-function-so-that-we-can-apply-the-laplace-transform">1.4.4. Preparing a piecewise continuous function so that we can apply the Laplace Transform</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-laplace-transform-of-a-piecewise-continuous-function">1.4.4.1. The Laplace Transform of a Piecewise Continuous Function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure-for-the-laplace-transform-of-a-function-with-a-single-point-of-discontinuity">1.4.4.2. Procedure for the Laplace Transform of a function with a single point of discontinuity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-procedure-for-the-laplace-transform-of-a-piecewise-continuous-function">1.4.4.3. General procedure for the Laplace Transform of a Piecewise Continuous Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-a-piecewise-continuous-function-so-that-we-can-apply-the-laplace-transform">1.4.6. Preparing a piecewise continuous function so that we can apply the Laplace Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-laplace-transform-of-a-piecewise-continuous-function">1.4.6.1. The Laplace Transform of a Piecewise Continuous Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure-for-the-laplace-transform-of-a-function-with-a-single-point-of-discontinuity">1.4.6.2. Procedure for the Laplace Transform of a function with a single point of discontinuity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-procedure-for-the-laplace-transform-of-a-piecewise-continuous-function">1.4.6.3. General procedure for the Laplace Transform of a Piecewise Continuous Function</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverting-functions-involving-the-t-shift">1.4.5. Inverting functions involving the <span class="math notranslate nohighlight">\(t\)</span>-shift</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.4.6. Self-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverting-functions-involving-the-t-shift">1.4.7. Inverting functions involving the <span class="math notranslate nohighlight">\(t\)</span>-shift</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.4.8. Self-test</a></li>
 </ul>
   </nav></div>
 

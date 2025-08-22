@@ -449,10 +449,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity-of-the-laplace-transform">1.3.1. Linearity of the Laplace Transform</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-of-the-laplace-transform">1.3.2. Uniqueness of the Laplace Transform</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverting-the-laplace-transform-using-the-basic-rules-and-a-table">1.3.3. Inverting the Laplace Transform using the Basic Rules and a Table</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.3.4. Self-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.3.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.3.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity-of-the-laplace-transform">1.3.3. Linearity of the Laplace Transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-of-the-laplace-transform">1.3.4. Uniqueness of the Laplace Transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverting-the-laplace-transform-using-the-basic-rules-and-a-table">1.3.5. Inverting the Laplace Transform using the Basic Rules and a Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.3.6. Self-test</a></li>
 </ul>
             </nav>
         </div>
@@ -466,9 +468,23 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="some-basic-laplace-transform-rules">
 <h1><span class="section-number">1.3. </span>Some Basic Laplace Transform Rules<a class="headerlink" href="#some-basic-laplace-transform-rules" title="Link to this heading">#</a></h1>
+<section id="intended-learning-outcomes">
+<h2><span class="section-number">1.3.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
+<p>By the end of this section, you should be able to:</p>
+<p>State and apply key properties of the Laplace transform, including linearity and shifting.</p>
+<p>Use these properties to compute Laplace transforms more efficiently than by evaluating the integral definition each time.</p>
+<p>Recognize how algebraic manipulations in the
+𝑠
+s-domain correspond to operations on functions in the time domain.</p>
+<p>Work through examples that illustrate how the properties simplify calculations for a range of functions.</p>
+<p>Build intuition for why these properties are useful when solving differential equations and modeling applied problems.</p>
+</section>
+<section id="introduction">
+<h2><span class="section-number">1.3.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>For differentiation and integration, we learned various rules such as the product rule or integration by parts.  Similarly there are rules that the Laplace Transform follows.  We present some of these now and discuss others (the <span class="math notranslate nohighlight">\(t\)</span>-shift and <span class="math notranslate nohighlight">\(s\)</span>-shift) later.</p>
+</section>
 <section id="linearity-of-the-laplace-transform">
-<h2><span class="section-number">1.3.1. </span>Linearity of the Laplace Transform<a class="headerlink" href="#linearity-of-the-laplace-transform" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.3.3. </span>Linearity of the Laplace Transform<a class="headerlink" href="#linearity-of-the-laplace-transform" title="Link to this heading">#</a></h2>
 <p>One of the most fundamental properties of the Laplace Transform is linearity.  If we take the Laplace Transform of a linear combination of functions, the result is the corresponding linear combination of their transforms.  For a linear combination of two functions</p>
 <div class="proof theorem admonition" id="thm:linearity">
 <p class="admonition-title"><span class="caption-number">Theorem 1.1 </span> (Linearity of the Laplace Transform)</p>
@@ -517,7 +533,7 @@ document.write(`
 </div><p>Notice that to do the transform we had to expand the product and then calculate the result for each term.  <strong>A common mistake is to assume <span class="math notranslate nohighlight">\(\mathcal{L}[f(t)g(t)](s) = \tilde{f}(s) \tilde{g}(s)\)</span>.  It does not.</strong></p>
 </section>
 <section id="uniqueness-of-the-laplace-transform">
-<h2><span class="section-number">1.3.2. </span>Uniqueness of the Laplace Transform<a class="headerlink" href="#uniqueness-of-the-laplace-transform" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.3.4. </span>Uniqueness of the Laplace Transform<a class="headerlink" href="#uniqueness-of-the-laplace-transform" title="Link to this heading">#</a></h2>
 <p>When we apply the Laplace Transform to solving differential equations, once we solve for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> we still need to invert the Laplace Transform on <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> to extract <span class="math notranslate nohighlight">\(f(t)\)</span>.  We need to be sure that when we invert the transform we get the correct function.</p>
 <p>If the Laplace Transform were not invertible, we could find ourselves in a scenario like:</p>
 <ul class="simple">
@@ -538,7 +554,7 @@ document.write(`
 </section>
 </div></section>
 <section id="inverting-the-laplace-transform-using-the-basic-rules-and-a-table">
-<h2><span class="section-number">1.3.3. </span>Inverting the Laplace Transform using the Basic Rules and a Table<a class="headerlink" href="#inverting-the-laplace-transform-using-the-basic-rules-and-a-table" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.3.5. </span>Inverting the Laplace Transform using the Basic Rules and a Table<a class="headerlink" href="#inverting-the-laplace-transform-using-the-basic-rules-and-a-table" title="Link to this heading">#</a></h2>
 <p>The Table at <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> allows us to take the Laplace Transform of a function without needing to use the definition to calculate it.  If we can find the function in the Table, then we can use the Table to perform the Transform.</p>
 <p>A key detail is that the uniqueness of the Laplace Transform means that if we know the transform of a function, we can find that function exactly (except perhaps at some points of discontinuity).  This means that the table works in both directions: we can invert the transform using the transform table.  We use <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[\tilde{f}(s)](t)\)</span> to denote the inverse transform of a function.</p>
 <div class="proof example admonition" id="example:invert_to_exponential">
@@ -610,7 +626,7 @@ f(t) &amp;= \mathcal{L}^{-1} [\tilde{f}(s)](t)\\
 </section>
 </div></section>
 <section id="self-test">
-<h2><span class="section-number">1.3.4. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.3.6. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Use the Linearity Property and <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> to find the Laplace Transform of <span class="math notranslate nohighlight">\(f(t) = \cos(3t) + 2\sin(3t)\)</span>.</p></li>
 <li><p>Use the Linearity Property and <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> to find the Laplace Transform of <span class="math notranslate nohighlight">\(f(t) = e^{-2t}(3\cos(t)- 4 \sin(t))\)</span>.</p></li>
@@ -686,10 +702,12 @@ f(t) &amp;= \mathcal{L}^{-1} [\tilde{f}(s)](t)\\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity-of-the-laplace-transform">1.3.1. Linearity of the Laplace Transform</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-of-the-laplace-transform">1.3.2. Uniqueness of the Laplace Transform</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverting-the-laplace-transform-using-the-basic-rules-and-a-table">1.3.3. Inverting the Laplace Transform using the Basic Rules and a Table</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.3.4. Self-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.3.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.3.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity-of-the-laplace-transform">1.3.3. Linearity of the Laplace Transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-of-the-laplace-transform">1.3.4. Uniqueness of the Laplace Transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverting-the-laplace-transform-using-the-basic-rules-and-a-table">1.3.5. Inverting the Laplace Transform using the Basic Rules and a Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.3.6. Self-test</a></li>
 </ul>
   </nav></div>
 

@@ -449,8 +449,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-of-f-t-and-f-t">1.8.1. Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-differential-equations-examples">1.8.2. Solving Differential Equations: Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.8.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.8.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-of-f-t-and-f-t">1.8.3. Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-differential-equations-examples">1.8.4. Solving Differential Equations: Examples</a></li>
 </ul>
             </nav>
         </div>
@@ -464,6 +466,24 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="using-the-laplace-transform-to-solve-differential-equations">
 <h1><span class="section-number">1.8. </span>Using the Laplace Transform to solve Differential Equations<a class="headerlink" href="#using-the-laplace-transform-to-solve-differential-equations" title="Link to this heading">#</a></h1>
+<section id="intended-learning-outcomes">
+<h2><span class="section-number">1.8.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
+<p>By the end of this section, you should be able to:</p>
+<ul class="simple">
+<li><p>Express the Laplace transforms of derivatives:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathcal{L}[f'(t)] &amp;= s\tilde{f}(s) - f(0)\\
+\mathcal{L}[f''(t)] &amp;= s^2\tilde{f}(s) - sf(0) - f'(0)\end{align*}\]</div>
+<ul class="simple">
+<li><p>Apply these formulas to convert linear, constant-coefficient first or second order ODEs in <span class="math notranslate nohighlight">\(t\)</span> into algebraic equations in <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
+<li><p>Solve the resulting equations for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> and then invert it.</p></li>
+<li><p>Handle examples that involve discontinuous forcing functions.</p></li>
+</ul>
+</section>
+<section id="introduction">
+<h2><span class="section-number">1.8.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>We now begin to apply the Laplace Transform to solving constant coefficient linear differential equations.  We focus on differential equations of the form</p>
 <div class="math notranslate nohighlight">
 \[f'(t) + af(t) = g(t)\]</div>
@@ -476,8 +496,9 @@ document.write(`
 <li><p>Do some Algebra to solve for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.</p></li>
 <li><p>Invert the Laplace Transform of <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> to find <span class="math notranslate nohighlight">\(f(t)\)</span>.</p></li>
 </ul>
+</section>
 <section id="transforms-of-f-t-and-f-t">
-<h2><span class="section-number">1.8.1. </span>Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span><a class="headerlink" href="#transforms-of-f-t-and-f-t" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.8.3. </span>Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span><a class="headerlink" href="#transforms-of-f-t-and-f-t" title="Link to this heading">#</a></h2>
 <p>To take the Laplace Transform of our differential equations, we will need to know the transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span>.</p>
 <div class="proof theorem admonition" id="theorem-0">
 <p class="admonition-title"><span class="caption-number">Theorem 1.5 </span> (Transforms of derivatives)</p>
@@ -514,9 +535,9 @@ Then applying this rule twice gives</p>
 <p>So the transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span> can be written in terms of the transform of <span class="math notranslate nohighlight">\(f(t)\)</span> and the initial conditions.  This is the key detail that leads to the Laplace Transform of a differential equation for <span class="math notranslate nohighlight">\(f(t)\)</span> becoming an Algebraic equation for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.</p>
 </section>
 <section id="solving-differential-equations-examples">
-<h2><span class="section-number">1.8.2. </span>Solving Differential Equations: Examples<a class="headerlink" href="#solving-differential-equations-examples" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.8.4. </span>Solving Differential Equations: Examples<a class="headerlink" href="#solving-differential-equations-examples" title="Link to this heading">#</a></h2>
 <div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 1.29 </span> (<span class="math notranslate nohighlight">\(f''(t) + 4f'(t) + 3f(t) = -6e^{-3t}\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.30 </span> (<span class="math notranslate nohighlight">\(f''(t) + 4f'(t) + 3f(t) = -6e^{-3t}\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To find <span class="math notranslate nohighlight">\(f(t)\)</span> if <span class="math notranslate nohighlight">\(f''(t) + 4f'(t) + 3f(t) = -6e^{-3t}\)</span> with <span class="math notranslate nohighlight">\(f(0) = 1\)</span> and <span class="math notranslate nohighlight">\(f'(0)=-2\)</span> we take the Transform of both sides:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -590,7 +611,7 @@ f(t) &amp;= \mathcal{L}^{-1}[\tilde{f}(s)](t)\\
 </div>
 <p>It is useful to see an example that involves a discontinuity:</p>
 <div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 1.30 </span> (<span class="math notranslate nohighlight">\(f'(t) + 2f(t) = t H_4(t)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.31 </span> (<span class="math notranslate nohighlight">\(f'(t) + 2f(t) = t H_4(t)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To solve for <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(f'(t) + 2f(t) = t H_4(t)\)</span> with <span class="math notranslate nohighlight">\(f(0) = 3\)</span> we follow the same steps, taking the Laplace Transform of both sides.</p>
 <p>We have</p>
@@ -729,8 +750,10 @@ f(t) &amp;= 3e^{-2t} +  H_4(t) \mathcal{L}^{-1} \left[ \frac{1+4s}{s^2(s+2)}\rig
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-of-f-t-and-f-t">1.8.1. Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-differential-equations-examples">1.8.2. Solving Differential Equations: Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.8.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.8.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-of-f-t-and-f-t">1.8.3. Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-differential-equations-examples">1.8.4. Solving Differential Equations: Examples</a></li>
 </ul>
   </nav></div>
 
