@@ -453,6 +453,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.8.2. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-of-f-t-and-f-t">1.8.3. Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-differential-equations-examples">1.8.4. Solving Differential Equations: Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.8.5. Self-test</a></li>
 </ul>
             </nav>
         </div>
@@ -477,9 +478,9 @@ document.write(`
 \mathcal{L}[f'(t)] &amp;= s\tilde{f}(s) - f(0)\\
 \mathcal{L}[f''(t)] &amp;= s^2\tilde{f}(s) - sf(0) - f'(0)\end{align*}\]</div>
 <ul class="simple">
-<li><p>Apply these formulas to convert linear, constant-coefficient first or second order ODEs in <span class="math notranslate nohighlight">\(t\)</span> into algebraic equations in <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
-<li><p>Solve the resulting equations for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> and then invert it.</p></li>
-<li><p>Handle examples that involve discontinuous forcing functions.</p></li>
+<li><p>Apply these formulas to convert a linear, constant-coefficient first or second order ODEs in <span class="math notranslate nohighlight">\(t\)</span> into an algebraic equation in <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
+<li><p>Solve the resulting equation for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> and then invert it.</p></li>
+<li><p>Handle cases that involve discontinuous forcing functions.</p></li>
 </ul>
 </section>
 <section id="introduction">
@@ -519,11 +520,12 @@ document.write(`
  &amp;= 0 - f(0) + s \int_0^\infty f(t) e^{-st} \, dt\\
  &amp;= -f(0) + s \tilde{f}(s)
  \end{align*}\]</div>
-<p>To demonstrate this for <span class="math notranslate nohighlight">\(f''(t)\)</span>, we rewrite the rule for <span class="math notranslate nohighlight">\(f'(t)\)</span> as
-$<span class="math notranslate nohighlight">\(
+<p>To demonstrate this for <span class="math notranslate nohighlight">\(f''(t)\)</span>, we rewrite the rule for <span class="math notranslate nohighlight">\(f'(t)\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
 \mathcal{L}\left[\frac{d}{dt}f'(t)\right](s) = -f(0) + s\mathcal{L}[f(t)](s)
-\)</span>$
-Then applying this rule twice gives</p>
+\]</div>
+<p>Then applying this rule twice gives</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathcal{L}[f''(t)](s) &amp;= \mathcal{L}[\frac{d}{dt} f'(t)](s)\\
@@ -546,21 +548,21 @@ f''(t) + 4f'(t) + 3f(t) &amp;= -6e^{-3t}\\
 \Rightarrow \quad \mathcal{L}[f''(t) + 4f'(t) + 3f(t)](s) &amp;= \mathcal{L}\left[-6e^{-3t}\right](s)\\
 s^2\tilde{f}(s) - sf(0) - f'(0) + 4(s\tilde{f}(s) - f(0)) + 3 \tilde{f}(s) &amp;= \frac{-6}{s+3}\\
 (s^2+4s+3)\tilde{f}(s) - s + 2 -4 &amp;= \frac{-6}{s+3}\\
-\tilde{f}(s) &amp;= \frac{-6}{(s+3)(s^2+4s+3)} + \frac{s+2}{s^2+4s+3}\\
+\Rightarrow \quad \tilde{f}(s) &amp;= \frac{-6}{(s+3)(s^2+4s+3)} + \frac{s+2}{s^2+4s+3}\\
 &amp;= \frac{-6}{(s+3)^2(s+1)} + \frac{s+2}{(s+3)(s+1)}
 \end{align*}\]</div>
-<p>We have solved for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.  Now we just need to invert the transform.  We could approach each fraction separately or we could do a single partial fractions expansion.  Typically if you can’t tell immediately how one of the fractions would be rewritten, it is easiest to do them in a single expansion.  The common denominator is <span class="math notranslate nohighlight">\((s+3)^2(s+1)\)</span>.  So we have</p>
+<p>We have solved for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.  To find <span class="math notranslate nohighlight">\(f(t)\)</span>, we need to invert the transform.  We could approach each fraction separately or we could do a single partial fractions expansion.  Typically if you can’t immediately see what the expansion of a given fraction looks like, it is easiest to do all the terms together in a single expansion.  The common denominator is <span class="math notranslate nohighlight">\((s+3)^2(s+1)\)</span>.  So we have</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{-6 + (s+2)(s+3)}{(s+3)^2(s+1)} = \frac{A}{(s+3)^2} + \frac{B}{s+3} + \frac{C}{s+1}
+\frac{-6}{(s+3)^2(s+1)} + \frac{s+2}{(s+3)(s+1)} = \frac{A}{(s+3)^2} + \frac{B}{s+3} + \frac{C}{s+1}
 \]</div>
-<p>Notice that we don’t expand out the numerator on the left hand side.  We will later plug in <span class="math notranslate nohighlight">\(s=-3\)</span>, so it is convenient to leave this factored.
-We multiply by the denominator:</p>
+<p>We multiply by the common denominator:</p>
 <div class="math notranslate nohighlight">
 \[
 -6 + (s+2)(s+3) = A(s+1) + B(s+3)(s+1) + C(s+3)^2
 \]</div>
-<p>Using <span class="math notranslate nohighlight">\(s=-3\)</span>:</p>
+<p>Notice that we <em>do not</em> expand the product on the left hand side.  Multiplying it out would make the next calculations more difficult (and give an opportunity for errors).
+Using <span class="math notranslate nohighlight">\(s=-3\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 -6 = -2A \Rightarrow A=3
@@ -568,7 +570,7 @@ We multiply by the denominator:</p>
 <p>Using <span class="math notranslate nohighlight">\(s=-1\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
--6 +2 = 4C \Rightarrow C=-1
+-6 +(-2)(-1) = 4C \Rightarrow C=-1
 \]</div>
 <p>Finally another convenient value is <span class="math notranslate nohighlight">\(s=0\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -583,7 +585,8 @@ We multiply by the denominator:</p>
 \[\begin{align*}
 f(t) &amp;= \mathcal{L}^{-1}[\tilde{f}(s)](t)\\
 &amp;= \mathcal{L}^{-1}\left[\frac{3}{(s+3)^2} + \frac{2}{s+3} + \frac{-1}{s+1}\right](t)\\
-&amp;= e^{-3t} \mathcal{L}^{-1}\left[\frac{3}{s^2}\right](t) + 2 e^{-3t} - e^{-t}\\
+&amp;= 3\mathcal{L}^{-1}\left[\frac{1}{(s+3)^2}\right](t) + 2\mathcal{L}^{-1}\left[\frac{1}{s+3}\right](t) - \mathcal{L}^{-1}\left[\frac{1}{s+1}\right](t)\\
+&amp;= 3e^{-3t} \mathcal{L}^{-1}\left[\frac{1}{s^2}\right](t) + 2 e^{-3t} - e^{-t}\\
 &amp;= 3te^{-3t}+ 2e^{-3t} - e^{-t}
 \end{align*}\]</div>
 </section>
@@ -618,15 +621,34 @@ f(t) &amp;= \mathcal{L}^{-1}[\tilde{f}(s)](t)\\
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathcal{L}[f'(t) + 2f(t)](s) &amp;= \mathcal{L}[t H_4(t)](s)\\
-s\tilde{f}(s) - 3 + 2\tilde{f}(s)  = \mathcal{L}[t H_4(t)](s)
+s\tilde{f}(s) - 3 + 2\tilde{f}(s)  &amp;= \mathcal{L}[t H_4(t)](s)
 \end{align*}\]</div>
-<p>To do the transform of the discontinuous term, we note that <span class="math notranslate nohighlight">\(g(t-4) = t\)</span> if <span class="math notranslate nohighlight">\(g(t)=t+4\)</span>.  Or we could use the result from the Transform Table (added 2025/03/07) that</p>
+<p>To do the transform of the discontinuous term, we will look at two equivalent approaches.  You can use whichever one is more convenient, but it would be good to have practice with both:</p>
+<ul>
+<li><p>From the Transform table, we have</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{L}[r(t)H_a(t)](s) = e^{-as} \mathcal{L}[r(t+a)](s)
-\]</div>
-<p>using <span class="math notranslate nohighlight">\(r(t) = t\)</span>.</p>
-<p>Either way we end up with <span class="math notranslate nohighlight">\(e^{-4s} \mathcal{L}[t+4](s) = e^{-4s} \left(\frac{1}{s^2} + \frac{4}{s}\right)\)</span>.  Thus we have</p>
+  \mathcal{L}[g(t)H_a(t)](s) = e^{-as} \mathcal{L}[g(t+a)](s)
+  \]</div>
+<p>Using <span class="math notranslate nohighlight">\(g(t) = t\)</span>, this says</p>
+<div class="math notranslate nohighlight">
+\[
+  \mathcal{L}[tH_4(t)](s) = e^{-4s}\mathcal{L}[t+4](s)
+  \]</div>
+</li>
+<li><p>Alternately, from the Transform table, we have</p>
+<div class="math notranslate nohighlight">
+\[
+  \mathcal{L}[g(t-a)H_a](s) = e^{-as} \mathcal{L}[g(t)](s)
+  \]</div>
+<p>To use this rule, we replace <span class="math notranslate nohighlight">\(t\)</span> by <span class="math notranslate nohighlight">\((t-a)+a\)</span>.  In this case, replacing <span class="math notranslate nohighlight">\(t\)</span> by <span class="math notranslate nohighlight">\((t-4)+4\)</span>, we can write <span class="math notranslate nohighlight">\(t=g(t-4)\)</span> where <span class="math notranslate nohighlight">\(g(x) = x+4\)</span>.  So using <span class="math notranslate nohighlight">\(g(t)=t+4\)</span>, this says</p>
+<div class="math notranslate nohighlight">
+\[
+  \mathcal{L}[tH_4(t)](s) = e^{-4s}\mathcal{L}[t+4](s)
+  \]</div>
+</li>
+</ul>
+<p>Either way we end up with the same thing, <span class="math notranslate nohighlight">\(e^{-4s} \mathcal{L}[t+4](s) = e^{-4s} \left(\frac{1}{s^2} + \frac{4}{s}\right)\)</span>.  Thus we have</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 (s+2) \tilde{f}(s) -3 &amp;=  e^{-4s} \left(\frac{1}{s^2} + \frac{4}{s}\right)\\
@@ -645,7 +667,7 @@ f(t) &amp;= \mathcal{L}^{-1}[\tilde{f}(s)](t)\\
 <div class="math notranslate nohighlight">
 \[\frac{1+4s}{s^2(s+2)} = \frac{A}{s^2} + \frac{B}{s} + \frac{C}{s+2}
 \]</div>
-<p>We get</p>
+<p>Multiplying through by the denominator, we get</p>
 <div class="math notranslate nohighlight">
 \[
 1+4s = A(s+2) + B(s)(s+2) + Cs^2
@@ -684,6 +706,38 @@ f(t) &amp;= 3e^{-2t} +  H_4(t) \mathcal{L}^{-1} \left[ \frac{1+4s}{s^2(s+2)}\rig
 </div>
 </div>
 </section>
+<section id="self-test">
+<h2><span class="section-number">1.8.5. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
+<p>This is currently still rudimentary.  An improved self-test will appear later.</p>
+<ol class="arabic simple">
+<li><p>Use the Laplace Transform to solve the initial value problem</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+f'(t) +2f(t) = e^{-t} \qquad f(0) = 3
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Use the Laplace Transform to solve the initial value problem</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+f'(t) + 2f(t) = 3e^{-2t} \qquad f(0) = 3
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Use the Laplace Transform to solve the initial value problem</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+f''(t) + 3f'(t) -4 f(t) = 2 + 3 t H_1(t)
+\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Use the Laplace Transform to solve the initial value problem</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+f''(t) + 3f'(t) -4 f(t) = 2 + 3 e^{-t} H_1(t)
+\]</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -695,16 +749,16 @@ f(t) &amp;= 3e^{-2t} +  H_4(t) \mathcal{L}^{-1} \left[ \frac{1+4s}{s^2(s+2)}\rig
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "octave"
+            mode: "xoctave"
         },
         kernelOptions: {
-            name: "octave",
+            name: "xoctave",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'octave'</script>
+    <script>kernelName = 'xoctave'</script>
 
                 </article>
               
@@ -754,6 +808,7 @@ f(t) &amp;= 3e^{-2t} +  H_4(t) \mathcal{L}^{-1} \left[ \frac{1+4s}{s^2(s+2)}\rig
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.8.2. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-of-f-t-and-f-t">1.8.3. Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-differential-equations-examples">1.8.4. Solving Differential Equations: Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.8.5. Self-test</a></li>
 </ul>
   </nav></div>
 
