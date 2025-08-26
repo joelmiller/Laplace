@@ -519,7 +519,7 @@ document.write(`
 <p>We now look at several examples using the <span class="math notranslate nohighlight">\(s\)</span>-shift.</p>
 <p>It is generally better practice when taking the transform to use <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}f(t)](s) = \mathcal{L}[f(t)](s-a)\)</span> Then find <span class="math notranslate nohighlight">\(\mathcal{L}[f(t)](s)\)</span> but use <span class="math notranslate nohighlight">\(s-a\)</span>.  You could use the equivalent statment <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}f(t)](s) = \tilde{f}(s-a)\)</span>.  This second option requires shifting <span class="math notranslate nohighlight">\(s\)</span> and finding the transform of <span class="math notranslate nohighlight">\(f\)</span> in one step, which often leads to Algebra errors.</p>
 <div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 1.14 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-2t}t^2](s)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.15 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-2t}t^2](s)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-2t}t^2](s)\)</span>, we use the <span class="math notranslate nohighlight">\(s\)</span>-shift and the rule from <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> that <span class="math notranslate nohighlight">\(\mathcal{L}[t^n](s) = n!/s^{n+1}\)</span>.</p>
 <p>We have</p>
@@ -530,7 +530,7 @@ document.write(`
 \end{align*}\]</div>
 </section>
 </div><div class="proof example admonition" id="example:e2tsin3t">
-<p class="admonition-title"><span class="caption-number">Example 1.15 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{2t}\sin(3t)](s)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.16 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{2t}\sin(3t)](s)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>We will find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{2t}\sin(3t)](s)\)</span> <em>without</em> using the entry in the table for <span class="math notranslate nohighlight">\(e^{at}\sin(\omega t)\)</span>.  Instead we will use the <span class="math notranslate nohighlight">\(s\)</span>-shift and the fact that <span class="math notranslate nohighlight">\(\mathcal{L}[\sin(\omega t)] = \omega/(s^2+\omega^2)\)</span></p>
 <p>We have</p>
@@ -542,9 +542,9 @@ document.write(`
 \end{align*}\]</div>
 </section>
 </div><div class="proof example admonition" id="example-3">
-<p class="admonition-title"><span class="caption-number">Example 1.16 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}\cos(\omega t)](s)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.17 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}\cos(\omega t)](s)\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>To find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}\cos(\omega t)](s)\)</span> using the <span class="math notranslate nohighlight">\(s\)</span>-shift we follow similar steps to <a class="reference internal" href="#example:e2tsin3t">Example 1.15</a> using <span class="math notranslate nohighlight">\(\mathcal{L}[\cos(\omega t)](s) = s/(s^2+\omega^2)\)</span>.</p>
+<p>To find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}\cos(\omega t)](s)\)</span> using the <span class="math notranslate nohighlight">\(s\)</span>-shift we follow similar steps to <a class="reference internal" href="#example:e2tsin3t">Example 1.16</a> using <span class="math notranslate nohighlight">\(\mathcal{L}[\cos(\omega t)](s) = s/(s^2+\omega^2)\)</span>.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathcal{L}[e^{at}\cos(\omega t)](s) &amp;=\mathcal{L}[\cos(\omega t)](s-a)\\
@@ -552,7 +552,7 @@ document.write(`
 \end{align*}\]</div>
 </section>
 </div><div class="proof example admonition" id="example-4">
-<p class="admonition-title"><span class="caption-number">Example 1.17 </span> (Using the <span class="math notranslate nohighlight">\(s\)</span> shift to invert: <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[(s)/((s-2)^2+9)](t)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.18 </span> (Using the <span class="math notranslate nohighlight">\(s\)</span> shift to invert: <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[(s)/((s-2)^2+9)](t)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To find <span class="math notranslate nohighlight">\(f(t)\)</span> if</p>
 <div class="math notranslate nohighlight">
