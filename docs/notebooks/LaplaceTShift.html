@@ -178,7 +178,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    The Laplace Transform
+                    MAT2VCA - Vector Calculus
                 </a>
             </li>
         </ul>
@@ -487,26 +487,21 @@ H_a(t) = \begin{cases} 0 &amp; t &lt; a\\
 </section>
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">graphics_toolkit</span><span class="p">(</span><span class="s">&quot;gnuplot&quot;</span><span class="p">)</span> <span class="c"># gnuplot is currently the only way I can get </span>
-                            <span class="c"># matlab/octave to display using this format</span>
-                            <span class="c"># However, it is not ideal - there is no control over</span>
-                            <span class="c"># font sizes, line widths, or ability to interact</span>
-                            <span class="c"># with the plot.</span>
-
-<span class="n">t</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span><span class="mi">1001</span><span class="p">);</span>
-<span class="k">for</span> <span class="n">a</span><span class="p">=[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-    <span class="n">Ha</span> <span class="p">=</span> <span class="n">t</span><span class="o">&gt;</span><span class="n">a</span><span class="p">;</span>  <span class="c">#defines Ha(t) = 1 for t&gt;a, 0 otherwise</span>
-    <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">a</span><span class="o">.*</span><span class="n">Ha</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;%d*H_%d(t)&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>  <span class="p">)</span>
-    <span class="nb">hold</span> <span class="n">on</span>
-    <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,(</span><span class="n">a</span><span class="o">+</span><span class="nb">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">.*</span><span class="n">Ha</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;(%d + sin(t))*H_%d(t)&#39;</span><span class="p">,</span> <span class="n">a</span> <span class="p">,</span><span class="n">a</span><span class="p">))</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="mi">1001</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="n">a</span><span class="p">=[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="w">    </span><span class="n">Ha</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">t</span><span class="o">&gt;</span><span class="n">a</span><span class="p">;</span><span class="w">  </span><span class="c">%defines Ha(t) = 1 for t&gt;a, 0 otherwise</span>
+<span class="w">    </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">a</span><span class="o">.*</span><span class="n">Ha</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayName&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;%d*H_%d(t)&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">)</span><span class="w">  </span><span class="p">)</span>
+<span class="w">    </span><span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="w">    </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,(</span><span class="n">a</span><span class="o">+</span><span class="nb">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">.*</span><span class="n">Ha</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayName&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;(%d + sin(t))*H_%d(t)&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
 <span class="k">end</span>
-<span class="nb">legend</span><span class="p">(</span><span class="s">&#39;location&#39;</span><span class="p">,</span> <span class="s">&#39;northwest&#39;</span><span class="p">)</span>
-<span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">6.1</span><span class="p">])</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&#39;location&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;northwest&#39;</span><span class="p">)</span>
+<span class="nb">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">6.1</span><span class="p">])</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/32f6b75c86f36f404788dd4641bc616502e511b54ef4665f31fd750c013d51fa.png" src="../_images/32f6b75c86f36f404788dd4641bc616502e511b54ef4665f31fd750c013d51fa.png" />
+<img alt="../_images/04eea5fdeb335ba70e90c07f13a83ffaa921850a096d76c58e520fc174b5e42f.png" src="../_images/04eea5fdeb335ba70e90c07f13a83ffaa921850a096d76c58e520fc174b5e42f.png" />
 </div>
 </div>
 <section id="alternate-definitions-of-h-a-t">
@@ -554,17 +549,17 @@ H_a(t) = H_0(t-a)
 <p>The code cell below implements <span class="math notranslate nohighlight">\(H_3(t)\)</span> and plots it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span>                            
-<span class="n">t</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">601</span><span class="p">);</span>
-<span class="n">H3</span> <span class="p">=</span> <span class="n">t</span><span class="o">&gt;</span><span class="p">=</span><span class="mi">3</span><span class="p">;</span>   <span class="c">#This is 0 where t&lt;3 and 1 for t&gt;=3</span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">H3</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">                            </span>
+<span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">601</span><span class="p">);</span>
+<span class="n">H3</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">;</span><span class="w">   </span><span class="c">%This is 0 where t&lt;3 and 1 for t&gt;=3</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">H3</span><span class="p">)</span>
 
-<span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span> <span class="c">#make axes a bit larger so that it&#39;s clearer.</span>
+<span class="nb">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span><span class="w"> </span><span class="c">%make axes a bit larger so that it&#39;s clearer.</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b0358a32d54a62d461c179d502c95ab134d248db90431a346f187841504cf53e.png" src="../_images/b0358a32d54a62d461c179d502c95ab134d248db90431a346f187841504cf53e.png" />
+<img alt="../_images/5e87518649873ef6d1d7bdb8e5d1161de4eb873d323bcd380f624d88031bb09d.png" src="../_images/5e87518649873ef6d1d7bdb8e5d1161de4eb873d323bcd380f624d88031bb09d.png" />
 </div>
 </div>
 <p>Notice that although the function is discontinuous at <span class="math notranslate nohighlight">\(t=3\)</span>, Matlab will still draw a line from the last point before <span class="math notranslate nohighlight">\(t=3\)</span> to the first point with <span class="math notranslate nohighlight">\(t \geq 3\)</span>.  If there is a large step size, then this line will not appear vertical.</p>
@@ -627,18 +622,18 @@ f(t) = \begin{cases}
 <p>Without using the Heaviside function, this is not very compact, and working with it computationally is a little awkward.   We plot <span class="math notranslate nohighlight">\(f(t)\)</span> below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">61</span><span class="p">);</span>
-<span class="n">t2</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span> <span class="mi">61</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">);</span>
+<span class="n">t2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">);</span>
 
-<span class="nb">plot</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t1</span><span class="p">)</span>        <span class="c"># notice that if we don&#39;t specify color, </span>
-<span class="nb">hold</span> <span class="n">on</span>             <span class="c"># the two plots will be given </span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t2</span><span class="o">-</span> <span class="n">t2</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span> <span class="c"># different colors</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">t1</span><span class="p">)</span><span class="w">        </span><span class="c">% notice that if we don&#39;t specify color, </span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="w">             </span><span class="c">% the two plots will be given </span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span><span class="w"> </span><span class="n">t2</span><span class="o">-</span><span class="w"> </span><span class="n">t2</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c">% different colors</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f5b0be3ee12e6783d937fad5456f1886dc6bd81678b8734c5db262b53e08d47a.png" src="../_images/f5b0be3ee12e6783d937fad5456f1886dc6bd81678b8734c5db262b53e08d47a.png" />
+<img alt="../_images/b381d361caee914da22addbe1216ecedf8aac0c2c29e32469e845efa35f9bf24.png" src="../_images/b381d361caee914da22addbe1216ecedf8aac0c2c29e32469e845efa35f9bf24.png" />
 </div>
 </div>
 <section id="the-laplace-transform-of-a-piecewise-continuous-function">
@@ -699,23 +694,23 @@ f(t) = t + H_3(t) g(t-3)
 </section>
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">801</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">801</span><span class="p">);</span>
 
-<span class="n">H3</span> <span class="p">=</span> <span class="n">t</span><span class="o">&gt;</span><span class="p">=</span><span class="mi">3</span><span class="p">;</span>  <span class="c">#define H_3(t) to be 1 if t&gt;=3 and 0 otherwise</span>
+<span class="n">H3</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">;</span><span class="w">  </span><span class="c">%define H_3(t) to be 1 if t&gt;=3 and 0 otherwise</span>
 
-<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&quot;f_0(t)&quot;</span><span class="p">)</span>
-<span class="nb">hold</span> <span class="n">on</span> 
-<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">t</span><span class="o">.^</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&quot;f_1(t)&quot;</span><span class="p">)</span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">H3</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;H_3(t)&#39;</span><span class="p">)</span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span> <span class="n">t</span><span class="o">.^</span><span class="mi">2</span> <span class="o">.*</span><span class="n">H3</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&quot;f(t) = f_0(t) - H_3(t) f_1(t)&quot;</span><span class="p">)</span>  <span class="c"># this plots with 1 color, </span>
-                         <span class="c"># but it includes the jump as a vertical line</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;--&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayName&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;f_0(t)&quot;</span><span class="p">)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="w"> </span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="o">.^</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;--&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayName&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;f_1(t)&quot;</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">H3</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayName&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;H_3(t)&#39;</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="o">-</span><span class="w"> </span><span class="n">t</span><span class="o">.^</span><span class="mi">2</span><span class="w"> </span><span class="o">.*</span><span class="n">H3</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayName&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;f(t) = f_0(t) - H_3(t) f_1(t)&quot;</span><span class="p">)</span><span class="w">  </span><span class="c">% this plots with 1 color, </span>
+<span class="w">                         </span><span class="c">% but it includes the jump as a vertical line</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
-<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="s">&quot;west&quot;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;west&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/96f0d11afb90304584bdea8e57e4b2f5b5ede19aa528be4a7f9cc94ab8d835d6.png" src="../_images/96f0d11afb90304584bdea8e57e4b2f5b5ede19aa528be4a7f9cc94ab8d835d6.png" />
+<img alt="../_images/7a460d742951b60416c539c98cdd0d72296788223fe3369776521505c2ff08e6.png" src="../_images/7a460d742951b60416c539c98cdd0d72296788223fe3369776521505c2ff08e6.png" />
 </div>
 </div>
 </section>
@@ -852,16 +847,16 @@ f(s) = \frac{1}{s-2} - 2e^{-s} \frac{1}{s-2} + 3 e^{-2s} \frac{1}{s-3}
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "jupyter_matlab_kernel"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "jupyter_matlab_kernel",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
 
                 </article>
               

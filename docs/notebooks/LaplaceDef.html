@@ -178,7 +178,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    The Laplace Transform
+                    MAT2VCA - Vector Calculus
                 </a>
             </li>
         </ul>
@@ -510,24 +510,18 @@ Before we try to find <span class="math notranslate nohighlight">\(\mathcal{L}[e
 </section>
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">graphics_toolkit</span><span class="p">(</span><span class="s">&quot;gnuplot&quot;</span><span class="p">)</span> <span class="c"># gnuplot is currently the only way I can get </span>
-                            <span class="c"># matlab/octave to display using this format</span>
-                            <span class="c"># However, it is not ideal - there is no control over</span>
-                            <span class="c"># font sizes, line widths, or ability to interact</span>
-                            <span class="c"># with the plot.</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">51</span><span class="p">);</span>
+<span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">);</span>
 
-<span class="n">t</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">51</span><span class="p">);</span>
-<span class="n">f</span> <span class="p">=</span> <span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">);</span>
-
-<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="n">color</span><span class="p">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span>
-<span class="nb">area</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">),</span>  <span class="s">&quot;FaceColor&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="w"> </span><span class="n">color</span><span class="p">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span>
+<span class="nb">area</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="w">  </span><span class="s">&quot;FaceColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">);</span>
 
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6103a809d07e9bf00675910399afe483b1ba1e162ac31723c95fd35acdbfd5d2.png" src="../_images/6103a809d07e9bf00675910399afe483b1ba1e162ac31723c95fd35acdbfd5d2.png" />
+<img alt="../_images/a887812ebb04b3cb2c0b11c8044edd12c0e0978144fe5100bd7b791ed58b1791.png" src="../_images/a887812ebb04b3cb2c0b11c8044edd12c0e0978144fe5100bd7b791ed58b1791.png" />
 </div>
 </div>
 <section id="finding-mathcal-l-e-t-s-for-general-s">
@@ -561,12 +555,12 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 </section>
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% this cell uses the same t and f as the </span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% this cell uses the same t and f as the </span>
 <span class="c">% previous code cell</span>
-<span class="k">for</span> <span class="n">s</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="n">label</span> <span class="p">=</span> <span class="p">[</span><span class="s">&#39;s=&#39;</span> <span class="n">num2str</span><span class="p">(</span><span class="n">s</span><span class="p">)];</span>
-    <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">s</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="n">label</span><span class="p">);</span>
-    <span class="nb">hold</span> <span class="n">on</span>
+<span class="k">for</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
+<span class="w">    </span><span class="n">label</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;s=&#39;</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">s</span><span class="p">)];</span>
+<span class="w">    </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">s</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;DisplayName&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="p">);</span>
+<span class="w">    </span><span class="n">hold</span><span class="w"> </span><span class="s">on</span>
 <span class="k">end</span>
 <span class="nb">legend</span><span class="p">()</span>
 <span class="nb">title</span><span class="p">(</span><span class="s">&#39;f(t) e^{-st}&#39;</span><span class="p">)</span>
@@ -575,7 +569,7 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dbf1bc4b0fdc15a6b739ced8747407ee164a9b08a6a5ecc5429bb49ca32b0cf8.png" src="../_images/dbf1bc4b0fdc15a6b739ced8747407ee164a9b08a6a5ecc5429bb49ca32b0cf8.png" />
+<img alt="../_images/71caaa804ead1f7526e246eee939ab38a4ed13044b0a1baed2daf127fa5d8d65.png" src="../_images/71caaa804ead1f7526e246eee939ab38a4ed13044b0a1baed2daf127fa5d8d65.png" />
 </div>
 </div>
 <p>When <span class="math notranslate nohighlight">\(s=-1\)</span>, the function <span class="math notranslate nohighlight">\(f(t)e^{-st}\)</span> is <span class="math notranslate nohighlight">\(1\)</span>, so the area under it between <span class="math notranslate nohighlight">\(t=0\)</span> to <span class="math notranslate nohighlight">\(t=\infty\)</span> is infinite.  When <span class="math notranslate nohighlight">\(s&lt;-1\)</span>, <span class="math notranslate nohighlight">\(f(t)e^{-st}\)</span> is an increasing function, so again the area is infinite.  For <span class="math notranslate nohighlight">\(s&gt;1\)</span> it is a decaying exponential with a finite area under it.</p>
@@ -735,16 +729,16 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "jupyter_matlab_kernel"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "jupyter_matlab_kernel",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
 
                 </article>
               
