@@ -448,6 +448,7 @@ document.write(`
 <li><p>Solve the resulting equation for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> and then invert it.</p></li>
 <li><p>Handle cases that involve discontinuous forcing functions.</p></li>
 </ul>
+<p><strong>This text is still undergoing improvements:</strong>  Please report any errors or things that are unclear to <a class="github reference external" href="https://github.com/joelmiller/Laplace/issues">joelmiller/Laplace#issues</a></p>
 </section>
 <section id="introduction">
 <h2><span class="section-number">1.8.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
@@ -705,16 +706,16 @@ f''(t) + 3f'(t) -4 f(t) = 2 + 3 e^{-t} H_1(t)
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "jupyter_matlab_kernel"
+            mode: "xoctave"
         },
         kernelOptions: {
-            name: "jupyter_matlab_kernel",
+            name: "xoctave",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'jupyter_matlab_kernel'</script>
+    <script>kernelName = 'xoctave'</script>
 
                 </article>
               
