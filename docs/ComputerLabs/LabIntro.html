@@ -421,7 +421,8 @@ document.write(`
 <h1><span class="section-number">4. </span>Computer Labs<a class="headerlink" href="#computer-labs" title="Link to this heading">#</a></h1>
 <p>This chapter contains the computer labs for the subject.  We will work through these computer labs in Cocalc.  You will receive instructions how to access cocalc at the start of the semester.</p>
 <p>The labs in this document are taken directly from the 2025 cocalc labs.  This means that there are occassional places where the formatting is mangled because the Cocalc interface interprets mathematics formatting slightly differently from the interface used here.</p>
-<p>If you want to work through these labs, you can do that.  At the top right of each page is a download button.  If you download the .ipynb format, it is possible to run these on your own machine.  You will need to install something that runs ‘’Jupyter Notebooks’’ (I use the program VS Code).  You will also need to install Matlab, and then do some additional work to get the program running the Jupyter Notebook to work with Matlab. Look for instructions to run a “Jupyter Notebook” with a Matlab kernel.  I use VS Code on a windows machine and I’ve followed <a class="reference external" href="https://github.com/mathworks/MATLAB-extension-for-vscode/">instructions here</a>.</p>
+<p>If you want to work through these labs, you can do that.  The simplest option is to open a Matlab window in your own computer (the university provides free downloads), and just write the relevant code into Matlab.</p>
+<p>A more sophisticated approach would involve downloading file and running it on your own machine. At the top right of each page is a download button.  If you download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> format, it is possible to run these on your own machine.  You will need to install something that runs ‘’Jupyter Notebooks’’ (I use the program <em>VS Code</em>).  You will also need to install Matlab (the university provides free downloads), and then do some additional work to get the program running the Jupyter Notebook to work with Matlab.  Look for instructions to run a “Jupyter Notebook” with a Matlab kernel.  If you use VS Code on a windows machine you should be able to follow the <a class="reference external" href="https://github.com/mathworks/MATLAB-extension-for-vscode/">instructions here</a>.  If you use VS Code on Windows I should be able to help, but I cannot promise that I have time to provide tech support.  If you use another approach, I may or may not be able to help.</p>
 <p>Once everything is working on your machine, when you run a block of code, you will see figures appear in the same document.  However, it will also bring up the figure in a separate window.  That window will give you the ability to interact with the plot, for example rotating a three-dimensional figure.</p>
 <div class="toctree-wrapper compound">
 </div>
@@ -436,16 +437,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "xoctave"
         },
         kernelOptions: {
-            name: "python3",
+            name: "xoctave",
             path: "./ComputerLabs"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'xoctave'</script>
 
                 </article>
               
