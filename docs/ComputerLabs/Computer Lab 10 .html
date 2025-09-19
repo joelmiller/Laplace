@@ -1,0 +1,979 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Computer lab 10 — Surface area of the top half of a sphere &#8212; The Laplace Transform and Differential Equations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ComputerLabs/Computer Lab 10 ';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="The Laplace Transform and Differential Equations - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Laplace Transform and Differential Equations - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Laplace Transform
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceExtra.html">1.9. Optional Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">2.1. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">2.2. Extensions to Lagrange Multipliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">3. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegrals.html">3.1. Multiple Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegralsDefineRegion.html">3.2. Systematically finding the terminals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="LabIntro.html">4. Computer Labs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2001.html">4.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2002.html">4.2. MAT2VCA Computer Lab 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2003.html">4.3. MAT2VCA Computer Lab 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2004.html">4.5. MAT2VCA Computer Lab 4: stationary points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2005.html">4.6. Cylindrical Coordinates and Unit Vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2006.html">4.7. The Gradient in non-Cartesian Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2007.html">4.8. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2008.html">4.9. Computer Lab 08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2009.html">4.10. Computer Lab 09  –   Work done moving through a vector field.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2011.html">4.11. Computer Lab 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2012.html">4.12. Computer Lab 12</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2FComputerLabs/Computer Lab 10 .html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ComputerLabs/Computer Lab 10 .ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Computer lab 10 — Surface area of the top half of a sphere</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-background-information">Essential background information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-surface-area-of-the-top-of-a-sphere">Finding the surface area of the top of a sphere</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tangent-vectors">Tangent Vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-area-of-the-parallelograms">Finding the area of the parallelograms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-surface-area-of-the-half-sphere">The surface area of the half-sphere</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-derivation-of-the-parametrization">Extra: derivation of the parametrization</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="computer-lab-10-surface-area-of-the-top-half-of-a-sphere">
+<h1>Computer lab 10 — Surface area of the top half of a sphere<a class="headerlink" href="#computer-lab-10-surface-area-of-the-top-half-of-a-sphere" title="Link to this heading">#</a></h1>
+<p>In this lab we will find the surface area of the top half of a sphere of radius <span class="math notranslate nohighlight">\(4\)</span>, without using the formula for the surface area of a sphere — the method we are developing could be used to find the surface area.</p>
+<p>The goal of this lab is to help you see how the integral</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_S \left \|\frac{\partial \vec{r}(u,v)}{\partial u} \times \frac{\partial \vec{r}(u,v)}{\partial v} \right\| \, dv \, du
+\]</div>
+<p>emerges when trying to calculate the area of a surface <span class="math notranslate nohighlight">\(S\)</span>.  More generally the integral of an arbitrary function on the surface is</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_S f(x(u,v),y(u,v),z(u,v)) \left \|\frac{\partial \vec{r}(u,v)}{\partial u} \times \frac{\partial \vec{r}(u,v)}{\partial v} \right\| \, dv \, du
+\]</div>
+<p>Throughout Calculus, a common theme is that we approximate curves by a collection of very short line segments.  Here we will go a step further: we approximate surfaces by a collection of very small parallelograms.</p>
+<p>Before we do that, we review how to calculate the area of a parallelogram if we know the vectors that define its sides.</p>
+<section id="essential-background-information">
+<h2>Essential background information<a class="headerlink" href="#essential-background-information" title="Link to this heading">#</a></h2>
+<p>We will rely on some properties of cross products.  In particular we will focus on the cross product of the vectors giving two sides of a parallelogram.</p>
+<p>Given two vectors <span class="math notranslate nohighlight">\(\vec{A}\)</span> and <span class="math notranslate nohighlight">\(\vec{B}\)</span>, the cross product <span class="math notranslate nohighlight">\(\vec{C} = \vec{A} \times \vec{B}\)</span> has some important properties:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\vec{C}\)</span> is orthogonal to both <span class="math notranslate nohighlight">\(\vec{A}\)</span> and <span class="math notranslate nohighlight">\(\vec{B}\)</span></p></li>
+<li><p>The direction of <span class="math notranslate nohighlight">\(\vec{C}\)</span> is determined by the “right hand rule”.</p></li>
+<li><p>The magnitude of <span class="math notranslate nohighlight">\(\vec{C}\)</span> is the product of the magnitudes of <span class="math notranslate nohighlight">\(\vec{A}\)</span> and <span class="math notranslate nohighlight">\(\vec{B}\)</span> and the sine of the angle between them:</p>
+<div class="math notranslate nohighlight">
+\[\| \vec{C} \| = \|\vec{A}\|\: \|\vec{B}\| \:|\sin(\theta)|\]</div>
+</li>
+</ul>
+<img src="cross_product_new.png"   width="411.625px"  height="229.802px"  style="object-fit:cover"/>
+<p>This image shows the cross product <span class="math notranslate nohighlight">\(\vec{C} = \vec{A} \times \vec{B}\)</span>.  Note that if you take your right hand, point the index finger in the direction of <span class="math notranslate nohighlight">\(\vec{A}\)</span> and the middle finger in the direction of <span class="math notranslate nohighlight">\(\vec{B}\)</span>, then your thumb will point in the direction of the cross product <span class="math notranslate nohighlight">\(\vec{C}\)</span> (alternately, if you point your fingers in the direction of <span class="math notranslate nohighlight">\(\vec{A}\)</span> and your palm in the direction of <span class="math notranslate nohighlight">\(\vec{B}\)</span>, then your thumb points in the direction of <span class="math notranslate nohighlight">\(\vec{C}\)</span>.)  This is the “right hand rule” for cross products.</p>
+<p>The magnitude of <span class="math notranslate nohighlight">\(\vec{C}\)</span> plays an important role that we will rely on later in this lab.  If we take the parallelogram whose sides are defined by <span class="math notranslate nohighlight">\(\vec{A}\)</span> and <span class="math notranslate nohighlight">\(\vec{B}\)</span>, its area is equal to the magnitude of the cross product <span class="math notranslate nohighlight">\(\| \vec{C}\|\)</span>.  Additionally, the cross product is perpendicular to the parallelogram.  This is illustrated through the following image:</p>
+<img src="cross_product_area_new.png"   width="326.635px"  height="183.812px"  style="object-fit:cover"/>
+<p>The area of the parallelogram is its base <span class="math notranslate nohighlight">\(\|\vec{A}\|\)</span> times its height <span class="math notranslate nohighlight">\(\|\vec{B}\| \sin(\theta)\)</span>, which equals the length of <span class="math notranslate nohighlight">\(\vec{C}\)</span>.</p>
+<p>We call a vector that is perpendicular to a plane a <em>normal vector to the plane</em>.</p>
+</section>
+<section id="finding-the-surface-area-of-the-top-of-a-sphere">
+<h2>Finding the surface area of the top of a sphere<a class="headerlink" href="#finding-the-surface-area-of-the-top-of-a-sphere" title="Link to this heading">#</a></h2>
+<p>Consider a greenhouse which resembles the top half of a sphere of radius <span class="math notranslate nohighlight">\(r=4\)</span>.  It has several rows of windows on it — in the image below it has 6 rows and 16 columns.   We would like to find the surface area by adding up the areas of the windows.</p>
+<p>Ultimately we want to know the area of the number of rows and columns increases to infinity so that it matches a true sphere.</p>
+<p>The code below plots the image.  We will derive the forumulas used in this code farther down.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">du</span> <span class="p">=</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">;</span>   <span class="c">%setting the step size in u and v in advance.  This makes it easier to change them and</span>
+<span class="n">dv</span> <span class="p">=</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">8</span><span class="p">;</span>    <span class="c">%we&#39;ll be making reference to them later.</span>
+<span class="n">u</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">du</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">dv</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>  <span class="c">%produces two matrices U and V.</span>
+                        <span class="c">%For the i-th element of the list u and the j-th element of the list v</span>
+                        <span class="c">%the ij entry of U has the i-th element of u </span>
+                        <span class="c">%and the ij entry of V has the j-th element of v</span>
+                        <span class="c">%So taking the ij entries of both gets you the </span>
+                        <span class="c">%i-th element of u and the j-th of v.</span>
+
+
+<span class="n">X</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="n">V</span><span class="p">);</span> <span class="c">%the ij-th element of X encodes the x value corresponding </span>
+                        <span class="c">%to the i-th element of u and j-th of v.</span>
+<span class="n">Y</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">V</span><span class="p">);</span> <span class="c">%the ij-th element of Y encodes the y value corresponding </span>
+                        <span class="c">%to the i-th element of u and j-th of v.</span>
+<span class="n">Z</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">cos</span><span class="p">(</span><span class="n">U</span><span class="p">);</span>
+
+<span class="nb">surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">zlabel</span><span class="p">(</span><span class="s">&#39;z&#39;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">(</span><span class="s">&#39;equal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b7f6b794678a868d0dcec8fdd2dc266be6a9009e8036051d92bd2b5ac4aad16b.png" src="../_images/b7f6b794678a868d0dcec8fdd2dc266be6a9009e8036051d92bd2b5ac4aad16b.png" />
+</div>
+</div>
+<p>Our approach to finding the area of the glass used in the greenhouse will be to add up the areas (or with full disclosure, a approximation to the areas) of each window.  Then when we take the size of the windows to zero, the approximations will become exact.</p>
+<p>We start by  parametrizing the shape.  This means we are putting a 2-dimensional coordinate system on it.  Guided by the usual spherical coordinates we will use the angle <span class="math notranslate nohighlight">\(\theta\)</span> (sometimes called the polar angle) and the angle <span class="math notranslate nohighlight">\(\phi\)</span> (sometimes called the azimuthal angle).</p>
+<p>However, since we want our methods to be consistent with what we’ll do for other shapes, we’ll use the variable names <span class="math notranslate nohighlight">\(u\)</span> (polar angle) and <span class="math notranslate nohighlight">\(v\)</span> (azimuthal angle).  We have</p>
+<div class="math notranslate nohighlight">
+\[ 0 \leq u \leq \pi/2 \, \qquad\qquad 0 \leq v \leq 2\pi\]</div>
+<img src="sphere_parametrization.png"   width="420.302px"  height="315.177px"  style="object-fit:cover"/>
+<p>The image shows a point on the sphere of radius <span class="math notranslate nohighlight">\(4\)</span>.  We are only interested in the top half for our calculation.  Each point on the surface is specified through the parameters (which we can think of as coordinates of points on the surface) <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>, with <span class="math notranslate nohighlight">\(u\)</span> being the angle from the vertical axis (the <em>polar</em> angle) and <span class="math notranslate nohighlight">\(v\)</span> the angle relative to the plane where <span class="math notranslate nohighlight">\(y=0\)</span> and <span class="math notranslate nohighlight">\(x\)</span> is positive.  If you are given the values of <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>, you should be able to locate the point on the surface, even if you don’t know the formulas to give the coordinates.</p>
+<p>Here are the formulas to find how <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span> from <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>, given that the radius is 4$.  We take these from the conversion between spherical and cartesian coordinates (but the formulas are derived at the very bottom of this lab)</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x &amp;= 4 \sin(u) \cos(v) \\
+y &amp;= 4\sin(u)\sin(v)\\
+z  &amp;= 4 \cos(u)
+\end{align*}\]</div>
+<p>Let’s plot the surface using this parametrization:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">du</span> <span class="p">=</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">;</span>   <span class="c">%setting the step size in u and v in advance.  This makes it easier to change them and</span>
+<span class="n">dv</span> <span class="p">=</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">8</span><span class="p">;</span>    <span class="c">%we&#39;ll be making reference to them later.</span>
+<span class="n">u</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">du</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">dv</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>  <span class="c">%produces two matrices U and V.</span>
+                        <span class="c">%For the i-th element of the list u and the j-th element of the list v</span>
+                        <span class="c">%the ij entry of U has the i-th element of u </span>
+                        <span class="c">%and the ij entry of V has the j-th element of v</span>
+                        <span class="c">%So taking the ij entries of both gets you the </span>
+                        <span class="c">%i-th element of u and the j-th of v.</span>
+
+
+<span class="n">X</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="n">V</span><span class="p">);</span> <span class="c">%the ij-th element of X encodes the x value corresponding </span>
+                        <span class="c">%to the i-th element of u and j-th of v.</span>
+<span class="n">Y</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">V</span><span class="p">);</span> <span class="c">%the ij-th element of Y encodes the y value corresponding </span>
+                        <span class="c">%to the i-th element of u and j-th of v.</span>
+<span class="n">Z</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">cos</span><span class="p">(</span><span class="n">U</span><span class="p">);</span>
+
+<span class="nb">surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">zlabel</span><span class="p">(</span><span class="s">&#39;z&#39;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">(</span><span class="s">&#39;equal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b7f6b794678a868d0dcec8fdd2dc266be6a9009e8036051d92bd2b5ac4aad16b.png" src="../_images/b7f6b794678a868d0dcec8fdd2dc266be6a9009e8036051d92bd2b5ac4aad16b.png" />
+</div>
+</div>
+<p>Each of the horizontal curves that completely encircles the sphere above corresponds to a constant value of <span class="math notranslate nohighlight">\(u\)</span> and each vertical curve that starts at the top and ends at the bottom corresponds to a constant value of <span class="math notranslate nohighlight">\(v\)</span>.</p>
+</section>
+<section id="tangent-vectors">
+<h2>Tangent Vectors<a class="headerlink" href="#tangent-vectors" title="Link to this heading">#</a></h2>
+<p>The position of a point on the surface with known <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> is given by</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\vec{r}(u,v)&amp;= x(u,v) \vec{i} + y(u,v) \vec{j} + z(u,v) \vec{k}\\
+&amp;= 4\sin(u) \cos(v) \vec{i} + 4\sin(u)\sin(v) \vec{j} + 4\cos(u) \vec{k}
+\end{align*}\]</div>
+<p>We can calculate <span class="math notranslate nohighlight">\(\partial \vec{r}/\partial u\)</span> and <span class="math notranslate nohighlight">\(\partial \vec{r}/\partial v\)</span>.  We get:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{\partial \vec{r}}{\partial u} &amp;= 4\cos(u)\cos(v) \vec{i} + 4 \cos(u) \sin(v) \vec{j}- 4\sin(u)\vec{k} \\
+\frac{\partial \vec{r}}{\partial v} &amp;=  -4\sin(u) \sin(v)\vec{i} + 4 \sin(u) \cos(v) \vec{j} + 0 \vec{k}
+\end{align*}\]</div>
+<p>We can interpret these as the amount of change in <span class="math notranslate nohighlight">\(\vec{r}\)</span> per unit change in <span class="math notranslate nohighlight">\(u\)</span> or <span class="math notranslate nohighlight">\(v\)</span>.  So we should expect that
+<span class="math notranslate nohighlight">\(
+\frac{\partial \vec{r}}{\partial u} \Delta u
+\)</span> and
+<span class="math notranslate nohighlight">\(\frac{\partial \vec{r}}{\partial v} \Delta v\)</span>
+represent the change in position when <span class="math notranslate nohighlight">\(u\)</span> increases by <span class="math notranslate nohighlight">\(\Delta u\)</span> or <span class="math notranslate nohighlight">\(v\)</span> increases by <span class="math notranslate nohighlight">\(\Delta v\)</span>.</p>
+<p><strong>Plot the vectors</strong>
+<span class="math notranslate nohighlight">\(
+\frac{\partial \vec{r}}{\partial u} \Delta u
+\)</span>
+and
+<span class="math notranslate nohighlight">\(\frac{\partial \vec{r}}{\partial v} \Delta v\)</span>
+over the surface.  Compare them to the frame drawn by matlab with line segments that directly connect the points <span class="math notranslate nohighlight">\(\vec{r}(u,v)\)</span> with <span class="math notranslate nohighlight">\(\vec{r}(u+\Delta u, v)\)</span> or with <span class="math notranslate nohighlight">\(\vec{r}(u,v+\Delta v)\)</span>.</p>
+<p><strong>You will need to fill some values in the cell below before it can run.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">du</span> <span class="p">=</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">;</span>   <span class="c">#setting the step size in u and v in advance.  This makes it easier to change them and</span>
+<span class="n">dv</span> <span class="p">=</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">8</span><span class="p">;</span>    <span class="c">#we&#39;ll be making reference to them later.</span>
+<span class="n">u</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">du</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">dv</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>  <span class="c">%produces two matrices U and V.</span>
+                        <span class="c">%For the i-th element of the list u and the j-th element of the list v</span>
+                        <span class="c">%the ij entry of U has the i-th element of u </span>
+                        <span class="c">%and the ij entry of V has the j-th element of v</span>
+                        <span class="c">%So taking the ij entry of both gets you the i-th element of u and the j-th of v.</span>
+
+<span class="n">X</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>  <span class="c">%the ij-th element of X encodes the x value corresponding to the i-th element of u and j-th of v.</span>
+<span class="n">Y</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>
+<span class="n">Z</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">cos</span><span class="p">(</span><span class="n">U</span><span class="p">);</span>
+
+<span class="c">%r(u,v) = x(u,v) i + y(u,v)j + z(u,v)k</span>
+<span class="c">%give the u derivatives at every single point:</span>
+
+
+<span class="c">% dXdU = &lt;fill this in&gt;</span>
+<span class="c">% dYdU = &lt;fill this in&gt;</span>
+<span class="c">% dZdU = &lt;fill this in&gt;</span>
+
+
+<span class="c">% %the v derivatives:</span>
+<span class="c">% dXdV = &lt;fill this in&gt;</span>
+<span class="c">% dYdV = &lt;fill this in&gt;</span>
+<span class="n">dZdV</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">V</span><span class="p">));</span>  <span class="c">%This command produces a matrix of zeros whose length/width are the same as V.</span>
+
+<span class="nb">surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">);</span>
+<span class="nb">hold</span> <span class="n">on</span>
+<span class="n">quiver3</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">du</span> <span class="o">*</span> <span class="n">dXdU</span><span class="p">,</span> <span class="n">du</span> <span class="o">*</span> <span class="n">dYdU</span><span class="p">,</span> <span class="n">du</span> <span class="o">*</span> <span class="n">dZdU</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="c">%plots Delta u * (dr/du).  The &#39;0&#39; tells quiver not to scale the vectors</span>
+<span class="n">quiver3</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">dv</span> <span class="o">*</span> <span class="n">dXdV</span><span class="p">,</span> <span class="n">dv</span> <span class="o">*</span> <span class="n">dYdV</span><span class="p">,</span> <span class="n">dv</span> <span class="o">*</span> <span class="n">dZdV</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">)</span> <span class="c">%plots Delta v * (dr/dv)</span>
+<span class="nb">axis</span><span class="p">(</span><span class="s">&#39;equal&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">zlabel</span><span class="p">(</span><span class="s">&#39;z&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>error: &#39;dXdU&#39; undefined near line 1, column 23
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>error: &#39;dXdV&#39; undefined near line 1, column 23
+</pre></div>
+</div>
+<img alt="../_images/b7f6b794678a868d0dcec8fdd2dc266be6a9009e8036051d92bd2b5ac4aad16b.png" src="../_images/b7f6b794678a868d0dcec8fdd2dc266be6a9009e8036051d92bd2b5ac4aad16b.png" />
+</div>
+</div>
+<p>The red vectors correspond to <span class="math notranslate nohighlight">\(\frac{\partial \vec{r}}{\partial u} \Delta u\)</span> and  the blue vectors give
+<span class="math notranslate nohighlight">\(\frac{\partial \vec{r}}{\partial v} \Delta v\)</span>.</p>
+<p>The vectors we’ve plotted are tangent vectors to the curves of constant <span class="math notranslate nohighlight">\(u\)</span> or of constant <span class="math notranslate nohighlight">\(v\)</span>.</p>
+<p>If we approximate the curves as locally straight lines near a given point <span class="math notranslate nohighlight">\(\vec{r}(u_i, v_j)\)</span>, then the point found by increasing <span class="math notranslate nohighlight">\(u\)</span> by <span class="math notranslate nohighlight">\(\Delta u\)</span> is <span class="math notranslate nohighlight">\(\vec{r}(u_i + \Delta u, v_j)\)</span> is approximately</p>
+<div class="math notranslate nohighlight">
+\[ \vec{r}(u_i + \Delta u, v_j) \approx \vec{r}(u_i, v_j) + \Delta u \frac{\partial \vec{r}(u_i,v_j)}{\partial u}\]</div>
+<p>So by drawing the vector <span class="math notranslate nohighlight">\(\Delta u \frac{\partial \vec{r}(u_i,v_j)}{\partial u}\)</span> based at <span class="math notranslate nohighlight">\(\vec{r}(u_i,v_j)\)</span>, the end point should be very close to <span class="math notranslate nohighlight">\(\vec{r}(u_i + \Delta u, v_j)\)</span>.   Similar things happen if we hold <span class="math notranslate nohighlight">\(u\)</span> constant and change <span class="math notranslate nohighlight">\(v\)</span> by <span class="math notranslate nohighlight">\(\Delta v\)</span>.</p>
+<p><strong>Edit the code above</strong> to make <span class="math notranslate nohighlight">\(\Delta u\)</span> and <span class="math notranslate nohighlight">\(\Delta v\)</span> larger and/or smaller until you clearly see that for smaller <span class="math notranslate nohighlight">\(\Delta u\)</span> or <span class="math notranslate nohighlight">\(\Delta v\)</span>, the tangent vectors (red and blue) get closer to approximating the edges of the polygons.</p>
+<p>We will zoom in very close to the location, <span class="math notranslate nohighlight">\(u = \pi/3\)</span> and <span class="math notranslate nohighlight">\(v = -3\pi/4\)</span> and look at what happens nearby for very small <span class="math notranslate nohighlight">\(\Delta u\)</span> and <span class="math notranslate nohighlight">\(\Delta v\)</span>.</p>
+<p><strong>Edit the code below</strong> to make <span class="math notranslate nohighlight">\(\Delta u\)</span> and <span class="math notranslate nohighlight">\(\Delta v\)</span> larger and/or smaller to see how well the tangent vectors approximate the surface when we zoom in closely.</p>
+<p>The key observation to make is that when <span class="math notranslate nohighlight">\(\Delta u\)</span> and <span class="math notranslate nohighlight">\(\Delta v\)</span> are small enough the vectors <span class="math notranslate nohighlight">\((\partial \vec{r}/\partial u ) \Delta u\)</span> and <span class="math notranslate nohighlight">\((\partial \vec{r}/\partial v) \Delta v\)</span> give us an excellent approximation of the edges we are using to create our polygon approximation to the sphere.  Thus we will be able to use them to find the area of a polygon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">du</span> <span class="p">=</span> <span class="mf">0.5</span><span class="p">;</span>
+<span class="n">dv</span> <span class="p">=</span> <span class="mf">0.5</span><span class="p">;</span>
+<span class="n">u</span> <span class="p">=</span> <span class="p">[</span><span class="nb">pi</span><span class="o">/</span><span class="mi">3</span><span class="o">-</span><span class="n">du</span><span class="p">,</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">3</span><span class="o">+</span><span class="n">du</span><span class="p">];</span>          <span class="c">%u just has 3 values centered at pi/3</span>
+<span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="o">-</span><span class="n">dv</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="o">+</span><span class="n">dv</span><span class="p">];</span> <span class="c">%v just has 3 values centered at -3 pi/4 = 5pi/4</span>
+
+<span class="p">[</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>  <span class="c">%produces two matrices U and V.</span>
+                        <span class="c">%For the i-th element of the list u and the j-th element of the list v</span>
+                        <span class="c">%the ij entry of U has the i-th element of u </span>
+                        <span class="c">%and the ij entry of V has the j-th element of v</span>
+                        <span class="c">%So taking the ij entry of both gets you the i-th element of u and the j-th of v.</span>
+
+
+<span class="n">X</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>  <span class="c">%the ij-th element of X encodes the x value corresponding to the i-th element of u and j-th of v.</span>
+<span class="n">Y</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>  
+<span class="n">Z</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">cos</span><span class="p">(</span><span class="n">U</span><span class="p">);</span>
+
+
+<span class="c">%r(u,v) = x(u,v) i + y(u,v)j + z(u,v)k</span>
+
+<span class="c">%The u and v derivatives at every single point:</span>
+
+<span class="n">dXdU</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>
+<span class="n">dYdU</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>
+<span class="n">dZdU</span> <span class="p">=</span> <span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">);</span>
+
+<span class="n">dXdV</span> <span class="p">=</span> <span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>
+<span class="n">dYdV</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>
+<span class="n">dZdV</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">V</span><span class="p">));</span>  <span class="c">%this is a matrix of only zero entries, with the same number of rows and columns as V </span>
+
+
+<span class="nb">surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">);</span>
+<span class="nb">hold</span> <span class="n">on</span>
+<span class="n">quiver3</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">du</span> <span class="o">*</span> <span class="n">dXdU</span><span class="p">,</span> <span class="n">du</span> <span class="o">*</span> <span class="n">dYdU</span><span class="p">,</span> <span class="n">du</span> <span class="o">*</span> <span class="n">dZdU</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="c">%plots Delta u * (dr/du).  The &#39;0&#39; tells quiver not to scale the vectors</span>
+<span class="n">quiver3</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">dv</span> <span class="o">*</span> <span class="n">dXdV</span><span class="p">,</span> <span class="n">dv</span> <span class="o">*</span> <span class="n">dYdV</span><span class="p">,</span> <span class="n">dv</span> <span class="o">*</span> <span class="n">dZdV</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">)</span> <span class="c">%plots Delta v * (dr/dv)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">zlabel</span><span class="p">(</span><span class="s">&#39;z&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a1b03af515ec56c30c827d5e84cfb9214dce1f472c8f3eebdd42063d1342deae.png" src="../_images/a1b03af515ec56c30c827d5e84cfb9214dce1f472c8f3eebdd42063d1342deae.png" />
+</div>
+</div>
+</section>
+<section id="finding-the-area-of-the-parallelograms">
+<h2>Finding the area of the parallelograms<a class="headerlink" href="#finding-the-area-of-the-parallelograms" title="Link to this heading">#</a></h2>
+<p>We want to find the area of the parallelogram at <span class="math notranslate nohighlight">\(\vec{r}(u_i,v_j)\)</span> whose sides are given by the tangent vectors found above:
+<span class="math notranslate nohighlight">\(\frac{\partial \vec{r}}{\partial u} \Delta u\)</span> and
+<span class="math notranslate nohighlight">\(\frac{\partial \vec{r}}{\partial v} \Delta v\)</span>.
+These look very close to being rectangles, and for the way we have chosen <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> they are.  But this is not always true when we parametrize a surface (the curves of constant <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> need not be perpendicular).  So to make sure our method applies to other cases, we will proceed as if we only know these are parallelograms.</p>
+<p>If we add up the areas of all the parallelograms, we would get a good approximation to the surface area of the sphere.  As <span class="math notranslate nohighlight">\(\Delta u\)</span> and <span class="math notranslate nohighlight">\(\Delta v\)</span> shrink , we get a better estimate of the surface area of the sphere.  In the limit that their lengths go to <span class="math notranslate nohighlight">\(0\)</span>, we get the surface area of the sphere.  Taking <span class="math notranslate nohighlight">\(\Delta u\)</span> and <span class="math notranslate nohighlight">\(\Delta v\)</span> to <span class="math notranslate nohighlight">\(0\)</span> and adding up many little areas should remind you of integration.</p>
+<p>Now we need to find the area of the parallelograms.  The cross product gives us a vector whose magnitude equals the area of the parallelogram. So we will add up the magnitudes of</p>
+<div class="math notranslate nohighlight">
+\[\left(\frac{\partial \vec{r}}{\partial v }\Delta v\right) \times \left(\frac{\partial \vec{r}}{\partial u}\Delta u\right)\]</div>
+<p>for all regions in the surface.  In this case we already found</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{\partial \vec{r}}{\partial u} &amp;= 4\cos(u)\cos(v) \vec{i} + 4 \cos(u) \sin(v) \vec{j}- 4\sin(u)\vec{k} \\
+\frac{\partial \vec{r}}{\partial v} &amp;=  -4\sin(u) \sin(v)\vec{i} + 4 \sin(u) \cos(v) \vec{j} + 0 \vec{k}
+\end{align*}\]</div>
+<p>So we find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left(\frac{\partial \vec{r}}{\partial v }\Delta v\right) \times \left(\frac{\partial \vec{r}}{\partial u}\Delta u\right)&amp;= (\Delta u \Delta v) \left(  4\cos(u)\cos(v) \vec{i} + 4 \cos(u) \sin(v) \vec{j}- 4\sin(u)\vec{k} \right) \times \left(-4\sin(u) \sin(v) \vec{i}+ 4 \sin(u) \cos(v) \vec{j} \right)\\ 
+ &amp;= (\Delta u \Delta v) \left \| \begin{pmatrix}
+ \vec{i} &amp; \vec{j} &amp; \vec{k}\\
+  4\cos(u)\cos(v)&amp; 4 \cos(u) \sin(v)&amp;-4\sin(u)\\
+ -4\sin(u) \sin(v) &amp; 4 \sin(u) \cos(v) &amp; 0
+ \end{pmatrix} \right\| \\
+ &amp;= \left(16\sin^2(u)\cos(v) \vec{i} + 16 \sin^2(u) \sin(v)\vec{j} + (16 \cos(u)\sin(u)\cos^2(v) + 16 \cos(u)\sin(u)\sin^2(v))\vec{k}\right) (\Delta u \Delta v)\\
+ &amp;= \left(16 \sin^2(u) \cos(v) \vec{i} + 16 \sin^2(u) \sin(v) \vec{j} + 16\cos(u)\sin(u) \vec{k} \right)(\Delta u \Delta v)\\
+ &amp;= 16 \sin(u) \left( \sin(u)\cos(v) \vec{i} + \sin(u) \sin(v) \vec{j} + \cos(u) \vec{k} \right) (\Delta u \Delta v)
+ \end{align*}\]</div>
+<p>For any <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>, this cross product is perpendicular to the two tangents we found at that point.  So these vectors are perpendicular to the surface of the sphere.  The vector inside the brackets in the final line is actually <span class="math notranslate nohighlight">\(\vec{e}_r\)</span>.<br />
+Let’s look at these vectors on the surface.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">du</span> <span class="p">=</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">;</span>   <span class="c">#setting the step size in u and v in advance.  This makes it easier to change them and</span>
+<span class="n">dv</span> <span class="p">=</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">8</span><span class="p">;</span>    <span class="c">#we&#39;ll be making reference to them later.</span>
+<span class="n">u</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">du</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">dv</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>  <span class="c">%produces two matrices U and V.</span>
+                        <span class="c">%For the i-th element of the list u and the j-th element of the list v</span>
+                        <span class="c">%the ij entry of U has the i-th element of u </span>
+                        <span class="c">%and the ij entry of V has the j-th element of v</span>
+                        <span class="c">%So taking the ij entry of both gets you the i-th element of u and the j-th of v.</span>
+
+<span class="n">X</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>  <span class="c">%the ij-th element of X encodes the x value corresponding to the i-th element of u and j-th of v.</span>
+<span class="n">Y</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>
+<span class="n">Z</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">cos</span><span class="p">(</span><span class="n">U</span><span class="p">);</span>
+
+<span class="n">cross_product_X</span> <span class="p">=</span> <span class="mi">16</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.^</span><span class="mf">2.</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="n">du</span><span class="o">*</span><span class="n">dv</span><span class="p">;</span>
+<span class="n">cross_product_Y</span> <span class="p">=</span> <span class="mi">16</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.^</span><span class="mf">2.</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="n">du</span><span class="o">*</span><span class="n">dv</span><span class="p">;</span>
+<span class="n">cross_product_Z</span> <span class="p">=</span> <span class="mi">16</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="o">*</span><span class="n">du</span><span class="o">*</span><span class="n">dv</span><span class="p">;</span>
+
+
+<span class="nb">surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">);</span>
+<span class="nb">hold</span> <span class="n">on</span>
+<span class="n">quiver3</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">cross_product_X</span><span class="p">,</span> <span class="n">cross_product_Y</span><span class="p">,</span> <span class="n">cross_product_Z</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">zlabel</span><span class="p">(</span><span class="s">&#39;z&#39;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">(</span><span class="s">&#39;equal&#39;</span><span class="p">)</span>
+<span class="nb">view</span><span class="p">(</span><span class="o">-</span><span class="mi">135</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>warning: using the gnuplot graphics toolkit is discouraged
+
+The gnuplot graphics toolkit is not actively maintained and has a number
+of limitations that are unlikely to be fixed.  Communication with gnuplot
+uses a one-directional pipe and limited information is passed back to the
+Octave interpreter so most changes made interactively in the plot window
+will not be reflected in the graphics properties managed by Octave.  For
+example, if the plot window is closed with a mouse click, Octave will not
+be notified and will not update its internal list of open figure windows.
+The qt toolkit is recommended instead.
+</pre></div>
+</div>
+<img alt="../_images/2b5ed42705f4c9410529cafc4369326502d4cda3fb4a0f2b3804c943df8c8504.png" src="../_images/2b5ed42705f4c9410529cafc4369326502d4cda3fb4a0f2b3804c943df8c8504.png" />
+</div>
+</div>
+<p>So what we’ve got now is a way of splitting the shape up into shapes that approximate parallelograms, and we can find a vector that is orthogonal to the surface whose length equals the area of the corresponding parallelogram.  You should be able to see that the vectors near the “equator” are longer than the vectors near the “poles”.  This is because the surface elements have larger area near the equator.</p>
+<p>If we add up the lengths of all of these normal vectors then we should get the surface area.</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{u_m}\left( \sum_{v_n} \left\|\frac{\partial \vec{r}(u_m,v_n)}{\partial v} \times \frac{\partial \vec{r}(u_m,v_n)}{\partial u}\right\| \Delta v \right)\Delta u
+\]</div>
+<p>Let’s choose a specific value of <span class="math notranslate nohighlight">\(u_m\)</span>, say <span class="math notranslate nohighlight">\(u_m=\pi/2\)</span>.  For this value, <strong>the inner sum</strong> becomes</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{v_n} \left \|\frac{\partial \vec{r}\left(\frac{\pi}{2},v\right)}{\partial v} \times \frac{\partial \vec{r}\left(\frac{\pi}{2},v\right)}{\partial u}\right\| \Delta v
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(0 \leq v \leq 2\pi\)</span>, if we take <span class="math notranslate nohighlight">\(\Delta v \to 0\)</span>, we get</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^{2\pi}  \left \|\frac{\partial \vec{r}\left(\frac{\pi}{2},v\right)}{\partial v} \times \frac{\partial \vec{r}\left(\frac{\pi}{2},v\right)}{\partial u}\right\|  \, dv
+\]</div>
+<p>Similar results happen for other values of <span class="math notranslate nohighlight">\(u_m\)</span>, so we get</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^{2\pi}  \left \|\frac{\partial \vec{r}\left(u_m,v\right)}{\partial v} \times \frac{\partial \vec{r}\left(u_m,v\right)}{\partial u}\right\|  \, dv
+\]</div>
+<p>for each <span class="math notranslate nohighlight">\(u_m\)</span>.  Then <span class="math notranslate nohighlight">\(\Delta u\)</span> times this gives a good approximation of the area of the sphere in the horizontal strip between <span class="math notranslate nohighlight">\(u_m\)</span> and <span class="math notranslate nohighlight">\(u_{m+1}\)</span>.</p>
+<p>So our approximation to the area is now</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{u_m}\left(\int_0^{2\pi}  \left \|\frac{\partial \vec{r}\left(u_m,v\right)}{\partial v} \times \frac{\partial \vec{r}\left(u_m,v\right)}{\partial u}\right\|  \, dv
+ \right)\Delta u
+\]</div>
+<p>Taking <span class="math notranslate nohighlight">\(\Delta u \to 0\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^{\pi/2} \left(\int_0^{2\pi}  \left \|\frac{\partial \vec{r}\left(u_m,v\right)}{\partial v} \times \frac{\partial \vec{r}\left(u_m,v\right)}{\partial u}\right\|  \, dv
+ \right)\Delta u
+\]</div>
+</section>
+<section id="the-surface-area-of-the-half-sphere">
+<h2>The surface area of the half-sphere<a class="headerlink" href="#the-surface-area-of-the-half-sphere" title="Link to this heading">#</a></h2>
+<p>The vectors remain separated in the <span class="math notranslate nohighlight">\(u\)</span> direction (because <span class="math notranslate nohighlight">\(\Delta u\)</span> is unchanged), but each level has many more vectors because of the reduction in <span class="math notranslate nohighlight">\(\Delta v\)</span>, and they are shorter.  For a given value of <span class="math notranslate nohighlight">\(u\)</span>, as <span class="math notranslate nohighlight">\(\Delta v\)</span> shrinks, the sum of the lengths of the vectors at that vertical level approaches the integral over <span class="math notranslate nohighlight">\(v\)</span> that we derived above.  It approximates the area of the sphere between <span class="math notranslate nohighlight">\(u_m\)</span> and <span class="math notranslate nohighlight">\(u_{m+1}\)</span>.  Notice that each integral is a number that is independent of <span class="math notranslate nohighlight">\(v\)</span> but not <span class="math notranslate nohighlight">\(u\)</span>.  That is, for each <span class="math notranslate nohighlight">\(u_m\)</span> we get a different value.</p>
+<p>If we then take <span class="math notranslate nohighlight">\(\Delta u\)</span> to <span class="math notranslate nohighlight">\(0\)</span>, we  get a integral over <span class="math notranslate nohighlight">\(u\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{u_m} \int_0^{2\pi} \left\|\frac{\partial \vec{r}(u,v)}{\partial v} \times \frac{\partial \vec{r}(u,v)}{\partial u}\right\| dv \Delta u  \to \int_0^{\pi/2} \left(\int_0^{2\pi} \left\|\frac{\partial \vec{r}(u,v)}{\partial v} \times \frac{\partial \vec{r}(u,v)}{\partial u}\right\| dv\right) \, du
+\]</div>
+<p>Now we find calculate the magnitude of the vector in the integral</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int_0^{\pi/2} \left(\int_0^{2\pi} \left\|\frac{\partial \vec{r}(u,v)}{\partial v} \times \frac{\partial \vec{r}(u,v)}{\partial u}\right\| dv\right) \, du &amp;=  \int_0^{\pi/2} \left(\int_0^{2\pi}\left\|16 \sin^2(u) \cos(v) \vec{i} + 16 \sin^2(u) \sin(v) \vec{j} + 16\cos(u)\sin(u) \vec{k}\right\| \, dv \right) \, du\\
+&amp;=  \int_0^{\pi/2} \left(\int_0^{2\pi}\left\|16 \sin(u) \left(\sin(u)\cos(v) \vec{i} + \sin(u) \sin(v) \vec{j} + \cos(u) \vec{k}\right)\right\| \, dv \right) \, du\\
+&amp;=  \int_0^{\pi/2} \left(\int_0^{2\pi}|16 \sin(u)| \: \left\| \left(\sin(u)\cos(v) \vec{i} + \sin(u) \sin(v) \vec{j} + \cos(u) \vec{k}\right)\right\| \, dv \right) \, du\\
+&amp;=  \int_0^{\pi/2} \left(\int_0^{2\pi}16 \sin(u) \: \sqrt{\sin^2(u)\cos^2(v)  + \sin^2(u) \sin^2(v) + \cos^2(u)} \, dv \right) \, du  \qquad\qquad \sin(u) \geq 0 \text{ for } 0 \leq u\leq \pi \\
+&amp;=  \int_0^{\pi/2} \left(\int_0^{2\pi}16 \sin(u) \: \sqrt{\sin^2(u)  + \cos^2(u)} \, dv \right) \, du\\ 
+&amp;=  \int_0^{\pi/2} \left(\int_0^{2\pi}16 \sin(u)  \, dv \right) \, du\\
+\end{align*}\]</div>
+<p>If you review the lecture about the “surface element” for a sphere’s surface in spherical coordinates, it was <span class="math notranslate nohighlight">\(dS = r^2 \sin(\theta)\)</span>.  In this case, <span class="math notranslate nohighlight">\(u = \theta\)</span> and <span class="math notranslate nohighlight">\(r=4\)</span>.</p>
+<p>We could factor the scalar <span class="math notranslate nohighlight">\(16 \sin(u)\)</span> from the vector and pull it out of the magnitude calculation because <span class="math notranslate nohighlight">\(\|c \vec{w}\| = |c| \|\vec{w}\|\)</span> for any scalar <span class="math notranslate nohighlight">\(c\)</span> and vector <span class="math notranslate nohighlight">\(\vec{w}\)</span>.  We could drop the absolute value signs around <span class="math notranslate nohighlight">\(16 \sin(u)\)</span> because <span class="math notranslate nohighlight">\(0 \leq u \leq \pi\)</span>,  so we are guaranteed <span class="math notranslate nohighlight">\(\sin(u) \geq 0\)</span>.</p>
+<p>Doing the inner integral first and then the outer integral we get:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int_0^{\pi/2} \left( \int_0^{2\pi} 16 \sin(u) \, dv\right) \, du &amp;= \int_0^{\pi/2} \left. 16 \sin(u)v \right|_{v=0}^{2\pi} \, du\\
+&amp;= \int_0^{\pi/2} 32 \pi \sin(u) \, du\\
+&amp;= \left. -32 \pi \cos(u) \right|_0^{\pi/2}\\
+&amp;= -32\pi(0) - (-32 \pi (1))\\
+&amp;= 32 \pi
+\end{align*}\]</div>
+<p>This matches the formula for the surface area of a  half-sphere <span class="math notranslate nohighlight">\(4 \pi r^2/2\)</span> with <span class="math notranslate nohighlight">\(r=4\)</span>.  Notice that in the first line of the equations above, one of the terminals was written as “<span class="math notranslate nohighlight">\(v=0\)</span>” rather than just <span class="math notranslate nohighlight">\(0\)</span>.  This is a helpful thing to include to remind us which variable we will replace using the terminals.  It isn’t necessary, but reduces our risk of making errors.</p>
+<p>If we had done this calculation this for a sphere of unknown radius <span class="math notranslate nohighlight">\(r\)</span>, we would have arrived at the formula <span class="math notranslate nohighlight">\(4\pi r^2/2\)</span>
+There is a useful trick that we could have used to simplify the integral here.  Because <span class="math notranslate nohighlight">\(u\)</span> is a constant as far as <span class="math notranslate nohighlight">\(v\)</span> is concerned we can pull it out of the integral over <span class="math notranslate nohighlight">\(v\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+ \int_0^{\pi/2} \left( \int_0^{2\pi} 16 \sin(u) \, dv\right) \, du = \int_0^{\pi/2} \left(16 \sin(u) \int_0^{2\pi} 1 dv \right) \, du
+\]</div>
+<p>Then because the integral over <span class="math notranslate nohighlight">\(v\)</span> does not depend on <span class="math notranslate nohighlight">\(u\)</span> (nor does <span class="math notranslate nohighlight">\(u\)</span> appear in its terminals), it is constant as far as <span class="math notranslate nohighlight">\(u\)</span> is concerned.  We can pull it out of the integral over <span class="math notranslate nohighlight">\(u\)</span>.  The 16 can also be pulled out.</p>
+<div class="math notranslate nohighlight">
+\[
+ \int_0^{\pi/2} \left(16 \sin(u) \int_0^{2\pi} 1 dv \right) \, du = 16 \left( \int_0^{2\pi} 1 \, dv  \right) \left( \int_0^{\pi/2} \sin(u)  du\right)
+\]</div>
+</section>
+<section id="extra-derivation-of-the-parametrization">
+<h2>Extra: derivation of the parametrization<a class="headerlink" href="#extra-derivation-of-the-parametrization" title="Link to this heading">#</a></h2>
+<p>Here is a derivation of the <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span> coordinates in terms of <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>.  We start by finding <span class="math notranslate nohighlight">\(z\)</span> in terms of the radius <span class="math notranslate nohighlight">\(r=4\)</span> and the angles <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>.  To help this, we draw the half-plane which includes the <span class="math notranslate nohighlight">\(z\)</span> axis and the point.  We draw a right triangle in this plane that will let us find <span class="math notranslate nohighlight">\(z\)</span></p>
+<img src=".Computer Lab 10.ipynb.upload/sphere_vertical_plane.png"   width="430.302px"  height="323.177px"  style="object-fit:cover"/>
+<p>We look at it from a side view.  The hypotenuse has length <span class="math notranslate nohighlight">\(4\)</span>.  The vertical leg of the triangle has length <span class="math notranslate nohighlight">\(z\)</span> and the horizontal leg of the triangle has length equal to the distance from the <span class="math notranslate nohighlight">\(z\)</span> axis to the point (in cylindrical coordinates this would be <span class="math notranslate nohighlight">\(\rho\)</span>).  The angle of the triangle that is at the origin is <span class="math notranslate nohighlight">\(u\)</span>.</p>
+<img src=".Computer Lab 10.ipynb.upload/sphere_side_view.png"   width="356.302px"  height="267.177px"  style="object-fit:cover"/>
+<p>By trigonometry, the vertical leg’s length divided by the hypotenuse is <span class="math notranslate nohighlight">\(\cos(u)\)</span>, so <span class="math notranslate nohighlight">\(z/4 = \cos(u)\)</span> yielding</p>
+<div class="math notranslate nohighlight">
+\[z = 4 \cos(u)\]</div>
+<p>Now we look for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.  We add the plane through the point that is parallel to the <span class="math notranslate nohighlight">\(xy\)</span> plane, and look at the horizontal leg of the right triangle:</p>
+<img src=".Computer Lab 10.ipynb.upload/sphere_horizontal_plane.png"   width="340.302px"  height="255.25px"  style="object-fit:cover"/>
+<p>We switch to a view from above and draw a new right triangle in this plane:</p>
+<img src=".Computer Lab 10.ipynb.upload/sphere_top_view.png"   width="367.302px"  height="275.177px"  style="object-fit:cover"/>
+<p>The hypotenuse is the line from the <span class="math notranslate nohighlight">\(z\)</span> axis to the point, which was the horizontal leg of the triangle we saw when calculating <span class="math notranslate nohighlight">\(z\)</span>.  This has length <span class="math notranslate nohighlight">\(4 \sin(u)\)</span>.  In this new triangle, this is the hypotenuse, and the angle of the point relative to the <span class="math notranslate nohighlight">\(x\)</span> axis is <span class="math notranslate nohighlight">\(v\)</span>.  So <span class="math notranslate nohighlight">\(\sin(v) = y/(4\sin(u))\)</span> and <span class="math notranslate nohighlight">\(\cos(v) = x/(4 \sin(u))\)</span>.  This finally yields</p>
+<div class="math notranslate nohighlight">
+\[ x = 4 \sin(u) \cos(v) \qquad\qquad y = 4\sin(u)\sin(v)\]</div>
+<p>Now we will use this parametrization to draw the sphere.  We set up a list of <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> values, and then use these formulas to plot the surface.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "octave-8.2"
+        },
+        kernelOptions: {
+            name: "octave-8.2",
+            path: "./ComputerLabs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'octave-8.2'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-background-information">Essential background information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-surface-area-of-the-top-of-a-sphere">Finding the surface area of the top of a sphere</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tangent-vectors">Tangent Vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-area-of-the-parallelograms">Finding the area of the parallelograms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-surface-area-of-the-half-sphere">The surface area of the half-sphere</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-derivation-of-the-parametrization">Extra: derivation of the parametrization</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LaTrobe University MAPS staff (present and past)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,869 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.2. MAT2VCA Computer Lab 2 &#8212; The Laplace Transform and Differential Equations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ComputerLabs/Computer Lab 02';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.3. MAT2VCA Computer Lab 3" href="Computer%20Lab%2003.html" />
+    <link rel="prev" title="4.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave" href="Computer%20Lab%2001.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="The Laplace Transform and Differential Equations - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Laplace Transform and Differential Equations - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Laplace Transform
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceExtra.html">1.9. Optional Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">2.1. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">2.2. Extensions to Lagrange Multipliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">3. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegrals.html">3.1. Multiple Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegralsDefineRegion.html">3.2. Systematically finding the terminals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="LabIntro.html">4. Computer Labs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2001.html">4.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. MAT2VCA Computer Lab 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2003.html">4.3. MAT2VCA Computer Lab 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2004.html">4.5. MAT2VCA Computer Lab 4: stationary points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2005.html">4.6. Cylindrical Coordinates and Unit Vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2006.html">4.7. The Gradient in non-Cartesian Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2007.html">4.8. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2008.html">4.9. Computer Lab 08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2009.html">4.10. Computer Lab 09  –   Work done moving through a vector field.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2011.html">4.11. Computer Lab 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2012.html">4.12. Computer Lab 12</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2FComputerLabs/Computer Lab 02.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ComputerLabs/Computer Lab 02.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MAT2VCA Computer Lab 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-this-lab">4.2.1. Goals for this lab:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrizing-lines">4.2.2. Parametrizing lines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-segments">4.2.2.1. Line segments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">4.2.2.2. Self test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-lines">4.2.3. Infinite lines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.2.3.1. Self test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circles">4.2.4. Circles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2.4.1. Self Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extension">4.2.4.2. Extension</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mat2vca-computer-lab-2">
+<h1><span class="section-number">4.2. </span>MAT2VCA Computer Lab 2<a class="headerlink" href="#mat2vca-computer-lab-2" title="Link to this heading">#</a></h1>
+<p>In this lab we will gain experience with parametrizing lines and circles.  We will mostly think of these as sitting within the <span class="math notranslate nohighlight">\(xy\)</span> plane, but more generally they could be sitting within a higher dimensional space.</p>
+<p>Lines and circles and many other curves are 1-dimensional objects.  We can mark a numberline along a curve, so that each point on the curve is associated with a numerical value, which we can call <span class="math notranslate nohighlight">\(t\)</span>.  Then the <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> (and possibly <span class="math notranslate nohighlight">\(z\)</span>) coordinates can be thought of as functions of <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Often, it’s useful to think of an object moving along the curve in time in which case <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span> give the coordinates of the object at each time <span class="math notranslate nohighlight">\(t\)</span>.  For example, the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates of a vehicle driving through a city can be thought of as functions of time.  At each time <span class="math notranslate nohighlight">\(t\)</span>, the function <span class="math notranslate nohighlight">\(x(t)\)</span> gives the corresponding <span class="math notranslate nohighlight">\(x\)</span> coordinate and <span class="math notranslate nohighlight">\(y(t)\)</span> gives the <span class="math notranslate nohighlight">\(y\)</span> coordinate.</p>
+<p>Other times, it may be useful to think of the distance <span class="math notranslate nohighlight">\(s\)</span> along the curve from some starting point.  Then <span class="math notranslate nohighlight">\(x(s)\)</span> and <span class="math notranslate nohighlight">\(y(s)\)</span> give the coordinates of the position on the curve that is distance <span class="math notranslate nohighlight">\(s\)</span> from the ‘start’.  We can think of this using a moving vehicle analogy as well.  If we give directions like like “follow the road for 1.5km” - if we know the path then the distance <span class="math notranslate nohighlight">\(s\)</span> tells us exactly what <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinate the vehicle has reached, so we can think of <span class="math notranslate nohighlight">\(x(s)\)</span> and <span class="math notranslate nohighlight">\(y(s)\)</span> as functions of <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<section id="goals-for-this-lab">
+<h2><span class="section-number">4.2.1. </span>Goals for this lab:<a class="headerlink" href="#goals-for-this-lab" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Parametrize the line segment between two points <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> using <span class="math notranslate nohighlight">\(t \in[0,1]\)</span>.</p></li>
+<li><p>Parametrize a line in terms of distance <span class="math notranslate nohighlight">\(s\)</span> from a given point <span class="math notranslate nohighlight">\(A\)</span> and the unit vector in the direction of the line <span class="math notranslate nohighlight">\(\vec{u}\)</span>.  This will be important for understanding cross sections in arbitrary directions, which is needed to understanding the slope in different directions and its relation to the gradient vector (lecture 3B).</p></li>
+<li><p>Parametrize a circle of given radius and center in terms of the angle <span class="math notranslate nohighlight">\(\theta\)</span>.  This will help in understanding cylindrical and spherical coordinates and in parametrizing surfaces later in the subject.</p></li>
+</ol>
+</section>
+<section id="parametrizing-lines">
+<h2><span class="section-number">4.2.2. </span>Parametrizing lines<a class="headerlink" href="#parametrizing-lines" title="Link to this heading">#</a></h2>
+<section id="line-segments">
+<h3><span class="section-number">4.2.2.1. </span>Line segments<a class="headerlink" href="#line-segments" title="Link to this heading">#</a></h3>
+<p>Consider two points <span class="math notranslate nohighlight">\(A=(x_A,y_A)\)</span> and <span class="math notranslate nohighlight">\(B=(x_B,y_B)\)</span> connected by a line segment.  Imagine an object (or an individual) moving along the line segment with constant velocity so that at time <span class="math notranslate nohighlight">\(t=0\)</span> it is at <span class="math notranslate nohighlight">\(A\)</span> and at time <span class="math notranslate nohighlight">\(t=1\)</span> it is at <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>Then at time <span class="math notranslate nohighlight">\(t=1/4\)</span> it is a quarter of the way from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span>.  At time <span class="math notranslate nohighlight">\(t=1/2\)</span> it is halfway to <span class="math notranslate nohighlight">\(B\)</span>.  At time <span class="math notranslate nohighlight">\(t=3/4\)</span> it is three quarters of the way to <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>How can we plot these points?  Let’s start with specific values <span class="math notranslate nohighlight">\(A=(0,0)\)</span> and <span class="math notranslate nohighlight">\(B=(2,3)\)</span> and plot them as red circles.  The fact that <span class="math notranslate nohighlight">\(A\)</span> is the origin will make our calculations a little simpler for a bit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">B</span><span class="p">=[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">plot</span><span class="p">([</span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">B</span><span class="p">(</span><span class="mi">1</span><span class="p">)],[</span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">B</span><span class="p">(</span><span class="mi">2</span><span class="p">)],</span>  <span class="s">&#39;ro&#39;</span><span class="p">)</span> <span class="c">%the &#39;r&#39; tells matlab to use red and the &#39;o&#39; tells it to use a circle.</span>
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">])</span>
+<span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now calculate by hand the points 1/4, 1/2, and 3/4 of the way from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span>.  Call these points <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, and <span class="math notranslate nohighlight">\(E\)</span>.  Then we plot <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and these points as circles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="p">=</span> <span class="p">[];</span> <span class="c">%fill this in</span>
+<span class="n">D</span> <span class="p">=</span> <span class="p">[];</span> <span class="c">%fill this in</span>
+<span class="n">E</span> <span class="p">=</span> <span class="p">[];</span> <span class="c">%fill this in</span>
+<span class="n">xs</span> <span class="p">=</span> <span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">B</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">C</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">D</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">E</span><span class="p">(</span><span class="mi">1</span><span class="p">)];</span>
+<span class="n">ys</span> <span class="p">=</span> <span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">B</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">C</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">D</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">E</span><span class="p">(</span><span class="mi">2</span><span class="p">)];</span>
+
+<span class="nb">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="s">&#39;ro&#39;</span><span class="p">)</span>
+
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">])</span>
+<span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can you find a formula for the point <span class="math notranslate nohighlight">\((x(t),y(t))\)</span> that is a proportion <span class="math notranslate nohighlight">\(t\)</span> (where <span class="math notranslate nohighlight">\(0\leq t \leq 1\)</span>) of the way from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span>?  If so, enter it in the box below.</p>
+<p>Enter the fomulas here:</p>
+<p>x = …
+y = …</p>
+<p>Now we’re going to use an efficient way to plot a bunch of dots between the two points.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">:</span> <span class="mi">1</span><span class="p">];</span>
+<span class="n">x</span> <span class="p">=</span> <span class="n">t</span><span class="o">*</span><span class="n">B</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> 
+<span class="n">y</span> <span class="p">=</span> <span class="n">t</span><span class="o">*</span><span class="n">B</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;.&#39;</span><span class="p">)</span> <span class="c">% the &#39;.&#39; means just a dot at each point.</span>
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">])</span>
+<span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Look at the values that <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(y\)</span> take.  Spend the time to understand why the plot looks like it does.  This may confirm the formula you found before for <span class="math notranslate nohighlight">\((x(t),y(t))\)</span>.  If not, spend some more time thinking about it.</p>
+<p>Now what happens if <span class="math notranslate nohighlight">\(A\)</span> is not at the origin?  Say that <span class="math notranslate nohighlight">\(A=(-1,1)\)</span> and <span class="math notranslate nohighlight">\(B=(1,4)\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">B</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nb">plot</span><span class="p">([</span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">B</span><span class="p">(</span><span class="mi">1</span><span class="p">)],[</span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">B</span><span class="p">(</span><span class="mi">2</span><span class="p">)],</span> <span class="s">&#39;ro&#39;</span><span class="p">)</span>
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">])</span>
+<span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">])</span>
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>   <span class="c">%aspect ratio of 1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that for this specific example, the step from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> is exactly the same as in the previous example.</p>
+<p>We’ll make an observation that if we treat <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> as vectors (rather than coordinates of points), then <span class="math notranslate nohighlight">\(A+(B-A) = B\)</span>.  <span class="math notranslate nohighlight">\(B-A\)</span> is the vector from the point <span class="math notranslate nohighlight">\(A\)</span> to the point <span class="math notranslate nohighlight">\(B\)</span>.  When we talk about going some fraction <span class="math notranslate nohighlight">\(t\)</span> of the way from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span>, we’re talking about adding that fraction of the vector <span class="math notranslate nohighlight">\((B-A)\)</span> to the vector <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">:</span> <span class="mi">1</span><span class="p">];</span>
+<span class="n">x</span> <span class="p">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="n">B</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">y</span> <span class="p">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="n">B</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;.&#39;</span><span class="p">)</span>
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">])</span>
+<span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">])</span>
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You should see that the formula for a point <span class="math notranslate nohighlight">\(P(t)\)</span> that is a fraction <span class="math notranslate nohighlight">\(t\)</span> of the way from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+P(t) = A + t(B-A)
+\]</div>
+<p>where we interpret these as vectors.</p>
+<p>So to describe the set of all points on the line segment from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span>, we can use</p>
+<div class="math notranslate nohighlight">
+\[
+\{ A+t(B-A) : 0 \leq t \leq 1\}
+\]</div>
+<p>This means the set of all points that can be written in the form <span class="math notranslate nohighlight">\(A+t(B-A)\)</span> for some value of <span class="math notranslate nohighlight">\(t\)</span> between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span>.
+Alternately, sometimes we write</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma(t) = A+t(B-A), \qquad t \in [0,1]
+\]</div>
+<p>which means that the function <span class="math notranslate nohighlight">\(\gamma(t)\)</span> gives the coordinate of the point corresponding to <span class="math notranslate nohighlight">\(t\)</span> for values of <span class="math notranslate nohighlight">\(t\)</span> within the given range.</p>
+<p>We call this a parametrization of the line from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span>.</p>
+</section>
+<section id="self-test">
+<h3><span class="section-number">4.2.2.2. </span>Self test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Plot 5 equally spaced points between the two points <span class="math notranslate nohighlight">\(A=(-4,5)\)</span> and <span class="math notranslate nohighlight">\(B=(2,-3)\)</span> as red dots, (including the end points) and find a parametrization for this line.</p></li>
+<li><p>Find a parametrization for the line in the opposite direction (i.e., it starts at <span class="math notranslate nohighlight">\(B\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span> and ends at <span class="math notranslate nohighlight">\(A\)</span> at <span class="math notranslate nohighlight">\(t=1\)</span>).  Plot 6 equally spaced points including the end points using this parametrization as blue squares</p></li>
+</ul>
+<ul class="simple">
+<li><p>Explain the statement: “The parametrization can be thought of as a new coordinate system for points on the line that assigns a number between 0 and 1 to each point on the line segment.  The rule <span class="math notranslate nohighlight">\(A+t(B-A)\)</span> translates from this new coordinate to our standard coordinates.”</p></li>
+</ul>
+<p>Give your answer here:</p>
+</section>
+</section>
+<section id="infinite-lines">
+<h2><span class="section-number">4.2.3. </span>Infinite lines<a class="headerlink" href="#infinite-lines" title="Link to this heading">#</a></h2>
+<p>Consider a point <span class="math notranslate nohighlight">\(A=(x_A,y_A)\)</span> and a unit vector <span class="math notranslate nohighlight">\(\vec{u} = (u_1,u_2)\)</span>.  (the term ‘unit vector’ means that the length of the vector is <span class="math notranslate nohighlight">\(1\)</span>).</p>
+<p>We would like to draw a line through <span class="math notranslate nohighlight">\(A\)</span> that goes in the direction of <span class="math notranslate nohighlight">\(\vec{u}\)</span>.  We will use <span class="math notranslate nohighlight">\(s\)</span> to denote the distance of a point on this line from <span class="math notranslate nohighlight">\(A\)</span> and we will try to find the coordinate <span class="math notranslate nohighlight">\((x(s),y(s))\)</span>.</p>
+<p>Because the length of <span class="math notranslate nohighlight">\(\vec{u}\)</span> is <span class="math notranslate nohighlight">\(1\)</span>, the length of the vector <span class="math notranslate nohighlight">\(s\vec{u}\)</span> is <span class="math notranslate nohighlight">\(s\)</span> for positive values of <span class="math notranslate nohighlight">\(s\)</span>, and <span class="math notranslate nohighlight">\(|s|\)</span> for negative values of <span class="math notranslate nohighlight">\(s\)</span>.  The positive values of <span class="math notranslate nohighlight">\(s\)</span> correspond to the direction that <span class="math notranslate nohighlight">\(\vec{u}\)</span> points, while negative values correspond to the opposite direction.</p>
+<p>Let’s take <span class="math notranslate nohighlight">\(A=(2,3)\)</span> and <span class="math notranslate nohighlight">\(\vec{u} = (3/5, 4/5)\)</span> (which has magnitude <span class="math notranslate nohighlight">\(1\)</span>).</p>
+<p>Set <span class="math notranslate nohighlight">\(P\)</span> to be the point <span class="math notranslate nohighlight">\(A + 5\vec{u}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">u</span> <span class="p">=</span> <span class="p">[</span><span class="mi">3</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="o">/</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">P</span> <span class="p">=</span> <span class="n">A</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">u</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use the pythagorean theorem by hand to check that the distance between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(P\)</span> is <span class="math notranslate nohighlight">\(5\)</span>.</p>
+<p>Write out your explanation here:</p>
+<p>To use Matlab to find the distance between two points you can use the following  command, without going through the Pythagorean theorem by hand…  The command <code class="docutils literal notranslate"><span class="pre">norm</span></code> gives the geometric length of a vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">norm</span><span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="n">P</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we’ll plot all points within distance <span class="math notranslate nohighlight">\(5\)</span> of <span class="math notranslate nohighlight">\(A\)</span> in the direction of <span class="math notranslate nohighlight">\(\vec{u}\)</span> or <span class="math notranslate nohighlight">\(-\vec{u}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.2</span><span class="p">:</span><span class="mi">5</span><span class="p">];</span>
+<span class="n">x</span> <span class="p">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">u</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">s</span><span class="p">;</span>
+<span class="n">y</span> <span class="p">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">u</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">s</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">([</span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">)],</span> <span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">)],</span> <span class="s">&#39;ro&#39;</span><span class="p">)</span>
+<span class="nb">hold</span> <span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the line is the set of points of the form</p>
+<div class="math notranslate nohighlight">
+\[
+\{ A + s\vec{u}: -\infty&lt;s&lt;\infty
+\}
+\]</div>
+<p>We can also write this as</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma(s) = A + s\vec{u} \qquad s \in \Re
+\]</div>
+<p>This is fine if the vector you have is a unit vector.  What if you’re given the point <span class="math notranslate nohighlight">\(A=(2,3)\)</span> and the vector <span class="math notranslate nohighlight">\(\vec{v} = (3,4)\)</span>, where <span class="math notranslate nohighlight">\(\vec{v}\)</span> is not a unit vector?</p>
+<p>One option is to just do exactly the same calculation as was done with <span class="math notranslate nohighlight">\(\vec{u}\)</span> above, but in this case the parameter <span class="math notranslate nohighlight">\(s\)</span> represents multiples of the length of <span class="math notranslate nohighlight">\(\vec{v}\)</span>.  If we want <span class="math notranslate nohighlight">\(s\)</span> to represent a distance (which we often do), then we replace <span class="math notranslate nohighlight">\(\vec{v} = (3,4)\)</span> with <span class="math notranslate nohighlight">\(\vec{u} = \vec{v}/\|\vec{v}\|\)</span>.  This will always give a unit vector in the same direction as <span class="math notranslate nohighlight">\(\vec{v}\)</span>. Then we can continue as we did above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="n">u</span> <span class="p">=</span> <span class="n">v</span><span class="o">/</span><span class="nb">norm</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.2</span><span class="p">:</span><span class="mi">5</span><span class="p">];</span>
+<span class="n">x</span> <span class="p">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">u</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">s</span><span class="p">;</span>
+<span class="n">y</span> <span class="p">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">u</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">s</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">([</span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">)],</span> <span class="p">[</span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">)],</span> <span class="s">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="p">=</span> <span class="s">&#39;A&#39;</span><span class="p">)</span>
+<span class="nb">hold</span> <span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3><span class="section-number">4.2.3.1. </span>Self test<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Find a parametrization of the line through the point A=(1,-1) in the direction of <span class="math notranslate nohighlight">\(\vec{v} = (1,1)\)</span> where the parameter <span class="math notranslate nohighlight">\(s\)</span> denotes the distance from <span class="math notranslate nohighlight">\(A\)</span> to a given point.  Plot points on the line of distance at most 10 from <span class="math notranslate nohighlight">\(A\)</span>.</p>
+</section>
+</section>
+<section id="circles">
+<h2><span class="section-number">4.2.4. </span>Circles<a class="headerlink" href="#circles" title="Link to this heading">#</a></h2>
+<p>Let’s try to plot the circle of radius <span class="math notranslate nohighlight">\(1\)</span> centred at the origin:</p>
+<div class="math notranslate nohighlight">
+\[x^2+y^2=1\]</div>
+<p>We’re going to first try a naive way and see that it is not as good as another approach.</p>
+<p>The natural thing to do, since we’re used to plotting functions is to express <span class="math notranslate nohighlight">\(y\)</span> as a function of <span class="math notranslate nohighlight">\(x\)</span>.  We can write <span class="math notranslate nohighlight">\(y^2=1-x^2\)</span> and so</p>
+<div class="math notranslate nohighlight">
+\[y = \pm \sqrt{1-x^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(-1\leq x \leq 1\)</span>.</p>
+<p>Let’s try to plot this.  In a sense, we are treating the circle as if the parameter we are using is the <span class="math notranslate nohighlight">\(x\)</span>-coordinate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">y</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;k&#39;</span><span class="p">)</span> <span class="c">%&#39;k&#39; means black.</span>
+<span class="nb">hold</span> <span class="n">on</span>
+
+<span class="n">y</span> <span class="p">=</span> <span class="o">-</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">)</span> <span class="c">#`b` means blue.</span>
+
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>  <span class="c">%this sets the &#39;aspect ratio&#39; so that the x and y distances are the same.  Otherwise it looks like a squashed circle.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that when we do this, we have to use two plotting commands because the circle is not a simple function of <span class="math notranslate nohighlight">\(x\)</span>, but instead can be thought of as two functions.  We’ve had to use a parameterization for the top half and a different parameterization for the bottom half of the circle.  You’ll also notice that close to <span class="math notranslate nohighlight">\(x=-1\)</span> and <span class="math notranslate nohighlight">\(x=1\)</span>, the circle is not very smooth.  It becomes clearer why if we plot the points themselves rather than lines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">y</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;ko&#39;</span><span class="p">)</span>
+<span class="nb">hold</span> <span class="n">on</span>
+
+<span class="n">y</span> <span class="p">=</span> <span class="o">-</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;bo&#39;</span><span class="p">)</span>
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the points are not equally spaced on the circle.  Their <span class="math notranslate nohighlight">\(x\)</span>-coordinates are equally spaced, but that results in very different geometric lengths.  They are farther apart near <span class="math notranslate nohighlight">\(x = \pm 1\)</span>.</p>
+<p>We would like to use a parametrization for which a given change in the parameter corresponds to the same distance regardless of the parameter value.  To do this, we’ll use the angle as the parameter.</p>
+<p><img alt="" src="../_images/polar_coords.png" /></p>
+<p>For a given point on the circle, we set <span class="math notranslate nohighlight">\(\theta\)</span> to be the angle between the line from the point to the centre of the circle and the <span class="math notranslate nohighlight">\(x\)</span> axis.  Then for this circle of radius <span class="math notranslate nohighlight">\(1\)</span> centred at the origin, <span class="math notranslate nohighlight">\(x = \cos(\theta)\)</span> and <span class="math notranslate nohighlight">\(y = \sin(\theta)\)</span>.  For this <span class="math notranslate nohighlight">\(\theta\)</span> goes from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(2\pi\)</span> (that is <span class="math notranslate nohighlight">\(0^\circ\)</span> to <span class="math notranslate nohighlight">\(360^\circ\)</span>).</p>
+<p>So  we are labelling points by the corresponding angle.  This is similar to how we label points on the Earth’s surface.  If you are talking about a point on the equator, you can identify exactly which point it is by using the Longitude, which is a measure of angle.  You don’t ever think about the (x,y,z) coordinates of the point.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">20</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span>
+<span class="n">x</span> <span class="p">=</span> <span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">);</span>
+<span class="n">y</span> <span class="p">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;ko&#39;</span><span class="p">)</span>
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we want the circle to have a different radius, <span class="math notranslate nohighlight">\(r\)</span>, we need to use <span class="math notranslate nohighlight">\(r\cos(\theta)\)</span> and <span class="math notranslate nohighlight">\(r\sin(\theta)\)</span>.</p>
+<p>If we want to shift the centre of the circle to another point <span class="math notranslate nohighlight">\((x_c,y_c)\)</span>, then we need to add <span class="math notranslate nohighlight">\(x_c\)</span> to all the <span class="math notranslate nohighlight">\(x\)</span> coordinates and <span class="math notranslate nohighlight">\(y_c\)</span> to all the <span class="math notranslate nohighlight">\(y\)</span> coordinates.</p>
+<p>So for a circle of radius <span class="math notranslate nohighlight">\(5\)</span> centred at <span class="math notranslate nohighlight">\((3,4)\)</span> we have</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">20</span><span class="p">:</span><span class="mi">6</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span>
+<span class="n">x</span> <span class="p">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mf">5.</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">);</span>
+<span class="n">y</span> <span class="p">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mf">5.</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">);</span>
+
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(notice that this circle goes through the origin — can you see why?)</p>
+<section id="id2">
+<h3><span class="section-number">4.2.4.1. </span>Self Test<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>plot a circle of radius <span class="math notranslate nohighlight">\(1/4\)</span> centred at <span class="math notranslate nohighlight">\((2,3)\)</span>.  Be sure to use <code class="docutils literal notranslate"><span class="pre">daspect([1,1])</span></code> to ensure that the aspect ratio is 1.</p>
+<p>What do you think happens if we use different values for <span class="math notranslate nohighlight">\(r\)</span> in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates?  Test your prediction.</p>
+</section>
+<section id="extension">
+<h3><span class="section-number">4.2.4.2. </span>Extension<a class="headerlink" href="#extension" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>See if you can modify the plots of circles so that they become spirals going out of the origin  (hint, the radius should depend on the angle).</p></li>
+<li><p>Can you make the spiral go around many times?</p></li>
+<li><p>The command <code class="docutils literal notranslate"><span class="pre">plot3(x,y,z)</span></code> will plot similarly to a 2 dimensional plot, but in 3D.  Can you use this to plot a helix that looks like a circle from above and does exactly 3 full rotations?</p></li>
+<li><p>Can you plot a double helix like a DNA molecule?  In a double helix, one helix is rotated by <span class="math notranslate nohighlight">\(\pi\)</span> compared to the other.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "octave-8.2"
+        },
+        kernelOptions: {
+            name: "octave-8.2",
+            path: "./ComputerLabs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'octave-8.2'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Computer%20Lab%2001.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>MAT2VCA Computer Lab 1 - basics of Matlab/Octave</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Computer%20Lab%2003.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>MAT2VCA Computer Lab 3</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-this-lab">4.2.1. Goals for this lab:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrizing-lines">4.2.2. Parametrizing lines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-segments">4.2.2.1. Line segments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">4.2.2.2. Self test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-lines">4.2.3. Infinite lines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.2.3.1. Self test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circles">4.2.4. Circles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2.4.1. Self Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extension">4.2.4.2. Extension</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LaTrobe University MAPS staff (present and past)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

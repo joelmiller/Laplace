@@ -25,6 +25,20 @@ chapters:
     sections: 
     - file: Integral_Calculus/MultipleIntegrals
     - file: Integral_Calculus/MultipleIntegralsDefineRegion
+  - file: ComputerLabs/LabIntro
+    sections:
+    - file: ComputerLabs/Computer Lab 01
+    - file: ComputerLabs/Computer Lab 02
+    - file: ComputerLabs/Computer Lab 03
+    - file: ComputerLabs/Computer Lab 04
+    - file: ComputerLabs/Computer Lab 05
+    - file: ComputerLabs/Computer Lab 06
+    - file: ComputerLabs/Computer Lab 07
+    - file: ComputerLabs/Computer Lab 08
+    - file: ComputerLabs/Computer Lab 09
+    - file: ComputerLabs/Computer Lab 10
+    - file: ComputerLabs/Computer Lab 11
+    - file: ComputerLabs/Computer Lab 12
     
 #- file: Laplace
 # - file: intro

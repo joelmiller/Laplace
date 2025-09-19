@@ -44,6 +44,6 @@ sphinx:
   extra_extensions:
     - sphinx_proof
 
-launch_buttons:
-  binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
-  thebe                  : true
+#launch_buttons:
+#  binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
+#  thebe                  : true

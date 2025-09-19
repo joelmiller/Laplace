@@ -1,0 +1,681 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.8. Lagrange Multipliers &#8212; The Laplace Transform and Differential Equations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ComputerLabs/Computer Lab 07';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.9. Computer Lab 08" href="Computer%20Lab%2008.html" />
+    <link rel="prev" title="4.7. The Gradient in non-Cartesian Coordinates" href="Computer%20Lab%2006.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="The Laplace Transform and Differential Equations - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Laplace Transform and Differential Equations - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Laplace Transform
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceExtra.html">1.9. Optional Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">2.1. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">2.2. Extensions to Lagrange Multipliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">3. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegrals.html">3.1. Multiple Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegralsDefineRegion.html">3.2. Systematically finding the terminals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="LabIntro.html">4. Computer Labs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2001.html">4.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2002.html">4.2. MAT2VCA Computer Lab 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2003.html">4.3. MAT2VCA Computer Lab 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2004.html">4.5. MAT2VCA Computer Lab 4: stationary points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2005.html">4.6. Cylindrical Coordinates and Unit Vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2006.html">4.7. The Gradient in non-Cartesian Coordinates</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.8. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2008.html">4.9. Computer Lab 08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2009.html">4.10. Computer Lab 09  –   Work done moving through a vector field.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2011.html">4.11. Computer Lab 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2012.html">4.12. Computer Lab 12</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2FComputerLabs/Computer Lab 07.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ComputerLabs/Computer Lab 07.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lagrange Multipliers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">4.8.1. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.8.2. example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">4.8.3. Self-test</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lagrange-multipliers">
+<h1><span class="section-number">4.8. </span>Lagrange Multipliers<a class="headerlink" href="#lagrange-multipliers" title="Link to this heading">#</a></h1>
+<p>In this lab we will explore properties of Lagrange Multipliers, with a focus on the need for contours of the objective function <span class="math notranslate nohighlight">\(f\)</span> to be tangent to the contours of the constraint function <span class="math notranslate nohighlight">\(g\)</span>.</p>
+<p>We will lead with an example:</p>
+<section id="example">
+<h2><span class="section-number">4.8.1. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<p>Consider the objective function <span class="math notranslate nohighlight">\(f(x, y) = x^2 + y^2\)</span> and the constraint <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> where <span class="math notranslate nohighlight">\(g(x,y) = y-x^2 + 1\)</span>.</p>
+<p>To apply the method of Lagrange Multipliers to this, we find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\nabla f &amp;= 2x \vec{i} + 2y\vec{j}\\
+\nabla g &amp;= -2x \vec{i} + \vec{j}
+\end{align*}\]</div>
+<p>Then <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span> yields</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+2x &amp;= - 2\lambda x\\
+2y &amp;= \lambda
+\end{align*}\]</div>
+<p>From the first equation we conclude that <span class="math notranslate nohighlight">\(\lambda = -1\)</span> or <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+<ul class="simple">
+<li><p>Assuming <span class="math notranslate nohighlight">\(x=0\)</span> and using the constraint <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> yields <span class="math notranslate nohighlight">\(y=-1\)</span>.  So we have a stationary point at <span class="math notranslate nohighlight">\((0,-1)\)</span>.</p></li>
+<li><p>Assuming that <span class="math notranslate nohighlight">\(\lambda = -1\)</span> the second equation yields <span class="math notranslate nohighlight">\(y=-1/2\)</span>.  Substituting this into the constraint gives <span class="math notranslate nohighlight">\(x = \pm 1/\sqrt{2}\)</span>.  So we have stationary points at <span class="math notranslate nohighlight">\((1/\sqrt{2},-1/2)\)</span> and <span class="math notranslate nohighlight">\((-1/\sqrt{2},-1/2)\)</span>.</p></li>
+</ul>
+<p>For these points we can find <span class="math notranslate nohighlight">\(f\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+        f(0,-1) &amp;= 1\\
+        f(1/\sqrt{2},-1/2) &amp;= 1/2 + 1/4 = 3/4\\
+        f(-1/\sqrt{2},-1/2) &amp;= 3/4
+\end{align*}\]</div>
+<p>For reference, we plot the constraint curve and a few contours of <span class="math notranslate nohighlight">\(f\)</span> including those corresponding to <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(3/4\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">y</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+
+<span class="n">G</span> <span class="p">=</span> <span class="n">Y</span> <span class="o">-</span> <span class="n">X</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">F</span> <span class="p">=</span> <span class="n">X</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Y</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+
+<span class="nb">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">G</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="nb">hold</span> <span class="n">on</span> 
+<span class="nb">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">F</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">colorbar</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e32e18805aaebf365d5c421d15113f963302664801977bdfa08f411b8fc54842.png" src="../_images/e32e18805aaebf365d5c421d15113f963302664801977bdfa08f411b8fc54842.png" />
+</div>
+</div>
+<p>We see in the figure that as <span class="math notranslate nohighlight">\(x^2+y^2\)</span> is increased, it first becomes tangent to the constraint parabola in two points.  These are the minima of <span class="math notranslate nohighlight">\(3/4\)</span>.  As <span class="math notranslate nohighlight">\(x^2+y^2\)</span> increases further, a new point of tangency emerges, and that is the lowest point in the parabola.  As we increase further, there is no value that makes the functions tangent.</p>
+<p>We can also see that there are points on the constraint which are arbitarily far from the origin.  As we do this, the value of <span class="math notranslate nohighlight">\(f\)</span> increases.</p>
+</section>
+<section id="id1">
+<h2><span class="section-number">4.8.2. </span>example<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>consider the gutter cross section that appeared in the videos for lesson 4B on stationary points:
+<img alt="gutter schematic" src="../_images/gutter.png" /></p>
+<p>the three variables of interest are <span class="math notranslate nohighlight">\(h\)</span> <span class="math notranslate nohighlight">\(b\)</span>, and the angle <span class="math notranslate nohighlight">\(\alpha\)</span>.  We want to maximixe the cross section area which equals <span class="math notranslate nohighlight">\(A(h,b,\alpha)=hb + h^2\tan(\alpha)/2\)</span> subject to the constraint <span class="math notranslate nohighlight">\(g(h,b,\alpha)=h+b+h\sec(\alpha)-1=0\)</span>.  in 4B, we used the constraint to eliminate one variable and then found the maximum of the remaining <span class="math notranslate nohighlight">\(2\)</span>-dimensional system.  Here we will use all three variables and Lagrange multipliers.  We will treat the variables as Cartesian coordinates and find the maximum of <span class="math notranslate nohighlight">\(A\)</span> subject to the constraint <span class="math notranslate nohighlight">\(g(h,b,\alpha)=0\)</span>.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\nabla A &amp;= (b + 2 h \tan(\alpha)/2)\vec{i} + h \vec{j} + h^2 \sec^2(\alpha)/2 \vec{k}\\
+\nabla g &amp;= (1 + \sec(\alpha))\vec{i} + \vec{j} + h \sec(\alpha)\tan(\alpha)
+\end{align*}\]</div>
+<p>So</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(b + 2 h \tan(\alpha)/2) &amp;= \lambda  (1 + \sec(\alpha))\\
+h &amp;= \lambda\\
+h^2 \sec^2(\alpha)/2 &amp;= \lambda h \sec(\alpha)\tan(\alpha)\\
+h+b+h\sec(\alpha)-1&amp;=0
+\end{align*}\]</div>
+<p>are the equations.</p>
+<p>We see <span class="math notranslate nohighlight">\(h= \lambda\)</span> so they become</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(b + h \tan(\alpha)) &amp;= h  (1 + \sec(\alpha))\\
+h^2 \sec^2(\alpha)/2 &amp;= h^2 \sec(\alpha)\tan(\alpha)\\
+h+b+h\sec(\alpha)-1&amp;=0
+\end{align*}\]</div>
+<p>The second of these equations becomes</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\sec^2(\alpha)}{2} = \sec{\alpha}\tan{\alpha}
+\]</div>
+<p>This leads to the conclusion that <span class="math notranslate nohighlight">\(\tan(\alpha) = \sec(\alpha)/2\)</span>.</p>
+<p>In the notes for Lesson 4B, we showed that this condition implies <span class="math notranslate nohighlight">\(\alpha = \pi/6\)</span> (a <span class="math notranslate nohighlight">\(30^\circ\)</span> angle).   This can be derived by constructing a right triangle with one side of length <span class="math notranslate nohighlight">\(1\)</span> and hypotenuse of length <span class="math notranslate nohighlight">\(\sec(\alpha)\)</span>.  The opposite side has length <span class="math notranslate nohighlight">\(\tan(\alpha) = \sec{(\alpha)}/2\)</span>.  Using the Pythagorean Theorem, this leads to <span class="math notranslate nohighlight">\(\sec(\alpha) = 2/\sqrt{3}\)</span> and <span class="math notranslate nohighlight">\(\tan(\alpha) = 1/\sqrt{3}\)</span>.</p>
+<p>The first equation above <span class="math notranslate nohighlight">\((b + 2 h \tan(\alpha)/2) = h  (1 + \sec(\alpha))\)</span> becomes <span class="math notranslate nohighlight">\(b + h/\sqrt{3} = h(1+2/\sqrt{3})\)</span>.  The constraint becomes <span class="math notranslate nohighlight">\(b + h(1+2/\sqrt{3})-1 = 0\)</span>.  We can solve this to get <span class="math notranslate nohighlight">\(h = 1/(2+\sqrt{3})\)</span> and</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+b &amp;= 1 - h - h \sec(\alpha) \\
+&amp;= 1 - h(1+\sec(\alpha))\\
+&amp; = 1 - \frac{1}{2+\sqrt{3}}\frac{2+\sqrt{3}}{\sqrt{3}}\\
+&amp;=  1 - \frac{1}{\sqrt{3}}
+\end{align*}\]</div>
+</section>
+<section id="self-test">
+<h2><span class="section-number">4.8.3. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
+<p>First, look at the figure and think about what you would intuitively expect is the angle that maximizes the cross section.</p>
+<p>In the code below, use different values of <span class="math notranslate nohighlight">\(\alpha\)</span> and track the maximum value of <span class="math notranslate nohighlight">\(A\)</span> on the line corresponding to the constraint.  Ideally, plot the area as a function of <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="p">=</span> <span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span>
+
+<span class="n">h</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">b</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">[</span><span class="n">H</span><span class="p">,</span><span class="n">B</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+
+<span class="c">%constraint is b = 1- h - h sec(alpha)</span>
+<span class="c">% Area = hb + h^2\tan(\alpha)/2</span>
+<span class="n">A</span> <span class="p">=</span> <span class="n">H</span><span class="o">.*</span><span class="n">B</span> <span class="o">+</span> <span class="n">H</span><span class="o">.^</span><span class="mi">2</span><span class="o">*</span><span class="nb">tan</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="nb">contour</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+<span class="nb">colorbar</span>
+<span class="nb">hold</span> <span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">h</span><span class="o">-</span><span class="n">h</span><span class="o">*</span><span class="nb">sec</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;h&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "octave-8.2"
+        },
+        kernelOptions: {
+            name: "octave-8.2",
+            path: "./ComputerLabs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'octave-8.2'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Computer%20Lab%2006.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4.7. </span>The Gradient in non-Cartesian Coordinates</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Computer%20Lab%2008.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.9. </span>Computer Lab 08</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">4.8.1. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.8.2. example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">4.8.3. Self-test</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LaTrobe University MAPS staff (present and past)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

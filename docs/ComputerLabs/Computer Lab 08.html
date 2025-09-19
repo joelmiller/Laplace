@@ -1,0 +1,1050 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.9. Computer Lab 08 &#8212; The Laplace Transform and Differential Equations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ComputerLabs/Computer Lab 08';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.10. Computer Lab 09 – Work done moving through a vector field." href="Computer%20Lab%2009.html" />
+    <link rel="prev" title="4.8. Lagrange Multipliers" href="Computer%20Lab%2007.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="The Laplace Transform and Differential Equations - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Laplace Transform and Differential Equations - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Laplace Transform
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceExtra.html">1.9. Optional Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">2.1. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">2.2. Extensions to Lagrange Multipliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">3. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegrals.html">3.1. Multiple Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegralsDefineRegion.html">3.2. Systematically finding the terminals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="LabIntro.html">4. Computer Labs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2001.html">4.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2002.html">4.2. MAT2VCA Computer Lab 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2003.html">4.3. MAT2VCA Computer Lab 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2004.html">4.5. MAT2VCA Computer Lab 4: stationary points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2005.html">4.6. Cylindrical Coordinates and Unit Vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2006.html">4.7. The Gradient in non-Cartesian Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2007.html">4.8. Lagrange Multipliers</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.9. Computer Lab 08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2009.html">4.10. Computer Lab 09  –   Work done moving through a vector field.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2011.html">4.11. Computer Lab 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2012.html">4.12. Computer Lab 12</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2FComputerLabs/Computer Lab 08.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ComputerLabs/Computer Lab 08.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Computer Lab 08</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tangent-to-a-curve">4.9.1. Tangent to a curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">4.9.1.1. Self test:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#length-of-a-curve">4.9.2. Length of a curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-length-of-a-curve-as-the-integral-of-speed">4.9.2.1. The length of a curve as the integral of speed.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#an-ellipse">4.9.2.1.1. An Ellipse:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternate-derivation-of-length">4.9.2.2. Alternate derivation of length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.9.2.3. Self test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-self-test">4.9.2.4. Extended self test:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="computer-lab-08">
+<h1><span class="section-number">4.9. </span>Computer Lab 08<a class="headerlink" href="#computer-lab-08" title="Link to this heading">#</a></h1>
+<p>In this lab we will explore tangents and the length of a curve.  An extension of these concepts relating tangents to the unit vectors in spherical and cylindrical coordinates is at the end, but it is not expected that you will cover that in this lab.</p>
+<p>Imagine a car driving on a circular path.  Since it doesn’t follow a straight line, the direction it travels is constantly changing.</p>
+<p>Let’s assume the <span class="math notranslate nohighlight">\(x\)</span> coordinate is</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = 4\cos(t)
+\]</div>
+<p>and the <span class="math notranslate nohighlight">\(y\)</span> coordinate is</p>
+<div class="math notranslate nohighlight">
+\[
+y(t)=4\sin(t)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(t\)</span> is time.  So its <em>position vector</em>, that is the vector from the origin to the position of the car, is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\vec{r}(t) &amp;= x(t) \vec{i} + y(t)\vec{j}\\
+&amp;= 4 \cos(t) \vec{i} + 4 \sin(t)\vec{j}
+\end{align*}
+\end{split}\]</div>
+<p>In the following cell, use <code class="docutils literal notranslate"><span class="pre">plot(x,y)</span></code> to plot the path that the car is expected to take from time <span class="math notranslate nohighlight">\(t=0\)</span> to <span class="math notranslate nohighlight">\(t=2\pi\)</span> on <span class="math notranslate nohighlight">\(xy\)</span> axes.</p>
+<p>In a separate figure (which we create using <code class="docutils literal notranslate"><span class="pre">figure(2)</span></code>), we plot <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span> both as functions of time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">20</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span>
+<span class="n">x</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="n">y</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Positions (x(t),y(t)) at different times&#39;</span><span class="p">)</span>
+
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+
+<span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;x(t)&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
+<span class="nb">hold</span> <span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;y(t)&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">()</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;x and y coordinates as a function of time.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before moving on, make sure you understand how the circular shape relates to the curves for <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span>   This animation may help: https://www.youtube.com/watch?v=z82I6u4DFTo</p>
+<section id="tangent-to-a-curve">
+<h2><span class="section-number">4.9.1. </span>Tangent to a curve<a class="headerlink" href="#tangent-to-a-curve" title="Link to this heading">#</a></h2>
+<p>At <span class="math notranslate nohighlight">\(t=7\pi/4\)</span> the car hits a patch of ice, and the wheels no longer make the car turn.  It continues in a straight line, in the same direction it was traveling at the moment it hit the ice.</p>
+<p>There are a number of questions we might try to answer about this, such as,</p>
+<ul class="simple">
+<li><p>how far has the car traveled before hitting the ice?</p></li>
+<li><p>how fast is the car traveling when it hits the ice?</p></li>
+<li><p>what direction is the car traveling when it hits the ice?</p></li>
+</ul>
+<p>We’ll focus on the last two at the moment.</p>
+<p>Because it is traveling in a circle, we can use properties of circles to figure out most of these questions.  However, let’s act as if we don’t know those properties and we’ll learn a more general way to calculate these so that we can work with non-circular paths.  We’ll be able to use the fact that it’s a circle to check our answers and help confirm we’re on the right path.</p>
+<p>In the cell below, plot the path that the car has taken from time <span class="math notranslate nohighlight">\(t=0\)</span> up to time <span class="math notranslate nohighlight">\(t=7\pi/4\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">20</span><span class="p">:</span><span class="mi">7</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">];</span>
+<span class="n">x</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="n">y</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To understand the answer to the questions above, we’ll introduce the concept of the velocity vector of the car.</p>
+<p>At time <span class="math notranslate nohighlight">\(t\)</span>, the rate of change of the <span class="math notranslate nohighlight">\(x\)</span> coordinate is <span class="math notranslate nohighlight">\(dx/dt\)</span> and the rate of change of the <span class="math notranslate nohighlight">\(y\)</span> coordinate is <span class="math notranslate nohighlight">\(dy/dt\)</span>.  So the rate of change of its position is captured by the vector <span class="math notranslate nohighlight">\(\vec{v}(t) = (dx/dt, dy/dt) = (-4\sin(t), 4\cos(t))\)</span>.</p>
+<ul class="simple">
+<li><p>We call <span class="math notranslate nohighlight">\(\vec{r}(t) = (x(t), y(t))\)</span> the <em>position vector</em>.</p></li>
+<li><p>We call <span class="math notranslate nohighlight">\(\vec{v}(t) = d \vec{r}/dt = (dx/dt, dy/dt)\)</span> the <em>velocity vector</em>.  It gives the rate of change of position at time <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+<li><p>We call <span class="math notranslate nohighlight">\(\vec{a}(t) = d \vec{v}/dt = (d^2x/dt^2, d^2y/dt^2)\)</span> the <em>acceleration vector</em>.  It gives the rate of change of velocity at time <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+</ul>
+<p>As a reminder, the command <code class="docutils literal notranslate"><span class="pre">quiver([x(t_0)],[y(t_0)],[dx(t_0)/dt],[dy(t_0)/dt])</span></code> will plot an arrow whose base is at <span class="math notranslate nohighlight">\((x(t_0),y(t_0))\)</span> in the direction <span class="math notranslate nohighlight">\((dx(t_0)/dt, dy(t_0)/dt)\)</span>.</p>
+<p>In the cell below,</p>
+<ul class="simple">
+<li><p>we plot the path of the car from <span class="math notranslate nohighlight">\(t=0\)</span> to <span class="math notranslate nohighlight">\(t=7\pi/4\)</span></p></li>
+<li><p>we plot the velocity vector of the car at time <span class="math notranslate nohighlight">\(t_0=7\pi/4\)</span> with base at <span class="math notranslate nohighlight">\((x(t_0), y(t_0))\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">20</span><span class="p">:</span><span class="mi">7</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">];</span>
+<span class="n">x</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="n">y</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">hold</span> <span class="n">on</span>
+<span class="n">t0</span><span class="p">=</span><span class="mi">7</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span>
+
+<span class="n">r0</span> <span class="p">=</span> <span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">t0</span><span class="p">),</span> <span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">t0</span><span class="p">)];</span>  <span class="c"># position at time t0.</span>
+<span class="nb">plot</span><span class="p">([</span><span class="n">r0</span><span class="p">(</span><span class="mi">1</span><span class="p">)],</span> <span class="p">[</span><span class="n">r0</span><span class="p">(</span><span class="mi">2</span><span class="p">)],</span> <span class="s">&#39;o&#39;</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;Position at time t_0&#39;</span><span class="p">)</span>
+
+<span class="n">v0</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">t0</span><span class="p">),</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">t0</span><span class="p">)];</span> <span class="c"># velocity at time t0. v0= dr/dt at time t0</span>
+<span class="nb">quiver</span><span class="p">([</span><span class="n">r0</span><span class="p">(</span><span class="mi">1</span><span class="p">)],</span> <span class="p">[</span><span class="n">r0</span><span class="p">(</span><span class="mi">2</span><span class="p">)],</span> <span class="p">[</span><span class="n">v0</span><span class="p">(</span><span class="mi">1</span><span class="p">)],</span> <span class="p">[</span><span class="n">v0</span><span class="p">(</span><span class="mi">2</span><span class="p">)],</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;Velocity at time t_0&#39;</span><span class="p">)</span>  <span class="c">#the 0 removes any scaling of the vector.</span>
+<span class="nb">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You should see that the velocity vector is tangent to the circle at that point.  The magnitude of the velocity vector is the speed of the car.</p>
+<p>We’ll make a distinction between ‘velocity’ (which includes a direction and is a vector) and ‘speed’ (which is just the magnitude of velocity and is a scalar).</p>
+<p>Now we’ll plot the path of the car, and a few velocity vectors along the way.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">%first we plot the partial circle</span>
+
+<span class="n">t</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="o">*</span><span class="nb">pi</span><span class="p">:</span><span class="mi">7</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">];</span>
+<span class="n">x</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="n">y</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>   <span class="c">%plot the partial circle</span>
+<span class="nb">hold</span> <span class="n">on</span>
+
+<span class="c">%Now we plot the vectors</span>
+
+<span class="n">low_res_times</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">:</span><span class="mi">7</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">];</span>  <span class="c">%these are the times we will use for plotting velocity vectors.</span>
+                                  <span class="c">%lower resolution so there are only a few vectors plotted</span>
+                                  
+<span class="n">low_res_xs</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">low_res_times</span><span class="p">);</span>  <span class="c">%these are the x coordinates at the specified times</span>
+<span class="n">low_res_ys</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">low_res_times</span><span class="p">);</span>  <span class="c">%the y coordinates</span>
+
+<span class="n">low_res_dxdt</span> <span class="p">=</span> <span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">low_res_times</span><span class="p">);</span> <span class="c">%the x component dx/dt</span>
+<span class="n">low_res_dydt</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">low_res_times</span><span class="p">);</span>  <span class="c">%the y component dy/dt</span>
+
+<span class="nb">quiver</span><span class="p">(</span><span class="n">low_res_xs</span><span class="p">,</span> <span class="n">low_res_ys</span><span class="p">,</span> <span class="n">low_res_dxdt</span><span class="p">,</span> <span class="n">low_res_dydt</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c">%the 0 turns off any scaling of the vectors</span>
+
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Position of Car and velocity vectors at several times.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice, the vectors plotted above are <strong>not unit vectors</strong>.  Their magnitude is not <span class="math notranslate nohighlight">\(1\)</span>.  In fact, their magnitude (the speed) is <span class="math notranslate nohighlight">\(4\)</span>.  This is because the car is travelling with speed 4 (to confirm this, note that the full circle would take <span class="math notranslate nohighlight">\(2\pi\)</span> units of time and its length is <span class="math notranslate nohighlight">\(8\pi\)</span>, so it must travel at speed <span class="math notranslate nohighlight">\(4\)</span> if its speed is to remain constant)</p>
+<p>When we want to know the unit vectors in the same direction as a given vector, we must divide the given vector by its magnitude.  The code below is identical to above, except that it plots the unit vectors in the direction of velocity by dividing by the magnitude in the <code class="docutils literal notranslate"><span class="pre">quiver</span></code> call.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">%first we plot the partial circle</span>
+
+<span class="n">t</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="o">*</span><span class="nb">pi</span><span class="p">:</span><span class="mi">7</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">];</span>
+<span class="n">x</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="n">y</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>   <span class="c">%plot the partial circle</span>
+<span class="nb">hold</span> <span class="n">on</span>
+
+<span class="c">%Now we plot the vectors</span>
+
+<span class="n">low_res_times</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">:</span><span class="mi">7</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">];</span>  <span class="c">%these are the times we will use for plotting tangent vectors.</span>
+                                  <span class="c">%lower resolution so there are only a few vectors plotted</span>
+                                  
+<span class="n">low_res_xs</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">low_res_times</span><span class="p">);</span>  <span class="c">%these are the x coordinates at the specified times</span>
+<span class="n">low_res</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">low_res_times</span><span class="p">);</span>  <span class="c">%the y coordinates</span>
+
+<span class="n">low_res_dxdt</span> <span class="p">=</span> <span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">low_res_times</span><span class="p">);</span> <span class="c">%the x component dx/dt</span>
+<span class="n">low_res_dydt</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">low_res_times</span><span class="p">);</span>  <span class="c">%the y component dy/dt</span>
+
+<span class="c">%the magnitude is 4, but we&#39;re going to assume it could vary, and calculate the magnitude at each point.  This will be more general and can be used for other curves.</span>
+<span class="n">magnitude</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">low_res_dxdt</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">low_res_dydt</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="nb">quiver</span><span class="p">(</span><span class="n">low_res_xs</span><span class="p">,</span> <span class="n">low_res_ys</span><span class="p">,</span> <span class="n">low_res_dxdt</span><span class="o">./</span><span class="n">magnitude</span><span class="p">,</span> <span class="n">low_res_dydt</span><span class="o">./</span><span class="n">magnitude</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c">%the 0 turns off any scaling of the vectors</span>
+
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Position of Car and tangent vectors of length 1 at several times.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each unit vector at time <span class="math notranslate nohighlight">\(t\)</span> (corresponding to angle <span class="math notranslate nohighlight">\(t\)</span>) is in fact <span class="math notranslate nohighlight">\(-\sin(\theta) \vec{i} + \cos(\theta) \vec{j}\)</span>.  If you dig out your formula sheets, you’ll see that this is <span class="math notranslate nohighlight">\(\vec{e}_\theta\)</span> in cylindrical coordinates.</p>
+<p>Notice how they are tangent to a curve for which both <span class="math notranslate nohighlight">\(\rho\)</span> and <span class="math notranslate nohighlight">\(z\)</span> are constant, but <span class="math notranslate nohighlight">\(\theta\)</span> varies.  If you take a curve for which only <span class="math notranslate nohighlight">\(\theta\)</span> varies, its tangent points in the direction of <span class="math notranslate nohighlight">\(\vec{e}_\theta\)</span>.  Similarly if you take a curve for which only <span class="math notranslate nohighlight">\(\rho\)</span> varies, then its tangent points in the direction of <span class="math notranslate nohighlight">\(\vec{e}_\rho\)</span>, or if only <span class="math notranslate nohighlight">\(z\)</span> varies, its tangent points in the direction of <span class="math notranslate nohighlight">\(\vec{e}_z\)</span>.  You will have the option to explore this in more detail in the ‘extended self test’ at the end of this lab.</p>
+<section id="self-test">
+<h3><span class="section-number">4.9.1.1. </span>Self test:<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h3>
+<p>Consider the ellipse given by</p>
+<div class="math notranslate nohighlight">
+\[
+x = \cos(t),  \qquad y = 2\sin(t)
+\]</div>
+<p>for <span class="math notranslate nohighlight">\(0 \leq t \leq 2\pi\)</span></p>
+<ul class="simple">
+<li><p>Plot the ellipse, with the aspect ratio set to 1 — that is, use  <code class="docutils literal notranslate"><span class="pre">daspect([1,1])</span></code></p></li>
+<li><p>Add 8 equally spaced (in time) tangent vectors (pointing in the direction of increasing <span class="math notranslate nohighlight">\(t\)</span>)</p></li>
+<li><p>Check visually that the tangent vectors really are tangent, and that unlike the circle, they are not all of the same length.</p></li>
+<li><p>If the car is following this path with the given parametrization, where is the speed greatest?</p></li>
+</ul>
+</section>
+</section>
+<section id="length-of-a-curve">
+<h2><span class="section-number">4.9.2. </span>Length of a curve<a class="headerlink" href="#length-of-a-curve" title="Link to this heading">#</a></h2>
+<section id="the-length-of-a-curve-as-the-integral-of-speed">
+<h3><span class="section-number">4.9.2.1. </span>The length of a curve as the integral of speed.<a class="headerlink" href="#the-length-of-a-curve-as-the-integral-of-speed" title="Link to this heading">#</a></h3>
+<p>If we think about the parameter as time, then the length of a curve can be calculated by finding the magnitude of the velocity vector (that is, its speed) and integrating it from the start time to the stop time.  We will look at two ways to reach this conclusion.</p>
+<p>Plot the speed of the car we saw below as a function of time from <span class="math notranslate nohighlight">\(t=0\)</span> to <span class="math notranslate nohighlight">\(t=7\pi/4\)</span> (it should be constant).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">20</span><span class="p">:</span><span class="mi">7</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">];</span>
+<span class="n">x</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="n">y</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+<span class="n">dxdt</span> <span class="p">=</span> <span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>       <span class="c">%v = dxdt i  +   dydt  j</span>
+<span class="n">dydt</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+<span class="nb">speed</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">dxdt</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dydt</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">speed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If a car is traveling at constant speed for a fixed duration of time, the distance traveled is speed<span class="math notranslate nohighlight">\(\times\)</span>time.  Convince yourself that this is equal to the area under the function you plotted above.</p>
+<p>As a check, you should verify that up to time <span class="math notranslate nohighlight">\(7\pi/4\)</span>, the car has traveled <span class="math notranslate nohighlight">\(7/8\)</span> of the way around the circle.  Since the circle has radius <span class="math notranslate nohighlight">\(4\)</span> and thus circumference <span class="math notranslate nohighlight">\(8\pi\)</span>, you should be able to confirm that the car has traveled a distance <span class="math notranslate nohighlight">\(7\pi\)</span>.  This should agree with the calculation you did above.</p>
+<section id="an-ellipse">
+<h4><span class="section-number">4.9.2.1.1. </span>An Ellipse:<a class="headerlink" href="#an-ellipse" title="Link to this heading">#</a></h4>
+<p>Now let’s consider an ellipse parametrized by</p>
+<div class="math notranslate nohighlight">
+\[x=\cos(t) \qquad y = 2\sin(t)\]</div>
+<p>Unlike the parametrized circle above, a car traveling with this parametrization for the ellipse does not have constant speed.  The velocity vector is</p>
+<div class="math notranslate nohighlight">
+\[ 
+\vec{v}(t) = \frac{d \vec{r}}{dt} = -\sin(t) \vec{i} + 2 \cos(t) \vec{j}
+\]</div>
+<p>The speed is</p>
+<div class="math notranslate nohighlight">
+\[\| \vec{v}(t)\| = \sqrt{ \vec{v}(t) \cdot \vec{v}(t) } = \sqrt{\sin^2(t) + 4\cos^2(t)}\]</div>
+<p>For an arbitrary parametrized curve,</p>
+<div class="math notranslate nohighlight">
+\[\| \vec{v}(t)\| = \sqrt{(dx/dt)^2 + (dy/dt)^2}\]</div>
+<p>We’ll use the code provided below to plot the speed as a function of time from <span class="math notranslate nohighlight">\(t=0\)</span> to <span class="math notranslate nohighlight">\(t=2\pi\)</span>, and add some approximating rectangles.</p>
+<p>Run the code below multiple times with varying numbers of rectangles and confirm for yourself that as the number of rectangles increases the area under the curve is matched by the area under the rectangles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">%Here we plot the rectangles first and then the curve (so that the curve can be seen on top of the rectangles rather than hiding behind)</span>
+
+<span class="n">N_rectangles</span> <span class="p">=</span> <span class="mi">50</span><span class="p">;</span> <span class="c">%number of rectangles</span>
+<span class="n">dt</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="n">N_rectangles</span><span class="p">;</span>  <span class="c">%time step corresponding to number of rectangles</span>
+
+<span class="n">rectangle_times</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">dt</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">-</span><span class="n">dt</span><span class="p">];</span> <span class="c">%the left hand value of time for each approximating rectangle</span>
+<span class="n">rectangle_heights</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="nb">sin</span><span class="p">(</span><span class="n">rectangle_times</span><span class="p">))</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">rectangle_times</span><span class="p">))</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>  <span class="c">%the heights of the rectangles</span>
+<span class="nb">bar</span><span class="p">(</span><span class="n">rectangle_times</span><span class="p">,</span> <span class="n">rectangle_heights</span><span class="p">,</span> <span class="s">&#39;histc&#39;</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;approximating rectangles&#39;</span><span class="p">);</span>  <span class="c">%this command does a bar plot, where each bar is aligned on the left.</span>
+
+<span class="nb">hold</span> <span class="n">on</span> 
+
+<span class="c">%now we plot the curve speed = sqrt((dx/dt)^2 + (dy/dt)^2) at high resolution</span>
+<span class="n">t</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="o">*</span><span class="nb">pi</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span>  <span class="c">%higher resolution times</span>
+<span class="n">dxdt</span> <span class="p">=</span> <span class="o">-</span><span class="nb">sin</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="n">dydt</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+<span class="nb">speed</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">dxdt</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dydt</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">speed</span><span class="p">,</span> <span class="s">&#39;linewidth&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="s">&#39;sqrt((dx/dt)^2 + (dy/dt)^2)&#39;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&#39;location&#39;</span><span class="p">,</span> <span class="s">&#39;eastoutside&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we approximate the speed of the car in each interval as if it is constant, then the distance traveled in that interval matches the area of the corresponding rectangle.  As we increase the number of rectangles, the combined area of the rectangles approaches the area under the curve.  By adding up the rectangles in the limit of short time intervals, we arrive at the integral of the speed.</p>
+<p><strong>The integral of speed over time gives the distance travelled.</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{align*}
+\lim_{\Delta t \to 0} \sum_{i=0}^{\frac{2\pi}{\Delta t}-1} \text{height}(\text{rectangle}_i) \text{width}({\text{rectangle}_i}) &amp;=\lim_{\Delta t \to 0} \sum_{i=0}^{\frac{2\pi}{\Delta t}-1} \text{height}(\text{rectangle}_i) \Delta t\\
+&amp;= \lim_{\Delta t \to 0} \sum_{i=0}^{\frac{2\pi}{\Delta t}-1} \sqrt{\left(\frac{dx}{dt}(t_i)\right)^2 + \left(\frac{dy}{dt}(t_i)\right)^2} \quad \Delta t  \\
+&amp;= \int_0^{2\pi}  \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} \, dt
+ \end{align*}
+ \end{split}\]</div>
+<p>So we’ve found an integral that can give us the length of the curve.</p>
+<p>Do not make the mistake of replacing <span class="math notranslate nohighlight">\( \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}\)</span> by <span class="math notranslate nohighlight">\(\frac{dx}{dt} + \frac{dy}{dt}\)</span>.</p>
+</section>
+</section>
+<section id="alternate-derivation-of-length">
+<h3><span class="section-number">4.9.2.2. </span>Alternate derivation of length<a class="headerlink" href="#alternate-derivation-of-length" title="Link to this heading">#</a></h3>
+<p>Here is a different way to arrive at the same integral to give the length of a curve.</p>
+<p>The ellipse considered above is well-approximated by a bunch of line segments connecting points on the ellipse separated by times <span class="math notranslate nohighlight">\(\Delta t\)</span>.</p>
+<p>An important principle of Calculus is that over a short distance, a curve is well-approximated by the tangent line.  This means that the line segment connecting two “adjacent” points in the ellipse can be approximated using a piece of the tangent line at the point, as long as the time interval is short.  That is:
+If <span class="math notranslate nohighlight">\(\Delta t\)</span> is small, then the vector from <span class="math notranslate nohighlight">\(\vec{r}(t)\)</span> to <span class="math notranslate nohighlight">\(\vec{r}(t+\Delta t)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\vec{r}(t+\Delta t) - \vec{r}(t) \approx \frac{d\vec{r}}{dt} \Delta t  \]</div>
+<p>(put another way, <span class="math notranslate nohighlight">\( \frac{d\vec{r}}{dt}  \approx \frac{\vec{r}(t+\Delta t) - \vec{r}(t)}{\Delta t}\)</span> as long as <span class="math notranslate nohighlight">\(\Delta t\)</span> is small enough)</p>
+<p>The code below plots the line segments connecting <span class="math notranslate nohighlight">\(N\)</span> points of the ellipse separated by time <span class="math notranslate nohighlight">\(\Delta t\)</span>.  Then it plots the <span class="math notranslate nohighlight">\(N-1\)</span> vectors between successive pairs of those points.</p>
+<p>Run the code and then rerun it changing the number of line segments plotted to confirm that if the number of points becomes large, then the line segments are well-approximated by the vectors.  This means that the summed lengths of the vectors will be a good approximation of the distance around of the ellipse.</p>
+<p>So if our points along the ellipse are  <span class="math notranslate nohighlight">\((x_1,y_1)\)</span>, <span class="math notranslate nohighlight">\((x_2,y_2)\)</span>, …, <span class="math notranslate nohighlight">\((x_N,y_N)\)</span>, we take the <span class="math notranslate nohighlight">\(N-1\)</span> vectors from <span class="math notranslate nohighlight">\(i=1\)</span> to <span class="math notranslate nohighlight">\(N-1\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\vec{v}_i = (x_{i+1}, y_{i+1}) - (x_i, y_i)
+\]</div>
+<p>and plot each vector <span class="math notranslate nohighlight">\(\vec{v}_i\)</span> starting at <span class="math notranslate nohighlight">\((x_i,y_i)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="p">=</span> <span class="mi">30</span><span class="p">;</span>         <span class="c">%low resolution for plotting segments approximating the ellipse</span>
+<span class="n">dt</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">t</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">dt</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span>  <span class="c">%t has N values</span>
+
+<span class="n">x</span> <span class="p">=</span> <span class="nb">cos</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="n">y</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+
+<span class="n">vector_x</span> <span class="p">=</span> <span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="n">N</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">vector_y</span> <span class="p">=</span> <span class="n">y</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="n">N</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+
+<span class="nb">quiver</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">vector_x</span><span class="p">,</span> <span class="n">vector_y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c">%this plots the vector at each point multiplied by dt. The &#39;0&#39; tells it not to scale the vector.</span>
+                                  <span class="c">%as n_segments increases, these should approximate the segments.</span>
+
+<span class="n">daspect</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Increase the value of <span class="math notranslate nohighlight">\(N\)</span> above and rerun the code until you are satisfied that the sum of the lengths of the vectors will approximate the length of the curve very well.</p>
+<p>Because the length of the ellipse is approximated by adding up the lengths of the vectors plotted above, and the approximation becomes exact as <span class="math notranslate nohighlight">\(N \to \infty\)</span>, we will analyze this sum in the large <span class="math notranslate nohighlight">\(N\)</span> limit.</p>
+<p>When <span class="math notranslate nohighlight">\(N\)</span> is large, each of the vectors is approximately tangent to the ellipse.  In fact each vector is approximately <span class="math notranslate nohighlight">\(\Delta t \times \|(dx/dt, dy/dt)\|= \Delta t \times\sqrt{(dx/dt)^2+(dy/dt)^2}\)</span> where <span class="math notranslate nohighlight">\(\Delta t = 2\pi/N\)</span>.  Adding these lengths together gives</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^{N-1} \left(\Delta t \times \sqrt{\left(\frac{dx(t_i)}{dt}\right)^2 + \left(\frac{dy(t_i)}{dt}\right)^2}\right)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(t_1=0\)</span> and the times are equally spaced giving the <span class="math notranslate nohighlight">\(N-1\)</span> times at the start of each of the <span class="math notranslate nohighlight">\(N-1\)</span> vectors.</p>
+<p>As we increase <span class="math notranslate nohighlight">\(N\)</span> (and decrease <span class="math notranslate nohighlight">\(\Delta t\)</span>), this is the definition of the integral:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{\Delta t \to 0}  \sum_{i=1}^{N-1} \left(\Delta t \times \sqrt{\left(\frac{dx(t_i)}{dt}\right)^2 + \left(\frac{dy(t_i)}{dt}\right)^2} \right) = \int_0^{2\pi}  \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} \, dt
+\]</div>
+<p>This is exactly the same integral  we found above when we were integrating the speed.  So either derivation gets us the same formula.</p>
+<p>For our ellipse we find that the length is</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^{2\pi} \sqrt{ \sin^2(t) + 4 \cos^2(t)} \, dt
+\]</div>
+<p>Notice that even though we have reduced this to an integral, there is no guarantee that we know a way to solve the integral exactly.  In this case, our best approach is likely to be to use a numerical approximation.</p>
+</section>
+<section id="id1">
+<h3><span class="section-number">4.9.2.3. </span>Self test<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>By hand:</p>
+<ul class="simple">
+<li><p>find a parametrization of the top half of a circle of radius <span class="math notranslate nohighlight">\(2\)</span>, using trigonometric functions as we have above.</p></li>
+<li><p>Use this parametrization to set up an integral to calculate the length of this half.</p></li>
+<li><p>Perform the integral and make sure you get half the circumference of a circle of radius <span class="math notranslate nohighlight">\(2\)</span>.</p></li>
+</ul>
+<p>Extra:</p>
+<ul class="simple">
+<li><p>Repeat the first two steps above parametrizing the top half of a circle and setting up the integral to calculate the length, where we use <span class="math notranslate nohighlight">\(x=t\)</span> and <span class="math notranslate nohighlight">\(y = \sqrt{4-t^2}\)</span> for <span class="math notranslate nohighlight">\(-2\leq t \leq 2\)</span>. (this is like writing <span class="math notranslate nohighlight">\(y\)</span> as a function of <span class="math notranslate nohighlight">\(x\)</span>).</p></li>
+</ul>
+<p>It turns out that there is a technique for solving the resulting integral (which we do not teach in our first-year subjects), called a trigonometric substitution (https://en.wikipedia.org/wiki/Trigonometric_substitution).
+The substitution is equivalent to changing the parametrization of the circle to be in terms of the angle.  It can be shown that whenever we use a substitution to do an integral, it’s equivalent to choosing a different parametrization of the interval.</p>
+</section>
+<section id="extended-self-test">
+<h3><span class="section-number">4.9.2.4. </span>Extended self test:<a class="headerlink" href="#extended-self-test" title="Link to this heading">#</a></h3>
+<p>The goal of this self-test is to revisit the unit vectors and gain a different intuition for their interpretation.  First we rederive the unit vectors which you can think of as tangent vectors to some curves, using the ideas we saw above.  Then we plot the curves and the unit vectors.</p>
+<p>Using cylindrical coordinates <span class="math notranslate nohighlight">\(\rho\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(z\)</span>, but the Cartesian directions <span class="math notranslate nohighlight">\(\vec{i}\)</span>, <span class="math notranslate nohighlight">\(\vec{j}\)</span>, <span class="math notranslate nohighlight">\(\vec{k}\)</span>, the position vector is given by
+<span class="math notranslate nohighlight">\(\vec{r} = x\vec{i} + y\vec{j} + z\vec{k}\)</span> which becomes</p>
+<div class="math notranslate nohighlight">
+\[\vec{r}(\rho, \theta, \phi) = \rho\cos(\theta) \vec{i} + \rho \sin(\theta) \vec{j} + z \vec{k}\]</div>
+<p>We’ll consider a specific point <span class="math notranslate nohighlight">\(P_0\)</span> of interest with <span class="math notranslate nohighlight">\(\rho = \rho_0\)</span>,  <span class="math notranslate nohighlight">\(\theta = \theta_0\)</span>,  and <span class="math notranslate nohighlight">\(z = z_0\)</span>.</p>
+<ul class="simple">
+<li><p>Consider a curve on which <span class="math notranslate nohighlight">\(\theta=\theta_0\)</span> and <span class="math notranslate nohighlight">\(z=z_0\)</span> are constant, but <span class="math notranslate nohighlight">\(\rho\)</span> varies.  This is a straight, horizontal line extending out from the <span class="math notranslate nohighlight">\(z\)</span>-axis at height <span class="math notranslate nohighlight">\(z_0\)</span> in the direction given by <span class="math notranslate nohighlight">\(\theta_0\)</span>.   The line can be parameterized as</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\vec{r}_1(\rho) = \rho \cos(\theta_0)\vec{i} + \rho \sin(\theta_0) \vec{j} + z_0 \vec{k}
+\]</div>
+<p>We will find a tangent vector to this line <span class="math notranslate nohighlight">\(\vec{r}_1(\rho)\)</span> at the point where it passes through <span class="math notranslate nohighlight">\(P_1\)</span> (that is where <span class="math notranslate nohighlight">\(\rho = \rho_0\)</span>) by looking at the derivative of this curve as its parameter (<span class="math notranslate nohighlight">\(\rho\)</span>) changes.  It turns out that this derivative, evaluated at <span class="math notranslate nohighlight">\(\rho = \rho_0\)</span> gives us</p>
+<div class="math notranslate nohighlight">
+\[
+ \frac{d \vec{r}_1(\rho_0)}{d \rho} = \cos(\theta_0)\vec{i} + \sin(\theta_0) \vec{j} = \frac{\partial \vec{r} (\rho_0, \theta_0, z_0)}{\partial \rho}
+\]</div>
+<p>That is, the tangent vector is <span class="math notranslate nohighlight">\(\cos(\theta_0)\vec{i} + \sin(\theta_0) \vec{j}\)</span> (confirm that this is <span class="math notranslate nohighlight">\(\frac{\partial \vec{r}}{\partial \rho}(\rho_0,\theta_0,z_0)\)</span>).  We want the unit vector in this direction, so we find the magnitude of this vector:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\left\|\frac{\partial \vec{r} (\rho_0, \theta_0, z_0)}{\partial \rho} \right \| &amp;= \sqrt{(\cos(\theta_0)\vec{i} + \sin(\theta_0) \vec{j}) \cdot ( \cos(\theta_0)\vec{i} + \sin(\theta_0) \vec{j})}\\
+&amp;= \sqrt{\cos^2(\theta_0) + \sin^2(\theta_0)}\\
+&amp;= 1
+\end{align*}
+\end{split}\]</div>
+<p>So the unit vector that is tangent to this curve at the point <span class="math notranslate nohighlight">\(P_0\)</span> is defined to be <span class="math notranslate nohighlight">\(\vec{e}_\rho\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \vec{e}_\rho= \frac{\partial \vec{r}(\rho_0, \theta_0, z_0)}{\partial \rho} /\left\|\frac{ \partial \vec{r}(\rho_0, \theta_0, z_0)}{\partial \rho}\right\| = \cos(\theta_0)\vec{i} + \sin(\theta_0) \vec{j}\]</div>
+<ul class="simple">
+<li><p>Now consider a curve on which <span class="math notranslate nohighlight">\(\rho=\rho_0\)</span> and <span class="math notranslate nohighlight">\(z=z_0\)</span> are constant, but <span class="math notranslate nohighlight">\(\theta\)</span> varies.  This is a horizontal circle of radius <span class="math notranslate nohighlight">\(\rho_0\)</span> at height <span class="math notranslate nohighlight">\(z_0\)</span>. Repeating this same process finds that the unit vector that is tangent to the circle is</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{e}_\theta = \frac{\partial \vec{r} (\rho_0, \theta_0, z_0)}{\partial \theta} / \left\|\frac{\partial \vec{r} (\rho_0, \theta_0, z_0)}{\partial \theta}\right\| = -\sin(\theta_0) \vec{i} + \cos(\theta_0) \vec{j}\]</div>
+<ul class="simple">
+<li><p>Finally, consider a curve through the point <span class="math notranslate nohighlight">\(P_0\)</span>, but this time <span class="math notranslate nohighlight">\(\theta=\theta_0\)</span> and <span class="math notranslate nohighlight">\(\rho=\rho_0\)</span> are constant, while <span class="math notranslate nohighlight">\(z\)</span> varies.  This is a vertical line at distance <span class="math notranslate nohighlight">\(\rho_0\)</span> from the <span class="math notranslate nohighlight">\(z\)</span> axis, with the given value of <span class="math notranslate nohighlight">\(\theta_0\)</span>.  Repeating this process finds that the unit vector that is tangent to the vertical line is</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{e}_z = \frac{\partial \vec{r} (\rho_0, \theta_0, z_0)}{\partial z} / \left \| \frac{\partial \vec{r} (\rho_0, \theta_0, z_0)}{\partial z} \right \| = \vec{k}\]</div>
+<p><strong>Code</strong></p>
+<p>The code below will plot the curves of constant <span class="math notranslate nohighlight">\(\rho\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(z\)</span> through the point <span class="math notranslate nohighlight">\(P_0\)</span> with <span class="math notranslate nohighlight">\(\theta_0 = 5\pi/4\)</span>, <span class="math notranslate nohighlight">\(z_0=4\)</span>, and <span class="math notranslate nohighlight">\(\rho_0 = 2\)</span>.</p>
+<p>Then it plots the vector <span class="math notranslate nohighlight">\(\vec{e}_\rho = \frac{d\vec{r}}{d\rho}  / \left\|\frac{d\vec{r}}{d\rho}\right\| = \cos(\theta)\vec{i} + \sin(\theta) \vec{j}\)</span> at the point <span class="math notranslate nohighlight">\(P_0\)</span> in red.</p>
+<p>After that, you need to uncomment and edit the code below to do the following</p>
+<ul class="simple">
+<li><p>Plot the vector <span class="math notranslate nohighlight">\(\vec{e}_\theta = \frac{d\vec{r}}{d\theta} / \left\|\frac{d\vec{r}}{d\theta}\right\|= -\sin(\theta) \vec{i} + \cos(\theta) \vec{j}\)</span> at the point <span class="math notranslate nohighlight">\(P_0\)</span> in blue.</p></li>
+<li><p>Plot the vector <span class="math notranslate nohighlight">\(\vec{e}_z = \frac{d\vec{r}}{dz} / \left\|\frac{d\vec{r}}{dz}\right\| = \vec{k}\)</span> at the point <span class="math notranslate nohighlight">\(P_0\)</span> in magenta (color code is <code class="docutils literal notranslate"><span class="pre">m</span></code>)</p></li>
+</ul>
+<p>Repeat at different values of <span class="math notranslate nohighlight">\(\theta_0\)</span>.</p>
+<p>Reflect on how the unit vectors are tangent to these curves.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">rho_0</span><span class="p">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">theta_0</span> <span class="p">=</span> <span class="mi">5</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span>
+<span class="n">z_0</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
+
+<span class="c">%first the line varying only z:</span>
+<span class="n">zs</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">4</span><span class="p">];</span>
+<span class="n">x_vals</span> <span class="p">=</span> <span class="n">rho_0</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta_0</span><span class="p">)</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">zs</span><span class="p">));</span>  <span class="c">% the `ones` turns this into a vector of the appropriate number </span>
+                                             <span class="c">% of entries made up of values rho_0*cos(theta_0)</span>
+<span class="n">y_vals</span> <span class="p">=</span> <span class="n">rho_0</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta_0</span><span class="p">)</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">zs</span><span class="p">));</span>
+<span class="n">z_vals</span> <span class="p">=</span> <span class="n">zs</span><span class="p">;</span>
+
+<span class="n">plot3</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> <span class="n">z_vals</span><span class="p">,</span> <span class="s">&#39;k&#39;</span><span class="p">);</span>
+<span class="nb">hold</span> <span class="n">on</span>
+
+<span class="c">%now the line varying only theta</span>
+<span class="n">thetas</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span>
+<span class="n">x_vals</span> <span class="p">=</span> <span class="n">rho_0</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">thetas</span><span class="p">);</span>
+<span class="n">y_vals</span> <span class="p">=</span> <span class="n">rho_0</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">thetas</span><span class="p">);</span>
+<span class="n">z_vals</span> <span class="p">=</span> <span class="n">z_0</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">thetas</span><span class="p">));</span>
+
+<span class="n">plot3</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> <span class="n">z_vals</span><span class="p">,</span> <span class="s">&#39;k&#39;</span><span class="p">);</span>
+
+<span class="c">%now the line varying only rho</span>
+<span class="n">rhos</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">x_vals</span> <span class="p">=</span> <span class="n">rhos</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta_0</span><span class="p">);</span>
+<span class="n">y_vals</span> <span class="p">=</span> <span class="n">rhos</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta_0</span><span class="p">);</span>
+<span class="n">z_vals</span> <span class="p">=</span> <span class="mi">4</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">rhos</span><span class="p">));</span>
+
+<span class="n">plot3</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> <span class="n">z_vals</span><span class="p">,</span> <span class="s">&#39;k&#39;</span><span class="p">);</span>
+
+
+<span class="n">x_0</span> <span class="p">=</span> <span class="n">rho_0</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta_0</span><span class="p">);</span>
+<span class="n">y_0</span> <span class="p">=</span> <span class="n">rho_0</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta_0</span><span class="p">);</span>
+<span class="c">%z_0 is already defined.</span>
+
+
+
+<span class="c">%plot e_rho</span>
+<span class="n">quiver3</span><span class="p">([</span><span class="n">x_0</span><span class="p">],</span> <span class="p">[</span><span class="n">y_0</span><span class="p">],</span> <span class="p">[</span><span class="n">z_0</span><span class="p">],</span> <span class="p">[</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta_0</span><span class="p">)],</span> <span class="p">[</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta_0</span><span class="p">)],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">);</span>
+
+<span class="c">%now plot the others:</span>
+<span class="c">%quiver3([x_0], [y_0], [z_0], &lt;add e_theta components here, see equations above&gt;, &#39;b&#39;);</span>
+<span class="c">%quiver3([x_0], [y_0], [z_0], &lt;add e_z components here&gt;, &#39;m&#39;)</span>
+
+<span class="nb">grid</span> <span class="n">on</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">zlabel</span><span class="p">(</span><span class="s">&#39;z&#39;</span><span class="p">)</span>
+
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Repeat the above using the spherical coordinates <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\phi\)</span> and the unit vectors <span class="math notranslate nohighlight">\(\vec{i}\)</span>, <span class="math notranslate nohighlight">\(\vec{j}\)</span>, and <span class="math notranslate nohighlight">\(\vec{k}\)</span>.  We have</p>
+<div class="math notranslate nohighlight">
+\[\vec{r} = r \sin(\theta)\cos(\phi) \vec{i} + r \sin(\theta) \sin(\phi) \vec{j} + r \cos(\theta) \vec{k}\]</div>
+<p>Plot the unit vectors at the point with <span class="math notranslate nohighlight">\(r_0=2\)</span>,   <span class="math notranslate nohighlight">\(\theta_0 = 3\pi/4\)</span>, and  <span class="math notranslate nohighlight">\(\phi_0 = 5\pi/4\)</span>.</p>
+<p>Vary the values of <span class="math notranslate nohighlight">\(\theta_0\)</span> and <span class="math notranslate nohighlight">\(\phi_0\)</span></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "octave-8.2"
+        },
+        kernelOptions: {
+            name: "octave-8.2",
+            path: "./ComputerLabs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'octave-8.2'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Computer%20Lab%2007.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4.8. </span>Lagrange Multipliers</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Computer%20Lab%2009.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.10. </span>Computer Lab 09  –   Work done moving through a vector field.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tangent-to-a-curve">4.9.1. Tangent to a curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">4.9.1.1. Self test:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#length-of-a-curve">4.9.2. Length of a curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-length-of-a-curve-as-the-integral-of-speed">4.9.2.1. The length of a curve as the integral of speed.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#an-ellipse">4.9.2.1.1. An Ellipse:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternate-derivation-of-length">4.9.2.2. Alternate derivation of length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.9.2.3. Self test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-self-test">4.9.2.4. Extended self test:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LaTrobe University MAPS staff (present and past)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

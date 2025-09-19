@@ -1,0 +1,985 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave &#8212; The Laplace Transform and Differential Equations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ComputerLabs/Computer Lab 01';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.2. MAT2VCA Computer Lab 2" href="Computer%20Lab%2002.html" />
+    <link rel="prev" title="4. Computer Labs" href="LabIntro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="The Laplace Transform and Differential Equations - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Laplace Transform and Differential Equations - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Laplace Transform
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceExtra.html">1.9. Optional Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">2.1. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">2.2. Extensions to Lagrange Multipliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">3. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegrals.html">3.1. Multiple Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegralsDefineRegion.html">3.2. Systematically finding the terminals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="LabIntro.html">4. Computer Labs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2002.html">4.2. MAT2VCA Computer Lab 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2003.html">4.3. MAT2VCA Computer Lab 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2004.html">4.5. MAT2VCA Computer Lab 4: stationary points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2005.html">4.6. Cylindrical Coordinates and Unit Vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2006.html">4.7. The Gradient in non-Cartesian Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2007.html">4.8. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2008.html">4.9. Computer Lab 08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2009.html">4.10. Computer Lab 09  –   Work done moving through a vector field.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2011.html">4.11. Computer Lab 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Computer%20Lab%2012.html">4.12. Computer Lab 12</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2FComputerLabs/Computer Lab 01.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ComputerLabs/Computer Lab 01.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MAT2VCA Computer Lab 1 - basics of Matlab/Octave</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">4.1.1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cocalc">4.1.1.1. Cocalc</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-and-octave">4.1.1.2. Matlab and Octave</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">4.1.2. Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-variable">4.1.3. <u>Defining a variable</u></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">4.1.3.1. Self test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">4.1.4. <u>Arrays</u></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.1.4.1. Self Test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">4.1.5. <u>Plotting</u></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-steps">4.1.5.1. Preliminary steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.1.5.2. Self Test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">4.1.6. <u>For Loops</u></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.1.6.1. Self Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-extension">4.1.6.2. Optional extension:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mat2vca-computer-lab-1-basics-of-matlab-octave">
+<h1><span class="section-number">4.1. </span>MAT2VCA Computer Lab 1 - basics of Matlab/Octave<a class="headerlink" href="#mat2vca-computer-lab-1-basics-of-matlab-octave" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2><span class="section-number">4.1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>In this Computer Lab we are going to learn some basics of the use of Matlab.</p>
+<section id="cocalc">
+<h3><span class="section-number">4.1.1.1. </span>Cocalc<a class="headerlink" href="#cocalc" title="Link to this heading">#</a></h3>
+<p>We will use Cocalc for our computer labs, and for some of our assignment questions. Cocalc runs on a remote server. You will need an internet connection to use it.</p>
+<p>The format with CoCalc allows us to create a lab which includes a mixture of text and Matlab code. Each student will have their own individual version of the lab which they can modify. The instructor can view the modifications you make.</p>
+<p>Please note that the number of licenses we have is a bit limited, so not everyone in the subject can use this at the same time (or rather, it may run very slow for a few people).  I’ve assumed that not many people will use this outside of their assigned lab period.  If you see messages about not having enough licenses and you aren’t attending a lab, please log off.  However, this should only occur if you happen to log on while one of the larger classes is in session.</p>
+</section>
+<section id="matlab-and-octave">
+<h3><span class="section-number">4.1.1.2. </span>Matlab and Octave<a class="headerlink" href="#matlab-and-octave" title="Link to this heading">#</a></h3>
+<p>Matlab is a common programming language for sciences, particularly for Engineering (However, languages such as Python are become more prevalent, especially for machine learning applications). We will develop Matlab code in our labs. Technically, what we are using is Octave, which is a free program that is indistinguishable from Matlab for our purposes and runs on the Cocalc server.</p>
+<p>The one downside is that plotting with Octave on this interface is clunky.  Using Matlab directly on the computer you are using is more interactive.  If you find yourself wanting to have more interaction with the plots, you can copy your code into matlab and run it.  Be aware that the University has Matlab licenses available to students.  I would encourage you to install it on your own machines if it would be useful for your other subjects, or if you want to have plots that you can zoom in on, rotate, etc.</p>
+<p>Each time you start running a session, your first command will take a bit longer, so be patient. If you ever want to clear the memory of all the calculations you’ve done and start over, click on ‘Kernel’ in the menu above and select ‘Restart Kernel’. All calculations will be forgotten and you’ll need to start at the beginning if you want anything you’ve calculated before to be remembered. This may also happen if you leave the session idle for too long.  The order you run the commands below will matter, and Octave will store in its memory whatever you have run.  If you run some commands and the bottom and scroll up and run some new commands, its memory will have whatever came out of the last calculation.  If a variable doesn’t seem to have the value you expect, you may need to consider whether you’ve run a command that changed its value.</p>
+</section>
+</section>
+<section id="goals">
+<h2><span class="section-number">4.1.2. </span>Goals<a class="headerlink" href="#goals" title="Link to this heading">#</a></h2>
+<p>In this lab, we expect you to learn or refresh your memory of</p>
+<ul class="simple">
+<li><p>How to interact with CoCalc</p></li>
+<li><p>how to define a variable in Matlab</p></li>
+<li><p>How to define and modify a simple array</p></li>
+<li><p>How to plot arrays, including 2-Dimensional arrays</p></li>
+<li><p>Basic use of for loops</p></li>
+</ul>
+<p>When you run each of the code cells below, you are expected to read the commands and understand what is happening.  Do not simply run them and move on.</p>
+</section>
+<section id="defining-a-variable">
+<h2><span class="section-number">4.1.3. </span><u>Defining a variable</u><a class="headerlink" href="#defining-a-variable" title="Link to this heading">#</a></h2>
+<p>In Matlab, a <em>variable</em> is basically a name that we assign a value to.</p>
+<p>In the cell below, the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> is assigned to be <code class="docutils literal notranslate"><span class="pre">3</span></code>.  Click in the cell and press shift-enter (that is, hold down the ‘shift’ key and press ‘enter’) to ‘run’ the cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">=</span><span class="mi">3</span><span class="w">   </span><span class="c">%this line defines the variable x to be 3.  </span>
+
+<span class="w">      </span><span class="c">%if this is the first command you are running, be patient, it needs to start up before it does the calculation.</span>
+
+
+<span class="w">      </span><span class="c">%</span>
+<span class="w">      </span><span class="c">%Also note that anything that appears after a percent sign is ignored by matlab.</span>
+<span class="w">      </span><span class="c">%These things after the percent sign are &#39;comments&#39; intended to remind us understand what our code is doing.</span>
+<span class="w">      </span><span class="c">%When you write code, please use comments explaining why you&#39;re doing what you&#39;re doing.  We all think we&#39;ll remember </span>
+<span class="w">      </span><span class="c">%what we were doing when we come back at look at something we did a week later.  We are wrong.  And if you&#39;re working with</span>
+<span class="w">      </span><span class="c">%a partner on a project it will save a lot of time if you use comments.</span>
+<span class="w">      </span><span class="c">%</span>
+<span class="w">      </span><span class="c">%If at all in doubt of whether to add a comment or not, the answer is add it.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now whenever you refer to <code class="docutils literal notranslate"><span class="pre">x</span></code> it will have the value 3.  Run the next cell by clicking in it and pressing ‘shift-enter’ again — as you work through the lab, please run each code cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="w">      </span><span class="c">%this will print out x+x</span>
+<span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">3</span><span class="w">    </span><span class="c">%this prints 6*x-3</span>
+<span class="n">y</span><span class="p">=</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="w">    </span><span class="c">%This assigns the value of x^2 to the variable y.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That last cell did several calculations with <code class="docutils literal notranslate"><span class="pre">x=3</span></code> and printed out their output.  Then it assigned the value of <code class="docutils literal notranslate"><span class="pre">x^2</span></code> to <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<p>We’ll check that <code class="docutils literal notranslate"><span class="pre">y</span></code> is now 9.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="w">     </span><span class="s">%display</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">current</span><span class="w"> </span><span class="s">value</span><span class="w"> </span><span class="s">of</span><span class="w"> </span><span class="s">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we’ll change the value of <code class="docutils literal notranslate"><span class="pre">x</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">=</span><span class="o">-</span><span class="mi">2</span><span class="w">   </span><span class="c">%x used to have a different value.  That value is completely forgotten now and replaced.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> is now -2.  What do you think <code class="docutils literal notranslate"><span class="pre">y</span></code> is now?  It was defined by <code class="docutils literal notranslate"><span class="pre">y=x^2</span></code> up above, back when <code class="docutils literal notranslate"><span class="pre">x</span></code> was 3.  Do you think Matlab remembers that<code class="docutils literal notranslate"><span class="pre">y=x^2</span></code> and will recalculate it using the new value <code class="docutils literal notranslate"><span class="pre">x=-2</span></code> or do you think it stored the numerical value back when <code class="docutils literal notranslate"><span class="pre">y</span></code> was defined and it won’t change now even though<code class="docutils literal notranslate"><span class="pre">x</span></code> has changed?</p>
+<p>Try it.  type <code class="docutils literal notranslate"><span class="pre">y</span></code> into the cell below and run the cell.</p>
+<p>What do you think the result of <code class="docutils literal notranslate"><span class="pre">x=x^2</span></code> would be?  Try it and check.</p>
+<p>In Matlab, the right hand side of an equation is evaluated based on the current values of the variables, and the result is assigned to whatever variable name is on the left hand side. So something that appears to be an equation in programming is not the same thing as an equation in mathematics.  If you were given <span class="math notranslate nohighlight">\(x=x^2\)</span> in a mathematics class, you would be expected to figure out that <span class="math notranslate nohighlight">\(x\)</span> is <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(1\)</span>.  In programming, it simply assigns a new value of <code class="docutils literal notranslate"><span class="pre">x</span></code> to be whatever the result of <code class="docutils literal notranslate"><span class="pre">x^2</span></code> is using the previous value of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>Please remember that an equals sign in programming does not have the same meaning as an equals sign in mathematical writing.  In mathematical writing, an equals sign is only used if the two things on either side are identical.  In programming it assigns a new value to the left hand side variable.</p>
+<section id="self-test">
+<h3><span class="section-number">4.1.3.1. </span>Self test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h3>
+<p>In the cell below create a variable named <code class="docutils literal notranslate"><span class="pre">myID</span></code> which is equal to your student ID number.  Then create a variable named <code class="docutils literal notranslate"><span class="pre">squaredID</span></code> which is equal to <code class="docutils literal notranslate"><span class="pre">myID^2</span></code>.  Find the value of <code class="docutils literal notranslate"><span class="pre">myID^3-squaredID*myID</span></code>.  Does the result make sense?</p>
+</section>
+</section>
+<section id="arrays">
+<h2><span class="section-number">4.1.4. </span><u>Arrays</u><a class="headerlink" href="#arrays" title="Link to this heading">#</a></h2>
+<p>An ‘array’ is basically an ordered list of numbers.  It can be thought of as a matrix with just one row, or as a vector.  The cell below sets <code class="docutils literal notranslate"><span class="pre">x</span></code> to be an ‘array’ made up of 8 numbers, which are (almost) the first few values of the Fibonacci Sequence, except that the first value is wrong (it should be 0), and the last value is wrong (it should be 13)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">=[</span><span class="mi">13</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="c">%this defines a new variable &#39;x&#39; which is an array.  It looks like the first few entries of the Fibonacci sequence, but not quite</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you program in other languages, you may notice that Matlab starts its indexing by 1, not 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">   </span><span class="c">%this prints the first entry of the array x.  </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can change specific entries of <code class="docutils literal notranslate"><span class="pre">x</span></code> .  In this case we’re going to make it match the first few values of the Fibonacci sequence [0, 1, 1, 2, 3, 5, 8, 13, …]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mi">0</span><span class="w">    </span><span class="c">%we&#39;re fixing x so that it is the first few numbers of the Fibonacci sequence.</span>
+<span class="n">x</span><span class="p">(</span><span class="mi">8</span><span class="p">)=</span><span class="mi">13</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we think about <code class="docutils literal notranslate"><span class="pre">x=[0,1,1,2,3,5,8,13]</span></code> as a matrix with one row, then the transpose of <code class="docutils literal notranslate"><span class="pre">x</span></code> is a matrix with one column.  what do you think you get from</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x*x</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x*transpose(x)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transpose(x)*x</span></code></p></li>
+</ul>
+<p>Try them in the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">*</span><span class="n">x</span>
+<span class="n">x</span><span class="o">*</span><span class="nb">transpose</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">transpose</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is treating the calculations above as matrix multiplication.  Notice that with matrix multiplication, the result of a row times a row is undefined, so you get an error message.  A row times a column is a 1x1 matrix whose entry is the dot product of that row and column.  In this case, the column times the row gets an 8x8 matrix.</p>
+<p>There is another way we can think about multiplying <code class="docutils literal notranslate"><span class="pre">x</span></code> times itself that we will use more often.  That is, to create a new array whose <code class="docutils literal notranslate"><span class="pre">i</span></code>th entry is the square of the corresponding <code class="docutils literal notranslate"><span class="pre">i</span></code>th entry of <code class="docutils literal notranslate"><span class="pre">x</span></code>.  This is done by using a dot before the multiplication symbol (so <code class="docutils literal notranslate"><span class="pre">x.*x</span></code> ).  It can also be done using the ‘caret’ symbol <code class="docutils literal notranslate"><span class="pre">^</span></code> with a dot before it (<code class="docutils literal notranslate"><span class="pre">x.^2</span></code> ).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.*</span><span class="n">x</span><span class="w">   </span><span class="c">%one way to create an array whose entries are the square of the entries in x.</span>
+
+<span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="w">   </span><span class="c">%another way.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Redo the cell above but without the <code class="docutils literal notranslate"><span class="pre">.</span></code> appearing.  This will give an error.  It is important that you learn what the error message is because you’ll almost certainly make this mistake at some point and you want to be able to recognize the error message.</p>
+<p>Often we may not know how many things are in the array, but we want to do something with the last element.  We can use <code class="docutils literal notranslate"><span class="pre">x(end)</span></code> for that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w">         </span><span class="s">%printing</span><span class="w"> </span><span class="s">out</span><span class="w"> </span><span class="s">x</span><span class="w"> </span><span class="s">for</span><span class="w"> </span><span class="s">reference</span><span class="w"> </span><span class="s">again</span>
+
+<span class="n">x</span><span class="p">(</span><span class="k">end</span><span class="p">)</span><span class="w">    </span><span class="c">%printing the last value of x</span>
+
+<span class="n">x</span><span class="p">(</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w">  </span><span class="c">%printing the next to last value of x.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3><span class="section-number">4.1.4.1. </span>Self Test<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Define an array <code class="docutils literal notranslate"><span class="pre">myID</span></code> of single digit numbers where the digits are the digits from your student ID.</p></li>
+<li><p>Create a new array<code class="docutils literal notranslate"><span class="pre">squaredID</span></code> whose entries are equal to the square of the entries in <code class="docutils literal notranslate"><span class="pre">myID.</span></code></p></li>
+<li><p>Change the second entry of <code class="docutils literal notranslate"><span class="pre">myID</span></code> to be 10.  Do you expect this to change <code class="docutils literal notranslate"><span class="pre">squaredID</span></code> or not?  Test it.</p></li>
+<li><p>By using <code class="docutils literal notranslate"><span class="pre">myID(end)</span></code> change the final entry of <code class="docutils literal notranslate"><span class="pre">myID</span></code> to be -1.</p></li>
+</ul>
+</section>
+</section>
+<section id="plotting">
+<h2><span class="section-number">4.1.5. </span><u>Plotting</u><a class="headerlink" href="#plotting" title="Link to this heading">#</a></h2>
+<p>Plotting functions is an essential skill of most quantitative fields.</p>
+<p>A common way to plot functions in matlab is to use the command <code class="docutils literal notranslate"><span class="pre">plot</span></code> with two ‘arguments’.  The first argument is a list of x-values and the second is a list (of the same number) of y-values.</p>
+<section id="preliminary-steps">
+<h3><span class="section-number">4.1.5.1. </span>Preliminary steps<a class="headerlink" href="#preliminary-steps" title="Link to this heading">#</a></h3>
+<p>To make images open in an interactive window, we use the following command.  (you will need to have matlab installed on the computer you are using and it will need to have the appropriate tools installed for jupyter notebook to use matlab).</p>
+<p>You will see a figure show up “in line” and in a separate window.  The separate window will be interactive.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;DefaultFigureVisible&#39;</span><span class="p">,</span><span class="s">&#39;on&#39;</span><span class="p">);</span><span class="w">           </span><span class="c">% allow GUI windows</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="s">&#39;Visible&#39;</span><span class="p">,</span><span class="s">&#39;on&#39;</span><span class="p">);</span><span class="w">                   </span><span class="c">% force a GUI figure</span>
+<span class="nb">set</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s">&#39;Renderer&#39;</span><span class="p">,</span><span class="s">&#39;opengl&#39;</span><span class="p">);</span><span class="w">                   </span><span class="c">% interactive 3-D needs OpenGL</span>
+
+
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w">  </span><span class="c">%plots the values in y at the corresponding x location.  Then joins with straight lines.</span>
+
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span><span class="w">  </span><span class="c">% Always label your axes</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/668244b0d0cba4d0d42180ecf418c2fca49be1efafe27141934934f8dba8933a.png" src="../_images/668244b0d0cba4d0d42180ecf418c2fca49be1efafe27141934934f8dba8933a.png" />
+<div class="output text_html"><html><body><pre>y = 1x21 double
+    9.8696    8.9073    7.9944    7.1308    6.3165    5.5517    4.8361    4.1699    3.5531    2.9856    2.4674    1.9986    1.5791    1.2090    0.8883    0.6169    0.3948    0.2221    0.0987    0.0247         0
+</pre></body></html></div></div>
+</div>
+<p>If we think of <code class="docutils literal notranslate"><span class="pre">x</span></code> as <code class="docutils literal notranslate"><span class="pre">[x1,</span> <span class="pre">x2,</span> <span class="pre">x3,</span> <span class="pre">...,</span> <span class="pre">x8]</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> as <code class="docutils literal notranslate"><span class="pre">[y1,</span> <span class="pre">y2,</span> <span class="pre">y3,</span> <span class="pre">...,</span> <span class="pre">y8]</span></code> what gets plotted above is a set of straight lines connecting the points <code class="docutils literal notranslate"><span class="pre">(x1,y1),</span> <span class="pre">(x2,y2),</span> <span class="pre">(x3,y3),</span> <span class="pre">...,</span> <span class="pre">(x8,y8)</span></code>.</p>
+<p>Sometimes we want to just plot the points.  In this case we give the plot command an additional argument.  Here we’ll plot as squares using ‘s’ for ‘square’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are ways to modify the plotting to use different line styles (dashed, dotted, thicker,…), different symbol shapes/sizes, and different colours.  A quick internet search will show you how these are done.</p>
+<p>There are many cases where we want an array made up of equally spaced numbers between two values.  This is especially common when we are plotting things.  The matlab command <code class="docutils literal notranslate"><span class="pre">[a:b:c]</span></code>  allows us to do this.  It takes 3 arguments: the minimum <code class="docutils literal notranslate"><span class="pre">a</span></code> , the step size between the entries <code class="docutils literal notranslate"><span class="pre">b</span></code>, and the maximum  <code class="docutils literal notranslate"><span class="pre">c</span></code>.  So for example, we can use `[0,1,6]` to mean an array that starts at 0, ends at 6, and steps by size 1 each time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">.5</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the middle value is not given, it is assumed to be 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>An equivalent way to generate lists of equal spacing is with <code class="docutils literal notranslate"><span class="pre">linspace</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">linspace(start,</span> <span class="pre">stop,</span> <span class="pre">count)</span></code> produces an array whose first entry is <code class="docutils literal notranslate"><span class="pre">start</span></code> and last entry is <code class="docutils literal notranslate"><span class="pre">stop</span></code>, with a total of <code class="docutils literal notranslate"><span class="pre">count</span></code> values.</p>
+<p>The following is equivalent to ``[0:0.1:1]`</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span><span class="w">         </span><span class="c">%will print out [0:0.1:1].  This is equivalent to the next line</span>
+<span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span><span class="w">  </span><span class="c">%make sure you understand why this is an 11, not a 10.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we plot using <code class="docutils literal notranslate"><span class="pre">x</span></code> for our <span class="math notranslate nohighlight">\(x\)</span> coordinates, the points are spread out enough that the plot may not look smooth.  The command to plot is <code class="docutils literal notranslate"><span class="pre">plot(x_coordinate_array,</span> <span class="pre">y_coordinate_array)</span></code> where <code class="docutils literal notranslate"><span class="pre">x_coordinate_array</span></code> is an array of <span class="math notranslate nohighlight">\(x\)</span> coordinates and <code class="docutils literal notranslate"><span class="pre">y_coordinate_array</span></code> is an array of <span class="math notranslate nohighlight">\(y\)</span> coordinates.</p>
+<p>You should always include axis labels on plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">.^</span><span class="mi">4</span><span class="p">)</span><span class="w">   </span><span class="c">%x is the x-coordinates,    x.^4 gives the y-coordinates</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;x^4&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To make the plot above  smooth, we need more points.  So we will create an array <code class="docutils literal notranslate"><span class="pre">high_resolution_x</span></code> that has many intermediate points.</p>
+<p>When we start dealing with long arrays, we usually don’t want them to be printed to the screen.  So in the command below, we end with a semicolon ‘;’  When the semicolon is there, the output is suppressed.  You could remove the semicolon below to see what happens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">high_resolution_x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">6</span><span class="p">];</span><span class="w">   </span><span class="c">%this covers the same range as x (0 to 6), but with a much smaller step size.</span>
+
+<span class="c">%an equivalent command is linspace(0,6,601)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">plot</span><span class="p">(</span><span class="n">high_resolution_x</span><span class="p">,</span><span class="w"> </span><span class="n">high_resolution_x</span><span class="o">.^</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;x^4&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also plot multiple things on the same axes, using <code class="docutils literal notranslate"><span class="pre">hold</span> <span class="pre">on</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">.^</span><span class="mi">3</span><span class="o">-</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="c">%this tells it to not overwrite the current figure, but rather to hold on to the current plot and then add things.</span>
+<span class="w">        </span><span class="c">%without `hold on`, the second plotting command would completely overwrite the first. </span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">high_resolution_x</span><span class="p">,</span><span class="w"> </span><span class="n">high_resolution_x</span><span class="o">.^</span><span class="mi">3</span><span class="o">-</span><span class="n">high_resolution_x</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;x^4&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">4.1.5.2. </span>Self Test<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Define an array <code class="docutils literal notranslate"><span class="pre">t</span></code> with values from <code class="docutils literal notranslate"><span class="pre">-2*pi</span></code> to<code class="docutils literal notranslate"><span class="pre">2*pi</span></code> having a stepsize of <code class="docutils literal notranslate"><span class="pre">0.2*pi</span></code>.  Then plot <code class="docutils literal notranslate"><span class="pre">sin(t)</span></code>, <code class="docutils literal notranslate"><span class="pre">cos(t)</span></code>, and <code class="docutils literal notranslate"><span class="pre">sin(t).^2+cos(t).^2</span></code>, all on the same axes.</p>
+</section>
+</section>
+<section id="for-loops">
+<h2><span class="section-number">4.1.6. </span><u>For Loops</u><a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h2>
+<p>An important tool in almost all programming languages is a ‘<code class="docutils literal notranslate"><span class="pre">for</span></code> loop’.  It lets us do the same calculation repeatedly, but each time with one of the variables changed.</p>
+<ul class="simple">
+<li><p>We’ll start with a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that just prints out the integers from 0 to 5.</p></li>
+<li><p>Then we’ll modify the for loop so that it also adds these up.</p></li>
+<li><p>Then we’ll modify it again so that it also creates arrays.</p></li>
+</ul>
+<p>The first line of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop tells us what variable name we’re going to use inside the for loop and gives an array showing what values it will take.</p>
+<p>Then it has commands to use for each subsequent value of the variable.</p>
+<p>Finally the word <code class="docutils literal notranslate"><span class="pre">end</span></code> appears so that matlab knows where that sequence of commands ends.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">   </span><span class="c">%counter will take each value from  0 to 5.  We could also use counter = [0:5]</span>
+<span class="w">   </span><span class="n">counter</span><span class="w">                         </span><span class="c">%This prints out the current value of counter.  It&#39;s a good idea to indent the commands within a loop a bit so that you can easily see where the for loop is.</span>
+<span class="k">end</span><span class="w">                                </span><span class="c">%the loop ends here.  </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A better way to do this is <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">counter</span> <span class="pre">=</span> <span class="pre">[0:5]</span></code>.</p>
+<p>Let’s use that and calculate the sum of the entries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="w">                    </span>#<span class="n">we</span><span class="o">&#39;</span><span class="n">re</span><span class="w"> </span><span class="n">going</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="nb">add</span><span class="w"> </span><span class="n">everything</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">store</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="s">&#39;sum&#39;</span><span class="p">.</span><span class="w">  </span><span class="n">Each</span><span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="n">through</span><span class="w"> </span><span class="n">we</span><span class="o">&#39;</span><span class="n">ll</span><span class="w"> </span><span class="n">modify</span><span class="w"> </span><span class="s">&#39;sum&#39;</span><span class="w"> </span><span class="n">We</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="nb">start</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">equal</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">work</span><span class="p">.</span>
+<span class="k">for</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="w">        </span><span class="c">%counter will take each value from  0 to 5.</span>
+<span class="w">   </span><span class="n">counter</span><span class="w">                 </span><span class="c">%This prints out the current value of counter.  It&#39;s a good idea to indent these a bit so that you can easily see where the for loop is.</span>
+<span class="w">   </span><span class="nb">sum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">counter</span><span class="w">     </span>#<span class="n">we</span><span class="w"> </span><span class="nb">add</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="nb">sum</span><span class="p">.</span>
+<span class="k">end</span><span class="w">                        </span><span class="c">%the loop ends here.  </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s a good idea to go through the loop with pen and paper just so that you can confirm you understand what’s happening.  Try running through it by hand if <code class="docutils literal notranslate"><span class="pre">sum</span></code> isn’t defined to be 0 at the start to see why it breaks.</p>
+<p>Now we create an array which will store each value of <code class="docutils literal notranslate"><span class="pre">sum</span></code> along the way, and append <code class="docutils literal notranslate"><span class="pre">sum</span></code> to the end of the array each time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">cumulative_value</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[]</span><span class="w">  </span><span class="c">%this is an empty array</span>
+<span class="nb">sum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="w">                </span><span class="c">%as above - if you leave this out, it will use whatever the previous value os `sum` is.  If you leave it out and `sum` isn&#39;t defined yet it will give an error</span>
+<span class="k">for</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">   </span>
+<span class="w">   </span><span class="n">counter</span><span class="w">                        </span><span class="c">%prints out the current value of counter</span>
+<span class="w">   </span><span class="nb">sum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="p">;</span><span class="w">          </span><span class="c">%note that output suppressed by semicolon</span>
+<span class="w">   </span><span class="n">cumulative_value</span><span class="p">(</span><span class="k">end</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sum</span><span class="w">  </span><span class="c">%this appends a new value to the end of the array, equal to sum.  This output will print out since there is no semicolon.</span>
+<span class="k">end</span><span class="w">       </span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h3><span class="section-number">4.1.6.1. </span>Self Test<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Define <code class="docutils literal notranslate"><span class="pre">dx</span> <span class="pre">=</span> <span class="pre">0.1</span></code> and <code class="docutils literal notranslate"><span class="pre">X=[0:dx:5-dx]</span></code> — note the capital letter X.</p>
+<p>Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to calculate the sum of <code class="docutils literal notranslate"><span class="pre">x^2*dx</span></code> where the sum is taken over each value <code class="docutils literal notranslate"><span class="pre">x</span></code> in the array <code class="docutils literal notranslate"><span class="pre">X</span></code> : <code class="docutils literal notranslate"><span class="pre">(X[1]^2)*dx</span> <span class="pre">+</span> <span class="pre">(X[2]^2)*dx</span> <span class="pre">+</span> <span class="pre">(X[3]^2)*dx</span> <span class="pre">+</span> <span class="pre">...X[end]^2*dx</span></code>    Compare your answer with the integral</p>
+<p><span class="math notranslate nohighlight">\(\int_0^5 x^2 dx\)</span>.</p>
+<p>note there are more efficient ways to do this calculation in matlab without using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, but the goal of this is to make sure you know how to use for loops.</p>
+<p>What happens to the difference between <span class="math notranslate nohighlight">\(\int_0^5 x^2 dx\)</span> and the value of the sum if you reduce <code class="docutils literal notranslate"><span class="pre">dx</span></code> ?</p>
+<p>The cell below shows a skeleton for some code to look at how the error changes as <code class="docutils literal notranslate"><span class="pre">dx</span></code> shrinks.  It creates a list of <code class="docutils literal notranslate"><span class="pre">dx</span></code> values.  Then it runs a for loop with each value of dx.  For each of these values, we want to do the same calculation as above.</p>
+<p><strong>Using the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop above as a model, edit the inner <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in the cell below  so that it will do the same sum.</strong></p>
+<p>We then set the error to be the absolute value of the difference between the sum and the integral.</p>
+<p>Finally we plot the error as a function of <code class="docutils literal notranslate"><span class="pre">dx</span></code>, but with log scales so that we can see the very small numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">errors</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="w">  </span><span class="c">%will store the errors for the calculations</span>
+<span class="n">dx_list</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="o">.^</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">5</span><span class="p">]</span><span class="w">   </span><span class="c">%the dx values we will use</span>
+
+
+<span class="k">for</span><span class="w"> </span><span class="n">dx</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dx_list</span><span class="w">   </span><span class="c">%dx will take each value in dx_list</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nb">sum</span><span class="w"> </span><span class="p">=</span><span class="mi">0</span><span class="p">;</span><span class="w">   </span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="k">...</span><span class="c">....  %here is a &#39;nested for loop&#39;.  The &#39;inner&#39; loop will execute completely each pass through the &#39;outer&#39; loop.   you need to provide this code</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">  </span>
+<span class="w">    </span><span class="n">errors</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="mf">41.66666666667</span><span class="o">-</span><span class="nb">sum</span><span class="p">)</span><span class="w">   </span><span class="c">%the integral is 41.66666....   We put the new error into the list of errors</span>
+<span class="w">    </span>
+<span class="k">end</span>
+
+<span class="nb">loglog</span><span class="p">(</span><span class="n">dx_list</span><span class="p">,</span><span class="w"> </span><span class="n">errors</span><span class="p">)</span><span class="w"> </span>#<span class="n">this</span><span class="w"> </span><span class="n">plots</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="nb">log</span><span class="w"> </span><span class="nb">scale</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="nb">axes</span><span class="p">.</span><span class="w">  </span><span class="n">WIthout</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="nb">log</span><span class="w"> </span><span class="nb">scale</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">would</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">see</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="nb">details</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">smaller</span><span class="w"> </span><span class="n">dx</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;dx&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;error&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="optional-extension">
+<h3><span class="section-number">4.1.6.2. </span>Optional extension:<a class="headerlink" href="#optional-extension" title="Link to this heading">#</a></h3>
+<p>A major limitation of many numerical algorithms is that to get high accuracy, we need high resolution, which requires many calculations.  To reduce the error with the algorithm above by a factor of 100, we need 100 times as many points, which means waiting 100 times as long.  It turns out that with a small change in the algorithm, a factor of 100 improvement in accuracy can be achieved with just 10 times as many points with almost the same underlying code.  If you need accuracy to 8 digits, this could mean the difference between getting an answer today or 30 years from now.</p>
+<p>Repeat the previous calculation, but this time, define <code class="docutils literal notranslate"><span class="pre">X</span></code> to be the values in the midpoint of each interval: <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">=</span> <span class="pre">[dx/2</span>&#160; <span class="pre">:</span>&#160; <span class="pre">dx</span>&#160; <span class="pre">:</span>&#160; <span class="pre">5-dx/2]</span></code>  Compare the size of the errors with the result above which used the left hand value.  How much does the error go do from a factor of 10 reduction in <code class="docutils literal notranslate"><span class="pre">dx</span></code>?  Notice that the effort to write the code using the midpoints is not much different, but the accuracy is dramatically higher.</p>
+<p>To go even further, to see mathematically (rather than computationally) why this error is so much smaller, choose an interval  <span class="math notranslate nohighlight">\((n \Delta x, (n+1)  \Delta x)\)</span>.  Sketch the function in that interval.   Let <span class="math notranslate nohighlight">\(x_n\)</span> be the midpoint of the interval.</p>
+<ul class="simple">
+<li><p>Sketch the approximation made if you replace the function by its tangent line approximation in the interval using the midpoint — the value at that point is <span class="math notranslate nohighlight">\(f(x_n)=x_n^2\)</span> and the slope is <span class="math notranslate nohighlight">\(f'(x_n)=2x_n\)</span>.</p></li>
+<li><p>Write down the formula for the area under this approximation in terms of <span class="math notranslate nohighlight">\(f(x_n)\)</span>, <span class="math notranslate nohighlight">\(f'(x_n)\)</span> and <span class="math notranslate nohighlight">\(\Delta x\)</span>.  You should see that <span class="math notranslate nohighlight">\(f'(x_n)\)</span> disappears from the expression - this is a result of choosing the midpoint.</p></li>
+<li><p>Compare the formula for this area with the formula in the new calculation you did.  You should see that they are the same.</p></li>
+<li><p>Now sketch the approximation made if you replace the function in that interval by the constant value  <span class="math notranslate nohighlight">\(f(n \Delta x)\)</span>.  You should visually see that the error appears larger.</p></li>
+<li><p>Now go back to the midpoint tangent line approximation.  Write <span class="math notranslate nohighlight">\(f(x) = f(x_n) + (x-x_n) f'(x_n) + (x-x_n)^2 f''(x_n)/2 +\cdots\)</span>  This is a Taylor Series approximation using the derivatives at the point <span class="math notranslate nohighlight">\(x_n\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>.  For the function <span class="math notranslate nohighlight">\(x^2\)</span>, higher derivatives are 0 so the sum is finite.  The tangent line approximation is <span class="math notranslate nohighlight">\(g(x) = f(x_n) + (x-x_n) f'(x_n)\)</span>.  You should see that <span class="math notranslate nohighlight">\(|x-x_n|\)</span> is no larger than <span class="math notranslate nohighlight">\(\Delta x\)</span>, so if <span class="math notranslate nohighlight">\(\Delta x\)</span> shrinks, the typical error between <span class="math notranslate nohighlight">\(g\)</span> and <span class="math notranslate nohighlight">\(f\)</span> scales like <span class="math notranslate nohighlight">\((\Delta x)^2\)</span>.  The width of each interval is <span class="math notranslate nohighlight">\(\Delta x\)</span>, so we expect the overall error in the approximation to be comparable in size to <span class="math notranslate nohighlight">\((\Delta x)^3\)</span>.  The number of intervals is <span class="math notranslate nohighlight">\(5/\Delta x\)</span>.  So if we add up the absolute values (that is, we assume the errors aren’t going to cancel) we get something proportional to <span class="math notranslate nohighlight">\((\Delta x)^2\)</span>.</p></li>
+<li><p>Use similar reasoning to see why the error approximating the function using the left-hand value <span class="math notranslate nohighlight">\(f(n\Delta x)\)</span> should be proportional to <span class="math notranslate nohighlight">\(\Delta x\)</span>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "jupyter_matlab_kernel"
+        },
+        kernelOptions: {
+            name: "jupyter_matlab_kernel",
+            path: "./ComputerLabs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="LabIntro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Computer Labs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Computer%20Lab%2002.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>MAT2VCA Computer Lab 2</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">4.1.1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cocalc">4.1.1.1. Cocalc</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-and-octave">4.1.1.2. Matlab and Octave</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">4.1.2. Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-variable">4.1.3. <u>Defining a variable</u></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">4.1.3.1. Self test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">4.1.4. <u>Arrays</u></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.1.4.1. Self Test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">4.1.5. <u>Plotting</u></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-steps">4.1.5.1. Preliminary steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.1.5.2. Self Test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">4.1.6. <u>For Loops</u></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.1.6.1. Self Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-extension">4.1.6.2. Optional extension:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LaTrobe University MAPS staff (present and past)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
