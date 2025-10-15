@@ -5,7 +5,8 @@ format: jb-book
 root: intro
 options: 
   numbered: True
-chapters:
+chapters: 
+  - file: prereqs/PrereqIntro
   - file: notebooks/LaplaceIntro
     sections:
     - file: notebooks/LaplaceDef
