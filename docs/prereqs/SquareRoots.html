@@ -432,8 +432,14 @@ document.write(`
 <p>You can easily check that this assumption is incorrect.  Consider any example where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are both nonzero.  Say <span class="math notranslate nohighlight">\(a=1\)</span>, <span class="math notranslate nohighlight">\(b=1\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-\sqrt{1^2+1^2} = \sqrt{1+1} = \sqrt{2} \neq 1+1
+\sqrt{1^2+1^2} = \sqrt{1+1} = \sqrt{2}
 \]</div>
+<p>But if you make the error you get:</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{1^2+1^2} {\color{red} = } 1+1 = 2
+\]</div>
+<p>So either there is an error or <span class="math notranslate nohighlight">\(\sqrt{2}=2\)</span> (in fact repeated applications of this argument would conclude <span class="math notranslate nohighlight">\(\sqrt{3}=3\)</span>, <span class="math notranslate nohighlight">\(\sqrt{4}=4\)</span>, etc.).  There is an error.</p>
 <p>When you encounter something like <span class="math notranslate nohighlight">\(f(x) = \sqrt{a(x)^2 + b(x)^2}\)</span> there are only really only two ways to get rid of the square root:</p>
 <ul class="simple">
 <li><p>do Algebra steps with <span class="math notranslate nohighlight">\(a(x)^2+b(x)^2\)</span> to arrive at a simplified expression that can be written as <span class="math notranslate nohighlight">\(c(x)^2\)</span>, in which case <span class="math notranslate nohighlight">\(\sqrt{a(x)^2+b(x)^2} = |c(x)|\)</span>.</p></li>
