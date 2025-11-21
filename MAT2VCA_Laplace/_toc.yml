@@ -8,7 +8,6 @@ options:
 chapters: 
   - file: prereqs/PrereqIntro
     sections:
-    - file: prereqs/SquareRoots
     - file: prereqs/Squares
     - file: prereqs/EqualsSign
     - file: prereqs/AlgebraReview

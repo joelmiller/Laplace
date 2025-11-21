@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.4. Squares &#8212; The Laplace Transform and Differential Equations</title>
+    <title>1.2. Squares &#8212; The Laplace Transform and Differential Equations</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'prereqs/Squares';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.5. The use of \(=\) and \(\Rightarrow\)" href="EqualsSign.html" />
-    <link rel="prev" title="1.3. Square roots" href="SquareRoots.html" />
+    <link rel="next" title="1.3. The use of \(=\) and \(\Rightarrow\)" href="EqualsSign.html" />
+    <link rel="prev" title="1. Prerequisites" href="PrereqIntro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,10 +184,9 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="PrereqIntro.html">1. Prerequisites</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="SquareRoots.html">1.3. Square roots</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4. Squares</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EqualsSign.html">1.5. The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="AlgebraReview.html">1.6. How to improve your prerequisite skills</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2. Squares</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EqualsSign.html">1.3. The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="AlgebraReview.html">1.4. How to improve your prerequisite skills</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/LaplaceIntro.html">2. Laplace Transforms and Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -399,7 +398,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -415,6 +416,17 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-square-of-a-sum">1.2.1. The square of a sum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-square-root-of-a-sum">1.2.2. The square root of a sum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-for-x-if-we-know-x-2">1.2.3. Solving for <span class="math notranslate nohighlight">\(x\)</span> if we know <span class="math notranslate nohighlight">\(x^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.2.4. Self-test</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -425,15 +437,25 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="squares">
-<h1><span class="section-number">1.4. </span>Squares<a class="headerlink" href="#squares" title="Link to this heading">#</a></h1>
-<p>Another common error related to the square root error is the assumption that</p>
+<h1><span class="section-number">1.2. </span>Squares<a class="headerlink" href="#squares" title="Link to this heading">#</a></h1>
+<p>Some of the most common errors that occurs when students do Algebra are related to squares.</p>
+<p>Please ensure that you are extremely comfortable with these concepts.  In a sport the goal isn’t to do a skill in isolation, but to internalize it and combine it with other skills in a competitive environment.  Similarly, here it’s not enough to be able to do these correctly in isolation, but rather to internalize them so that it is automatic.</p>
+<section id="the-square-of-a-sum">
+<h2><span class="section-number">1.2.1. </span>The square of a sum<a class="headerlink" href="#the-square-of-a-sum" title="Link to this heading">#</a></h2>
+<p>A common mistake is to simplify <span class="math notranslate nohighlight">\((a(x)+b(x))^2\)</span> by assuming that the square of a sum is the same as the sum of a square:</p>
 <div class="math notranslate nohighlight">
 \[
-(a+b)^2 = a^2 + b^2  {\color{red} \leftarrow \text{Incorrect assumption}}
+(a(x)+b(x))^2 = a(x)^2 + b(x)^2  \quad {\color{red} \leftarrow \text{Incorrect assumption}}
 \]</div>
-<p>Do not do this.</p>
+<p>Please do not do this.</p>
 <p>To illustrate what’s happening, let’s assume <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are positive and consider the following square with side length <span class="math notranslate nohighlight">\(a+b\)</span>.  The area of the square is <span class="math notranslate nohighlight">\((a+b)^2\)</span>.  However, you can divide the square into 4 pieces: a square of side <span class="math notranslate nohighlight">\(a\)</span> (and area <span class="math notranslate nohighlight">\(a^2\)</span>), a square of side <span class="math notranslate nohighlight">\(b\)</span> (and area <span class="math notranslate nohighlight">\(b^2\)</span>), and two rectangles of sides <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> (with area <span class="math notranslate nohighlight">\(ab\)</span>).</p>
-<p>NEED TO ADD IMAGE HERE</p>
+<figure class="align-default" id="fig-square-of-sum">
+<a class="reference internal image-reference" href="../_images/(a+b)^2.png"><img alt="../_images/%28a%2Bb%29%5E2.png" src="../_images/%28a%2Bb%29%5E2.png" style="height: 250px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">The area of a square with side length <span class="math notranslate nohighlight">\(a+b\)</span> is <span class="math notranslate nohighlight">\(a^2 + 2ab+b^2\)</span>.  Treating it as <span class="math notranslate nohighlight">\(a^2+b^2\)</span> accounts for the two squares (red and blue), but not the two rectangles (grey).</span><a class="headerlink" href="#fig-square-of-sum" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>If you treat <span class="math notranslate nohighlight">\((a+b)^2\)</span> as <span class="math notranslate nohighlight">\(a^2+b^2\)</span>, you are claiming that the area of those two rectangles is zero.</p>
 <p>The drawing above is awkward if the values can be negative, so to show it in more generality, here’s an Algebraic derivation:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -445,6 +467,474 @@ document.write(`
 \end{align*}\]</div>
 <p>You should memorize that <span class="math notranslate nohighlight">\((a+b)^2 = a^2+2ab+b^2\)</span>.  This will take practice.</p>
 </section>
+<section id="the-square-root-of-a-sum">
+<h2><span class="section-number">1.2.2. </span>The square root of a sum<a class="headerlink" href="#the-square-root-of-a-sum" title="Link to this heading">#</a></h2>
+<p>Another common error occurs in square roots:</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{a(x)^2 + b(x)^2} = a(x)+b(x) \quad  {\color{red} \leftarrow \text{incorrect assumption}}\]</div>
+<p>You can easily check that this assumption is incorrect.  Consider any example where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are both nonzero.  Say <span class="math notranslate nohighlight">\(a=1\)</span>, <span class="math notranslate nohighlight">\(b=1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{1^2+1^2} = \sqrt{1+1} = \sqrt{2}
+\]</div>
+<p>But if you make the error you get:</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{1^2+1^2} {\color{red} = } 1+1 = 2
+\]</div>
+<p>So either there is an error or <span class="math notranslate nohighlight">\(\sqrt{2}=2\)</span> (in fact repeated applications of this argument would conclude <span class="math notranslate nohighlight">\(\sqrt{3}=3\)</span>, <span class="math notranslate nohighlight">\(\sqrt{4}=4\)</span>, etc.).  There is an error.</p>
+<p>When you encounter something like <span class="math notranslate nohighlight">\(f(x) = \sqrt{a(x)^2 + b(x)^2}\)</span> there are only really only two ways to get rid of the square root:</p>
+<ul class="simple">
+<li><p>do Algebra steps with <span class="math notranslate nohighlight">\(a(x)^2+b(x)^2\)</span> to arrive at a simplified expression that can be written as <span class="math notranslate nohighlight">\(c(x)^2\)</span>, in which case <span class="math notranslate nohighlight">\(\sqrt{a(x)^2+b(x)^2} = |c(x)|\)</span>.</p></li>
+<li><p>square both sides of the equation to get <span class="math notranslate nohighlight">\(f(x)^2 = a(x)^2 + b(x)^2\)</span>.  However, after finding the solution, we must check that $f(x) is not a negative number since the step of squaring opens up the possibility of creating new solutions.</p></li>
+</ul>
+</section>
+<section id="solving-for-x-if-we-know-x-2">
+<h2><span class="section-number">1.2.3. </span>Solving for <span class="math notranslate nohighlight">\(x\)</span> if we know <span class="math notranslate nohighlight">\(x^2\)</span><a class="headerlink" href="#solving-for-x-if-we-know-x-2" title="Link to this heading">#</a></h2>
+<p>It often occurs that we get something of the form <span class="math notranslate nohighlight">\(x^2=K\)</span> (here <span class="math notranslate nohighlight">\(K\)</span> must be 0 or positive).  It is natural to assume that</p>
+<div class="math notranslate nohighlight">
+\[
+\text{If } x^2=K \text{ then } x = \sqrt{K}  \quad  {\color{red} \leftarrow \text{incorrect assumption}}
+\]</div>
+<p>However, here is one counter-example: if <span class="math notranslate nohighlight">\(x^2=4\)</span>, then <span class="math notranslate nohighlight">\(x\)</span> could be <span class="math notranslate nohighlight">\(-2\)</span> instead of <span class="math notranslate nohighlight">\(2\)</span>.  We’re now at a level of mathematics where it’s not enough to know some of the solutions to your equation.  You usually need to have all of them.  You must use</p>
+<div class="math notranslate nohighlight">
+\[
+\text{If } x^2=K \text{ then } x = \pm \sqrt{K}
+\]</div>
+<p>A similar problem can occur when we have</p>
+<div class="math notranslate nohighlight">
+\[y^2=x^2\]</div>
+<p>Again it is natural to assume that <span class="math notranslate nohighlight">\(y = \sqrt{x^2}=x\)</span>.  There are two problems that can occur here.  Both of them are solved by taking</p>
+<div class="math notranslate nohighlight">
+\[y = \pm x\]</div>
+<p>The first problem is that if <span class="math notranslate nohighlight">\(x&lt;0\)</span>, then <span class="math notranslate nohighlight">\(\sqrt{x^2} \neq x\)</span>.  Intead <span class="math notranslate nohighlight">\(\sqrt{x^2} = |x|\)</span>.  The second problem is that if we have <span class="math notranslate nohighlight">\(y^2 = x^2\)</span>, then <span class="math notranslate nohighlight">\(y = \pm \sqrt{x^2} = \pm |x|\)</span>.  Since <span class="math notranslate nohighlight">\(\pm |x| = \pm x\)</span>, we get <span class="math notranslate nohighlight">\(y = \pm x\)</span>.</p>
+</section>
+<section id="self-test">
+<h2><span class="section-number">1.2.4. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
+<p><strong>1. Expanding Squares Correctly</strong></p>
+<p>For each expression below:</p>
+<p>(a) Expand the square correctly using</p>
+<div class="math notranslate nohighlight">
+\[(a+b)^2 = a^2 + 2ab + b^2.\]</div>
+<p>(b) Identify a common incorrect expansion.</p>
+<p>(c) For the given values of the variables, calculate the numerical value of the expression by:</p>
+<ul class="simple">
+<li><p>substituting the values and doing the sum before squaring,</p></li>
+<li><p>substituting the values into your correct expansion,</p></li>
+<li><p>substituting the values into the incorrect expansion.</p></li>
+</ul>
+<hr class="docutils" />
+<p>(1.1) <span class="math notranslate nohighlight">\((x+5)^2\)</span></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Expression</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((x+5)^2\)</span>. Compare the solutions at <span class="math notranslate nohighlight">\(x=2\)</span>.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Solution</label><div class="sd-tab-content docutils">
+<p>(a) <span class="math notranslate nohighlight">\((x+5)^2 = x^2 + 10x + 25.\)</span></p>
+<p>(b) Incorrect expansion: <span class="math notranslate nohighlight">\(x^2 + 25\)</span></p>
+<p>(c)</p>
+<ul class="simple">
+<li><p>Original: 49</p></li>
+<li><p>Correct expansion: 49</p></li>
+<li><p>Incorrect expansion: 29</p></li>
+</ul>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>(a) Use</p>
+<div class="math notranslate nohighlight">
+\[(a+b)^2 = a^2 + 2ab + b^2.\]</div>
+<p>Set <span class="math notranslate nohighlight">\(a=x\)</span>, <span class="math notranslate nohighlight">\(b=5\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[(x+5)^2 = x^2 + 2(x)(5) + 25 = x^2 + 10x + 25.\]</div>
+<p>(b) A common incorrect expansion is</p>
+<div class="math notranslate nohighlight">
+\[(x+5)^2 = x^2 + 25\]</div>
+<p>(c) Check at <span class="math notranslate nohighlight">\(x=2\)</span>:</p>
+<ul class="simple">
+<li><p>Original: <span class="math notranslate nohighlight">\((2+5)^2 = 49\)</span></p></li>
+<li><p>Correct expansion: <span class="math notranslate nohighlight">\(2^2 + 10(2) + 25 = 49\)</span></p></li>
+<li><p>Incorrect expansion: <span class="math notranslate nohighlight">\(2^2 + 25 = 29\)</span></p></li>
+</ul>
+</div>
+</div>
+<p>(1.2) <span class="math notranslate nohighlight">\((2x-3)^2\)</span></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Expression</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((2x-3)^2\)</span>. Compare the solutions at <span class="math notranslate nohighlight">\(x=1\)</span>.</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Solution</label><div class="sd-tab-content docutils">
+<p>(a) <span class="math notranslate nohighlight">\((2x-3)^2 = 4x^2 - 12x + 9.\)</span></p>
+<p>(b) Incorrect expansion: <span class="math notranslate nohighlight">\(4x^2 + 9\)</span></p>
+<p>(c)</p>
+<ul class="simple">
+<li><p>Original: 1</p></li>
+<li><p>Correct expansion: 1</p></li>
+<li><p>Incorrect expansion: 13</p></li>
+</ul>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>(a) Use</p>
+<div class="math notranslate nohighlight">
+\[(a+b)^2 = a^2 + 2ab + b^2.\]</div>
+<p>Let <span class="math notranslate nohighlight">\(a=2x\)</span> and <span class="math notranslate nohighlight">\(b=-3\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a^2 = 4x^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2ab = 2(2x)(-3) = -12x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b^2 = 9\)</span></p></li>
+</ul>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[(2x-3)^2 = 4x^2 - 12x + 9.\]</div>
+<p>(b) A common incorrect expansion is</p>
+<div class="math notranslate nohighlight">
+\[(2x-3)^2 = 4x^2 + 9.\]</div>
+<p>(c) Check at <span class="math notranslate nohighlight">\(x=1\)</span>:</p>
+<ul class="simple">
+<li><p>Original: <span class="math notranslate nohighlight">\((2\cdot 1 - 3)^2 = (-1)^2 = 1\)</span></p></li>
+<li><p>Correct expansion: <span class="math notranslate nohighlight">\(4 - 12 + 9 = 1\)</span></p></li>
+<li><p>Incorrect expansion: <span class="math notranslate nohighlight">\(4 + 9 = 13\)</span></p></li>
+</ul>
+</div>
+</div>
+<p>(1.3) <span class="math notranslate nohighlight">\((x+h)^2\)</span></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Expression</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((x+h)^2\)</span>. Compare solutions at <span class="math notranslate nohighlight">\(x=2\)</span>, <span class="math notranslate nohighlight">\(h=0.1\)</span>.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Solution</label><div class="sd-tab-content docutils">
+<p>(a) <span class="math notranslate nohighlight">\((x+h)^2 = x^2 + 2xh + h^2.\)</span></p>
+<p>(b) Incorrect expansion: <span class="math notranslate nohighlight">\(x^2 + h^2\)</span></p>
+<p>(c)</p>
+<ul class="simple">
+<li><p>Original: 4.41</p></li>
+<li><p>Correct expansion: 4.41</p></li>
+<li><p>Incorrect expansion: 4.01</p></li>
+</ul>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>(a) Using</p>
+<div class="math notranslate nohighlight">
+\[(a+b)^2 = a^2 + 2ab + b^2,\]</div>
+<p>set <span class="math notranslate nohighlight">\(a=x\)</span> and <span class="math notranslate nohighlight">\(b=h\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[(x+h)^2 = x^2 + 2xh + h^2.\]</div>
+<p>(b) A common incorrect expansion is</p>
+<div class="math notranslate nohighlight">
+\[(x+h)^2 = x^2 + h^2.\]</div>
+<p>(c) Check at <span class="math notranslate nohighlight">\(x=2\)</span>, <span class="math notranslate nohighlight">\(h=0.1\)</span>:</p>
+<ul class="simple">
+<li><p>Original: <span class="math notranslate nohighlight">\((2+0.1)^2 = 2.1^2 = 4.41\)</span></p></li>
+<li><p>Correct expansion: <span class="math notranslate nohighlight">\(4 + 0.4 + 0.01 = 4.41\)</span></p></li>
+<li><p>Incorrect expansion: <span class="math notranslate nohighlight">\(4 + 0.01 = 4.01\)</span></p></li>
+</ul>
+</div>
+</div>
+<p>(1.4) <span class="math notranslate nohighlight">\((3y+4)^2\)</span></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Expression</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((3y+4)^2\)</span>. Compare solutions at <span class="math notranslate nohighlight">\(y=2\)</span>.</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Solution</label><div class="sd-tab-content docutils">
+<p>(a) <span class="math notranslate nohighlight">\((3y+4)^2 = 9y^2 + 24y + 16.\)</span></p>
+<p>(b) Incorrect expansion: <span class="math notranslate nohighlight">\(9y^2 + 16\)</span></p>
+<p>(c)</p>
+<ul class="simple">
+<li><p>Original: 100</p></li>
+<li><p>Correct expansion: 100</p></li>
+<li><p>Incorrect expansion: 52</p></li>
+</ul>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>(a) Using</p>
+<div class="math notranslate nohighlight">
+\[(a+b)^2 = a^2 + 2ab + b^2,\]</div>
+<p>let <span class="math notranslate nohighlight">\(a=3y\)</span> and <span class="math notranslate nohighlight">\(b=4\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a^2 = 9y^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2ab = 2(3y)(4) = 24y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b^2 = 16\)</span></p></li>
+</ul>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[(3y+4)^2 = 9y^2 + 24y + 16.\]</div>
+<p>(b) A common incorrect expansion is</p>
+<div class="math notranslate nohighlight">
+\[(3y+4)^2 = 9y^2 + 16.\]</div>
+<p>(c) Check at <span class="math notranslate nohighlight">\(y=2\)</span>:</p>
+<ul class="simple">
+<li><p>Original: <span class="math notranslate nohighlight">\((3\cdot 2 + 4)^2 = 10^2 = 100\)</span></p></li>
+<li><p>Correct expansion: <span class="math notranslate nohighlight">\(36 + 48 + 16 = 100\)</span></p></li>
+<li><p>Incorrect expansion: <span class="math notranslate nohighlight">\(36 + 16 = 52\)</span></p></li>
+</ul>
+</div>
+</div>
+<p><strong>2. Square Roots and Identities</strong></p>
+<p>For each expression below:</p>
+<p>(a) State whether the proposed identity is valid for all real values of the variable.</p>
+<p>(b) If the identity is not valid, provide a counterexample.</p>
+<p>(c) Briefly explain why the identity fails (if it does).</p>
+<p>(d) Find all values of <span class="math notranslate nohighlight">\(x\)</span> for which the expression is true.</p>
+<hr class="docutils" />
+<p>(2.1) <span class="math notranslate nohighlight">\(\sqrt{x^2 + 9} \stackrel{?}{=} x + 3\)</span></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+Expression</label><div class="sd-tab-content docutils">
+<p>Determine whether <span class="math notranslate nohighlight">\(\sqrt{x^2 + 9} = x + 3\)</span> is valid for all real <span class="math notranslate nohighlight">\(x\)</span>.</p>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+Solution</label><div class="sd-tab-content docutils">
+<p>(a) Not valid for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>(b) Counterexample: <span class="math notranslate nohighlight">\(x=1\)</span> gives</p>
+<ul class="simple">
+<li><p>LHS: <span class="math notranslate nohighlight">\(\sqrt{10}\)</span></p></li>
+<li><p>RHS: <span class="math notranslate nohighlight">\(4\)</span></p></li>
+</ul>
+<p>(c) The square root of a sum is <strong>not</strong> equal to the sum of square roots.</p>
+<p>(d) <span class="math notranslate nohighlight">\(x=0\)</span></p>
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>(a) We test whether</p>
+<div class="math notranslate nohighlight">
+\[(x^2 + 9)^{1/2} = x + 3\]</div>
+<p>holds for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>(b) Choose <span class="math notranslate nohighlight">\(x=1\)</span>:</p>
+<ul class="simple">
+<li><p>LHS: <span class="math notranslate nohighlight">\(\sqrt{1^2 + 9} = \sqrt{10}\)</span></p></li>
+<li><p>RHS: <span class="math notranslate nohighlight">\(1 + 3 = 4\)</span></p></li>
+</ul>
+<p>Since <span class="math notranslate nohighlight">\(\sqrt{10} \neq 4\)</span>, the identity fails.</p>
+<p>(c) The error comes from assuming</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{a^2 + b^2} = a + b,\]</div>
+<p>which is not a valid property of square roots.</p>
+<p>(d) If <span class="math notranslate nohighlight">\((x^2+9)^{1/2} = x+3\)</span> then by squaring both sides</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*} 
+x^2+9 &amp;= x^2 + 6x + 9\\
+0&amp;= 6x\\
+0 &amp;=x
+\end{align*}\]</div>
+<p>Because squaring both sides of an equation can introduce incorrect solutions, we check that <span class="math notranslate nohighlight">\(x=0\)</span> is a solution.</p>
+</div>
+</div>
+<p>(2.2) <span class="math notranslate nohighlight">\(\sqrt{4x^2} \stackrel{?}{=} 2x\)</span></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+Expression</label><div class="sd-tab-content docutils">
+<p>Determine whether <span class="math notranslate nohighlight">\(\sqrt{4x^2} = 2x\)</span> holds for all real <span class="math notranslate nohighlight">\(x\)</span>.</p>
+</div>
+<input id="sd-tab-item-16" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+Solution</label><div class="sd-tab-content docutils">
+<p>(a) Not valid for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>(b) Counterexample: <span class="math notranslate nohighlight">\(x = -3\)</span></p>
+<ul class="simple">
+<li><p>LHS: <span class="math notranslate nohighlight">\(6\)</span></p></li>
+<li><p>RHS: <span class="math notranslate nohighlight">\(-6\)</span></p></li>
+</ul>
+<p>(c) Correct identity is <span class="math notranslate nohighlight">\(\sqrt{4x^2} = 2|x|\)</span>.</p>
+<p>(d) All <span class="math notranslate nohighlight">\(x \geq 0\)</span>.</p>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>(a) Consider</p>
+<div class="math notranslate nohighlight">
+\[(4x^2)^{1/2} \stackrel{?}{=} 2x.\]</div>
+<p>(b) Test <span class="math notranslate nohighlight">\(x=-3\)</span>:</p>
+<ul class="simple">
+<li><p>LHS: <span class="math notranslate nohighlight">\(\sqrt{4(-3)^2} = \sqrt{36} = 6\)</span></p></li>
+<li><p>RHS: <span class="math notranslate nohighlight">\(2(-3) = -6\)</span></p></li>
+</ul>
+<p>They differ, so the identity is false (it is false for any negative <span class="math notranslate nohighlight">\(x\)</span>).</p>
+<p>(c) The error comes from assuming that <span class="math notranslate nohighlight">\(x=\sqrt{x^2}\)</span>,
+but <span class="math notranslate nohighlight">\(\sqrt{x^2} = |x|\)</span>.</p>
+<p>(d) if <span class="math notranslate nohighlight">\(2x = \sqrt{4x^2}\)</span>, then <span class="math notranslate nohighlight">\(2x = 2 |x|\)</span>.  So <span class="math notranslate nohighlight">\(x=|x|\)</span>.  This is true for any <span class="math notranslate nohighlight">\(x \geq 0\)</span>.</p>
+</div>
+</div>
+<p>(2.3) <span class="math notranslate nohighlight">\(\sqrt{(x+1)^2 + (x+2)^2} \stackrel{?}{=} (x+1)+(x+2)\)</span></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-18">
+Expression</label><div class="sd-tab-content docutils">
+<p>Determine whether<br />
+<span class="math notranslate nohighlight">\(\sqrt{(x+1)^2 + (x+2)^2} = (x+1)+(x+2)\)</span>.</p>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-19">
+Solution</label><div class="sd-tab-content docutils">
+<p>(a) Not valid for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>(b) Counterexample: <span class="math notranslate nohighlight">\(x = 0\)</span></p>
+<ul class="simple">
+<li><p>LHS: <span class="math notranslate nohighlight">\(\sqrt{5}\)</span></p></li>
+<li><p>RHS: <span class="math notranslate nohighlight">\(3\)</span></p></li>
+</ul>
+<p>(c) The square root cannot be distributed across addition.</p>
+<p>(d) <span class="math notranslate nohighlight">\(x=-1\)</span>  (note <span class="math notranslate nohighlight">\(x=-2\)</span> is not a solution)</p>
+</div>
+<input id="sd-tab-item-20" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-20">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>(a) We examine whether</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{(x+1)^2 + (x+2)^2} = (x+1)+(x+2)\]</div>
+<p>is always true.</p>
+<p>(b) Let <span class="math notranslate nohighlight">\(x=0\)</span>:</p>
+<ul class="simple">
+<li><p>LHS: <span class="math notranslate nohighlight">\(\sqrt{1^2 + 2^2} = \sqrt{5}\)</span></p></li>
+<li><p>RHS: <span class="math notranslate nohighlight">\(1 + 2 = 3\)</span></p></li>
+</ul>
+<p>Since <span class="math notranslate nohighlight">\(\sqrt{5} \neq 3\)</span>, the identity is false.</p>
+<p>(c) This fails because</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{A + B} \neq \sqrt{A} + \sqrt{B}\]</div>
+<p>(unless one of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is zero and the other one is non-negative).</p>
+<p>(d) We will look at three different ways to find the solution, in order of increasing sophistication and decreasing difficulty.</p>
+<ul>
+<li><p>If
+<span class="math notranslate nohighlight">\(\sqrt{(x+1)^2 + (x+2)^2} = (x+1)+(x+2)\)</span> then</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sqrt{(x+1)^2 + (x+2)^2} &amp;= 2x+3\\
+\Rightarrow (x+1)^2 + (x+2)^2 &amp;= (2x+3)^2\\
+x^2+2x+1 + x^2+4x+4 &amp;= 4x^2 + 12x + 9\\
+2x^2 + 6x + 5 &amp;= 4x^2 + 12x + 9\\
+0 &amp;= 2x^2 + 6x + 4\\
+0 &amp;= x^2 + 3x+2\\
+0 &amp;= (x+2)(x+1) 
+\end{align*}\]</div>
+<p>So <span class="math notranslate nohighlight">\(x =-2\)</span> or <span class="math notranslate nohighlight">\(x=-1\)</span>.  However, when we squared both sides of the equation, we might have introduced some incorrect solutions.  That is, the step marked with <span class="math notranslate nohighlight">\(\Rightarrow\)</span> is not necessarily reversible.  There may be values of <span class="math notranslate nohighlight">\(x\)</span> that make the second equation true but not the first.  We need to check our values in the original equation.  In this case, if <span class="math notranslate nohighlight">\(x=-1\)</span>, the equation is <span class="math notranslate nohighlight">\(\sqrt{0^2 + 1^2} = 0+1\)</span>, which is correct.  However, for <span class="math notranslate nohighlight">\(x=-2\)</span>, the equation is <span class="math notranslate nohighlight">\(\sqrt{(-1)^2+0^2} = -1 + 0\)</span> which is not true.  So <span class="math notranslate nohighlight">\(x=-2\)</span> is not a solution.</p>
+</li>
+<li><p>If we are patient and don’t try to combine everything.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sqrt{(x+1)^2 + (x+2)^2} &amp;= (x+1) + (x+2)\\
+\Rightarrow (x+1)^2 + (x+2)^2 &amp;= (x+1)^2 + 2(x+1)(x+2) + (x+2)^2\\
+\Rightarrow 0 &amp;= 2(x+1)(x+2)
+\end{align*}\]</div>
+<p>So <span class="math notranslate nohighlight">\(x =-2\)</span> or <span class="math notranslate nohighlight">\(x=-1\)</span>.  The same argument as in the previous attempt excludes <span class="math notranslate nohighlight">\(x=-2\)</span>.</p>
+</li>
+<li><p>Finally, if <span class="math notranslate nohighlight">\(\sqrt{a^2+b^2}=a+b\)</span> then either (<span class="math notranslate nohighlight">\(a=0\)</span> and <span class="math notranslate nohighlight">\(b \geq 0\)</span>) or (<span class="math notranslate nohighlight">\(a \geq 0\)</span> and <span class="math notranslate nohighlight">\(b=0\)</span>).  That is, either <span class="math notranslate nohighlight">\(x+1=0\)</span> and <span class="math notranslate nohighlight">\(x+2\geq 0\)</span>, which occurs for <span class="math notranslate nohighlight">\(x=-1\)</span> or <span class="math notranslate nohighlight">\(x+1 \geq 0\)</span> and <span class="math notranslate nohighlight">\(x+2=0\)</span>.  But <span class="math notranslate nohighlight">\(x+2=0\)</span> means <span class="math notranslate nohighlight">\(x+1&lt;0\)</span>, so this is not possible.  Thus <span class="math notranslate nohighlight">\(x=-1\)</span> is the only solution.</p></li>
+</ul>
+</div>
+</div>
+<p><strong>3. Solving “Square = Constant” Equations</strong></p>
+<p>For each equation below:</p>
+<p>(a) Solve for <span class="math notranslate nohighlight">\(x\)</span></p>
+<p>(b) Check that your solution(s) is/are true solutions</p>
+<hr class="docutils" />
+<p>(3.1) <span class="math notranslate nohighlight">\(x^2 = 25\)</span></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+Expression</label><div class="sd-tab-content docutils">
+<p>Solve the equation <span class="math notranslate nohighlight">\(x^2 = 25\)</span>.</p>
+</div>
+<input id="sd-tab-item-22" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-22">
+Solution</label><div class="sd-tab-content docutils">
+<p>(a) <span class="math notranslate nohighlight">\(x = \pm 5\)</span></p>
+<p>(b) see worked solution</p>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-23">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>(a) The equation is of the form <span class="math notranslate nohighlight">\(x^2=25\)</span>, so taking the square root, with the <span class="math notranslate nohighlight">\(\pm\)</span> yields <span class="math notranslate nohighlight">\(x = \pm 5\)</span>.</p>
+<p>(b) <span class="math notranslate nohighlight">\((-5)^2 = 25\)</span>    and <span class="math notranslate nohighlight">\(5^2=25\)</span></p>
+</div>
+</div>
+<p>(3.2) <span class="math notranslate nohighlight">\((x - 3)^2 = 7\)</span></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-24" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-24">
+Expression</label><div class="sd-tab-content docutils">
+<p>Solve the equation <span class="math notranslate nohighlight">\((x - 3)^2 = 7\)</span>.</p>
+</div>
+<input id="sd-tab-item-25" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-25">
+Solution</label><div class="sd-tab-content docutils">
+<p>(a) <span class="math notranslate nohighlight">\(x = 3 \pm \sqrt{7}\)</span></p>
+<p>(b) see worked solution</p>
+</div>
+<input id="sd-tab-item-26" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-26">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>(a) Using the rule that if <span class="math notranslate nohighlight">\(u^2=K\)</span>, then <span class="math notranslate nohighlight">\(u = \pm \sqrt{K}\)</span> we get</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(x-3)^2 &amp;= 7\\
+(x-3) &amp;= \pm \sqrt{7}\\
+x &amp;= 3 \pm \sqrt{7}
+\end{align*} \]</div>
+<p>(b)</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((3 + \sqrt{7} - 3)^2 = \sqrt{7}^2 = 7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((3-\sqrt{7}-3)^2 = (-\sqrt{7})^2 = 7\)</span></p></li>
+</ul>
+</div>
+</div>
+<p>(3.3) <span class="math notranslate nohighlight">\((2x + 1)^2 = 9\)</span></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-27" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-27">
+Expression</label><div class="sd-tab-content docutils">
+<p>Solve the equation <span class="math notranslate nohighlight">\((2x+1)^2 = 9\)</span>.</p>
+</div>
+<input id="sd-tab-item-28" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-28">
+Solution</label><div class="sd-tab-content docutils">
+<p>(a)  Solutions: <span class="math notranslate nohighlight">\(x = 1\)</span>, <span class="math notranslate nohighlight">\(x = -2\)</span></p>
+<p>(b) see worked solution</p>
+</div>
+<input id="sd-tab-item-29" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-29">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>(a) Since <span class="math notranslate nohighlight">\(u^2=K\)</span> has solution <span class="math notranslate nohighlight">\(u \pm \sqrt{K}\)</span> we have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(2x+1)^2 &amp;= 9\\
+(2x+1) &amp;= \pm 3\\
+2x &amp;= -1 \pm 3
+\end{align*}\]</div>
+<p>Solving each case: <span class="math notranslate nohighlight">\(2x = -1-3\)</span> or <span class="math notranslate nohighlight">\(2x=-1+3\)</span>.  So <span class="math notranslate nohighlight">\(x=-2\)</span> or <span class="math notranslate nohighlight">\(x=1\)</span>.
+(b)</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((2(-2)+1)^2 = (-4+1)^2=(-3)^2=9\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((2(1)+1)^2 = (2+1)^2 = 3^2 = 9\)</span></p></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -455,16 +945,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "jupyter_matlab_kernel"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "jupyter_matlab_kernel",
             path: "./prereqs"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
 
                 </article>
               
@@ -477,12 +967,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="SquareRoots.html"
+       href="PrereqIntro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.3. </span>Square roots</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Prerequisites</p>
       </div>
     </a>
     <a class="right-next"
@@ -490,7 +980,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.5. </span>The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></p>
+        <p class="prev-next-title"><span class="section-number">1.3. </span>The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -500,6 +990,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-square-of-a-sum">1.2.1. The square of a sum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-square-root-of-a-sum">1.2.2. The square root of a sum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-for-x-if-we-know-x-2">1.2.3. Solving for <span class="math notranslate nohighlight">\(x\)</span> if we know <span class="math notranslate nohighlight">\(x^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.2.4. Self-test</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

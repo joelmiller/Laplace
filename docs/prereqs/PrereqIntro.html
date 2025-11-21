@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'prereqs/PrereqIntro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.3. Square roots" href="SquareRoots.html" />
+    <link rel="next" title="1.2. Squares" href="Squares.html" />
     <link rel="prev" title="MAT2VCA - Vector Calculus" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,10 +184,9 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. Prerequisites</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="SquareRoots.html">1.3. Square roots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Squares.html">1.4. Squares</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EqualsSign.html">1.5. The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="AlgebraReview.html">1.6. How to improve your prerequisite skills</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Squares.html">1.2. Squares</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EqualsSign.html">1.3. The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="AlgebraReview.html">1.4. How to improve your prerequisite skills</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/LaplaceIntro.html">2. Laplace Transforms and Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -422,8 +421,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-need-for-a-chapter-on-prerequisites">1.2. The need for a chapter on prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-example">1.1.1. Introductory Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-need-for-a-chapter-on-prerequisites">1.1.2. The need for a chapter on prerequisites</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -437,9 +439,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="prerequisites">
 <h1><span class="section-number">1. </span>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h1>
-<p>This chapter is still very much in development.  I hope to provide some self-evaluation tests to ensure that students are able to do the material.  These are not yet included, but I have included some common errors that students make.</p>
 <section id="introduction">
 <h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>This chapter is still very much in development.  I hope to provide some self-evaluation tests to ensure that students are able to do the material.  These are not yet included, but I have included some common errors that students make.</p>
+<section id="introductory-example">
+<h3><span class="section-number">1.1.1. </span>Introductory Example<a class="headerlink" href="#introductory-example" title="Link to this heading">#</a></h3>
 <p>In her twenties, my mother spent two years in Peru and once stayed at the family house of a male (non-romantic) friend.  After taking a nap she got up and was hungry.  She wanted to tell his parents:</p>
 <p><em>No estoy cansada, pero tengo hambre</em>.</p>
 <p>However, she was not fully fluent in Spanish and so she was using specific phrases that she had (almost) memorized.  She stumbled over two letters and said</p>
@@ -449,17 +453,17 @@ document.write(`
 <p>In this subject, we teach new concepts in terms of things taught in pre-requisite subjects.  Most of all, we rely on Algebra.  Unfortunately many students in this subject are not fluent with Algebra, and so the explanations seem difficult to follow, as if they were in a foreign language.  Often these students don’t worry about understanding and instead try to memorise the methods.  This is like learning special phrases in a foreign language without knowing the words or grammar.  They won’t recognize a small error that changes everything and even if they do everything right they may not understand the answer they get.</p>
 </section>
 <section id="the-need-for-a-chapter-on-prerequisites">
-<h2><span class="section-number">1.2. </span>The need for a chapter on prerequisites<a class="headerlink" href="#the-need-for-a-chapter-on-prerequisites" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">1.1.2. </span>The need for a chapter on prerequisites<a class="headerlink" href="#the-need-for-a-chapter-on-prerequisites" title="Link to this heading">#</a></h3>
 <p>The vast majority of students who fail MAT2VCA lose many marks due to gaps in their recollection of prerequisite subjects.  The students are intellectually capable of understanding the concepts, but they need to plug the holes in their background knowledge.  Unfortunately this is hard to do while simultaneously mastering new material.</p>
 <p>This introductory chapter is an attempt to address the most common knowledge gaps.  It focuses on prerequisite concepts which play the largest role in VCA.  This is not a complete list and there is insufficient time in this subject to teach this prerequisite material.  We will try to remind you of it when it comes up, but if we set aside lecture time to explain it then we will not have time to teach the new material.</p>
 <p>To find out where you stand, please explore the material in this chapter early in the semester while your workload across all subjects is still light.</p>
-<ul>
-<li><p>If you find yourself in a familiar place with an occassional landmark that you hadn’t previously noticed, then you seem to be in good shape for the semester.  Please stay engaged, keep up with the material, and you will probably be rewarded at the end of the semester.</p></li>
-<li><p>If much of this appears foreign, do not despair.  Australia has many people who have arrived without speaking the language and succeeded.  Often they have had to work hard to achieve this success.  They are rightfully proud of their success.</p>
-<p>There are legitimate cases where the right choice is to cut your losses for this semester and focus on other subjects right now and review Algebra etc before next year, and that is okay.  But for the majority the right choice is to put in extra effort.  Please decide before the census date.  If you decide to push through, please set aside extra time to review the material, go to the MathHub, and <strong>come to office hours</strong>.</p>
-</li>
+<ul class="simple">
+<li><p>If you find yourself in a familiar place, but perhaps with occassional landmarks that you hadn’t previously noticed, then you seem to be in good shape for the semester.  Please stay engaged, keep up with the material, and you will probably be rewarded at the end of the semester.</p></li>
+<li><p>If much of this appears foreign, do not despair.  Australia has many people who have arrived without speaking the language and succeeded.  Often they have had to work hard to achieve this success.  They are rightfully proud of their success.  You may not be fluent in the language we will use in much of this subject, but with contientious work, you can succeed.</p></li>
 </ul>
+<p>There are legitimate cases where the right choice is to cut your losses for this semester and focus on other subjects right now and review Algebra etc before next year, and if you are in that position, that is okay.  But for the majority the right choice is to put in extra effort.  Please decide which is your situation before the census date.  If you decide to push through, please set aside extra time to review the material, go to the MathHub, and <strong>come to office hours</strong>.</p>
 <p><strong>PS</strong> — for those who plan to teach mathematics or may have younger siblings or otherwise know people still in high school:  Please advise high school students interested in any STEM field that they should take the highest level of math that they can succeed at.  LaTrobe (along with many other Australian Universities) does not require Mathematical Methods or Specialist Mathematics for entry into Engineering, and many students who do not take them before arriving are successful in their first attempt at all of the mathematics subjects.  It is possible, but it is not easy.  We cover both of these subjects (and more) in two 12-week semesters in first year mathematics with over 100 students in each subject. Students who spent an entire 40 week high school year meeting their teacher almost every day in classes of under 30 while learning Methods or Specialist typically find VCA less stressful than students who waited until after high school.</p>
+</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -505,11 +509,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="SquareRoots.html"
+       href="Squares.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.3. </span>Square roots</p>
+        <p class="prev-next-title"><span class="section-number">1.2. </span>Squares</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -529,8 +533,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-need-for-a-chapter-on-prerequisites">1.2. The need for a chapter on prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-example">1.1.1. Introductory Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-need-for-a-chapter-on-prerequisites">1.1.2. The need for a chapter on prerequisites</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
