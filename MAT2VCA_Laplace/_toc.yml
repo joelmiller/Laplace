@@ -3,48 +3,51 @@
 
 format: jb-book
 root: intro
-options: 
-  numbered: True
-chapters: 
-  - file: prereqs/PrereqIntro
-    sections:
-    - file: prereqs/Squares
-    - file: prereqs/EqualsSign
-    - file: prereqs/AlgebraReview
-
-  - file: notebooks/LaplaceIntro
-    sections:
-    - file: notebooks/LaplaceDef
-    - file: notebooks/LaplaceRules
-    - file: notebooks/LaplaceTShift
-    - file: notebooks/LaplaceSShift
-    - file: notebooks/LaplacePF
-    - file: notebooks/LaplacePF2
-    - file: notebooks/LaplaceDEsoln
-    - file: notebooks/LaplaceExtra
-    - file: notebooks/LaplaceTable
-  - file: Differential_Calculus/DifferentialIntro
-    sections: 
-    - file: Differential_Calculus/Lagrange
-    - file: Differential_Calculus/Lagrange_Extensions
-  - file: Integral_Calculus/IntegralIntro
-    sections: 
-    - file: Integral_Calculus/MultipleIntegrals
-    - file: Integral_Calculus/MultipleIntegralsDefineRegion
-  - file: ComputerLabs/LabIntro
-    sections:
-    - file: ComputerLabs/Computer Lab 01
-    - file: ComputerLabs/Computer Lab 02
-    - file: ComputerLabs/Computer Lab 03
-    - file: ComputerLabs/Computer Lab 04
-    - file: ComputerLabs/Computer Lab 05
-    - file: ComputerLabs/Computer Lab 06
-    - file: ComputerLabs/Computer Lab 07
-    - file: ComputerLabs/Computer Lab 08
-    - file: ComputerLabs/Computer Lab 09
-    - file: ComputerLabs/Computer Lab 10
-    - file: ComputerLabs/Computer Lab 11
-    - file: ComputerLabs/Computer Lab 12
+parts:
+  - caption: Prerequisite Information
+    numbered: False
+    chapters: 
+    - file: prereqs/PrereqIntro
+      sections:
+      - file: prereqs/Squares
+      - file: prereqs/EqualsSign
+      - file: prereqs/AlgebraReview
+  - caption: Vector Calculus
+    numbered: True
+    chapters:
+    - file: notebooks/LaplaceIntro
+      sections:
+      - file: notebooks/LaplaceDef
+      - file: notebooks/LaplaceRules
+      - file: notebooks/LaplaceTShift
+      - file: notebooks/LaplaceSShift
+      - file: notebooks/LaplacePF
+      - file: notebooks/LaplacePF2
+      - file: notebooks/LaplaceDEsoln
+      - file: notebooks/LaplaceExtra
+      - file: notebooks/LaplaceTable
+    - file: Differential_Calculus/DifferentialIntro
+      sections: 
+      - file: Differential_Calculus/Lagrange
+      - file: Differential_Calculus/Lagrange_Extensions
+    - file: Integral_Calculus/IntegralIntro
+      sections: 
+      - file: Integral_Calculus/MultipleIntegrals
+      - file: Integral_Calculus/MultipleIntegralsDefineRegion
+    - file: ComputerLabs/LabIntro
+      sections:
+      - file: ComputerLabs/Computer Lab 01
+      - file: ComputerLabs/Computer Lab 02
+      - file: ComputerLabs/Computer Lab 03
+      - file: ComputerLabs/Computer Lab 04
+      - file: ComputerLabs/Computer Lab 05
+      - file: ComputerLabs/Computer Lab 06
+      - file: ComputerLabs/Computer Lab 07
+      - file: ComputerLabs/Computer Lab 08
+      - file: ComputerLabs/Computer Lab 09
+      - file: ComputerLabs/Computer Lab 10
+      - file: ComputerLabs/Computer Lab 11
+      - file: ComputerLabs/Computer Lab 12
     
 #- file: Laplace
 # - file: intro

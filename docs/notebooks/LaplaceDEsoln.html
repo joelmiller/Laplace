@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.8. Using the Laplace Transform to solve Differential Equations &#8212; The Laplace Transform and Differential Equations</title>
+    <title>1.8. Using the Laplace Transform to solve Differential Equations &#8212; The Laplace Transform and Differential Equations</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/LaplaceDEsoln';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.9. Optional Extensions" href="LaplaceExtra.html" />
-    <link rel="prev" title="2.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators" href="LaplacePF2.html" />
+    <link rel="next" title="1.9. Optional Extensions" href="LaplaceExtra.html" />
+    <link rel="prev" title="1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators" href="LaplacePF2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,48 +182,52 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite Information</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../prereqs/PrereqIntro.html">1. Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../prereqs/Squares.html">1.2. Squares</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prereqs/EqualsSign.html">1.3. The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prereqs/AlgebraReview.html">1.4. How to improve your prerequisite skills</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="LaplaceIntro.html">2. Laplace Transforms and Differential Equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="LaplaceDef.html">2.2. Laplace Transform Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceRules.html">2.3. Some Basic Laplace Transform Rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">2.4. The Laplace Transform and Discontinuous Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceSShift.html">2.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">2.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">2.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.8. Using the Laplace Transform to solve Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceExtra.html">2.9. Optional Extensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">2.10. A table of Laplace Transforms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceExtra.html">1.9. Optional Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">3. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">3.1. Lagrange Multipliers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">3.2. Extensions to Lagrange Multipliers</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">2.1. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">2.2. Extensions to Lagrange Multipliers</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">4. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegrals.html">4.1. Multiple Integrals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegralsDefineRegion.html">4.2. Systematically finding the terminals</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">3. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegrals.html">3.1. Multiple Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegralsDefineRegion.html">3.2. Systematically finding the terminals</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ComputerLabs/LabIntro.html">5. Computer Labs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2001.html">5.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2002.html">5.2. MAT2VCA Computer Lab 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2003.html">5.3. MAT2VCA Computer Lab 3</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ComputerLabs/LabIntro.html">4. Computer Labs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2001.html">4.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2002.html">4.2. MAT2VCA Computer Lab 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2003.html">4.3. MAT2VCA Computer Lab 3</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2004.html">5.5. MAT2VCA Computer Lab 4: stationary points</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2005.html">5.6. Cylindrical Coordinates and Unit Vectors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2006.html">5.7. The Gradient in non-Cartesian Coordinates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2007.html">5.8. Lagrange Multipliers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2008.html">5.9. Computer Lab 08</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2009.html">5.10. Computer Lab 09  –   Work done moving through a vector field.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2011.html">5.11. Computer Lab 11</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2012.html">5.12. Computer Lab 12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2004.html">4.5. MAT2VCA Computer Lab 4: stationary points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2005.html">4.6. Cylindrical Coordinates and Unit Vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2006.html">4.7. The Gradient in non-Cartesian Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2007.html">4.8. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2008.html">4.9. Computer Lab 08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2009.html">4.10. Computer Lab 09  –   Work done moving through a vector field.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2011.html">4.11. Computer Lab 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2012.html">4.12. Computer Lab 12</a></li>
 </ul>
 </details></li>
 </ul>
@@ -421,11 +425,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.8.1. Intended Learning Outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.8.2. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-of-f-t-and-f-t">2.8.3. Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-differential-equations-examples">2.8.4. Solving Differential Equations: Examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.8.5. Self-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.8.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.8.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-of-f-t-and-f-t">1.8.3. Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-differential-equations-examples">1.8.4. Solving Differential Equations: Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.8.5. Self-test</a></li>
 </ul>
             </nav>
         </div>
@@ -438,9 +442,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="using-the-laplace-transform-to-solve-differential-equations">
-<h1><span class="section-number">2.8. </span>Using the Laplace Transform to solve Differential Equations<a class="headerlink" href="#using-the-laplace-transform-to-solve-differential-equations" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">1.8. </span>Using the Laplace Transform to solve Differential Equations<a class="headerlink" href="#using-the-laplace-transform-to-solve-differential-equations" title="Link to this heading">#</a></h1>
 <section id="intended-learning-outcomes">
-<h2><span class="section-number">2.8.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.8.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
 <p>By the end of this section, you should be able to:</p>
 <ul class="simple">
 <li><p>Express the Laplace transforms of derivatives:</p></li>
@@ -457,7 +461,7 @@ document.write(`
 <p><strong>This text is still undergoing improvements:</strong>  Please report any errors or things that are unclear to <a class="github reference external" href="https://github.com/joelmiller/Laplace/issues">joelmiller/Laplace#issues</a></p>
 </section>
 <section id="introduction">
-<h2><span class="section-number">2.8.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.8.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>We now begin to apply the Laplace Transform to solving constant coefficient linear differential equations.  We focus on differential equations of the form</p>
 <div class="math notranslate nohighlight">
 \[f'(t) + af(t) = g(t)\]</div>
@@ -472,10 +476,10 @@ document.write(`
 </ul>
 </section>
 <section id="transforms-of-f-t-and-f-t">
-<h2><span class="section-number">2.8.3. </span>Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span><a class="headerlink" href="#transforms-of-f-t-and-f-t" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.8.3. </span>Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span><a class="headerlink" href="#transforms-of-f-t-and-f-t" title="Link to this heading">#</a></h2>
 <p>To take the Laplace Transform of our differential equations, we will need to know the transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span>.</p>
 <div class="proof theorem admonition" id="theorem-0">
-<p class="admonition-title"><span class="caption-number">Theorem 2.5 </span> (Transforms of derivatives)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 1.5 </span> (Transforms of derivatives)</p>
 <section class="theorem-content" id="proof-content">
 <p>Given a function <span class="math notranslate nohighlight">\(f(t)\)</span> whose Laplace Transform is <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>, the transform of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span> are</p>
 <div class="amsmath math notranslate nohighlight">
@@ -510,9 +514,9 @@ document.write(`
 <p>So the transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span> can be written in terms of the transform of <span class="math notranslate nohighlight">\(f(t)\)</span> and the initial conditions.  This is the key detail that leads to the Laplace Transform of a differential equation for <span class="math notranslate nohighlight">\(f(t)\)</span> becoming an Algebraic equation for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.</p>
 </section>
 <section id="solving-differential-equations-examples">
-<h2><span class="section-number">2.8.4. </span>Solving Differential Equations: Examples<a class="headerlink" href="#solving-differential-equations-examples" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.8.4. </span>Solving Differential Equations: Examples<a class="headerlink" href="#solving-differential-equations-examples" title="Link to this heading">#</a></h2>
 <div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 2.31 </span> (<span class="math notranslate nohighlight">\(f''(t) + 4f'(t) + 3f(t) = -6e^{-3t}\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.31 </span> (<span class="math notranslate nohighlight">\(f''(t) + 4f'(t) + 3f(t) = -6e^{-3t}\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To find <span class="math notranslate nohighlight">\(f(t)\)</span> if <span class="math notranslate nohighlight">\(f''(t) + 4f'(t) + 3f(t) = -6e^{-3t}\)</span> with <span class="math notranslate nohighlight">\(f(0) = 1\)</span> and <span class="math notranslate nohighlight">\(f'(0)=-2\)</span> we take the Transform of both sides:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -562,28 +566,33 @@ f(t) &amp;= \mathcal{L}^{-1}[\tilde{f}(s)](t)\\
 &amp;= 3e^{-3t} \mathcal{L}^{-1}\left[\frac{1}{s^2}\right](t) + 2 e^{-3t} - e^{-t}\\
 &amp;= 3te^{-3t}+ 2e^{-3t} - e^{-t}
 \end{align*}\]</div>
+<p>The plot below shows <span class="math notranslate nohighlight">\(f(t)\)</span>.  Notice the value of <span class="math notranslate nohighlight">\(f(0)\)</span> and <span class="math notranslate nohighlight">\(f'(0)\)</span>.</p>
 </section>
-</div><div class="cell docutils container">
+</div><div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">4</span><span class="p">];</span><span class="w"> </span><span class="c">% time vector</span>
 
-<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="o">.*</span><span class="n">e</span><span class="o">.^</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">.^</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">e</span><span class="o">.^</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">))</span>
 
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;f(t)&#39;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Solution to: f&#39;&#39;(t) + 4f&#39;(t) + 3f(t) = -6e^{-3t},  f(0) = 1, f&#39;(0)=-2&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Solution to: $f&#39;&#39;(t) + 4f&#39;(t) + 3f(t) = -6e^{-3t},  f(0) = 1, f&#39;(0)=-2$&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unrecognized function or variable &#39;e&#39;.
-</pre></div>
-</div>
+<img alt="../_images/846525763a7564d0f60157bce42dab0742e9ae0f6c19ae8cb879087aad5d00e9.png" src="../_images/846525763a7564d0f60157bce42dab0742e9ae0f6c19ae8cb879087aad5d00e9.png" />
 </div>
 </div>
 <p>It is useful to see an example that involves a discontinuity:</p>
 <div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 2.32 </span> (<span class="math notranslate nohighlight">\(f'(t) + 2f(t) = t H_4(t)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.32 </span> (<span class="math notranslate nohighlight">\(f'(t) + 2f(t) = t H_4(t)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To solve for <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(f'(t) + 2f(t) = t H_4(t)\)</span> with <span class="math notranslate nohighlight">\(f(0) = 3\)</span> we follow the same steps, taking the Laplace Transform of both sides.</p>
 <p>We have</p>
@@ -660,17 +669,17 @@ f(t) &amp;= 3e^{-2t} +  H_4(t) \mathcal{L}^{-1} \left[ \frac{1+4s}{s^2(s+2)}\rig
 
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;f(t)&#39;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Solution to: df/dt(t) + 2f(t) = t H_4(t), f(0) = 3&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Solution to: $f&#39;(t) + 2f(t) = t H_4(t)$,  $f(0) = 3$&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01f39690951309f82c4b3331186e21840f5dbf4e0715b79907f8c025068fd489.png" src="../_images/01f39690951309f82c4b3331186e21840f5dbf4e0715b79907f8c025068fd489.png" />
+<img alt="../_images/d41487bc0e11d714e7773e24d14d562c3b519bc0a0b980c01a46a53860f58f7a.png" src="../_images/d41487bc0e11d714e7773e24d14d562c3b519bc0a0b980c01a46a53860f58f7a.png" />
 </div>
 </div>
 </section>
 <section id="self-test">
-<h2><span class="section-number">2.8.5. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.8.5. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
 <p>This is currently still rudimentary.  An improved self-test will appear later.</p>
 <ol class="arabic simple">
 <li><p>Use the Laplace Transform to solve the initial value problem</p></li>
@@ -712,16 +721,16 @@ f''(t) + 3f'(t) -4 f(t) = 2 + 3 e^{-t} H_1(t)
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "jupyter_matlab_kernel"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "jupyter_matlab_kernel",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
 
                 </article>
               
@@ -739,7 +748,7 @@ f''(t) + 3f'(t) -4 f(t) = 2 + 3 e^{-t} H_1(t)
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.7. </span>Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</p>
+        <p class="prev-next-title"><span class="section-number">1.7. </span>Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</p>
       </div>
     </a>
     <a class="right-next"
@@ -747,7 +756,7 @@ f''(t) + 3f'(t) -4 f(t) = 2 + 3 e^{-t} H_1(t)
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.9. </span>Optional Extensions</p>
+        <p class="prev-next-title"><span class="section-number">1.9. </span>Optional Extensions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -767,11 +776,11 @@ f''(t) + 3f'(t) -4 f(t) = 2 + 3 e^{-t} H_1(t)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.8.1. Intended Learning Outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.8.2. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-of-f-t-and-f-t">2.8.3. Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-differential-equations-examples">2.8.4. Solving Differential Equations: Examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.8.5. Self-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.8.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.8.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-of-f-t-and-f-t">1.8.3. Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-differential-equations-examples">1.8.4. Solving Differential Equations: Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.8.5. Self-test</a></li>
 </ul>
   </nav></div>
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.2. Laplace Transform Definition &#8212; The Laplace Transform and Differential Equations</title>
+    <title>1.2. Laplace Transform Definition &#8212; The Laplace Transform and Differential Equations</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/LaplaceDef';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.3. Some Basic Laplace Transform Rules" href="LaplaceRules.html" />
-    <link rel="prev" title="2. Laplace Transforms and Differential Equations" href="LaplaceIntro.html" />
+    <link rel="next" title="1.3. Some Basic Laplace Transform Rules" href="LaplaceRules.html" />
+    <link rel="prev" title="1. Laplace Transforms and Differential Equations" href="LaplaceIntro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,48 +182,52 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite Information</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../prereqs/PrereqIntro.html">1. Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../prereqs/Squares.html">1.2. Squares</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prereqs/EqualsSign.html">1.3. The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prereqs/AlgebraReview.html">1.4. How to improve your prerequisite skills</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="LaplaceIntro.html">2. Laplace Transforms and Differential Equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2. Laplace Transform Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceRules.html">2.3. Some Basic Laplace Transform Rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">2.4. The Laplace Transform and Discontinuous Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceSShift.html">2.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">2.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">2.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">2.8. Using the Laplace Transform to solve Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceExtra.html">2.9. Optional Extensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">2.10. A table of Laplace Transforms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2. Laplace Transform Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceExtra.html">1.9. Optional Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">3. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">3.1. Lagrange Multipliers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">3.2. Extensions to Lagrange Multipliers</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">2.1. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">2.2. Extensions to Lagrange Multipliers</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">4. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegrals.html">4.1. Multiple Integrals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegralsDefineRegion.html">4.2. Systematically finding the terminals</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">3. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegrals.html">3.1. Multiple Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegralsDefineRegion.html">3.2. Systematically finding the terminals</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ComputerLabs/LabIntro.html">5. Computer Labs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2001.html">5.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2002.html">5.2. MAT2VCA Computer Lab 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2003.html">5.3. MAT2VCA Computer Lab 3</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ComputerLabs/LabIntro.html">4. Computer Labs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2001.html">4.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2002.html">4.2. MAT2VCA Computer Lab 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2003.html">4.3. MAT2VCA Computer Lab 3</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2004.html">5.5. MAT2VCA Computer Lab 4: stationary points</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2005.html">5.6. Cylindrical Coordinates and Unit Vectors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2006.html">5.7. The Gradient in non-Cartesian Coordinates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2007.html">5.8. Lagrange Multipliers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2008.html">5.9. Computer Lab 08</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2009.html">5.10. Computer Lab 09  –   Work done moving through a vector field.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2011.html">5.11. Computer Lab 11</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2012.html">5.12. Computer Lab 12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2004.html">4.5. MAT2VCA Computer Lab 4: stationary points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2005.html">4.6. Cylindrical Coordinates and Unit Vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2006.html">4.7. The Gradient in non-Cartesian Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2007.html">4.8. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2008.html">4.9. Computer Lab 08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2009.html">4.10. Computer Lab 09  –   Work done moving through a vector field.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2011.html">4.11. Computer Lab 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2012.html">4.12. Computer Lab 12</a></li>
 </ul>
 </details></li>
 </ul>
@@ -421,17 +425,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.2.1. Intended Learning Outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.2.2. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-example">2.2.3. Introductory example</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-e-t-s-for-general-s">2.2.3.1. Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-t}](s)\)</span> for general <span class="math notranslate nohighlight">\(s\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.2.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.2.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-example">1.2.3. Introductory example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-e-t-s-for-general-s">1.2.3.1. Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-t}](s)\)</span> for general <span class="math notranslate nohighlight">\(s\)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">2.2.4. Examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-general-laplace-transforms">2.2.4.1. More general Laplace Transforms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">1.2.4. Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-general-laplace-transforms">1.2.4.1. More general Laplace Transforms</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.2.5. Self-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.2.5. Self-test</a></li>
 </ul>
             </nav>
         </div>
@@ -444,9 +448,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="laplace-transform-definition">
-<h1><span class="section-number">2.2. </span>Laplace Transform Definition<a class="headerlink" href="#laplace-transform-definition" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">1.2. </span>Laplace Transform Definition<a class="headerlink" href="#laplace-transform-definition" title="Link to this heading">#</a></h1>
 <section id="intended-learning-outcomes">
-<h2><span class="section-number">2.2.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.2.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
 <p>By the end of this section, you should be able to:</p>
 <ul class="simple">
 <li><p>State the formal definition of the Laplace transform.</p></li>
@@ -457,19 +461,19 @@ document.write(`
 <p><strong>This text is still undergoing improvements:</strong>  Please report any errors or things that are unclear to <a class="github reference external" href="https://github.com/joelmiller/Laplace/issues">joelmiller/Laplace#issues</a></p>
 </section>
 <section id="introduction">
-<h2><span class="section-number">2.2.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>The Laplace Transform is an operation that converts a function <span class="math notranslate nohighlight">\(f(t)\)</span> of (non-negative) time <span class="math notranslate nohighlight">\(t \geq 0\)</span> into a function <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> of a new variable <span class="math notranslate nohighlight">\(s\)</span>  The properties of the Laplace Transform mean that if we take the Laplace Transform of both sides of the <em>differential equation</em> for <span class="math notranslate nohighlight">\(f(t)\)</span>, Equation <a class="reference internal" href="LaplaceIntro.html#equation-eq-basic-driven-ode">(2.1)</a>, then the result is a new <em>algebraic equation</em> for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.</p>
+<h2><span class="section-number">1.2.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The Laplace Transform is an operation that converts a function <span class="math notranslate nohighlight">\(f(t)\)</span> of (non-negative) time <span class="math notranslate nohighlight">\(t \geq 0\)</span> into a function <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> of a new variable <span class="math notranslate nohighlight">\(s\)</span>  The properties of the Laplace Transform mean that if we take the Laplace Transform of both sides of the <em>differential equation</em> for <span class="math notranslate nohighlight">\(f(t)\)</span>, Equation <a class="reference internal" href="LaplaceIntro.html#equation-eq-basic-driven-ode">(1.1)</a>, then the result is a new <em>algebraic equation</em> for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.</p>
 <p>Once we solve this algebraic equation and find <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> we will be able to invert the transform to find <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
 <figure class="align-default" id="fig-laplace-solution-diagram">
 <a class="reference internal image-reference" href="../_images/Laplace_solution_diagram.png"><img alt="../_images/Laplace_solution_diagram.png" src="../_images/Laplace_solution_diagram.png" style="height: 250px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Given a constant coefficient linear differential equation for <span class="math notranslate nohighlight">\(f(t)\)</span>, we can use methods of Calculus to find <span class="math notranslate nohighlight">\(f(t)\)</span> directly, or we can use the Laplace Transform to convert the differential equation into an Algebraic equation for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.  Then we can solve the Algebraic equation for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> and then invert the Laplace Transform to find <span class="math notranslate nohighlight">\(f(t)\)</span>.</span><a class="headerlink" href="#fig-laplace-solution-diagram" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Given a constant coefficient linear differential equation for <span class="math notranslate nohighlight">\(f(t)\)</span>, we can use methods of Calculus to find <span class="math notranslate nohighlight">\(f(t)\)</span> directly, or we can use the Laplace Transform to convert the differential equation into an Algebraic equation for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.  Then we can solve the Algebraic equation for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> and then invert the Laplace Transform to find <span class="math notranslate nohighlight">\(f(t)\)</span>.</span><a class="headerlink" href="#fig-laplace-solution-diagram" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The Laplace Transform is defined as follows:</p>
 <div class="proof definition admonition" id="Def_Laplace">
-<p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (The Laplace Transform)</p>
+<p class="admonition-title"><span class="caption-number">Definition 1.1 </span> (The Laplace Transform)</p>
 <section class="definition-content" id="proof-content">
 <p>The Laplace Transform is an <em>integral transform</em> that takes as input a piecewise continuous function <span class="math notranslate nohighlight">\(f(t)\)</span> that is defined for non-negative <span class="math notranslate nohighlight">\(t\)</span>: <span class="math notranslate nohighlight">\(f:[0,\infty) \to \mathbb{R}\)</span> and produces a new function <span class="math notranslate nohighlight">\(\tilde{f}(s) = \mathcal{L}[f(t)](s)\)</span> using the integral</p>
 <div class="math notranslate nohighlight">
@@ -483,11 +487,11 @@ document.write(`
 <p>We usually won’t use the definition of the Laplace Transform to find the Laplace Transform of a function.  Just like we don’t usually use the definition of the derivative to compute a derivative, but rather we use a set of derivative rules, we will create a table of  Laplace Transforms rules to use.</p>
 </section>
 <section id="introductory-example">
-<h2><span class="section-number">2.2.3. </span>Introductory example<a class="headerlink" href="#introductory-example" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.2.3. </span>Introductory example<a class="headerlink" href="#introductory-example" title="Link to this heading">#</a></h2>
 <p>Consider the function <span class="math notranslate nohighlight">\(f(t)=e^{-t}\)</span>.<br />
 Before we try to find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-t}](s)\)</span> for general <span class="math notranslate nohighlight">\(s\)</span>, we will first try to find its value for a specific value of <span class="math notranslate nohighlight">\(s\)</span>.  We start with <span class="math notranslate nohighlight">\(s=3\)</span>, so we perform the integral <span class="math notranslate nohighlight">\(\int_0^\infty  e^{-t} e^{-3t} \, dt\)</span>.</p>
 <div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 2.1 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-t}](3)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.1 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-t}](3)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>According to the definition, when <span class="math notranslate nohighlight">\(s=3\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -514,8 +518,14 @@ Before we try to find <span class="math notranslate nohighlight">\(\mathcal{L}[e
 \end{align*}\]</div>
 <p>We used the fact that if <span class="math notranslate nohighlight">\(a&lt;0\)</span>, then <span class="math notranslate nohighlight">\(e^{ab} \to 0\)</span> as <span class="math notranslate nohighlight">\(b \to \infty\)</span>.</p>
 <p>So the area under the curve is indeed finite, even though the right boundary goes off to <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
+<p>The plot below shows the function <span class="math notranslate nohighlight">\(f(t)e^{-3t}\)</span>.  The Laplace Transform should be the area under this curve (in blue).</p>
 </section>
-</div><div class="cell docutils container">
+</div><div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">51</span><span class="p">);</span>
 <span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">);</span>
@@ -527,17 +537,18 @@ Before we try to find <span class="math notranslate nohighlight">\(\mathcal{L}[e
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/a887812ebb04b3cb2c0b11c8044edd12c0e0978144fe5100bd7b791ed58b1791.png" src="../_images/a887812ebb04b3cb2c0b11c8044edd12c0e0978144fe5100bd7b791ed58b1791.png" />
+<img alt="../_images/e49b010d87f4e4b8a30ee003ee225bcd69405534b736e48d25d447408e46de4f.png" src="../_images/e49b010d87f4e4b8a30ee003ee225bcd69405534b736e48d25d447408e46de4f.png" />
 </div>
 </div>
 <section id="finding-mathcal-l-e-t-s-for-general-s">
-<h3><span class="section-number">2.2.3.1. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-t}](s)\)</span> for general <span class="math notranslate nohighlight">\(s\)</span><a class="headerlink" href="#finding-mathcal-l-e-t-s-for-general-s" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.2.3.1. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-t}](s)\)</span> for general <span class="math notranslate nohighlight">\(s\)</span><a class="headerlink" href="#finding-mathcal-l-e-t-s-for-general-s" title="Link to this heading">#</a></h3>
 <p>We could try to repeat the integral with <span class="math notranslate nohighlight">\(s= 2, 0, -1/2\)</span>, and every other value, but it would take forever. Rather than repeating over and over, we use <span class="math notranslate nohighlight">\(-s\)</span> to replace <span class="math notranslate nohighlight">\(-3\)</span> in the steps above  so that we only have to integrate once.  The steps are the same.</p>
 <div class="proof example admonition" id="example_Lap_e^-t">
-<p class="admonition-title"><span class="caption-number">Example 2.2 </span> (The Laplace Transform of <span class="math notranslate nohighlight">\(e^{-t}\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.2 </span> (The Laplace Transform of <span class="math notranslate nohighlight">\(e^{-t}\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>To find the Laplace Transform of <span class="math notranslate nohighlight">\(e^{-t}\)</span>, we use the integral in <a class="reference internal" href="#Def_Laplace">Definition 2.1</a>:</p>
+<p>To find the Laplace Transform of <span class="math notranslate nohighlight">\(e^{-t}\)</span>, we use the integral in <a class="reference internal" href="#Def_Laplace">Definition 1.1</a>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathcal{L}[f(t)](s) &amp;= \int_0^\infty  f(t) e^{-st} \, dt\\
@@ -560,33 +571,62 @@ Before we try to find <span class="math notranslate nohighlight">\(\mathcal{L}[e
 <p>So we conclude that <span class="math notranslate nohighlight">\(\tilde{f}(s) = 1/(s+1)\)</span> if <span class="math notranslate nohighlight">\(s&gt;-1\)</span> and infinite otherwise.<br />
 We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)</span> to verify where the integral is finite/infinite:</p>
 </section>
-</div><div class="cell docutils container">
+</div><div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% this cell uses the same t and f as the </span>
 <span class="c">% previous code cell</span>
+
+<span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">51</span><span class="p">);</span>
+<span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">);</span>
+
 <span class="k">for</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
 <span class="w">    </span><span class="n">label</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;s=&#39;</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">s</span><span class="p">)];</span>
 <span class="w">    </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">s</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;DisplayName&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="p">);</span>
 <span class="w">    </span><span class="n">hold</span><span class="w"> </span><span class="s">on</span>
 <span class="k">end</span>
 <span class="nb">legend</span><span class="p">()</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;f(t) e^{-st}&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;$f(t) e^{-st}$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/71caaa804ead1f7526e246eee939ab38a4ed13044b0a1baed2daf127fa5d8d65.png" src="../_images/71caaa804ead1f7526e246eee939ab38a4ed13044b0a1baed2daf127fa5d8d65.png" />
+<img alt="../_images/706327439975004b33c23625afe0060eb53c7bb96cba58c67bce634ef5920b51.png" src="../_images/706327439975004b33c23625afe0060eb53c7bb96cba58c67bce634ef5920b51.png" />
 </div>
 </div>
-<p>When <span class="math notranslate nohighlight">\(s=-1\)</span>, the function <span class="math notranslate nohighlight">\(f(t)e^{-st}\)</span> is <span class="math notranslate nohighlight">\(1\)</span>, so the area under it between <span class="math notranslate nohighlight">\(t=0\)</span> to <span class="math notranslate nohighlight">\(t=\infty\)</span> is infinite.  When <span class="math notranslate nohighlight">\(s&lt;-1\)</span>, <span class="math notranslate nohighlight">\(f(t)e^{-st}\)</span> is an increasing function, so again the area is infinite.  For <span class="math notranslate nohighlight">\(s&gt;1\)</span> it is a decaying exponential with a finite area under it.</p>
+<p>When <span class="math notranslate nohighlight">\(s=-1\)</span>, the function <span class="math notranslate nohighlight">\(f(t)e^{-st}\)</span> is <span class="math notranslate nohighlight">\(1\)</span>, so the area under it between <span class="math notranslate nohighlight">\(t=0\)</span> to <span class="math notranslate nohighlight">\(t=\infty\)</span> is infinite.  When <span class="math notranslate nohighlight">\(s&lt;-1\)</span>, <span class="math notranslate nohighlight">\(f(t)e^{-st}\)</span> is an increasing function, so again the area is infinite.  For <span class="math notranslate nohighlight">\(s&gt;-1\)</span> it is a decaying exponential with a finite area under it, and for each <span class="math notranslate nohighlight">\(s\)</span> the area is different.</p>
+<p>We now plot the area under the curve <span class="math notranslate nohighlight">\(f(t)e^{-st}\)</span> from <span class="math notranslate nohighlight">\(t=0\)</span> to <span class="math notranslate nohighlight">\(t=\infty\)</span> as a function of <span class="math notranslate nohighlight">\(s\)</span>.  Generally we don’t actually care what the plot looks like, but it is important to realize that this is a function of <span class="math notranslate nohighlight">\(s\)</span> and not <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1001</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">s</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="o">./</span><span class="p">(</span><span class="n">s</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Laplace Transform $\tilde{f}(s)=1/(s+1)$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/f3b1a25c59af1f84509291fdde02b62f2cb717cd4b3d25f5a884162a29bf465e.png" src="../_images/f3b1a25c59af1f84509291fdde02b62f2cb717cd4b3d25f5a884162a29bf465e.png" />
+</div>
+</div>
 <p>We have been careful using limits to handle the terminal at infinity.  We will now use a shortcut.  We will allow <span class="math notranslate nohighlight">\(\infty\)</span> to appear in our equations without formally writing out the limit.  If we do this, then any finite number divided by <span class="math notranslate nohighlight">\(\infty\)</span> is <span class="math notranslate nohighlight">\(0\)</span>.  As long as only one thing in our equations ends up going to infinity, this shortcut is okay to use,.  However, if we encounter things like <span class="math notranslate nohighlight">\(\infty/\infty\)</span> or <span class="math notranslate nohighlight">\(\infty-\infty\)</span>, then we need to back up and use the limits carefully.</p>
 </section>
 </section>
 <section id="examples">
-<h2><span class="section-number">2.2.4. </span>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.2.4. </span>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
 <div class="proof example admonition" id="ex:Lap_e^t">
-<p class="admonition-title"><span class="caption-number">Example 2.3 </span> (The Laplace Transform of <span class="math notranslate nohighlight">\(e^t\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.3 </span> (The Laplace Transform of <span class="math notranslate nohighlight">\(e^t\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To find the Laplace Transform of <span class="math notranslate nohighlight">\(e^t\)</span> we take the integral</p>
 <div class="amsmath math notranslate nohighlight">
@@ -600,10 +640,10 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 \end{align*}\]</div>
 </section>
 </div><div class="proof example admonition" id="ex:Lap_cos4t">
-<p class="admonition-title"><span class="caption-number">Example 2.4 </span> (The Laplace Transform of <span class="math notranslate nohighlight">\(\cos(4t)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.4 </span> (The Laplace Transform of <span class="math notranslate nohighlight">\(\cos(4t)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To find the Laplace Transform of <span class="math notranslate nohighlight">\(\cos(4t)\)</span> we calculate the integral in
-<a class="reference internal" href="#Def_Laplace">Definition 2.1</a></p>
+<a class="reference internal" href="#Def_Laplace">Definition 1.1</a></p>
 <div class="math notranslate nohighlight">
 \[
 \tilde{f}(s) = \int_0^\infty \cos(4t)e^{-st} \, dt
@@ -613,7 +653,7 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 <a class="reference internal image-reference" href="../_images/int_by_parts_tabular_cos4t.png"><img alt="../_images/int_by_parts_tabular_cos4t.png" src="../_images/int_by_parts_tabular_cos4t.png" style="height: 150px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">The tabular approach for integrating <span class="math notranslate nohighlight">\(\cos( 4t) e^{-st}\)</span> by parts.</span><a class="headerlink" href="#fig-tabular-int-by-parts" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">The tabular approach for integrating <span class="math notranslate nohighlight">\(\cos( 4t) e^{-st}\)</span> by parts.</span><a class="headerlink" href="#fig-tabular-int-by-parts" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>From this, we conclude that</p>
@@ -636,7 +676,7 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 \[\begin{align*}
 \int_a^b u(t) v'(t) \, dt = u(t) v(t) |_{t=a}^b - \int_a^b u'(t)v(t) \, dt
 \end{align*}\]</div>
-<p>so integration be parts has the effect of taking a derivative away from <span class="math notranslate nohighlight">\(v\)</span> (i.e., integrating <span class="math notranslate nohighlight">\(v'\)</span>) and putting it on <span class="math notranslate nohighlight">\(u\)</span> (i.e., differentiating <span class="math notranslate nohighlight">\(u\)</span>).</p>
+<p>so integration be parts has the effect of converting the original integral into a term that just involves the end points and a new integral that takes a derivative away from <span class="math notranslate nohighlight">\(v\)</span> (i.e., integrating <span class="math notranslate nohighlight">\(v'\)</span>) and moves it to <span class="math notranslate nohighlight">\(u\)</span> (i.e., differentiating <span class="math notranslate nohighlight">\(u\)</span>).</p>
 <p>In our case, we set <span class="math notranslate nohighlight">\(u(t) = \cos(4t)\)</span> and <span class="math notranslate nohighlight">\(v'(t) = e^{-st}\)</span>.  If we integrate by parts twice (details not shown), we end up with</p>
 <div class="math notranslate nohighlight">
 \[
@@ -646,7 +686,7 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 <p>Either way, we discover that if <span class="math notranslate nohighlight">\(f(t) = \cos(4t)\)</span>, then <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{s}{s^2+16}\)</span>, with the restriction that <span class="math notranslate nohighlight">\(s&gt;0\)</span>.</p>
 </section>
 </div><div class="proof example admonition" id="Example:H1">
-<p class="admonition-title"><span class="caption-number">Example 2.5 </span> (Laplace Transform of a discontinuous function)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.5 </span> (Laplace Transform of a discontinuous function)</p>
 <section class="example-content" id="proof-content">
 <p>Consider the function</p>
 <div class="math notranslate nohighlight">
@@ -665,10 +705,10 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
 \end{align*}\]</div>
 </section>
 </div><section id="more-general-laplace-transforms">
-<h3><span class="section-number">2.2.4.1. </span>More general Laplace Transforms<a class="headerlink" href="#more-general-laplace-transforms" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.2.4.1. </span>More general Laplace Transforms<a class="headerlink" href="#more-general-laplace-transforms" title="Link to this heading">#</a></h3>
 <p>It’s useful to know <span class="math notranslate nohighlight">\(\mathcal{L}[e^t](s)\)</span> and <span class="math notranslate nohighlight">\(\mathcal{L}[\cos(4t)](s)\)</span>, but in general we will find it more useful to have <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}](s)\)</span> and <span class="math notranslate nohighlight">\(\mathcal{L}[\cos(\omega t)](s)\)</span> for any <span class="math notranslate nohighlight">\(a\)</span> or <span class="math notranslate nohighlight">\(\omega\)</span>  (Here the variable <span class="math notranslate nohighlight">\(\omega\)</span> is “omega”, not “double-u”.  It is often used for a frequency.).</p>
 <div class="proof example admonition" id="ex:Lap_e^at">
-<p class="admonition-title"><span class="caption-number">Example 2.6 </span> (<span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}](s)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.6 </span> (<span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}](s)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To find the Laplace Transform of <span class="math notranslate nohighlight">\(f(t)=e^{at}\)</span> we follow the same steps as before.</p>
 <div class="amsmath math notranslate nohighlight">
@@ -682,7 +722,7 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
 \end{align*}\]</div>
 </section>
 </div><div class="proof example admonition" id="ex:Lap_cos_omegat">
-<p class="admonition-title"><span class="caption-number">Example 2.7 </span> (The Laplace Transform of <span class="math notranslate nohighlight">\(f(t) = \cos(\omega t)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.7 </span> (The Laplace Transform of <span class="math notranslate nohighlight">\(f(t) = \cos(\omega t)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To find the Laplace Transform of <span class="math notranslate nohighlight">\(\cos(\omega t)\)</span> we follow the steps we used for <span class="math notranslate nohighlight">\(\cos(4t)\)</span></p>
 <div class="math notranslate nohighlight">
@@ -694,7 +734,7 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
 <a class="reference internal image-reference" href="../_images/int_by_parts_tabular_cos_omega_t.png"><img alt="../_images/int_by_parts_tabular_cos_omega_t.png" src="../_images/int_by_parts_tabular_cos_omega_t.png" style="height: 150px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.3 </span><span class="caption-text">The tabular approach for integrating <span class="math notranslate nohighlight">\(\cos(\omega t) e^{-st}\)</span> by parts.</span><a class="headerlink" href="#fig-tabular-int-by-parts-general" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">The tabular approach for integrating <span class="math notranslate nohighlight">\(\cos(\omega t) e^{-st}\)</span> by parts.</span><a class="headerlink" href="#fig-tabular-int-by-parts-general" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>From this, we conclude that</p>
@@ -717,7 +757,7 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
 </div></section>
 </section>
 <section id="self-test">
-<h2><span class="section-number">2.2.5. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.2.5. </span>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Use the definition of the Laplace Transform to find the Laplace Transform of <span class="math notranslate nohighlight">\(f(t)=1\)</span>.</p></li>
 <li><p>Use the definition of the Laplace Transform to find the Laplace Transform of <span class="math notranslate nohighlight">\(f(t)=t\)</span>.</p></li>
@@ -736,16 +776,16 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "jupyter_matlab_kernel"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "jupyter_matlab_kernel",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
 
                 </article>
               
@@ -763,7 +803,7 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Laplace Transforms and Differential Equations</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Laplace Transforms and Differential Equations</p>
       </div>
     </a>
     <a class="right-next"
@@ -771,7 +811,7 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.3. </span>Some Basic Laplace Transform Rules</p>
+        <p class="prev-next-title"><span class="section-number">1.3. </span>Some Basic Laplace Transform Rules</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -791,17 +831,17 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.2.1. Intended Learning Outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.2.2. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-example">2.2.3. Introductory example</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-e-t-s-for-general-s">2.2.3.1. Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-t}](s)\)</span> for general <span class="math notranslate nohighlight">\(s\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">1.2.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.2.2. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-example">1.2.3. Introductory example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-e-t-s-for-general-s">1.2.3.1. Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-t}](s)\)</span> for general <span class="math notranslate nohighlight">\(s\)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">2.2.4. Examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-general-laplace-transforms">2.2.4.1. More general Laplace Transforms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">1.2.4. Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-general-laplace-transforms">1.2.4.1. More general Laplace Transforms</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.2.5. Self-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">1.2.5. Self-test</a></li>
 </ul>
   </nav></div>
 
