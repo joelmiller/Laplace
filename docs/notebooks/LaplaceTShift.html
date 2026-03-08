@@ -485,7 +485,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\begin{split}
 H_a(t) = \begin{cases} 0 &amp; t &lt; a\\
-                       1 &amp; t \geq a
+                       1 &amp; a \leq t
                        \end{cases}
 \end{split}\]</div>
 </section>
@@ -597,6 +597,7 @@ H_a(t) = H_0(t-a)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">                            </span>
+<span class="nb">clf</span><span class="p">()</span>
 <span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">601</span><span class="p">);</span>
 <span class="n">H3</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">;</span><span class="w">   </span><span class="c">%This is 0 where t&lt;3 and 1 for t&gt;=3</span>
 <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">H3</span><span class="p">)</span>
@@ -608,7 +609,7 @@ H_a(t) = H_0(t-a)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20117039abdd55c69ea30cb54a57a1fadb921eacae6a63a0741984cfb3d0f43e.png" src="../_images/20117039abdd55c69ea30cb54a57a1fadb921eacae6a63a0741984cfb3d0f43e.png" />
+<img alt="../_images/45ef3cd97e3d292c2735013fda33923d5eb48b8fe2157f316d6730a9e3226e5c.png" src="../_images/45ef3cd97e3d292c2735013fda33923d5eb48b8fe2157f316d6730a9e3226e5c.png" />
 </div>
 </div>
 <p>Notice that although the function is discontinuous at <span class="math notranslate nohighlight">\(t=3\)</span>, Matlab will still draw a line from the last point before <span class="math notranslate nohighlight">\(t=3\)</span> to the first point with <span class="math notranslate nohighlight">\(t \geq 3\)</span>.  If the <span class="math notranslate nohighlight">\(t\)</span> values were far apart, then this line will not appear vertical.</p>
@@ -660,7 +661,7 @@ H_a(t) = H_0(t-a)
 <div class="math notranslate nohighlight">
 \[\begin{split}
 f(t) = \begin{cases}
- t &amp;  0 \leq t &lt; 3\\
+ t &amp;  t&lt; 3\\
  t - t^2 &amp; 3 \leq t 
  \end{cases}
 \end{split}\]</div>
@@ -672,7 +673,8 @@ f(t) = \begin{cases}
 <p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clf</span><span class="p">()</span>
+<span class="n">t1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">);</span>
 <span class="n">t2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">61</span><span class="p">);</span>
 
 <span class="nb">plot</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">t1</span><span class="p">)</span><span class="w">        </span><span class="c">% notice that if we don&#39;t specify color, </span>
@@ -684,14 +686,14 @@ f(t) = \begin{cases}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7a2e278c8e2cb4e819e9ccd8ec230bee034aefea373ac1ca26c244f015eae49f.png" src="../_images/7a2e278c8e2cb4e819e9ccd8ec230bee034aefea373ac1ca26c244f015eae49f.png" />
+<img alt="../_images/0971be591e8b627dce543af6ecd3932de8222e789a0124ec133523846c0c8690.png" src="../_images/0971be591e8b627dce543af6ecd3932de8222e789a0124ec133523846c0c8690.png" />
 </div>
 </div>
 <section id="the-laplace-transform-of-a-piecewise-continuous-function">
 <h3><span class="section-number">1.4.6.1. </span>The Laplace Transform of a Piecewise Continuous Function<a class="headerlink" href="#the-laplace-transform-of-a-piecewise-continuous-function" title="Link to this heading">#</a></h3>
 <p>Now we introduce a procedure that will convert <span class="math notranslate nohighlight">\(f(t)\)</span> into the sum of functions that can be transformed using the Laplace Transform Table.  We’ll introduce it through an example with a single discontinuity and then give the method.</p>
 <div class="proof example admonition" id="example-piecewise_decomposition">
-<p class="admonition-title"><span class="caption-number">Example 1.13 </span> (Finding the Laplace Transform of <span class="math notranslate nohighlight">\(f(t) = \begin{cases} t &amp;  0 \leq t &lt; 3\\ t - t^2 &amp; 3 \leq t \end{cases}\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.13 </span> (Finding the Laplace Transform of <span class="math notranslate nohighlight">\(f(t) = \begin{cases} t &amp;  t &lt; 3\\ t - t^2 &amp; 3 \leq t \end{cases}\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>We see that a jump occurs at <span class="math notranslate nohighlight">\(t=3\)</span>. We will write <span class="math notranslate nohighlight">\(f(t)\)</span> as a continuous function <span class="math notranslate nohighlight">\(f_0(t)\)</span> plus <span class="math notranslate nohighlight">\(H_3(t)\)</span> times another continuous function <span class="math notranslate nohighlight">\(f_1(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -779,28 +781,36 @@ f(t) = t + H_3(t) g(t-3)
 <div class="proof algorithm admonition" id="Algorithm-OneJumpDiscon">
 <p class="admonition-title"><span class="caption-number">Algorithm 1.1 </span> (Finding the Laplace Transform of a function with one jump discontinuity)</p>
 <section class="algorithm-content" id="proof-content">
-<ol class="arabic simple">
+<p>Consider the function</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(t) = \begin{cases} g_0(t) &amp; t &lt; a\\
+g_1(t) &amp; a \leq t
+\end{cases}
+\end{split}\]</div>
+<ol class="arabic">
 <li><p>Set <span class="math notranslate nohighlight">\(f(t) = f_0(t) + H_a(t) f_1(t)\)</span> where <span class="math notranslate nohighlight">\(f_0(t)\)</span> and <span class="math notranslate nohighlight">\(f_1(t)\)</span> will be found later.</p></li>
-<li><p>Set <span class="math notranslate nohighlight">\(f_0(t)\)</span> to be a continuous function that matches <span class="math notranslate nohighlight">\(f(t)\)</span> for <span class="math notranslate nohighlight">\(t&lt;a\)</span>.</p></li>
-<li><p>For <span class="math notranslate nohighlight">\(t&gt;a\)</span>, we find <span class="math notranslate nohighlight">\(f_1(t) = f(t) - f_0(t)\)</span>.  That is, we subtract the continuation of what <span class="math notranslate nohighlight">\(f\)</span> looks like for <span class="math notranslate nohighlight">\(t&lt;a\)</span> from the function <span class="math notranslate nohighlight">\(f(t)\)</span> for <span class="math notranslate nohighlight">\(t&gt;a\)</span>.</p></li>
-</ol>
+<li><p>Set <span class="math notranslate nohighlight">\(f_0(t) = g_0(t)\)</span>.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(t&gt;a\)</span>, we set <span class="math notranslate nohighlight">\(f_1(t) = g_1(t) - g_0(t)\)</span>.  That is, we subtract the functional form of <span class="math notranslate nohighlight">\(f\)</span> for values  <span class="math notranslate nohighlight">\(t&lt;a\)</span> from its actual value for <span class="math notranslate nohighlight">\(t&gt;a\)</span>.</p>
 <p>Then <span class="math notranslate nohighlight">\(f(t) = f_0(t) + H_{a}(t) f_1(t)\)</span>.</p>
-<ol class="arabic simple" start="4">
+</li>
 <li><p>Find <span class="math notranslate nohighlight">\(\mathcal{L}[ f_0(t)](s) + \mathcal{L}[H_a(t)f_1(t)](s)\)</span> using the transform table.</p></li>
 </ol>
 </section>
-</div><p>At step (2), we have <span class="math notranslate nohighlight">\(f(t)=f_0(t)\)</span> for <span class="math notranslate nohighlight">\(t&lt;a\)</span>&gt;.  However, for <span class="math notranslate nohighlight">\(t&gt;a\)</span>, <span class="math notranslate nohighlight">\(f(t)\)</span> does not match the continuation of <span class="math notranslate nohighlight">\(f_0(t)\)</span>.  So if we define <span class="math notranslate nohighlight">\(f(t) = f_0(t) + H_a(t) f_1(t)\)</span>, then <span class="math notranslate nohighlight">\(f(t) = f_0(t)\)</span> for <span class="math notranslate nohighlight">\(t&lt;a\)</span>.  Then using step (3), as <span class="math notranslate nohighlight">\(t\)</span> crosses <span class="math notranslate nohighlight">\(a\)</span> <span class="math notranslate nohighlight">\(f_1(t)\)</span> “turns on” and remains on.  The combined sum <span class="math notranslate nohighlight">\(f_0(t) + f_1(t)\)</span> will equal <span class="math notranslate nohighlight">\(f(t)\)</span> for <span class="math notranslate nohighlight">\(t&gt;a\)</span>.</p>
-<p>Often to compute the Laplace Transform of <span class="math notranslate nohighlight">\(H_a(t) f_1(t)\)</span> we want <span class="math notranslate nohighlight">\(f_1(t)\)</span> in the form <span class="math notranslate nohighlight">\(g_1(t-a)\)</span>.  To find what <span class="math notranslate nohighlight">\(g_1(t)\)</span> is, we note that</p>
+</div><p>To see that this works, we verify that <span class="math notranslate nohighlight">\(f(t) = f_0(t) + H_a(t) f_1(t)\)</span> where <span class="math notranslate nohighlight">\(f_0(t)=g_0(t)\)</span> and <span class="math notranslate nohighlight">\(f_1(t) = g_1(t)-g_0(t)\)</span> has the correct values.</p>
+<p>For <span class="math notranslate nohighlight">\(t\leq a\)</span>,  <span class="math notranslate nohighlight">\(H_a(t)=0\)</span>, so if <span class="math notranslate nohighlight">\(t\leq a\)</span>, then <span class="math notranslate nohighlight">\(f(t) = f_0(t)=g_0(t)\)</span> which matches the definition of <span class="math notranslate nohighlight">\(f(t)\)</span> for <span class="math notranslate nohighlight">\(t\leq a\)</span>.</p>
+<p>For <span class="math notranslate nohighlight">\(t&gt;a\)</span>,  <span class="math notranslate nohighlight">\(H_a(t)=1\)</span>, so if <span class="math notranslate nohighlight">\(t &gt;a\)</span>, then <span class="math notranslate nohighlight">\(f(t) = f_0(t) + f_1(t) = g_1(t)\)</span> which matches the definition of <span class="math notranslate nohighlight">\(f(t)\)</span> for <span class="math notranslate nohighlight">\(t&gt;a\)</span>.</p>
+<p>Often to compute the Laplace Transform of <span class="math notranslate nohighlight">\(H_a(t) f_1(t)\)</span> we want <span class="math notranslate nohighlight">\(f_1(t)\)</span> in the form <span class="math notranslate nohighlight">\(h_1(t-a)\)</span>.  To find what <span class="math notranslate nohighlight">\(h_1(t)\)</span> is, we note that</p>
 <div class="math notranslate nohighlight">
 \[
-   f_1(t) = g_1(t-a) \quad \Rightarrow \quad f_1(t+a) = g_1(t+a-a) = g_1(t)
+   f_1(t) = h_1(t-a) \quad \Rightarrow \quad f_1(t+a) = h_1(t+a-a) = h_1(t)
 \]</div>
-<p>So we set <span class="math notranslate nohighlight">\(g_1(t) = f_1(t+a)\)</span>.</p>
+<p>So if <span class="math notranslate nohighlight">\(h_1(t) = f_1(t+a)\)</span>, then <span class="math notranslate nohighlight">\(f_1(t) = h_1(t-a)\)</span>.</p>
 <p>(Note that the transform table as presented in <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 1.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> includes both <span class="math notranslate nohighlight">\(\mathcal{L}[H_a(t)f(t)](s)\)</span> and <span class="math notranslate nohighlight">\(\mathcal{L}[H_a(t)f(t-a)](s)\)</span>.  This final conversion step is already accounted for in the table entry for <span class="math notranslate nohighlight">\(\mathcal{L}[H_a(t)f(t)](s)\)</span>).</p>
 <div class="proof example admonition" id="example-SingleJumpDiscon">
-<p class="admonition-title"><span class="caption-number">Example 1.14 </span> (Finding the Laplace Transform of <span class="math notranslate nohighlight">\(f(t)= \begin{cases} t &amp; t\leq 3\\ \sin(t) &amp; t&gt;3 \end{cases} \quad\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.14 </span> (Finding the Laplace Transform of <span class="math notranslate nohighlight">\(f(t)= \begin{cases} t &amp; t &lt;3\\ \sin(t) &amp; 3 \leq t \end{cases} \quad\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>We apply the steps of <a class="reference internal" href="#Algorithm-OneJumpDiscon">Algorithm 1.1</a> to <span class="math notranslate nohighlight">\(f(t)= \begin{cases} t &amp; t\leq 3\\ \sin(t) &amp; t&gt;3 \end{cases}\:\)</span>.</p>
+<p>We apply the steps of <a class="reference internal" href="#Algorithm-OneJumpDiscon">Algorithm 1.1</a> to <span class="math notranslate nohighlight">\(f(t)= \begin{cases} t &amp; t &lt; 3\\ \sin(t) &amp; 3\leq t \end{cases}\:\)</span>.</p>
 <ol class="arabic">
 <li><p>We  write <span class="math notranslate nohighlight">\(f(t) = f_0(t) + f_1(t) H_3(t)\)</span>.</p></li>
 <li><p>We set <span class="math notranslate nohighlight">\(f_0(t) = t\)</span></p></li>
@@ -821,51 +831,60 @@ f(t) = t + H_3(t) g(t-3)
 </div></section>
 <section id="general-procedure-for-the-laplace-transform-of-a-piecewise-continuous-function-with-a-finite-number-of-jump-discontinuities">
 <h3><span class="section-number">1.4.6.3. </span>General procedure for the Laplace Transform of a Piecewise Continuous Function with a finite number of jump discontinuities<a class="headerlink" href="#general-procedure-for-the-laplace-transform-of-a-piecewise-continuous-function-with-a-finite-number-of-jump-discontinuities" title="Link to this heading">#</a></h3>
-<p>If we want to take the Laplace Transform of a piecewise continuous function <span class="math notranslate nohighlight">\(f(t)\)</span> with a discontinuity at <span class="math notranslate nohighlight">\(t=a\)</span>, we can follow a procedure.  The basic idea is that at a jump at <span class="math notranslate nohighlight">\(t=a\)</span> we need to find the function that gives the difference between <span class="math notranslate nohighlight">\(f\)</span> on the right and <span class="math notranslate nohighlight">\(f\)</span> on the left of the jump.  Then the function can be written as whatever it is known to be on the left plus the difference times <span class="math notranslate nohighlight">\(H_a(t)\)</span>.  The example above did this with a single discontinuity, but this can be repeated.</p>
+<p>If we want to take the Laplace Transform of a piecewise continuous function <span class="math notranslate nohighlight">\(f(t)\)</span> with a discontinuity at <span class="math notranslate nohighlight">\(t=a\)</span>, we can follow a procedure.  The basic idea is that when a jump occurs at <span class="math notranslate nohighlight">\(t=a\)</span> we need to add the jump to the function we have for <span class="math notranslate nohighlight">\(t&lt;a\)</span>.  We find the jump by subtracting the expression for <span class="math notranslate nohighlight">\(t&lt;a\)</span> from the expression for <span class="math notranslate nohighlight">\(t&gt;a\)</span>.  Then we add <span class="math notranslate nohighlight">\(H_a(t)\)</span> times the result to get the jump.  The example above did this with a single discontinuity, but this can be repeated at each discontinuity.</p>
 <p>The general procedure is:</p>
 <div class="proof algorithm admonition" id="algorithm-6">
 <p class="admonition-title"><span class="caption-number">Algorithm 1.2 </span> (Finding the Laplace Transform of a Piecewise Continuous Function with a finite number of jump discontinuities)</p>
 <section class="algorithm-content" id="proof-content">
-<ol class="arabic">
+<p>Consider the function</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(t) = \begin{cases} g_0(t) &amp; t &lt; a_1\\
+g_1(t) &amp; a_1 \leq t &lt; a_2\\
+g_2(t) &amp; a_2 \leq t &lt; a_3\\
+\vdots &amp; \vdots &amp;\\
+g_n(t) &amp; a_n \leq t
+\end{cases}
+\end{split}\]</div>
+<ol class="arabic simple">
 <li><p>Find the location(s) of discontinuities, <span class="math notranslate nohighlight">\(a_1 &lt; a_2&lt; \cdots &lt; a_n\)</span>.<br />
 Write <span class="math notranslate nohighlight">\(f(t) = f_0(t) + f_1(t)H_{a_1}(t) + \cdots + f_n(t) H_{a_n}(t)\)</span>.</p></li>
-<li><p>For <span class="math notranslate nohighlight">\(t&lt;a_1\)</span>, set <span class="math notranslate nohighlight">\(f_0(t)\)</span> to be a function that matches <span class="math notranslate nohighlight">\(f(t)\)</span> in this region.<br />
-Then for <span class="math notranslate nohighlight">\(t&lt;a_1\)</span>, <span class="math notranslate nohighlight">\(f(t) = f_0(t)\)</span></p></li>
-<li><p>Next, set <span class="math notranslate nohighlight">\(f_1(t) = f(t)-f_0(t)\)</span> in <span class="math notranslate nohighlight">\(a_1 &lt; t&lt; a_2\)</span>.<br />
-Then for <span class="math notranslate nohighlight">\(t&lt;a_2\)</span>, <span class="math notranslate nohighlight">\(f(t) = f_0(t) + H_{a_1}(t) f_1(t)\)</span>.</p></li>
-<li><p>At each successive point of discontinuity, repeat the previous step.  Set <span class="math notranslate nohighlight">\(f_m(t) = f(t) - (f_0(t) + f_1(t) + \cdots + f_{m-1}(t))\)</span>.<br />
-That is set <span class="math notranslate nohighlight">\(f_m(t)\)</span> to be the functional form of <span class="math notranslate nohighlight">\(f(t)\)</span> to the right of <span class="math notranslate nohighlight">\(t_m\)</span> minus the functional form to the left of <span class="math notranslate nohighlight">\(t_m\)</span></p>
-<p>Then <span class="math notranslate nohighlight">\(f(t) = f_0(t) + H_{a_1}(t) f_1(t) + H_{a_2}(t) f_2(t) + \cdots + H_{a_n}(t) f_n(t)\)</span>.</p>
-</li>
+<li><p>Set <span class="math notranslate nohighlight">\(f_0(t) = g_0(t)\)</span>.</p></li>
+<li><p>For each point of discontinuity, <span class="math notranslate nohighlight">\(a_i\)</span>, <span class="math notranslate nohighlight">\(i=1, \ldots, n\)</span>, set <span class="math notranslate nohighlight">\(f_i(t) = g_{i}- g_{i-1}(t)\)</span>.</p></li>
 <li><p>Find <span class="math notranslate nohighlight">\(\mathcal{L}[ f_0(t)](s) + \mathcal{L}[H_a(t)f_1(t)](s) + \cdots +\mathcal{L}[H_{a_n}(t)f_n(t)](s)\)</span> using the transform table.</p></li>
 </ol>
 </section>
-</div><p>Note that at the end of step (4), the function <span class="math notranslate nohighlight">\(f(t)\)</span> has been written as a sum of functions that turn on at <span class="math notranslate nohighlight">\(a_1\)</span>, <span class="math notranslate nohighlight">\(a_2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(a_n\)</span>.</p>
+</div><p>Note that at the end of step (3), the function <span class="math notranslate nohighlight">\(f(t)\)</span> has been written as a sum of functions that turn on at <span class="math notranslate nohighlight">\(a_1\)</span>, <span class="math notranslate nohighlight">\(a_2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(a_n\)</span>.  The function that turns on at <span class="math notranslate nohighlight">\(a_i\)</span> is the amount that <span class="math notranslate nohighlight">\(g_{i-1}(t)\)</span> must change by to reach <span class="math notranslate nohighlight">\(g_i(t)\)</span>.</p>
 <div class="proof example admonition" id="example-MultiJumpDiscon">
-<p class="admonition-title"><span class="caption-number">Example 1.15 </span> (Finding the Laplace Transform of <span class="math notranslate nohighlight">\(f(t) = \begin{cases} e^{2t} &amp; t\leq 1\\ e^{2t}(1-2e^{-2}) &amp; 1 &lt;t \leq 2\\ e^{2t}(1-2e^{-2}) + 3e^{3(t-2)} &amp; t&gt;2 \end{cases} \qquad\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.15 </span> (Finding the Laplace Transform of <span class="math notranslate nohighlight">\(f(t) = \begin{cases} e^{2t} &amp; t&lt; 1\\ e^{2t}(1-2e^{-2}) &amp; 1 \leq t &lt; 2\\ e^{2t}(1-2e^{-2}) + 3e^{3(t-2)} &amp; 2\leq t \end{cases} \qquad\)</span>)</p>
 <section class="example-content" id="proof-content">
+<p>We follow the steps above.  Here</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+g_0(t) &amp;= e^{2t}\\
+g_1(t) &amp;= e^{2t}(1-2e^{-2})\\
+g_2(t) &amp;= e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}
+\end{align*}\]</div>
 <ol class="arabic">
-<li><p>We follow the steps above.  The jumps are at <span class="math notranslate nohighlight">\(a_1=1\)</span> and <span class="math notranslate nohighlight">\(a_2=2\)</span>.  So we write</p>
+<li><p>The jumps are at <span class="math notranslate nohighlight">\(a_1=1\)</span> and <span class="math notranslate nohighlight">\(a_2=2\)</span>.  So we write</p>
 <div class="math notranslate nohighlight">
 \[
    f(t) = f_0(t) + H_1(t) f_1(t) + H_2(t) f_2(t)
    \]</div>
 </li>
 <li><p>We find <span class="math notranslate nohighlight">\(f_0(t) = e^{2t}\)</span>.</p></li>
-<li><p>For <span class="math notranslate nohighlight">\(a_1=1\)</span>, we get <span class="math notranslate nohighlight">\(f_1(t) = e^{2t}(1-2e^{-2})-f_0(t) = -2e^{2t-2}\)</span></p></li>
-<li><p>We repeat for the remaining jumps, of which there is only <span class="math notranslate nohighlight">\(a_2==2\)</span>.  We find</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-f_2(t) &amp;= (e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}) - (e^{2t}(1-2e^{-2}))\\
-       &amp;= 3e^{3(t-2)}
-\end{align*}\]</div>
+<li><ul class="simple">
+<li><p>For <span class="math notranslate nohighlight">\(a_1=1\)</span>, we get <span class="math notranslate nohighlight">\(f_1(t) = e^{2t}(1-2e^{-2})-e^{2t} = -2e^{2t-2}\)</span> and</p></li>
+<li><p>for <span class="math notranslate nohighlight">\(a_2=2\)</span>, we get <span class="math notranslate nohighlight">\(f_2(t) =  e^{2t}(1-2e^{-2}) + 3e^{3(t-2)} - e^{2t}(1-2e^{-2})\)</span></p></li>
+</ul>
 </li>
-<li><p>So</p>
+</ol>
+<p>So</p>
 <div class="math notranslate nohighlight">
 \[
    f(t) = e^{2t} + H_1(t) (-2e^{2t-2}) + H_2(t) 3e^{3(t-2)}
    \]</div>
-</li>
+<ol class="arabic" start="4">
 <li><p>Now we use the transform rules to find</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -904,7 +923,7 @@ f_2(t) &amp;= (e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}) - (e^{2t}(1-2e^{-2}))\\
 \[
 \tilde{f}(s) = \frac{1}{s-2} - 2e^{-s} \frac{1}{s-2} + 3 e^{-2s} \frac{1}{s-3}
 \]</div>
-<p>we note that each term has a different exponential factor.  We will have to approach each one separately.  We can separate them out because of linearity.  We have</p>
+<p>we note that each term has a different exponential factor.  We will <strong>handle each one separately</strong>.  We can separate them because of linearity.  We have</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathcal{L}^{-1}[\tilde{f}(s)](t) &amp;= \mathcal{L}^{-1} \left[\frac{1}{s-2} - 2e^{-s} \frac{1}{s-2} + 3 e^{-2s} \frac{1}{s-3} \right](t)\\
@@ -912,7 +931,7 @@ f_2(t) &amp;= (e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}) - (e^{2t}(1-2e^{-2}))\\
 &amp;= e^{2t} - 2 H_1(t) \mathcal{L}^{-1}\left[ \frac{1}{s-2}\right](t-1) + 3 H_2(t)\mathcal{L}^{-1}\left[\frac{1}{s-3} \right](t-2)\\
 &amp;= e^{2t} - 2H_1(t) e^{2(t-1)} + 3 H_2(t) e^{3(t-2)}
 \end{align*}\]</div>
-<p>Pay close attention to what happened in the last step.  Be sure you see the relevance of <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">remark-TshitLinf</span></code>.</p>
+<p>Pay close attention to what happened in the last step.  Be sure you see the relevance of <a class="reference internal" href="#remark-TshiftLinf">Remark 1.1</a>.</p>
 </section>
 </div></section>
 <section id="self-test">
@@ -924,7 +943,7 @@ f_2(t) &amp;= (e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}) - (e^{2t}(1-2e^{-2}))\\
 \[\begin{split} 
     f(t) =  \begin{cases} 
                 t &amp; t &lt;1\\
-                t+t^2 &amp; t \geq 1
+                t+t^2 &amp; 1\leq t
             \end{cases}
     \end{split}\]</div>
 <p>into an expression of the form <span class="math notranslate nohighlight">\(f_0(t) + H_a(t)f_1(t)\)</span>.</p>
@@ -934,7 +953,7 @@ f_2(t) &amp;= (e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}) - (e^{2t}(1-2e^{-2}))\\
 \[\begin{split} 
     f(t) =  \begin{cases} 
                 t &amp; t &lt;1\\
-                t^2 &amp; t \geq 1
+                t^2 &amp; 1 \leq t
             \end{cases}
     \end{split}\]</div>
 <p>into an expression of the form <span class="math notranslate nohighlight">\(f_0(t) + H_a(t)f_1(t)\)</span>.  Notice that this is not discontinuous, but its derivative has a jump at <span class="math notranslate nohighlight">\(t=1\)</span>.  This process is still useful if we want to calculate the Laplace Transform.</p>
@@ -946,17 +965,17 @@ f_2(t) &amp;= (e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}) - (e^{2t}(1-2e^{-2}))\\
 \[\begin{split} 
     f(t) =  \begin{cases} 
                 t &amp; t &lt;1\\
-                t+t^2 &amp; t \geq 1
+                t+t^2 &amp; 1 \leq t
             \end{cases}
     \end{split}\]</div>
 <p>(an earlier question asked you to write it as <span class="math notranslate nohighlight">\(f_0(t) + H_a(t)f_1(t)\)</span>).</p>
 </li>
-<li><p>Sketch and find the Laplace Transform of</p>
+<li><p>Sketch <span class="math notranslate nohighlight">\(f(t)\)</span> and find its Laplace Transform:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     f(t) =  \begin{cases} 
-                0 &amp; t&lt;1 \text{ or }  2 \leq t \\
                 1 &amp; 1 \leq t &lt; 2
+                0 &amp; t&lt;1 \text{ or }  2 \leq t \\
             \end{cases}
     \end{split}\]</div>
 </li>
@@ -981,16 +1000,16 @@ f_2(t) &amp;= (e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}) - (e^{2t}(1-2e^{-2}))\\
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "jupyter_matlab_kernel"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "jupyter_matlab_kernel",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
 
                 </article>
               
