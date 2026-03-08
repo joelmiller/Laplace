@@ -974,7 +974,7 @@ g_2(t) &amp;= e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}
 <div class="math notranslate nohighlight">
 \[\begin{split}
     f(t) =  \begin{cases} 
-                1 &amp; 1 \leq t &lt; 2
+                1 &amp; 1 \leq t &lt; 2\\
                 0 &amp; t&lt;1 \text{ or }  2 \leq t \\
             \end{cases}
     \end{split}\]</div>
@@ -985,7 +985,7 @@ g_2(t) &amp;= e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="equivalence-note" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Mathematically, we create an <em>equivalence class</em> where we consider discontinuous functions to be equivalent and interchangeable as long as they are identical everywhere they are continuous.  This is similar to the concept that <span class="math notranslate nohighlight">\(1/2 = 2/4 = 3/6\)</span> — we can use these interchangeably for most mathematical purposes.  So much so that we teach people that they actually are the same thing. Ask a parent with 3 hungry, irritable children and no knife if they care whether you give them 1 half, 2 quarters or 3 sixths of a pie.  They are different, but for the purposes of mathematical operations they are interchangeable.</p>
+<p>Mathematically, we create an <em>equivalence class</em> where we consider discontinuous functions to be equivalent and interchangeable as long as they differ only at a finite number of points.  This is similar to the concept that <span class="math notranslate nohighlight">\(1/2 = 2/4 = 3/6\)</span> — we can use these interchangeably for most mathematical purposes.  So much so that we teach people that they actually are the same thing. Ask a parent with 3 hungry, irritable children and no knife if they care whether you give them 1 half, 2 quarters or 3 sixths of a pie.  There is a difference between them, but for most mathematical purposes we treat them as the same thing.  In this case we also treat two functions that differ at a finite number of points as being the same because we really only care about what happens when we integrate them and if they differ at a finite number of points they have the same integral.</p>
 </aside>
 </aside>
 </section>
@@ -1000,16 +1000,16 @@ g_2(t) &amp;= e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "jupyter_matlab_kernel"
+            mode: "xoctave"
         },
         kernelOptions: {
-            name: "jupyter_matlab_kernel",
+            name: "xoctave",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'jupyter_matlab_kernel'</script>
+    <script>kernelName = 'xoctave'</script>
 
                 </article>
               
