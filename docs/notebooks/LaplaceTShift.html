@@ -799,15 +799,17 @@ g_1(t) &amp; a \leq t
 <ol class="arabic">
 <li><p>Set <span class="math notranslate nohighlight">\(f(t) = f_0(t) + H_a(t) f_1(t)\)</span> where <span class="math notranslate nohighlight">\(f_0(t)\)</span> and <span class="math notranslate nohighlight">\(f_1(t)\)</span> will be found later.</p></li>
 <li><p>Set <span class="math notranslate nohighlight">\(f_0(t) = g_0(t)\)</span>.</p></li>
-<li><p>For <span class="math notranslate nohighlight">\(t&gt;a\)</span>, we set <span class="math notranslate nohighlight">\(f_1(t) = g_1(t) - g_0(t)\)</span>.  That is, we subtract the functional form of <span class="math notranslate nohighlight">\(f\)</span> for values  <span class="math notranslate nohighlight">\(t&lt;a\)</span> from its actual value for <span class="math notranslate nohighlight">\(t&gt;a\)</span>.</p>
+<li><p>For <span class="math notranslate nohighlight">\(t&gt;a\)</span>, we set <span class="math notranslate nohighlight">\(f_1(t) = g_1(t) - g_0(t)\)</span>.  That is, we subtract the functional form of <span class="math notranslate nohighlight">\(f\)</span> for values  <span class="math notranslate nohighlight">\(t&lt;a\)</span> from its functional form for <span class="math notranslate nohighlight">\(t&gt;a\)</span>.</p>
 <p>Then <span class="math notranslate nohighlight">\(f(t) = f_0(t) + H_{a}(t) f_1(t)\)</span>.</p>
 </li>
 <li><p>Find <span class="math notranslate nohighlight">\(\mathcal{L}[ f_0(t)](s) + \mathcal{L}[H_a(t)f_1(t)](s)\)</span> using the transform table.</p></li>
 </ol>
 </section>
-</div><p>To see that this works, we verify that <span class="math notranslate nohighlight">\(f(t) = f_0(t) + H_a(t) f_1(t)\)</span> where <span class="math notranslate nohighlight">\(f_0(t)=g_0(t)\)</span> and <span class="math notranslate nohighlight">\(f_1(t) = g_1(t)-g_0(t)\)</span> has the correct values.</p>
-<p>For <span class="math notranslate nohighlight">\(t\leq a\)</span>,  <span class="math notranslate nohighlight">\(H_a(t)=0\)</span>, so if <span class="math notranslate nohighlight">\(t\leq a\)</span>, then <span class="math notranslate nohighlight">\(f(t) = f_0(t)=g_0(t)\)</span> which matches the definition of <span class="math notranslate nohighlight">\(f(t)\)</span> for <span class="math notranslate nohighlight">\(t\leq a\)</span>.</p>
-<p>For <span class="math notranslate nohighlight">\(t&gt;a\)</span>,  <span class="math notranslate nohighlight">\(H_a(t)=1\)</span>, so if <span class="math notranslate nohighlight">\(t &gt;a\)</span>, then <span class="math notranslate nohighlight">\(f(t) = f_0(t) + f_1(t) = g_1(t)\)</span> which matches the definition of <span class="math notranslate nohighlight">\(f(t)\)</span> for <span class="math notranslate nohighlight">\(t&gt;a\)</span>.</p>
+</div><p>To see that this works, we verify that <span class="math notranslate nohighlight">\(f(t) = f_0(t) + H_a(t) f_1(t)\)</span> where <span class="math notranslate nohighlight">\(f_0(t)=g_0(t)\)</span> and <span class="math notranslate nohighlight">\(f_1(t) = g_1(t)-g_0(t)\)</span> has the correct values:</p>
+<ul class="simple">
+<li><p>For <span class="math notranslate nohighlight">\(t\leq a\)</span>,  <span class="math notranslate nohighlight">\(H_a(t)=0\)</span>, so if <span class="math notranslate nohighlight">\(t\leq a\)</span>, then <span class="math notranslate nohighlight">\(f(t) = f_0(t)=g_0(t)\)</span> which matches the definition of <span class="math notranslate nohighlight">\(f(t)\)</span> for <span class="math notranslate nohighlight">\(t\leq a\)</span>.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(t&gt;a\)</span>,  <span class="math notranslate nohighlight">\(H_a(t)=1\)</span>, so if <span class="math notranslate nohighlight">\(t &gt;a\)</span>, then <span class="math notranslate nohighlight">\(f(t) = f_0(t) + f_1(t) = g_1(t)\)</span> which matches the definition of <span class="math notranslate nohighlight">\(f(t)\)</span> for <span class="math notranslate nohighlight">\(t&gt;a\)</span>.</p></li>
+</ul>
 <p>Often to compute the Laplace Transform of <span class="math notranslate nohighlight">\(H_a(t) f_1(t)\)</span> we want <span class="math notranslate nohighlight">\(f_1(t)\)</span> in the form <span class="math notranslate nohighlight">\(h_1(t-a)\)</span>.  To find what <span class="math notranslate nohighlight">\(h_1(t)\)</span> is, we note that</p>
 <div class="math notranslate nohighlight">
 \[
@@ -859,9 +861,14 @@ g_n(t) &amp; a_n \leq t
 <li><p>Find the location(s) of discontinuities, <span class="math notranslate nohighlight">\(a_1 &lt; a_2&lt; \cdots &lt; a_n\)</span>.<br />
 Write <span class="math notranslate nohighlight">\(f(t) = f_0(t) + f_1(t)H_{a_1}(t) + \cdots + f_n(t) H_{a_n}(t)\)</span>.</p></li>
 <li><p>Set <span class="math notranslate nohighlight">\(f_0(t) = g_0(t)\)</span>.</p></li>
-<li><p>For each point of discontinuity, <span class="math notranslate nohighlight">\(a_i\)</span>, <span class="math notranslate nohighlight">\(i=1, \ldots, n\)</span>, set <span class="math notranslate nohighlight">\(f_i(t) = g_{i}- g_{i-1}(t)\)</span>.</p></li>
-<li><p>Find <span class="math notranslate nohighlight">\(\mathcal{L}[ f_0(t)](s) + \mathcal{L}[H_a(t)f_1(t)](s) + \cdots +\mathcal{L}[H_{a_n}(t)f_n(t)](s)\)</span> using the transform table.</p></li>
+<li><p>For each point of discontinuity, <span class="math notranslate nohighlight">\(a_i\)</span>, <span class="math notranslate nohighlight">\(i=1, \ldots, n\)</span>, set <span class="math notranslate nohighlight">\(f_i(t) = g_{i}(t)- g_{i-1}(t)\)</span>.</p></li>
+<li><p>Find</p></li>
 </ol>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}[f(t)](s) = \mathcal{L}[ f_0(t)](s) + \mathcal{L}[H_a(t)f_1(t)](s) + \cdots +\mathcal{L}[H_{a_n}(t)f_n(t)](s)
+\]</div>
+<p>using the transform table.</p>
 </section>
 </div><p>Note that at the end of step (3), the function <span class="math notranslate nohighlight">\(f(t)\)</span> has been written as a sum of functions that turn on at <span class="math notranslate nohighlight">\(a_1\)</span>, <span class="math notranslate nohighlight">\(a_2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(a_n\)</span>.  The function that turns on at <span class="math notranslate nohighlight">\(a_i\)</span> is the amount that <span class="math notranslate nohighlight">\(g_{i-1}(t)\)</span> must change by to reach <span class="math notranslate nohighlight">\(g_i(t)\)</span>.</p>
 <div class="proof example admonition" id="example-MultiJumpDiscon">

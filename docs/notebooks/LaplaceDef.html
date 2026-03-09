@@ -712,8 +712,8 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
 \[\begin{align*}
 \mathcal{L}[f(t)](s) &amp;= \int_0^\infty f(t) e^{-st} \, dt\\
                      &amp;= \int_0^2 f(t) e^{-st} \, dt + \int_2^\infty f(t) e^{-st} \, dt\\
-                     &amp;= \int_0^2 0 e^{-st}\, dt + \int_2^\infty e^{-st} \, dt\\
-                     &amp;= 0 + \left[ \frac{1}{-s} e^{-st} \right|_{t=2}^\infty \\
+                     &amp;= \int_0^2 0 e^{-st}\, dt + \int_2^\infty 1e^{-st} \, dt\\
+                     &amp;= 0 + \left[ \frac{1}{-s} e^{-st} \right|_{t=2}^\infty  &amp; s \neq 0\\
                      &amp;= \frac{e^{-2s}}{s} &amp; s&gt;0
 \end{align*}\]</div>
 </section>
