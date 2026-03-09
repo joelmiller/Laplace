@@ -184,10 +184,10 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite Information</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../prereqs/PrereqIntro.html">1. Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../prereqs/PrereqIntro.html">Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../prereqs/Squares.html">Squares</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prereqs/EqualsSign.html">1.3. The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prereqs/AlgebraReview.html">1.4. How to improve your prerequisite skills</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prereqs/EqualsSign.html">The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prereqs/AlgebraReview.html">How to improve your prerequisite skills</a></li>
 </ul>
 </details></li>
 </ul>
@@ -481,7 +481,7 @@ document.write(`
 <div class="proof definition admonition" id="Def_Heaviside">
 <p class="admonition-title"><span class="caption-number">Definition 1.2 </span></p>
 <section class="definition-content" id="proof-content">
-<p>The <em>Heaviside Step Function</em>, also known as the <em>unit step function</em> is a function <span class="math notranslate nohighlight">\(H_a(t)\)</span> defined by</p>
+<p>The <em>Heaviside Step Function</em>, also known as the <em>unit step function</em>, is a function <span class="math notranslate nohighlight">\(H_a(t)\)</span> defined by</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 H_a(t) = \begin{cases} 0 &amp; t &lt; a\\
@@ -575,7 +575,7 @@ H_a(t) = \begin{cases}
 </section>
 <section id="h-a-t-as-a-shifted-version-of-h-0-t">
 <h3><span class="section-number">1.4.3.2. </span><span class="math notranslate nohighlight">\(H_a(t)\)</span> as a shifted version of <span class="math notranslate nohighlight">\(H_0(t)\)</span><a class="headerlink" href="#h-a-t-as-a-shifted-version-of-h-0-t" title="Link to this heading">#</a></h3>
-<p>It will be convenient for our analysis to use <span class="math notranslate nohighlight">\(H_a(t)\)</span> in our equations.  However, most computer programming languages that have a built-in Heaviside Function only define <span class="math notranslate nohighlight">\(H_0(t)\)</span>, a function that is <span class="math notranslate nohighlight">\(0\)</span> for <span class="math notranslate nohighlight">\(t&lt;0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> for <span class="math notranslate nohighlight">\(t&gt;1\)</span> (with varying choices about how to handle <span class="math notranslate nohighlight">\(t=0\)</span>).</p>
+<p>It will be convenient for our analysis to use <span class="math notranslate nohighlight">\(H_a(t)\)</span> in our equations.  However, most computer programming languages that have a built-in Heaviside Function only define <span class="math notranslate nohighlight">\(H_0(t)\)</span>, a function that is <span class="math notranslate nohighlight">\(0\)</span> for <span class="math notranslate nohighlight">\(t&lt;0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> for <span class="math notranslate nohighlight">\(t&gt;0\)</span> (with varying choices about how to handle <span class="math notranslate nohighlight">\(t=0\)</span>).</p>
 <p>So it will be useful to know how <span class="math notranslate nohighlight">\(H_a(t)\)</span> and <span class="math notranslate nohighlight">\(H_0(t)\)</span> are related.  Since <span class="math notranslate nohighlight">\(H_a(t)\)</span> is simply a shift of <span class="math notranslate nohighlight">\(H_0(t)\)</span> by a distance <span class="math notranslate nohighlight">\(a\)</span>, we have</p>
 <div class="math notranslate nohighlight">
 \[
@@ -616,7 +616,15 @@ H_a(t) = H_0(t-a)
 </section>
 <section id="the-transform-of-h-a-t-f-t-a">
 <span id="tshift-transform"></span><h2><span class="section-number">1.4.5. </span>The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span><a class="headerlink" href="#the-transform-of-h-a-t-f-t-a" title="Link to this heading">#</a></h2>
-<p>We encounter functions like <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span> when a switch is abruptly flipped at time <span class="math notranslate nohighlight">\(a\)</span>.  When we later solve Equation <a class="reference internal" href="LaplaceIntro.html#equation-eq-basic-driven-ode">(1.1)</a>, we will take the Laplace Transform of both sides.  If the right hand side is discontinuous, then we need to be able to calculate its transform.  We have from the definition of the Laplace Transform:</p>
+<p>We encounter functions like <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span> when a switch is abruptly flipped at time <span class="math notranslate nohighlight">\(a\)</span>.  The function is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+H_a(t) f(t-a) = \begin{cases} 0 &amp; t&lt;a\\
+                      f(t-a) &amp; a \leq t
+                      \end{cases}
+\end{split}\]</div>
+<p>So the function <span class="math notranslate nohighlight">\(f(t-a)\)</span> “turns on”at <span class="math notranslate nohighlight">\(t=a\)</span>.</p>
+<p>When we later solve Equation <a class="reference internal" href="LaplaceIntro.html#equation-eq-basic-driven-ode">(1.1)</a>, we will take the Laplace Transform of both sides.  If the right hand side is discontinuous, then we need to be able to calculate its transform.  We have from the definition of the Laplace Transform:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathcal{L}[H_a(t)f(t-a)](s) &amp;= \int_0^\infty H_a(t) f(t-a) e^{-st} \, dt\\
@@ -810,21 +818,22 @@ g_1(t) &amp; a \leq t
 <div class="proof example admonition" id="example-SingleJumpDiscon">
 <p class="admonition-title"><span class="caption-number">Example 1.14 </span> (Finding the Laplace Transform of <span class="math notranslate nohighlight">\(f(t)= \begin{cases} t &amp; t &lt;3\\ \sin(t) &amp; 3 \leq t \end{cases} \quad\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>We apply the steps of <a class="reference internal" href="#Algorithm-OneJumpDiscon">Algorithm 1.1</a> to <span class="math notranslate nohighlight">\(f(t)= \begin{cases} t &amp; t &lt; 3\\ \sin(t) &amp; 3\leq t \end{cases}\:\)</span>.</p>
+<p>We apply the steps of <a class="reference internal" href="#Algorithm-OneJumpDiscon">Algorithm 1.1</a> to <span class="math notranslate nohighlight">\(f(t)= \begin{cases} t &amp; t &lt; 3\\ \sin(2t) &amp; 3\leq t \end{cases}\:\)</span>.</p>
 <ol class="arabic">
 <li><p>We  write <span class="math notranslate nohighlight">\(f(t) = f_0(t) + f_1(t) H_3(t)\)</span>.</p></li>
 <li><p>We set <span class="math notranslate nohighlight">\(f_0(t) = t\)</span></p></li>
-<li><p>We set <span class="math notranslate nohighlight">\(f_1(t) = \sin(t) - t\)</span>.  So <span class="math notranslate nohighlight">\(f(t) = t + H_3(t)(\sin(t)-t)\)</span>.</p></li>
+<li><p>We set <span class="math notranslate nohighlight">\(f_1(t) = \sin(2t) - t\)</span>.  So <span class="math notranslate nohighlight">\(f(t) = t + H_3(t)(\sin(2t)-t)\)</span>.</p></li>
 <li><p>We take</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathcal{L}[f(t)](s) &amp;= \mathcal{L}[f_0(t)](s) + \mathcal{L}[H_3(t)f_1(t)](s)\\
-&amp;= \mathcal{L}[t](s) + \mathcal{L}[H_3(t) (\sin(t)-t)](s)\\
-&amp;= \frac{1}{s^2} + e^{-3t}\mathcal{L}[\sin(t+3) - (t+3)](s)\\
-&amp;= \frac{1}{s^2} + e^{-3t} \left( \mathcal{L}[\cos(3)\sin(t) + \sin(3)\cos(t) - t - 3](s) \right)\\
-&amp;= \frac{1}{s^2} + e^{-3t} \left(\cos(3) \frac{1^2}{s^2+1^2} + \sin(3) \frac{s}{s^2+1^2} - \frac{1}{s^2} - 3 \frac{1}{s}\right)
+&amp;= \mathcal{L}[t](s) + \mathcal{L}[H_3(t) (\sin(2t)-t)](s)\\
+&amp;= \frac{1}{s^2} + e^{-3s}\mathcal{L}[\sin(2(t+3)) - (t+3)](s)\\
+&amp;= \frac{1}{s^2} + e^{-3s}\mathcal{L}[\sin(2t+6) - (t+3)](s)\\
+&amp;= \frac{1}{s^2} + e^{-3s} \left( \mathcal{L}[\cos(6)\sin(2t) + \sin(6)\cos(2t) - t - 3](s) \right)\\
+&amp;= \frac{1}{s^2} + e^{-3s} \left(\cos(6) \frac{2}{s^2+2^2} + \sin(6) \frac{s}{s^2+2^2} - \frac{1}{s^2} - 3 \frac{1}{s}\right)
 \end{align*}\]</div>
-<p>where we used <span class="math notranslate nohighlight">\(\sin(3+t) = \cos(3)\sin(t) + \sin(3)\cos(t)\)</span>.</p>
+<p>where we used <span class="math notranslate nohighlight">\(\sin(2t+6) = \cos(6)\sin(2t) + \sin(6)\cos(2t)\)</span>.</p>
 </li>
 </ol>
 </section>
@@ -911,7 +920,7 @@ g_2(t) &amp;= e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}
 <div class="proof remark admonition" id="remark-TshiftLinf">
 <p class="admonition-title"><span class="caption-number">Remark 1.1 </span></p>
 <section class="remark-content" id="proof-content">
-<p>Notice that when we pull the exponential <span class="math notranslate nohighlight">\(e^{-as}\)</span> out from inside <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[e^{-as}\tilde{f}(s)](t)\)</span>, we get a factor of <span class="math notranslate nohighlight">\(H_a(t)\)</span> and the argument of the Inverse Transform becomes <span class="math notranslate nohighlight">\(t-a\)</span>.</p>
+<p>Notice that when we pull the exponential <span class="math notranslate nohighlight">\(e^{-as}\)</span> out from inside <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[e^{-as}\tilde{f}(s)](t)\)</span>, we get a factor of <span class="math notranslate nohighlight">\(H_a(t)\)</span> and the argument of the Inverse Transform becomes <span class="math notranslate nohighlight">\(t-a\)</span>.  The exponential in <span class="math notranslate nohighlight">\(s\)</span> corresponds to a shift in <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p>Because of this, when we do the inversion, it is helpful to use the notation <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\)</span> until the final step:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -1006,16 +1015,16 @@ g_2(t) &amp;= e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "jupyter_matlab_kernel"
+            mode: "xoctave"
         },
         kernelOptions: {
-            name: "jupyter_matlab_kernel",
+            name: "xoctave",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'jupyter_matlab_kernel'</script>
+    <script>kernelName = 'xoctave'</script>
 
                 </article>
               
@@ -1095,7 +1104,7 @@ g_2(t) &amp;= e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}
   <div class="footer-item">
     
 <p class="component-author">
-By LaTrobe University MAPS staff (present and past)
+By La Trobe University MAPS staff (present and past)
 </p>
 
   </div>

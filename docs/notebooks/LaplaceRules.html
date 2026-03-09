@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/LaplaceRules';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.4. The Laplace Transform and Discontinuous Functions" href="LaplaceTShift.html" />
+    <link rel="next" title="1.4. The \(t\)-shift: Laplace Transforms and Discontinuous Functions" href="LaplaceTShift.html" />
     <link rel="prev" title="1.2. Laplace Transform Definition" href="LaplaceDef.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,10 +184,10 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite Information</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../prereqs/PrereqIntro.html">1. Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../prereqs/PrereqIntro.html">Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../prereqs/Squares.html">Squares</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prereqs/EqualsSign.html">1.3. The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prereqs/AlgebraReview.html">1.4. How to improve your prerequisite skills</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prereqs/EqualsSign.html">The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prereqs/AlgebraReview.html">How to improve your prerequisite skills</a></li>
 </ul>
 </details></li>
 </ul>
@@ -196,7 +196,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3. Some Basic Laplace Transform Rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">1.4. The Laplace Transform and Discontinuous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LaplaceTShift.html">1.4. The <span class="math notranslate nohighlight">\(t\)</span>-shift: Laplace Transforms and Discontinuous Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
@@ -477,6 +477,8 @@ document.write(`
 \]</div>
 </section>
 </div><p>This property is known as <em>linearity</em>.</p>
+<div class="proof admonition" id="proof">
+<p>Proof. Linearity</p>
 <p>To demonstrate the truth of the claim in equation <a class="reference internal" href="#equation-eq-laplinearity-double">(1.3)</a>, we simply plug the sum <span class="math notranslate nohighlight">\(af(t) + bg(t)\)</span> into the definition of the Laplace Transform.  Then we will use the fact that the integral has the linearity property.  So the Laplace Transform “inherits” linearity from the integral through the following calculation:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -493,6 +495,7 @@ document.write(`
 &amp;= a \tilde{f}(s) + b \tilde{g}(s) + c \tilde{h}(s)
 \end{align*}\]</div>
 <p>More generally we can use mathematical induction and show that a sum of <span class="math notranslate nohighlight">\(n+1\)</span> functions is a sum of two functions where one of them is the sum of <span class="math notranslate nohighlight">\(n\)</span> functions.  From this it follows that linearity holds for any positive value of <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</div>
 <div class="proof example admonition" id="LapPolynomialproduct">
 <p class="admonition-title"><span class="caption-number">Example 1.8 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}\left[t^2\left(\frac{t}{2}-7\right)\right](s)\)</span>)</p>
 <section class="example-content" id="proof-content">
@@ -522,7 +525,7 @@ document.write(`
 <p>It can happen that two piecewise continuous functions <span class="math notranslate nohighlight">\(f(t)\)</span> and <span class="math notranslate nohighlight">\(g(t)\)</span> might have the same Laplace Transform, but not be equal to one another.  However, this only happens at discrete points where a function is discontinuous.  From a physical point of view this distinction is irrelevant: if a switch is off for <span class="math notranslate nohighlight">\(t&lt;3\)</span> and on for <span class="math notranslate nohighlight">\(t&gt;3\)</span>, it doesn’t actually have any impact whether we say it is on or off for the instantaneous moment of <span class="math notranslate nohighlight">\(0\)</span> duration at <span class="math notranslate nohighlight">\(t=3\)</span>.  We will gloss over this point and treat two functions as identical if they differ only at points of discontinuity.</p>
 <p>To summarize:</p>
 <div class="proof theorem admonition" id="thm:unique">
-<p class="admonition-title"><span class="caption-number">Theorem 1.2 </span> (Uniquenss of the Laplace Transform)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 1.2 </span> (Uniqueness of the Laplace Transform)</p>
 <section class="theorem-content" id="proof-content">
 <p>Consider two piecewise continuous functions <span class="math notranslate nohighlight">\(f(t)\)</span> and <span class="math notranslate nohighlight">\(g(t)\)</span> that have the same Laplace Transforms: <span class="math notranslate nohighlight">\(\tilde{f}(s) = \tilde{g}(s)\)</span>.</p>
 <p>The functions <span class="math notranslate nohighlight">\(f(t)\)</span> and <span class="math notranslate nohighlight">\(g(t)\)</span> can only differ at points where at least one of them is discontinuous.</p>
@@ -558,7 +561,7 @@ f(t) &amp;= \mathcal{L}^{-1} [\tilde{f}(s)](t)\\
 </div><div class="proof example admonition" id="example:invert_to_exponential_neg_coeff">
 <p class="admonition-title"><span class="caption-number">Example 1.10 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1} \left[ \frac{3}{(s+2)} \right](t)\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>This example follows , but with <span class="math notranslate nohighlight">\(s+2\)</span> in the denominator, not <span class="math notranslate nohighlight">\(s-2\)</span>.  The table gives us <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}] = 1/(s-a)\)</span>.  To use the table we must first rewrite <span class="math notranslate nohighlight">\(s+2\)</span> in the form <span class="math notranslate nohighlight">\(s-a\)</span>, so we use <span class="math notranslate nohighlight">\(s+2= s-(-2)\)</span>.</p>
+<p>This example follows <a class="reference internal" href="#example:invert_to_exponential">Example 1.9</a>, but with <span class="math notranslate nohighlight">\(s+2\)</span> in the denominator, not <span class="math notranslate nohighlight">\(s-2\)</span>.  The table gives us <span class="math notranslate nohighlight">\(\mathcal{L}[e^{at}] = 1/(s-a)\)</span>.  To use the table we must first rewrite <span class="math notranslate nohighlight">\(s+2\)</span> in the form <span class="math notranslate nohighlight">\(s-a\)</span>, so we use <span class="math notranslate nohighlight">\(s+2= s-(-2)\)</span>.</p>
 <p>We use the table entry with <span class="math notranslate nohighlight">\(a=-2\)</span> and we get</p>
 <div class="math notranslate nohighlight">
 \[
@@ -579,14 +582,14 @@ f(t) &amp;= \mathcal{L}^{-1} [\tilde{f}(s)](t)\\
 \]</div>
 </section>
 </div><div class="proof example admonition" id="example:invert_to_exponential_times_sin">
-<p class="admonition-title"><span class="caption-number">Example 1.11 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{8}{(s-2)^2 + 16}\right](t)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 1.11 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{2}{(s-2)^2 + 16}\right](t)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To find the Inverse Transform of <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{2}{(s-2)^2 + 16}\)</span> we look in the Table for a similar function (up to a constant multiple).  We find  <span class="math notranslate nohighlight">\(\frac{\omega}{(s-a)^2 + \omega^2}\)</span> which resembles our function for <span class="math notranslate nohighlight">\(a=2\)</span> and <span class="math notranslate nohighlight">\(\omega = 4\)</span>.  We have</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L}\left[e^{2t}\sin(4t)\right](s) = \frac{4}{(s-2)^2 + 4^2}
 \]</div>
-<p>Then we get</p>
+<p>This is similar to ours, but the numerator is off by a factor of <span class="math notranslate nohighlight">\(2\)</span>.  So we need to modify <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> so that it looks like a constant times <span class="math notranslate nohighlight">\(\frac{4}{(s-2)^2 + 4^2}\)</span>.  We get</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
  f(t) &amp;= \mathcal{L}^{-1} [\tilde{f}(s)](t)\\
@@ -597,7 +600,7 @@ f(t) &amp;= \mathcal{L}^{-1} [\tilde{f}(s)](t)\\
 <p>Notice that in order to get a numerator of <span class="math notranslate nohighlight">\(4\)</span> (which is required to match the function appearing in the transform column of the Table) we had to factor out a <span class="math notranslate nohighlight">\(1/2\)</span>, or equivalently multiply by <span class="math notranslate nohighlight">\(2/2\)</span>.  We conclude that</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{1}{2} e^{2t} \sin(4t) = \mathcal{L}^{-1}\left[\frac{8}{(s-2)^2 + 16}\right](t)
+\frac{1}{2} e^{2t} \sin(4t) = \mathcal{L}^{-1}\left[\frac{2}{(s-2)^2 + 16}\right](t)
 \]</div>
 </section>
 </div></section>
@@ -658,7 +661,7 @@ f(t) &amp;= \mathcal{L}^{-1} [\tilde{f}(s)](t)\\
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.4. </span>The Laplace Transform and Discontinuous Functions</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>The <span class="math notranslate nohighlight">\(t\)</span>-shift: Laplace Transforms and Discontinuous Functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -698,7 +701,7 @@ f(t) &amp;= \mathcal{L}^{-1} [\tilde{f}(s)](t)\\
   <div class="footer-item">
     
 <p class="component-author">
-By LaTrobe University MAPS staff (present and past)
+By La Trobe University MAPS staff (present and past)
 </p>
 
   </div>

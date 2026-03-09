@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Vector Calculus - MAT2VCA
-author: LaTrobe University MAPS staff (present and past)
+author: La Trobe University MAPS staff (present and past)
 logo: logo.png
 
 # Force re-execution of notebooks on each build.

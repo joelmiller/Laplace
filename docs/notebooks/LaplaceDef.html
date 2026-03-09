@@ -184,10 +184,10 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite Information</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../prereqs/PrereqIntro.html">1. Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../prereqs/PrereqIntro.html">Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../prereqs/Squares.html">Squares</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prereqs/EqualsSign.html">1.3. The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../prereqs/AlgebraReview.html">1.4. How to improve your prerequisite skills</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prereqs/EqualsSign.html">The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prereqs/AlgebraReview.html">How to improve your prerequisite skills</a></li>
 </ul>
 </details></li>
 </ul>
@@ -462,7 +462,7 @@ document.write(`
 </section>
 <section id="introduction">
 <h2><span class="section-number">1.2.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>The Laplace Transform is an operation that converts a function <span class="math notranslate nohighlight">\(f(t)\)</span> of (non-negative) time <span class="math notranslate nohighlight">\(t \geq 0\)</span> into a function <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> of a new variable <span class="math notranslate nohighlight">\(s\)</span>  The properties of the Laplace Transform mean that if we take the Laplace Transform of both sides of the <em>differential equation</em> for <span class="math notranslate nohighlight">\(f(t)\)</span>, Equation <a class="reference internal" href="LaplaceIntro.html#equation-eq-basic-driven-ode">(1.1)</a>, then the result is a new <em>algebraic equation</em> for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.</p>
+<p>The Laplace Transform is an operation that converts a function <span class="math notranslate nohighlight">\(f(t)\)</span> of (non-negative) time <span class="math notranslate nohighlight">\(t \geq 0\)</span> into a function <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> of a new variable <span class="math notranslate nohighlight">\(s\)</span>.  The properties of the Laplace Transform mean that if we take the Laplace Transform of both sides of the <em>differential equation</em> for <span class="math notranslate nohighlight">\(f(t)\)</span>, Equation <a class="reference internal" href="LaplaceIntro.html#equation-eq-basic-driven-ode">(1.1)</a>, then the result is a new <em>algebraic equation</em> for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.</p>
 <p>Once we solve this algebraic equation and find <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> we will be able to invert the transform to find <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
 <figure class="align-default" id="fig-laplace-solution-diagram">
 <a class="reference internal image-reference" href="../_images/Laplace_solution_diagram.png"><img alt="../_images/Laplace_solution_diagram.png" src="../_images/Laplace_solution_diagram.png" style="height: 250px;" />
@@ -484,7 +484,7 @@ document.write(`
 </section>
 </div><p>For some functions <span class="math notranslate nohighlight">\(f(t)\)</span> the Laplace Transform will only be defined for <span class="math notranslate nohighlight">\(s\)</span> above some threshold.  For other functions it may not be defined at all.</p>
 <p>We will use the notation <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> as a short-hand for <span class="math notranslate nohighlight">\(\mathcal{L}[f(t)](s)\)</span>.  Usually it will be easier to use <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>, but sometimes the longer notation with <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is used, especially if we are dealing with the transform of the sum or product of two functions.</p>
-<p>We usually won’t use the definition of the Laplace Transform to find the Laplace Transform of a function.  Just like we don’t usually use the definition of the derivative to compute a derivative, but rather we use a set of derivative rules, we will create a table of  Laplace Transforms rules to use.</p>
+<p>We usually won’t use the definition of the Laplace Transform to find the Laplace Transform of a function.  Just like we don’t usually use the definition of the derivative to compute a derivative, but rather we use a set of derivative rules, we will create a table of  Laplace Transform rules to use.</p>
 </section>
 <section id="introductory-example">
 <h2><span class="section-number">1.2.3. </span>Introductory example<a class="headerlink" href="#introductory-example" title="Link to this heading">#</a></h2>
@@ -508,7 +508,7 @@ Before we try to find <span class="math notranslate nohighlight">\(\mathcal{L}[e
 <p>From the plot below, we see that despite having an infinite domain <span class="math notranslate nohighlight">\(0 \leq t &lt; \infty\)</span> the product <span class="math notranslate nohighlight">\(f(t)e^{-3t}\)</span> decays so quickly to <span class="math notranslate nohighlight">\(0\)</span> that the area appears finite.  We can calculate it exactly.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-\int_0^\infty  f(t) e^{-3t} \, dt = &amp;= \lim_{b\to\infty} \int_0^b  f(t) e^{-3t} \, dt \\
+\int_0^\infty  f(t) e^{-3t} \, dt &amp;= \lim_{b\to\infty} \int_0^b  f(t) e^{-3t} \, dt \\
 &amp;=\lim_{b\to\infty} \int_0^b e^{-t} e^{-3t} \, dt \\
 &amp;= \lim_{b\to \infty} \int_0^b e^{-4t}  \, dt\\
 &amp;= \lim_{b\to \infty} \left. - \frac{1}{4}e^{-4t} \right|_{t=0}^b\\
@@ -527,14 +527,13 @@ Before we try to find <span class="math notranslate nohighlight">\(\mathcal{L}[e
 <p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">51</span><span class="p">);</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">51</span><span class="p">);</span>
+<span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">);</span>
 
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="o">.*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">area</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="o">.*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">),</span>  <span class="s2">&quot;FaceColor&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="w"> </span><span class="n">color</span><span class="p">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span>
+<span class="nb">area</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="w">  </span><span class="s">&quot;FaceColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">);</span>
 
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -558,11 +557,11 @@ Before we try to find <span class="math notranslate nohighlight">\(\mathcal{L}[e
 &amp;= \lim_{b\to \infty} \int_0^b e^{-(s+1)t}  \, dt\\
 &amp;= \begin{cases}
 \displaystyle \lim_{b\to \infty} \left. - \frac{1}{s+1}e^{-(s+1)t} \right|_{t=0}^b &amp; s\neq -1\\
-\displaystyle \lim_{b\to \infty} t|_{t=0}^b &amp; s=1
+\displaystyle \lim_{b\to \infty} t|_{t=0}^b &amp; s=-1
 \end{cases}\\
 &amp;= \begin{cases}
-\displaystyle \lim_{b\to \infty}  -\frac{1}{s+1} e^{-(s+1) b}  - \left( - \frac{1}{s+1} e^0 \right) &amp; s \neq 1\\
-\displaystyle \lim_{b\to \infty} b  &amp; s = 1
+\displaystyle \lim_{b\to \infty}  -\frac{1}{s+1} e^{-(s+1) b}  - \left( - \frac{1}{s+1} e^0 \right) &amp; s \neq -1\\
+\displaystyle \lim_{b\to \infty} b  &amp; s = -1
 \end{cases}\\
 &amp;= \begin{cases}
 \frac{1}{s+1} &amp; \text{if $s&gt;-1$}\\
@@ -579,21 +578,20 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 <p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">this</span> <span class="n">cell</span> <span class="n">uses</span> <span class="n">the</span> <span class="n">same</span> <span class="n">t</span> <span class="ow">and</span> <span class="n">f</span> <span class="k">as</span> <span class="n">the</span> 
-<span class="o">%</span> <span class="n">previous</span> <span class="n">code</span> <span class="n">cell</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% this cell uses the same t and f as the </span>
+<span class="c">% previous code cell</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">51</span><span class="p">);</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">);</span>
+<span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">51</span><span class="p">);</span>
+<span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">);</span>
 
-<span class="k">for</span> <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="n">label</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;$s=&#39;</span> <span class="n">num2str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="s1">&#39;$&#39;</span><span class="p">];</span>
-    <span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="o">.*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">s</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;DisplayName&#39;</span><span class="p">,</span> <span class="n">label</span><span class="p">);</span>
-    <span class="n">hold</span> <span class="n">on</span>
-<span class="n">end</span>
-<span class="n">legend</span><span class="p">()</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;$f(t) e^{-st}$&#39;</span><span class="p">,</span> <span class="s1">&#39;Interpreter&#39;</span><span class="p">,</span> <span class="s1">&#39;latex&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-
+<span class="k">for</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
+<span class="w">    </span><span class="n">label</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;$s=&#39;</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="s">&#39;$&#39;</span><span class="p">];</span>
+<span class="w">    </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">s</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;DisplayName&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="p">);</span>
+<span class="w">    </span><span class="n">hold</span><span class="w"> </span><span class="s">on</span>
+<span class="k">end</span>
+<span class="nb">legend</span><span class="p">()</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;$f(t) e^{-st}$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -611,19 +609,30 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 <p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1001</span><span class="p">);</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">s</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="n">end</span><span class="p">),</span> <span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="n">end</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Laplace Transform $</span><span class="se">\t</span><span class="s1">ilde</span><span class="si">{f}</span><span class="s1">(s)=1/(s+1)$&#39;</span><span class="p">,</span> <span class="s1">&#39;Interpreter&#39;</span><span class="p">,</span> <span class="s1">&#39;latex&#39;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1001</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">s</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="o">./</span><span class="p">(</span><span class="n">s</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+<span class="nb">title</span><span class="p">(</span><span class="n">r</span><span class="o">&#39;</span><span class="n">Laplace</span><span class="w"> </span><span class="n">Transform</span><span class="w"> </span>$<span class="o">\</span><span class="n">tilde</span><span class="p">{</span><span class="n">f</span><span class="p">}(</span><span class="n">s</span><span class="p">)=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>$<span class="s">&#39;, &#39;</span><span class="n">Interpreter</span><span class="o">&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f3b1a25c59af1f84509291fdde02b62f2cb717cd4b3d25f5a884162a29bf465e.png" src="../_images/f3b1a25c59af1f84509291fdde02b62f2cb717cd4b3d25f5a884162a29bf465e.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Invalid expression. Check for missing multiplication operator, missing or unbalanced delimiters, or other syntax error. To construct matrices, use brackets instead of parentheses.
+
+Error in jupyter.execute (line 58)
+resp = jsondecode(matlab.internal.editor.evaluateSynchronousRequest(request));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in processJupyterKernelRequest (line 54)
+            output = jupyter.execute(code, kernelId);
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
 </div>
 </div>
-<p>We have been careful using limits to handle the terminal at infinity.  We will now use a shortcut.  We will allow <span class="math notranslate nohighlight">\(\infty\)</span> to appear in our equations without formally writing out the limit.  If we do this, then any finite number divided by <span class="math notranslate nohighlight">\(\infty\)</span> is <span class="math notranslate nohighlight">\(0\)</span>.  As long as only one thing in our equations ends up going to infinity, this shortcut is okay to use,.  However, if we encounter things like <span class="math notranslate nohighlight">\(\infty/\infty\)</span> or <span class="math notranslate nohighlight">\(\infty-\infty\)</span>, then we need to back up and use the limits carefully.</p>
+</div>
+<p>We have been careful using limits to handle the terminal at infinity.  We will now use a shortcut.  We will allow <span class="math notranslate nohighlight">\(\infty\)</span> to appear in our equations without formally writing out the limit.  If we do this, then any finite number divided by <span class="math notranslate nohighlight">\(\infty\)</span> is <span class="math notranslate nohighlight">\(0\)</span>.  As long as only one thing in our equations ends up going to infinity, this shortcut is okay to use.  However, if we encounter things like <span class="math notranslate nohighlight">\(\infty/\infty\)</span> or <span class="math notranslate nohighlight">\(\infty-\infty\)</span>, then we need to back up and use the limits carefully.</p>
 </section>
 </section>
 <section id="examples">
@@ -636,9 +645,10 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 \[\begin{align*}
 \tilde{f}(s) &amp;= \int_0^\infty e^t e^{-st} \, dt \\
  &amp;= \int_0^\infty e^{(1-s)t} \, dt\\
- &amp;= \left. \frac{1}{1-s} e^{(1-s)t} \right|_{t=0}^\infty\\
- &amp;= \frac{1}{1-s} \left( e^{(1-s)\infty} - e^0\right)\\
- &amp;= \frac{1}{s-1} \left( 1- e^{(1-s)\infty}\right)\\
+ &amp;= \left. \frac{1}{1-s} e^{(1-s)t} \right|_{t=0}^\infty \qquad \text{if } s\neq 1\\
+ &amp;= \frac{1}{1-s} \left( e^{(1-s)\infty} - e^0\right) \qquad \text{if } s\neq 1\\
+ &amp;= \frac{1}{1-s} \left( e^{(1-s)\infty} - 1 \right) \qquad \text{if } s\neq 1\\
+ &amp;= \frac{1}{s-1} \left( 1- e^{(1-s)\infty}\right)\qquad \text{if } s\neq 1\\
  &amp;=  \frac{1}{s-1}  \qquad \text{if } s&gt;1
 \end{align*}\]</div>
 </section>
@@ -679,7 +689,7 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 \[\begin{align*}
 \int_a^b u(t) v'(t) \, dt = u(t) v(t) |_{t=a}^b - \int_a^b u'(t)v(t) \, dt
 \end{align*}\]</div>
-<p>so integration be parts has the effect of converting the original integral into a term that just involves the end points and a new integral that takes a derivative away from <span class="math notranslate nohighlight">\(v\)</span> (i.e., integrating <span class="math notranslate nohighlight">\(v'\)</span>) and moves it to <span class="math notranslate nohighlight">\(u\)</span> (i.e., differentiating <span class="math notranslate nohighlight">\(u\)</span>).</p>
+<p>so integration by parts has the effect of converting the original integral into a term that just involves the end points and a new integral that takes a derivative away from <span class="math notranslate nohighlight">\(v\)</span> (i.e., integrating <span class="math notranslate nohighlight">\(v'\)</span>) and moves it to <span class="math notranslate nohighlight">\(u\)</span> (i.e., differentiating <span class="math notranslate nohighlight">\(u\)</span>).</p>
 <p>In our case, we set <span class="math notranslate nohighlight">\(u(t) = \cos(4t)\)</span> and <span class="math notranslate nohighlight">\(v'(t) = e^{-st}\)</span>.  If we integrate by parts twice (details not shown), we end up with</p>
 <div class="math notranslate nohighlight">
 \[
@@ -702,7 +712,7 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
 \[\begin{align*}
 \mathcal{L}[f(t)](s) &amp;= \int_0^\infty f(t) e^{-st} \, dt\\
                      &amp;= \int_0^2 f(t) e^{-st} \, dt + \int_2^\infty f(t) e^{-st} \, dt\\
-                     &amp;= \int_0^2 0 \, dt + \int_2^\infty e^{-st} \, dt\\
+                     &amp;= \int_0^2 0 e^{-st}\, dt + \int_2^\infty e^{-st} \, dt\\
                      &amp;= 0 + \left[ \frac{1}{-s} e^{-st} \right|_{t=2}^\infty \\
                      &amp;= \frac{e^{-2s}}{s} &amp; s&gt;0
 \end{align*}\]</div>
@@ -859,7 +869,7 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
   <div class="footer-item">
     
 <p class="component-author">
-By LaTrobe University MAPS staff (present and past)
+By La Trobe University MAPS staff (present and past)
 </p>
 
   </div>
