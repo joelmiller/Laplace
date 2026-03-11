@@ -611,25 +611,16 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1001</span><span class="p">);</span>
 <span class="nb">plot</span><span class="p">(</span><span class="n">s</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="o">./</span><span class="p">(</span><span class="n">s</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
-<span class="nb">title</span><span class="p">(</span><span class="n">r</span><span class="o">&#39;</span><span class="n">Laplace</span><span class="w"> </span><span class="n">Transform</span><span class="w"> </span>$<span class="o">\</span><span class="n">tilde</span><span class="p">{</span><span class="n">f</span><span class="p">}(</span><span class="n">s</span><span class="p">)=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>$<span class="s">&#39;, &#39;</span><span class="n">Interpreter</span><span class="o">&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Laplace Transform $\tilde{f}(s)=1/(s+1)$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$s$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$\tilde{f}(s)$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Invalid expression. Check for missing multiplication operator, missing or unbalanced delimiters, or other syntax error. To construct matrices, use brackets instead of parentheses.
-
-Error in jupyter.execute (line 58)
-resp = jsondecode(matlab.internal.editor.evaluateSynchronousRequest(request));
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error in processJupyterKernelRequest (line 54)
-            output = jupyter.execute(code, kernelId);
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Error in connector.internal.fevalMatlab
-
-Error in connector.internal.fevalJSON
-</pre></div>
-</div>
+<img alt="../_images/03a43dfc1a70e53517777a6e993b4a01e87e6f700c74b5ff080211e4ab9c0b07.png" src="../_images/03a43dfc1a70e53517777a6e993b4a01e87e6f700c74b5ff080211e4ab9c0b07.png" />
 </div>
 </div>
 <p>We have been careful using limits to handle the terminal at infinity.  We will now use a shortcut.  We will allow <span class="math notranslate nohighlight">\(\infty\)</span> to appear in our equations without formally writing out the limit.  If we do this, then any finite number divided by <span class="math notranslate nohighlight">\(\infty\)</span> is <span class="math notranslate nohighlight">\(0\)</span>.  As long as only one thing in our equations ends up going to infinity, this shortcut is okay to use.  However, if we encounter things like <span class="math notranslate nohighlight">\(\infty/\infty\)</span> or <span class="math notranslate nohighlight">\(\infty-\infty\)</span>, then we need to back up and use the limits carefully.</p>
@@ -789,16 +780,16 @@ f(t) = \begin{cases} 0 &amp; t&lt; 2\\ 1 &amp; t \geq 2 \end{cases}
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "jupyter_matlab_kernel"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "jupyter_matlab_kernel",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
 
                 </article>
               
