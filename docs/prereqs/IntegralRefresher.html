@@ -1,0 +1,1871 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Integration Refresher &#8212; Vector Calculus - MAT2VCA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'prereqs/IntegralRefresher';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Laplace Transforms and Differential Equations" href="../notebooks/LaplaceIntro.html" />
+    <link rel="prev" title="How to improve your prerequisite skills" href="AlgebraReview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Vector Calculus - MAT2VCA - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Vector Calculus - MAT2VCA - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    MAT2VCA - Vector Calculus
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite Information</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="PrereqIntro.html">Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Squares.html">Squares</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EqualsSign.html">The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="AlgebraReview.html">How to improve your prerequisite skills</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Integration Refresher</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTShift.html">1.4. The <span class="math notranslate nohighlight">\(t\)</span>-shift: Laplace Transforms and Discontinuous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceExtra.html">1.9. Optional Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">2.1. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">2.2. Extensions to Lagrange Multipliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">3. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegrals.html">3.1. Multiple Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegralsDefineRegion.html">3.2. Systematically finding the terminals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ComputerLabs/LabIntro.html">4. Computer Labs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2001.html">4.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2002.html">4.2. MAT2VCA Computer Lab 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2003.html">4.3. MAT2VCA Computer Lab 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2004.html">4.5. MAT2VCA Computer Lab 4: stationary points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2005.html">4.6. Cylindrical Coordinates and Unit Vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2006.html">4.7. The Gradient in non-Cartesian Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2007.html">4.8. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2008.html">4.9. Computer Lab 08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2009.html">4.10. Computer Lab 09  –   Work done moving through a vector field.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2011.html">4.11. Computer Lab 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2012.html">4.12. Computer Lab 12</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2Fprereqs/IntegralRefresher.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/prereqs/IntegralRefresher.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Integration Refresher</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-an-indefinite-integral-means">What an indefinite integral means</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-answer">Check your answer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definite-integrals-and-riemann-sums">Definite integrals and Riemann sums</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#riemann-sum-idea">Riemann sum idea</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-approximation">Improving the approximation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-riemann-sums-matter-later">Why Riemann sums matter later</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">Self-test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-power-rule-for-integration">The power rule for integration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-error">Common error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-special-case-int-frac-1-x-dx">The special case <span class="math notranslate nohighlight">\(\int \frac{1}{x}\,dx\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-expressions-before-integrating">Rewrite expressions before integrating</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#roots-as-fractional-powers">Roots as fractional powers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fractions-as-negative-powers">Fractions as negative powers}</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#split-sums-term-by-term">Split sums term by term</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-algebraically-before-integrating">Simplify algebraically before integrating</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Self test:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substitution">Substitution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-pattern">Basic pattern</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check">Check</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Self test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts">Integration by parts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-table-method-for-integration-by-parts">The table method for integration by parts</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-terminating-table">Example: a terminating table</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-table-where-the-integral-repeats">Example: a table where the integral repeats</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Self Test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-fractions">Partial fractions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-partial-fractions">When to use partial fractions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-the-degree-of-the-numerator-geq-the-degree-of-the-denominator">When the degree of the numerator <span class="math notranslate nohighlight">\(\geq\)</span> the degree of the denominator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Self test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-method">Choosing a method</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="integration-refresher">
+<h1>Integration Refresher<a class="headerlink" href="#integration-refresher" title="Link to this heading">#</a></h1>
+<p>This refresher is about integration skills you are expected to bring into multivariable calculus.  The goal is to remind you of integration concepts you learned previously to make sure you can confidently handle the one-variable integration steps that will appear inside multivariable problems.</p>
+<p>By the end, you should be comfortable with:</p>
+<ul class="simple">
+<li><p>Simplifying an expression before integrating;</p></li>
+<li><p>Using the power rule for indefinite integrals;</p></li>
+<li><p>Recognising when logarithms appear;</p></li>
+<li><p>Using substitution;</p></li>
+<li><p>Using integration by parts;</p></li>
+<li><p>Understanding definite integrals as limits of Riemann sums;</p></li>
+<li><p>Checking whether your answer differentiates back to the integrand.</p></li>
+</ul>
+<section id="what-an-indefinite-integral-means">
+<h2>What an indefinite integral means<a class="headerlink" href="#what-an-indefinite-integral-means" title="Link to this heading">#</a></h2>
+<p>An indefinite integral asks for an antiderivative.</p>
+<p>If</p>
+<div class="math notranslate nohighlight">
+\[
+F'(x)=f(x),
+\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[
+\int f(x)\,dx = F(x)+C.
+\]</div>
+<p>The constant <span class="math notranslate nohighlight">\(C\)</span> is important because many different functions have the same derivative. For example,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}\left(x^3+7\right)=3x^2
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}\left(x^3-100\right)=3x^2.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\int 3x^2\,dx=x^3+C.
+\]</div>
+<section id="check-your-answer">
+<h3>Check your answer<a class="headerlink" href="#check-your-answer" title="Link to this heading">#</a></h3>
+<p>The simplest way to check an indefinite integral is to differentiate your result.</p>
+<p>Example:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x^2\,dx=\frac{x^3}{3}+C.
+\]</div>
+<p>Check:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}\left(\frac{x^3}{3}+C\right)=x^2.
+\]</div>
+</section>
+</section>
+<section id="definite-integrals-and-riemann-sums">
+<h2>Definite integrals and Riemann sums<a class="headerlink" href="#definite-integrals-and-riemann-sums" title="Link to this heading">#</a></h2>
+<p>Before learning double and triple integrals, it is important to remember what a one-variable definite integral means.</p>
+<p>A definite integral</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x)\,dx
+\]</div>
+<p>can be interpreted as the signed area between the graph of <span class="math notranslate nohighlight">\(f(x)\)</span> and the <span class="math notranslate nohighlight">\(x\)</span>-axis from <span class="math notranslate nohighlight">\(x=a\)</span> to <span class="math notranslate nohighlight">\(x=b\)</span>. We use a ``signed area’’ meaning:</p>
+<ul class="simple">
+<li><p>Area above the <span class="math notranslate nohighlight">\(x\)</span>-axis contributes positively.</p></li>
+<li><p>Area below the <span class="math notranslate nohighlight">\(x\)</span>-axis contributes negatively.</p></li>
+</ul>
+<section id="riemann-sum-idea">
+<h3>Riemann sum idea<a class="headerlink" href="#riemann-sum-idea" title="Link to this heading">#</a></h3>
+<p>To estimate the area under a curve, divide the interval <span class="math notranslate nohighlight">\([a,b]\)</span> into many small pieces. If each piece has width <span class="math notranslate nohighlight">\(\Delta x\)</span>, and <span class="math notranslate nohighlight">\(x_i^*\)</span> is a sample point in the <span class="math notranslate nohighlight">\(i\)</span> th piece, then</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^n f(x_i^*)\Delta x
+\]</div>
+<p>approximates the area.</p>
+<p>In this subject, we will use the <strong>left endpoint</strong> of each interval for <span class="math notranslate nohighlight">\(x_i\)</span> unless stated otherwise.</p>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h4>
+<p>Approximate</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^2 x^2\,dx
+\]</div>
+<p>using <span class="math notranslate nohighlight">\(n=4\)</span> rectangles.
+Here</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta x=\frac{2-0}{4}=\frac{1}{2}.
+\]</div>
+<p>The left endpoints are</p>
+<div class="math notranslate nohighlight">
+\[
+0, \frac{1}{2}, 1, \frac{3}{2}.
+\]</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Plot f(x) = x^2 on [0,2] and illustrate the left-endpoint</span>
+<span class="c">% Riemann sum using n = 4 rectangles.</span>
+<span class="c">%</span>
+<span class="c">% Each rectangle is labelled with its area.</span>
+
+
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+
+<span class="n">Delta_x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">;</span>
+
+<span class="c">% Left endpoints</span>
+<span class="n">x_left</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Delta_x</span><span class="p">;</span>
+
+<span class="c">% Function values at the left endpoints</span>
+<span class="n">heights</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x_left</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+
+<span class="c">% Areas of the rectangles</span>
+<span class="n">areas</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">heights</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Delta_x</span><span class="p">;</span>
+
+<span class="c">% Riemann sum</span>
+<span class="n">riemann_sum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="n">areas</span><span class="p">);</span>
+
+<span class="c">% Plot the function</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="mi">400</span><span class="p">);</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+
+<span class="n">figure</span>
+<span class="s">hold</span><span class="w"> </span><span class="s">on</span>
+<span class="nb">grid</span><span class="w"> </span><span class="n">on</span>
+
+<span class="c">% Draw rectangles first</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">n</span>
+<span class="w">    </span><span class="n">left</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x_left</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">height</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">heights</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">area</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">areas</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nb">rectangle</span><span class="p">(</span><span class="s">&#39;Position&#39;</span><span class="p">,[</span><span class="n">left</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">Delta_x</span><span class="p">,</span><span class="nb">height</span><span class="p">],</span><span class="w"> </span><span class="k">...</span>
+<span class="w">              </span><span class="s">&#39;FaceColor&#39;</span><span class="p">,[</span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.9</span><span class="w"> </span><span class="mf">1.0</span><span class="p">],</span><span class="w"> </span><span class="k">...</span>
+<span class="w">              </span><span class="s">&#39;EdgeColor&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">% Label each rectangle by its area.</span>
+<span class="w">    </span><span class="c">% For the first rectangle the height is 0, so place the label slightly above the axis.</span>
+<span class="w">    </span><span class="n">label_x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Delta_x</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">label_y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="nb">height</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">0.08</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nb">text</span><span class="p">(</span><span class="n">label_x</span><span class="p">,</span><span class="n">label_y</span><span class="p">,</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;Area = %.3g&#39;</span><span class="p">,</span><span class="nb">area</span><span class="p">),</span><span class="w"> </span><span class="k">...</span>
+<span class="w">         </span><span class="s">&#39;HorizontalAlignment&#39;</span><span class="p">,</span><span class="s">&#39;center&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="w">         </span><span class="s">&#39;VerticalAlignment&#39;</span><span class="p">,</span><span class="s">&#39;middle&#39;</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c">% Plot the curve on top of the rectangles</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c">% Plot the x-axis</span>
+<span class="nb">plot</span><span class="p">([</span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="p">],[</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$$f(x)$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;The function $f(x) = x^2$ on $[0,2]$ and Riemann rectangles for $\Delta x = 0.5$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;The Riemann sum is %.4f.\n&#39;</span><span class="p">,</span><span class="n">riemann_sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/3cdce7039d79885c00fea0ed9531c7b7ce3373f02bbcd84dd7270886f69b2eeb.png" src="../_images/3cdce7039d79885c00fea0ed9531c7b7ce3373f02bbcd84dd7270886f69b2eeb.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Riemann sum is 1.7500.
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the Riemann sum is</p>
+<div class="math notranslate nohighlight">
+\[
+\left[0^2+\left(\frac{1}{2}\right)^2+1^2+\left(\frac{3}{2}\right)^2\right]\frac{1}{2}.
+\]</div>
+<p>That is</p>
+<div class="math notranslate nohighlight">
+\[
+\left(0+\frac{1}{4}+1+\frac{9}{4}\right)\frac{1}{2}
+=\frac{7}{2}\cdot\frac{1}{2}
+=\frac{7}{4}.
+\]</div>
+</section>
+<section id="improving-the-approximation">
+<h4>Improving the approximation<a class="headerlink" href="#improving-the-approximation" title="Link to this heading">#</a></h4>
+<p>The definite integral is the limit of these sums as the pieces become thinner:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x)\,dx = \lim_{\Delta x\to 0}\sum_{i=1}^n f(x_i^*)\Delta x.
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[
+n \Delta x=b-a.
+\]</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Plot f(x) = x^2 on [0,2] and illustrate the left-endpoint</span>
+<span class="c">% Riemann sum using n = 4 rectangles.</span>
+<span class="c">%</span>
+<span class="c">% Each rectangle is labelled with its area.</span>
+
+
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+
+<span class="n">Delta_x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">;</span>
+
+<span class="c">% Left endpoints</span>
+<span class="n">x_left</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Delta_x</span><span class="p">;</span>
+
+<span class="c">% Function values at the left endpoints</span>
+<span class="n">heights</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x_left</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+
+<span class="c">% Areas of the rectangles</span>
+<span class="n">areas</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">heights</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Delta_x</span><span class="p">;</span>
+
+<span class="c">% Riemann sum</span>
+<span class="n">riemann_sum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="n">areas</span><span class="p">);</span>
+
+<span class="c">% Plot the function</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="mi">400</span><span class="p">);</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+
+<span class="n">figure</span>
+<span class="s">hold</span><span class="w"> </span><span class="s">on</span>
+<span class="nb">grid</span><span class="w"> </span><span class="n">on</span>
+
+<span class="c">% Draw rectangles first</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">n</span>
+<span class="w">    </span><span class="n">left</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x_left</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">height</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">heights</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">area</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">areas</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nb">rectangle</span><span class="p">(</span><span class="s">&#39;Position&#39;</span><span class="p">,[</span><span class="n">left</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">Delta_x</span><span class="p">,</span><span class="nb">height</span><span class="p">],</span><span class="w"> </span><span class="k">...</span>
+<span class="w">              </span><span class="s">&#39;FaceColor&#39;</span><span class="p">,[</span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.9</span><span class="w"> </span><span class="mf">1.0</span><span class="p">],</span><span class="w"> </span><span class="k">...</span>
+<span class="w">              </span><span class="s">&#39;EdgeColor&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">% Label each rectangle by its area.</span>
+<span class="w">    </span><span class="c">% For the first rectangle the height is 0, so place the label slightly above the axis.</span>
+<span class="w">    </span><span class="n">label_x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Delta_x</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">label_y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="nb">height</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">0.08</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nb">text</span><span class="p">(</span><span class="n">label_x</span><span class="p">,</span><span class="n">label_y</span><span class="p">,</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;Area =\n %.3g&#39;</span><span class="p">,</span><span class="nb">area</span><span class="p">),</span><span class="w"> </span><span class="k">...</span>
+<span class="w">         </span><span class="s">&#39;HorizontalAlignment&#39;</span><span class="p">,</span><span class="s">&#39;center&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="w">         </span><span class="s">&#39;VerticalAlignment&#39;</span><span class="p">,</span><span class="s">&#39;middle&#39;</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c">% Plot the curve on top of the rectangles</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c">% Plot the x-axis</span>
+<span class="nb">plot</span><span class="p">([</span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="p">],[</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$f(x)$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;The function $f(x) = x^2$ on $[0,2]$ and Riemann rectangles for smaller $\Delta x$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;The Riemann sum is %.4f.\n&#39;</span><span class="p">,</span><span class="n">riemann_sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/6ce7c6e15cd9f927dd41b46b91af358da8bf9bfac0edbe8177b5aa3dfccd411c.png" src="../_images/6ce7c6e15cd9f927dd41b46b91af358da8bf9bfac0edbe8177b5aa3dfccd411c.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Riemann sum is 2.2800.
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a better approximation than with <span class="math notranslate nohighlight">\(\Delta x  = 0.5\)</span>, but it is not exact. The exact value is</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^2 x^2\,dx=\left[\frac{x^3}{3}\right]_0^2=\frac{8}{3}.
+\]</div>
+<p>We can compare the approximation with the exact value as we increase the number of rectangles. As <span class="math notranslate nohighlight">\(n\)</span> increases, the rectangles become thinner, and the Riemann sum should get closer to the definite integral.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Plot how the left-endpoint Riemann sum changes as n increases,</span>
+<span class="c">% and plot the absolute error on a log scale.</span>
+
+
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="n">exact_value</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">8</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+
+<span class="n">n_values</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">100</span><span class="p">;</span>
+<span class="n">Delta_x_values</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">./</span><span class="n">n_values</span><span class="p">;</span>
+<span class="n">riemann_sums</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">n_values</span><span class="p">));</span>
+<span class="n">abs_errors</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">n_values</span><span class="p">));</span>
+
+<span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">n_values</span><span class="p">)</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">n_values</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Delta_x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Delta_x_values</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+<span class="w">    </span><span class="n">x_left</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Delta_x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">riemann_sums</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="n">x_left</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">Delta_x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">abs_errors</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">exact_value</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">riemann_sums</span><span class="p">(</span><span class="n">k</span><span class="p">));</span>
+<span class="k">end</span>
+
+<span class="nb">figure</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">Delta_x_values</span><span class="p">,</span><span class="n">riemann_sums</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">Delta_x_values</span><span class="p">,</span><span class="n">exact_value</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">Delta_x_values</span><span class="p">)),</span><span class="s">&#39;--&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Rectangle Width  $\Delta x$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Approximation&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Riemann sums approach the exact value as $\Delta x \to 0$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&#39;Riemann sum&#39;</span><span class="p">,</span><span class="s">&#39;Exact value&#39;</span><span class="p">,</span><span class="s">&#39;Location&#39;</span><span class="p">,</span><span class="s">&#39;southeast&#39;</span><span class="p">)</span>
+<span class="nb">grid</span><span class="w"> </span><span class="n">on</span>
+
+<span class="nb">figure</span>
+<span class="nb">loglog</span><span class="p">(</span><span class="n">Delta_x_values</span><span class="p">,</span><span class="n">abs_errors</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Rectangle Width  $\Delta x$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;|Error|&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Riemann sum error goes to $0$ as $\Delta x \to 0$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">grid</span><span class="w"> </span><span class="n">on</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/3f7e36b331c7ec7d2c75ab7121a5978d15e9182a3d6e4977f0762b70d66e4304.png" src="../_images/3f7e36b331c7ec7d2c75ab7121a5978d15e9182a3d6e4977f0762b70d66e4304.png" />
+<img alt="../_images/ecc0ff11898d631d0a731966c53c76242ba14d1ccd374f5d65b839eebd0545a2.png" src="../_images/ecc0ff11898d631d0a731966c53c76242ba14d1ccd374f5d65b839eebd0545a2.png" />
+</div>
+</div>
+</section>
+<section id="why-riemann-sums-matter-later">
+<h4>Why Riemann sums matter later<a class="headerlink" href="#why-riemann-sums-matter-later" title="Link to this heading">#</a></h4>
+<p>In multivariable calculus, double integrals and triple integrals are built from the same idea: divide a region into small pieces, approximate the contribution from each piece, add them up, and take a limit. For now, the key point is that an integral is not just a formula. It represents a limiting sum.</p>
+</section>
+</section>
+<section id="self-test">
+<h3>Self-test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Use Riemann sums to approximate the integral <span class="math notranslate nohighlight">\(\int_0^4 x^3-x^2 \, dx\)</span> with <span class="math notranslate nohighlight">\(\Delta x = 1\)</span> and <span class="math notranslate nohighlight">\(\Delta x = 0.5\)</span>.</p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Extension Questions</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">These are more advanced questions intended for students who want to go beyond what is required for the subject.</p>
+<p class="sd-card-text">The questions below are related to the accuracy of the approximation as <span class="math notranslate nohighlight">\(\Delta x\)</span> shrinks.</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">We want to understand the error in the Riemann sums</p>
+<ul class="simple">
+<li><p class="sd-card-text">Assume <span class="math notranslate nohighlight">\(f(x) = mx+b\)</span> is a straight line.  Find the error in the Riemann sum approximation of <span class="math notranslate nohighlight">\(\int_0^1 f(x)\, dx\)</span> in terms of <span class="math notranslate nohighlight">\(dx\)</span>.</p></li>
+<li><p class="sd-card-text">To more accurately estimate the error for other functions, write <span class="math notranslate nohighlight">\(f(x)\)</span> in an interval <span class="math notranslate nohighlight">\((x_i,x_i+\Delta x)\)</span> using a Taylor Series about <span class="math notranslate nohighlight">\(x_i\)</span>:<br />
+$<span class="math notranslate nohighlight">\(
+f(x) \approx f(x_i) + (x-x_i) f'(x_i) + \frac{(x-x_i)^2}{2} f''(x_i) + \cdots
+\)</span><span class="math notranslate nohighlight">\(
+Find the value of \)</span>\int_{x_i}^{x_i+\Delta x} f(x) , dx$ using this expansion.</p></li>
+<li><p class="sd-card-text">What is the leading order (in <span class="math notranslate nohighlight">\(\Delta x\)</span>) error between the calculated area and the approximation from the rectangle for the strip from <span class="math notranslate nohighlight">\(x_i\)</span> to <span class="math notranslate nohighlight">\(x_i+\Delta x\)</span>?</p></li>
+<li><p class="sd-card-text">Assuming <span class="math notranslate nohighlight">\(|f'(x)|&lt;k\)</span>, find a bound on the sums of the leading order errors over all strips in terms of <span class="math notranslate nohighlight">\(\Delta x\)</span>.</p></li>
+<li><p class="sd-card-text">Use this to explain the slope of the error in the log-log plot.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Consider what would happen if you used the midpoint rather than the left point of each interval to approximate the value of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<ul class="simple">
+<li><p class="sd-card-text">Explain visually why this should be more accurate.</p></li>
+<li><p class="sd-card-text">Assume <span class="math notranslate nohighlight">\(f(x) = mx+b\)</span> is a straight line.  Find the error in the Riemann sum approximation of <span class="math notranslate nohighlight">\(\int_0^1 f(x)\, dx\)</span> in terms of <span class="math notranslate nohighlight">\(dx\)</span>.</p></li>
+<li><p class="sd-card-text">To more accurately estimate the error for other functions, write <span class="math notranslate nohighlight">\(f(x)\)</span> in an interval <span class="math notranslate nohighlight">\((x_i,x_i+\Delta x)\)</span> using a Taylor Series about <span class="math notranslate nohighlight">\(\hat{x}_i = x_i + \frac{\Delta x}{2}\)</span>:<br />
+$<span class="math notranslate nohighlight">\(
+f(x) \approx f(\hat{x}_i) + (x-\hat{x}_i) f'(\hat{x}_i) + \frac{(x-\hat{x}_i)^2}{2} f''(\hat{x_i}) + \cdots
+\)</span><span class="math notranslate nohighlight">\(  
+Find the value of \)</span>\int_{x_i}^{x_i+\Delta x} f(x) , dx$ using this expansion.</p></li>
+<li><p class="sd-card-text">What is the leading order (in <span class="math notranslate nohighlight">\(\Delta x\)</span>) error between the calculated area and the rectangle approximation using the midpoint?</p></li>
+<li><p class="sd-card-text">Assuming <span class="math notranslate nohighlight">\(|f''(x)|&lt;k\)</span>, find a bound on the sums of the leading order errors.</p></li>
+<li><p class="sd-card-text">Predict the new slope of the error and check.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Consider what would happen with the “trapezoid” rule.  Rather than using a rectangle, we connect the two points <span class="math notranslate nohighlight">\((x_i, f(x_i))\)</span> and <span class="math notranslate nohighlight">\((x_{i+1}, f(x_{i+1}))\)</span> and connect them with a straight line.  The area of the resulting trapezoid is
+$<span class="math notranslate nohighlight">\( 
+A_i = \frac{f(x_{i+1})-f(x_i)}{2} \Delta x
+\)</span>$</p>
+<ul class="simple">
+<li><p class="sd-card-text">Explain visually why this should be more accurate.</p></li>
+<li><p class="sd-card-text">Assume <span class="math notranslate nohighlight">\(f(x) = mx+b\)</span> is a straight line.  Find the error in the Riemann sum approximation of <span class="math notranslate nohighlight">\(\int_0^1 f(x)\, dx\)</span> in terms of <span class="math notranslate nohighlight">\(dx\)</span>.</p></li>
+<li><p class="sd-card-text">To more accurately estimate the error for other functions, write</p></li>
+<li><p class="sd-card-text">Using a Taylor Series expansion about <span class="math notranslate nohighlight">\(x_i\)</span>, find the value of <span class="math notranslate nohighlight">\(f(x_{i+1})\)</span> in terms of <span class="math notranslate nohighlight">\(f\)</span> and its derivatives at <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(\Delta x\)</span>.</p></li>
+<li><p class="sd-card-text">Use this to write out the area of the trapezoid in term of <span class="math notranslate nohighlight">\(f\)</span> and derivatives at <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(\Delta x\)</span>.</p></li>
+<li><p class="sd-card-text">Integrate the Taylor Series expansion from <span class="math notranslate nohighlight">\(x_i\)</span> to <span class="math notranslate nohighlight">\(x_{i+1}\)</span> and find the leading order (in <span class="math notranslate nohighlight">\(\Delta x\)</span>) of the error.</p></li>
+<li><p class="sd-card-text">Assuming <span class="math notranslate nohighlight">\(|f''(x)|&lt;k\)</span>, find a bound on the sums of the leading order errors.</p></li>
+<li><p class="sd-card-text">Predict the new slope of the error and check.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</details></section>
+</section>
+<section id="the-power-rule-for-integration">
+<h2>The power rule for integration<a class="headerlink" href="#the-power-rule-for-integration" title="Link to this heading">#</a></h2>
+<p>For <span class="math notranslate nohighlight">\(n\neq -1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\int x^n\,dx=\frac{x^{n+1}}{n+1}+C.
+\]</div>
+<p>The exponent increases by <span class="math notranslate nohighlight">\(1\)</span>, and then we divide by the new exponent.</p>
+<p>Examples:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int x^4\,dx &amp;= \frac{x^5}{5}+C\\
+\int x\,dx &amp;= \frac{x^2}{2}+C\\
+\int 1\,dx &amp;= x+C\\
+\int x^{-2}\,dx&amp;=\frac{x^{-1}}{-1}+C=-\frac{1}{x}+C.
+\end{align*}\]</div>
+<section id="common-error">
+<h3>Common error<a class="headerlink" href="#common-error" title="Link to this heading">#</a></h3>
+<p>Integration <strong>should increase the exponent by 1 and divide by the final exponent</strong>.  In contrast, <strong>Decreasing the exponent by 1 and multiplying by the original exponent</strong> corresponds to differentiating.  Integration reverses differentiation.</p>
+</section>
+<section id="the-special-case-int-frac-1-x-dx">
+<h3>The special case <span class="math notranslate nohighlight">\(\int \frac{1}{x}\,dx\)</span><a class="headerlink" href="#the-special-case-int-frac-1-x-dx" title="Link to this heading">#</a></h3>
+<p>The power rule does not apply when <span class="math notranslate nohighlight">\(n=-1\)</span> (it would require division by zero).</p>
+<p>Instead,</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{1}{x}\,dx=\ln|x|+C.
+\]</div>
+<p>So if you see <span class="math notranslate nohighlight">\(x^{-1}\)</span> or <span class="math notranslate nohighlight">\(1/x\)</span>, expect a logarithm.</p>
+<p>Examples:
+$<span class="math notranslate nohighlight">\(
+\int \frac{2}{x}\,dx=2\ln|x|+C.
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+\int \left(x+\frac{2}{x}+\frac{1}{x^2}\right)dx
+=\frac{x^2}{2}+2\ln|x|-\frac{1}{x}+C.
+\]</div>
+</section>
+<section id="rewrite-expressions-before-integrating">
+<h3>Rewrite expressions before integrating<a class="headerlink" href="#rewrite-expressions-before-integrating" title="Link to this heading">#</a></h3>
+<p>Many integrals become easier after rewriting powers, roots, or fractions.</p>
+<section id="roots-as-fractional-powers">
+<h4>Roots as fractional powers<a class="headerlink" href="#roots-as-fractional-powers" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{x}=x^{1/2}.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\int \sqrt{x}\,dx=\int x^{1/2}\,dx=\frac{x^{3/2}}{3/2}+C=\frac{2}{3}x^{3/2}+C.
+\]</div>
+</section>
+<section id="fractions-as-negative-powers">
+<h4>Fractions as negative powers}<a class="headerlink" href="#fractions-as-negative-powers" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{x^2}=x^{-2}.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{1}{x^2}\,dx=\int x^{-2}\,dx=-x^{-1}+C=-\frac{1}{x}+C.
+\]</div>
+</section>
+<section id="split-sums-term-by-term">
+<h4>Split sums term by term<a class="headerlink" href="#split-sums-term-by-term" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\int \left(x^2+2x+\frac{1}{x^2}\right) \, dx
+=\int x^2\,dx+2\int x\,dx+\int x^{-2}\,dx.
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+\left(x^2+2x+\frac{1}{x^2}\right)\, dx=\frac{x^3}{3}+x^2-\frac{1}{x}+C.
+\]</div>
+</section>
+</section>
+<section id="simplify-algebraically-before-integrating">
+<h3>Simplify algebraically before integrating<a class="headerlink" href="#simplify-algebraically-before-integrating" title="Link to this heading">#</a></h3>
+<p>Before integrating, look for algebraic simplifications.</p>
+<p>Example:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{x^2-1}{x-1}\,dx.
+\]</div>
+<p>First factor:</p>
+<div class="math notranslate nohighlight">
+\[
+x^2-1=(x-1)(x+1).
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x^2-1}{x-1}=x+1, \qquad x\neq 1.
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{x^2-1}{x-1}\,dx=\int (x+1)\,dx=\frac{x^2}{2}+x+C,
+\]</div>
+<p>on intervals where <span class="math notranslate nohighlight">\(x\neq 1\)</span>.</p>
+<p>The original expression is not defined at <span class="math notranslate nohighlight">\(x=1\)</span>, even though the simplified
+expression <span class="math notranslate nohighlight">\(x+1\)</span> is. This does not change the value of a definite Riemann
+integral once the removable singularity is filled in, because changing a
+function at one point does not affect its Riemann integral. However, for
+indefinite integration, it is more accurate to say that the antiderivative is
+being found on intervals where the original function is defined.</p>
+</section>
+<section id="id1">
+<h3>Self test:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int x^4\,dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \left(3x^2-2x+5\right)dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \sqrt{x}\,dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{1}{x^3}\,dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \left(x+\frac{2}{x}+\frac{1}{x^2}\right)dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{x^2-1}{x-1}\,dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{x^2-3x+2}{x-2}\,dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int (x^2+3)^2\,dx\)</span></p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Extension Questions</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">These are more advanced questions intended for students who want to go beyond what is required for the subject.</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Derive the rule <span class="math notranslate nohighlight">\(\int \frac{1}{x} \, dx = \ln |x|\)</span> by writing <span class="math notranslate nohighlight">\(e^{\ln |x|} = |x|\)</span>.</p>
+<ul class="simple">
+<li><p class="sd-card-text">In the case of <span class="math notranslate nohighlight">\(x &gt;0\)</span>, this simplifies to <span class="math notranslate nohighlight">\(e^{\ln x}=x\)</span>.  Differentiate both sides of this euqation without using the knowledge that <span class="math notranslate nohighlight">\(d\ln(x)/dx = 1/x\)</span>.  Instead set <span class="math notranslate nohighlight">\(f(x) = d \ln(x)/dx\)</span>.  Solve for <span class="math notranslate nohighlight">\(f(x)\)</span>.</p></li>
+<li><p class="sd-card-text">Repeat for the case <span class="math notranslate nohighlight">\(x&lt;0\)</span> where we can write <span class="math notranslate nohighlight">\(|x| = -x\)</span>.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Use Riemann integration with <span class="math notranslate nohighlight">\(\Delta x = 1\)</span> to find a formula to approximate <span class="math notranslate nohighlight">\(\int_1^n \frac{1}{x} \, dx\)</span>.  Show that this approximation is always an over-estimate to the true integral.  Use this to prove that <span class="math notranslate nohighlight">\(\sum_{k=1}^\infty \frac{1}{k}\)</span> is infinite.</p></li>
+</ol>
+</div>
+</details></section>
+</section>
+<section id="substitution">
+<h2>Substitution<a class="headerlink" href="#substitution" title="Link to this heading">#</a></h2>
+<p>We do not have a 100% guaranteed way to integrate the product of two functions.  The standard techniques are either integration by parts or integration by substitution.  These are related to the product rule of differentiation and the chain rule of differentiation (because both result in products occuring).</p>
+<p>We’ll start by looking at integration by substitution.  Suppose we have an integral of the form
+$<span class="math notranslate nohighlight">\(
+\int g(u(x)) u'(x) \, dx
+\)</span><span class="math notranslate nohighlight">\(
+So it is the product of two factors, and the first factor can be written in the form \)</span>g(u(x))<span class="math notranslate nohighlight">\(.  If the second factor is equal to \)</span>u’(x)$ then we can use integration by substitution.</p>
+<p>We can derive the method by finding <span class="math notranslate nohighlight">\(G(x)\)</span> such that <span class="math notranslate nohighlight">\(G'(x) = g(x)\)</span>.  Then <span class="math notranslate nohighlight">\(\frac{d}{dx}G(u(x))= G'(u(x))u'(x)\)</span> by the chain rule.  Since <span class="math notranslate nohighlight">\(G'(u(x)) = g(u(x))\)</span>, this shows that the
+$<span class="math notranslate nohighlight">\(
+G(u(x)) +C = \int g(u(x))u'(x) \, dx
+\)</span>$
+However, doing the steps is easier if we use a slightly different approach (which also fits more naturally with other methods we will use in MAT2VCA).</p>
+<section id="basic-pattern">
+<h3>Basic pattern<a class="headerlink" href="#basic-pattern" title="Link to this heading">#</a></h3>
+<p>Let’s say we have an integral of the form</p>
+<div class="math notranslate nohighlight">
+\[
+\int h(x)f(x) \, dx
+\]</div>
+<p>If we can rewrite <span class="math notranslate nohighlight">\(h(x)\)</span> as <span class="math notranslate nohighlight">\(h(x) = g(u(x))\)</span> for some function <span class="math notranslate nohighlight">\(u(x)\)</span> and <span class="math notranslate nohighlight">\(\frac{1}{u'(x)}\)</span> would cancel out <span class="math notranslate nohighlight">\(f(x)\)</span>  (so really <span class="math notranslate nohighlight">\(f(x) = a u'(x)\)</span> for a constant <span class="math notranslate nohighlight">\(a\)</span>), then we do the following:</p>
+<p>Set <span class="math notranslate nohighlight">\(u=u(x)\)</span></p>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{du}{dx}=u'(x),
+\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+dx=\frac{du}{u'(x)}.
+\]</div>
+<p>We then substitute both <span class="math notranslate nohighlight">\(u(x)\)</span> and <span class="math notranslate nohighlight">\(dx\)</span> into the integral. The goal is to rewrite the whole integral in terms of <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(du\)</span>, with no <span class="math notranslate nohighlight">\(x\)</span> remaining.</p>
+<p>The ``art’’ of integration by substitution is to find a function <span class="math notranslate nohighlight">\(u(x)\)</span> so that one factor can be written in terms of <span class="math notranslate nohighlight">\(u(x)\)</span> and the other factor would cancel with <span class="math notranslate nohighlight">\(1/u'(x)\)</span>.  This isn’t always possible.</p>
+</section>
+<section id="id2">
+<h3>Example<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Evaluate</p>
+<div class="math notranslate nohighlight">
+\[
+\int x\sqrt{1+x^2}\,dx.
+\]</div>
+<p>In this case if we take <span class="math notranslate nohighlight">\(u(x) = 1 + x^2\)</span> then <span class="math notranslate nohighlight">\(\sqrt{1+x^2} = g(u(x))\)</span> where <span class="math notranslate nohighlight">\(g(x) =\sqrt{x}\)</span>.  Further <span class="math notranslate nohighlight">\(u'(x) = 2x\)</span> which would cancel with <span class="math notranslate nohighlight">\(x\)</span>.  So integration by substitution will work.</p>
+<p>So let</p>
+<div class="math notranslate nohighlight">
+\[
+u(x)=1+x^2.
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{du}{dx}=2x,
+\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+dx=\frac{du}{2x}.
+\]</div>
+<p>Substitute into the integral:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x\sqrt{1+x^2}\,dx
+=
+\int x\sqrt{u}\,\frac{du}{2x}.
+\]</div>
+<p>Now cancel the <span class="math notranslate nohighlight">\(x\)</span> terms:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x\sqrt{u}\,\frac{du}{2x}
+=
+\frac{1}{2}\int u^{1/2}\,du.
+\]</div>
+<p>Now integrate:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{2}\int u^{1/2}\,du
+=
+\frac{1}{2}\cdot \frac{u^{3/2}}{3/2}+C
+=
+\frac{1}{3}u^{3/2}+C.
+\]</div>
+<p>Substitute back:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x\sqrt{1+x^2}\,dx
+=
+\frac{1}{3}(1+x^2)^{3/2}+C.
+\]</div>
+<section id="check">
+<h4>Check<a class="headerlink" href="#check" title="Link to this heading">#</a></h4>
+<p>Differentiate:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}\left[\frac{1}{3}(1+x^2)^{3/2}\right]
+=
+\frac{1}{3}\cdot\frac{3}{2}(1+x^2)^{1/2}\cdot 2x
+=
+x\sqrt{1+x^2}.
+\]</div>
+</section>
+</section>
+<section id="id3">
+<h3>Example<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Consider the definite integral</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^5 x^2e^{x^3-2} \, dx
+\]</div>
+<p>Then set</p>
+<div class="math notranslate nohighlight">
+\[
+u=x^3-2
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{du}{dx} = 3x^2
+\]</div>
+<p>which will cancel with <span class="math notranslate nohighlight">\(x^2\)</span>.</p>
+<p>The way I approach the substitution step and the following steps is to write it as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int_0^5 x^2 e^{x^3-3} \, dx &amp;= \int_{x=0}^{5} x^2 e^{u} \frac{du}{3x^2}\\
+&amp;= \frac{1}{3} \int_{x=0}^5 e^u \, du\\
+&amp;= \frac{1}{3} \left. e^u \right|_{x=0}^5\\
+&amp;= \frac{1}{3} \left. e^{x^3-3} \right|_{x=0}^5\\
+&amp;= \frac{1}{3} ( e^{122} - e^{-3})
+\end{align*}\]</div>
+<p>Notice that I do not change the terminals when I switch to <span class="math notranslate nohighlight">\(du\)</span>.  Instead I explicitly write that the terminals correspond to values of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Another commonly taught approach is to figure out what <span class="math notranslate nohighlight">\(u(0)\)</span> and <span class="math notranslate nohighlight">\(u(5)\)</span> and introduce these as the terminals when you change from using <span class="math notranslate nohighlight">\(dx\)</span> to using <span class="math notranslate nohighlight">\(du\)</span>.  So the final step of the caluculation above occurs in this earlier step.</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^5 x^2 e^{x^3-3} \, dx = \int_{e^{-3}}^{e^{122}} x^2 e^{u} \frac{du}{3x^2}
+\]</div>
+<p>I find this less desirable because</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- You are introducing multiple changes at once --- changing the terminals and doing changes within the integrand, which increases the probability of an error.
+- I always put off doing a calculation if it&#39;s not yet needed (not just here, but as a general principle in Algebraic manipulations --- don&#39;t put in effort to ``simplify&#39;&#39; something until you&#39;re sure that simplification is going to help).  For example, sometimes I end up doing yet another substitution, replacing $u$ with some new variable $v$ and it&#39;s easier at the end to calculate $v(u(x))$. 
+- My physics professors drilled into me that I should never substitute numbers into a formula until the very last step because sometimes the final formula (in this case $e^{x^3-3}$) tells me something about whatever original physical problem led to the calculation which is lost if we&#39;ve already done the substitution.
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>Self test<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int x\sqrt{1+x^2}\,dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int 3x(x^2+1)^5\,dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{-x}{x^2-1}\,dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \sin(x) \cos(x) \, dx\)</span>.</p>
+<p>For this integral, use <span class="math notranslate nohighlight">\(u=\sin(x)\)</span></p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \sin(x) \cos(x) \, dx\)</span>.</p>
+<p>For this integral, use <span class="math notranslate nohighlight">\(u=\cos(x)\)</span></p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \sin^5(x) \cos(x) \, dx\)</span>.</p>
+<p>Set <span class="math notranslate nohighlight">\(u = \sin(x)\)</span>.</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \cos^3(x) \, dx\)</span>.</p>
+<p>This will take some work to get it into a useable form.  Eventually you will set <span class="math notranslate nohighlight">\(u = \sin(x)\)</span>.</p>
+</li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Extension Questions</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">These are more advanced questions intended for students who want to go beyond what is required for the subject.</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Sometimes you start doing an integration by substitution and then need yet another integration by substitution.  Often, once you’ve completed the problem, you can clean up the work by doing a single combined substitution.  Let’s try this with <span class="math notranslate nohighlight">\(\int_0^3 x \sqrt{x^2+16} \, dx\)</span></p>
+<ul class="simple">
+<li><p class="sd-card-text">Start with the substitution <span class="math notranslate nohighlight">\(u=x^2\)</span>.  Find a new integral (best to keep the terminals of the integrals in terms of <span class="math notranslate nohighlight">\(x\)</span>).</p></li>
+<li><p class="sd-card-text">Now do the substitution <span class="math notranslate nohighlight">\(v=u+16\)</span> to make it a bit simpler.  Complete the integration.</p></li>
+<li><p class="sd-card-text">Go back to the original integral.  Find <span class="math notranslate nohighlight">\(v\)</span> as a function of <span class="math notranslate nohighlight">\(x\)</span>.  Use that substitution instead and confirm that you end up with the same final integral.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</details></section>
+</section>
+<section id="integration-by-parts">
+<h2>Integration by parts<a class="headerlink" href="#integration-by-parts" title="Link to this heading">#</a></h2>
+<p>Integration by parts is the reverse of the product rule.</p>
+<p>The formula is</p>
+<div class="math notranslate nohighlight">
+\[
+\int f(x)g'(x)\,dx=f(x)g(x)-\int f'(x)g(x)\,dx.
+\]</div>
+<p>It is useful when the integrand is a product of two different types of functions, especially when one part becomes simpler after differentiating.</p>
+<section id="id5">
+<h3>Example<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Evaluate</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx.
+\]</div>
+<p>Choose</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=x, \qquad g'(x)=e^{-2x}.
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=1,
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+g(x)=\int e^{-2x}\,dx=-\frac{1}{2}e^{-2x}.
+\]</div>
+<p>Using integration by parts,</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+=x\left(-\frac{1}{2}e^{-2x}\right)-\int 1\left(-\frac{1}{2}e^{-2x}\right)dx.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+=-\frac{x}{2}e^{-2x}+\frac{1}{2}\int e^{-2x}\,dx.
+\]</div>
+<p>Now</p>
+<div class="math notranslate nohighlight">
+\[
+\int e^{-2x}\,dx=-\frac{1}{2}e^{-2x},
+\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+=-\frac{x}{2}e^{-2x}-\frac{1}{4}e^{-2x}+C.
+\]</div>
+<p>Equivalently,</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+=-\frac{1}{4}(2x+1)e^{-2x}+C.
+\]</div>
+</section>
+<section id="the-table-method-for-integration-by-parts">
+<h3>The table method for integration by parts<a class="headerlink" href="#the-table-method-for-integration-by-parts" title="Link to this heading">#</a></h3>
+<p>The table method is a bookkeeping method for integration by parts. It is especially useful when we want to do repeated integration by parts.  This is especially common if one factor becomes simpler after repeated differentiation, or when repeated integration by parts eventually returns to the original integral.</p>
+<p>The usual integration by parts formula is</p>
+<div class="math notranslate nohighlight">
+\[
+\int f(x)g'(x)\,dx
+=
+f(x)g(x)-\int f'(x)g(x)\,dx.
+\]</div>
+<p>In the table method, we choose one factor to differentiate and the other factor to integrate.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{r|l|c}
+\text{sign} &amp; \frac{d}{dx}\cdot &amp; \int \cdot\,dx \\ \hline
+\text{alternate signs $+$, $-$ here} &amp; \text{differentiate this factor} &amp; \text{integrate this factor}
+\end{array}
+\end{split}\]</div>
+<p>After making the table, we multiply diagonally. The signs alternate:</p>
+<div class="math notranslate nohighlight">
+\[
++,\quad -,\quad +,\quad -,\quad \dots
+\]</div>
+<p>For example, if the table is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{r|l|c}
+\text{sign} &amp; \frac{d}{dx}\cdot &amp; \int \cdot\,dx \\ \hline
+~^+ &amp;f_0 &amp; g_0 \\
+~^- &amp; f_1 &amp; g_1 \\
+~^+ &amp; f_2 &amp; g_2 \\
+~^- &amp; f_3 &amp; g_3 \\
+\vdots &amp; \vdots &amp; \vdots
+\end{array}
+\end{split}\]</div>
+<p>then the diagonal products give</p>
+<div class="math notranslate nohighlight">
+\[
+f_0g_1 - f_1g_2 + f_2g_3 - \cdots.
+\]</div>
+<p>Each row tells us what integral remains if we stop at that row.  So if we stop at the row containing <span class="math notranslate nohighlight">\(f_k\)</span> and <span class="math notranslate nohighlight">\(g_k\)</span>, then the leftover integral involves the two entries in the bottom row:</p>
+<div class="math notranslate nohighlight">
+\[
+\pm \int f_k g_k\,dx.
+\]</div>
+<p>The sign in front of the leftover integral continues the alternating sign pattern.</p>
+<p>So, for the table above, if we stop at the row containing <span class="math notranslate nohighlight">\(f_2\)</span> and <span class="math notranslate nohighlight">\(g_2\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+\int f_0 g_0\,dx
+=
+f_0g_1
+-
+f_1g_2
++
+\int f_2g_2\,dx.
+\]</div>
+<p>If we stop at the row containing <span class="math notranslate nohighlight">\(f_3\)</span> and <span class="math notranslate nohighlight">\(g_3\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+\int f_0 g_0\,dx
+=
+f_0g_1
+-
+f_1g_2
++
+f_2g_3
+-
+\int f_3g_3\,dx.
+\]</div>
+<p>In many polynomial examples, the differentiated column eventually reaches <span class="math notranslate nohighlight">\(0\)</span>, so the leftover integral is <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<section id="example-a-terminating-table">
+<h4>Example: a terminating table<a class="headerlink" href="#example-a-terminating-table" title="Link to this heading">#</a></h4>
+<p>Evaluate</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx.
+\]</div>
+<p>We choose the factor <span class="math notranslate nohighlight">\(x\)</span> to differentiate, because it becomes simpler. We choose <span class="math notranslate nohighlight">\(e^{-2x}\)</span> to integrate.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{c|c}
+\frac{d}{dx}\cdot &amp; \int \cdot\,dx \\ \hline
+x &amp; e^{-2x} \\
+1 &amp; -\frac{1}{2}e^{-2x} \\
+0 &amp; \frac{1}{4}e^{-2x}
+\end{array}
+\end{split}\]</div>
+<p>The diagonal products are</p>
+<div class="math notranslate nohighlight">
+\[
+x\left(-\frac{1}{2}e^{-2x}\right)
+-
+1\left(\frac{1}{4}e^{-2x}\right).
+\]</div>
+<p>Since the differentiated column has reached <span class="math notranslate nohighlight">\(0\)</span>, there is no leftover integral. Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+=
+-\frac{x}{2}e^{-2x}
+-
+\frac{1}{4}e^{-2x}
++
+C.
+\]</div>
+<p>Equivalently,</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+=
+-\frac{1}{4}(2x+1)e^{-2x}
++
+C.
+\]</div>
+</section>
+<section id="example-a-table-where-the-integral-repeats">
+<h4>Example: a table where the integral repeats<a class="headerlink" href="#example-a-table-where-the-integral-repeats" title="Link to this heading">#</a></h4>
+<p>Evaluate</p>
+<div class="math notranslate nohighlight">
+\[
+\int \sin(x)\cos(2x)\,dx.
+\]</div>
+<p>This example does not terminate. Instead, the original integral reappears.</p>
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[
+J=\int \sin(x)\cos(2x)\,dx.
+\]</div>
+<p>We choose <span class="math notranslate nohighlight">\(\sin(x)\)</span> to differentiate and <span class="math notranslate nohighlight">\(\cos(2x)\)</span> to integrate.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{r|l|c}
+\text{sign}&amp;\frac{d}{dx}\cdot &amp; \int \cdot\,dx \\ \hline
+~^+&amp;\sin(x) &amp; \cos(2x) \\
+~^-&amp;\cos(x) &amp; \frac{1}{2}\sin(2x) \\
+~^+&amp;-\sin(x) &amp; -\frac{1}{4}\cos(2x)
+\end{array}
+\end{split}\]</div>
+<p>Using the first diagonal product, and then keeping the second row as the leftover integral, we get</p>
+<div class="math notranslate nohighlight">
+\[
+J
+=
+\frac{1}{2}\sin(x)\sin(2x)
+-
+\int \frac{1}{2}\cos(x)\sin(2x)\,dx.
+\]</div>
+<p>This hasn’t solved our problem yet.  We go one step further.  Use the next diagonal product. The leftover integral now comes from the bottom row of the table:</p>
+<div class="math notranslate nohighlight">
+\[
+J
+=
+\frac{1}{2}\sin(x)\sin(2x)
+-\cos(x)\left(-\frac{1}{4}\cos(2x)\right)
++
+\int (-\sin(x))\left(-\frac{1}{4}\cos(2x)\right)\,dx.
+\]</div>
+<p>Since</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{1}{4}\sin(x)\cos(2x)\,dx
+=
+\frac{1}{4}J +C
+\]</div>
+<p>we have</p>
+<div class="math notranslate nohighlight">
+\[
+J
+=
+\frac{1}{2}\sin(x)\sin(2x)
++\frac{1}{4}\cos(x)\cos(2x)
++
+\frac{1}{4}J +C
+\]</div>
+<p>Move the <span class="math notranslate nohighlight">\(\frac{1}{4}J\)</span> term to the left:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{3}{4}J
+=
+\frac{1}{2}\sin(x)\sin(2x)
++
+\frac{1}{4}\cos(x)\cos(2x) +C.
+\]</div>
+<p>Hence</p>
+<div class="math notranslate nohighlight">
+\[
+J
+=
+\frac{2}{3}\sin(x)\sin(2x)
++
+\frac{1}{3}\cos(x)\cos(2x)
++
+K
+\]</div>
+<p>(using the fact that if <span class="math notranslate nohighlight">\(C\)</span> is an arbitrary constant then <span class="math notranslate nohighlight">\(4C/3\)</span> is also an arbitrary constant)
+Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\int \sin(x)\cos(2x)\,dx
+=
+\frac{2}{3}\sin(x)\sin(2x)
++
+\frac{1}{3}\cos(x)\cos(2x)
++
+K.
+\]</div>
+<p>(it is okay to replace <span class="math notranslate nohighlight">\(K\)</span> by <span class="math notranslate nohighlight">\(C\)</span>, it’s just numerically different from the arbitrary constant <span class="math notranslate nohighlight">\(C\)</span> seen above — it’s still an arbitrary constant).</p>
+</section>
+</section>
+<section id="id6">
+<h3>Self Test<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int xe^{-2x}\,dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int x\cos(x)\,dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int x\ln(x)\,dx\)</span></p>
+<p>Your intuition may lead to the wrong choice of which function to differentiate.</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \ln(x) \, dx\)</span></p>
+<p>Write <span class="math notranslate nohighlight">\(\ln(x) = 1 \ln(x)\)</span> before starting.</p>
+</li>
+</ol>
+</section>
+</section>
+<section id="partial-fractions">
+<h2>Partial fractions<a class="headerlink" href="#partial-fractions" title="Link to this heading">#</a></h2>
+<p>Partial fractions are useful for integrating rational functions, meaning fractions where the numerator and denominator are polynomials.</p>
+<p>The basic idea is to rewrite one complicated fraction as a sum of simpler fractions.</p>
+<p>For example,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2}{x(x+1)}
+\]</div>
+<p>can be written in the form</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2}{x(x+1)}
+=
+\frac{A}{x}
++
+\frac{B}{x+1}.
+\]</div>
+<p>To find <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, multiply both sides by the common denominator <span class="math notranslate nohighlight">\(x(x+1)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+2=A(x+1)+Bx.
+\]</div>
+<p>Now choose convenient values of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(x=0\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+2=A.
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(x=-1\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+2=-B,
+\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+B=-2.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2}{x(x+1)}
+=
+\frac{2}{x}
+-
+\frac{2}{x+1}.
+\]</div>
+<p>Now the integral is easier:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{2}{x(x+1)}\,dx
+=
+\int \left(\frac{2}{x}-\frac{2}{x+1}\right)dx.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{2}{x(x+1)}\,dx
+=
+2\ln|x|-2\ln|x+1|+C.
+\]</div>
+<p>Equivalently,</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{2}{x(x+1)}\,dx
+=
+2\ln\left|\frac{x}{x+1}\right|+C.
+\]</div>
+<section id="when-to-use-partial-fractions">
+<h3>When to use partial fractions<a class="headerlink" href="#when-to-use-partial-fractions" title="Link to this heading">#</a></h3>
+<p>Partial fractions are useful when:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\text{polynomial}}{\text{factorised polynomial}}
+\]</div>
+<p>cannot be simplified by direct cancellation, but the denominator factors into simpler pieces.</p>
+<p>For example,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{3x+5}{(x-1)(x+2)}
+\]</div>
+<p>can be written as</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{3x+5}{(x-1)(x+2)}
+=
+\frac{A}{x-1}
++
+\frac{B}{x+2}.
+\]</div>
+<p>Then solve for <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> before integrating.</p>
+<p>Sometimes we have a choice of using partial fractions or an integration by substitution where something in the denominator can be made into <span class="math notranslate nohighlight">\(u\)</span> and then a substitution eliminates the numerator.  This is then a matter of personal preference (I usually use substitution).</p>
+</section>
+<section id="when-the-degree-of-the-numerator-geq-the-degree-of-the-denominator">
+<h3>When the degree of the numerator <span class="math notranslate nohighlight">\(\geq\)</span> the degree of the denominator<a class="headerlink" href="#when-the-degree-of-the-numerator-geq-the-degree-of-the-denominator" title="Link to this heading">#</a></h3>
+<p>When the degree of the numerator is at least as large as the degree of the denominator, it is possible (through polynomial division or otherwise) to rewrite this as a polynomial (possibly just a constant) plus a fraction in which the degree of the numerator is less than that of the denominator.</p>
+<p>For example:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x+1}{x}
+=
+\frac{x}{x}+\frac{1}{x}
+=
+1+\frac{1}{x}.
+\]</div>
+</section>
+<section id="id7">
+<h3>Self test<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Find <span class="math notranslate nohighlight">\(\int \frac{x}{x^2-1} \, dx\)</span> using partial fractions.  Confirm that this gives the same result as integration by substitution.</p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Extension Questions</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">These are more advanced questions intended for students who want to go beyond what is required for the subject.</p>
+<ol class="arabic">
+<li><p class="sd-card-text">Find <span class="math notranslate nohighlight">\(\int \sec(x) \, dx\)</span> by first writing</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int \sec(x) \, dx &amp;= \int \frac{1}{\cos(x)} \, dx\\
+                 &amp;= \int \frac{\cos(x)}{\cos^2(x)} \, dx\\
+                 &amp;=\int \frac{\cos(x)}{1-\sin^2(x)} \, dx
+\end{align*}\]</div>
+<p class="sd-card-text">Then use the substitution <span class="math notranslate nohighlight">\(u = \sin(x)\)</span> to set up the partial fractions.</p>
+<p class="sd-card-text">This problem has an interesting history mathematically — it’s the first known case of using partial fractions, and it was actually done before mathematicians had a fully rigorous concept of what an integral is.  It was an important problem for creating a Mercator projection map.  See <a class="reference external" href="https://www.tandfonline.com/doi/pdf/10.1080/0025570X.1980.11976846">this article</a></p>
+</li>
+</ol>
+</div>
+</details></section>
+</section>
+<section id="choosing-a-method">
+<h2>Choosing a method<a class="headerlink" href="#choosing-a-method" title="Link to this heading">#</a></h2>
+<p>When you see an integral, ask the following questions.</p>
+<ul>
+<li><p>Can I simplify first?</p>
+<p>Look for:</p>
+<ul class="simple">
+<li><p>factoring;</p></li>
+<li><p>cancelling common factors;</p></li>
+<li><p>expanding brackets;</p></li>
+<li><p>rewriting roots and fractions using powers;</p></li>
+<li><p>splitting sums term by term.</p></li>
+</ul>
+<p>Example:</p>
+<div class="math notranslate nohighlight">
+\[
+   \int \frac{x^2-4}{x-2}\,dx
+   \]</div>
+<p>should first become</p>
+<div class="math notranslate nohighlight">
+\[
+   \int (x+2)\,dx,
+   \]</div>
+<p>with the restriction <span class="math notranslate nohighlight">\(x\neq 2\)</span> in the original expression.</p>
+</li>
+<li><p>Is it a basic power-rule integral?</p>
+<p>Examples:</p>
+<div class="math notranslate nohighlight">
+\[
+   \int x^5\,dx,
+   \qquad
+   \int x^{-2}\,dx,
+   \qquad
+   \int \sqrt{x}\,dx.
+   \]</div>
+</li>
+<li><p>Is there a <span class="math notranslate nohighlight">\(1/x\)</span> term?</p>
+<p>If yes, expect a logarithm:</p>
+<div class="math notranslate nohighlight">
+\[
+   \int \frac{1}{x}\,dx=\ln|x|+C.
+   \]</div>
+</li>
+<li><p>Is there an ``inside function’’ and its derivative?</p>
+<p>Then try substitution.</p>
+<p>Example:</p>
+<div class="math notranslate nohighlight">
+\[
+   \int x\sqrt{1+x^2}\,dx.
+   \]</div>
+<p>The ``inside function’’ is <span class="math notranslate nohighlight">\(1+x^2\)</span>, and its derivative is <span class="math notranslate nohighlight">\(2x\)</span>.</p>
+</li>
+<li><p>Is it a ratio of polynomials?</p>
+<ul class="simple">
+<li><p>First check if cancellation is possible.</p></li>
+<li><p>If the numerator has degree at least as large as the denominator, then use long division to create a polynomial plus a fraction whose numerator has lower degree than the denominator.  Use power rules for the polynomial part.</p></li>
+<li><p>Then check whether integration by substitution works.</p></li>
+<li><p>Otherwise, use partial fractions.</p></li>
+</ul>
+</li>
+<li><p>Is it a product that our other methods don’t work on?</p>
+<p>Then try integration by parts.</p>
+</li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "jupyter_matlab_kernel"
+        },
+        kernelOptions: {
+            name: "jupyter_matlab_kernel",
+            path: "./prereqs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="AlgebraReview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">How to improve your prerequisite skills</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../notebooks/LaplaceIntro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Laplace Transforms and Differential Equations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-an-indefinite-integral-means">What an indefinite integral means</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-answer">Check your answer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definite-integrals-and-riemann-sums">Definite integrals and Riemann sums</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#riemann-sum-idea">Riemann sum idea</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-approximation">Improving the approximation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-riemann-sums-matter-later">Why Riemann sums matter later</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">Self-test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-power-rule-for-integration">The power rule for integration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-error">Common error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-special-case-int-frac-1-x-dx">The special case <span class="math notranslate nohighlight">\(\int \frac{1}{x}\,dx\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-expressions-before-integrating">Rewrite expressions before integrating</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#roots-as-fractional-powers">Roots as fractional powers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fractions-as-negative-powers">Fractions as negative powers}</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#split-sums-term-by-term">Split sums term by term</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-algebraically-before-integrating">Simplify algebraically before integrating</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Self test:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substitution">Substitution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-pattern">Basic pattern</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check">Check</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Self test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts">Integration by parts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-table-method-for-integration-by-parts">The table method for integration by parts</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-terminating-table">Example: a terminating table</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-table-where-the-integral-repeats">Example: a table where the integral repeats</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Self Test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-fractions">Partial fractions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-partial-fractions">When to use partial fractions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-the-degree-of-the-numerator-geq-the-degree-of-the-denominator">When the degree of the numerator <span class="math notranslate nohighlight">\(\geq\)</span> the degree of the denominator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Self test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-method">Choosing a method</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By La Trobe University MAPS staff (present and past)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

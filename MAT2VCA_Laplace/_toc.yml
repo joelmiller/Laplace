@@ -12,6 +12,7 @@ parts:
       - file: prereqs/Squares
       - file: prereqs/EqualsSign
       - file: prereqs/AlgebraReview
+    - file: prereqs/IntegralRefresher
   - caption: Vector Calculus
     numbered: True
     chapters:
