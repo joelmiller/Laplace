@@ -2807,19 +2807,250 @@ J=\frac{1}{2}\sin^2(x)+C.
 <input checked="checked" id="sd-tab-item-60" name="sd-tab-set-19" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-60">
 Question</label><div class="sd-tab-content docutils">
-<p><span class="math notranslate nohighlight">\(\displaystyle \int x\ln(x)\,dx\)</span></p>
-<p>Your intuition may lead to the wrong choice of which function to differentiate.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \int \sin(x)\cos(2x)\,dx\)</span></p>
+<p>This example was given above, differentiating <span class="math notranslate nohighlight">\(\sin(x)\)</span> and integrating <span class="math notranslate nohighlight">\(\cos(2x)\)</span>. Do it here by differentiating <span class="math notranslate nohighlight">\(\cos(2x)\)</span> and integrating <span class="math notranslate nohighlight">\(\sin(x)\)</span>.</p>
 </div>
 <input id="sd-tab-item-61" name="sd-tab-set-19" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-61">
 Solution</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
-\frac{x^2}{2}\ln(x)-\frac{x^2}{4}+C
+\frac{1}{3}\cos(x)\cos(2x)
++
+\frac{2}{3}\sin(x)\sin(2x)
++
+C
 \]</div>
 </div>
 <input id="sd-tab-item-62" name="sd-tab-set-19" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-62">
+Worked solution: integration by parts</label><div class="sd-tab-content docutils">
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[
+J=\int \sin(x)\cos(2x)\,dx.
+\]</div>
+<p>We differentiate <span class="math notranslate nohighlight">\(\cos(2x)\)</span> and integrate <span class="math notranslate nohighlight">\(\sin(x)\)</span>.</p>
+<p>Choose</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=\cos(2x),
+\qquad
+g'(x)=\sin(x).
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=-2\sin(2x),
+\qquad
+g(x)=-\cos(x).
+\]</div>
+<p>Using integration by parts,</p>
+<div class="math notranslate nohighlight">
+\[
+J
+=
+\cos(2x)(-\cos(x))
+-
+\int \left[-2\sin(2x)\right]\left[-\cos(x)\right]\,dx.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+J
+=
+-\cos(x)\cos(2x)
+-
+2\int \sin(2x)\cos(x)\,dx.
+\]</div>
+<p>Now apply integration by parts to the remaining integral. Let</p>
+<div class="math notranslate nohighlight">
+\[
+K=\int \sin(2x)\cos(x)\,dx.
+\]</div>
+<p>Choose</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=\sin(2x),
+\qquad
+g'(x)=\cos(x).
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=2\cos(2x),
+\qquad
+g(x)=\sin(x).
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+K
+=
+\sin(2x)\sin(x)
+-
+\int 2\cos(2x)\sin(x)\,dx.
+\]</div>
+<p>Since</p>
+<div class="math notranslate nohighlight">
+\[
+\int \cos(2x)\sin(x)\,dx=J,
+\]</div>
+<p>we have</p>
+<div class="math notranslate nohighlight">
+\[
+K
+=
+\sin(x)\sin(2x)-2J.
+\]</div>
+<p>Substitute this into the expression for <span class="math notranslate nohighlight">\(J\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+J
+=
+-\cos(x)\cos(2x)
+-
+2\left[\sin(x)\sin(2x)-2J\right].
+\]</div>
+<p>Hence</p>
+<div class="math notranslate nohighlight">
+\[
+J
+=
+-\cos(x)\cos(2x)
+-
+2\sin(x)\sin(2x)
++
+4J.
+\]</div>
+<p>Move the <span class="math notranslate nohighlight">\(4J\)</span> term to the left:</p>
+<div class="math notranslate nohighlight">
+\[
+-3J
+=
+-\cos(x)\cos(2x)
+-
+2\sin(x)\sin(2x).
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+J
+=
+\frac{1}{3}\cos(x)\cos(2x)
++
+\frac{2}{3}\sin(x)\sin(2x)
++
+C.
+\]</div>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[
+\int \sin(x)\cos(2x)\,dx
+=
+\frac{1}{3}\cos(x)\cos(2x)
++
+\frac{2}{3}\sin(x)\sin(2x)
++
+C.
+\]</div>
+</div>
+<input id="sd-tab-item-63" name="sd-tab-set-19" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-63">
+Worked solution: table method</label><div class="sd-tab-content docutils">
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[
+J=\int \sin(x)\cos(2x)\,dx.
+\]</div>
+<p>We differentiate <span class="math notranslate nohighlight">\(\cos(2x)\)</span> and integrate <span class="math notranslate nohighlight">\(\sin(x)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{r|l|c}
+\text{sign} &amp; \frac{d}{dx}\cdot &amp; \int \cdot\,dx \\ \hline
+~^+ &amp; \cos(2x) &amp; \sin(x) \\
+~^- &amp; -2\sin(2x) &amp; -\cos(x) \\
+~^+ &amp; -4\cos(2x) &amp; -\sin(x)
+\end{array}
+\end{split}\]</div>
+<p>Using the diagonal products and then the bottom row as the leftover integral,</p>
+<div class="math notranslate nohighlight">
+\[
+J
+=
+\cos(2x)(-\cos(x))
+-
+\left[-2\sin(2x)\right](-\sin(x))
++
+\int \left[-4\cos(2x)\right](-\sin(x))\,dx.
+\]</div>
+<p>Simplify:</p>
+<div class="math notranslate nohighlight">
+\[
+J
+=
+-\cos(x)\cos(2x)
+-
+2\sin(x)\sin(2x)
++
+4\int \sin(x)\cos(2x)\,dx.
+\]</div>
+<p>Since</p>
+<div class="math notranslate nohighlight">
+\[
+\int \sin(x)\cos(2x)\,dx=J,
+\]</div>
+<p>this becomes</p>
+<div class="math notranslate nohighlight">
+\[
+J
+=
+-\cos(x)\cos(2x)
+-
+2\sin(x)\sin(2x)
++
+4J.
+\]</div>
+<p>Move the <span class="math notranslate nohighlight">\(4J\)</span> term to the left:</p>
+<div class="math notranslate nohighlight">
+\[
+-3J
+=
+-\cos(x)\cos(2x)
+-
+2\sin(x)\sin(2x).
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+J
+=
+\frac{1}{3}\cos(x)\cos(2x)
++
+\frac{2}{3}\sin(x)\sin(2x)
++
+C.
+\]</div>
+</div>
+</div>
+</li>
+<li><div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-64" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-64">
+Question</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(\displaystyle \int x\ln(x)\,dx\)</span></p>
+<p>Your intuition may lead to the wrong choice of which function to differentiate.</p>
+</div>
+<input id="sd-tab-item-65" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-65">
+Solution</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+\frac{x^2}{2}\ln(x)-\frac{x^2}{4}+C
+\]</div>
+</div>
+<input id="sd-tab-item-66" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-66">
 Worked solution: integration by parts</label><div class="sd-tab-content docutils">
 <p>Use integration by parts:</p>
 <div class="math notranslate nohighlight">
@@ -2883,8 +3114,8 @@ g(x)=\frac{x^2}{2}.
 \frac{x^2}{2}\ln(x)-\frac{x^2}{4}+C.
 \]</div>
 </div>
-<input id="sd-tab-item-63" name="sd-tab-set-19" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-63">
+<input id="sd-tab-item-67" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-67">
 Worked solution: table method</label><div class="sd-tab-content docutils">
 <p>For this integral, it is better to differentiate <span class="math notranslate nohighlight">\(\ln(x)\)</span>, not <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>Choose <span class="math notranslate nohighlight">\(\ln(x)\)</span> to differentiate and <span class="math notranslate nohighlight">\(x\)</span> to integrate.</p>
@@ -2929,22 +3160,22 @@ C.
 </div>
 </li>
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-64" name="sd-tab-set-20" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-64">
+<input checked="checked" id="sd-tab-item-68" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-68">
 Question</label><div class="sd-tab-content docutils">
 <p><span class="math notranslate nohighlight">\(\displaystyle \int \ln(x) \, dx\)</span></p>
 <p>Write <span class="math notranslate nohighlight">\(\ln(x)=1\ln(x)\)</span> before starting.</p>
 </div>
-<input id="sd-tab-item-65" name="sd-tab-set-20" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-65">
+<input id="sd-tab-item-69" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-69">
 Solution</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 x\ln(x)-x+C
 \]</div>
 </div>
-<input id="sd-tab-item-66" name="sd-tab-set-20" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-66">
+<input id="sd-tab-item-70" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-70">
 Worked solution: integration by parts</label><div class="sd-tab-content docutils">
 <p>First write</p>
 <div class="math notranslate nohighlight">
@@ -3010,8 +3241,8 @@ x\ln(x)-\int 1\,dx.
 x\ln(x)-x+C.
 \]</div>
 </div>
-<input id="sd-tab-item-67" name="sd-tab-set-20" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-67">
+<input id="sd-tab-item-71" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-71">
 Worked solution: table method</label><div class="sd-tab-content docutils">
 <p>First write</p>
 <div class="math notranslate nohighlight">
@@ -3167,13 +3398,13 @@ B=-2.
 <h3>Self-test<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <ol class="arabic">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-68" name="sd-tab-set-21" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-68">
+<input checked="checked" id="sd-tab-item-72" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-72">
 Question</label><div class="sd-tab-content docutils">
 <p>Find <span class="math notranslate nohighlight">\(\displaystyle \int \frac{x}{x^2-1} \, dx\)</span> using partial fractions. Confirm that this gives the same result as integration by substitution.</p>
 </div>
-<input id="sd-tab-item-69" name="sd-tab-set-21" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-69">
+<input id="sd-tab-item-73" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-73">
 Solution</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -3182,8 +3413,8 @@ Solution</label><div class="sd-tab-content docutils">
 \frac{1}{2}\ln|x^2-1|+C
 \]</div>
 </div>
-<input id="sd-tab-item-70" name="sd-tab-set-21" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-70">
+<input id="sd-tab-item-74" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-74">
 Worked solution: partial fractions</label><div class="sd-tab-content docutils">
 <p>First factor the denominator:</p>
 <div class="math notranslate nohighlight">
@@ -3268,8 +3499,8 @@ C.
 \frac{1}{2}\ln|x^2-1|+C.
 \]</div>
 </div>
-<input id="sd-tab-item-71" name="sd-tab-set-21" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-71">
+<input id="sd-tab-item-75" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-75">
 Worked solution: substitution check</label><div class="sd-tab-content docutils">
 <p>Set</p>
 <div class="math notranslate nohighlight">
@@ -3319,13 +3550,13 @@ dx=\frac{du}{2x}.
 </div>
 </li>
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-72" name="sd-tab-set-22" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-72">
+<input checked="checked" id="sd-tab-item-76" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-76">
 Question</label><div class="sd-tab-content docutils">
 <p>Find <span class="math notranslate nohighlight">\(\displaystyle \int \frac{x}{x^2+3x+2} \, dx\)</span> using partial fractions. Check if you can integrate this by substitution.</p>
 </div>
-<input id="sd-tab-item-73" name="sd-tab-set-22" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-73">
+<input id="sd-tab-item-77" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-77">
 Solution</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -3334,8 +3565,8 @@ Solution</label><div class="sd-tab-content docutils">
 -\ln|x+1|+2\ln|x+2|+C
 \]</div>
 </div>
-<input id="sd-tab-item-74" name="sd-tab-set-22" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-74">
+<input id="sd-tab-item-78" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-78">
 Worked solution: partial fractions</label><div class="sd-tab-content docutils">
 <p>First factor the denominator:</p>
 <div class="math notranslate nohighlight">
@@ -3406,8 +3637,8 @@ B=2.
 C.
 \]</div>
 </div>
-<input id="sd-tab-item-75" name="sd-tab-set-22" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-75">
+<input id="sd-tab-item-79" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-79">
 Worked solution: substitution check</label><div class="sd-tab-content docutils">
 <p>A natural substitution to try is</p>
 <div class="math notranslate nohighlight">
