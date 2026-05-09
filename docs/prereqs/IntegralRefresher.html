@@ -1040,16 +1040,18 @@ being found on intervals where the original function is defined.</p>
 <section id="substitution">
 <h2>Substitution<a class="headerlink" href="#substitution" title="Link to this heading">#</a></h2>
 <p>We do not have a 100% guaranteed way to integrate the product of two functions.  The standard techniques are either integration by parts or integration by substitution.  These are related to the product rule of differentiation and the chain rule of differentiation (because both result in products occuring).</p>
-<p>We’ll start by looking at integration by substitution.  Suppose we have an integral of the form
-$<span class="math notranslate nohighlight">\(
+<p>We’ll start by looking at integration by substitution.  Suppose we have an integral of the form</p>
+<div class="math notranslate nohighlight">
+\[
 \int g(u(x)) u'(x) \, dx
-\)</span><span class="math notranslate nohighlight">\(
-So it is the product of two factors, and the first factor can be written in the form \)</span>g(u(x))<span class="math notranslate nohighlight">\(.  If the second factor is equal to \)</span>u’(x)$ then we can use integration by substitution.</p>
-<p>We can derive the method by finding <span class="math notranslate nohighlight">\(G(x)\)</span> such that <span class="math notranslate nohighlight">\(G'(x) = g(x)\)</span>.  Then <span class="math notranslate nohighlight">\(\frac{d}{dx}G(u(x))= G'(u(x))u'(x)\)</span> by the chain rule.  Since <span class="math notranslate nohighlight">\(G'(u(x)) = g(u(x))\)</span>, this shows that the
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>So it is the product of two factors, and the first factor can be written in the form <span class="math notranslate nohighlight">\(g(u(x))\)</span>.  If the second factor is equal to <span class="math notranslate nohighlight">\(u'(x)\)</span> then we can use integration by substitution.</p>
+<p>We can derive the method by finding <span class="math notranslate nohighlight">\(G(x)\)</span> such that <span class="math notranslate nohighlight">\(G'(x) = g(x)\)</span>.  Then <span class="math notranslate nohighlight">\(\frac{d}{dx}G(u(x))= G'(u(x))u'(x)\)</span> by the chain rule.  Since <span class="math notranslate nohighlight">\(G'(u(x)) = g(u(x))\)</span>, this shows that the</p>
+<div class="math notranslate nohighlight">
+\[
 G(u(x)) +C = \int g(u(x))u'(x) \, dx
-\)</span>$
-However, doing the steps is easier if we use a slightly different approach (which also fits more naturally with other methods we will use in MAT2VCA).</p>
+\]</div>
+<p>However, doing the steps is easier if we use a slightly different approach (which also fits more naturally with other methods we will use in MAT2VCA).</p>
 <section id="basic-pattern">
 <h3>Basic pattern<a class="headerlink" href="#basic-pattern" title="Link to this heading">#</a></h3>
 <p>Let’s say we have an integral of the form</p>
@@ -1172,11 +1174,11 @@ u=x^3-2
 \int_0^5 x^2 e^{x^3-3} \, dx = \int_{e^{-3}}^{e^{122}} x^2 e^{u} \frac{du}{3x^2}
 \]</div>
 <p>I find this less desirable because</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- You are introducing multiple changes at once --- changing the terminals and doing changes within the integrand, which increases the probability of an error.
-- I always put off doing a calculation if it&#39;s not yet needed (not just here, but as a general principle in Algebraic manipulations --- don&#39;t put in effort to ``simplify&#39;&#39; something until you&#39;re sure that simplification is going to help).  For example, sometimes I end up doing yet another substitution, replacing $u$ with some new variable $v$ and it&#39;s easier at the end to calculate $v(u(x))$. 
-- My physics professors drilled into me that I should never substitute numbers into a formula until the very last step because sometimes the final formula (in this case $e^{x^3-3}$) tells me something about whatever original physical problem led to the calculation which is lost if we&#39;ve already done the substitution.
-</pre></div>
-</div>
+<ul class="simple">
+<li><p>You are introducing multiple changes at once — changing the terminals and doing changes within the integrand, which increases the probability of an error.</p></li>
+<li><p>I always put off doing a calculation if it’s not yet needed (not just here, but as a general principle in Algebraic manipulations — don’t put in effort to ``simplify’’ something until you’re sure that simplification is going to help).  For example, sometimes I end up doing yet another substitution, replacing <span class="math notranslate nohighlight">\(u\)</span> with some new variable <span class="math notranslate nohighlight">\(v\)</span> and it’s easier at the end to calculate <span class="math notranslate nohighlight">\(v(u(x))\)</span>.</p></li>
+<li><p>My physics professors drilled into me that I should never substitute numbers into a formula until the very last step because sometimes the final formula (in this case <span class="math notranslate nohighlight">\(e^{x^3-3}\)</span>) tells me something about whatever original physical problem led to the calculation which is lost if we’ve already done the substitution.</p></li>
+</ul>
 </section>
 <section id="id4">
 <h3>Self test<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
@@ -1489,6 +1491,7 @@ K.
 <ol class="arabic">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \int xe^{-2x}\,dx\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \int x\cos(x)\,dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \sin(x) \cos(x) \, dx\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \int x\ln(x)\,dx\)</span></p>
 <p>Your intuition may lead to the wrong choice of which function to differentiate.</p>
 </li>
@@ -1609,6 +1612,7 @@ B=-2.
 <h3>Self test<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Find <span class="math notranslate nohighlight">\(\int \frac{x}{x^2-1} \, dx\)</span> using partial fractions.  Confirm that this gives the same result as integration by substitution.</p></li>
+<li><p>Find <span class="math notranslate nohighlight">\(\int \frac{x}{x^2+3x+2} \, dx\)</span> using partial fractions.  Check if you can integrate this by substitution.</p></li>
 </ol>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1705,16 +1709,16 @@ B=-2.
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "jupyter_matlab_kernel"
+            mode: "xoctave"
         },
         kernelOptions: {
-            name: "jupyter_matlab_kernel",
+            name: "xoctave",
             path: "./prereqs"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'jupyter_matlab_kernel'</script>
+    <script>kernelName = 'xoctave'</script>
 
                 </article>
               
