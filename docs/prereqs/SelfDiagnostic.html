@@ -475,6 +475,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-11">D.11</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-12">D.12</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-13">D.13</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-14">D.14</a></li>
 </ul>
 </li>
 </ul>
@@ -495,11 +496,9 @@ document.write(`
 <ul class="simple">
 <li><p>Do not use a calculator.</p></li>
 <li><p>Do not use notes or online help.</p></li>
-<li><p>Show working where appropriate.</p></li>
-<li><p>If you cannot start a question, leave it blank.</p></li>
-<li><p>Once you are done, check your answers and review all problems that you had difficulty with.</p></li>
+<li><p>Once you are done, check your answers and review all problems that you had difficulty with (even if you managed to get them correct).</p></li>
 <li><p>Starting with the first problem you have difficulty with, review the worked solution.  If this is enough of a reminder then redo the question without looking at the worked solution and do a few several similar questions to confirm that you can reliably perform the skill.  (feeding the question and solution to an AI is a good way to generate similar questions).</p></li>
-<li><p>If you still have difficulty with a topic, review the refresher provided in this section (only the integration refresher is written so far).</p></li>
+<li><p>If you still have difficulty with a topic, go through the reviews provided in this section (only the integration refresher is written so far).</p></li>
 </ul>
 <section id="part-a-algebra">
 <h2>Part A: Algebra<a class="headerlink" href="#part-a-algebra" title="Link to this heading">#</a></h2>
@@ -717,10 +716,10 @@ Worked solution</label><div class="sd-tab-content docutils">
 <input checked="checked" id="sd-tab-item-18" name="sd-tab-set-6" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-18">
 Question</label><div class="sd-tab-content docutils">
-<p>Find the coefficients <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<p>Simplify</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{2}{x(x+1)}=\frac{A}{x}+\frac{B}{x+1}
+\frac{x+3}{x}
 \]</div>
 </div>
 <input id="sd-tab-item-19" name="sd-tab-set-6" type="radio">
@@ -728,11 +727,47 @@ Question</label><div class="sd-tab-content docutils">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
-A=2, \qquad B=-2
+1 + \frac{3}{x}
 \]</div>
 </div>
 <input id="sd-tab-item-20" name="sd-tab-set-6" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-20">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>Because the numerator is a sum, we can break this up into the sum of two fractions:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x+3}{x} = \frac{x}{x} + \frac{3}{x}
+\]</div>
+<p>Then we can cancel <span class="math notranslate nohighlight">\(x\)</span> in the first term to get</p>
+<div class="math notranslate nohighlight">
+\[
+1 + \frac{3}{x}
+\]</div>
+</div>
+</div>
+</li>
+</ol>
+<ol class="arabic" start="8">
+<li><div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+Question</label><div class="sd-tab-content docutils">
+<p>Find the coefficients <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2}{x(x+1)}=\frac{A}{x}+\frac{B}{x+1}
+\]</div>
+</div>
+<input id="sd-tab-item-22" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-22">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+A=2, \qquad B=-2
+\]</div>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-23">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Multiply both sides by <span class="math notranslate nohighlight">\(x(x+1)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -765,8 +800,8 @@ B=-2.
 </ol>
 <ol class="arabic" start="8">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-21">
+<input checked="checked" id="sd-tab-item-24" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-24">
 Question</label><div class="sd-tab-content docutils">
 <p>Expand and simplify:</p>
 <div class="math notranslate nohighlight">
@@ -774,16 +809,16 @@ Question</label><div class="sd-tab-content docutils">
 (x^2+3)^2
 \]</div>
 </div>
-<input id="sd-tab-item-22" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-22">
+<input id="sd-tab-item-25" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-25">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 x^4+6x^2+9
 \]</div>
 </div>
-<input id="sd-tab-item-23" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-23">
+<input id="sd-tab-item-26" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-26">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Use <span class="math notranslate nohighlight">\((a+b)^2=a^2+2ab+b^2\)</span> with <span class="math notranslate nohighlight">\(a=x^2\)</span> and <span class="math notranslate nohighlight">\(b=3\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -796,8 +831,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 </ol>
 <ol class="arabic" start="9">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-24" name="sd-tab-set-8" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-24">
+<input checked="checked" id="sd-tab-item-27" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-27">
 Question</label><div class="sd-tab-content docutils">
 <p>Solve for <span class="math notranslate nohighlight">\(x\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -805,16 +840,16 @@ Question</label><div class="sd-tab-content docutils">
 \frac{x-1}{x+2}=2
 \]</div>
 </div>
-<input id="sd-tab-item-25" name="sd-tab-set-8" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-25">
+<input id="sd-tab-item-28" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-28">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 x=-5
 \]</div>
 </div>
-<input id="sd-tab-item-26" name="sd-tab-set-8" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-26">
+<input id="sd-tab-item-29" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-29">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Start by multiplying both sides by <span class="math notranslate nohighlight">\(x+2\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -838,8 +873,8 @@ x-1=2x+4.
 </ol>
 <ol class="arabic" start="10">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-27" name="sd-tab-set-9" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-27">
+<input checked="checked" id="sd-tab-item-30" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-30">
 Question</label><div class="sd-tab-content docutils">
 <p>Solve for <span class="math notranslate nohighlight">\(x\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -847,16 +882,16 @@ Question</label><div class="sd-tab-content docutils">
 \frac{2}{x+1}+1=3
 \]</div>
 </div>
-<input id="sd-tab-item-28" name="sd-tab-set-9" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-28">
+<input id="sd-tab-item-31" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-31">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 x=0
 \]</div>
 </div>
-<input id="sd-tab-item-29" name="sd-tab-set-9" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-29">
+<input id="sd-tab-item-32" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-32">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Subtract <span class="math notranslate nohighlight">\(1\)</span> from both sides:</p>
 <div class="math notranslate nohighlight">
@@ -884,8 +919,8 @@ x=0.
 </ol>
 <ol class="arabic" start="11">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-30" name="sd-tab-set-10" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-30">
+<input checked="checked" id="sd-tab-item-33" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-33">
 Question</label><div class="sd-tab-content docutils">
 <p>Solve for <span class="math notranslate nohighlight">\(x\)</span>. Check that all solutions you find satisfy the original equation.</p>
 <div class="math notranslate nohighlight">
@@ -893,16 +928,16 @@ Question</label><div class="sd-tab-content docutils">
 \sqrt{x+1}=x-1
 \]</div>
 </div>
-<input id="sd-tab-item-31" name="sd-tab-set-10" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-31">
+<input id="sd-tab-item-34" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-34">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 x=3
 \]</div>
 </div>
-<input id="sd-tab-item-32" name="sd-tab-set-10" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-32">
+<input id="sd-tab-item-35" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-35">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Square both sides:</p>
 <div class="math notranslate nohighlight">
@@ -942,8 +977,8 @@ x=0: \sqrt{1}\neq -1,
 </ol>
 <ol class="arabic" start="12">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-33" name="sd-tab-set-11" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-33">
+<input checked="checked" id="sd-tab-item-36" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-36">
 Question</label><div class="sd-tab-content docutils">
 <p>Solve for <span class="math notranslate nohighlight">\(x\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -951,16 +986,16 @@ Question</label><div class="sd-tab-content docutils">
 \ln(x-2)=0
 \]</div>
 </div>
-<input id="sd-tab-item-34" name="sd-tab-set-11" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-34">
+<input id="sd-tab-item-37" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-37">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 x=3
 \]</div>
 </div>
-<input id="sd-tab-item-35" name="sd-tab-set-11" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-35">
+<input id="sd-tab-item-38" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-38">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Exponentiate both sides:</p>
 <div class="math notranslate nohighlight">
@@ -983,8 +1018,8 @@ x=3.
 </ol>
 <ol class="arabic" start="13">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-36" name="sd-tab-set-12" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-36">
+<input checked="checked" id="sd-tab-item-39" name="sd-tab-set-13" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-39">
 Question</label><div class="sd-tab-content docutils">
 <p>Solve for <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -992,16 +1027,16 @@ Question</label><div class="sd-tab-content docutils">
 2f(x)+3=x
 \]</div>
 </div>
-<input id="sd-tab-item-37" name="sd-tab-set-12" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-37">
+<input id="sd-tab-item-40" name="sd-tab-set-13" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-40">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 f(x)=\frac{x-3}{2}
 \]</div>
 </div>
-<input id="sd-tab-item-38" name="sd-tab-set-12" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-38">
+<input id="sd-tab-item-41" name="sd-tab-set-13" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-41">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Subtract <span class="math notranslate nohighlight">\(3\)</span> from both sides:</p>
 <div class="math notranslate nohighlight">
@@ -1019,8 +1054,8 @@ f(x)=\frac{x-3}{2}.
 </ol>
 <ol class="arabic" start="14">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-39" name="sd-tab-set-13" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-39">
+<input checked="checked" id="sd-tab-item-42" name="sd-tab-set-14" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-42">
 Question</label><div class="sd-tab-content docutils">
 <p>Solve for <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1028,16 +1063,16 @@ Question</label><div class="sd-tab-content docutils">
 \frac{f(x)-1}{2}=x
 \]</div>
 </div>
-<input id="sd-tab-item-40" name="sd-tab-set-13" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-40">
+<input id="sd-tab-item-43" name="sd-tab-set-14" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-43">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 f(x)=2x+1
 \]</div>
 </div>
-<input id="sd-tab-item-41" name="sd-tab-set-13" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-41">
+<input id="sd-tab-item-44" name="sd-tab-set-14" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-44">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Multiply both sides by <span class="math notranslate nohighlight">\(2\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1055,8 +1090,8 @@ f(x)=2x+1.
 </ol>
 <ol class="arabic" start="15">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-42" name="sd-tab-set-14" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-42">
+<input checked="checked" id="sd-tab-item-45" name="sd-tab-set-15" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-45">
 Question</label><div class="sd-tab-content docutils">
 <p>Solve for <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1064,16 +1099,16 @@ Question</label><div class="sd-tab-content docutils">
 \ln(f(x))=x
 \]</div>
 </div>
-<input id="sd-tab-item-43" name="sd-tab-set-14" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-43">
+<input id="sd-tab-item-46" name="sd-tab-set-15" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-46">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 f(x)=e^x
 \]</div>
 </div>
-<input id="sd-tab-item-44" name="sd-tab-set-14" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-44">
+<input id="sd-tab-item-47" name="sd-tab-set-15" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-47">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Exponentiate both sides:</p>
 <div class="math notranslate nohighlight">
@@ -1086,8 +1121,8 @@ f(x)=e^x.
 </ol>
 <ol class="arabic" start="16">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-45" name="sd-tab-set-15" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-45">
+<input checked="checked" id="sd-tab-item-48" name="sd-tab-set-16" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-48">
 Question</label><div class="sd-tab-content docutils">
 <p>Solve for <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1095,16 +1130,16 @@ Question</label><div class="sd-tab-content docutils">
 f(x)^2=x+1
 \]</div>
 </div>
-<input id="sd-tab-item-46" name="sd-tab-set-15" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-46">
+<input id="sd-tab-item-49" name="sd-tab-set-16" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-49">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 f(x)=\pm\sqrt{x+1}
 \]</div>
 </div>
-<input id="sd-tab-item-47" name="sd-tab-set-15" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-47">
+<input id="sd-tab-item-50" name="sd-tab-set-16" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-50">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Take square roots of both sides:</p>
 <div class="math notranslate nohighlight">
@@ -1118,8 +1153,8 @@ f(x)=\pm\sqrt{x+1}.
 </ol>
 <ol class="arabic" start="17">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-48" name="sd-tab-set-16" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-48">
+<input checked="checked" id="sd-tab-item-51" name="sd-tab-set-17" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-51">
 Question</label><div class="sd-tab-content docutils">
 <p>Solve for <span class="math notranslate nohighlight">\(x\)</span> in terms of <span class="math notranslate nohighlight">\(y\)</span>, meaning find an expression of the form <span class="math notranslate nohighlight">\(x=g(y)\)</span> where the right-hand side has <span class="math notranslate nohighlight">\(y\)</span> in it, but not <span class="math notranslate nohighlight">\(x\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1127,16 +1162,16 @@ Question</label><div class="sd-tab-content docutils">
 y=\frac{2x+1}{x-1}
 \]</div>
 </div>
-<input id="sd-tab-item-49" name="sd-tab-set-16" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-49">
+<input id="sd-tab-item-52" name="sd-tab-set-17" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-52">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 x=\frac{y+1}{y-2}
 \]</div>
 </div>
-<input id="sd-tab-item-50" name="sd-tab-set-16" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-50">
+<input id="sd-tab-item-53" name="sd-tab-set-17" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-53">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Multiply by <span class="math notranslate nohighlight">\(x-1\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1169,8 +1204,8 @@ x=\frac{y+1}{y-2}.
 </ol>
 <ol class="arabic" start="18">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-51" name="sd-tab-set-17" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-51">
+<input checked="checked" id="sd-tab-item-54" name="sd-tab-set-18" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-54">
 Question</label><div class="sd-tab-content docutils">
 <p>Decide whether the following statement is always true. If not, show an example.</p>
 <div class="math notranslate nohighlight">
@@ -1178,8 +1213,8 @@ Question</label><div class="sd-tab-content docutils">
 (a+b)^2=a^2+b^2
 \]</div>
 </div>
-<input id="sd-tab-item-52" name="sd-tab-set-17" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-52">
+<input id="sd-tab-item-55" name="sd-tab-set-18" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-55">
 Answer</label><div class="sd-tab-content docutils">
 <p>The statement is <strong>not</strong> always true. For example, if <span class="math notranslate nohighlight">\(a=1\)</span> and <span class="math notranslate nohighlight">\(b=1\)</span>, then</p>
 <div class="math notranslate nohighlight">
@@ -1192,8 +1227,8 @@ Answer</label><div class="sd-tab-content docutils">
 a^2+b^2=2.
 \]</div>
 </div>
-<input id="sd-tab-item-53" name="sd-tab-set-17" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-53">
+<input id="sd-tab-item-56" name="sd-tab-set-18" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-56">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>The correct expansion is</p>
 <div class="math notranslate nohighlight">
@@ -1221,8 +1256,8 @@ a^2+b^2=1^2+1^2=2.
 </ol>
 <ol class="arabic" start="19">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-54" name="sd-tab-set-18" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-54">
+<input checked="checked" id="sd-tab-item-57" name="sd-tab-set-19" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-57">
 Question</label><div class="sd-tab-content docutils">
 <p>Decide whether the following statement is always true. If not, show an example.</p>
 <div class="math notranslate nohighlight">
@@ -1230,8 +1265,8 @@ Question</label><div class="sd-tab-content docutils">
 \sqrt{a^2+b^2}=a+b
 \]</div>
 </div>
-<input id="sd-tab-item-55" name="sd-tab-set-18" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-55">
+<input id="sd-tab-item-58" name="sd-tab-set-19" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-58">
 Answer</label><div class="sd-tab-content docutils">
 <p>The statement is <strong>not</strong> always true. For example, if <span class="math notranslate nohighlight">\(a=3\)</span> and <span class="math notranslate nohighlight">\(b=4\)</span>, then</p>
 <div class="math notranslate nohighlight">
@@ -1244,8 +1279,8 @@ Answer</label><div class="sd-tab-content docutils">
 a+b=7.
 \]</div>
 </div>
-<input id="sd-tab-item-56" name="sd-tab-set-18" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-56">
+<input id="sd-tab-item-59" name="sd-tab-set-19" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-59">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Take <span class="math notranslate nohighlight">\(a=3\)</span> and <span class="math notranslate nohighlight">\(b=4\)</span>. Then</p>
 <div class="math notranslate nohighlight">
@@ -1264,8 +1299,8 @@ a+b=3+4=7.
 </ol>
 <ol class="arabic" start="20">
 <li><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-57" name="sd-tab-set-19" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-57">
+<input checked="checked" id="sd-tab-item-60" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-60">
 Question</label><div class="sd-tab-content docutils">
 <p>Consider the natural log and square root functions.</p>
 <p>(a) Evaluate:</p>
@@ -1289,8 +1324,8 @@ Question</label><div class="sd-tab-content docutils">
 \ln(y+2)=x-1; \qquad \sqrt{y^2+4}=x-1
 \]</div>
 </div>
-<input id="sd-tab-item-58" name="sd-tab-set-19" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-58">
+<input id="sd-tab-item-61" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-61">
 Answer</label><div class="sd-tab-content docutils">
 <p>(a)</p>
 <div class="math notranslate nohighlight">
@@ -1310,8 +1345,8 @@ y=e^{x-1}-2,
 y=\pm\sqrt{x^2-2x-3}, \qquad x\geq 1.
 \]</div>
 </div>
-<input id="sd-tab-item-59" name="sd-tab-set-19" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-59">
+<input id="sd-tab-item-62" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-62">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>(a) Since <span class="math notranslate nohighlight">\(e^0=1\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -1380,8 +1415,8 @@ y=\pm\sqrt{x^2-2x-3}, \qquad x\geq 1.
 <section id="b-1">
 <h3>B.1<a class="headerlink" href="#b-1" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-60" name="sd-tab-set-20" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-60">
+<input checked="checked" id="sd-tab-item-63" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-63">
 Question</label><div class="sd-tab-content docutils">
 <p>Sketch the graph of</p>
 <div class="math notranslate nohighlight">
@@ -1390,8 +1425,8 @@ y=x^2.
 \]</div>
 <p>Label axes and key features.</p>
 </div>
-<input id="sd-tab-item-61" name="sd-tab-set-20" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-61">
+<input id="sd-tab-item-64" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-64">
 Answer</label><div class="sd-tab-content docutils">
 <p>The graph of</p>
 <div class="math notranslate nohighlight">
@@ -1402,8 +1437,8 @@ y=x^2
 <a class="reference internal image-reference" href="../_images/B1_parabola.png"><img alt="Graph of $y=x^2$" src="../_images/B1_parabola.png" style="width: 450px;" />
 </a>
 </div>
-<input id="sd-tab-item-62" name="sd-tab-set-20" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-62">
+<input id="sd-tab-item-65" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-65">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>The function <span class="math notranslate nohighlight">\(y=x^2\)</span> is nonnegative for all <span class="math notranslate nohighlight">\(x\)</span>. It has vertex at <span class="math notranslate nohighlight">\((0,0)\)</span> and is symmetric because</p>
 <div class="math notranslate nohighlight">
@@ -1456,8 +1491,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="b-2">
 <h3>B.2<a class="headerlink" href="#b-2" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-63" name="sd-tab-set-21" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-63">
+<input checked="checked" id="sd-tab-item-66" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-66">
 Question</label><div class="sd-tab-content docutils">
 <p>Sketch the graph of</p>
 <div class="math notranslate nohighlight">
@@ -1466,15 +1501,15 @@ y=\frac{1}{x}.
 \]</div>
 <p>Label asymptotes.</p>
 </div>
-<input id="sd-tab-item-64" name="sd-tab-set-21" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-64">
+<input id="sd-tab-item-67" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-67">
 Answer</label><div class="sd-tab-content docutils">
 <p>The graph has one branch in quadrant I and one branch in quadrant III. The asymptotes are <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(y=0\)</span>.</p>
 <a class="reference internal image-reference" href="../_images/B2_hyperbola.png"><img alt="Graph of $y=1/x$" src="../_images/B2_hyperbola.png" style="width: 450px;" />
 </a>
 </div>
-<input id="sd-tab-item-65" name="sd-tab-set-21" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-65">
+<input id="sd-tab-item-68" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-68">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>The function is undefined at <span class="math notranslate nohighlight">\(x=0\)</span>, giving a vertical asymptote <span class="math notranslate nohighlight">\(x=0\)</span>. As <span class="math notranslate nohighlight">\(x\to\pm\infty\)</span>, <span class="math notranslate nohighlight">\(1/x\to 0\)</span>, giving a horizontal asymptote <span class="math notranslate nohighlight">\(y=0\)</span>.</p>
 <p>For <span class="math notranslate nohighlight">\(x&gt;0\)</span>, <span class="math notranslate nohighlight">\(y&gt;0\)</span>, so the graph is in quadrant I. For <span class="math notranslate nohighlight">\(x&lt;0\)</span>, <span class="math notranslate nohighlight">\(y&lt;0\)</span>, so the graph is in quadrant III.</p>
@@ -1525,8 +1560,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="b-3">
 <h3>B.3<a class="headerlink" href="#b-3" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-66" name="sd-tab-set-22" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-66">
+<input checked="checked" id="sd-tab-item-69" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-69">
 Question</label><div class="sd-tab-content docutils">
 <p>Find <span class="math notranslate nohighlight">\(f(2)\)</span> if</p>
 <div class="math notranslate nohighlight">
@@ -1534,16 +1569,16 @@ Question</label><div class="sd-tab-content docutils">
 f(x)=x^2-3x.
 \]</div>
 </div>
-<input id="sd-tab-item-67" name="sd-tab-set-22" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-67">
+<input id="sd-tab-item-70" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-70">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 f(2)=-2
 \]</div>
 </div>
-<input id="sd-tab-item-68" name="sd-tab-set-22" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-68">
+<input id="sd-tab-item-71" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-71">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Substitute <span class="math notranslate nohighlight">\(x=2\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1556,21 +1591,21 @@ f(2)=2^2-3(2)=4-6=-2.
 <section id="b-4">
 <h3>B.4<a class="headerlink" href="#b-4" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-69" name="sd-tab-set-23" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-69">
+<input checked="checked" id="sd-tab-item-72" name="sd-tab-set-24" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-72">
 Question</label><div class="sd-tab-content docutils">
 <p>If <span class="math notranslate nohighlight">\(f(3)=5\)</span>, what is the corresponding point on the graph of <span class="math notranslate nohighlight">\(f(x)\)</span>?</p>
 </div>
-<input id="sd-tab-item-70" name="sd-tab-set-23" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-70">
+<input id="sd-tab-item-73" name="sd-tab-set-24" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-73">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 (3,5)
 \]</div>
 </div>
-<input id="sd-tab-item-71" name="sd-tab-set-23" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-71">
+<input id="sd-tab-item-74" name="sd-tab-set-24" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-74">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>The statement <span class="math notranslate nohighlight">\(f(3)=5\)</span> means that when the input is <span class="math notranslate nohighlight">\(x=3\)</span>, the output is <span class="math notranslate nohighlight">\(y=5\)</span>. Therefore the corresponding point is</p>
 <div class="math notranslate nohighlight">
@@ -1583,8 +1618,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="b-5">
 <h3>B.5<a class="headerlink" href="#b-5" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-72" name="sd-tab-set-24" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-72">
+<input checked="checked" id="sd-tab-item-75" name="sd-tab-set-25" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-75">
 Question</label><div class="sd-tab-content docutils">
 <p>Solve:</p>
 <div class="math notranslate nohighlight">
@@ -1592,16 +1627,16 @@ Question</label><div class="sd-tab-content docutils">
 x^2=4
 \]</div>
 </div>
-<input id="sd-tab-item-73" name="sd-tab-set-24" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-73">
+<input id="sd-tab-item-76" name="sd-tab-set-25" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-76">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 x=\pm 2
 \]</div>
 </div>
-<input id="sd-tab-item-74" name="sd-tab-set-24" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-74">
+<input id="sd-tab-item-77" name="sd-tab-set-25" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-77">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Taking square roots gives two possibilities:</p>
 <div class="math notranslate nohighlight">
@@ -1619,8 +1654,8 @@ x=\pm 2.
 <section id="b-6">
 <h3>B.6<a class="headerlink" href="#b-6" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-75" name="sd-tab-set-25" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-75">
+<input checked="checked" id="sd-tab-item-78" name="sd-tab-set-26" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-78">
 Question</label><div class="sd-tab-content docutils">
 <p>Sketch the line</p>
 <div class="math notranslate nohighlight">
@@ -1629,13 +1664,13 @@ y=2x-1.
 \]</div>
 <p>Label at least two points.</p>
 </div>
-<input id="sd-tab-item-76" name="sd-tab-set-25" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-76">
+<input id="sd-tab-item-79" name="sd-tab-set-26" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-79">
 Answer</label><div class="sd-tab-content docutils">
 <p>A line with slope <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(y\)</span>-intercept <span class="math notranslate nohighlight">\(-1\)</span>. Two points are <span class="math notranslate nohighlight">\((0,-1)\)</span> and <span class="math notranslate nohighlight">\((1,1)\)</span>.</p>
 </div>
-<input id="sd-tab-item-77" name="sd-tab-set-25" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-77">
+<input id="sd-tab-item-80" name="sd-tab-set-26" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-80">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>The equation is in slope-intercept form:</p>
 <div class="math notranslate nohighlight">
@@ -1655,8 +1690,8 @@ y=2(1)-1=1,
 <section id="b-7">
 <h3>B.7<a class="headerlink" href="#b-7" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-78" name="sd-tab-set-26" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-78">
+<input checked="checked" id="sd-tab-item-81" name="sd-tab-set-27" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-81">
 Question</label><div class="sd-tab-content docutils">
 <p>For the line</p>
 <div class="math notranslate nohighlight">
@@ -1667,15 +1702,15 @@ y=-3x+4,
 <p>(b) state the <span class="math notranslate nohighlight">\(y\)</span>-intercept,</p>
 <p>(c) sketch the line.</p>
 </div>
-<input id="sd-tab-item-79" name="sd-tab-set-26" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-79">
+<input id="sd-tab-item-82" name="sd-tab-set-27" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-82">
 Answer</label><div class="sd-tab-content docutils">
 <p>(a) Slope: <span class="math notranslate nohighlight">\(-3\)</span>.</p>
 <p>(b) <span class="math notranslate nohighlight">\(y\)</span>-intercept: <span class="math notranslate nohighlight">\(4\)</span>.</p>
 <p>(c) The line passes through <span class="math notranslate nohighlight">\((0,4)\)</span> and decreases with slope <span class="math notranslate nohighlight">\(-3\)</span> as <span class="math notranslate nohighlight">\(x\)</span> increases. For example, another point is <span class="math notranslate nohighlight">\((1,1)\)</span>.</p>
 </div>
-<input id="sd-tab-item-80" name="sd-tab-set-26" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-80">
+<input id="sd-tab-item-83" name="sd-tab-set-27" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-83">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>The equation is in slope-intercept form:</p>
 <div class="math notranslate nohighlight">
@@ -1701,8 +1736,8 @@ b=4.
 <section id="b-8-a">
 <h4>B.8.a<a class="headerlink" href="#b-8-a" title="Link to this heading">#</a></h4>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-81" name="sd-tab-set-27" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-81">
+<input checked="checked" id="sd-tab-item-84" name="sd-tab-set-28" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-84">
 Question</label><div class="sd-tab-content docutils">
 <p>Sketch the function</p>
 <div class="math notranslate nohighlight">
@@ -1710,14 +1745,14 @@ Question</label><div class="sd-tab-content docutils">
 y=\sin(x).
 \]</div>
 </div>
-<input id="sd-tab-item-82" name="sd-tab-set-27" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-82">
+<input id="sd-tab-item-85" name="sd-tab-set-28" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-85">
 Answer</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="../_images/B8a.png"><img alt="Graph of y equals sin x" src="../_images/B8a.png" style="width: 500px;" />
 </a>
 </div>
-<input id="sd-tab-item-83" name="sd-tab-set-27" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-83">
+<input id="sd-tab-item-86" name="sd-tab-set-28" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-86">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>This is the basic sine curve.</p>
 <p>Key features:</p>
@@ -1735,8 +1770,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="b-8-b">
 <h4>B.8.b<a class="headerlink" href="#b-8-b" title="Link to this heading">#</a></h4>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-84" name="sd-tab-set-28" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-84">
+<input checked="checked" id="sd-tab-item-87" name="sd-tab-set-29" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-87">
 Question</label><div class="sd-tab-content docutils">
 <p>Sketch the function</p>
 <div class="math notranslate nohighlight">
@@ -1744,14 +1779,14 @@ Question</label><div class="sd-tab-content docutils">
 y=\cos(2x).
 \]</div>
 </div>
-<input id="sd-tab-item-85" name="sd-tab-set-28" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-85">
+<input id="sd-tab-item-88" name="sd-tab-set-29" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-88">
 Answer</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="../_images/B8b.png"><img alt="Graph of y equals cos 2x" src="../_images/B8b.png" style="width: 500px;" />
 </a>
 </div>
-<input id="sd-tab-item-86" name="sd-tab-set-28" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-86">
+<input id="sd-tab-item-89" name="sd-tab-set-29" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-89">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>This is a cosine curve with horizontal compression.</p>
 <p>Key features:</p>
@@ -1768,8 +1803,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="b-8-c">
 <h4>B.8.c<a class="headerlink" href="#b-8-c" title="Link to this heading">#</a></h4>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-87" name="sd-tab-set-29" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-87">
+<input checked="checked" id="sd-tab-item-90" name="sd-tab-set-30" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-90">
 Question</label><div class="sd-tab-content docutils">
 <p>Sketch the function</p>
 <div class="math notranslate nohighlight">
@@ -1777,14 +1812,14 @@ Question</label><div class="sd-tab-content docutils">
 y=3\sin(x).
 \]</div>
 </div>
-<input id="sd-tab-item-88" name="sd-tab-set-29" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-88">
+<input id="sd-tab-item-91" name="sd-tab-set-30" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-91">
 Answer</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="../_images/B8c.png"><img alt="Graph of y equals 3 sin x" src="../_images/B8c.png" style="width: 500px;" />
 </a>
 </div>
-<input id="sd-tab-item-89" name="sd-tab-set-29" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-89">
+<input id="sd-tab-item-92" name="sd-tab-set-30" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-92">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>This is a vertically stretched sine curve.</p>
 <p>Key features:</p>
@@ -1802,8 +1837,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="b-8-d">
 <h4>B.8.d<a class="headerlink" href="#b-8-d" title="Link to this heading">#</a></h4>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-90" name="sd-tab-set-30" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-90">
+<input checked="checked" id="sd-tab-item-93" name="sd-tab-set-31" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-93">
 Question</label><div class="sd-tab-content docutils">
 <p>Sketch the function</p>
 <div class="math notranslate nohighlight">
@@ -1811,14 +1846,14 @@ Question</label><div class="sd-tab-content docutils">
 y=1-\cos(x).
 \]</div>
 </div>
-<input id="sd-tab-item-91" name="sd-tab-set-30" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-91">
+<input id="sd-tab-item-94" name="sd-tab-set-31" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-94">
 Answer</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="../_images/B8d.png"><img alt="Graph of y equals 1 minus cos x" src="../_images/B8d.png" style="width: 500px;" />
 </a>
 </div>
-<input id="sd-tab-item-92" name="sd-tab-set-30" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-92">
+<input id="sd-tab-item-95" name="sd-tab-set-31" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-95">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Start with <span class="math notranslate nohighlight">\(y=\cos(x)\)</span>, reflect it vertically across the <span class="math notranslate nohighlight">\(x\)</span>-axis to get <span class="math notranslate nohighlight">\(y=-\cos(x)\)</span>, then shift it up by <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <p>Key features:</p>
@@ -1836,8 +1871,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="b-8-e">
 <h4>B.8.e<a class="headerlink" href="#b-8-e" title="Link to this heading">#</a></h4>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-93" name="sd-tab-set-31" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-93">
+<input checked="checked" id="sd-tab-item-96" name="sd-tab-set-32" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-96">
 Question</label><div class="sd-tab-content docutils">
 <p>Sketch the function</p>
 <div class="math notranslate nohighlight">
@@ -1845,14 +1880,14 @@ Question</label><div class="sd-tab-content docutils">
 y=\sin(x+\pi/4).
 \]</div>
 </div>
-<input id="sd-tab-item-94" name="sd-tab-set-31" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-94">
+<input id="sd-tab-item-97" name="sd-tab-set-32" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-97">
 Answer</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="../_images/B8e.png"><img alt="Graph of y equals sin of x plus pi over 4" src="../_images/B8e.png" style="width: 500px;" />
 </a>
 </div>
-<input id="sd-tab-item-95" name="sd-tab-set-31" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-95">
+<input id="sd-tab-item-98" name="sd-tab-set-32" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-98">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>This is the basic sine curve shifted left by <span class="math notranslate nohighlight">\(\pi/4\)</span>.</p>
 <p>Key features:</p>
@@ -1868,8 +1903,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="b-8-f">
 <h4>B.8.f<a class="headerlink" href="#b-8-f" title="Link to this heading">#</a></h4>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-96" name="sd-tab-set-32" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-96">
+<input checked="checked" id="sd-tab-item-99" name="sd-tab-set-33" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-99">
 Question</label><div class="sd-tab-content docutils">
 <p>Sketch the function</p>
 <div class="math notranslate nohighlight">
@@ -1877,14 +1912,14 @@ Question</label><div class="sd-tab-content docutils">
 y=1+2\sin(3(x-\pi/2)).
 \]</div>
 </div>
-<input id="sd-tab-item-97" name="sd-tab-set-32" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-97">
+<input id="sd-tab-item-100" name="sd-tab-set-33" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-100">
 Answer</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="../_images/B8f.png"><img alt="Graph of y equals 1 plus 2 sin of 3 times x minus pi over 2" src="../_images/B8f.png" style="width: 500px;" />
 </a>
 </div>
-<input id="sd-tab-item-98" name="sd-tab-set-32" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-98">
+<input id="sd-tab-item-101" name="sd-tab-set-33" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-101">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Start with <span class="math notranslate nohighlight">\(y=\sin(x)\)</span>.</p>
 <ul class="simple">
@@ -2038,8 +2073,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="c-1">
 <h3>C.1<a class="headerlink" href="#c-1" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-99" name="sd-tab-set-33" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-99">
+<input checked="checked" id="sd-tab-item-102" name="sd-tab-set-34" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-102">
 Question</label><div class="sd-tab-content docutils">
 <p>Differentiate:</p>
 <div class="math notranslate nohighlight">
@@ -2047,16 +2082,16 @@ Question</label><div class="sd-tab-content docutils">
 f(x)=3x^2-2x
 \]</div>
 </div>
-<input id="sd-tab-item-100" name="sd-tab-set-33" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-100">
+<input id="sd-tab-item-103" name="sd-tab-set-34" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-103">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 f'(x)=6x-2
 \]</div>
 </div>
-<input id="sd-tab-item-101" name="sd-tab-set-33" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-101">
+<input id="sd-tab-item-104" name="sd-tab-set-34" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-104">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Use the power rule term by term:</p>
 <div class="math notranslate nohighlight">
@@ -2079,8 +2114,8 @@ f'(x)=6x-2.
 <section id="c-2">
 <h3>C.2<a class="headerlink" href="#c-2" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-102" name="sd-tab-set-34" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-102">
+<input checked="checked" id="sd-tab-item-105" name="sd-tab-set-35" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-105">
 Question</label><div class="sd-tab-content docutils">
 <p>Differentiate:</p>
 <div class="math notranslate nohighlight">
@@ -2088,16 +2123,16 @@ Question</label><div class="sd-tab-content docutils">
 f(x)=(2x+1)^3
 \]</div>
 </div>
-<input id="sd-tab-item-103" name="sd-tab-set-34" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-103">
+<input id="sd-tab-item-106" name="sd-tab-set-35" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-106">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 f'(x)=6(2x+1)^2
 \]</div>
 </div>
-<input id="sd-tab-item-104" name="sd-tab-set-34" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-104">
+<input id="sd-tab-item-107" name="sd-tab-set-35" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-107">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Use the chain rule. If</p>
 <div class="math notranslate nohighlight">
@@ -2115,8 +2150,8 @@ f'(x)=3(2x+1)^2(2)=6(2x+1)^2.
 <section id="c-3">
 <h3>C.3<a class="headerlink" href="#c-3" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-105" name="sd-tab-set-35" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-105">
+<input checked="checked" id="sd-tab-item-108" name="sd-tab-set-36" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-108">
 Question</label><div class="sd-tab-content docutils">
 <p>Differentiate:</p>
 <div class="math notranslate nohighlight">
@@ -2124,16 +2159,16 @@ Question</label><div class="sd-tab-content docutils">
 f(x)=\ln(x^2+1)
 \]</div>
 </div>
-<input id="sd-tab-item-106" name="sd-tab-set-35" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-106">
+<input id="sd-tab-item-109" name="sd-tab-set-36" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-109">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 f'(x)=\frac{2x}{x^2+1}
 \]</div>
 </div>
-<input id="sd-tab-item-107" name="sd-tab-set-35" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-107">
+<input id="sd-tab-item-110" name="sd-tab-set-36" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-110">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Use the chain rule. The <span class="math notranslate nohighlight">\(x\)</span> derivative of <span class="math notranslate nohighlight">\(\ln(u)\)</span> is <span class="math notranslate nohighlight">\(u'/u\)</span>. Here</p>
 <div class="math notranslate nohighlight">
@@ -2156,8 +2191,8 @@ f'(x)=\frac{2x}{x^2+1}.
 <section id="c-4">
 <h3>C.4<a class="headerlink" href="#c-4" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-108" name="sd-tab-set-36" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-108">
+<input checked="checked" id="sd-tab-item-111" name="sd-tab-set-37" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-111">
 Question</label><div class="sd-tab-content docutils">
 <p>Find the indefinite integral:</p>
 <div class="math notranslate nohighlight">
@@ -2165,16 +2200,16 @@ Question</label><div class="sd-tab-content docutils">
 \int x^2\,dx
 \]</div>
 </div>
-<input id="sd-tab-item-109" name="sd-tab-set-36" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-109">
+<input id="sd-tab-item-112" name="sd-tab-set-37" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-112">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \frac{x^3}{3}+C
 \]</div>
 </div>
-<input id="sd-tab-item-110" name="sd-tab-set-36" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-110">
+<input id="sd-tab-item-113" name="sd-tab-set-37" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-113">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Use the power rule for integration:</p>
 <div class="math notranslate nohighlight">
@@ -2192,8 +2227,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="c-5">
 <h3>C.5<a class="headerlink" href="#c-5" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-111" name="sd-tab-set-37" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-111">
+<input checked="checked" id="sd-tab-item-114" name="sd-tab-set-38" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-114">
 Question</label><div class="sd-tab-content docutils">
 <p>Differentiate:</p>
 <div class="math notranslate nohighlight">
@@ -2201,16 +2236,16 @@ Question</label><div class="sd-tab-content docutils">
 f(x)=(x^2)^3
 \]</div>
 </div>
-<input id="sd-tab-item-112" name="sd-tab-set-37" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-112">
+<input id="sd-tab-item-115" name="sd-tab-set-38" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-115">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 f'(x)=6x^5
 \]</div>
 </div>
-<input id="sd-tab-item-113" name="sd-tab-set-37" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-113">
+<input id="sd-tab-item-116" name="sd-tab-set-38" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-116">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>First simplify:</p>
 <div class="math notranslate nohighlight">
@@ -2235,8 +2270,8 @@ f'(x)=6x^5.
 <section id="c-6">
 <h3>C.6<a class="headerlink" href="#c-6" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-114" name="sd-tab-set-38" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-114">
+<input checked="checked" id="sd-tab-item-117" name="sd-tab-set-39" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-117">
 Question</label><div class="sd-tab-content docutils">
 <p>Differentiate:</p>
 <div class="math notranslate nohighlight">
@@ -2244,16 +2279,16 @@ Question</label><div class="sd-tab-content docutils">
 f(x)=\sqrt{x}
 \]</div>
 </div>
-<input id="sd-tab-item-115" name="sd-tab-set-38" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-115">
+<input id="sd-tab-item-118" name="sd-tab-set-39" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-118">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 f'(x)=\frac{1}{2\sqrt{x}}
 \]</div>
 </div>
-<input id="sd-tab-item-116" name="sd-tab-set-38" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-116">
+<input id="sd-tab-item-119" name="sd-tab-set-39" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-119">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Rewrite the square root as a power:</p>
 <div class="math notranslate nohighlight">
@@ -2271,8 +2306,8 @@ f'(x)=\frac{1}{2}x^{-1/2}=\frac{1}{2\sqrt{x}}.
 <section id="c-7">
 <h3>C.7<a class="headerlink" href="#c-7" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-117" name="sd-tab-set-39" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-117">
+<input checked="checked" id="sd-tab-item-120" name="sd-tab-set-40" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-120">
 Question</label><div class="sd-tab-content docutils">
 <p>Differentiate:</p>
 <div class="math notranslate nohighlight">
@@ -2280,16 +2315,16 @@ Question</label><div class="sd-tab-content docutils">
 f(x)=x^2+x+\frac{1}{x}
 \]</div>
 </div>
-<input id="sd-tab-item-118" name="sd-tab-set-39" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-118">
+<input id="sd-tab-item-121" name="sd-tab-set-40" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-121">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 f'(x)=2x+1-\frac{1}{x^2}
 \]</div>
 </div>
-<input id="sd-tab-item-119" name="sd-tab-set-39" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-119">
+<input id="sd-tab-item-122" name="sd-tab-set-40" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-122">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Rewrite <span class="math notranslate nohighlight">\(1/x\)</span> as <span class="math notranslate nohighlight">\(x^{-1}\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -2312,8 +2347,8 @@ f'(x)=2x+1-\frac{1}{x^2}.
 <section id="c-8">
 <h3>C.8<a class="headerlink" href="#c-8" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-120" name="sd-tab-set-40" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-120">
+<input checked="checked" id="sd-tab-item-123" name="sd-tab-set-41" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-123">
 Question</label><div class="sd-tab-content docutils">
 <p>Find the indefinite integral:</p>
 <div class="math notranslate nohighlight">
@@ -2321,16 +2356,16 @@ Question</label><div class="sd-tab-content docutils">
 \int \left(x+\frac{2}{x}+\frac{1}{x^2}\right)\,dx
 \]</div>
 </div>
-<input id="sd-tab-item-121" name="sd-tab-set-40" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-121">
+<input id="sd-tab-item-124" name="sd-tab-set-41" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-124">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \frac{x^2}{2}+2\ln|x|-\frac{1}{x}+C
 \]</div>
 </div>
-<input id="sd-tab-item-122" name="sd-tab-set-40" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-122">
+<input id="sd-tab-item-125" name="sd-tab-set-41" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-125">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Integrate term by term:</p>
 <div class="math notranslate nohighlight">
@@ -2364,8 +2399,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="c-9">
 <h3>C.9<a class="headerlink" href="#c-9" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-123" name="sd-tab-set-41" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-123">
+<input checked="checked" id="sd-tab-item-126" name="sd-tab-set-42" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-126">
 Question</label><div class="sd-tab-content docutils">
 <p>Evaluate the integral using substitution:</p>
 <div class="math notranslate nohighlight">
@@ -2373,16 +2408,16 @@ Question</label><div class="sd-tab-content docutils">
 \int x\sqrt{1+x^2}\,dx
 \]</div>
 </div>
-<input id="sd-tab-item-124" name="sd-tab-set-41" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-124">
+<input id="sd-tab-item-127" name="sd-tab-set-42" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-127">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \frac{1}{3}(1+x^2)^{3/2}+C
 \]</div>
 </div>
-<input id="sd-tab-item-125" name="sd-tab-set-41" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-125">
+<input id="sd-tab-item-128" name="sd-tab-set-42" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-128">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Let</p>
 <div class="math notranslate nohighlight">
@@ -2423,8 +2458,8 @@ dx=\frac{1}{2x}\,du.
 <section id="c-10">
 <h3>C.10<a class="headerlink" href="#c-10" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-126" name="sd-tab-set-42" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-126">
+<input checked="checked" id="sd-tab-item-129" name="sd-tab-set-43" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-129">
 Question</label><div class="sd-tab-content docutils">
 <p>Evaluate the integral using integration by parts:</p>
 <div class="math notranslate nohighlight">
@@ -2437,20 +2472,20 @@ Question</label><div class="sd-tab-content docutils">
 \int f(x)g'(x)\,dx=f(x)g(x)-\int f'(x)g(x)\,dx.
 \]</div>
 </div>
-<input id="sd-tab-item-127" name="sd-tab-set-42" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-127">
+<input id="sd-tab-item-130" name="sd-tab-set-43" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-130">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 -\frac{1}{4}(2x+1)e^{-2x}+C
 \]</div>
 </div>
-<input id="sd-tab-item-128" name="sd-tab-set-42" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-128">
+<input id="sd-tab-item-131" name="sd-tab-set-43" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-131">
 Worked solution</label><div class="sd-tab-content docutils">
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-129" name="sd-tab-set-43" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-129">
+<input checked="checked" id="sd-tab-item-132" name="sd-tab-set-44" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-132">
 Method 1: integration by parts formula</label><div class="sd-tab-content docutils">
 <p>We want to evaluate</p>
 <div class="math notranslate nohighlight">
@@ -2524,8 +2559,8 @@ C.
 C.
 \]</div>
 </div>
-<input id="sd-tab-item-130" name="sd-tab-set-43" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-130">
+<input id="sd-tab-item-133" name="sd-tab-set-44" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-133">
 Method 2: tabular method</label><div class="sd-tab-content docutils">
 <p>We want to evaluate</p>
 <div class="math notranslate nohighlight">
@@ -2582,8 +2617,8 @@ C.
 <section id="c-11">
 <h3>C.11<a class="headerlink" href="#c-11" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-131" name="sd-tab-set-44" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-131">
+<input checked="checked" id="sd-tab-item-134" name="sd-tab-set-45" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-134">
 Question</label><div class="sd-tab-content docutils">
 <p>Evaluate the integral using partial fractions:</p>
 <div class="math notranslate nohighlight">
@@ -2591,16 +2626,16 @@ Question</label><div class="sd-tab-content docutils">
 \int \frac{3x+3}{x^2+x-2}\,dx
 \]</div>
 </div>
-<input id="sd-tab-item-132" name="sd-tab-set-44" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-132">
+<input id="sd-tab-item-135" name="sd-tab-set-45" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-135">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \ln|x+2|+2\ln|x-1|+C
 \]</div>
 </div>
-<input id="sd-tab-item-133" name="sd-tab-set-44" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-133">
+<input id="sd-tab-item-136" name="sd-tab-set-45" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-136">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>We want to evaluate</p>
 <div class="math notranslate nohighlight">
@@ -2689,21 +2724,21 @@ C.
 <section id="d-1">
 <h3>D.1<a class="headerlink" href="#d-1" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-134" name="sd-tab-set-45" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-134">
+<input checked="checked" id="sd-tab-item-137" name="sd-tab-set-46" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-137">
 Question</label><div class="sd-tab-content docutils">
 <p>Given the vector <span class="math notranslate nohighlight">\(\vec v=(1,2,2)\)</span>, find the unit vector <span class="math notranslate nohighlight">\(\vec u\)</span> pointing in the same direction.</p>
 </div>
-<input id="sd-tab-item-135" name="sd-tab-set-45" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-135">
+<input id="sd-tab-item-138" name="sd-tab-set-46" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-138">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \vec u=\left(\frac{1}{3},\frac{2}{3},\frac{2}{3}\right)
 \]</div>
 </div>
-<input id="sd-tab-item-136" name="sd-tab-set-45" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-136">
+<input id="sd-tab-item-139" name="sd-tab-set-46" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-139">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>The unit vector is</p>
 <div class="math notranslate nohighlight">
@@ -2726,8 +2761,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="d-2">
 <h3>D.2<a class="headerlink" href="#d-2" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-137" name="sd-tab-set-46" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-137">
+<input checked="checked" id="sd-tab-item-140" name="sd-tab-set-47" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-140">
 Question</label><div class="sd-tab-content docutils">
 <p>Compute the dot product:</p>
 <div class="math notranslate nohighlight">
@@ -2735,16 +2770,16 @@ Question</label><div class="sd-tab-content docutils">
 (1,2,3)\cdot(2,0,1)
 \]</div>
 </div>
-<input id="sd-tab-item-138" name="sd-tab-set-46" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-138">
+<input id="sd-tab-item-141" name="sd-tab-set-47" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-141">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 5
 \]</div>
 </div>
-<input id="sd-tab-item-139" name="sd-tab-set-46" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-139">
+<input id="sd-tab-item-142" name="sd-tab-set-47" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-142">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Multiply corresponding components and add:</p>
 <div class="math notranslate nohighlight">
@@ -2757,8 +2792,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="d-3">
 <h3>D.3<a class="headerlink" href="#d-3" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-140" name="sd-tab-set-47" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-140">
+<input checked="checked" id="sd-tab-item-143" name="sd-tab-set-48" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-143">
 Question</label><div class="sd-tab-content docutils">
 <p>Use the dot product to find <span class="math notranslate nohighlight">\(\cos(\theta)\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between</p>
 <div class="math notranslate nohighlight">
@@ -2766,16 +2801,16 @@ Question</label><div class="sd-tab-content docutils">
 (1,0,0) \quad \text{and} \quad (1,1,0).
 \]</div>
 </div>
-<input id="sd-tab-item-141" name="sd-tab-set-47" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-141">
+<input id="sd-tab-item-144" name="sd-tab-set-48" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-144">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \cos(\theta)=\frac{1}{\sqrt{2}}
 \]</div>
 </div>
-<input id="sd-tab-item-142" name="sd-tab-set-47" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-142">
+<input id="sd-tab-item-145" name="sd-tab-set-48" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-145">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Let</p>
 <div class="math notranslate nohighlight">
@@ -2813,8 +2848,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="d-4">
 <h3>D.4<a class="headerlink" href="#d-4" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-143" name="sd-tab-set-48" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-143">
+<input checked="checked" id="sd-tab-item-146" name="sd-tab-set-49" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-146">
 Question</label><div class="sd-tab-content docutils">
 <p>Are these vectors perpendicular? Justify.</p>
 <div class="math notranslate nohighlight">
@@ -2822,13 +2857,13 @@ Question</label><div class="sd-tab-content docutils">
 (2,-1,0), \qquad (1,2,0)
 \]</div>
 </div>
-<input id="sd-tab-item-144" name="sd-tab-set-48" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-144">
+<input id="sd-tab-item-147" name="sd-tab-set-49" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-147">
 Answer</label><div class="sd-tab-content docutils">
 <p>Yes. Their dot product is <span class="math notranslate nohighlight">\(0\)</span>.</p>
 </div>
-<input id="sd-tab-item-145" name="sd-tab-set-48" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-145">
+<input id="sd-tab-item-148" name="sd-tab-set-49" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-148">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Compute the dot product:</p>
 <div class="math notranslate nohighlight">
@@ -2842,8 +2877,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="d-5">
 <h3>D.5<a class="headerlink" href="#d-5" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-146" name="sd-tab-set-49" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-146">
+<input checked="checked" id="sd-tab-item-149" name="sd-tab-set-50" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-149">
 Question</label><div class="sd-tab-content docutils">
 <p>Compute the cross product:</p>
 <div class="math notranslate nohighlight">
@@ -2851,16 +2886,16 @@ Question</label><div class="sd-tab-content docutils">
 (1,0,0)\times(0,1,0)
 \]</div>
 </div>
-<input id="sd-tab-item-147" name="sd-tab-set-49" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-147">
+<input id="sd-tab-item-150" name="sd-tab-set-50" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-150">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 (0,0,1)
 \]</div>
 </div>
-<input id="sd-tab-item-148" name="sd-tab-set-49" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-148">
+<input id="sd-tab-item-151" name="sd-tab-set-50" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-151">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>We want to compute</p>
 <div class="math notranslate nohighlight">
@@ -2954,8 +2989,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="d-6">
 <h3>D.6<a class="headerlink" href="#d-6" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-149" name="sd-tab-set-50" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-149">
+<input checked="checked" id="sd-tab-item-152" name="sd-tab-set-51" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-152">
 Question</label><div class="sd-tab-content docutils">
 <p>Use the cross product to find the area of a parallelogram whose edges are the vectors</p>
 <div class="math notranslate nohighlight">
@@ -2963,16 +2998,16 @@ Question</label><div class="sd-tab-content docutils">
 (1,2,0), \qquad (2,1,0).
 \]</div>
 </div>
-<input id="sd-tab-item-150" name="sd-tab-set-50" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-150">
+<input id="sd-tab-item-153" name="sd-tab-set-51" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-153">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 3
 \]</div>
 </div>
-<input id="sd-tab-item-151" name="sd-tab-set-50" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-151">
+<input id="sd-tab-item-154" name="sd-tab-set-51" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-154">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>We want to find the area of the parallelogram whose edges are</p>
 <div class="math notranslate nohighlight">
@@ -3084,18 +3119,18 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="d-7">
 <h3>D.7<a class="headerlink" href="#d-7" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-152" name="sd-tab-set-51" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-152">
+<input checked="checked" id="sd-tab-item-155" name="sd-tab-set-52" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-155">
 Question</label><div class="sd-tab-content docutils">
 <p>In one sentence: in what direction does <span class="math notranslate nohighlight">\(\vec a\times\vec b\)</span> point?</p>
 </div>
-<input id="sd-tab-item-153" name="sd-tab-set-51" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-153">
+<input id="sd-tab-item-156" name="sd-tab-set-52" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-156">
 Answer</label><div class="sd-tab-content docutils">
 <p>It points perpendicular to both <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span>, with direction given by the right-hand rule.</p>
 </div>
-<input id="sd-tab-item-154" name="sd-tab-set-51" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-154">
+<input id="sd-tab-item-157" name="sd-tab-set-52" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-157">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>The cross product <span class="math notranslate nohighlight">\(\vec a\times\vec b\)</span> is perpendicular to the plane containing <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span>. Its orientation is determined by the right-hand rule: curl your fingers from <span class="math notranslate nohighlight">\(\vec a\)</span> toward <span class="math notranslate nohighlight">\(\vec b\)</span>, and your thumb points in the direction of <span class="math notranslate nohighlight">\(\vec a\times\vec b\)</span>.</p>
 </div>
@@ -3104,8 +3139,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="d-8">
 <h3>D.8<a class="headerlink" href="#d-8" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-155" name="sd-tab-set-52" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-155">
+<input checked="checked" id="sd-tab-item-158" name="sd-tab-set-53" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-158">
 Question</label><div class="sd-tab-content docutils">
 <p>Find a vector parallel to the line</p>
 <div class="math notranslate nohighlight">
@@ -3113,8 +3148,8 @@ Question</label><div class="sd-tab-content docutils">
 y=3x-4.
 \]</div>
 </div>
-<input id="sd-tab-item-156" name="sd-tab-set-52" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-156">
+<input id="sd-tab-item-159" name="sd-tab-set-53" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-159">
 Answer</label><div class="sd-tab-content docutils">
 <p>One possible answer is</p>
 <div class="math notranslate nohighlight">
@@ -3122,8 +3157,8 @@ Answer</label><div class="sd-tab-content docutils">
 (1,3).
 \]</div>
 </div>
-<input id="sd-tab-item-157" name="sd-tab-set-52" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-157">
+<input id="sd-tab-item-160" name="sd-tab-set-53" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-160">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>The slope is <span class="math notranslate nohighlight">\(3\)</span>, which means that when <span class="math notranslate nohighlight">\(x\)</span> increases by <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(y\)</span> increases by <span class="math notranslate nohighlight">\(3\)</span>. Therefore a direction vector parallel to the line is</p>
 <div class="math notranslate nohighlight">
@@ -3136,8 +3171,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="d-9">
 <h3>D.9<a class="headerlink" href="#d-9" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-158" name="sd-tab-set-53" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-158">
+<input checked="checked" id="sd-tab-item-161" name="sd-tab-set-54" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-161">
 Question</label><div class="sd-tab-content docutils">
 <p>Parametrise the line through the point <span class="math notranslate nohighlight">\((1,2,3)\)</span> in the direction of the vector</p>
 <div class="math notranslate nohighlight">
@@ -3145,8 +3180,8 @@ Question</label><div class="sd-tab-content docutils">
 \vec v=(2,-1,1).
 \]</div>
 </div>
-<input id="sd-tab-item-159" name="sd-tab-set-53" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-159">
+<input id="sd-tab-item-162" name="sd-tab-set-54" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-162">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -3158,8 +3193,8 @@ Answer</label><div class="sd-tab-content docutils">
 x=1+2t, \qquad y=2-t, \qquad z=3+t.
 \]</div>
 </div>
-<input id="sd-tab-item-160" name="sd-tab-set-53" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-160">
+<input id="sd-tab-item-163" name="sd-tab-set-54" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-163">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>A line through point <span class="math notranslate nohighlight">\(\vec p\)</span> with direction vector <span class="math notranslate nohighlight">\(\vec v\)</span> can be written as</p>
 <div class="math notranslate nohighlight">
@@ -3187,8 +3222,8 @@ x=1+2t, \qquad y=2-t, \qquad z=3+t.
 <section id="d-10">
 <h3>D.10<a class="headerlink" href="#d-10" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-161" name="sd-tab-set-54" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-161">
+<input checked="checked" id="sd-tab-item-164" name="sd-tab-set-55" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-164">
 Question</label><div class="sd-tab-content docutils">
 <p>Parametrise the line through the two points</p>
 <div class="math notranslate nohighlight">
@@ -3196,8 +3231,8 @@ Question</label><div class="sd-tab-content docutils">
 (1,1,0) \quad \text{and} \quad (3,5,0).
 \]</div>
 </div>
-<input id="sd-tab-item-162" name="sd-tab-set-54" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-162">
+<input id="sd-tab-item-165" name="sd-tab-set-55" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-165">
 Answer</label><div class="sd-tab-content docutils">
 <p>One parametrisation is</p>
 <div class="math notranslate nohighlight">
@@ -3205,8 +3240,8 @@ Answer</label><div class="sd-tab-content docutils">
 \vec r(t)=(1,1,0)+t(2,4,0).
 \]</div>
 </div>
-<input id="sd-tab-item-163" name="sd-tab-set-54" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-163">
+<input id="sd-tab-item-166" name="sd-tab-set-55" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-166">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>A direction vector is found by subtracting the points:</p>
 <div class="math notranslate nohighlight">
@@ -3224,8 +3259,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="d-11">
 <h3>D.11<a class="headerlink" href="#d-11" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-164" name="sd-tab-set-55" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-164">
+<input checked="checked" id="sd-tab-item-167" name="sd-tab-set-56" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-167">
 Question</label><div class="sd-tab-content docutils">
 <p>A line is given by</p>
 <div class="math notranslate nohighlight">
@@ -3235,8 +3270,8 @@ Question</label><div class="sd-tab-content docutils">
 <p>(a) Find two points on the line using <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(t=1\)</span>.</p>
 <p>(b) Sketch the line.</p>
 </div>
-<input id="sd-tab-item-165" name="sd-tab-set-55" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-165">
+<input id="sd-tab-item-168" name="sd-tab-set-56" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-168">
 Answer</label><div class="sd-tab-content docutils">
 <p>(a) The two points are</p>
 <div class="math notranslate nohighlight">
@@ -3245,8 +3280,8 @@ Answer</label><div class="sd-tab-content docutils">
 \]</div>
 <p>(b) The line is the straight line through these two points.</p>
 </div>
-<input id="sd-tab-item-166" name="sd-tab-set-55" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-166">
+<input id="sd-tab-item-169" name="sd-tab-set-56" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-169">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>For <span class="math notranslate nohighlight">\(t=0\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -3265,8 +3300,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="d-12">
 <h3>D.12<a class="headerlink" href="#d-12" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-167" name="sd-tab-set-56" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-167">
+<input checked="checked" id="sd-tab-item-170" name="sd-tab-set-57" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-170">
 Question</label><div class="sd-tab-content docutils">
 <p>A line is given by</p>
 <div class="math notranslate nohighlight">
@@ -3277,15 +3312,15 @@ Question</label><div class="sd-tab-content docutils">
 <p>(b) Give a direction vector.</p>
 <p>(c) Is <span class="math notranslate nohighlight">\(x\)</span> increasing or decreasing as <span class="math notranslate nohighlight">\(t\)</span> increases?</p>
 </div>
-<input id="sd-tab-item-168" name="sd-tab-set-56" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-168">
+<input id="sd-tab-item-171" name="sd-tab-set-57" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-171">
 Answer</label><div class="sd-tab-content docutils">
 <p>(a) A point is <span class="math notranslate nohighlight">\((3,-1)\)</span>.</p>
 <p>(b) A direction vector is <span class="math notranslate nohighlight">\((-1,2)\)</span>.</p>
 <p>(c) <span class="math notranslate nohighlight">\(x\)</span> is decreasing as <span class="math notranslate nohighlight">\(t\)</span> increases.</p>
 </div>
-<input id="sd-tab-item-169" name="sd-tab-set-56" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-169">
+<input id="sd-tab-item-172" name="sd-tab-set-57" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-172">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>The parametrisation is written as</p>
 <div class="math notranslate nohighlight">
@@ -3309,8 +3344,8 @@ Worked solution</label><div class="sd-tab-content docutils">
 <section id="d-13">
 <h3>D.13<a class="headerlink" href="#d-13" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-170" name="sd-tab-set-57" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-170">
+<input checked="checked" id="sd-tab-item-173" name="sd-tab-set-58" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-173">
 Question</label><div class="sd-tab-content docutils">
 <p>Let</p>
 <div class="math notranslate nohighlight">
@@ -3318,11 +3353,11 @@ Question</label><div class="sd-tab-content docutils">
 \vec a=(1,2,3), \qquad \vec b=(2,4,6).
 \]</div>
 <p>(a) Compute <span class="math notranslate nohighlight">\(\vec a\times\vec b\)</span>.</p>
-<p>(b) Find the area of the parallelogram.</p>
-<p>(c) What does this tell you about the vectors?</p>
+<p>(b) Find the area of a parallelogram if these vectors correspond to two of the sides.</p>
+<p>(c) What does the area of the parallelogram tell you about the vectors?</p>
 </div>
-<input id="sd-tab-item-171" name="sd-tab-set-57" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-171">
+<input id="sd-tab-item-174" name="sd-tab-set-58" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-174">
 Answer</label><div class="sd-tab-content docutils">
 <p>(a)</p>
 <div class="math notranslate nohighlight">
@@ -3332,8 +3367,8 @@ Answer</label><div class="sd-tab-content docutils">
 <p>(b) The area is <span class="math notranslate nohighlight">\(0\)</span>.</p>
 <p>(c) The vectors are parallel.</p>
 </div>
-<input id="sd-tab-item-172" name="sd-tab-set-57" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-172">
+<input id="sd-tab-item-175" name="sd-tab-set-58" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-175">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Let</p>
 <div class="math notranslate nohighlight">
@@ -3454,6 +3489,137 @@ Worked solution</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </section>
+<section id="d-14">
+<h3>D.14<a class="headerlink" href="#d-14" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-176" name="sd-tab-set-59" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-176">
+Question</label><div class="sd-tab-content docutils">
+<p>Given a parallelogram whose vertices are</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+V_1 &amp;= (0,0,0)\\
+V_2 &amp;= (1,2,1)\\
+V_3 &amp;= (3,3,0)\\
+V_4 &amp;= (2,1,-1)
+\end{align*}\]</div>
+<p>(a) Using the cross product, find a vector <span class="math notranslate nohighlight">\(\vec{v}\)</span> that is perpendicular to the parallelogram whose length equals the area of the parallelogram.</p>
+<p>(b) Find a unit vector <span class="math notranslate nohighlight">\(\vec{u}\)</span> that is perpendicular to the parallelogram.</p>
+</div>
+<input id="sd-tab-item-177" name="sd-tab-set-59" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-177">
+Answer</label><div class="sd-tab-content docutils">
+<p>One possible answer is</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{v}=-3\vec{i}+3\vec{j}-3\vec{k}.
+\]</div>
+<p>The opposite vector,</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{v}=3\vec{i}-3\vec{j}+3\vec{k},
+\]</div>
+<p>is also correct.</p>
+<p>A corresponding unit vector is</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{u}
+=
+-\frac{1}{\sqrt{3}}\vec{i}
++
+\frac{1}{\sqrt{3}}\vec{j}
+-
+\frac{1}{\sqrt{3}}\vec{k}.
+\]</div>
+<p>The opposite unit vector is also correct.</p>
+</div>
+<input id="sd-tab-item-178" name="sd-tab-set-59" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-178">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>The vectors giving two adjacent sides of the parallelogram are</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\vec{a} &amp;= V_2 - V_1 = (1,2,1),\\
+\vec{b} &amp;= V_4 - V_1 = (2,1,-1).
+\end{align*}\]</div>
+<p>Their cross product is perpendicular to the parallelogram and has length equal to the area of the parallelogram.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\vec{v}
+&amp;= \vec{a}\times\vec{b}\\
+&amp;=
+\begin{vmatrix}
+\vec{i} &amp; \vec{j} &amp; \vec{k}\\
+1 &amp; 2 &amp; 1\\
+2 &amp; 1 &amp; -1
+\end{vmatrix}\\
+&amp;=
+\vec{i}
+\begin{vmatrix}
+2 &amp; 1\\
+1 &amp; -1
+\end{vmatrix}
+-
+\vec{j}
+\begin{vmatrix}
+1 &amp; 1\\
+2 &amp; -1
+\end{vmatrix}
++
+\vec{k}
+\begin{vmatrix}
+1 &amp; 2\\
+2 &amp; 1
+\end{vmatrix}\\
+&amp;=
+\vec{i}\bigl(2(-1)-1(1)\bigr)
+-
+\vec{j}\bigl(1(-1)-1(2)\bigr)
++
+\vec{k}\bigl(1(1)-2(2)\bigr)\\
+&amp;=
+-3\vec{i}+3\vec{j}-3\vec{k}.
+\end{align*}\]</div>
+<p>Thus for part (a), one possible answer is</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{v}=-3\vec{i}+3\vec{j}-3\vec{k}.
+\]</div>
+<p>The vector <span class="math notranslate nohighlight">\(\vec{b}\times\vec{a}\)</span> would also work, giving</p>
+<div class="math notranslate nohighlight">
+\[
+-\vec{v}=3\vec{i}-3\vec{j}+3\vec{k}.
+\]</div>
+<p>For part (b), we divide by the length of <span class="math notranslate nohighlight">\(\vec{v}\)</span>.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\|\vec{v}\|
+&amp;=
+\sqrt{(-3)^2+3^2+(-3)^2}\\
+&amp;=
+\sqrt{27}\\
+&amp;=
+3\sqrt{3}.
+\end{align*}\]</div>
+<p>Therefore</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\vec{u}
+&amp;=
+\frac{\vec{v}}{\|\vec{v}\|}\\
+&amp;=
+\frac{-3\vec{i}+3\vec{j}-3\vec{k}}{3\sqrt{3}}\\
+&amp;=
+-\frac{1}{\sqrt{3}}\vec{i}
++
+\frac{1}{\sqrt{3}}\vec{j}
+-
+\frac{1}{\sqrt{3}}\vec{k}.
+\end{align*}\]</div>
+<p>The opposite unit vector is also correct.</p>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -3466,16 +3632,16 @@ Worked solution</label><div class="sd-tab-content docutils">
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "jupyter_matlab_kernel"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "jupyter_matlab_kernel",
             path: "./prereqs"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
 
                 </article>
               
@@ -3569,6 +3735,7 @@ Worked solution</label><div class="sd-tab-content docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-11">D.11</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-12">D.12</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-13">D.13</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-14">D.14</a></li>
 </ul>
 </li>
 </ul>
