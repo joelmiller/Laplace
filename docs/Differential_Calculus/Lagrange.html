@@ -185,6 +185,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite Information</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../prereqs/PrereqIntro.html">Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prereqs/SelfDiagnostic.html">MAT2VCA Readiness Self-Diagnostic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prereqs/Squares.html">Squares</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prereqs/EqualsSign.html">The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../prereqs/AlgebraReview.html">How to improve your prerequisite skills</a></li>
@@ -649,14 +650,30 @@ document.write(`
 <span class="k">end</span>
 
 
-<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;northwest&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;east outside&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d8dc5e58f28c6b09400fc27b7107517b205427e18f631b71c054bc709b1fc9ff.png" src="../_images/d8dc5e58f28c6b09400fc27b7107517b205427e18f631b71c054bc709b1fc9ff.png" />
-<div class="output text_html"><html><body><pre>colorvec = 'mc'</pre></body></html></div></div>
+<img alt="../_images/c7624011c0b71ffa6f4e3e68fe160b687a002d9d2da71be4d4363522f7ce3833.png" src="../_images/c7624011c0b71ffa6f4e3e68fe160b687a002d9d2da71be4d4363522f7ce3833.png" />
+<div class="output text_html"><html><body><pre>constraint_coords = 2×126 double
+         0   -0.5000   -0.6000   -0.7000   -0.8000   -0.9000   -1.0000   -1.1000   -1.2000   -1.3000   -1.3000   -1.4000   -1.4262   -1.5000   -1.5000   -1.5422   -1.5674   -1.5789   -1.5792   -1.5701   -1.5531   -1.5294   -1.5000   -1.5000   -1.4628   -1.4213   -1.4000   -1.3740   -1.3217   -1.3000
+  125.0000   -1.5000   -1.5294   -1.5531   -1.5701   -1.5792   -1.5789   -1.5674   -1.5422   -1.5000   -1.5000   -1.4262   -1.4000   -1.3000   -1.3000   -1.2000   -1.1000   -1.0000   -0.9000   -0.8000   -0.7000   -0.6000   -0.5000   -0.5000   -0.4000   -0.3000   -0.2542   -0.2000   -0.1000   -0.0616
+...</pre></body></html></div><div class="output text_html"><html><body><pre>c = 
+  Contour with properties:
+
+    EdgeColor: [1 0 0]
+    LineStyle: '-'
+    LineWidth: 0.5000
+    FaceColor: 'none'
+    LevelList: 0
+        XData: [41×41 double]
+        YData: [41×41 double]
+        ZData: [41×41 double]
+
+  Use GET to show all properties
+</pre></body></html></div><div class="output text_html"><html><body><pre>colorvec = 'mc'</pre></body></html></div></div>
 </div>
 <p>(note, in the plot above, the gradients at the minima are exactly equal, so only one appears.  At the maxima, they point in the same directions, but one is longer than the other, so both are visible.)</p>
 <p>If we change <span class="math notranslate nohighlight">\((x,y)\)</span> slightly from the top point of intersection of <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> with <span class="math notranslate nohighlight">\(f(x,y)=(3/2)^2\)</span> by moving in the clockwise direction, we increase <span class="math notranslate nohighlight">\(f\)</span>.  If we move in the counter-clockwise direction, we decrease <span class="math notranslate nohighlight">\(f\)</span>.  Inevitably, if <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> crosses the contour of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((x_0,y_0)\)</span>, it will encounter contours on either side of the contour of <span class="math notranslate nohighlight">\(f\)</span> through <span class="math notranslate nohighlight">\((x_0,y_0)\)</span>.  So to avoid crossing the contour we require that the contour and <span class="math notranslate nohighlight">\(g(x,y)=0\)</span> be tangent.</p>
@@ -1202,16 +1219,16 @@ Values of <span class="math notranslate nohighlight">\(f\)</span>:</label><div c
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "jupyter_matlab_kernel"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "jupyter_matlab_kernel",
             path: "./Differential_Calculus"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
 
                 </article>
               

@@ -1,0 +1,3711 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MAT2VCA Readiness Self-Diagnostic &#8212; Vector Calculus - MAT2VCA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'prereqs/SelfDiagnostic';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Squares" href="Squares.html" />
+    <link rel="prev" title="Prerequisites" href="PrereqIntro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Vector Calculus - MAT2VCA - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Vector Calculus - MAT2VCA - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    MAT2VCA - Vector Calculus
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite Information</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="PrereqIntro.html">Prerequisites</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">MAT2VCA Readiness Self-Diagnostic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Squares.html">Squares</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EqualsSign.html">The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="AlgebraReview.html">How to improve your prerequisite skills</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="IntegralRefresher.html">Integration Refresher</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTShift.html">1.4. The <span class="math notranslate nohighlight">\(t\)</span>-shift: Laplace Transforms and Discontinuous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceExtra.html">1.9. Optional Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">2.1. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">2.2. Extensions to Lagrange Multipliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">3. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegrals.html">3.1. Multiple Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegralsDefineRegion.html">3.2. Systematically finding the terminals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ComputerLabs/LabIntro.html">4. Computer Labs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2001.html">4.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2002.html">4.2. MAT2VCA Computer Lab 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2003.html">4.3. MAT2VCA Computer Lab 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2004.html">4.5. MAT2VCA Computer Lab 4: stationary points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2005.html">4.6. Cylindrical Coordinates and Unit Vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2006.html">4.7. The Gradient in non-Cartesian Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2007.html">4.8. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2008.html">4.9. Computer Lab 08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2009.html">4.10. Computer Lab 09  –   Work done moving through a vector field.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2011.html">4.11. Computer Lab 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2012.html">4.12. Computer Lab 12</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2Fprereqs/SelfDiagnostic.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/prereqs/SelfDiagnostic.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MAT2VCA Readiness Self-Diagnostic</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-a-algebra">Part A: Algebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-1">A.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-2">A.2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-3">A.3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-4">A.4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-5">A.5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-6">A.6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-7">A.7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-8">A.8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-9">A.9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-10">A.10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-11">A.11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-12">A.12</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-13">A.13</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-14">A.14</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-15">A.15</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-16">A.16</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-17">A.17</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-18">A.18</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-19">A.19</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-20">A.20</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-21">A.21</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-b-functions-and-graphs">Part B: Functions and Graphs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-1">B.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-2">B.2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-3">B.3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-4">B.4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-5">B.5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-6">B.6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-7">B.7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8">B.8</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8-a">B.8.a</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8-b">B.8.b</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8-c">B.8.c</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8-d">B.8.d</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8-e">B.8.e</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8-f">B.8.f</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-c-calculus">Part C: Calculus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-1">C.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-2">C.2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-3">C.3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-4">C.4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-5">C.5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-6">C.6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-7">C.7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-8">C.8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-9">C.9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-10">C.10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-11">C.11</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-d-vectors-and-geometry">Part D: Vectors and Geometry</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-1">D.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-2">D.2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-3">D.3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-4">D.4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-5">D.5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-6">D.6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7">D.7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-8">D.8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-9">D.9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-10">D.10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-11">D.11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-12">D.12</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-13">D.13</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mat2vca-readiness-self-diagnostic">
+<h1>MAT2VCA Readiness Self-Diagnostic<a class="headerlink" href="#mat2vca-readiness-self-diagnostic" title="Link to this heading">#</a></h1>
+<p>This self-diagnostic test is designed to help you identify skills you should improve before beginning MAT2VCA.</p>
+<p><strong>Instructions</strong></p>
+<ul class="simple">
+<li><p>Do not use a calculator.</p></li>
+<li><p>Do not use notes or online help.</p></li>
+<li><p>Show working where appropriate.</p></li>
+<li><p>If you cannot start a question, leave it blank.</p></li>
+<li><p>Once you are done, check your answers and review all problems that you had difficulty with.</p></li>
+<li><p>Starting with the first problem you have difficulty with, review the worked solution.  If this is enough of a reminder then redo the question without looking at the worked solution and do a few several similar questions to confirm that you can reliably perform the skill.  (feeding the question and solution to an AI is a good way to generate similar questions).</p></li>
+<li><p>If you still have difficulty with a topic, review the refresher provided in this section (only the integration refresher is written so far).</p></li>
+</ul>
+<section id="part-a-algebra">
+<h2>Part A: Algebra<a class="headerlink" href="#part-a-algebra" title="Link to this heading">#</a></h2>
+<section id="a-1">
+<h3>A.1<a class="headerlink" href="#a-1" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>Simplify:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{6x^2y}{3xy^2}
+\]</div>
+<p>Specify any restrictions on <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span>.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+\frac{2x}{y}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(x\neq 0\)</span> and <span class="math notranslate nohighlight">\(y\neq 0\)</span> in the original expression.</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Cancel common factors:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{6x^2y}{3xy^2}
+=\frac{6}{3}\frac{x^2}{x}\frac{y}{y^2}
+=\frac{2x}{y}.
+\]</div>
+<p>The original denominator is <span class="math notranslate nohighlight">\(3xy^2\)</span>, so the original expression requires <span class="math notranslate nohighlight">\(x\neq 0\)</span> and <span class="math notranslate nohighlight">\(y\neq 0\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="a-2">
+<h3>A.2<a class="headerlink" href="#a-2" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>Expand and simplify:</p>
+<div class="math notranslate nohighlight">
+\[
+(x+2)(x-5)
+\]</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x^2-3x-10
+\]</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Expand each product:</p>
+<div class="math notranslate nohighlight">
+\[
+(x+2)(x-5)=x^2-5x+2x-10=x^2-3x-10.
+\]</div>
+</div>
+</div>
+</section>
+<section id="a-3">
+<h3>A.3<a class="headerlink" href="#a-3" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>Factor:</p>
+<div class="math notranslate nohighlight">
+\[
+9-x^2
+\]</div>
+<p>You should be able to immediately factor something when it is one square subtracted from another.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+(3-x)(3+x)
+\]</div>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>This is a difference of squares:</p>
+<div class="math notranslate nohighlight">
+\[
+9-x^2=3^2-x^2=(3-x)(3+x).
+\]</div>
+</div>
+</div>
+</section>
+<section id="a-4">
+<h3>A.4<a class="headerlink" href="#a-4" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Question</label><div class="sd-tab-content docutils">
+<p>Factor:</p>
+<div class="math notranslate nohighlight">
+\[
+x^2-6x+9
+\]</div>
+<p>You should be able to immediately factor a quadratic <span class="math notranslate nohighlight">\(1x^2+bx+c\)</span> when <span class="math notranslate nohighlight">\((b/2)^2=c\)</span>. This should be the first factorisation you look for when factoring <span class="math notranslate nohighlight">\(x^2+bx+c\)</span>.</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+(x-3)^2
+\]</div>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Here <span class="math notranslate nohighlight">\(b=-6\)</span>, so <span class="math notranslate nohighlight">\(b/2=-3\)</span> and <span class="math notranslate nohighlight">\((-3)^2=9\)</span>. Therefore the quadratic is a perfect square:</p>
+<div class="math notranslate nohighlight">
+\[
+x^2-6x+9=(x-3)^2.
+\]</div>
+</div>
+</div>
+</section>
+<section id="a-5">
+<h3>A.5<a class="headerlink" href="#a-5" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+Question</label><div class="sd-tab-content docutils">
+<p>Solve for <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x^2-5x+6=0
+\]</div>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x=2 \quad \text{or} \quad x=3
+\]</div>
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Factor the quadratic:</p>
+<div class="math notranslate nohighlight">
+\[
+x^2-5x+6=(x-2)(x-3).
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+(x-2)(x-3)=0.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+x=2 \quad \text{or} \quad x=3.
+\]</div>
+</div>
+</div>
+</section>
+<section id="a-6">
+<h3>A.6<a class="headerlink" href="#a-6" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+Question</label><div class="sd-tab-content docutils">
+<p>Simplify, and state any restrictions on <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x^2-1}{x-1}
+\]</div>
+</div>
+<input id="sd-tab-item-16" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x+1, \qquad x\neq 1
+\]</div>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Factor the numerator:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x^2-1}{x-1}=\frac{(x-1)(x+1)}{x-1}.
+\]</div>
+<p>Cancel the common factor <span class="math notranslate nohighlight">\(x-1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x^2-1}{x-1}=x+1.
+\]</div>
+<p>The original expression is undefined when <span class="math notranslate nohighlight">\(x-1=0\)</span>, so <span class="math notranslate nohighlight">\(x\neq 1\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="a-7">
+<h3>A.7<a class="headerlink" href="#a-7" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-18">
+Question</label><div class="sd-tab-content docutils">
+<p>Find the coefficients <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2}{x(x+1)}=\frac{A}{x}+\frac{B}{x+1}
+\]</div>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-19">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+A=2, \qquad B=-2
+\]</div>
+</div>
+<input id="sd-tab-item-20" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-20">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Multiply both sides by <span class="math notranslate nohighlight">\(x(x+1)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+2=A(x+1)+Bx.
+\]</div>
+<p>Set <span class="math notranslate nohighlight">\(x=0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+2=A.
+\]</div>
+<p>Set <span class="math notranslate nohighlight">\(x=-1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+2=-B,
+\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+B=-2.
+\]</div>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2}{x(x+1)}=\frac{2}{x}-\frac{2}{x+1}.
+\]</div>
+</div>
+</div>
+</section>
+<section id="a-8">
+<h3>A.8<a class="headerlink" href="#a-8" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+Question</label><div class="sd-tab-content docutils">
+<p>Simplify, and state any restrictions on <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x^2-4}{x-2}
+\]</div>
+</div>
+<input id="sd-tab-item-22" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-22">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x+2, \qquad x\neq 2
+\]</div>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-23">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Factor the numerator:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x^2-4}{x-2}=\frac{(x-2)(x+2)}{x-2}.
+\]</div>
+<p>Cancel the common factor <span class="math notranslate nohighlight">\(x-2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x^2-4}{x-2}=x+2.
+\]</div>
+<p>The original denominator is zero when <span class="math notranslate nohighlight">\(x=2\)</span>, so <span class="math notranslate nohighlight">\(x\neq 2\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="a-9">
+<h3>A.9<a class="headerlink" href="#a-9" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-24" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-24">
+Question</label><div class="sd-tab-content docutils">
+<p>Expand and simplify:</p>
+<div class="math notranslate nohighlight">
+\[
+(x^2+3)^2
+\]</div>
+</div>
+<input id="sd-tab-item-25" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-25">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x^4+6x^2+9
+\]</div>
+</div>
+<input id="sd-tab-item-26" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-26">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Use <span class="math notranslate nohighlight">\((a+b)^2=a^2+2ab+b^2\)</span> with <span class="math notranslate nohighlight">\(a=x^2\)</span> and <span class="math notranslate nohighlight">\(b=3\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+(x^2+3)^2=(x^2)^2+2(x^2)(3)+3^2=x^4+6x^2+9.
+\]</div>
+</div>
+</div>
+</section>
+<section id="a-10">
+<h3>A.10<a class="headerlink" href="#a-10" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-27" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-27">
+Question</label><div class="sd-tab-content docutils">
+<p>Solve for <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x-1}{x+2}=2
+\]</div>
+</div>
+<input id="sd-tab-item-28" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-28">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x=-5
+\]</div>
+</div>
+<input id="sd-tab-item-29" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-29">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Start by multiplying both sides by <span class="math notranslate nohighlight">\(x+2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x-1=2(x+2).
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+x-1=2x+4.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+-5=x.
+\]</div>
+<p>Therefore <span class="math notranslate nohighlight">\(x=-5\)</span>. The original denominator is not zero at <span class="math notranslate nohighlight">\(x=-5\)</span>, so this is valid.</p>
+</div>
+</div>
+</section>
+<section id="a-11">
+<h3>A.11<a class="headerlink" href="#a-11" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-30" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-30">
+Question</label><div class="sd-tab-content docutils">
+<p>Solve for <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2}{x+1}+1=3
+\]</div>
+</div>
+<input id="sd-tab-item-31" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-31">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x=0
+\]</div>
+</div>
+<input id="sd-tab-item-32" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-32">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Subtract <span class="math notranslate nohighlight">\(1\)</span> from both sides:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2}{x+1}=2.
+\]</div>
+<p>Multiply by <span class="math notranslate nohighlight">\(x+1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+2=2(x+1).
+\]</div>
+<p>Divide by <span class="math notranslate nohighlight">\(2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+1=x+1.
+\]</div>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[
+x=0.
+\]</div>
+</div>
+</div>
+</section>
+<section id="a-12">
+<h3>A.12<a class="headerlink" href="#a-12" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-33" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-33">
+Question</label><div class="sd-tab-content docutils">
+<p>Solve for <span class="math notranslate nohighlight">\(x\)</span>. Check that all solutions you find satisfy the original equation.</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{x+1}=x-1
+\]</div>
+</div>
+<input id="sd-tab-item-34" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-34">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x=3
+\]</div>
+</div>
+<input id="sd-tab-item-35" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-35">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Square both sides:</p>
+<div class="math notranslate nohighlight">
+\[
+x+1=(x-1)^2.
+\]</div>
+<p>Expand:</p>
+<div class="math notranslate nohighlight">
+\[
+x+1=x^2-2x+1.
+\]</div>
+<p>Rearrange:</p>
+<div class="math notranslate nohighlight">
+\[
+0=x^2-3x=x(x-3).
+\]</div>
+<p>So the possible solutions are</p>
+<div class="math notranslate nohighlight">
+\[
+x=0 \quad \text{or} \quad x=3.
+\]</div>
+<p>Check them in the original equation:</p>
+<div class="math notranslate nohighlight">
+\[
+x=0: \sqrt{1}\neq -1,
+\]</div>
+<p>so <span class="math notranslate nohighlight">\(x=0\)</span> is rejected.</p>
+<p>For <span class="math notranslate nohighlight">\(x=3\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{4}=2=3-1.
+\]</div>
+<p>Therefore the solution is <span class="math notranslate nohighlight">\(x=3\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="a-13">
+<h3>A.13<a class="headerlink" href="#a-13" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-36" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-36">
+Question</label><div class="sd-tab-content docutils">
+<p>Solve for <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(x-2)=0
+\]</div>
+</div>
+<input id="sd-tab-item-37" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-37">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x=3
+\]</div>
+</div>
+<input id="sd-tab-item-38" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-38">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Exponentiate both sides:</p>
+<div class="math notranslate nohighlight">
+\[
+x-2=e^0.
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(e^0=1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+x-2=1.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+x=3.
+\]</div>
+</div>
+</div>
+</section>
+<section id="a-14">
+<h3>A.14<a class="headerlink" href="#a-14" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-39" name="sd-tab-set-13" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-39">
+Question</label><div class="sd-tab-content docutils">
+<p>Solve for <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+2f(x)+3=x
+\]</div>
+</div>
+<input id="sd-tab-item-40" name="sd-tab-set-13" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-40">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f(x)=\frac{x-3}{2}
+\]</div>
+</div>
+<input id="sd-tab-item-41" name="sd-tab-set-13" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-41">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Subtract <span class="math notranslate nohighlight">\(3\)</span> from both sides:</p>
+<div class="math notranslate nohighlight">
+\[
+2f(x)=x-3.
+\]</div>
+<p>Divide by <span class="math notranslate nohighlight">\(2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=\frac{x-3}{2}.
+\]</div>
+</div>
+</div>
+</section>
+<section id="a-15">
+<h3>A.15<a class="headerlink" href="#a-15" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-42" name="sd-tab-set-14" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-42">
+Question</label><div class="sd-tab-content docutils">
+<p>Solve for <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{f(x)-1}{2}=x
+\]</div>
+</div>
+<input id="sd-tab-item-43" name="sd-tab-set-14" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-43">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f(x)=2x+1
+\]</div>
+</div>
+<input id="sd-tab-item-44" name="sd-tab-set-14" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-44">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Multiply both sides by <span class="math notranslate nohighlight">\(2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)-1=2x.
+\]</div>
+<p>Add <span class="math notranslate nohighlight">\(1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=2x+1.
+\]</div>
+</div>
+</div>
+</section>
+<section id="a-16">
+<h3>A.16<a class="headerlink" href="#a-16" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-45" name="sd-tab-set-15" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-45">
+Question</label><div class="sd-tab-content docutils">
+<p>Solve for <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(f(x))=x
+\]</div>
+</div>
+<input id="sd-tab-item-46" name="sd-tab-set-15" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-46">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f(x)=e^x
+\]</div>
+</div>
+<input id="sd-tab-item-47" name="sd-tab-set-15" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-47">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Exponentiate both sides:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=e^x.
+\]</div>
+</div>
+</div>
+</section>
+<section id="a-17">
+<h3>A.17<a class="headerlink" href="#a-17" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-48" name="sd-tab-set-16" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-48">
+Question</label><div class="sd-tab-content docutils">
+<p>Solve for <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)^2=x+1
+\]</div>
+</div>
+<input id="sd-tab-item-49" name="sd-tab-set-16" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-49">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f(x)=\pm\sqrt{x+1}
+\]</div>
+</div>
+<input id="sd-tab-item-50" name="sd-tab-set-16" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-50">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Take square roots of both sides:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=\pm\sqrt{x+1}.
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is required to be a single-valued function, then additional information would be needed to choose either the positive or negative branch.</p>
+</div>
+</div>
+</section>
+<section id="a-18">
+<h3>A.18<a class="headerlink" href="#a-18" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-51" name="sd-tab-set-17" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-51">
+Question</label><div class="sd-tab-content docutils">
+<p>Solve for <span class="math notranslate nohighlight">\(x\)</span> in terms of <span class="math notranslate nohighlight">\(y\)</span>, meaning find an expression of the form <span class="math notranslate nohighlight">\(x=g(y)\)</span> where the right-hand side has <span class="math notranslate nohighlight">\(y\)</span> in it, but not <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+y=\frac{2x+1}{x-1}
+\]</div>
+</div>
+<input id="sd-tab-item-52" name="sd-tab-set-17" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-52">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x=\frac{y+1}{y-2}
+\]</div>
+</div>
+<input id="sd-tab-item-53" name="sd-tab-set-17" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-53">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Multiply by <span class="math notranslate nohighlight">\(x-1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+y(x-1)=2x+1.
+\]</div>
+<p>Expand:</p>
+<div class="math notranslate nohighlight">
+\[
+yx-y=2x+1.
+\]</div>
+<p>Collect the terms involving <span class="math notranslate nohighlight">\(x\)</span> on one side:</p>
+<div class="math notranslate nohighlight">
+\[
+yx-2x=y+1.
+\]</div>
+<p>Factor out <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x(y-2)=y+1.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+x=\frac{y+1}{y-2}.
+\]</div>
+</div>
+</div>
+</section>
+<section id="a-19">
+<h3>A.19<a class="headerlink" href="#a-19" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-54" name="sd-tab-set-18" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-54">
+Question</label><div class="sd-tab-content docutils">
+<p>Decide whether the following statement is always true. If not, show an example.</p>
+<div class="math notranslate nohighlight">
+\[
+(a+b)^2=a^2+b^2
+\]</div>
+</div>
+<input id="sd-tab-item-55" name="sd-tab-set-18" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-55">
+Answer</label><div class="sd-tab-content docutils">
+<p>The statement is <strong>not</strong> always true. For example, if <span class="math notranslate nohighlight">\(a=1\)</span> and <span class="math notranslate nohighlight">\(b=1\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+(a+b)^2=4,
+\]</div>
+<p>but</p>
+<div class="math notranslate nohighlight">
+\[
+a^2+b^2=2.
+\]</div>
+</div>
+<input id="sd-tab-item-56" name="sd-tab-set-18" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-56">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>The correct expansion is</p>
+<div class="math notranslate nohighlight">
+\[
+(a+b)^2=a^2+2ab+b^2.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+(a+b)^2-(a^2+b^2)=2ab.
+\]</div>
+<p>So for <span class="math notranslate nohighlight">\((a+b)^2\)</span> to equal <span class="math notranslate nohighlight">\(a^2+b^2\)</span>, we require <span class="math notranslate nohighlight">\(2ab=0\)</span>.  So if <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are both nonzero, this then <span class="math notranslate nohighlight">\((a+b)^2 \neq a^2+b^2\)</span>. For example, if <span class="math notranslate nohighlight">\(a=1\)</span> and <span class="math notranslate nohighlight">\(b=1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+(a+b)^2=2^2=4,
+\]</div>
+<p>while</p>
+<div class="math notranslate nohighlight">
+\[
+a^2+b^2=1^2+1^2=2.
+\]</div>
+</div>
+</div>
+</section>
+<section id="a-20">
+<h3>A.20<a class="headerlink" href="#a-20" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-57" name="sd-tab-set-19" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-57">
+Question</label><div class="sd-tab-content docutils">
+<p>Decide whether the following statement is always true. If not, show an example.</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{a^2+b^2}=a+b
+\]</div>
+</div>
+<input id="sd-tab-item-58" name="sd-tab-set-19" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-58">
+Answer</label><div class="sd-tab-content docutils">
+<p>The statement is <strong>not</strong> always true. For example, if <span class="math notranslate nohighlight">\(a=3\)</span> and <span class="math notranslate nohighlight">\(b=4\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{a^2+b^2}=5,
+\]</div>
+<p>but</p>
+<div class="math notranslate nohighlight">
+\[
+a+b=7.
+\]</div>
+</div>
+<input id="sd-tab-item-59" name="sd-tab-set-19" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-59">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Take <span class="math notranslate nohighlight">\(a=3\)</span> and <span class="math notranslate nohighlight">\(b=4\)</span>. Then</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{a^2+b^2}=\sqrt{3^2+4^2}=\sqrt{25}=5.
+\]</div>
+<p>But</p>
+<div class="math notranslate nohighlight">
+\[
+a+b=3+4=7.
+\]</div>
+<p>So the statement is not always true.</p>
+</div>
+</div>
+</section>
+<section id="a-21">
+<h3>A.21<a class="headerlink" href="#a-21" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-60" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-60">
+Question</label><div class="sd-tab-content docutils">
+<p>Consider the natural log and square root functions.</p>
+<p>(a) Evaluate:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(1); \qquad \sqrt{1}
+\]</div>
+<p>(b) For what values of <span class="math notranslate nohighlight">\(x\)</span> are the functions defined?</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(x); \qquad \sqrt{x}
+\]</div>
+<p>(c) For what values of <span class="math notranslate nohighlight">\(x\)</span> are the functions defined?</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(x-3); \qquad \sqrt{x-3}
+\]</div>
+<p>(d) Solve for <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(y+2)=x-1; \qquad \sqrt{y^2+4}=x-1
+\]</div>
+</div>
+<input id="sd-tab-item-61" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-61">
+Answer</label><div class="sd-tab-content docutils">
+<p>(a)</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(1)=0, \qquad \sqrt{1}=1.
+\]</div>
+<p>(b) <span class="math notranslate nohighlight">\(\ln(x)\)</span> is defined for <span class="math notranslate nohighlight">\(x&gt;0\)</span>; <span class="math notranslate nohighlight">\(\sqrt{x}\)</span> is defined for <span class="math notranslate nohighlight">\(x\geq 0\)</span>.</p>
+<p>(c) <span class="math notranslate nohighlight">\(\ln(x-3)\)</span> is defined for <span class="math notranslate nohighlight">\(x&gt;3\)</span>; <span class="math notranslate nohighlight">\(\sqrt{x-3}\)</span> is defined for <span class="math notranslate nohighlight">\(x\geq 3\)</span>.</p>
+<p>(d)</p>
+<div class="math notranslate nohighlight">
+\[
+y=e^{x-1}-2,
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+y=\pm\sqrt{x^2-2x-3}, \qquad x\geq 1.
+\]</div>
+</div>
+<input id="sd-tab-item-62" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-62">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>(a) Since <span class="math notranslate nohighlight">\(e^0=1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(1)=0.
+\]</div>
+<p>Also,</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{1}=1.
+\]</div>
+<p>(b) The logarithm requires a positive input, so <span class="math notranslate nohighlight">\(\ln(x)\)</span> is defined for <span class="math notranslate nohighlight">\(x&gt;0\)</span>. The square root requires a nonnegative input, so <span class="math notranslate nohighlight">\(\sqrt{x}\)</span> is defined for <span class="math notranslate nohighlight">\(x\geq 0\)</span>.</p>
+<p>(c) For <span class="math notranslate nohighlight">\(\ln(x-3)\)</span>, we need</p>
+<div class="math notranslate nohighlight">
+\[
+x-3&gt;0,
+\]</div>
+<p>so <span class="math notranslate nohighlight">\(x&gt;3\)</span>. For <span class="math notranslate nohighlight">\(\sqrt{x-3}\)</span>, we need</p>
+<div class="math notranslate nohighlight">
+\[
+x-3\geq 0,
+\]</div>
+<p>so <span class="math notranslate nohighlight">\(x\geq 3\)</span>.</p>
+<p>(d) For the logarithm equation,</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(y+2)=x-1
+\]</div>
+<p>implies</p>
+<div class="math notranslate nohighlight">
+\[
+y+2=e^{x-1},
+\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+y=e^{x-1}-2.
+\]</div>
+<p>For the square-root equation,</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{y^2+4}=x-1.
+\]</div>
+<p>The left-hand side is nonnegative, so we require <span class="math notranslate nohighlight">\(x-1\geq 0\)</span>, meaning <span class="math notranslate nohighlight">\(x\geq 1\)</span>. Squaring gives</p>
+<div class="math notranslate nohighlight">
+\[
+y^2+4=(x-1)^2.
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+y^2=(x-1)^2-4=x^2-2x-3.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+y=\pm\sqrt{x^2-2x-3}, \qquad x\geq 1.
+\]</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-b-functions-and-graphs">
+<h2>Part B: Functions and Graphs<a class="headerlink" href="#part-b-functions-and-graphs" title="Link to this heading">#</a></h2>
+<section id="b-1">
+<h3>B.1<a class="headerlink" href="#b-1" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-63" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-63">
+Question</label><div class="sd-tab-content docutils">
+<p>Sketch the graph of</p>
+<div class="math notranslate nohighlight">
+\[
+y=x^2.
+\]</div>
+<p>Label axes and key features.</p>
+</div>
+<input id="sd-tab-item-64" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-64">
+Answer</label><div class="sd-tab-content docutils">
+<p>The graph of</p>
+<div class="math notranslate nohighlight">
+\[
+y=x^2
+\]</div>
+<p>is a parabola opening upwards. Its vertex is at <span class="math notranslate nohighlight">\((0,0)\)</span> and it is symmetric about the <span class="math notranslate nohighlight">\(y\)</span>-axis.</p>
+<a class="reference internal image-reference" href="../_images/B1_parabola.png"><img alt="Graph of $y=x^2$" src="../_images/B1_parabola.png" style="width: 450px;" />
+</a>
+</div>
+<input id="sd-tab-item-65" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-65">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>The function <span class="math notranslate nohighlight">\(y=x^2\)</span> is nonnegative for all <span class="math notranslate nohighlight">\(x\)</span>. It has vertex at <span class="math notranslate nohighlight">\((0,0)\)</span> and is symmetric because</p>
+<div class="math notranslate nohighlight">
+\[
+(-x)^2=x^2.
+\]</div>
+<p>Useful points include</p>
+<div class="math notranslate nohighlight">
+\[
+(-2,4), \quad (-1,1), \quad (0,0), \quad (1,1), \quad (2,4).
+\]</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_hide-output docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% code for generating the firgure for B.1</span>
+<span class="c">% </span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">400</span><span class="p">);</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+
+<span class="n">figure</span>
+<span class="s">plot(x,y,&#39;LineWidth&#39;,2)</span>
+
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$y$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Graph of $y = x^2$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="w"> </span><span class="n">equal</span>
+
+<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="s">&#39;B1_parabola.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<details class="admonition hide below-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
+</summary>
+<div class="cell_output docutils container">
+<img alt="../_images/a1239c9eb6146b02f132b4bdd24fe600e5178159e8eb2eba89c0be7f590b1969.png" src="../_images/a1239c9eb6146b02f132b4bdd24fe600e5178159e8eb2eba89c0be7f590b1969.png" />
+</div>
+</details>
+</div>
+</section>
+<section id="b-2">
+<h3>B.2<a class="headerlink" href="#b-2" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-66" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-66">
+Question</label><div class="sd-tab-content docutils">
+<p>Sketch the graph of</p>
+<div class="math notranslate nohighlight">
+\[
+y=\frac{1}{x}.
+\]</div>
+<p>Label asymptotes.</p>
+</div>
+<input id="sd-tab-item-67" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-67">
+Answer</label><div class="sd-tab-content docutils">
+<p>The graph has one branch in quadrant I and one branch in quadrant III. The asymptotes are <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(y=0\)</span>.</p>
+<a class="reference internal image-reference" href="../_images/B2_hyperbola.png"><img alt="Graph of $y=1/x$" src="../_images/B2_hyperbola.png" style="width: 450px;" />
+</a>
+</div>
+<input id="sd-tab-item-68" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-68">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>The function is undefined at <span class="math notranslate nohighlight">\(x=0\)</span>, giving a vertical asymptote <span class="math notranslate nohighlight">\(x=0\)</span>. As <span class="math notranslate nohighlight">\(x\to\pm\infty\)</span>, <span class="math notranslate nohighlight">\(1/x\to 0\)</span>, giving a horizontal asymptote <span class="math notranslate nohighlight">\(y=0\)</span>.</p>
+<p>For <span class="math notranslate nohighlight">\(x&gt;0\)</span>, <span class="math notranslate nohighlight">\(y&gt;0\)</span>, so the graph is in quadrant I. For <span class="math notranslate nohighlight">\(x&lt;0\)</span>, <span class="math notranslate nohighlight">\(y&lt;0\)</span>, so the graph is in quadrant III.</p>
+</div>
+</div>
+<div class="cell tag_hide-input tag_hide-output docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% code for generating the figure for B.2</span>
+<span class="c">% </span>
+<span class="n">xneg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span>
+<span class="n">xpos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span>
+<span class="n">yneg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">./</span><span class="n">xneg</span><span class="p">;</span>
+<span class="n">ypos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">./</span><span class="n">xpos</span><span class="p">;</span>
+
+<span class="n">figure</span>
+<span class="s">plot(xneg,yneg,&#39;LineWidth&#39;,2,</span><span class="w"> </span><span class="s">color=&#39;r&#39;)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">xpos</span><span class="p">,</span><span class="n">ypos</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">=</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$y$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Graph of $y = 1/x$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="w"> </span><span class="n">equal</span>
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
+<span class="nb">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
+
+<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="s">&#39;B2_hyperbola.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<details class="admonition hide below-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
+</summary>
+<div class="cell_output docutils container">
+<img alt="../_images/02df7bbddc405b49d64c951baf08aa0d491f5d89a3e80d0a2fef310705a14c53.png" src="../_images/02df7bbddc405b49d64c951baf08aa0d491f5d89a3e80d0a2fef310705a14c53.png" />
+</div>
+</details>
+</div>
+</section>
+<section id="b-3">
+<h3>B.3<a class="headerlink" href="#b-3" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-69" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-69">
+Question</label><div class="sd-tab-content docutils">
+<p>Find <span class="math notranslate nohighlight">\(f(2)\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=x^2-3x.
+\]</div>
+</div>
+<input id="sd-tab-item-70" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-70">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f(2)=-2
+\]</div>
+</div>
+<input id="sd-tab-item-71" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-71">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Substitute <span class="math notranslate nohighlight">\(x=2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f(2)=2^2-3(2)=4-6=-2.
+\]</div>
+</div>
+</div>
+</section>
+<section id="b-4">
+<h3>B.4<a class="headerlink" href="#b-4" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-72" name="sd-tab-set-24" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-72">
+Question</label><div class="sd-tab-content docutils">
+<p>If <span class="math notranslate nohighlight">\(f(3)=5\)</span>, what is the corresponding point on the graph of <span class="math notranslate nohighlight">\(f(x)\)</span>?</p>
+</div>
+<input id="sd-tab-item-73" name="sd-tab-set-24" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-73">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+(3,5)
+\]</div>
+</div>
+<input id="sd-tab-item-74" name="sd-tab-set-24" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-74">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>The statement <span class="math notranslate nohighlight">\(f(3)=5\)</span> means that when the input is <span class="math notranslate nohighlight">\(x=3\)</span>, the output is <span class="math notranslate nohighlight">\(y=5\)</span>. Therefore the corresponding point is</p>
+<div class="math notranslate nohighlight">
+\[
+(3,5).
+\]</div>
+</div>
+</div>
+</section>
+<section id="b-5">
+<h3>B.5<a class="headerlink" href="#b-5" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-75" name="sd-tab-set-25" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-75">
+Question</label><div class="sd-tab-content docutils">
+<p>Solve:</p>
+<div class="math notranslate nohighlight">
+\[
+x^2=4
+\]</div>
+</div>
+<input id="sd-tab-item-76" name="sd-tab-set-25" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-76">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x=\pm 2
+\]</div>
+</div>
+<input id="sd-tab-item-77" name="sd-tab-set-25" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-77">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Taking square roots gives two possibilities:</p>
+<div class="math notranslate nohighlight">
+\[
+x=2 \quad \text{or} \quad x=-2.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+x=\pm 2.
+\]</div>
+</div>
+</div>
+</section>
+<section id="b-6">
+<h3>B.6<a class="headerlink" href="#b-6" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-78" name="sd-tab-set-26" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-78">
+Question</label><div class="sd-tab-content docutils">
+<p>Sketch the line</p>
+<div class="math notranslate nohighlight">
+\[
+y=2x-1.
+\]</div>
+<p>Label at least two points.</p>
+</div>
+<input id="sd-tab-item-79" name="sd-tab-set-26" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-79">
+Answer</label><div class="sd-tab-content docutils">
+<p>A line with slope <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(y\)</span>-intercept <span class="math notranslate nohighlight">\(-1\)</span>. Two points are <span class="math notranslate nohighlight">\((0,-1)\)</span> and <span class="math notranslate nohighlight">\((1,1)\)</span>.</p>
+</div>
+<input id="sd-tab-item-80" name="sd-tab-set-26" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-80">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>The equation is in slope-intercept form:</p>
+<div class="math notranslate nohighlight">
+\[
+y=mx+b.
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(m=2\)</span> and <span class="math notranslate nohighlight">\(b=-1\)</span>. So the line crosses the <span class="math notranslate nohighlight">\(y\)</span>-axis at <span class="math notranslate nohighlight">\((0,-1)\)</span> and it has slope <span class="math notranslate nohighlight">\(2\)</span>.</p>
+<p>To find another point, try <span class="math notranslate nohighlight">\(x=1\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+y=2(1)-1=1,
+\]</div>
+<p>so another point is <span class="math notranslate nohighlight">\((1,1)\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="b-7">
+<h3>B.7<a class="headerlink" href="#b-7" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-81" name="sd-tab-set-27" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-81">
+Question</label><div class="sd-tab-content docutils">
+<p>For the line</p>
+<div class="math notranslate nohighlight">
+\[
+y=-3x+4,
+\]</div>
+<p>(a) state the slope,</p>
+<p>(b) state the <span class="math notranslate nohighlight">\(y\)</span>-intercept,</p>
+<p>(c) sketch the line.</p>
+</div>
+<input id="sd-tab-item-82" name="sd-tab-set-27" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-82">
+Answer</label><div class="sd-tab-content docutils">
+<p>(a) Slope: <span class="math notranslate nohighlight">\(-3\)</span>.</p>
+<p>(b) <span class="math notranslate nohighlight">\(y\)</span>-intercept: <span class="math notranslate nohighlight">\(4\)</span>.</p>
+<p>(c) The line passes through <span class="math notranslate nohighlight">\((0,4)\)</span> and decreases with slope <span class="math notranslate nohighlight">\(-3\)</span> as <span class="math notranslate nohighlight">\(x\)</span> increases. For example, another point is <span class="math notranslate nohighlight">\((1,1)\)</span>.</p>
+</div>
+<input id="sd-tab-item-83" name="sd-tab-set-27" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-83">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>The equation is in slope-intercept form:</p>
+<div class="math notranslate nohighlight">
+\[
+y=mx+b.
+\]</div>
+<p>So the slope is</p>
+<div class="math notranslate nohighlight">
+\[
+m=-3,
+\]</div>
+<p>and the <span class="math notranslate nohighlight">\(y\)</span>-intercept is</p>
+<div class="math notranslate nohighlight">
+\[
+b=4.
+\]</div>
+<p>Thus the line passes through <span class="math notranslate nohighlight">\((0,4)\)</span>. Since the slope is <span class="math notranslate nohighlight">\(-3\)</span>, increasing <span class="math notranslate nohighlight">\(x\)</span> by <span class="math notranslate nohighlight">\(1\)</span> decreases <span class="math notranslate nohighlight">\(y\)</span> by <span class="math notranslate nohighlight">\(3\)</span>, so another point is <span class="math notranslate nohighlight">\((1,1)\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="b-8">
+<h3>B.8<a class="headerlink" href="#b-8" title="Link to this heading">#</a></h3>
+<section id="b-8-a">
+<h4>B.8.a<a class="headerlink" href="#b-8-a" title="Link to this heading">#</a></h4>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-84" name="sd-tab-set-28" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-84">
+Question</label><div class="sd-tab-content docutils">
+<p>Sketch the function</p>
+<div class="math notranslate nohighlight">
+\[
+y=\sin(x).
+\]</div>
+</div>
+<input id="sd-tab-item-85" name="sd-tab-set-28" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-85">
+Answer</label><div class="sd-tab-content docutils">
+<a class="reference internal image-reference" href="../_images/B8a.png"><img alt="Graph of y equals sin x" src="../_images/B8a.png" style="width: 500px;" />
+</a>
+</div>
+<input id="sd-tab-item-86" name="sd-tab-set-28" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-86">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>This is the basic sine curve.</p>
+<p>Key features:</p>
+<ul class="simple">
+<li><p>amplitude <span class="math notranslate nohighlight">\(1\)</span></p></li>
+<li><p>period <span class="math notranslate nohighlight">\(2\pi\)</span></p></li>
+<li><p>midline <span class="math notranslate nohighlight">\(y=0\)</span></p></li>
+<li><p>passes through <span class="math notranslate nohighlight">\((0,0)\)</span></p></li>
+<li><p>maximum value <span class="math notranslate nohighlight">\(1\)</span></p></li>
+<li><p>minimum value <span class="math notranslate nohighlight">\(-1\)</span></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="b-8-b">
+<h4>B.8.b<a class="headerlink" href="#b-8-b" title="Link to this heading">#</a></h4>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-87" name="sd-tab-set-29" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-87">
+Question</label><div class="sd-tab-content docutils">
+<p>Sketch the function</p>
+<div class="math notranslate nohighlight">
+\[
+y=\cos(2x).
+\]</div>
+</div>
+<input id="sd-tab-item-88" name="sd-tab-set-29" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-88">
+Answer</label><div class="sd-tab-content docutils">
+<a class="reference internal image-reference" href="../_images/B8b.png"><img alt="Graph of y equals cos 2x" src="../_images/B8b.png" style="width: 500px;" />
+</a>
+</div>
+<input id="sd-tab-item-89" name="sd-tab-set-29" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-89">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>This is a cosine curve with horizontal compression.</p>
+<p>Key features:</p>
+<ul class="simple">
+<li><p>amplitude <span class="math notranslate nohighlight">\(1\)</span></p></li>
+<li><p>period <span class="math notranslate nohighlight">\(\pi\)</span></p></li>
+<li><p>midline <span class="math notranslate nohighlight">\(y=0\)</span></p></li>
+<li><p>starts at <span class="math notranslate nohighlight">\((0,1)\)</span></p></li>
+<li><p>completes two full cycles on <span class="math notranslate nohighlight">\([0,2\pi]\)</span></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="b-8-c">
+<h4>B.8.c<a class="headerlink" href="#b-8-c" title="Link to this heading">#</a></h4>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-90" name="sd-tab-set-30" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-90">
+Question</label><div class="sd-tab-content docutils">
+<p>Sketch the function</p>
+<div class="math notranslate nohighlight">
+\[
+y=3\sin(x).
+\]</div>
+</div>
+<input id="sd-tab-item-91" name="sd-tab-set-30" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-91">
+Answer</label><div class="sd-tab-content docutils">
+<a class="reference internal image-reference" href="../_images/B8c.png"><img alt="Graph of y equals 3 sin x" src="../_images/B8c.png" style="width: 500px;" />
+</a>
+</div>
+<input id="sd-tab-item-92" name="sd-tab-set-30" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-92">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>This is a vertically stretched sine curve.</p>
+<p>Key features:</p>
+<ul class="simple">
+<li><p>amplitude <span class="math notranslate nohighlight">\(3\)</span></p></li>
+<li><p>period <span class="math notranslate nohighlight">\(2\pi\)</span></p></li>
+<li><p>midline <span class="math notranslate nohighlight">\(y=0\)</span></p></li>
+<li><p>passes through <span class="math notranslate nohighlight">\((0,0)\)</span></p></li>
+<li><p>maximum value <span class="math notranslate nohighlight">\(3\)</span></p></li>
+<li><p>minimum value <span class="math notranslate nohighlight">\(-3\)</span></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="b-8-d">
+<h4>B.8.d<a class="headerlink" href="#b-8-d" title="Link to this heading">#</a></h4>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-93" name="sd-tab-set-31" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-93">
+Question</label><div class="sd-tab-content docutils">
+<p>Sketch the function</p>
+<div class="math notranslate nohighlight">
+\[
+y=1-\cos(x).
+\]</div>
+</div>
+<input id="sd-tab-item-94" name="sd-tab-set-31" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-94">
+Answer</label><div class="sd-tab-content docutils">
+<a class="reference internal image-reference" href="../_images/B8d.png"><img alt="Graph of y equals 1 minus cos x" src="../_images/B8d.png" style="width: 500px;" />
+</a>
+</div>
+<input id="sd-tab-item-95" name="sd-tab-set-31" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-95">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Start with <span class="math notranslate nohighlight">\(y=\cos(x)\)</span>, reflect it vertically across the <span class="math notranslate nohighlight">\(x\)</span>-axis to get <span class="math notranslate nohighlight">\(y=-\cos(x)\)</span>, then shift it up by <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>Key features:</p>
+<ul class="simple">
+<li><p>amplitude <span class="math notranslate nohighlight">\(1\)</span></p></li>
+<li><p>period <span class="math notranslate nohighlight">\(2\pi\)</span></p></li>
+<li><p>midline <span class="math notranslate nohighlight">\(y=1\)</span></p></li>
+<li><p>minimum value <span class="math notranslate nohighlight">\(0\)</span></p></li>
+<li><p>maximum value <span class="math notranslate nohighlight">\(2\)</span></p></li>
+<li><p>passes through <span class="math notranslate nohighlight">\((0,0)\)</span></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="b-8-e">
+<h4>B.8.e<a class="headerlink" href="#b-8-e" title="Link to this heading">#</a></h4>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-96" name="sd-tab-set-32" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-96">
+Question</label><div class="sd-tab-content docutils">
+<p>Sketch the function</p>
+<div class="math notranslate nohighlight">
+\[
+y=\sin(x+\pi/4).
+\]</div>
+</div>
+<input id="sd-tab-item-97" name="sd-tab-set-32" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-97">
+Answer</label><div class="sd-tab-content docutils">
+<a class="reference internal image-reference" href="../_images/B8e.png"><img alt="Graph of y equals sin of x plus pi over 4" src="../_images/B8e.png" style="width: 500px;" />
+</a>
+</div>
+<input id="sd-tab-item-98" name="sd-tab-set-32" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-98">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>This is the basic sine curve shifted left by <span class="math notranslate nohighlight">\(\pi/4\)</span>.</p>
+<p>Key features:</p>
+<ul class="simple">
+<li><p>amplitude <span class="math notranslate nohighlight">\(1\)</span></p></li>
+<li><p>period <span class="math notranslate nohighlight">\(2\pi\)</span></p></li>
+<li><p>midline <span class="math notranslate nohighlight">\(y=0\)</span></p></li>
+<li><p>phase shift left by <span class="math notranslate nohighlight">\(\pi/4\)</span></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="b-8-f">
+<h4>B.8.f<a class="headerlink" href="#b-8-f" title="Link to this heading">#</a></h4>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-99" name="sd-tab-set-33" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-99">
+Question</label><div class="sd-tab-content docutils">
+<p>Sketch the function</p>
+<div class="math notranslate nohighlight">
+\[
+y=1+2\sin(3(x-\pi/2)).
+\]</div>
+</div>
+<input id="sd-tab-item-100" name="sd-tab-set-33" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-100">
+Answer</label><div class="sd-tab-content docutils">
+<a class="reference internal image-reference" href="../_images/B8f.png"><img alt="Graph of y equals 1 plus 2 sin of 3 times x minus pi over 2" src="../_images/B8f.png" style="width: 500px;" />
+</a>
+</div>
+<input id="sd-tab-item-101" name="sd-tab-set-33" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-101">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Start with <span class="math notranslate nohighlight">\(y=\sin(x)\)</span>.</p>
+<ul class="simple">
+<li><p>The factor <span class="math notranslate nohighlight">\(2\)</span> gives amplitude <span class="math notranslate nohighlight">\(2\)</span>.</p></li>
+<li><p>The factor <span class="math notranslate nohighlight">\(3\)</span> inside the sine gives period</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\frac{2\pi}{3}.
+\]</div>
+<ul class="simple">
+<li><p>The term <span class="math notranslate nohighlight">\((x-\pi/2)\)</span> shifts the graph right by <span class="math notranslate nohighlight">\(\pi/2\)</span>.</p></li>
+<li><p>The outside <span class="math notranslate nohighlight">\(+1\)</span> shifts the graph up by <span class="math notranslate nohighlight">\(1\)</span>.</p></li>
+</ul>
+<p>So the key features are:</p>
+<ul class="simple">
+<li><p>amplitude <span class="math notranslate nohighlight">\(2\)</span></p></li>
+<li><p>period <span class="math notranslate nohighlight">\(2\pi/3\)</span></p></li>
+<li><p>midline <span class="math notranslate nohighlight">\(y=1\)</span></p></li>
+<li><p>phase shift right by <span class="math notranslate nohighlight">\(\pi/2\)</span></p></li>
+<li><p>maximum value <span class="math notranslate nohighlight">\(3\)</span></p></li>
+<li><p>minimum value <span class="math notranslate nohighlight">\(-1\)</span></p></li>
+</ul>
+</div>
+</div>
+<div class="cell tag_hide-input tag_hide-output docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% code for generating the figures for B.8</span>
+
+
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="w"> </span><span class="mi">800</span><span class="p">);</span>
+
+<span class="c">% ---------- B.8.a ----------</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">plot(x,y,&#39;LineWidth&#39;,2,&#39;Color&#39;,&#39;b&#39;)</span>
+<span class="nb">grid</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$y$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;$y=\sin(x)$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="nb">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">])</span>
+<span class="nb">xticks</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="nb">pi</span><span class="p">,</span><span class="o">-</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="nb">pi</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="nb">xticklabels</span><span class="p">({</span><span class="s">&#39;$-2\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$-\frac{3\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$-\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$-\frac{\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$0$&#39;</span><span class="p">,</span><span class="s">&#39;$\frac{\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$\frac{3\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$2\pi$&#39;</span><span class="p">})</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;TickLabelInterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;B8a.png&#39;</span><span class="p">)</span>
+
+<span class="c">% ---------- B.8.b ----------</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">plot(x,y,&#39;LineWidth&#39;,2,&#39;Color&#39;,&#39;b&#39;)</span>
+<span class="nb">grid</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$y$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;$y=\cos(2x)$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="nb">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">])</span>
+<span class="nb">xticks</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="nb">pi</span><span class="p">,</span><span class="o">-</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="nb">pi</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="nb">xticklabels</span><span class="p">({</span><span class="s">&#39;$-2\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$-\frac{3\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$-\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$-\frac{\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$0$&#39;</span><span class="p">,</span><span class="s">&#39;$\frac{\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$\frac{3\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$2\pi$&#39;</span><span class="p">})</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;TickLabelInterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;B8b.png&#39;</span><span class="p">)</span>
+
+<span class="c">% ---------- B.8.c ----------</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">plot(x,y,&#39;LineWidth&#39;,2,&#39;Color&#39;,&#39;b&#39;)</span>
+<span class="nb">grid</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$y$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;$y=3\sin(x)$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="nb">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">])</span>
+<span class="nb">xticks</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="nb">pi</span><span class="p">,</span><span class="o">-</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="nb">pi</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="nb">xticklabels</span><span class="p">({</span><span class="s">&#39;$-2\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$-\frac{3\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$-\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$-\frac{\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$0$&#39;</span><span class="p">,</span><span class="s">&#39;$\frac{\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$\frac{3\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$2\pi$&#39;</span><span class="p">})</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;TickLabelInterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;B8c.png&#39;</span><span class="p">)</span>
+
+<span class="c">% ---------- B.8.d ----------</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">-</span><span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">plot(x,y,&#39;LineWidth&#39;,2,&#39;Color&#39;,&#39;b&#39;)</span>
+<span class="nb">grid</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$y$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;$y=1-\cos(x)$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="nb">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">])</span>
+<span class="nb">xticks</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="nb">pi</span><span class="p">,</span><span class="o">-</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="nb">pi</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="nb">xticklabels</span><span class="p">({</span><span class="s">&#39;$-2\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$-\frac{3\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$-\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$-\frac{\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$0$&#39;</span><span class="p">,</span><span class="s">&#39;$\frac{\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$\frac{3\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$2\pi$&#39;</span><span class="p">})</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;TickLabelInterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;B8d.png&#39;</span><span class="p">)</span>
+
+<span class="c">% ---------- B.8.e ----------</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">plot(x,y,&#39;LineWidth&#39;,2,&#39;Color&#39;,&#39;b&#39;)</span>
+<span class="nb">grid</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$y$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;$y=\sin(x+\pi/4)$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="nb">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">])</span>
+<span class="nb">xticks</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="nb">pi</span><span class="p">,</span><span class="o">-</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="nb">pi</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="nb">xticklabels</span><span class="p">({</span><span class="s">&#39;$-2\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$-\frac{3\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$-\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$-\frac{\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$0$&#39;</span><span class="p">,</span><span class="s">&#39;$\frac{\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$\frac{3\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$2\pi$&#39;</span><span class="p">})</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;TickLabelInterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;B8e.png&#39;</span><span class="p">)</span>
+
+<span class="c">% ---------- B.8.f ----------</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">));</span>
+<span class="n">figure</span>
+<span class="s">plot(x,y,&#39;LineWidth&#39;,2,&#39;Color&#39;,&#39;b&#39;)</span>
+<span class="nb">grid</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$y$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;$y=1+2\sin(3(x-\pi/2))$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="nb">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">])</span>
+<span class="nb">xticks</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="nb">pi</span><span class="p">,</span><span class="o">-</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="nb">pi</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="nb">xticklabels</span><span class="p">({</span><span class="s">&#39;$-2\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$-\frac{3\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$-\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$-\frac{\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$0$&#39;</span><span class="p">,</span><span class="s">&#39;$\frac{\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$\pi$&#39;</span><span class="p">,</span><span class="s">&#39;$\frac{3\pi}{2}$&#39;</span><span class="p">,</span><span class="s">&#39;$2\pi$&#39;</span><span class="p">})</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;TickLabelInterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;B8f.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<details class="admonition hide below-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
+</summary>
+<div class="cell_output docutils container">
+<img alt="../_images/ec367575e97f8bedc295939296aa41198690b369a2601c445cf98b564fd81a0c.png" src="../_images/ec367575e97f8bedc295939296aa41198690b369a2601c445cf98b564fd81a0c.png" />
+<img alt="../_images/6c9af399bbd437e677147ac0bc420e431337fcf1204dedeaf1ad4bca568593d8.png" src="../_images/6c9af399bbd437e677147ac0bc420e431337fcf1204dedeaf1ad4bca568593d8.png" />
+<img alt="../_images/6341a59a52c99937402240c9a0892dc1402cbcc24e2cdc2fffc514f69da4f9df.png" src="../_images/6341a59a52c99937402240c9a0892dc1402cbcc24e2cdc2fffc514f69da4f9df.png" />
+<img alt="../_images/65c776e4e2eb75f9df1f1066798bb82fe58c707f5364c18912e626d584c42160.png" src="../_images/65c776e4e2eb75f9df1f1066798bb82fe58c707f5364c18912e626d584c42160.png" />
+<img alt="../_images/b45b4d9814d87e89992db4cce459d080221d4a75ff64f88e885c7df537ef3860.png" src="../_images/b45b4d9814d87e89992db4cce459d080221d4a75ff64f88e885c7df537ef3860.png" />
+<img alt="../_images/d7977ed112a4be03b66530d020dba4092a898fd6ee1c1c8ddaf576a75d7688d9.png" src="../_images/d7977ed112a4be03b66530d020dba4092a898fd6ee1c1c8ddaf576a75d7688d9.png" />
+</div>
+</details>
+</div>
+</section>
+</section>
+</section>
+<section id="part-c-calculus">
+<h2>Part C: Calculus<a class="headerlink" href="#part-c-calculus" title="Link to this heading">#</a></h2>
+<section id="c-1">
+<h3>C.1<a class="headerlink" href="#c-1" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-102" name="sd-tab-set-34" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-102">
+Question</label><div class="sd-tab-content docutils">
+<p>Differentiate:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=3x^2-2x
+\]</div>
+</div>
+<input id="sd-tab-item-103" name="sd-tab-set-34" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-103">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f'(x)=6x-2
+\]</div>
+</div>
+<input id="sd-tab-item-104" name="sd-tab-set-34" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-104">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Use the power rule term by term:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}(3x^2)=6x,
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}(-2x)=-2.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=6x-2.
+\]</div>
+</div>
+</div>
+</section>
+<section id="c-2">
+<h3>C.2<a class="headerlink" href="#c-2" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-105" name="sd-tab-set-35" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-105">
+Question</label><div class="sd-tab-content docutils">
+<p>Differentiate:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=(2x+1)^3
+\]</div>
+</div>
+<input id="sd-tab-item-106" name="sd-tab-set-35" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-106">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f'(x)=6(2x+1)^2
+\]</div>
+</div>
+<input id="sd-tab-item-107" name="sd-tab-set-35" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-107">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Use the chain rule. If</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=(2x+1)^3,
+\]</div>
+<p>then the power rule gives <span class="math notranslate nohighlight">\(3(2x+1)^2\)</span> and the chain rule multiplies this by the derivative of the inside function <span class="math notranslate nohighlight">\(2x+1\)</span> is <span class="math notranslate nohighlight">\(2\)</span>. Thus</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=3(2x+1)^2(2)=6(2x+1)^2.
+\]</div>
+</div>
+</div>
+</section>
+<section id="c-3">
+<h3>C.3<a class="headerlink" href="#c-3" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-108" name="sd-tab-set-36" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-108">
+Question</label><div class="sd-tab-content docutils">
+<p>Differentiate:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=\ln(x^2+1)
+\]</div>
+</div>
+<input id="sd-tab-item-109" name="sd-tab-set-36" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-109">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f'(x)=\frac{2x}{x^2+1}
+\]</div>
+</div>
+<input id="sd-tab-item-110" name="sd-tab-set-36" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-110">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Use the chain rule. The <span class="math notranslate nohighlight">\(x\)</span> derivative of <span class="math notranslate nohighlight">\(\ln(u)\)</span> is <span class="math notranslate nohighlight">\(u'/u\)</span>. Here</p>
+<div class="math notranslate nohighlight">
+\[
+u=x^2+1,
+\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+u'=2x.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=\frac{2x}{x^2+1}.
+\]</div>
+</div>
+</div>
+</section>
+<section id="c-4">
+<h3>C.4<a class="headerlink" href="#c-4" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-111" name="sd-tab-set-37" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-111">
+Question</label><div class="sd-tab-content docutils">
+<p>Find the indefinite integral:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x^2\,dx
+\]</div>
+</div>
+<input id="sd-tab-item-112" name="sd-tab-set-37" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-112">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+\frac{x^3}{3}+C
+\]</div>
+</div>
+<input id="sd-tab-item-113" name="sd-tab-set-37" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-113">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Use the power rule for integration:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x^n\,dx=\frac{x^{n+1}}{n+1}+C,
+\]</div>
+<p>for <span class="math notranslate nohighlight">\(n\neq -1\)</span>. With <span class="math notranslate nohighlight">\(n=2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\int x^2\,dx=\frac{x^3}{3}+C.
+\]</div>
+</div>
+</div>
+</section>
+<section id="c-5">
+<h3>C.5<a class="headerlink" href="#c-5" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-114" name="sd-tab-set-38" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-114">
+Question</label><div class="sd-tab-content docutils">
+<p>Differentiate:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=(x^2)^3
+\]</div>
+</div>
+<input id="sd-tab-item-115" name="sd-tab-set-38" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-115">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f'(x)=6x^5
+\]</div>
+</div>
+<input id="sd-tab-item-116" name="sd-tab-set-38" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-116">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>First simplify:</p>
+<div class="math notranslate nohighlight">
+\[
+(x^2)^3=x^6.
+\]</div>
+<p>Then differentiate:</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=6x^5.
+\]</div>
+<p><strong>Alternately</strong>, use the power rule and chain rule:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{d}{dx} (x^2)^3 &amp;= 3 (x^2)^2 \frac{d}{dx} x^2\\
+&amp;= 3 x^4(2x)\\
+&amp;= 6x^5
+\end{align*}\]</div>
+</div>
+</div>
+</section>
+<section id="c-6">
+<h3>C.6<a class="headerlink" href="#c-6" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-117" name="sd-tab-set-39" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-117">
+Question</label><div class="sd-tab-content docutils">
+<p>Differentiate:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=\sqrt{x}
+\]</div>
+</div>
+<input id="sd-tab-item-118" name="sd-tab-set-39" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-118">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f'(x)=\frac{1}{2\sqrt{x}}
+\]</div>
+</div>
+<input id="sd-tab-item-119" name="sd-tab-set-39" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-119">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Rewrite the square root as a power:</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{x}=x^{1/2}.
+\]</div>
+<p>Then use the power rule:</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=\frac{1}{2}x^{-1/2}=\frac{1}{2\sqrt{x}}.
+\]</div>
+</div>
+</div>
+</section>
+<section id="c-7">
+<h3>C.7<a class="headerlink" href="#c-7" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-120" name="sd-tab-set-40" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-120">
+Question</label><div class="sd-tab-content docutils">
+<p>Differentiate:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=x^2+x+\frac{1}{x}
+\]</div>
+</div>
+<input id="sd-tab-item-121" name="sd-tab-set-40" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-121">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f'(x)=2x+1-\frac{1}{x^2}
+\]</div>
+</div>
+<input id="sd-tab-item-122" name="sd-tab-set-40" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-122">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Rewrite <span class="math notranslate nohighlight">\(1/x\)</span> as <span class="math notranslate nohighlight">\(x^{-1}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=x^2+x+x^{-1}.
+\]</div>
+<p>Differentiate term by term:</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=2x+1-x^{-2}.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=2x+1-\frac{1}{x^2}.
+\]</div>
+</div>
+</div>
+</section>
+<section id="c-8">
+<h3>C.8<a class="headerlink" href="#c-8" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-123" name="sd-tab-set-41" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-123">
+Question</label><div class="sd-tab-content docutils">
+<p>Find the indefinite integral:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \left(x+\frac{2}{x}+\frac{1}{x^2}\right)\,dx
+\]</div>
+</div>
+<input id="sd-tab-item-124" name="sd-tab-set-41" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-124">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+\frac{x^2}{2}+2\ln|x|-\frac{1}{x}+C
+\]</div>
+</div>
+<input id="sd-tab-item-125" name="sd-tab-set-41" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-125">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Integrate term by term:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \left(x+\frac{2}{x}+\frac{1}{x^2}\right)\,dx
+=\int x\,dx+2\int \frac{1}{x}\,dx+\int x^{-2}\,dx.
+\]</div>
+<p>Now</p>
+<div class="math notranslate nohighlight">
+\[
+\int x\,dx=\frac{x^2}{2},
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+2\int \frac{1}{x}\,dx=2\ln|x|,
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\int x^{-2}\,dx=-x^{-1}=-\frac{1}{x}.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\int \left(x+\frac{2}{x}+\frac{1}{x^2}\right)\,dx
+=\frac{x^2}{2}+2\ln|x|-\frac{1}{x}+C.
+\]</div>
+</div>
+</div>
+</section>
+<section id="c-9">
+<h3>C.9<a class="headerlink" href="#c-9" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-126" name="sd-tab-set-42" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-126">
+Question</label><div class="sd-tab-content docutils">
+<p>Evaluate the integral using substitution:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x\sqrt{1+x^2}\,dx
+\]</div>
+</div>
+<input id="sd-tab-item-127" name="sd-tab-set-42" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-127">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{3}(1+x^2)^{3/2}+C
+\]</div>
+</div>
+<input id="sd-tab-item-128" name="sd-tab-set-42" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-128">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[
+u=1+x^2.
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{du}{dx}=2x,
+\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+du=2x\,dx.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+dx=\frac{1}{2x}\,du.
+\]</div>
+<p>Substitute into the integral:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int x\sqrt{1+x^2}\,dx&amp;=\int xu^{1/2}\frac{1}{2x}\,du\\
+&amp; =\frac{1}{2}\int u^{1/2}\,du\\
+&amp;=\frac{1}{2}\cdot \frac{u^{3/2}}{3/2}+C\\
+&amp;=\frac{1}{3}u^{3/2}+C.
+\end{align*}\]</div>
+<p>Substitute back <span class="math notranslate nohighlight">\(u = 1+x^2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x\sqrt{1+x^2}\,dx=\frac{1}{3}(1+x^2)^{3/2}+C.
+\]</div>
+</div>
+</div>
+</section>
+<section id="c-10">
+<h3>C.10<a class="headerlink" href="#c-10" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-129" name="sd-tab-set-43" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-129">
+Question</label><div class="sd-tab-content docutils">
+<p>Evaluate the integral using integration by parts:</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+\]</div>
+<p>In integration by parts,</p>
+<div class="math notranslate nohighlight">
+\[
+\int f(x)g'(x)\,dx=f(x)g(x)-\int f'(x)g(x)\,dx.
+\]</div>
+</div>
+<input id="sd-tab-item-130" name="sd-tab-set-43" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-130">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+-\frac{1}{4}(2x+1)e^{-2x}+C
+\]</div>
+</div>
+<input id="sd-tab-item-131" name="sd-tab-set-43" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-131">
+Worked solution</label><div class="sd-tab-content docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-132" name="sd-tab-set-44" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-132">
+Method 1: integration by parts formula</label><div class="sd-tab-content docutils">
+<p>We want to evaluate</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx.
+\]</div>
+<p>Using</p>
+<div class="math notranslate nohighlight">
+\[
+\int f(x)g'(x)\,dx
+=
+f(x)g(x)-\int f'(x)g(x)\,dx,
+\]</div>
+<p>choose</p>
+<div class="math notranslate nohighlight">
+\[
+f(x)=x,
+\qquad
+g'(x)=e^{-2x}.
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=1,
+\qquad
+g(x)=-\frac{1}{2}e^{-2x}.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+=
+x\left(-\frac{1}{2}e^{-2x}\right)
+-
+\int 1\left(-\frac{1}{2}e^{-2x}\right)\,dx.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+=
+-\frac{x}{2}e^{-2x}
++
+\frac{1}{2}\int e^{-2x}\,dx.
+\]</div>
+<p>Since</p>
+<div class="math notranslate nohighlight">
+\[
+\int e^{-2x}\,dx
+=
+-\frac{1}{2}e^{-2x},
+\]</div>
+<p>we get</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+=
+-\frac{x}{2}e^{-2x}
+-
+\frac{1}{4}e^{-2x}
++
+C.
+\]</div>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+=
+-\frac{1}{4}(2x+1)e^{-2x}
++
+C.
+\]</div>
+</div>
+<input id="sd-tab-item-133" name="sd-tab-set-44" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-133">
+Method 2: tabular method</label><div class="sd-tab-content docutils">
+<p>We want to evaluate</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx.
+\]</div>
+<p>Use the tabular method. Differentiate <span class="math notranslate nohighlight">\(x\)</span> until it becomes <span class="math notranslate nohighlight">\(0\)</span>, and repeatedly integrate <span class="math notranslate nohighlight">\(e^{-2x}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{c|c}
+\text{Differentiate} &amp; \text{Integrate} \\
+\hline
+x &amp; e^{-2x} \\
+1 &amp; -\frac{1}{2}e^{-2x} \\
+0 &amp; \frac{1}{4}e^{-2x}
+\end{array}
+\end{split}\]</div>
+<p>Now multiply diagonally, alternating signs starting with <span class="math notranslate nohighlight">\(+\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+=
+x\left(-\frac{1}{2}e^{-2x}\right)
+-
+1\left(\frac{1}{4}e^{-2x}\right)
++
+C.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+=
+-\frac{x}{2}e^{-2x}
+-
+\frac{1}{4}e^{-2x}
++
+C.
+\]</div>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[
+\int xe^{-2x}\,dx
+=
+-\frac{1}{4}(2x+1)e^{-2x}
++
+C.
+\]</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="c-11">
+<h3>C.11<a class="headerlink" href="#c-11" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-134" name="sd-tab-set-45" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-134">
+Question</label><div class="sd-tab-content docutils">
+<p>Evaluate the integral using partial fractions:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{3x+3}{x^2+x-2}\,dx
+\]</div>
+</div>
+<input id="sd-tab-item-135" name="sd-tab-set-45" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-135">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+\ln|x+2|+2\ln|x-1|+C
+\]</div>
+</div>
+<input id="sd-tab-item-136" name="sd-tab-set-45" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-136">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>We want to evaluate</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{3x+1}{(x-1)(x+2)}\,dx.
+\]</div>
+<p>First use partial fractions:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{3x+1}{(x-1)(x+2)}
+=
+\frac{A}{x-1}
++
+\frac{B}{x+2}.
+\]</div>
+<p>Multiplying both sides by <span class="math notranslate nohighlight">\((x-1)(x+2)\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[
+3x+1 = A(x+2)+B(x-1).
+\]</div>
+<p>Set <span class="math notranslate nohighlight">\(x=1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+3(1)+1=A(1+2)+B(1-1),
+\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+4=3A,
+\]</div>
+<p>and therefore</p>
+<div class="math notranslate nohighlight">
+\[
+A=\frac{4}{3}.
+\]</div>
+<p>Set <span class="math notranslate nohighlight">\(x=-2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+3(-2)+1=A(-2+2)+B(-2-1),
+\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+-5=-3B,
+\]</div>
+<p>and therefore</p>
+<div class="math notranslate nohighlight">
+\[
+B=\frac{5}{3}.
+\]</div>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{3x+1}{(x-1)(x+2)}
+=
+\frac{4}{3(x-1)}
++
+\frac{5}{3(x+2)}.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{3x+1}{(x-1)(x+2)}\,dx
+=
+\int \frac{4}{3(x-1)}\,dx
++
+\int \frac{5}{3(x+2)}\,dx.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{3x+1}{(x-1)(x+2)}\,dx
+=
+\frac{4}{3}\ln|x-1|
++
+\frac{5}{3}\ln|x+2|
++
+C.
+\]</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-d-vectors-and-geometry">
+<h2>Part D: Vectors and Geometry<a class="headerlink" href="#part-d-vectors-and-geometry" title="Link to this heading">#</a></h2>
+<section id="d-1">
+<h3>D.1<a class="headerlink" href="#d-1" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-137" name="sd-tab-set-46" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-137">
+Question</label><div class="sd-tab-content docutils">
+<p>Given the vector <span class="math notranslate nohighlight">\(\vec v=(1,2,2)\)</span>, find the unit vector <span class="math notranslate nohighlight">\(\vec u\)</span> pointing in the same direction.</p>
+</div>
+<input id="sd-tab-item-138" name="sd-tab-set-46" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-138">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+\vec u=\left(\frac{1}{3},\frac{2}{3},\frac{2}{3}\right)
+\]</div>
+</div>
+<input id="sd-tab-item-139" name="sd-tab-set-46" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-139">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>The unit vector is</p>
+<div class="math notranslate nohighlight">
+\[
+\vec u=\frac{\vec v}{\|\vec v\|}.
+\]</div>
+<p>First compute the length:</p>
+<div class="math notranslate nohighlight">
+\[
+\|\vec v\|=\sqrt{1^2+2^2+2^2}=\sqrt{9}=3.
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\vec u=\left(\frac{1}{3},\frac{2}{3},\frac{2}{3}\right).
+\]</div>
+</div>
+</div>
+</section>
+<section id="d-2">
+<h3>D.2<a class="headerlink" href="#d-2" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-140" name="sd-tab-set-47" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-140">
+Question</label><div class="sd-tab-content docutils">
+<p>Compute the dot product:</p>
+<div class="math notranslate nohighlight">
+\[
+(1,2,3)\cdot(2,0,1)
+\]</div>
+</div>
+<input id="sd-tab-item-141" name="sd-tab-set-47" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-141">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+5
+\]</div>
+</div>
+<input id="sd-tab-item-142" name="sd-tab-set-47" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-142">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Multiply corresponding components and add:</p>
+<div class="math notranslate nohighlight">
+\[
+(1,2,3)\cdot(2,0,1)=1(2)+2(0)+3(1)=5.
+\]</div>
+</div>
+</div>
+</section>
+<section id="d-3">
+<h3>D.3<a class="headerlink" href="#d-3" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-143" name="sd-tab-set-48" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-143">
+Question</label><div class="sd-tab-content docutils">
+<p>Use the dot product to find <span class="math notranslate nohighlight">\(\cos(\theta)\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between</p>
+<div class="math notranslate nohighlight">
+\[
+(1,0,0) \quad \text{and} \quad (1,1,0).
+\]</div>
+</div>
+<input id="sd-tab-item-144" name="sd-tab-set-48" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-144">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+\cos(\theta)=\frac{1}{\sqrt{2}}
+\]</div>
+</div>
+<input id="sd-tab-item-145" name="sd-tab-set-48" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-145">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[
+\vec a=(1,0,0), \qquad \vec b=(1,1,0).
+\]</div>
+<p>The dot product is</p>
+<div class="math notranslate nohighlight">
+\[
+\vec a\cdot\vec b=1(1)+0(1)+0(0)=1.
+\]</div>
+<p>The lengths are</p>
+<div class="math notranslate nohighlight">
+\[
+\|\vec a\|=1, \qquad \|\vec b\|=\sqrt{2}.
+\]</div>
+<p>Since</p>
+<div class="math notranslate nohighlight">
+\[
+\vec a\cdot\vec b=\|\vec a\|\|\vec b\|\cos(\theta),
+\]</div>
+<p>we get</p>
+<div class="math notranslate nohighlight">
+\[
+1=1\cdot \sqrt{2}\cos(\theta).
+\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\cos(\theta)=\frac{1}{\sqrt{2}}.
+\]</div>
+</div>
+</div>
+</section>
+<section id="d-4">
+<h3>D.4<a class="headerlink" href="#d-4" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-146" name="sd-tab-set-49" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-146">
+Question</label><div class="sd-tab-content docutils">
+<p>Are these vectors perpendicular? Justify.</p>
+<div class="math notranslate nohighlight">
+\[
+(2,-1,0), \qquad (1,2,0)
+\]</div>
+</div>
+<input id="sd-tab-item-147" name="sd-tab-set-49" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-147">
+Answer</label><div class="sd-tab-content docutils">
+<p>Yes. Their dot product is <span class="math notranslate nohighlight">\(0\)</span>.</p>
+</div>
+<input id="sd-tab-item-148" name="sd-tab-set-49" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-148">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Compute the dot product:</p>
+<div class="math notranslate nohighlight">
+\[
+(2,-1,0)\cdot(1,2,0)=2(1)+(-1)(2)+0(0)=2-2=0.
+\]</div>
+<p>Since the dot product is zero, the vectors are perpendicular.</p>
+</div>
+</div>
+</section>
+<section id="d-5">
+<h3>D.5<a class="headerlink" href="#d-5" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-149" name="sd-tab-set-50" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-149">
+Question</label><div class="sd-tab-content docutils">
+<p>Compute the cross product:</p>
+<div class="math notranslate nohighlight">
+\[
+(1,0,0)\times(0,1,0)
+\]</div>
+</div>
+<input id="sd-tab-item-150" name="sd-tab-set-50" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-150">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+(0,0,1)
+\]</div>
+</div>
+<input id="sd-tab-item-151" name="sd-tab-set-50" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-151">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>We want to compute</p>
+<div class="math notranslate nohighlight">
+\[
+(1,0,0)\times(0,1,0).
+\]</div>
+<p>Use the determinant formula for the cross product:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+(1,0,0)\times(0,1,0)
+=
+\begin{vmatrix}
+\vec{i} &amp; \vec{j} &amp; \vec{k} \\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0
+\end{vmatrix}.
+\end{split}\]</div>
+<p>Expanding along the first row gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+\vec{i} &amp; \vec{j} &amp; \vec{k} \\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0
+\end{vmatrix}
+=
+\vec{i}
+\begin{vmatrix}
+0 &amp; 0 \\
+1 &amp; 0
+\end{vmatrix}
+-
+\vec{j}
+\begin{vmatrix}
+1 &amp; 0 \\
+0 &amp; 0
+\end{vmatrix}
++
+\vec{k}
+\begin{vmatrix}
+1 &amp; 0 \\
+0 &amp; 1
+\end{vmatrix}.
+\end{split}\]</div>
+<p>Now evaluate each <span class="math notranslate nohighlight">\(2\times 2\)</span> determinant:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+0 &amp; 0 \\
+1 &amp; 0
+\end{vmatrix}
+=
+0(0)-0(1)=0,
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+1 &amp; 0 \\
+0 &amp; 0
+\end{vmatrix}
+=
+1(0)-0(0)=0,
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+1 &amp; 0 \\
+0 &amp; 1
+\end{vmatrix}
+=
+1(1)-0(0)=1.
+\end{split}\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+(1,0,0)\times(0,1,0)
+=
+0\vec{i}-0\vec{j}+1\vec{k}
+=
+\vec{k}.
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+(1,0,0)\times(0,1,0)=(0,0,1).
+\]</div>
+</div>
+</div>
+</section>
+<section id="d-6">
+<h3>D.6<a class="headerlink" href="#d-6" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-152" name="sd-tab-set-51" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-152">
+Question</label><div class="sd-tab-content docutils">
+<p>Use the cross product to find the area of a parallelogram whose edges are the vectors</p>
+<div class="math notranslate nohighlight">
+\[
+(1,2,0), \qquad (2,1,0).
+\]</div>
+</div>
+<input id="sd-tab-item-153" name="sd-tab-set-51" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-153">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+3
+\]</div>
+</div>
+<input id="sd-tab-item-154" name="sd-tab-set-51" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-154">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>We want to find the area of the parallelogram whose edges are</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}=(1,2,0),
+\qquad
+\vec{b}=(2,1,0).
+\]</div>
+<p>The area is</p>
+<div class="math notranslate nohighlight">
+\[
+\|\vec{a}\times\vec{b}\|.
+\]</div>
+<p>First compute the cross product using the determinant formula:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{a}\times\vec{b}
+=
+\begin{vmatrix}
+\vec{i} &amp; \vec{j} &amp; \vec{k} \\
+1 &amp; 2 &amp; 0 \\
+2 &amp; 1 &amp; 0
+\end{vmatrix}.
+\end{split}\]</div>
+<p>Expanding along the first row gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{a}\times\vec{b}
+=
+\vec{i}
+\begin{vmatrix}
+2 &amp; 0 \\
+1 &amp; 0
+\end{vmatrix}
+-
+\vec{j}
+\begin{vmatrix}
+1 &amp; 0 \\
+2 &amp; 0
+\end{vmatrix}
++
+\vec{k}
+\begin{vmatrix}
+1 &amp; 2 \\
+2 &amp; 1
+\end{vmatrix}.
+\end{split}\]</div>
+<p>Now evaluate each <span class="math notranslate nohighlight">\(2\times 2\)</span> determinant:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+2 &amp; 0 \\
+1 &amp; 0
+\end{vmatrix}
+=
+2(0)-0(1)=0,
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+1 &amp; 0 \\
+2 &amp; 0
+\end{vmatrix}
+=
+1(0)-0(2)=0,
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+1 &amp; 2 \\
+2 &amp; 1
+\end{vmatrix}
+=
+1(1)-2(2)
+=
+1-4
+=
+-3.
+\end{split}\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}\times\vec{b}
+=
+0\vec{i}-0\vec{j}-3\vec{k}
+=
+(0,0,-3).
+\]</div>
+<p>The area of the parallelogram is the length of this vector:</p>
+<div class="math notranslate nohighlight">
+\[
+\|\vec{a}\times\vec{b}\|
+=
+\|(0,0,-3)\|
+=
+\sqrt{0^2+0^2+(-3)^2}
+=
+3.
+\]</div>
+<p>So the area of the parallelogram is</p>
+<div class="math notranslate nohighlight">
+\[
+3.
+\]</div>
+</div>
+</div>
+</section>
+<section id="d-7">
+<h3>D.7<a class="headerlink" href="#d-7" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-155" name="sd-tab-set-52" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-155">
+Question</label><div class="sd-tab-content docutils">
+<p>In one sentence: in what direction does <span class="math notranslate nohighlight">\(\vec a\times\vec b\)</span> point?</p>
+</div>
+<input id="sd-tab-item-156" name="sd-tab-set-52" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-156">
+Answer</label><div class="sd-tab-content docutils">
+<p>It points perpendicular to both <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span>, with direction given by the right-hand rule.</p>
+</div>
+<input id="sd-tab-item-157" name="sd-tab-set-52" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-157">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>The cross product <span class="math notranslate nohighlight">\(\vec a\times\vec b\)</span> is perpendicular to the plane containing <span class="math notranslate nohighlight">\(\vec a\)</span> and <span class="math notranslate nohighlight">\(\vec b\)</span>. Its orientation is determined by the right-hand rule: curl your fingers from <span class="math notranslate nohighlight">\(\vec a\)</span> toward <span class="math notranslate nohighlight">\(\vec b\)</span>, and your thumb points in the direction of <span class="math notranslate nohighlight">\(\vec a\times\vec b\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="d-8">
+<h3>D.8<a class="headerlink" href="#d-8" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-158" name="sd-tab-set-53" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-158">
+Question</label><div class="sd-tab-content docutils">
+<p>Find a vector parallel to the line</p>
+<div class="math notranslate nohighlight">
+\[
+y=3x-4.
+\]</div>
+</div>
+<input id="sd-tab-item-159" name="sd-tab-set-53" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-159">
+Answer</label><div class="sd-tab-content docutils">
+<p>One possible answer is</p>
+<div class="math notranslate nohighlight">
+\[
+(1,3).
+\]</div>
+</div>
+<input id="sd-tab-item-160" name="sd-tab-set-53" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-160">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>The slope is <span class="math notranslate nohighlight">\(3\)</span>, which means that when <span class="math notranslate nohighlight">\(x\)</span> increases by <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(y\)</span> increases by <span class="math notranslate nohighlight">\(3\)</span>. Therefore a direction vector parallel to the line is</p>
+<div class="math notranslate nohighlight">
+\[
+(1,3).
+\]</div>
+</div>
+</div>
+</section>
+<section id="d-9">
+<h3>D.9<a class="headerlink" href="#d-9" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-161" name="sd-tab-set-54" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-161">
+Question</label><div class="sd-tab-content docutils">
+<p>Parametrise the line through the point <span class="math notranslate nohighlight">\((1,2,3)\)</span> in the direction of the vector</p>
+<div class="math notranslate nohighlight">
+\[
+\vec v=(2,-1,1).
+\]</div>
+</div>
+<input id="sd-tab-item-162" name="sd-tab-set-54" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-162">
+Answer</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+\vec r(t)=(1,2,3)+t(2,-1,1)
+\]</div>
+<p>Equivalently,</p>
+<div class="math notranslate nohighlight">
+\[
+x=1+2t, \qquad y=2-t, \qquad z=3+t.
+\]</div>
+</div>
+<input id="sd-tab-item-163" name="sd-tab-set-54" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-163">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>A line through point <span class="math notranslate nohighlight">\(\vec p\)</span> with direction vector <span class="math notranslate nohighlight">\(\vec v\)</span> can be written as</p>
+<div class="math notranslate nohighlight">
+\[
+\vec r(t)=\vec p+t\vec v.
+\]</div>
+<p>Here</p>
+<div class="math notranslate nohighlight">
+\[
+\vec p=(1,2,3), \qquad \vec v=(2,-1,1).
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\vec r(t)=(1,2,3)+t(2,-1,1).
+\]</div>
+<p>Equivalently,</p>
+<div class="math notranslate nohighlight">
+\[
+x=1+2t, \qquad y=2-t, \qquad z=3+t.
+\]</div>
+</div>
+</div>
+</section>
+<section id="d-10">
+<h3>D.10<a class="headerlink" href="#d-10" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-164" name="sd-tab-set-55" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-164">
+Question</label><div class="sd-tab-content docutils">
+<p>Parametrise the line through the two points</p>
+<div class="math notranslate nohighlight">
+\[
+(1,1,0) \quad \text{and} \quad (3,5,0).
+\]</div>
+</div>
+<input id="sd-tab-item-165" name="sd-tab-set-55" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-165">
+Answer</label><div class="sd-tab-content docutils">
+<p>One parametrisation is</p>
+<div class="math notranslate nohighlight">
+\[
+\vec r(t)=(1,1,0)+t(2,4,0).
+\]</div>
+</div>
+<input id="sd-tab-item-166" name="sd-tab-set-55" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-166">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>A direction vector is found by subtracting the points:</p>
+<div class="math notranslate nohighlight">
+\[
+(3,5,0)-(1,1,0)=(2,4,0).
+\]</div>
+<p>Using <span class="math notranslate nohighlight">\((1,1,0)\)</span> as the point on the line, a parametrisation is</p>
+<div class="math notranslate nohighlight">
+\[
+\vec r(t)=(1,1,0)+t(2,4,0).
+\]</div>
+</div>
+</div>
+</section>
+<section id="d-11">
+<h3>D.11<a class="headerlink" href="#d-11" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-167" name="sd-tab-set-56" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-167">
+Question</label><div class="sd-tab-content docutils">
+<p>A line is given by</p>
+<div class="math notranslate nohighlight">
+\[
+(x,y)=(1,1)+t(2,1).
+\]</div>
+<p>(a) Find two points on the line using <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(t=1\)</span>.</p>
+<p>(b) Sketch the line.</p>
+</div>
+<input id="sd-tab-item-168" name="sd-tab-set-56" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-168">
+Answer</label><div class="sd-tab-content docutils">
+<p>(a) The two points are</p>
+<div class="math notranslate nohighlight">
+\[
+(1,1), \qquad (3,2).
+\]</div>
+<p>(b) The line is the straight line through these two points.</p>
+</div>
+<input id="sd-tab-item-169" name="sd-tab-set-56" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-169">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>For <span class="math notranslate nohighlight">\(t=0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+(x,y)=(1,1)+0(2,1)=(1,1).
+\]</div>
+<p>For <span class="math notranslate nohighlight">\(t=1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+(x,y)=(1,1)+(2,1)=(3,2).
+\]</div>
+<p>So two points are <span class="math notranslate nohighlight">\((1,1)\)</span> and <span class="math notranslate nohighlight">\((3,2)\)</span>. Sketch the straight line through these two points.</p>
+</div>
+</div>
+</section>
+<section id="d-12">
+<h3>D.12<a class="headerlink" href="#d-12" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-170" name="sd-tab-set-57" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-170">
+Question</label><div class="sd-tab-content docutils">
+<p>A line is given by</p>
+<div class="math notranslate nohighlight">
+\[
+(x,y)=(3,-1)+t(-1,2).
+\]</div>
+<p>(a) Give a point on the line.</p>
+<p>(b) Give a direction vector.</p>
+<p>(c) Is <span class="math notranslate nohighlight">\(x\)</span> increasing or decreasing as <span class="math notranslate nohighlight">\(t\)</span> increases?</p>
+</div>
+<input id="sd-tab-item-171" name="sd-tab-set-57" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-171">
+Answer</label><div class="sd-tab-content docutils">
+<p>(a) A point is <span class="math notranslate nohighlight">\((3,-1)\)</span>.</p>
+<p>(b) A direction vector is <span class="math notranslate nohighlight">\((-1,2)\)</span>.</p>
+<p>(c) <span class="math notranslate nohighlight">\(x\)</span> is decreasing as <span class="math notranslate nohighlight">\(t\)</span> increases.</p>
+</div>
+<input id="sd-tab-item-172" name="sd-tab-set-57" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-172">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>The parametrisation is written as</p>
+<div class="math notranslate nohighlight">
+\[
+(x,y)=\text{point}+t(\text{direction vector}).
+\]</div>
+<p>So a point on the line is</p>
+<div class="math notranslate nohighlight">
+\[
+(3,-1),
+\]</div>
+<p>and the direction vector is</p>
+<div class="math notranslate nohighlight">
+\[
+(-1,2).
+\]</div>
+<p>The <span class="math notranslate nohighlight">\(x\)</span>-component of the direction vector is <span class="math notranslate nohighlight">\(-1\)</span>, so <span class="math notranslate nohighlight">\(x\)</span> decreases as <span class="math notranslate nohighlight">\(t\)</span> increases.</p>
+</div>
+</div>
+</section>
+<section id="d-13">
+<h3>D.13<a class="headerlink" href="#d-13" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-173" name="sd-tab-set-58" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-173">
+Question</label><div class="sd-tab-content docutils">
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[
+\vec a=(1,2,3), \qquad \vec b=(2,4,6).
+\]</div>
+<p>(a) Compute <span class="math notranslate nohighlight">\(\vec a\times\vec b\)</span>.</p>
+<p>(b) Find the area of the parallelogram.</p>
+<p>(c) What does this tell you about the vectors?</p>
+</div>
+<input id="sd-tab-item-174" name="sd-tab-set-58" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-174">
+Answer</label><div class="sd-tab-content docutils">
+<p>(a)</p>
+<div class="math notranslate nohighlight">
+\[
+\vec a\times\vec b=\vec 0.
+\]</div>
+<p>(b) The area is <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<p>(c) The vectors are parallel.</p>
+</div>
+<input id="sd-tab-item-175" name="sd-tab-set-58" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-175">
+Worked solution</label><div class="sd-tab-content docutils">
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}=(1,2,3),
+\qquad
+\vec{b}=(2,4,6).
+\]</div>
+<p>We want to compute</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}\times\vec{b}.
+\]</div>
+<p>Use the determinant formula:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{a}\times\vec{b}
+=
+\begin{vmatrix}
+\vec{i} &amp; \vec{j} &amp; \vec{k} \\
+1 &amp; 2 &amp; 3 \\
+2 &amp; 4 &amp; 6
+\end{vmatrix}.
+\end{split}\]</div>
+<p>Expanding along the first row gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{a}\times\vec{b}
+=
+\vec{i}
+\begin{vmatrix}
+2 &amp; 3 \\
+4 &amp; 6
+\end{vmatrix}
+-
+\vec{j}
+\begin{vmatrix}
+1 &amp; 3 \\
+2 &amp; 6
+\end{vmatrix}
++
+\vec{k}
+\begin{vmatrix}
+1 &amp; 2 \\
+2 &amp; 4
+\end{vmatrix}.
+\end{split}\]</div>
+<p>Now evaluate each <span class="math notranslate nohighlight">\(2\times 2\)</span> determinant:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+2 &amp; 3 \\
+4 &amp; 6
+\end{vmatrix}
+=
+2(6)-3(4)
+=
+12-12
+=
+0,
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+1 &amp; 3 \\
+2 &amp; 6
+\end{vmatrix}
+=
+1(6)-3(2)
+=
+6-6
+=
+0,
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+1 &amp; 2 \\
+2 &amp; 4
+\end{vmatrix}
+=
+1(4)-2(2)
+=
+4-4
+=
+0.
+\end{split}\]</div>
+<p>Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}\times\vec{b}
+=
+0\vec{i}-0\vec{j}+0\vec{k}
+=
+(0,0,0).
+\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{a}\times\vec{b}=\vec{0}.
+\]</div>
+<p>The area of the parallelogram is</p>
+<div class="math notranslate nohighlight">
+\[
+\|\vec{a}\times\vec{b}\|
+=
+\|\vec{0}\|
+=
+0.
+\]</div>
+<p>This tells us that the vectors are parallel. In fact,</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{b}=2\vec{a}.
+\]</div>
+<p>So the parallelogram has zero area because the two edge vectors point in the same direction.</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "jupyter_matlab_kernel"
+        },
+        kernelOptions: {
+            name: "jupyter_matlab_kernel",
+            path: "./prereqs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="PrereqIntro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Prerequisites</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Squares.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Squares</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-a-algebra">Part A: Algebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-1">A.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-2">A.2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-3">A.3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-4">A.4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-5">A.5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-6">A.6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-7">A.7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-8">A.8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-9">A.9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-10">A.10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-11">A.11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-12">A.12</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-13">A.13</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-14">A.14</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-15">A.15</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-16">A.16</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-17">A.17</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-18">A.18</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-19">A.19</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-20">A.20</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-21">A.21</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-b-functions-and-graphs">Part B: Functions and Graphs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-1">B.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-2">B.2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-3">B.3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-4">B.4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-5">B.5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-6">B.6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-7">B.7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8">B.8</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8-a">B.8.a</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8-b">B.8.b</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8-c">B.8.c</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8-d">B.8.d</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8-e">B.8.e</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8-f">B.8.f</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-c-calculus">Part C: Calculus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-1">C.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-2">C.2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-3">C.3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-4">C.4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-5">C.5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-6">C.6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-7">C.7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-8">C.8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-9">C.9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-10">C.10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-11">C.11</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-d-vectors-and-geometry">Part D: Vectors and Geometry</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-1">D.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-2">D.2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-3">D.3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-4">D.4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-5">D.5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-6">D.6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7">D.7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-8">D.8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-9">D.9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-10">D.10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-11">D.11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-12">D.12</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-13">D.13</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By La Trobe University MAPS staff (present and past)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

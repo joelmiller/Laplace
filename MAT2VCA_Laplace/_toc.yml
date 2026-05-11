@@ -9,6 +9,7 @@ parts:
     chapters: 
     - file: prereqs/PrereqIntro
       sections:
+      - file: prereqs/SelfDiagnostic
       - file: prereqs/Squares
       - file: prereqs/EqualsSign
       - file: prereqs/AlgebraReview
