@@ -977,38 +977,43 @@ f(3.5)&amp;=3.5^3-3.5^2=\frac{343}{8}-\frac{49}{4}\\
 <span class="sd-summary-text">Extension Questions</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">These are more advanced questions intended for students who want to go beyond what is required for the subject.</p>
 <p class="sd-card-text">The questions below are related to the accuracy of the approximation as <span class="math notranslate nohighlight">\(\Delta x\)</span> shrinks.</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p class="sd-card-text">We want to understand the error in the Riemann sums</p>
-<ul class="simple">
+<ul>
 <li><p class="sd-card-text">Assume <span class="math notranslate nohighlight">\(f(x) = mx+b\)</span> is a straight line.  Find the error in the Riemann sum approximation of <span class="math notranslate nohighlight">\(\int_0^1 f(x)\, dx\)</span> in terms of <span class="math notranslate nohighlight">\(dx\)</span>.</p></li>
-<li><p class="sd-card-text">To more accurately estimate the error for other functions, write <span class="math notranslate nohighlight">\(f(x)\)</span> in an interval <span class="math notranslate nohighlight">\((x_i,x_i+\Delta x)\)</span> using a Taylor Series about <span class="math notranslate nohighlight">\(x_i\)</span>:<br />
-$<span class="math notranslate nohighlight">\(
-f(x) \approx f(x_i) + (x-x_i) f'(x_i) + \frac{(x-x_i)^2}{2} f''(x_i) + \cdots
-\)</span><span class="math notranslate nohighlight">\(
-Find the value of \)</span>\int_{x_i}^{x_i+\Delta x} f(x) , dx$ using this expansion.</p></li>
+<li><p class="sd-card-text">To more accurately estimate the error for other functions, write <span class="math notranslate nohighlight">\(f(x)\)</span> in an interval <span class="math notranslate nohighlight">\((x_i,x_i+\Delta x)\)</span> using a Taylor Series about <span class="math notranslate nohighlight">\(x_i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+     f(x) \approx f(x_i) + (x-x_i) f'(x_i) + \frac{(x-x_i)^2}{2} f''(x_i) + \cdots
+     \]</div>
+<p class="sd-card-text">Find the value of <span class="math notranslate nohighlight">\(\int_{x_i}^{x_i+\Delta x} f(x) \, dx\)</span> using this expansion.</p>
+</li>
 <li><p class="sd-card-text">What is the leading order (in <span class="math notranslate nohighlight">\(\Delta x\)</span>) error between the calculated area and the approximation from the rectangle for the strip from <span class="math notranslate nohighlight">\(x_i\)</span> to <span class="math notranslate nohighlight">\(x_i+\Delta x\)</span>?</p></li>
 <li><p class="sd-card-text">Assuming <span class="math notranslate nohighlight">\(|f'(x)|&lt;k\)</span>, find a bound on the sums of the leading order errors over all strips in terms of <span class="math notranslate nohighlight">\(\Delta x\)</span>.</p></li>
 <li><p class="sd-card-text">Use this to explain the slope of the error in the log-log plot.</p></li>
 </ul>
 </li>
 <li><p class="sd-card-text">Consider what would happen if you used the midpoint rather than the left point of each interval to approximate the value of <span class="math notranslate nohighlight">\(f\)</span>.</p>
-<ul class="simple">
+<ul>
 <li><p class="sd-card-text">Explain visually why this should be more accurate.</p></li>
 <li><p class="sd-card-text">Assume <span class="math notranslate nohighlight">\(f(x) = mx+b\)</span> is a straight line.  Find the error in the Riemann sum approximation of <span class="math notranslate nohighlight">\(\int_0^1 f(x)\, dx\)</span> in terms of <span class="math notranslate nohighlight">\(dx\)</span>.</p></li>
-<li><p class="sd-card-text">To more accurately estimate the error for other functions, write <span class="math notranslate nohighlight">\(f(x)\)</span> in an interval <span class="math notranslate nohighlight">\((x_i,x_i+\Delta x)\)</span> using a Taylor Series about <span class="math notranslate nohighlight">\(\hat{x}_i = x_i + \frac{\Delta x}{2}\)</span>:<br />
-$<span class="math notranslate nohighlight">\(
-f(x) \approx f(\hat{x}_i) + (x-\hat{x}_i) f'(\hat{x}_i) + \frac{(x-\hat{x}_i)^2}{2} f''(\hat{x_i}) + \cdots
-\)</span><span class="math notranslate nohighlight">\(  
-Find the value of \)</span>\int_{x_i}^{x_i+\Delta x} f(x) , dx$ using this expansion.</p></li>
+<li><p class="sd-card-text">To more accurately estimate the error for other functions, write <span class="math notranslate nohighlight">\(f(x)\)</span> in an interval <span class="math notranslate nohighlight">\((x_i,x_i+\Delta x)\)</span> using a Taylor Series about <span class="math notranslate nohighlight">\(\hat{x}_i = x_i + \frac{\Delta x}{2}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+     f(x) \approx f(\hat{x}_i) + (x-\hat{x}_i) f'(\hat{x}_i) + \frac{(x-\hat{x}_i)^2}{2} f''(\hat{x_i}) + \cdots
+     \]</div>
+<p class="sd-card-text">Find the value of <span class="math notranslate nohighlight">\(\int_{x_i}^{x_i+\Delta x} f(x) \, dx\)</span> using this expansion.</p>
+</li>
 <li><p class="sd-card-text">What is the leading order (in <span class="math notranslate nohighlight">\(\Delta x\)</span>) error between the calculated area and the rectangle approximation using the midpoint?</p></li>
 <li><p class="sd-card-text">Assuming <span class="math notranslate nohighlight">\(|f''(x)|&lt;k\)</span>, find a bound on the sums of the leading order errors.</p></li>
 <li><p class="sd-card-text">Predict the new slope of the error and check.</p></li>
 </ul>
 </li>
-<li><p class="sd-card-text">Consider what would happen with the “trapezoid” rule.  Rather than using a rectangle, we connect the two points <span class="math notranslate nohighlight">\((x_i, f(x_i))\)</span> and <span class="math notranslate nohighlight">\((x_{i+1}, f(x_{i+1}))\)</span> and connect them with a straight line.  The area of the resulting trapezoid is
-$<span class="math notranslate nohighlight">\( 
-A_i = \frac{f(x_{i+1})-f(x_i)}{2} \Delta x
-\)</span>$</p>
+<li><p class="sd-card-text">Consider what would happen with the “trapezoid” rule.  Rather than using a rectangle, we connect the two points <span class="math notranslate nohighlight">\((x_i, f(x_i))\)</span> and <span class="math notranslate nohighlight">\((x_{i+1}, f(x_{i+1}))\)</span> and connect them with a straight line.  The area of the resulting trapezoid is</p>
+<div class="math notranslate nohighlight">
+\[ 
+   A_i = \frac{f(x_{i+1})-f(x_i)}{2} \Delta x
+   \]</div>
 <ul class="simple">
 <li><p class="sd-card-text">Explain visually why this should be more accurate.</p></li>
 <li><p class="sd-card-text">Assume <span class="math notranslate nohighlight">\(f(x) = mx+b\)</span> is a straight line.  Find the error in the Riemann sum approximation of <span class="math notranslate nohighlight">\(\int_0^1 f(x)\, dx\)</span> in terms of <span class="math notranslate nohighlight">\(dx\)</span>.</p></li>
