@@ -502,6 +502,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-12">D.12</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-13">D.13</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-14">D.14</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-15">D.15</a></li>
 </ul>
 </li>
 </ul>
@@ -4122,6 +4123,30 @@ Worked Solution</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </section>
+<section id="d-15">
+<h3>D.15<a class="headerlink" href="#d-15" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-185" name="sd-tab-set-62" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-185">
+Question</label><div class="sd-tab-content docutils">
+<p>The point <span class="math notranslate nohighlight">\(P\)</span> is a distance <span class="math notranslate nohighlight">\(4\)</span> from the origin in the 2D plane.  The ray from the origin to <span class="math notranslate nohighlight">\(P\)</span> has an angle of <span class="math notranslate nohighlight">\(7\pi/6\)</span> with the positive <span class="math notranslate nohighlight">\(x\)</span>-axis.</p>
+<p>Find the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates of <span class="math notranslate nohighlight">\(P\)</span> without using any trigonometric functions.  [hint: think about 45-45-90 and 30-60-90 special triangles]</p>
+</div>
+<input id="sd-tab-item-186" name="sd-tab-set-62" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-186">
+Answer</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(P=(-2\sqrt{3},-2)\)</span></p>
+</div>
+<input id="sd-tab-item-187" name="sd-tab-set-62" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-187">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>First draw the ray from the origin to <span class="math notranslate nohighlight">\(P\)</span>.  The angle between this ray and the negative <span class="math notranslate nohighlight">\(x\)</span> axis is <span class="math notranslate nohighlight">\(\pi/6\)</span> (that is, <span class="math notranslate nohighlight">\(30^\circ\)</span>).  If we draw the line from <span class="math notranslate nohighlight">\(P\)</span> to the (negative) <span class="math notranslate nohighlight">\(x\)</span> axis, we form a 30-60-90 triangle whose hypotenuse is <span class="math notranslate nohighlight">\(4\)</span>.  The segment from <span class="math notranslate nohighlight">\(P\)</span> to the (negative) <span class="math notranslate nohighlight">\(x\)</span>-axis has length half of the hypotenuse (because this is a 30-60-90 triangle).  Then using the Pythagorean theorem (or using memorized properties of a 30-60-90 triangle), the other side of the right triangle has length <span class="math notranslate nohighlight">\(\sqrt{4^2-2^2}= \sqrt{12} = 2\sqrt{3}\)</span>.</p>
+<a class="reference internal image-reference" href="../_images/D15triangle.png"><img alt="Diagram showing triangle used in deriving coordinate of $P$" src="../_images/D15triangle.png" style="width: 500px;" />
+</a>
+<p>By observing where this triangle sits in the <span class="math notranslate nohighlight">\(xy\)</span> plane, it is clear that both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are negative.  So the position is <span class="math notranslate nohighlight">\(P = (-2\sqrt{3}, -2)\)</span>.</p>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -4134,16 +4159,16 @@ Worked Solution</label><div class="sd-tab-content docutils">
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "jupyter_matlab_kernel"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "jupyter_matlab_kernel",
             path: "./prereqs"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
 
                 </article>
               
@@ -4263,6 +4288,7 @@ Worked Solution</label><div class="sd-tab-content docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-12">D.12</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-13">D.13</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-14">D.14</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-15">D.15</a></li>
 </ul>
 </li>
 </ul>
