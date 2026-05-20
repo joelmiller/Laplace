@@ -13,6 +13,7 @@ parts:
       - file: prereqs/Squares
       - file: prereqs/EqualsSign
       - file: prereqs/AlgebraReview
+      - file: prereqs/SpecialTriangles
     - file: prereqs/IntegralRefresher
   - caption: Vector Calculus
     numbered: True

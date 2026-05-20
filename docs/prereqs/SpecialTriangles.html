@@ -1,0 +1,812 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Special Triangles &#8212; Vector Calculus - MAT2VCA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'prereqs/SpecialTriangles';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Integration Refresher" href="IntegralRefresher.html" />
+    <link rel="prev" title="How to improve your prerequisite skills" href="AlgebraReview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Vector Calculus - MAT2VCA - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Vector Calculus - MAT2VCA - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    MAT2VCA - Vector Calculus
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite Information</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="PrereqIntro.html">Prerequisites</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SelfDiagnostic.html">MAT2VCA Readiness Self-Diagnostic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Squares.html">Squares</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EqualsSign.html">The use of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="AlgebraReview.html">How to improve your prerequisite skills</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Special Triangles</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="IntegralRefresher.html">Integration Refresher</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/LaplaceIntro.html">1. Laplace Transforms and Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDef.html">1.2. Laplace Transform Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceRules.html">1.3. Some Basic Laplace Transform Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTShift.html">1.4. The <span class="math notranslate nohighlight">\(t\)</span>-shift: Laplace Transforms and Discontinuous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceSShift.html">1.5. The <span class="math notranslate nohighlight">\(s\)</span>-shift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF.html">1.6. Inverting the Laplace Transform with Partial Fractions — quadratic denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplacePF2.html">1.7. Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceDEsoln.html">1.8. Using the Laplace Transform to solve Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceExtra.html">1.9. Optional Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/LaplaceTable.html">1.10. A table of Laplace Transforms</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">2.1. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">2.2. Extensions to Lagrange Multipliers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">3. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegrals.html">3.1. Multiple Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Integral_Calculus/MultipleIntegralsDefineRegion.html">3.2. Systematically finding the terminals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ComputerLabs/LabIntro.html">4. Computer Labs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2001.html">4.1. MAT2VCA Computer Lab 1 - basics of Matlab/Octave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2002.html">4.2. MAT2VCA Computer Lab 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2003.html">4.3. MAT2VCA Computer Lab 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2004.html">4.5. MAT2VCA Computer Lab 4: stationary points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2005.html">4.6. Cylindrical Coordinates and Unit Vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2006.html">4.7. The Gradient in non-Cartesian Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2007.html">4.8. Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2008.html">4.9. Computer Lab 08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2009.html">4.10. Computer Lab 09  –   Work done moving through a vector field.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2011.html">4.11. Computer Lab 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ComputerLabs/Computer%20Lab%2012.html">4.12. Computer Lab 12</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/joelmiller/Laplace/issues/new?title=Issue%20on%20page%20%2Fprereqs/SpecialTriangles.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/prereqs/SpecialTriangles.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Special Triangles</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-45-45-90-triangle">The <span class="math notranslate nohighlight">\(45\)</span>-<span class="math notranslate nohighlight">\(45\)</span>-<span class="math notranslate nohighlight">\(90\)</span> triangle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">Self test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-30-60-90-triangle">The 30-60-90 triangle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Self-test</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="special-triangles">
+<h1>Special Triangles<a class="headerlink" href="#special-triangles" title="Link to this heading">#</a></h1>
+<p>There are two right triangles taught in MAT1001 that every student should be familiar with.  These two triangles show up often when instructors want to see if students understand the relationship between the <span class="math notranslate nohighlight">\(xy\)</span> coordinates and the angle and distance of that point from the origin.</p>
+<p>This shows up in this subject when converting between Cartesian coordinates and polar, cylindrical, or spherical coordinates.  One instance of this will occur on <strong>the 2026 final exam</strong>.  This also appears when using complex numbers in the form <span class="math notranslate nohighlight">\(r e^{i\theta}\)</span>.</p>
+<p>We’re going to look at these two triangles assuming that the hypotenuse has length <span class="math notranslate nohighlight">\(1\)</span> and determine the other sides of the triangles.  However, we can scale all of the sides by the same constant <span class="math notranslate nohighlight">\(r\)</span> if we are looking at a specific case where a point has distance <span class="math notranslate nohighlight">\(r\)</span> from the origin.</p>
+<section id="the-45-45-90-triangle">
+<h2>The <span class="math notranslate nohighlight">\(45\)</span>-<span class="math notranslate nohighlight">\(45\)</span>-<span class="math notranslate nohighlight">\(90\)</span> triangle<a class="headerlink" href="#the-45-45-90-triangle" title="Link to this heading">#</a></h2>
+<p>We start by considering a right triangle whose two smaller angles are both <span class="math notranslate nohighlight">\(45^\circ\)</span>.  This is called a 45-45-90 triangle.</p>
+<figure class="align-default" id="fig-454590a">
+<a class="reference internal image-reference" href="../_images/454590a.png"><img alt="../_images/454590a.png" src="../_images/454590a.png" style="height: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">A 45-45-90 triangle with hypotenuse <span class="math notranslate nohighlight">\(1\)</span>, showing the angles labelled in degrees.  The legs of the right triangle have the same length, but have not yet been calculated.</span><a class="headerlink" href="#fig-454590a" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In radians, the two smaller angles are <span class="math notranslate nohighlight">\(\pi/4\)</span>.</p>
+<figure class="align-default" id="fig-454590b">
+<a class="reference internal image-reference" href="../_images/454590b.png"><img alt="../_images/454590b.png" src="../_images/454590b.png" style="height: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">A 45-45-90 triangle with hypotenuse <span class="math notranslate nohighlight">\(1\)</span>, showing the angles labelled in radians.The legs of the right triangle have the same length, but have not yet been calculated.</span><a class="headerlink" href="#fig-454590b" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To find the two legs of the triangle, we use the Pythagorean Theorem: <span class="math notranslate nohighlight">\(a^2+a^2 = 1^2\)</span>, so <span class="math notranslate nohighlight">\(2a^2 = 1\)</span>.  Thus <span class="math notranslate nohighlight">\(a = 1/\sqrt{2}\)</span>.  Often we ``rationalize’’ the denominator to rewrite it as <span class="math notranslate nohighlight">\(a=\sqrt{2}/2\)</span>.</p>
+<figure class="align-default" id="fig-454590c">
+<a class="reference internal image-reference" href="../_images/454590c.png"><img alt="../_images/454590c.png" src="../_images/454590c.png" style="height: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">A 45-45-90 triangle with hypotenuse <span class="math notranslate nohighlight">\(1\)</span>, showing the angles labelled in radians.The legs of the right triangle both have length <span class="math notranslate nohighlight">\(\sqrt{2}/2\)</span>.</span><a class="headerlink" href="#fig-454590c" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>With this layout, we can quickly find <span class="math notranslate nohighlight">\(\sin(\pi/4)\)</span>, <span class="math notranslate nohighlight">\(\cos(\pi/4)\)</span>, and <span class="math notranslate nohighlight">\(\tan(\pi/4)\)</span>.</p>
+<p>If we want to find other (odd) multiples of <span class="math notranslate nohighlight">\(\pi/4\)</span>, we can draw the triangle with one vertex at the origin, and one leg aligned with the <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> axis so that the hypotenuse has the appropriate angle.</p>
+<figure class="align-default" id="fig-454590d">
+<a class="reference internal image-reference" href="../_images/454590d.png"><img alt="../_images/454590d.png" src="../_images/454590d.png" style="height: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Using the 45-45-90 triangle to find the coordinates of points with angles <span class="math notranslate nohighlight">\(\pi/4\)</span>, <span class="math notranslate nohighlight">\(3\pi/4\)</span>, <span class="math notranslate nohighlight">\(5\pi/4\)</span>, and <span class="math notranslate nohighlight">\(7\pi/4\)</span>.  Two triangles are highlighted, which can be used to find the values for <span class="math notranslate nohighlight">\(\theta = \pi/4\)</span> and for <span class="math notranslate nohighlight">\(\theta = 5\pi/4\)</span> (or equivalently <span class="math notranslate nohighlight">\(-3\pi/4\)</span>).</span><a class="headerlink" href="#fig-454590d" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="self-test">
+<h3>Self test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h3>
+<p>You should be able to answer the questions below without referring to the diagrams above.  Instead, you should be able to draw your own diagram.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>Find <span class="math notranslate nohighlight">\(\sin(\pi/4)\)</span>, <span class="math notranslate nohighlight">\(\cos(\pi/4)\)</span>, and <span class="math notranslate nohighlight">\(\tan(\pi/4)\)</span>.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Answer</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sin(\pi/4)&amp;=\sqrt{2}/2\\
+\cos(\pi/4)&amp;=\sqrt{2}/2\\
+\tan(\pi/4)&amp;=1
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Worked solution</label><div class="sd-tab-content docutils">
+<a class="reference internal image-reference" href="../_images/454590d.png"><img alt="45-45-90 triangle" src="../_images/454590d.png" style="width: 250px;" />
+</a>
+<p>If we take a ray at angle <span class="math notranslate nohighlight">\(\pi/4\)</span>, then it splits between the positive <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes.</p>
+<p>We draw this ray with length <span class="math notranslate nohighlight">\(1\)</span>.  By adding a vertical line from the end point down to the  <span class="math notranslate nohighlight">\(x\)</span> axis, we can draw a right triangle that includes with hypotenuse <span class="math notranslate nohighlight">\(1\)</span> (the ray) and one leg parallel to the <span class="math notranslate nohighlight">\(y\)</span> axis and the other leg along the <span class="math notranslate nohighlight">\(x\)</span> axis.</p>
+<p>Because it is a 45-45-90 triangle the two legs both have length <span class="math notranslate nohighlight">\(\sqrt{2}/2\)</span>.  So the point at the end of the ray is <span class="math notranslate nohighlight">\((\sqrt{2}/2, \sqrt{2}/2)\)</span>.  Then we have <span class="math notranslate nohighlight">\(\sin(\pi/4) = y/r = \sqrt{2}/2\)</span>, while <span class="math notranslate nohighlight">\(\cos(\pi/4) = x/r = \sqrt{2}/2\)</span> and <span class="math notranslate nohighlight">\(\tan(\pi/4) = y/x = 1\)</span>.</p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>Find <span class="math notranslate nohighlight">\(\sin(3\pi/4)\)</span>, <span class="math notranslate nohighlight">\(\cos(3\pi/4)\)</span>, and <span class="math notranslate nohighlight">\(\tan(3\pi/4)\)</span>.</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Answer</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sin(3\pi/4)&amp;=\sqrt{2}/2\\
+\cos(3\pi/4)&amp;=-\sqrt{2}/2\\
+\tan(3\pi/4)&amp;=-1
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Worked solution</label><div class="sd-tab-content docutils">
+<a class="reference internal image-reference" href="../_images/454590d.png"><img alt="45-45-90 triangle" src="../_images/454590d.png" style="width: 250px;" />
+</a>
+<p>If we take a ray at angle <span class="math notranslate nohighlight">\(3\pi/4\)</span>, then it is <span class="math notranslate nohighlight">\(\pi/4\)</span> more than <span class="math notranslate nohighlight">\(\pi/2\)</span>.  So it splits the positive <span class="math notranslate nohighlight">\(y\)</span> and negative <span class="math notranslate nohighlight">\(x\)</span> axes.  (We could equivalently say it is <span class="math notranslate nohighlight">\(\pi/4\)</span> less than <span class="math notranslate nohighlight">\(\pi/2\)</span>.)</p>
+<p>We draw this ray with length <span class="math notranslate nohighlight">\(1\)</span>.  By adding a vertical line from the end point down to the (negative) <span class="math notranslate nohighlight">\(x\)</span> axis, we can draw a right triangle that includes with hypotenuse <span class="math notranslate nohighlight">\(1\)</span> (the ray) and one leg parallel to the <span class="math notranslate nohighlight">\(y\)</span> axis and the other leg along the (negative) <span class="math notranslate nohighlight">\(x\)</span> axis.</p>
+<p>Because it is a 45-45-90 triangle the two legs both have length <span class="math notranslate nohighlight">\(\sqrt{2}/2\)</span>.  So the point at the end of the ray is <span class="math notranslate nohighlight">\((-\sqrt{2}/2, \sqrt{2}/2)\)</span>.  Then we have <span class="math notranslate nohighlight">\(\sin(3\pi/4) = y/r = \sqrt{2}/2\)</span>, while <span class="math notranslate nohighlight">\(\cos(3\pi/4) = x/r = -\sqrt{2}/2\)</span> and <span class="math notranslate nohighlight">\(\tan(3\pi/4) = y/x = -1\)</span>.</p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>Find <span class="math notranslate nohighlight">\(\sin(5\pi/4)\)</span>, <span class="math notranslate nohighlight">\(\cos(5\pi/4)\)</span>, and <span class="math notranslate nohighlight">\(\tan(5\pi/4)\)</span>.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Answer</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sin(5\pi/4)&amp;=-\sqrt{2}/2\\
+\cos(5\pi/4)&amp;=-\sqrt{2}/2\\
+\tan(5\pi/4)&amp;=1
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Worked solution</label><div class="sd-tab-content docutils">
+<a class="reference internal image-reference" href="../_images/454590d.png"><img alt="45-45-90 triangle" src="../_images/454590d.png" style="width: 250px;" />
+</a>
+<p>If we take a ray at angle <span class="math notranslate nohighlight">\(5\pi/4\)</span>, then it is <span class="math notranslate nohighlight">\(\pi/4\)</span> more than <span class="math notranslate nohighlight">\(\pi\)</span>.  So it splits the negative <span class="math notranslate nohighlight">\(y\)</span> and negative <span class="math notranslate nohighlight">\(x\)</span> axes.</p>
+<p>We draw this ray with length <span class="math notranslate nohighlight">\(1\)</span>.  By adding a vertical line from the end point up to the (negative) <span class="math notranslate nohighlight">\(x\)</span> axis, we can draw a right triangle that includes with hypotenuse <span class="math notranslate nohighlight">\(1\)</span> (the ray) and one leg parallel to the <span class="math notranslate nohighlight">\(y\)</span> axis and the other leg along the (negative) <span class="math notranslate nohighlight">\(x\)</span> axis.</p>
+<p>Because it is a 45-45-90 triangle the two legs both have length <span class="math notranslate nohighlight">\(\sqrt{2}/2\)</span>.  So the point at the end of the ray is <span class="math notranslate nohighlight">\((-\sqrt{2}/2, -\sqrt{2}/2)\)</span>.  Then we have <span class="math notranslate nohighlight">\(\sin(\pi/4) = y/r = -\sqrt{2}/2\)</span>, while <span class="math notranslate nohighlight">\(\cos(\pi/4) = x/r = -\sqrt{2}/2\)</span> and <span class="math notranslate nohighlight">\(\tan(\pi/4) = y/x = 1\)</span>.</p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Question</label><div class="sd-tab-content docutils">
+<p>Find <span class="math notranslate nohighlight">\(\sin(7\pi/4)\)</span>, <span class="math notranslate nohighlight">\(\cos(7\pi/4)\)</span>, and <span class="math notranslate nohighlight">\(\tan(7\pi/4)\)</span>.</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Answer</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sin(7\pi/4)&amp;=-\sqrt{2}/2\\
+\cos(7\pi/4)&amp;=\sqrt{2}/2\\
+\tan(7\pi/4)&amp;=-1
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+Worked solution</label><div class="sd-tab-content docutils">
+<a class="reference internal image-reference" href="../_images/454590d.png"><img alt="45-45-90 triangle" src="../_images/454590d.png" style="width: 250px;" />
+</a>
+<p>If we take a ray at angle <span class="math notranslate nohighlight">\(7\pi/4\)</span>, then it is <span class="math notranslate nohighlight">\(\pi/4\)</span> less than <span class="math notranslate nohighlight">\(2\pi\)</span>.  So it splits the negative <span class="math notranslate nohighlight">\(y\)</span> and positive <span class="math notranslate nohighlight">\(x\)</span> axes.</p>
+<p>We draw this ray with length <span class="math notranslate nohighlight">\(1\)</span>.  By adding a vertical line from the end point up to the <span class="math notranslate nohighlight">\(x\)</span> axis, we can draw a right triangle that includes with hypotenuse <span class="math notranslate nohighlight">\(1\)</span> (the ray) and one leg parallel to the <span class="math notranslate nohighlight">\(y\)</span> axis and the other leg along the  <span class="math notranslate nohighlight">\(x\)</span> axis.</p>
+<p>Because it is a 45-45-90 triangle the two legs both have length <span class="math notranslate nohighlight">\(\sqrt{2}/2\)</span>.  So the point at the end of the ray is <span class="math notranslate nohighlight">\((\sqrt{2}/2, -\sqrt{2}/2)\)</span>.  Then we have <span class="math notranslate nohighlight">\(\sin(\pi/4) = y/r = -\sqrt{2}/2\)</span>, while <span class="math notranslate nohighlight">\(\cos(\pi/4) = x/r = \sqrt{2}/2\)</span> and <span class="math notranslate nohighlight">\(\tan(\pi/4) = y/x = -1\)</span>.</p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+Question</label><div class="sd-tab-content docutils">
+<p>Find <span class="math notranslate nohighlight">\(\sin(-\pi/4)\)</span>, <span class="math notranslate nohighlight">\(\cos(-\pi/4)\)</span>, and <span class="math notranslate nohighlight">\(\tan(-\pi/4)\)</span>.</p>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+Answer</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sin(-\pi/4)&amp;=-\sqrt{2}/2\\
+\cos(-\pi/4)&amp;=\sqrt{2}/2\\
+\tan(-\pi/4)&amp;=-1
+\end{align*}\]</div>
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+Worked solution</label><div class="sd-tab-content docutils">
+<a class="reference internal image-reference" href="../_images/454590d.png"><img alt="45-45-90 triangle" src="../_images/454590d.png" style="width: 250px;" />
+</a>
+<p>This angle is the same as <span class="math notranslate nohighlight">\(7\pi/4\)</span>, so we can use the argument for <span class="math notranslate nohighlight">\(7\pi/4\)</span>.</p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+Question</label><div class="sd-tab-content docutils">
+<p>The angle from the origin to a point <span class="math notranslate nohighlight">\(P\)</span> is <span class="math notranslate nohighlight">\(3\pi/4\)</span>.  The point is length <span class="math notranslate nohighlight">\(3\sqrt{2}\)</span> away from the origin.  Without using any trigonometric functions, find its coordinates.</p>
+</div>
+<input id="sd-tab-item-16" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+Answer</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((-3,3)\)</span></p>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>Draw the ray with length <span class="math notranslate nohighlight">\(3\sqrt{2}\)</span> and the given angle to point <span class="math notranslate nohighlight">\(P\)</span>.  If we draw a line down from the end point <span class="math notranslate nohighlight">\(P\)</span> to the <span class="math notranslate nohighlight">\(x\)</span>-axis, this defines a right triangle with both sides having the same length <span class="math notranslate nohighlight">\(a\)</span> and hypotenuse of length <span class="math notranslate nohighlight">\(3 \sqrt{2}\)</span>.</p>
+<p>By the Pythagorean theorem <span class="math notranslate nohighlight">\(a^2+a^2 = (3\sqrt{2})^2\)</span> so <span class="math notranslate nohighlight">\(2a^2 = 2\cdot 3^2\)</span>,  Thus <span class="math notranslate nohighlight">\(a=3\)</span>.  By looking at the picture (you have drawn the picture, right?), we see that the <span class="math notranslate nohighlight">\(x\)</span> coordinate is negative but the <span class="math notranslate nohighlight">\(y\)</span>-coordinate is positive.  So it is at <span class="math notranslate nohighlight">\((-3,3)\)</span>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="the-30-60-90-triangle">
+<h2>The 30-60-90 triangle<a class="headerlink" href="#the-30-60-90-triangle" title="Link to this heading">#</a></h2>
+<p>To build a 30-60-90 triangle, we first build an equilateral triangle all of whose sides are length <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/equilateral.png"><img alt="../_images/equilateral.png" src="../_images/equilateral.png" style="height: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">An equilateral triangle with side length <span class="math notranslate nohighlight">\(1\)</span>.  All angles are <span class="math notranslate nohighlight">\(60^\circ\)</span> or <span class="math notranslate nohighlight">\(\pi/3\)</span> radians.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Then we draw an altitude from one vertex to the opposite side.  It splits the opposite side into two equal pieces, and the angle is split into two equal angles.</p>
+<figure class="align-default" id="fig-306090">
+<a class="reference internal image-reference" href="../_images/306090a.png"><img alt="../_images/306090a.png" src="../_images/306090a.png" style="height: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">An equilateral triangle with side length <span class="math notranslate nohighlight">\(1\)</span>, split by an altitude.</span><a class="headerlink" href="#fig-306090" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We focus on one of the right triangles created.  One side has length <span class="math notranslate nohighlight">\(h\)</span>, the other has length <span class="math notranslate nohighlight">\(1/2\)</span>, and the hypotenuse has length <span class="math notranslate nohighlight">\(1\)</span>.  So  <span class="math notranslate nohighlight">\(h^2 + (1/2)^2 = 1^2\)</span>.  Rearranging</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+h^2 &amp;= 1^2-\left(\frac{1}{2}\right)^2\\
+\Rightarrow h &amp;= \sqrt{1^2-\left(\frac{1}{2}\right)^2}\\
+ &amp;= \sqrt{1-\frac{1}{4}}\\
+ &amp;= \sqrt{\frac{3}{4}}\\
+ &amp;= \frac{\sqrt{3}}{2}
+ \end{align*}\]</div>
+<p><em>Warning: A common error is to incorrectly replace <span class="math notranslate nohighlight">\(\sqrt{1^2-\left(\frac{1}{2}\right)^2}\)</span> with <span class="math notranslate nohighlight">\(1-\frac{1}{2} = \frac{1}{2}\)</span>.  Because much of Vector Calculus deals with concepts related to distance and length is usually calculated using the Pythagorean theorem, we are often taking the square root of a sum or difference of squares.  This error is one of the most common reasons that students fail this subject.</em></p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/306090b.png"><img alt="../_images/306090b.png" src="../_images/306090b.png" style="height: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">One of the right triangles created by the altitude.  The angles are <span class="math notranslate nohighlight">\(\pi/3\)</span> and <span class="math notranslate nohighlight">\(\pi/6\)</span>.  The hypotenuse has length <span class="math notranslate nohighlight">\(1\)</span>, and the side opposite the <span class="math notranslate nohighlight">\(\pi/6\)</span> angle has length <span class="math notranslate nohighlight">\(1/2\)</span> and the other side has length <span class="math notranslate nohighlight">\(\sqrt{3}/2\)</span>.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From this triangle, we can get <span class="math notranslate nohighlight">\(\sin(\pi/3)\)</span>, <span class="math notranslate nohighlight">\(\cos(\pi/3)\)</span>, <span class="math notranslate nohighlight">\(\tan(\pi/3)\)</span> as well as <span class="math notranslate nohighlight">\(\sin(\pi/6)\)</span>, <span class="math notranslate nohighlight">\(\cos(\pi/6)\)</span>, <span class="math notranslate nohighlight">\(\tan(\pi/6)\)</span>.</p>
+</section>
+<section id="id3">
+<h2>Self-test<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>We can use this triangle to help calculate <span class="math notranslate nohighlight">\(\sin(\theta)\)</span>, <span class="math notranslate nohighlight">\(\cos(\theta)\)</span>, and <span class="math notranslate nohighlight">\(\tan(\theta)\)</span> by drawing a 30-60-90 triangle whose hypotenuse is a ray out of the origin with angle <span class="math notranslate nohighlight">\(\theta\)</span>, one of the sides is on the <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> axis, and the other is parallel to the <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> axis.  This works for angles <span class="math notranslate nohighlight">\(\theta = \pi/6\)</span>, <span class="math notranslate nohighlight">\(\pi/3\)</span>, <span class="math notranslate nohighlight">\(2\pi/3\)</span>, <span class="math notranslate nohighlight">\(5\pi/6\)</span>, <span class="math notranslate nohighlight">\(7\pi/6\)</span>, <span class="math notranslate nohighlight">\(4\pi/3\)</span>, <span class="math notranslate nohighlight">\(5\pi/3\)</span>, and <span class="math notranslate nohighlight">\(11\pi/6\)</span>.</p>
+<ol class="arabic simple">
+<li><p>For each angle above, sketch a ray coming out of the origin with that angle.</p></li>
+<li><p>Choose at least <span class="math notranslate nohighlight">\(3\)</span> of the rays in the previous question.  For each, construct a 30-60-90 triangle that you can use to calculate <span class="math notranslate nohighlight">\(\sin\)</span>, <span class="math notranslate nohighlight">\(\cos\)</span>, and <span class="math notranslate nohighlight">\(\tan\)</span> of the angle.</p></li>
+<li><p>Choose some of the angles above and find the coordinates of a few points at distance some positive integer (greater than <span class="math notranslate nohighlight">\(1\)</span>) from the origin.  Do not use any trigonometric functions to do this.  Instead draw the relevant triangles.</p></li>
+</ol>
+<p>Note - when I use the 30-60-90 triangles in my work, I draw the triangle every time and rederive the lengths.  I do not count on being able to memorize any of this.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./prereqs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="AlgebraReview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">How to improve your prerequisite skills</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="IntegralRefresher.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Integration Refresher</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-45-45-90-triangle">The <span class="math notranslate nohighlight">\(45\)</span>-<span class="math notranslate nohighlight">\(45\)</span>-<span class="math notranslate nohighlight">\(90\)</span> triangle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">Self test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-30-60-90-triangle">The 30-60-90 triangle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Self-test</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By La Trobe University MAPS staff (present and past)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
