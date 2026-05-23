@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.2. Extensions to Lagrange Multipliers &#8212; Vector Calculus - MAT2VCA</title>
+    <title>2.2. The case \(\nabla f = \vec{0}\) &#8212; Vector Calculus - MAT2VCA</title>
   
   
   
@@ -210,7 +210,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Lagrange.html">2.1. Lagrange Multipliers</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2. Extensions to Lagrange Multipliers</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2. The case <span class="math notranslate nohighlight">\(\nabla f = \vec{0}\)</span></a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">3. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -405,9 +405,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -418,19 +416,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Extensions to Lagrange Multipliers</h1>
+    <h1>The case \nabla f = \vec{0}</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-case-nabla-f-vec-0">2.2.1. The case <span class="math notranslate nohighlight">\(\nabla f = \vec{0}\)</span></a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -440,30 +430,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="extensions-to-lagrange-multipliers">
-<h1><span class="section-number">2.2. </span>Extensions to Lagrange Multipliers<a class="headerlink" href="#extensions-to-lagrange-multipliers" title="Link to this heading">#</a></h1>
-<section id="the-case-nabla-f-vec-0">
-<h2><span class="section-number">2.2.1. </span>The case <span class="math notranslate nohighlight">\(\nabla f = \vec{0}\)</span><a class="headerlink" href="#the-case-nabla-f-vec-0" title="Link to this heading">#</a></h2>
-<p>In the argument above, we implicitly assumed that given a contour of <span class="math notranslate nohighlight">\(f\)</span>, the values of <span class="math notranslate nohighlight">\(f\)</span> on one side of the contour are larger and on the other side they are smaller.</p>
-<p>It could be that the contours on both sides are smaller or on both sides are larger.  For example, we might have</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-case-nabla-f-vec-0">
+<h1><span class="section-number">2.2. </span>The case <span class="math notranslate nohighlight">\(\nabla f = \vec{0}\)</span><a class="headerlink" href="#the-case-nabla-f-vec-0" title="Link to this heading">#</a></h1>
+<p><em>note — I need to revisit this section to make it read more cleanly</em></p>
+<p>In the arguments in the previous section, we implicitly assumed given a contour of <span class="math notranslate nohighlight">\(f\)</span>, the contours of <span class="math notranslate nohighlight">\(f\)</span> on one side are larger and on the other side are smaller.  Using this argument, we look for a point where the contour <span class="math notranslate nohighlight">\(g=0\)</span> is tangent to a contour of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Typically this is a reasonable assumption, but there are a few special cases that can occur when <span class="math notranslate nohighlight">\(\nabla f = \vec{0}\)</span>.  Luckily in these cases it is still true that <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span> with <span class="math notranslate nohighlight">\(\lambda = 0\)</span>.</p>
+<p>One possibility is that the the contour of <span class="math notranslate nohighlight">\(f\)</span> is simply a single point.  This occurs if it is a local maximum or minimum of <span class="math notranslate nohighlight">\(f\)</span> (ignoring the constraint).  In this case the point will also be a local maximum or minimum of <span class="math notranslate nohighlight">\(f\)</span> subject to the constraint.</p>
+<p><strong>add an example here</strong></p>
+<p>Another possibility is that the contour of <span class="math notranslate nohighlight">\(f\)</span> is actually the intersection of two curves.  This occurs, for example, at a saddle point.  In this case the point could be either a minim, maximum, or neither subject to the constraint.</p>
+<p>Yet another possibility is that a point is part of a curve of points at which <span class="math notranslate nohighlight">\(\nabla f = 0\)</span>.  For example, we might have</p>
 <div class="math notranslate nohighlight">
 \[
 f(x,y) = \sqrt{x^2+y^2} - (x^2+y^2)
 \]</div>
-<p>This increases as the distance from the origin increases until that distance is <span class="math notranslate nohighlight">\(\sqrt{x^2+y^2}=1/2\)</span>, at which point it begins to decrease again.  This is easier to see in polar coordinates.  If we set <span class="math notranslate nohighlight">\(r = \sqrt{x^2+y^2}\)</span> then  <span class="math notranslate nohighlight">\(f(x,y) = r-r^2\)</span>, which has its maximum at <span class="math notranslate nohighlight">\(r=1/2\)</span></p>
-<p>Luckily in this case the method still works.  We can show that where <span class="math notranslate nohighlight">\(\sqrt{x^2+y^2} = 1/2\)</span> the gradient of <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\vec{0}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\nabla f(x,y) &amp;= \frac{\partial \sqrt{x^2+y^2} - (x^2+y^2)}{\partial x} \vec{i} + \frac{ \partial \sqrt{x^2+y^2} - (x^2+y^2)}{ \partial y} \vec{j}\\
-&amp;= \left(\frac{1}{2}\frac{2x}{\sqrt{x^2+y^2}} - 2x \right) \vec{i} + \left(\frac{1}{2}\frac{2y}{\sqrt{x^2+y^2}} - 2y \right) \vec{j}\\
-\end{align*}\]</div>
-<p>As <span class="math notranslate nohighlight">\(\sqrt{x^2+y^2} = 1/2\)</span>, this becomes</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\nabla f(x,y) &amp;= \left(\frac{x}{1/2} - 2x \right)\vec{i} + \left(\frac{y}{1/2} - 2y \right) \vec{j}\\
-&amp;= \vec{0}
-\end{align*}\]</div>
-<p>And so we would still find such a point by setting <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span>, where in this case we would find <span class="math notranslate nohighlight">\(\lambda = 0\)</span>.</p>
+<p>This is easier to see in polar coordinates.  If we set <span class="math notranslate nohighlight">\(r = \sqrt{x^2+y^2}\)</span> then  <span class="math notranslate nohighlight">\(f(x,y) = r-r^2\)</span>, which has its maximum at <span class="math notranslate nohighlight">\(r=1/2\)</span>.  In this case it’s not necessary that the constraint curve is tangent to this contour.  The maximum will be at whatever point crosses the contour.  It turns out that every point along the contour has <span class="math notranslate nohighlight">\(\nabla f=0\)</span>.  So once again <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span>, where <span class="math notranslate nohighlight">\(\lambda = 0\)</span>.</p>
 <p>Let’s work through this, but this time use the constraint <span class="math notranslate nohighlight">\(\frac{x^2}{8} + \frac{63}{8}y^2 -1 =0\)</span>.  This constraint is chosen to make some of the calculations below nicer, but they won’t be amazingly simple.</p>
 <div class="proof example admonition" id="example:Lagrange_ex3">
 <p class="admonition-title"><span class="caption-number">Example 2.3 </span> (Find local maxima/minima of <span class="math notranslate nohighlight">\(f(x,y) = \sqrt{x^2+y^2}-(x^2+y^2)\)</span> subject to <span class="math notranslate nohighlight">\(g(x,y)=x^2/8+\frac{63}{8}y^2-1=0\)</span>.)</p>
@@ -483,38 +463,44 @@ x^2/8 + \frac{63}{8}y^2-1 &amp;=0
 \end{align*}\]</div>
 <p>Looking at the first equation, we either have <span class="math notranslate nohighlight">\(x = 0\)</span> or <span class="math notranslate nohighlight">\( \lambda = \frac{4}{\sqrt{x^2+y^2}} - 8\)</span>.  We must consider both possibilities.</p>
 <ul class="simple">
-<li><p>If <span class="math notranslate nohighlight">\(x=0\)</span>, then the constraint becomes <span class="math notranslate nohighlight">\(\frac{63}{8}y^2-1 = 0\)</span>, so <span class="math notranslate nohighlight">\(y= \pm 2\sqrt{2}/3\sqrt{7}\)</span>.  Thus we get two points <span class="math notranslate nohighlight">\((0 , \pm 2\sqrt{2}/3\sqrt{7})\)</span>.  The other points will have nicer values.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(\lambda = \frac{4}{\sqrt{x^2+y^2}}-8 = 4 \left(\frac{1}{\sqrt{x^2+y^2}}-2\right)\)</span>, then</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(x=0\)</span>, then the constraint becomes <span class="math notranslate nohighlight">\(\frac{63}{8}y^2-1 = 0\)</span>, so <span class="math notranslate nohighlight">\(y= \pm 2\sqrt{2}/3\sqrt{7}\)</span>.  Thus we get two points <span class="math notranslate nohighlight">\((0 , \pm 2\sqrt{2}/3\sqrt{7})\)</span>.  At these points we have <span class="math notranslate nohighlight">\(\sqrt{x^2+y^2}-(x^2+y^2) = \frac{2\sqrt{2}}{3\sqrt{7}} - \frac{8}{63} \approx 0.36\)</span>.</p></li>
 </ul>
+<p>The other points will have nicer values.</p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\(\lambda = \frac{4}{\sqrt{x^2+y^2}}-8 = 4 \left(\frac{1}{\sqrt{x^2+y^2}}-2\right)\)</span>, then</p>
 <div class="math notranslate nohighlight">
-\[ y\left(\frac{1}{\sqrt{x^2+y^2}} - 2 \right) = 4\left(\frac{1}{\sqrt{x^2+y^2}}-2\right) 16y \]</div>
+\[ 
+  y\left(\frac{1}{\sqrt{x^2+y^2}} - 2 \right) = 4\left(\frac{1}{\sqrt{x^2+y^2}}-2\right) 16y \]</div>
 <p>From this it follows that <span class="math notranslate nohighlight">\(y=0\)</span> or <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{x^2+y^2}} - 2=0\)</span>.  We must again follow both possibilities.</p>
 <ul class="simple">
-<li><p>If <span class="math notranslate nohighlight">\(y=0\)</span>, then the constraint becomes <span class="math notranslate nohighlight">\(x^2/8 - 1 =0\)</span>.  From this we get <span class="math notranslate nohighlight">\(x = \pm 2\sqrt{2}\)</span>.  This yields the points <span class="math notranslate nohighlight">\((\pm 2 \sqrt{2},0)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(y=0\)</span>, then the constraint becomes <span class="math notranslate nohighlight">\(x^2/8 - 1 =0\)</span>.  From this we get <span class="math notranslate nohighlight">\(x = \pm 2\sqrt{2}\)</span>.  This yields the points <span class="math notranslate nohighlight">\((\pm 2 \sqrt{2},0)\)</span>.  The value of <span class="math notranslate nohighlight">\(f(x,y)\)</span> at these points is <span class="math notranslate nohighlight">\(\sqrt{x^2+y^2}-(x^2+y^2) = 2\sqrt{2} - 8\approx -5.17\)</span>.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{x^2+y^2}} - 2=0\)</span>, then we have <span class="math notranslate nohighlight">\(\sqrt{x^2+y^2} = 1/2\)</span>.  Taking the constraint, we have</p></li>
 </ul>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-x^2/8 + y^2/8 +\left(-\frac{y^2}{8} + \frac{63}{8}y^2\right)-1&amp;=0\\
-\frac{x^2+y^2}{8} + \frac{62 y^2}{8} - 1 &amp;=0\\
-\frac{1}{32} + \frac{31 y^2}{4} -1 &amp;= 0\\
-\frac{31}{4} y^2 &amp;= \frac{31}{32}\\
-y^2 &amp;=  \frac{1}{8}\\
-y &amp;= \pm \frac{1}{2\sqrt{2}}
+ x^2/8 + y^2/8 +\left(-\frac{y^2}{8} + \frac{63}{8}y^2\right)-1&amp;=0\\
+ \frac{x^2+y^2}{8} + \frac{62 y^2}{8} - 1 &amp;=0\\
+ \frac{1}{32} + \frac{31 y^2}{4} -1 &amp;= 0\\
+ \frac{31}{4} y^2 &amp;= \frac{31}{32}\\
+ y^2 &amp;=  \frac{1}{8}\\
+ y &amp;= \pm \frac{1}{2\sqrt{2}}
 \end{align*}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(x^2+y^2 = 1/4\)</span> and <span class="math notranslate nohighlight">\(y^2 = \frac{1}{8}\)</span>, we conclude <span class="math notranslate nohighlight">\(x^2 = \frac{1}{8}\)</span>, so <span class="math notranslate nohighlight">\(x = \pm \frac{1}{2 \sqrt{2}}\)</span>. This gives us the four points</p>
 <div class="math notranslate nohighlight">
 \[
-\left(\frac{1}{2\sqrt{2}}, \frac{1}{2\sqrt{2}} \right)
-\qquad
-\left(\frac{1}{2\sqrt{2}}, -\frac{1}{2\sqrt{2}} \right)
-\qquad
-\left(-\frac{1}{2\sqrt{2}}, \frac{1}{2\sqrt{2}} \right)
-\qquad
-\left(-\frac{1}{2\sqrt{2}}, -\frac{1}{2\sqrt{2}} \right)
-\]</div>
+  \left(\frac{1}{2\sqrt{2}}, \frac{1}{2\sqrt{2}} \right)
+  \qquad
+  \left(\frac{1}{2\sqrt{2}}, -\frac{1}{2\sqrt{2}} \right)
+  \qquad
+  \left(-\frac{1}{2\sqrt{2}}, \frac{1}{2\sqrt{2}} \right)
+  \qquad
+  \left(-\frac{1}{2\sqrt{2}}, -\frac{1}{2\sqrt{2}} \right)
+  \]</div>
+<p>At these points, <span class="math notranslate nohighlight">\(f(x,y)=\sqrt{x^2+y^2} - (x^2+y^2) = \frac{1}{2} - \frac{1}{4} = \frac{1}{4}\)</span>.</p>
+</li>
+</ul>
 </section>
-</div><p>For reference, we plot the constraint in red and the contours of <span class="math notranslate nohighlight">\(f\)</span>.  The ones corresponding to local minima and maxima are in magenta.  The constraint crosses the contour <span class="math notranslate nohighlight">\(f(x,y)=1/2\)</span> without being tangent, but on this contour <span class="math notranslate nohighlight">\(\nabla f=\vec{0}\)</span>, so we still have <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span> where <span class="math notranslate nohighlight">\(\lambda = 0\)</span>.</p>
+</div><p>For reference, we plot the constraint in red and the contours of <span class="math notranslate nohighlight">\(f\)</span>.  The ones corresponding to local minima and maxima are in magenta.  The constraint crosses the contour <span class="math notranslate nohighlight">\(f(x,y)=1/4\)</span> without being tangent, but on this contour <span class="math notranslate nohighlight">\(\nabla f=\vec{0}\)</span>, so we still have <span class="math notranslate nohighlight">\(\nabla f = \lambda \nabla g\)</span> where <span class="math notranslate nohighlight">\(\lambda = 0\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -549,46 +535,98 @@ y &amp;= \pm \frac{1}{2\sqrt{2}}
 <span class="nb">plot</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;Color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;m&#39;</span><span class="p">)</span>
 <span class="nb">plot</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">7</span><span class="p">)))</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">7</span><span class="p">)))</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;Color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;m&#39;</span><span class="p">)</span>
 <span class="nb">plot</span><span class="p">(</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+<span class="nb">colorbar</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/eeebbaa3b4720e79c9ea34029b6e2abb95d53792b79874b694049729ba15b50e.png" src="../_images/eeebbaa3b4720e79c9ea34029b6e2abb95d53792b79874b694049729ba15b50e.png" />
+<img alt="../_images/658ccf41c36abcecddbbb474048dff72538058e7fb76b5c66d1b15e475da0982.png" src="../_images/658ccf41c36abcecddbbb474048dff72538058e7fb76b5c66d1b15e475da0982.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<p>The plots below show the same informationa as above, but in 3 dimensions rather than contours.  One of the plots focuses on points closer to the origin so that we can more clearly see what happens when the constraint crosses the contour <span class="math notranslate nohighlight">\(f(x,y)=1/4\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span><span class="nb">all</span>
 <span class="nb">clc</span>
 <span class="nb">clf</span>
 
-<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">3</span><span class="p">];</span>
-<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">1</span><span class="p">];</span>
-<span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<span class="n">theta</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">80</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span><span class="w">     </span><span class="c">%plot the local max/min in magenta.</span>
+<span class="n">r</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">3</span><span class="p">];</span>
+<span class="c">%x = [-1:0.1:1];</span>
+<span class="c">%y = [-1:0.1:1];</span>
+<span class="p">[</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">Theta</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">meshgrid</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">theta</span><span class="p">);</span>
+<span class="c">%[X,Y] = meshgrid(x,y);</span>
+<span class="n">X</span><span class="p">=</span><span class="n">R</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="n">Theta</span><span class="p">);</span>
+<span class="n">Y</span><span class="p">=</span><span class="w"> </span><span class="n">R</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">Theta</span><span class="p">);</span>
 
-<span class="n">F</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="n">X</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">Y</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="n">X</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">Y</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">F</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">R</span><span class="o">-</span><span class="n">R</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c">%sqrt(X.^2+Y.^2) -(X.^2+Y.^2);</span>
+
+
+<span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">F</span><span class="p">);</span>
+<span class="n">hold</span><span class="w"> </span><span class="s">on</span>
+<span class="n">r</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="nb">plot3</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="w"> </span><span class="n">r</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">+</span><span class="mf">.00075</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+<span class="n">r</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span>
+<span class="nb">plot3</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="w"> </span><span class="n">r</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">+</span><span class="mf">.00075</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;m&#39;</span><span class="p">)</span>
+
+<span class="c">%the following command plots the points given by the constraint g(x,y)=0</span>
+<span class="c">%and it creates a list of the x and y coordinates.</span>
+<span class="n">constraint_x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">);</span>
+<span class="n">constraint_y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">63</span><span class="p">);</span>
+<span class="nb">plot3</span><span class="p">(</span><span class="n">constraint_x</span><span class="p">,</span><span class="w"> </span><span class="n">constraint_y</span><span class="p">,</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="n">constraint_x</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">constraint_y</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">constraint_x</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">constraint_y</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mf">.0008</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayName&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;The values of $f(x,y)$ where $g(x,y)=0$&#39;</span><span class="p">)</span><span class="w"> </span><span class="c">%plot values on the constraint   </span>
+
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">zlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
+
+<span class="c">%daspect([1 1 0.5])</span>
+
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$y$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">zlabel</span><span class="p">(</span><span class="s">&#39;$z$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+
+
+
+<span class="n">theta</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">20</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span><span class="w">     </span><span class="c">%plot the local max/min in magenta.</span>
+<span class="n">r</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">3</span><span class="p">];</span>
+<span class="c">%x = [-1:0.1:1];</span>
+<span class="c">%y = [-1:0.1:1];</span>
+<span class="p">[</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">Theta</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">meshgrid</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">theta</span><span class="p">);</span>
+<span class="c">%[X,Y] = meshgrid(x,y);</span>
+<span class="n">X</span><span class="p">=</span><span class="n">R</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="n">Theta</span><span class="p">);</span>
+<span class="n">Y</span><span class="p">=</span><span class="w"> </span><span class="n">R</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="n">Theta</span><span class="p">);</span>
+
+<span class="n">F</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">R</span><span class="o">-</span><span class="n">R</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c">%sqrt(X.^2+Y.^2) -(X.^2+Y.^2);</span>
 
 <span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">F</span><span class="p">)</span>
 <span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
 
 
-<span class="n">theta</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">20</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">];</span><span class="w">     </span><span class="c">%plot the local max/min in magenta.</span>
 
 <span class="n">r</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
 <span class="nb">plot3</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="w"> </span><span class="n">r</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">+</span><span class="mf">.00075</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;m&#39;</span><span class="p">)</span>
 <span class="n">r</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span>
 <span class="nb">plot3</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="w"> </span><span class="n">r</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">r</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">+</span><span class="mf">.00075</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;m&#39;</span><span class="p">)</span>
-<span class="nb">plot3</span><span class="p">(</span><span class="n">constraint_x</span><span class="p">,</span><span class="w"> </span><span class="n">constraint_y</span><span class="p">,</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="n">constraint_x</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">constraint_y</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">constraint_x</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">constraint_y</span><span class="o">.^</span><span class="mi">2</span><span class="p">),</span><span class="s">&#39;r&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayName&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;The values of $f(x,y)$ where $g(x,y)=0$&#39;</span><span class="p">)</span><span class="w"> </span><span class="c">%plot values on the constraint</span>
-<span class="c">% legend(&#39;interpreter&#39;, &#39;latex&#39;)</span>
 
+<span class="c">%the following command plots the points given by the constraint g(x,y)=0</span>
+<span class="c">%and it creates a list of the x and y coordinates.</span>
+<span class="n">constraint_x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">);</span>
+<span class="n">constraint_y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">63</span><span class="p">);</span>
+<span class="nb">plot3</span><span class="p">(</span><span class="n">constraint_x</span><span class="p">,</span><span class="w"> </span><span class="n">constraint_y</span><span class="p">,</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="n">constraint_x</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">constraint_y</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">constraint_x</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">constraint_y</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mf">.0008</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DisplayName&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;The values of $f(x,y)$ where $g(x,y)=0$&#39;</span><span class="p">)</span><span class="w"> </span><span class="c">%plot values on the constraint   </span>
 
-<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">zlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="nb">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">zlim</span><span class="p">([</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
 
-<span class="nb">daspect</span><span class="p">([</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.5</span><span class="p">])</span>
+<span class="c">%daspect([1 1 0.5])</span>
 
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$y$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
@@ -596,14 +634,12 @@ y &amp;= \pm \frac{1}{2\sqrt{2}}
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/c104e762282fa136806b7f2cd308177fcdbc1a020dfb3188229629481ea12658.png" src="../_images/c104e762282fa136806b7f2cd308177fcdbc1a020dfb3188229629481ea12658.png" />
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unrecognized function or variable &#39;constraint_x&#39;.
-</pre></div>
+<img alt="../_images/0a3c0aea02aedb01c7f21e6e31b1f9fa3fe05a40d92f9f874375719b55a4bc97.png" src="../_images/0a3c0aea02aedb01c7f21e6e31b1f9fa3fe05a40d92f9f874375719b55a4bc97.png" />
+<img alt="../_images/9edceeef52e97a9e1a085318db01b72ffb3b5013e4f1c0df859b7061008cd88b.png" src="../_images/9edceeef52e97a9e1a085318db01b72ffb3b5013e4f1c0df859b7061008cd88b.png" />
 </div>
 </div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -615,16 +651,16 @@ y &amp;= \pm \frac{1}{2\sqrt{2}}
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "jupyter_matlab_kernel"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "jupyter_matlab_kernel",
             path: "./Differential_Calculus"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
 
                 </article>
               
@@ -660,21 +696,6 @@ y &amp;= \pm \frac{1}{2\sqrt{2}}
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-case-nabla-f-vec-0">2.2.1. The case <span class="math notranslate nohighlight">\(\nabla f = \vec{0}\)</span></a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
