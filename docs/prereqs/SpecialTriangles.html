@@ -210,7 +210,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Differential_Calculus/DifferentialIntro.html">2. Derivatives in higher dimension and their applications</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange.html">2.1. Lagrange Multipliers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">2.2. Extensions to Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Differential_Calculus/Lagrange_Extensions.html">2.2. The case <span class="math notranslate nohighlight">\(\nabla f = \vec{0}\)</span></a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Integral_Calculus/IntegralIntro.html">3. Integral Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -482,10 +482,31 @@ document.write(`
 <a class="reference internal image-reference" href="../_images/454590d.png"><img alt="../_images/454590d.png" src="../_images/454590d.png" style="height: 500px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Using the 45-45-90 triangle to find the coordinates of points with angles <span class="math notranslate nohighlight">\(\pi/4\)</span>, <span class="math notranslate nohighlight">\(3\pi/4\)</span>, <span class="math notranslate nohighlight">\(5\pi/4\)</span>, and <span class="math notranslate nohighlight">\(7\pi/4\)</span>.  Two triangles are highlighted, which can be used to find the values for <span class="math notranslate nohighlight">\(\theta = \pi/4\)</span> and for <span class="math notranslate nohighlight">\(\theta = 5\pi/4\)</span> (or equivalently <span class="math notranslate nohighlight">\(-3\pi/4\)</span>).</span><a class="headerlink" href="#fig-454590d" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Using the 45-45-90 triangle to find the coordinates of points of distance <span class="math notranslate nohighlight">\(1\)</span> from the origin with angles <span class="math notranslate nohighlight">\(\pi/4\)</span>, <span class="math notranslate nohighlight">\(3\pi/4\)</span>, <span class="math notranslate nohighlight">\(5\pi/4\)</span>, and <span class="math notranslate nohighlight">\(7\pi/4\)</span>.  Two triangles are highlighted, which can be used to find the values for <span class="math notranslate nohighlight">\(\theta = \pi/4\)</span> and for <span class="math notranslate nohighlight">\(\theta = 5\pi/4\)</span> (or equivalently <span class="math notranslate nohighlight">\(-3\pi/4\)</span>).</span><a class="headerlink" href="#fig-454590d" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<section id="self-test">
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 1 </span> (Finding coordinates from the angle and distance from the origin.)</p>
+<section class="example-content" id="proof-content">
+<p>Assume that you are given that the line from the origin to a point <span class="math notranslate nohighlight">\(P\)</span> has length <span class="math notranslate nohighlight">\(3\)</span> and forms an angle of <span class="math notranslate nohighlight">\(-3\pi/4\)</span> with the positive <span class="math notranslate nohighlight">\(x\)</span> axis.  We will find the coordinates of the point using the 45-45-90 triangle without using trigonometric functions.</p>
+<a class="reference internal image-reference" href="../_images/Triangle454590ExampleB.png"><img alt="Drawing showing the point" src="../_images/Triangle454590ExampleB.png" style="width: 250px;" />
+</a>
+<p>Because this is a multiple of <span class="math notranslate nohighlight">\(\pi/4\)</span>, we can draw a 45-45-90 triangle by drawing a vertical line from the point to the horizontal axis.  The sides of this triangle have length <span class="math notranslate nohighlight">\(3/\sqrt{2} = 3 \sqrt{2}/2\)</span>.  Given the angle, we can see that both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are negative, so the point is at <span class="math notranslate nohighlight">\((-3\sqrt{2}/2, .
+-3\sqrt{2}/2)\)</span>.</p>
+<a class="reference internal image-reference" href="../_images/Triangle454590ExampleB2.png"><img alt="Drawing showing the point augmented to include the triangle." src="../_images/Triangle454590ExampleB2.png" style="width: 250px;" />
+</a>
+</section>
+</div><div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 2 </span> (Finding coordinates from the angle and distance from the origin.)</p>
+<section class="example-content" id="proof-content">
+<p>Assume that you are given that the point <span class="math notranslate nohighlight">\(P\)</span> has length <span class="math notranslate nohighlight">\(3\)</span> has coordinates <span class="math notranslate nohighlight">\((-4\sqrt{2},4\sqrt{2})\)</span>.  We will find its distance from the origin and the angle of the line from the origin to <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<a class="reference internal image-reference" href="../_images/Triangle454590ExampleA.png"><img alt="Drawing showing the point" src="../_images/Triangle454590ExampleA.png" style="width: 250px;" />
+</a>
+<p>Because the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates have the same absolute value, we can draw a 45-45-90 triangle by drawing a vertical line from the point to the horizontal axis.  The sides of this triangle have length <span class="math notranslate nohighlight">\(4\sqrt{2}/\sqrt{2} = 4\)</span>.  Given that <span class="math notranslate nohighlight">\(x\)</span> is negative, but <span class="math notranslate nohighlight">\(y\)</span> is positive, we know that this will be in the second quadrant: <span class="math notranslate nohighlight">\(\pi/2 \leq \theta \leq \pi\)</span>.  She point is at <span class="math notranslate nohighlight">\((-4,4)\)</span>.</p>
+<a class="reference internal image-reference" href="../_images/Triangle454590ExampleB2.png"><img alt="Drawing showing the point augmented to include the triangle." src="../_images/Triangle454590ExampleB2.png" style="width: 250px;" />
+</a>
+</section>
+</div><section id="self-test">
 <h3>Self test<a class="headerlink" href="#self-test" title="Link to this heading">#</a></h3>
 <p>You should be able to answer the questions below without referring to the diagrams above.  Instead, you should be able to draw your own diagram.</p>
 <div class="sd-tab-set docutils">
@@ -514,32 +535,32 @@ Worked solution</label><div class="sd-tab-content docutils">
 <p>Because it is a 45-45-90 triangle the two legs both have length <span class="math notranslate nohighlight">\(\sqrt{2}/2\)</span>.  So the point at the end of the ray is <span class="math notranslate nohighlight">\((\sqrt{2}/2, \sqrt{2}/2)\)</span>.  Then we have <span class="math notranslate nohighlight">\(\sin(\pi/4) = y/r = \sqrt{2}/2\)</span>, while <span class="math notranslate nohighlight">\(\cos(\pi/4) = x/r = \sqrt{2}/2\)</span> and <span class="math notranslate nohighlight">\(\tan(\pi/4) = y/x = 1\)</span>.</p>
 </div>
 </div>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
-Question</label><div class="sd-tab-content docutils">
-<p>Find <span class="math notranslate nohighlight">\(\sin(3\pi/4)\)</span>, <span class="math notranslate nohighlight">\(\cos(3\pi/4)\)</span>, and <span class="math notranslate nohighlight">\(\tan(3\pi/4)\)</span>.</p>
-</div>
-<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
-Answer</label><div class="sd-tab-content docutils">
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\sin(3\pi/4)&amp;=\sqrt{2}/2\\
-\cos(3\pi/4)&amp;=-\sqrt{2}/2\\
-\tan(3\pi/4)&amp;=-1
-\end{align*}\]</div>
-</div>
-<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-5">
-Worked solution</label><div class="sd-tab-content docutils">
-<a class="reference internal image-reference" href="../_images/454590d.png"><img alt="45-45-90 triangle" src="../_images/454590d.png" style="width: 250px;" />
-</a>
-<p>If we take a ray at angle <span class="math notranslate nohighlight">\(3\pi/4\)</span>, then it is <span class="math notranslate nohighlight">\(\pi/4\)</span> more than <span class="math notranslate nohighlight">\(\pi/2\)</span>.  So it splits the positive <span class="math notranslate nohighlight">\(y\)</span> and negative <span class="math notranslate nohighlight">\(x\)</span> axes.  (We could equivalently say it is <span class="math notranslate nohighlight">\(\pi/4\)</span> less than <span class="math notranslate nohighlight">\(\pi/2\)</span>.)</p>
-<p>We draw this ray with length <span class="math notranslate nohighlight">\(1\)</span>.  By adding a vertical line from the end point down to the (negative) <span class="math notranslate nohighlight">\(x\)</span> axis, we can draw a right triangle that includes with hypotenuse <span class="math notranslate nohighlight">\(1\)</span> (the ray) and one leg parallel to the <span class="math notranslate nohighlight">\(y\)</span> axis and the other leg along the (negative) <span class="math notranslate nohighlight">\(x\)</span> axis.</p>
-<p>Because it is a 45-45-90 triangle the two legs both have length <span class="math notranslate nohighlight">\(\sqrt{2}/2\)</span>.  So the point at the end of the ray is <span class="math notranslate nohighlight">\((-\sqrt{2}/2, \sqrt{2}/2)\)</span>.  Then we have <span class="math notranslate nohighlight">\(\sin(3\pi/4) = y/r = \sqrt{2}/2\)</span>, while <span class="math notranslate nohighlight">\(\cos(3\pi/4) = x/r = -\sqrt{2}/2\)</span> and <span class="math notranslate nohighlight">\(\tan(3\pi/4) = y/x = -1\)</span>.</p>
-</div>
-</div>
+<!--
+`````{tab-set}
+````{tab-item} Question
+Find $\sin(3\pi/4)$, $\cos(3\pi/4)$, and $\tan(3\pi/4)$.
+````
+
+````{tab-item} Answer
+\begin{align*}
+\sin(3\pi/4)&=\sqrt{2}/2\\
+\cos(3\pi/4)&=-\sqrt{2}/2\\
+\tan(3\pi/4)&=-1
+\end{align*}
+````
+
+````{tab-item} Worked solution
+```{image}  ../images/454590d.png
+:alt: 45-45-90 triangle
+:width: 250px
+```
+If we take a ray at angle $3\pi/4$, then it is $\pi/4$ more than $\pi/2$.  So it splits the positive $y$ and negative $x$ axes.  (We could equivalently say it is $\pi/4$ less than $\pi/2$.)
+
+We draw this ray with length $1$.  By adding a vertical line from the end point down to the (negative) $x$ axis, we can draw a right triangle that includes with hypotenuse $1$ (the ray) and one leg parallel to the $y$ axis and the other leg along the (negative) $x$ axis.
+
+Because it is a 45-45-90 triangle the two legs both have length $\sqrt{2}/2$.  So the point at the end of the ray is $(-\sqrt{2}/2, \sqrt{2}/2)$.  Then we have $\sin(3\pi/4) = y/r = \sqrt{2}/2$, while $\cos(3\pi/4) = x/r = -\sqrt{2}/2$ and $\tan(3\pi/4) = y/x = -1$.
+````
+````` -->
 <!-- `````{tab-set}
 ````{tab-item} Question
 Find $\sin(5\pi/4)$, $\cos(5\pi/4)$, and $\tan(5\pi/4)$.
@@ -567,13 +588,13 @@ Because it is a 45-45-90 triangle the two legs both have length $\sqrt{2}/2$.  S
 ````
 ````` -->
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-6">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
 Question</label><div class="sd-tab-content docutils">
 <p>Find <span class="math notranslate nohighlight">\(\sin(7\pi/4)\)</span>, <span class="math notranslate nohighlight">\(\cos(7\pi/4)\)</span>, and <span class="math notranslate nohighlight">\(\tan(7\pi/4)\)</span>.</p>
 </div>
-<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-7">
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
 Answer</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -582,8 +603,8 @@ Answer</label><div class="sd-tab-content docutils">
 \tan(7\pi/4)&amp;=-1
 \end{align*}\]</div>
 </div>
-<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-8">
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
 Worked solution</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="../_images/454590d.png"><img alt="45-45-90 triangle" src="../_images/454590d.png" style="width: 250px;" />
 </a>
@@ -593,13 +614,13 @@ Worked solution</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-9">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
 Question</label><div class="sd-tab-content docutils">
 <p>Find <span class="math notranslate nohighlight">\(\sin(-\pi/4)\)</span>, <span class="math notranslate nohighlight">\(\cos(-\pi/4)\)</span>, and <span class="math notranslate nohighlight">\(\tan(-\pi/4)\)</span>.</p>
 </div>
-<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-10">
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
 Answer</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -608,12 +629,32 @@ Answer</label><div class="sd-tab-content docutils">
 \tan(-\pi/4)&amp;=-1
 \end{align*}\]</div>
 </div>
-<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-11">
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
 Worked solution</label><div class="sd-tab-content docutils">
 <a class="reference internal image-reference" href="../_images/454590d.png"><img alt="45-45-90 triangle" src="../_images/454590d.png" style="width: 250px;" />
 </a>
 <p>This angle is the same as <span class="math notranslate nohighlight">\(7\pi/4\)</span>, so we can use the argument for <span class="math notranslate nohighlight">\(7\pi/4\)</span>.</p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Question</label><div class="sd-tab-content docutils">
+<p>The point <span class="math notranslate nohighlight">\(P\)</span> is located at a distance of <span class="math notranslate nohighlight">\(2\)</span> from the origin, and the angle the vector <span class="math notranslate nohighlight">\(\vec{OP}\)</span> makes with the positive <span class="math notranslate nohighlight">\(x\)</span> axis is <span class="math notranslate nohighlight">\(-\pi/4\)</span>.  Without using trigonometric functions, find the coordinates of <span class="math notranslate nohighlight">\(P\)</span>.</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Answer</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\((\sqrt{2},-\sqrt{2})\)</span></p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+Worked Solution</label><div class="sd-tab-content docutils">
+<p>We draw the point and add some additional lines to create a 45-45-90 triangle with the positive <span class="math notranslate nohighlight">\(x\)</span> axis:</p>
+<a class="reference internal image-reference" href="../_images/Triangle454590ExampleC.png"><img alt="drawing with point and triangle" src="../_images/Triangle454590ExampleC.png" style="width: 250px;" />
+</a>
+<p>Using properties of this triangle, we find that the legs are both of length <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>.  Because the angle is between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(-\pi/2\)</span>, the <span class="math notranslate nohighlight">\(x\)</span> value is positive, but the <span class="math notranslate nohighlight">\(y\)</span> value is negative.</p>
 </div>
 </div>
 <div class="sd-tab-set docutils">
@@ -656,7 +697,7 @@ Worked Solution</label><div class="sd-tab-content docutils">
 <input checked="checked" id="sd-tab-item-18" name="sd-tab-set-6" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-18">
 Question</label><div class="sd-tab-content docutils">
-<p>The point <span class="math notranslate nohighlight">\(P\)</span> has coordinates <span class="math notranslate nohighlight">\((-3,-3)\)</span>.  Find the angle to the point <span class="math notranslate nohighlight">\(P\)</span>.  Relate this to the commonly-used formula <span class="math notranslate nohighlight">\(\theta = \arctan(y/x)\)</span> if found using a calculator.</p>
+<p>The point <span class="math notranslate nohighlight">\(P\)</span> has coordinates <span class="math notranslate nohighlight">\((-3,-3)\)</span>.  Find the angle to the point <span class="math notranslate nohighlight">\(P\)</span>.  Comment on what woud happen if you used the formula <span class="math notranslate nohighlight">\(\theta = \arctan(y/x)\)</span> using a calculator.</p>
 </div>
 <input id="sd-tab-item-19" name="sd-tab-set-6" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-19">
