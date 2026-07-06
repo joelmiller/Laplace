@@ -445,7 +445,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="mat2vca-readiness-self-diagnostic">
 <h1><span class="section-number">1.2. </span>MAT2VCA Readiness Self-Diagnostic<a class="headerlink" href="#mat2vca-readiness-self-diagnostic" title="Link to this heading">#</a></h1>
-<p>This self-diagnostic test is designed to help you identify skills you should improve before beginning MAT2VCA.</p>
+<p>Vector Calculus is a challenging subject to learn and also to teach.  This is illustrated through a comment from the 2026 student feedback survey:</p>
+<blockquote>
+<div><p><em>I don’t have all the basics.  Teachers shouldn’t pretend that we have all the basics and they can just rush into the math…  Because I don’t understand the basics so there is no chance for me to understand the maths from the online lectures.</em></p>
+</div></blockquote>
+<p>If you find yourself in this position, by far your best chance to pass the subject and to save a massive amount of wasted effort is to <strong>show up in office hours regularly</strong> with your questions.</p>
+<p>As much as I wish we had the capacity to teach Algebra and Calculus at the same time that we are teaching ~100 students Vector Calculus, we simply do not.  If you come to our office hours, we can help.  But when we teach the concepts to ~100 students, we have to assume that they understand the basic pre-requisites.</p>
+<p>This self-diagnostic test is designed to help address exactly this issue so that you can identify skills you should improve <strong>before</strong> beginning MAT2VCA (or at least provide a reference for you during MAT2VCA).  That said, if there are specific points in the lectures that are unclear, please tell us and we can try to improve them.</p>
 <p><strong>Instructions</strong></p>
 <ul class="simple">
 <li><p>Do not use a calculator.</p></li>
@@ -499,7 +505,7 @@ Question</label><div class="sd-tab-content docutils">
 <p>Expand and simplify:</p>
 <div class="math notranslate nohighlight">
 \[
-(x+2)(x-5)
+(x-2)(x-5)
 \]</div>
 </div>
 <input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
@@ -507,17 +513,19 @@ Question</label><div class="sd-tab-content docutils">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
-x^2-3x-10
+x^2-7x+10
 \]</div>
 </div>
 <input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
 Worked solution</label><div class="sd-tab-content docutils">
 <p>Expand each product:</p>
-<div class="math notranslate nohighlight">
-\[
-(x+2)(x-5)=x^2-5x+2x-10=x^2-3x-10.
-\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(x-2)(x-5)&amp;= x(x-5) - 2(x-5)\\
+          &amp;=x^2-5x \: - \: 2x+10
+          &amp;=x^2-7x+10
+\end{align*}\]</div>
 </div>
 </div>
 </li>
@@ -530,7 +538,6 @@ Question</label><div class="sd-tab-content docutils">
 \[
 9-x^2
 \]</div>
-<p>You should be able to immediately factor something when it is one square subtracted from another.</p>
 </div>
 <input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-7">
@@ -539,6 +546,7 @@ Answer</label><div class="sd-tab-content docutils">
 \[
 (3-x)(3+x)
 \]</div>
+<p>You should be able to immediately factor a difference of squares.</p>
 </div>
 <input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-8">
@@ -560,7 +568,6 @@ Question</label><div class="sd-tab-content docutils">
 \[
 x^2-6x+9
 \]</div>
-<p>You should be able to immediately factor a quadratic <span class="math notranslate nohighlight">\(1x^2+bx+c\)</span> when <span class="math notranslate nohighlight">\((b/2)^2=c\)</span>. This should be the first factorisation you look for when factoring <span class="math notranslate nohighlight">\(x^2+bx+c\)</span>.</p>
 </div>
 <input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-10">
@@ -569,15 +576,20 @@ Answer</label><div class="sd-tab-content docutils">
 \[
 (x-3)^2
 \]</div>
+<p>If you want to factor a quadratic whose leading coefficient is <span class="math notranslate nohighlight">\(1\)</span>, the first factorization you should check is whether it is a perfect square.</p>
 </div>
 <input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-11">
 Worked solution</label><div class="sd-tab-content docutils">
-<p>Here <span class="math notranslate nohighlight">\(b=-6\)</span>, so <span class="math notranslate nohighlight">\(b/2=-3\)</span> and <span class="math notranslate nohighlight">\((-3)^2=9\)</span>. Therefore the quadratic is a perfect square:</p>
+<p>We first look to see if <span class="math notranslate nohighlight">\(x^2-6x+9\)</span> might be of the form</p>
+<div class="math notranslate nohighlight">
+\[(x+q)^2= x^2+2qx+q^2\]</div>
+<p>Matching coefficients we need <span class="math notranslate nohighlight">\(q^2=9\)</span> and <span class="math notranslate nohighlight">\(2q=-6\)</span>.  Since <span class="math notranslate nohighlight">\(9=(\pm 3)^2\)</span> and <span class="math notranslate nohighlight">\(-6= 2(-3)\)</span>, this will work with <span class="math notranslate nohighlight">\(q=-3\)</span>.  So</p>
 <div class="math notranslate nohighlight">
 \[
 x^2-6x+9=(x-3)^2.
 \]</div>
+<p>So what we’ve done is to check if one of the two square roots of the constant term is half of the coefficient of <span class="math notranslate nohighlight">\(x\)</span>.  If so, then it is a perfect square.</p>
 </div>
 </div>
 </li>
@@ -641,17 +653,16 @@ x+1, \qquad x\neq 1
 <input id="sd-tab-item-17" name="sd-tab-set-5" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-17">
 Worked solution</label><div class="sd-tab-content docutils">
-<p>Factor the numerator:</p>
+<p>Factor the numerator using a difference of squares:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{x^2-1}{x-1}=\frac{(x-1)(x+1)}{x-1}.
 \]</div>
-<p>Cancel the common factor <span class="math notranslate nohighlight">\(x-1\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
+<p>Cancel the common factor <span class="math notranslate nohighlight">\(x-1\)</span> (which is allowed for any value of <span class="math notranslate nohighlight">\(x\)</span> <strong>except</strong> <span class="math notranslate nohighlight">\(x=1\)</span>):
+$<span class="math notranslate nohighlight">\(
 \frac{x^2-1}{x-1}=x+1.
-\]</div>
-<p>The original expression is undefined when <span class="math notranslate nohighlight">\(x-1=0\)</span>, so <span class="math notranslate nohighlight">\(x\neq 1\)</span>.</p>
+\)</span>$</p>
+<p>The original expression is undefined when <span class="math notranslate nohighlight">\(x-1=0\)</span>, so the equality above only holds for <span class="math notranslate nohighlight">\(x\neq 1\)</span>.</p>
 </div>
 </div>
 </li>
@@ -1699,7 +1710,7 @@ y = \frac{-x^2 +4x -3}{2} = -\frac{1}{2} x^2 + 2x - \frac{3}{2}
 <input checked="checked" id="sd-tab-item-103" name="sd-tab-set-34" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-103">
 Question</label><div class="sd-tab-content docutils">
-<p>Sketch the graph of</p>
+<p>Sketch the graph of all solutions to</p>
 <div class="math notranslate nohighlight">
 \[
 yx=3x
@@ -1716,6 +1727,7 @@ x&amp;=0
 \end{align*}\]</div>
 <a class="reference internal image-reference" href="../_images/B3_twolines.png"><img alt="Graph of $yx=3x$" src="../_images/B3_twolines.png" style="width: 450px;" />
 </a>
+<p>Note that the solution is <strong>two lines</strong>, not the single point <span class="math notranslate nohighlight">\((0,3)\)</span>.</p>
 </div>
 <input id="sd-tab-item-105" name="sd-tab-set-34" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-105">
@@ -2156,6 +2168,7 @@ y + (x-3)^2-1 &amp;= 0\\
 <input id="sd-tab-item-148" name="sd-tab-set-48" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-148">
 Answer</label><div class="sd-tab-content docutils">
+<p>The equation <span class="math notranslate nohighlight">\(y+(x-3)^2-1=0\)</span> yields the parabola, and the equation <span class="math notranslate nohighlight">\(2y=2xy\)</span> yields two straight lines.</p>
 <a class="reference internal image-reference" href="../_images/B11_intersection.png"><img alt="" src="../_images/B11_intersection.png" style="width: 500px;" />
 </a>
 <p>The points where the different colours cross are at <span class="math notranslate nohighlight">\((1,-3)\)</span>, <span class="math notranslate nohighlight">\((2,0)\)</span>, and <span class="math notranslate nohighlight">\((4,0)\)</span>.  These are the solutions to both equations.</p>
