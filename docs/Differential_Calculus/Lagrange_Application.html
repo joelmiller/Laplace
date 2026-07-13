@@ -488,42 +488,42 @@ P_{ij} = \frac{x_i}{x_i+x_j}
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 P[\text{table}] &amp;= \binom{5}{4}\left(\frac{x_1}{x_1+x_2}\right)^4\left(\frac{x_2}{x_1+x_2}\right)^1 \binom{3}{2} \left(\frac{x_2}{x_2+x_3}\right)^2 \left(\frac{x_3}{x_2+x_1}\right)^1 \binom{1}{1}  \left(\frac{x_3}{x_3+x_1}\right)^1\\
-&amp;= \prod_{i\neq j} \binom{N_{i,j}}{W_{i,j}} \frac{x_i^{W_{i,j}} x_j^{W_{j,i}}}{(x_i+x_j)^{N_{i,j}}}\\
-&amp;= \left(\prod_i x_i^{W_i}\right) \left(\prod_{i\neq j} \binom{N_{i,j}}{W_{i,j}} (x_i+x_j)^{-N_{i,j}}\right)
+&amp;= \prod_{i,j: i&lt;j} \binom{N_{i,j}}{W_{i,j}} \frac{x_i^{W_{i,j}} x_j^{W_{j,i}}}{(x_i+x_j)^{N_{i,j}}}\\
+&amp;= \left(\prod_i x_i^{W_i}\right) \left(\prod_{i,j: i&lt; j} \binom{N_{i,j}}{W_{i,j}} (x_i+x_j)^{-N_{i,j}}\right)
 \end{align*}\]</div>
 <p>Our goal is to find the values of <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span> for which <span class="math notranslate nohighlight">\(P[\text{table}]\)</span> is largest subject to the constraint that <span class="math notranslate nohighlight">\(x_1+x_2+x_3-1=0\)</span> (and all <span class="math notranslate nohighlight">\(x_i\)</span> are non-negative).</p>
 <p>To make it easier to work with, we will instad try to maximize</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \ln(P[\text{table}])
- &amp;= \sum_i \ln(x_i^{W_i} )  + \sum_{i\neq j} \ln\binom{N_{i,j}}{W_{i,j}} + \sum_{i\neq j} \ln (x_i+x_j)^{N_{i,j}}\\
- &amp;= \sum_i W_i \ln(x_i) + \sum_{i\neq j}\ln\binom{N_{i,j}}{W_{i,j}} + \sum_{i\neq j} -N_{i,j}\ln (x_i+x_j)
+ &amp;= \sum_i \ln(x_i^{W_i} )  + \sum_{i,j:i\neq j} \ln\binom{N_{i,j}}{W_{i,j}} + \sum_{i,j: i\neq j} \ln \left((x_i+x_j)^{-N_{i,j}}\right)\\
+ &amp;= \sum_i W_i \ln(x_i) + \sum_{i,j:i\neq j}\ln\binom{N_{i,j}}{W_{i,j}} + \sum_{i,j:i\neq j} -N_{i,j}\ln (x_i+x_j)
 \end{align*}\]</div>
-<p>To set up Lagrante Multipliers, we find that</p>
+<p>To set up Lagrante Multipliers, we find that for each <span class="math notranslate nohighlight">\(i\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-\frac{\partial}{\partial x_i} \ln(P[\text{table}]) &amp;= W_i \frac{1}{x_i} + \sum_{j \neq i} -N_{i,j} \frac{1}{x_i+x_j}
+\frac{\partial}{\partial x_i} \ln(P[\text{table}]) &amp;= W_i \frac{1}{x_i} + \sum_{j  \neq i} -N_{i,j} \frac{1}{x_i+x_j}
 \end{align*}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\partial}{\partial x_i} \sum x_j - 1 = 1
+\frac{\partial}{\partial x_i} \left(-1+\sum_k x_k\right) = 1
 \]</div>
 <p>So Lagrange multipliers state that for each <span class="math notranslate nohighlight">\(i\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 W_i \frac{1}{x_i} - \sum_{j \neq i} N_{i,j} \frac{1}{x_i+x_j} = \lambda
 \]</div>
-<p>with the constraint that <span class="math notranslate nohighlight">\(\sum x_j = 1\)</span>.</p>
+<p>with the constraint that <span class="math notranslate nohighlight">\(\sum_k x_k = 1\)</span>.</p>
 <p>We multiply by <span class="math notranslate nohighlight">\(x_i\)</span> to get</p>
 <div class="math notranslate nohighlight">
 \[
 W_i - x_i\sum_{j \neq i} N_{i,j} \frac{1}{x_i+x_j}=  \lambda x_i
 \]</div>
-<p>Summing this, using <span class="math notranslate nohighlight">\(\sum x_i=1\)</span>, we get</p>
+<p>Summing this over <span class="math notranslate nohighlight">\(i\)</span>, using <span class="math notranslate nohighlight">\(\sum x_i=1\)</span>, we get</p>
 <div class="math notranslate nohighlight">
 \[
-\sum W_i - \sum_i \left(x_i\sum_{j \neq i}  \frac{N_{i,j}}{x_i+x_j}\right) = \lambda
+\sum_i W_i - \sum_i \left(x_i\sum_{j \neq i}  \frac{N_{i,j}}{x_i+x_j}\right) = \lambda
 \]</div>
 <p>We can observe that <span class="math notranslate nohighlight">\(\sum_i W_i\)</span> is the total number of wins, equal to <span class="math notranslate nohighlight">\(N=\frac{1}{2}\sum_{i}\sum_{j} N_{i,j}\)</span>.  We also observe that <span class="math notranslate nohighlight">\(x_i\sum_{j \neq i} \frac{N_{i,j}}{x_i+x_j}\)</span> is the expected number of wins of <span class="math notranslate nohighlight">\(i\)</span>, and so summing it over <span class="math notranslate nohighlight">\(i\)</span> also gives the expected number of wins in the entire table, also equal to <span class="math notranslate nohighlight">\(N=\frac{1}{2}\sum_i\sum_j N_{i,j}\)</span>.  So <span class="math notranslate nohighlight">\(\lambda\)</span> must be <span class="math notranslate nohighlight">\(N-N=0\)</span>.</p>
 <p>For each <span class="math notranslate nohighlight">\(i\)</span>, the system becomes</p>
@@ -531,13 +531,14 @@ W_i - x_i\sum_{j \neq i} N_{i,j} \frac{1}{x_i+x_j}=  \lambda x_i
 \[
 0 = W_i - x_i\sum_{j \neq i}  \frac{N_{i,j}}{x_i+x_j}
 \]</div>
-<p>We can rewrite this as</p>
+<p>(a careful analysis of this equations shows that the vector <span class="math notranslate nohighlight">\(\vec{x}\)</span> that solves this system corresponds to a vector for which each team’s number of wins equals its expected number of wins).  We can rewrite this as</p>
 <div class="math notranslate nohighlight">
 \[
 x_i = \frac{W_i}{\sum_{j \neq i} \frac{N_{i,j}}{x_i+x_j}}
 \]</div>
 <p>If appropriate conditions hold, we can solve this iteratively by assuming that initially all <span class="math notranslate nohighlight">\(x_j\)</span> are equal, plugging the vector of values into the right hand side and finding the new vector.  If this process converges, then it gives us a solution to the equation.</p>
-<p>There are other methods that can be used to guarantee that this process converges.  (for example, if the vector <span class="math notranslate nohighlight">\(\vec{x}^{(n)}\)</span> remains bounded there must be a limit).</p>
+<p>So far we haven’t proven that this will converge.  There are other methods that can be used to guarantee that this process converges.  (for example, if the vector <span class="math notranslate nohighlight">\(\vec{x}^{(n)}\)</span> remains bounded there must be a limit).</p>
+<p>I’m a little concerned that it’s not obvious that the iterative process ensures that <span class="math notranslate nohighlight">\(\sum x_i=1\)</span> is preserved.  It might be, but that needs checking.  Alternately, if we normalize at each step, then the iterative process will work.</p>
 </section>
 </div></section>
 
