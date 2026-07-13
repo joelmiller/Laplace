@@ -33,6 +33,7 @@ parts:
       sections: 
       - file: Differential_Calculus/Lagrange
       - file: Differential_Calculus/Lagrange_Extensions
+      - file: Differential_Calculus/Lagrange_Application
     - file: Integral_Calculus/IntegralIntro
       sections: 
       - file: Integral_Calculus/MultipleIntegrals
