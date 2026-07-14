@@ -496,49 +496,50 @@ P[\text{table}] &amp;= \binom{5}{4}\left(\frac{x_1}{x_1+x_2}\right)^4\left(\frac
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \ln(P[\text{table}])
- &amp;= \sum_i \ln(x_i^{W_i} )  + \sum_{i,j:i\neq j} \ln\binom{N_{i,j}}{W_{i,j}} + \sum_{i,j: i\neq j} \ln \left((x_i+x_j)^{-N_{i,j}}\right)\\
- &amp;= \sum_i W_i \ln(x_i) + \sum_{i,j:i\neq j}\ln\binom{N_{i,j}}{W_{i,j}} + \sum_{i,j:i\neq j} -N_{i,j}\ln (x_i+x_j)
+ &amp;= \sum_i \ln(x_i^{W_i} )  + \sum_{i,j:i&lt;j} \ln\binom{N_{i,j}}{W_{i,j}} + \sum_{i,j: i&lt; j} \ln \left((x_i+x_j)^{-N_{i,j}}\right)\\
+ &amp;= \sum_i W_i \ln(x_i) + \sum_{i,j:i&lt;&gt; j}\ln\binom{N_{i,j}}{W_{i,j}} + \sum_{i,j:i&lt; j} -N_{i,j}\ln (x_i+x_j)
 \end{align*}\]</div>
-<p>To set up Lagrante Multipliers, we find that for each <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<p>To set up Lagrante Multipliers, we find that for each <span class="math notranslate nohighlight">\(k\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-\frac{\partial}{\partial x_i} \ln(P[\text{table}]) &amp;= W_i \frac{1}{x_i} + \sum_{j  \neq i} -N_{i,j} \frac{1}{x_i+x_j}
+\frac{\partial}{\partial x_k} \ln(P[\text{table}]) &amp;= W_k \frac{1}{x_k} + \sum_{j  &lt; k} -N_{j,k} \frac{1}{x_j+x_k} + \sum_{j&gt;k} -N_{k,j} \frac{1}{x_k+x_j}\\
+&amp;=  W_k \frac{1}{x_k} + \sum_{j\neq k} -N_{k,j} \frac{1}{x_k+x_j}
 \end{align*}\]</div>
-<p>and</p>
+<p>using the symmetry of <span class="math notranslate nohighlight">\(N_{k,j} = N_{j,k}\)</span>.  We also have</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\partial}{\partial x_i} \left(-1+\sum_k x_k\right) = 1
+\frac{\partial}{\partial x_k} \left(-1+\sum_j x_j\right) = 1
 \]</div>
-<p>So Lagrange multipliers state that for each <span class="math notranslate nohighlight">\(i\)</span></p>
+<p>So Lagrange multipliers state that for each <span class="math notranslate nohighlight">\(k\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-W_i \frac{1}{x_i} - \sum_{j \neq i} N_{i,j} \frac{1}{x_i+x_j} = \lambda
+W_k \frac{1}{x_k} - \sum_{j \neq k} N_{k,j} \frac{1}{x_k+x_j} = \lambda
 \]</div>
 <p>with the constraint that <span class="math notranslate nohighlight">\(\sum_k x_k = 1\)</span>.</p>
-<p>We multiply by <span class="math notranslate nohighlight">\(x_i\)</span> to get</p>
+<p>We multiply by <span class="math notranslate nohighlight">\(x_k\)</span> to get</p>
 <div class="math notranslate nohighlight">
 \[
-W_i - x_i\sum_{j \neq i} N_{i,j} \frac{1}{x_i+x_j}=  \lambda x_i
+W_k - x_k\sum_{j \neq k} N_{k,j} \frac{1}{x_k+x_j}=  \lambda x_k
 \]</div>
-<p>Summing this over <span class="math notranslate nohighlight">\(i\)</span>, using <span class="math notranslate nohighlight">\(\sum x_i=1\)</span>, we get</p>
+<p>Summing this over <span class="math notranslate nohighlight">\(k\)</span>, using <span class="math notranslate nohighlight">\(\sum x_k=1\)</span>, we get</p>
 <div class="math notranslate nohighlight">
 \[
-\sum_i W_i - \sum_i \left(x_i\sum_{j \neq i}  \frac{N_{i,j}}{x_i+x_j}\right) = \lambda
+\sum_k W_k - \sum_k \left(x_k\sum_{j \neq k}  \frac{N_{k,j}}{x_k+x_j}\right) = \lambda
 \]</div>
-<p>We can observe that <span class="math notranslate nohighlight">\(\sum_i W_i\)</span> is the total number of wins, equal to <span class="math notranslate nohighlight">\(N=\frac{1}{2}\sum_{i}\sum_{j} N_{i,j}\)</span>.  We also observe that <span class="math notranslate nohighlight">\(x_i\sum_{j \neq i} \frac{N_{i,j}}{x_i+x_j}\)</span> is the expected number of wins of <span class="math notranslate nohighlight">\(i\)</span>, and so summing it over <span class="math notranslate nohighlight">\(i\)</span> also gives the expected number of wins in the entire table, also equal to <span class="math notranslate nohighlight">\(N=\frac{1}{2}\sum_i\sum_j N_{i,j}\)</span>.  So <span class="math notranslate nohighlight">\(\lambda\)</span> must be <span class="math notranslate nohighlight">\(N-N=0\)</span>.</p>
-<p>For each <span class="math notranslate nohighlight">\(i\)</span>, the system becomes</p>
+<p>We can observe that <span class="math notranslate nohighlight">\(\sum_k W_k\)</span> is the total number of wins, equal to <span class="math notranslate nohighlight">\(N=\frac{1}{2}\sum_{i}\sum_{j} N_{i,j}\)</span>.  We also observe that <span class="math notranslate nohighlight">\(x_k\sum_{j \neq k} \frac{N_{k,j}}{x_k+x_j}\)</span> is the expected number of wins of <span class="math notranslate nohighlight">\(k\)</span>, and so summing it over <span class="math notranslate nohighlight">\(k\)</span> also gives the expected number of wins in the entire table, also equal to <span class="math notranslate nohighlight">\(N=\frac{1}{2}\sum_i\sum_j N_{i,j}\)</span>.  So <span class="math notranslate nohighlight">\(\lambda\)</span> must be <span class="math notranslate nohighlight">\(N-N=0\)</span>.</p>
+<p>For each <span class="math notranslate nohighlight">\(k\)</span>, the system becomes</p>
 <div class="math notranslate nohighlight">
 \[
-0 = W_i - x_i\sum_{j \neq i}  \frac{N_{i,j}}{x_i+x_j}
+0 = W_k - x_k\sum_{j \neq k}  \frac{N_{k,j}}{x_k+x_j}
 \]</div>
 <p>(a careful analysis of this equations shows that the vector <span class="math notranslate nohighlight">\(\vec{x}\)</span> that solves this system corresponds to a vector for which each team’s number of wins equals its expected number of wins).  We can rewrite this as</p>
 <div class="math notranslate nohighlight">
 \[
-x_i = \frac{W_i}{\sum_{j \neq i} \frac{N_{i,j}}{x_i+x_j}}
+x_k = \frac{W_k}{\sum_{j \neq k} \frac{N_{k,j}}{x_k+x_j}}
 \]</div>
 <p>If appropriate conditions hold, we can solve this iteratively by assuming that initially all <span class="math notranslate nohighlight">\(x_j\)</span> are equal, plugging the vector of values into the right hand side and finding the new vector.  If this process converges, then it gives us a solution to the equation.</p>
 <p>So far we haven’t proven that this will converge.  There are other methods that can be used to guarantee that this process converges.  (for example, if the vector <span class="math notranslate nohighlight">\(\vec{x}^{(n)}\)</span> remains bounded there must be a limit).</p>
-<p>I’m a little concerned that it’s not obvious that the iterative process ensures that <span class="math notranslate nohighlight">\(\sum x_i=1\)</span> is preserved.  It might be, but that needs checking.  Alternately, if we normalize at each step, then the iterative process will work.</p>
+<p>I’m a little concerned that it’s not obvious that the iterative process ensures that <span class="math notranslate nohighlight">\(\sum x_k=1\)</span> is preserved.  It might be, but that needs checking.  Alternately, if we normalize at each step, then the iterative process will work.</p>
 </section>
 </div></section>
 
