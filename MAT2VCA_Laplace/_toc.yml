@@ -10,11 +10,14 @@ parts:
     - file: prereqs/PrereqIntro
       sections:
       - file: prereqs/SelfDiagnostic
-      - file: prereqs/Squares
-      - file: prereqs/EqualsSign
-      - file: prereqs/AlgebraReview
-      - file: prereqs/SpecialTriangles
-    - file: prereqs/IntegralRefresher
+      - file: prereqs/GapFilling
+        sections:
+        - file: prereqs/AlgebraReview
+          sections:
+          - file: prereqs/Squares
+          - file: prereqs/EqualsSign
+        - file: prereqs/SpecialTriangles
+        - file: prereqs/IntegralRefresher
   - caption: Vector Calculus
     numbered: True
     chapters:
