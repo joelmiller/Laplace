@@ -2866,7 +2866,8 @@ y&amp;=xy\\
 y-xy&amp;=0\\
 y(1-x)&amp;=0
 \end{align*}\]</div>
-<p>The solution to this is two straight lines: <span class="math notranslate nohighlight">\(x=1\)</span> and <span class="math notranslate nohighlight">\(y=0\)</span>.</p>
+<p>The solution to this is two straight lines: <span class="math notranslate nohighlight">\(x=1\)</span> or <span class="math notranslate nohighlight">\(y=0\)</span>.</p>
+<p>Let’s look at an alternate approach, starting with <span class="math notranslate nohighlight">\(y=xy\)</span>.  It is tempting to divide by <span class="math notranslate nohighlight">\(y\)</span>, which gives <span class="math notranslate nohighlight">\(1=x\)</span>.  However, when we divide, we cannot divide by <span class="math notranslate nohighlight">\(0\)</span>.  So, as long as <span class="math notranslate nohighlight">\(y \neq 0\)</span>, we have <span class="math notranslate nohighlight">\(1=x\)</span>.  We need to check what happens if <span class="math notranslate nohighlight">\(y=0\)</span> separately.  If <span class="math notranslate nohighlight">\(y=0\)</span>, then <span class="math notranslate nohighlight">\(y=xy\)</span> becomes <span class="math notranslate nohighlight">\(0 = 0x\)</span>, which is true.  So <span class="math notranslate nohighlight">\(y=0\)</span> is also a solution.  So we have again found that <span class="math notranslate nohighlight">\(x=1\)</span> or <span class="math notranslate nohighlight">\(y=0\)</span> are both solutions.</p>
 <p>We plot the parabola in one colour and the two straight lines in another.  The points where <strong>different</strong> colours cross are where both equations are satisfied.</p>
 <a class="reference internal image-reference" href="../_images/B11_intersection.png"><img alt="" src="../_images/B11_intersection.png" style="width: 500px;" />
 </a>
@@ -3313,11 +3314,13 @@ Worked solution</label><div class="sd-tab-content docutils">
 \[
 f(x)=(2x+1)^3,
 \]</div>
-<p>then the power rule gives <span class="math notranslate nohighlight">\(3(2x+1)^2\)</span> and the chain rule multiplies this by the derivative of the inside function <span class="math notranslate nohighlight">\(2x+1\)</span> is <span class="math notranslate nohighlight">\(2\)</span>. Thus</p>
-<div class="math notranslate nohighlight">
-\[
-f'(x)=3(2x+1)^2(2)=6(2x+1)^2.
-\]</div>
+<p>then the power rule gives <span class="math notranslate nohighlight">\(3(2x+1)^2\)</span> and the chain rule multiplies this by <span class="math notranslate nohighlight">\(2\)</span>, the derivative of the inside function <span class="math notranslate nohighlight">\(2x+1\)</span>. Thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f'(x)&amp;=3(2x+1)^2 \frac{d}{dx}(2x+1)\\
+&amp;= 3(2x+1)^2(2)\\
+&amp;= 6(2x+1)^2.
+\end{align*}\]</div>
 </div>
 </div>
 </li>
