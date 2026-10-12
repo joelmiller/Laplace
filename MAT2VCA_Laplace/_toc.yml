@@ -15,6 +15,7 @@ parts:
         - file: prereqs/AlgebraReview
           sections:
           - file: prereqs/Squares
+        
           - file: prereqs/EqualsSign
         - file: prereqs/SpecialTriangles
         - file: prereqs/IntegralRefresher
