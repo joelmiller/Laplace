@@ -1,0 +1,33 @@
+.sd-tab-set.vertical-part-tabs {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  grid-template-rows: repeat(4, auto);
+  column-gap: 1rem;
+  align-items: start;
+}
+
+.sd-tab-set.vertical-part-tabs > label.sd-tab-label:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.sd-tab-set.vertical-part-tabs > label.sd-tab-label:nth-of-type(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.sd-tab-set.vertical-part-tabs > label.sd-tab-label:nth-of-type(3) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.sd-tab-set.vertical-part-tabs > label.sd-tab-label:nth-of-type(4) {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.sd-tab-set.vertical-part-tabs > .sd-tab-content {
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  min-width: 0;
+}
