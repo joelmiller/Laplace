@@ -15,7 +15,7 @@
   grid-column: 1;
   grid-row: 2;
 }
- 
+
 .sd-tab-set.vertical-part-tabs > label.sd-tab-label:nth-of-type(3) {
   grid-column: 1;
   grid-row: 3;
@@ -33,5 +33,5 @@
 }
 
 .sd-tab-set.vertical-part-tabs > input:checked + label.sd-tab-label {
-  border-bottom: 1px solid var(--sd-color-card-border, #dee2e6);
+  border-bottom: 3px solid var(--sd-color-card-border, #dee2e6);
 }
