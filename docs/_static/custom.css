@@ -31,3 +31,7 @@
   grid-row: 1 / span 4;
   min-width: 0;
 }
+
+.sd-tab-set.vertical-part-tabs > input:checked + label.sd-tab-label {
+  border-bottom: 3px solid var(--sd-color-card-border, #dee2e6);
+}
