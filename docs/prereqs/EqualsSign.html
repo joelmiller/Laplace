@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=6526a06a" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=112f745b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -62,6 +62,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'prereqs/EqualsSign';</script>
+    <script src="../_static/vertical-tabs.js?v=50cdff66"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1.3.2. Special Triangles" href="SpecialTriangles.html" />
@@ -412,7 +413,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -428,6 +431,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">1.3.1.2.1. Summary</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -442,13 +453,12 @@ document.write(`
 <p>Mathematical writing has grammar rules, though they are not frequently explicitly taught.  Some of the most common errors occur when people misuse either <span class="math notranslate nohighlight">\(=\)</span> or <span class="math notranslate nohighlight">\(\Rightarrow\)</span>.</p>
 <p>In mathematical writing, the equals sign takes a specific meaning.  Unfortunately, it is different from what the equals sign means in primary school and what it means with a calculator.  This leads to confusion.</p>
 <p>In primary school, you would see something like <span class="math notranslate nohighlight">\(3+4=~~~\)</span> and you would be expected to fill in <span class="math notranslate nohighlight">\(7\)</span>.  For most calculators, the equals sign plays a similar role. You type the keys in order: <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(+\)</span>, <span class="math notranslate nohighlight">\(4\)</span>, <span class="math notranslate nohighlight">\(=\)</span>, and then the calculator displays <span class="math notranslate nohighlight">\(7\)</span>.  So many students are used to the idea that the equals sign is the instruction “perform the calculation”.  This is not what it means.</p>
-<p>In mathematical writing, the equals sign sits in the middle of an equation.  An equation is an assertion or claim that the two things on either side of the equals sign are in fact equal to one another.</p>
-<p>Our mathematical argument typically consists of a starting equation.  Then we modify that equation to create a new equation in such a way that if the first equation is True, then the second equation is also True.  After a sequence of (correct) steps, we arrive at a final equation that must be True.</p>
-<p>Consider now <span class="math notranslate nohighlight">\(\Rightarrow\)</span>.  This is used to denote that if one statement is True, then the next statement must also be True.</p>
-<p>Most mathematical writing of the variety that shows up in MAT2VCA should be presented as a sequence of equations, each of which has <span class="math notranslate nohighlight">\(=\)</span> in the middle and between the equations we use <span class="math notranslate nohighlight">\(\Rightarrow\)</span>.</p>
-<p>Let us consider an illustrative example showing a correct use of the two symbols and then an incorrect use.  Both demonstrate correct reasoning and get to the same answer.  However, the first uses mathematical grammar correctly.  The second is more like a string of incomplete sentences.</p>
+<p>In mathematical writing, the equals sign sits in the middle of an equation.  An equation such as <span class="math notranslate nohighlight">\(A=B\)</span> is an assertion or claim that the two things on either side of the equals sign are in fact equal to one another.</p>
+<p>Consider now <span class="math notranslate nohighlight">\(\Rightarrow\)</span>.  This is used to denote that if one statement is True, then the next statement must also be True.  So <span class="math notranslate nohighlight">\(A=B \Rightarrow 2A=2B\)</span>.  If the first equation is True, then the second equation is also True.  Most mathematical writing of the variety that shows up in MAT2VCA should be presented as a sequence of equations, each of which has <span class="math notranslate nohighlight">\(=\)</span> in the middle and between the equations we use <span class="math notranslate nohighlight">\(\Rightarrow\)</span>.</p>
+<p>Let us consider an illustrative example showing two correct uses of <span class="math notranslate nohighlight">\(=\)</span> and <span class="math notranslate nohighlight">\(\Rightarrow\)</span> and then an incorrect use.  They all demonstrate correct reasoning and get to the same answer.  However, the first two use mathematical grammar correctly.  The third is more like a string of incomplete sentences.</p>
 <p>Here is a sample problem: <em>Consider <span class="math notranslate nohighlight">\(f(x) = x^2 -6x + 9\)</span>.  Find <span class="math notranslate nohighlight">\(f(3)\)</span>.</em></p>
-<p>Here are two correct ways to write the solution:</p>
+<ul>
+<li><p>Here is the first way:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 f(x) &amp;= x^2 - 6x + 9\\
@@ -456,7 +466,8 @@ f(x) &amp;= x^2 - 6x + 9\\
 \Rightarrow f(3) &amp;= 9 - 18 + 9\\
 \Rightarrow f(3) &amp;= 0
 \end{align*}\]</div>
-<p>A shortcut we use in mathematics when the the left hand side of a sequence of equations remains the same is to write a sequence of equals signs, without including the left hand side:</p>
+</li>
+<li><p>A shortcut we use in mathematics when the the left hand side of a sequence of equations remains the same is to write a sequence of equals signs, without including the left hand side:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 f(x) &amp;= x^2-6x+9\\
@@ -464,16 +475,25 @@ f(x) &amp;= x^2-6x+9\\
 &amp;= 9 - 18 + 9\\
 &amp;= 0
 \end{align*}\]</div>
-<p>Either of the solutions above is acceptible.</p>
-<p>Notice that the mathematical calculation happens <strong>between</strong> each line.  There is a specific calculation that is done from one equation to the next.</p>
-<p>Here is an incorrect way of writing the solution.  It matches exactly the sequence of steps you would use if using a (standard) calculator.  The thought process underlying these steps is correct.  However, the presentation is incorrect.</p>
+</li>
+<li><p>Here is an incorrect way of writing the solution.  It matches exactly the sequence of steps you would use if using a (standard) calculator.  The thought process underlying these steps is correct.  However, the presentation is incorrect:</p>
 <p><span class="math notranslate nohighlight">\(f(3)=3^2 = 9 - 6\times 3 = 9-18=-9+9=0\)</span></p>
-<p>If you look at it, you can probably determine the steps that are actually being taken.  But as written, this makes a series of False claims such as</p>
-<p>$$
-3^2 = 9 - 6\times 3</p>
-<p>The source of the problems with doing a calculation like this is that it’s hard to know what each equals sign really means.  In the “correct” versions higher up, I can ask you to verify the step between the second and third line and you can check exactly what calculation was done and whether it was done correctly.  In this version, if I ask you to check the fourth equals sign (<span class="math notranslate nohighlight">\(9-18=-9+9\)</span>), you can’t do that in isolation, you have to go through the entire calculation to see what part of the expression the student was working on in that step.</p>
-<p>This makes it difficult for a student to go back and check for accuracy.  It makes it difficult for a marker to understand the student’s thought process.  More concerningly, it increases the risk of errors.  Imagine looking at medical notes and seeing something like this by a doctor calculating a child’s medication dosage.</p>
+</li>
+</ul>
+<p>Notice that in the first two examples, the mathematical calculation happens <strong>between</strong> each line.  There is a specific calculation that is done from one equation to the next.  If that calculation is done correctly and one equation is True, then the equation on the next line is also True.</p>
+<p>In the final example, you can probably determine the steps that are being taken.  But as written, this is the equivalent of writing an essay that is full of grammatically incorrect sentences and lacking periods.  For example, we have the second equals sign which gives us the equation:</p>
+<div class="math notranslate nohighlight">
+\[
+3^2 = 9 - 6\times 3
+\]</div>
+<p>but the writer means “<span class="math notranslate nohighlight">\(3^2\)</span> equals <span class="math notranslate nohighlight">\(9\)</span>, and then the next thing we will do is subtract <span class="math notranslate nohighlight">\(6\times 3\)</span> from this.”  There are two statements mixed together with this one equals sign.  This is a problem because it’s hard to know what each equals sign really means.  In the “correct” versions higher up, I can ask you to verify the step between the second and third line and you can check exactly what calculation was done and whether it was done correctly.  You need to make sure sure that if the first equation is true, then the next equation is also true.</p>
+<p>However, as this is written, if I ask you to check the fourth equals sign (<span class="math notranslate nohighlight">\(9-18=-9+9\)</span>), you can’t do that in isolation.  You have to know that the writer means “in this step I find <span class="math notranslate nohighlight">\(9-18 =-9\)</span>, and now I’m starting the next step which is adding <span class="math notranslate nohighlight">\(9\)</span>.”  We can figure that out, but what if the writer makes a mistake and has <span class="math notranslate nohighlight">\(9-18=9+9\)</span>?  Now you have to figure out what was going on in the writer’s head - did the writer make a mistake?  Was the writer doing a different step of the calculation without being clear?</p>
+<section id="summary">
+<h2><span class="section-number">1.3.1.2.1. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>The basic structure of any mathematical writing is that we start from a set of claims that we assume to be true, and then we follow a series of logical steps which lead to a conclusion.  At each step in our work, we make a new claim.  In mathematical writing we must make sure that our claim is clearly stated and that it is also clear how one claim follows from the previous claim.</p>
+<p>For the sort of problems we work on in this subject, our claims are expressed through equations.  We claim that the expression on the left hand side of <span class="math notranslate nohighlight">\(=\)</span> is exactly the same as on the right hand side.  The <span class="math notranslate nohighlight">\(\Rightarrow\)</span> means that if the previous equation is True, then so is the next one.  We use the word “equals” when we read <span class="math notranslate nohighlight">\(=\)</span> and “implies” when we read <span class="math notranslate nohighlight">\(\Rightarrow\)</span>.</p>
 <p>One of the skills we focus on in this subject is ensuring that students can clearly express a mathematical explanation.  If you write down an equals sign and the two things on either side of it are not equal, you will lose points, even if the underlying calculation that you are doing is correct.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -530,6 +550,21 @@ f(x) &amp;= x^2-6x+9\\
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">1.3.1.2.1. Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
