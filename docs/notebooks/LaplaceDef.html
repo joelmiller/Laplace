@@ -541,18 +541,26 @@ Before we try to find <span class="math notranslate nohighlight">\(\mathcal{L}[e
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">51</span><span class="p">);</span>
 <span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">);</span>
 
-<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="w"> </span><span class="n">color</span><span class="p">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span>
-<span class="nb">area</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="w">  </span><span class="s">&quot;FaceColor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">theme</span><span class="w"> </span><span class="s">light</span>
 
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">gca</span><span class="p">;</span>
+
+<span class="nb">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;Color&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;red&#39;</span><span class="p">)</span>
+<span class="nb">hold</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;on&#39;</span><span class="p">)</span>
+
+<span class="nb">area</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="w"> </span><span class="k">...</span>
+<span class="w">    </span><span class="s">&#39;FaceColor&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;blue&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="w">    </span><span class="s">&#39;FaceAlpha&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">);</span>
+
+<span class="nb">xlabel</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;$t$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;$f(t)$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;latex&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting MATLAB ...
-</pre></div>
-</div>
+<img alt="../_images/2a1852ddb44fdcf84110e3b3ce33988cf3f6df7669e1a39c9d5ac546b7ced823.png" src="../_images/2a1852ddb44fdcf84110e3b3ce33988cf3f6df7669e1a39c9d5ac546b7ced823.png" />
 </div>
 </div>
 <section id="finding-mathcal-l-e-t-s-for-general-s">
@@ -636,7 +644,7 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 <img alt="../_images/03a43dfc1a70e53517777a6e993b4a01e87e6f700c74b5ff080211e4ab9c0b07.png" src="../_images/03a43dfc1a70e53517777a6e993b4a01e87e6f700c74b5ff080211e4ab9c0b07.png" />
 </div>
 </div>
-<p>We have been careful using limits to handle the terminal at infinity.  We will now use a shortcut.  We will allow <span class="math notranslate nohighlight">\(\infty\)</span> to appear in our equations without formally writing out the limit.  If we do this, then any finite number divided by <span class="math notranslate nohighlight">\(\infty\)</span> is <span class="math notranslate nohighlight">\(0\)</span>.  As long as only one thing in our equations ends up going to infinity, this shortcut is okay to use.  However, if we encounter things like <span class="math notranslate nohighlight">\(\infty/\infty\)</span> or <span class="math notranslate nohighlight">\(\infty-\infty\)</span>, then we need to back up and use the limits carefully.</p>
+<p>We have been careful using limits to handle the terminal at infinity.  We will now use a shortcut.  We will allow <span class="math notranslate nohighlight">\(\infty\)</span> to appear in our equations without formally writing out the limit.  If we do this, then any finite number divided by <span class="math notranslate nohighlight">\(\infty\)</span> is <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(e^{-\infty}=0\)</span>.  As long as only one thing in our equations ends up going to infinity, this shortcut is okay to use.  However, if we encounter things like <span class="math notranslate nohighlight">\(\infty/\infty\)</span> or <span class="math notranslate nohighlight">\(\infty-\infty\)</span>, then we need to back up and use the limits carefully.</p>
 </section>
 </section>
 <section id="examples">
@@ -679,7 +687,7 @@ We’ll look at a few values of <span class="math notranslate nohighlight">\(s\)
 \tilde{f}(s) =&amp; \int_0^\infty \cos(4t) e^{-st} \, dt\\
  &amp;=  \left[ \cos(4t)\frac{(-e^{-st})}{s} - (-4\sin(4t)) \frac{e^{-st}}{s^2} \right|_{t=0}^\infty +\int_0^\infty -16 \cos(4t) \frac{e^{-st}}{s^2} \, dt\\
 &amp;= 0 - \frac{(-1)}{s} + 4 \left(0 - 0 \frac{1}{s^2}\right) - \frac{16}{s^2}  \int_0^\infty \cos(4t) e^{-st} \, dt \qquad &amp;\text{if }s&gt;0\\
-&amp;+ \frac{1}{s} - \frac{16}{s^2} \tilde{f}(s) &amp; s&gt;0\\
+&amp;=+ \frac{1}{s} - \frac{16}{s^2} \tilde{f}(s) &amp; s&gt;0\\
 \end{align*}\]</div>
 <p>We have expressed <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> in terms of some things we can calculate and a multiple of <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>.  It might seem that we’re back where we started, but Algebra comes to the rescue.  We move the terms with <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> to the left hand side:</p>
 <div class="amsmath math notranslate nohighlight">

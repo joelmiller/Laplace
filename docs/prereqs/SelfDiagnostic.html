@@ -5145,7 +5145,13 @@ Question</label><div class="sd-tab-content docutils">
 Answer</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
-\ln|x+2|+2\ln|x-1|+C
+\int \frac{3x+1}{(x-1)(x+2)}\,dx
+=
+\frac{4}{3}\ln|x-1|
++
+\frac{5}{3}\ln|x+2|
++
+C.
 \]</div>
 </div>
 <input id="sd-tab-item-234" name="sd-tab-set-62" type="radio">
@@ -5618,7 +5624,7 @@ The Riemann sum is 1.7500.
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;$x$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;$f(x)$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
 
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Riemann sum for $f(x)=1/x$ on $[1,n+1]$&#39;</span><span class="p">,</span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Riemann sum for $f(x)=1/x$ on $[1,n+1]$ for $n=%d$&#39;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Interpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
 
 <span class="nb">xlim</span><span class="p">([</span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="p">])</span>
 <span class="nb">ylim</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mf">1.15</span><span class="p">])</span>
@@ -5640,12 +5646,17 @@ The Riemann sum is 1.7500.
 <p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<img alt="../_images/3955f56ac3e4cdaef69967fb0a9c00b84204a23125c61bc5a330741dbcf14d5d.png" src="../_images/3955f56ac3e4cdaef69967fb0a9c00b84204a23125c61bc5a330741dbcf14d5d.png" />
+<img alt="../_images/4e9926423a69fa2584e4987b82461a7eacc4c9e6cce1a9748c28846c0d839481.png" src="../_images/4e9926423a69fa2584e4987b82461a7eacc4c9e6cce1a9748c28846c0d839481.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n = 8.
 Delta x = 1.0000.
 The Riemann sum is 2.717857.
 The exact integral is log(n+1) = 2.197225.
 The Riemann sum is larger than the integral by 0.520633.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: Error in state of SceneNode.
+String scalar or character vector must have valid interpreter syntax: 
+Riemann sum for $f(x)=1/x$ on $[1,n+1]$ for $n=
 </pre></div>
 </div>
 </div>
@@ -5915,7 +5926,7 @@ Worked solution</label><div class="sd-tab-content docutils">
 <input checked="checked" id="sd-tab-item-256" name="sd-tab-set-70" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-256">
 Question</label><div class="sd-tab-content docutils">
-<p>Use the cross product to find the area of a parallelogram whose edges are the vectors</p>
+<p>Use the cross product to find the area of a parallelogram which has edges given by the vectors</p>
 <div class="math notranslate nohighlight">
 \[
 (1,2,0), \qquad (2,1,0).

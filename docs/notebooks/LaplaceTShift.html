@@ -578,8 +578,8 @@ H_a(t) = \begin{cases}
 \end{cases}
 \end{split}\]</div>
 <p>which splits the difference between the two limits.</p>
-<p>We use the Laplace Transform for the purposes of solving differential equations.  In this context, any of these definitions can be used without changing any of our results.  These functions appear as discontinuous changes to the derivatives (at first, second, or higher order), and the value of the derivative at the point <span class="math notranslate nohighlight">\(a\)</span> has no impact on the value of the integral.</p>
-<p>The value of a finite function at a single point has no impact on the integral, and so the Laplace Transform:</p>
+<p>We use the Laplace Transform for the purposes of solving differential equations.  In this context, any of these definitions can be used without changing any of our results.  The use of <span class="math notranslate nohighlight">\(H_a(t)\)</span> creates step discontinuities in a function or in its derivatives at isolated points.  The value of a function at the point of a step discontinuity has no impact on the value of the integral.</p>
+<p>So the Laplace Transform:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{L}[H_a(t)](s) = \int_0^\infty H_a(t) e^{-st} \, dt\]</div>
 <p>of all of these definitions will be the same.  The solutions to our differential equations will be the same regardless of how we choose to define <span class="math notranslate nohighlight">\(H_a(t)\)</span>.  They are all equivalent for our purposes<a class="footnote-reference brackets" href="#equivalence-note" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
@@ -623,7 +623,7 @@ H_a(t) = H_0(t-a)
 <img alt="../_images/45ef3cd97e3d292c2735013fda33923d5eb48b8fe2157f316d6730a9e3226e5c.png" src="../_images/45ef3cd97e3d292c2735013fda33923d5eb48b8fe2157f316d6730a9e3226e5c.png" />
 </div>
 </div>
-<p>Notice that although the function is discontinuous at <span class="math notranslate nohighlight">\(t=3\)</span>, Matlab will still draw a line from the last point before <span class="math notranslate nohighlight">\(t=3\)</span> to the first point with <span class="math notranslate nohighlight">\(t \geq 3\)</span>.  If the <span class="math notranslate nohighlight">\(t\)</span> values were far apart, then this line will not appear vertical.</p>
+<p>Notice that although the function is discontinuous at <span class="math notranslate nohighlight">\(t=3\)</span>, Matlab will still draw a line from the last point before <span class="math notranslate nohighlight">\(t=3\)</span> to the first point with <span class="math notranslate nohighlight">\(t \geq 3\)</span>.  If the vector <span class="math notranslate nohighlight">\(t\)</span> is created with a smaller number of points, then this line will not appear vertical.</p>
 </section>
 <section id="the-transform-of-h-a-t-f-t-a">
 <span id="tshift-transform"></span><h2><span class="section-number">2.4.5. </span>The transform of <span class="math notranslate nohighlight">\(H_a(t) f(t-a)\)</span><a class="headerlink" href="#the-transform-of-h-a-t-f-t-a" title="Link to this heading">#</a></h2>
@@ -1007,8 +1007,9 @@ g_2(t) &amp;= e^{2t}(1-2e^{-2}) + 3e^{3(t-2)}
 <div class="math notranslate nohighlight">
 \[\begin{split}
     f(t) =  \begin{cases} 
+                0 &amp; t&lt;1\\
                 1 &amp; 1 \leq t &lt; 2\\
-                0 &amp; t&lt;1 \text{ or }  2 \leq t \\
+                0 &amp; t \geq 2 
             \end{cases}
     \end{split}\]</div>
 </li>
