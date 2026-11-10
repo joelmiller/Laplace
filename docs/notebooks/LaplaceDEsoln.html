@@ -436,7 +436,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.8.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">2.8.1. Preliminaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.8.1.1. Intended Learning Outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-pre-requisite-knowledge">2.8.1.2. Essential pre-requisite knowledge:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.8.2. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-of-f-t-and-f-t">2.8.3. Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-differential-equations-examples">2.8.4. Solving Differential Equations: Examples</a></li>
@@ -454,8 +458,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="using-the-laplace-transform-to-solve-differential-equations">
 <h1><span class="section-number">2.8. </span>Using the Laplace Transform to solve Differential Equations<a class="headerlink" href="#using-the-laplace-transform-to-solve-differential-equations" title="Link to this heading">#</a></h1>
+<p><strong>This text is still undergoing improvements:</strong>  Please report any errors or things that are unclear to <a class="github reference external" href="https://github.com/joelmiller/Laplace/issues">joelmiller/Laplace#issues</a></p>
+<section id="preliminaries">
+<h2><span class="section-number">2.8.1. </span>Preliminaries<a class="headerlink" href="#preliminaries" title="Link to this heading">#</a></h2>
 <section id="intended-learning-outcomes">
-<h2><span class="section-number">2.8.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">2.8.1.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h3>
 <p>By the end of this section, you should be able to:</p>
 <ul class="simple">
 <li><p>Express the Laplace transforms of derivatives:</p></li>
@@ -469,7 +476,15 @@ document.write(`
 <li><p>Solve the resulting equation for <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> and then invert it.</p></li>
 <li><p>Handle cases that involve discontinuous forcing functions.</p></li>
 </ul>
-<p><strong>This text is still undergoing improvements:</strong>  Please report any errors or things that are unclear to <a class="github reference external" href="https://github.com/joelmiller/Laplace/issues">joelmiller/Laplace#issues</a></p>
+</section>
+<section id="essential-pre-requisite-knowledge">
+<h3><span class="section-number">2.8.1.2. </span>Essential pre-requisite knowledge:<a class="headerlink" href="#essential-pre-requisite-knowledge" title="Link to this heading">#</a></h3>
+<p>To follow this section, you should be comfortable with:</p>
+<ul class="simple">
+<li><p>Integration by parts</p></li>
+<li><p>The meaning of a differential equation</p></li>
+</ul>
+</section>
 </section>
 <section id="introduction">
 <h2><span class="section-number">2.8.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
@@ -743,16 +758,16 @@ f''(t) + 3f'(t) -4 f(t) = 2 + 3 e^{-t} H_1(t)
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "jupyter_matlab_kernel"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "jupyter_matlab_kernel",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
 
                 </article>
               
@@ -798,7 +813,11 @@ f''(t) + 3f'(t) -4 f(t) = 2 + 3 e^{-t} H_1(t)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.8.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">2.8.1. Preliminaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.8.1.1. Intended Learning Outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-pre-requisite-knowledge">2.8.1.2. Essential pre-requisite knowledge:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.8.2. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-of-f-t-and-f-t">2.8.3. Transforms of <span class="math notranslate nohighlight">\(f'(t)\)</span> and <span class="math notranslate nohighlight">\(f''(t)\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-differential-equations-examples">2.8.4. Solving Differential Equations: Examples</a></li>

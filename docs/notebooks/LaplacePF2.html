@@ -436,7 +436,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.7.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">2.7.1. Preliminaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.7.1.1. Intended Learning Outcomes</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.7.2. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-real-roots">2.7.3. Distinct Real Roots</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-roots">2.7.4. Repeated roots</a></li>
@@ -455,8 +458,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="inverting-the-laplace-transform-with-partial-fractions-cubic-and-higher-order-denominators">
 <h1><span class="section-number">2.7. </span>Inverting the Laplace Transform with Partial Fractions — cubic and higher order denominators<a class="headerlink" href="#inverting-the-laplace-transform-with-partial-fractions-cubic-and-higher-order-denominators" title="Link to this heading">#</a></h1>
+<p><strong>This text is still undergoing improvements:</strong>  Please report any errors or things that are unclear to <a class="github reference external" href="https://github.com/joelmiller/Laplace/issues">joelmiller/Laplace#issues</a></p>
+<section id="preliminaries">
+<h2><span class="section-number">2.7.1. </span>Preliminaries<a class="headerlink" href="#preliminaries" title="Link to this heading">#</a></h2>
 <section id="intended-learning-outcomes">
-<h2><span class="section-number">2.7.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">2.7.1.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h3>
 <p>By the end of this section, you should be able to:</p>
 <ul class="simple">
 <li><p>Identify the appropriate Partial Fractions expansion of <span class="math notranslate nohighlight">\(\tilde{f}(s) = p(s)/q(s)\)</span> where <span class="math notranslate nohighlight">\(q(s)\)</span> is cubic or higher order and the degree of <span class="math notranslate nohighlight">\(p\)</span> is less than the degree of <span class="math notranslate nohighlight">\(q\)</span>.</p></li>
@@ -470,7 +476,7 @@ document.write(`
 <li><p>Solve for the unknown partial fraction coefficients</p></li>
 <li><p>Use known Laplace transform pairs to invert each term—combining results to find <span class="math notranslate nohighlight">\(f(t) = \mathcal{L}^{-1}[\tilde{f}(s)](t)\)</span></p></li>
 </ul>
-<p><strong>This text is still undergoing improvements:</strong>  Please report any errors or things that are unclear to <a class="github reference external" href="https://github.com/joelmiller/Laplace/issues">joelmiller/Laplace#issues</a></p>
+</section>
 </section>
 <section id="introduction">
 <h2><span class="section-number">2.7.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
@@ -965,16 +971,16 @@ f(t) = \frac{1}{6} t \sin(3t) + \frac{1}{2} \sin(3t)
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xoctave"
+            mode: "jupyter_matlab_kernel"
         },
         kernelOptions: {
-            name: "xoctave",
+            name: "jupyter_matlab_kernel",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xoctave'</script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
 
                 </article>
               
@@ -1020,7 +1026,10 @@ f(t) = \frac{1}{6} t \sin(3t) + \frac{1}{2} \sin(3t)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.7.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">2.7.1. Preliminaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.7.1.1. Intended Learning Outcomes</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.7.2. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distinct-real-roots">2.7.3. Distinct Real Roots</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-roots">2.7.4. Repeated roots</a></li>

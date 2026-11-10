@@ -436,7 +436,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.3.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">2.3.1. Preliminaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.3.1.1. Intended Learning Outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-pre-requisite-knowledge">2.3.1.2. Essential pre-requisite knowledge:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.3.2. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity-of-the-laplace-transform">2.3.3. Linearity of the Laplace Transform</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-of-the-laplace-transform">2.3.4. Uniqueness of the Laplace Transform</a></li>
@@ -455,8 +459,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="some-basic-laplace-transform-rules">
 <h1><span class="section-number">2.3. </span>Some Basic Laplace Transform Rules<a class="headerlink" href="#some-basic-laplace-transform-rules" title="Link to this heading">#</a></h1>
+<p><strong>This text is still undergoing improvements:</strong>  Please report any errors or things that are unclear to <a class="github reference external" href="https://github.com/joelmiller/Laplace/issues">joelmiller/Laplace#issues</a></p>
+<section id="preliminaries">
+<h2><span class="section-number">2.3.1. </span>Preliminaries<a class="headerlink" href="#preliminaries" title="Link to this heading">#</a></h2>
 <section id="intended-learning-outcomes">
-<h2><span class="section-number">2.3.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">2.3.1.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h3>
 <p>By the end of this section, you should be able to:</p>
 <ul class="simple">
 <li><p>State and apply the linearity property of the Laplace transform.</p></li>
@@ -464,7 +471,15 @@ document.write(`
 <li><p>Use tables and properties to compute inverse Laplace transforms of simple expressions.</p></li>
 <li><p>Recognize limitations of the transform such as <span class="math notranslate nohighlight">\(\mathcal{L}[f(t)g(t)](s) \neq \mathcal{L}[f(t)](s)\mathcal{L}[g(t)](s)\)</span> to avoid common errors.</p></li>
 </ul>
-<p><strong>This text is still undergoing improvements:</strong>  Please report any errors or things that are unclear to <a class="github reference external" href="https://github.com/joelmiller/Laplace/issues">joelmiller/Laplace#issues</a></p>
+</section>
+<section id="essential-pre-requisite-knowledge">
+<h3><span class="section-number">2.3.1.2. </span>Essential pre-requisite knowledge:<a class="headerlink" href="#essential-pre-requisite-knowledge" title="Link to this heading">#</a></h3>
+<p>To follow this section, you need to be comfortable with:</p>
+<ul class="simple">
+<li><p>Linearity of integration: <span class="math notranslate nohighlight">\(\int af(x) + b g(x) \, dx = a \int f(x) \, dx + b \int g(x) \, dx\)</span>.</p></li>
+<li><p>The idea that the integral  <span class="math notranslate nohighlight">\(\int f(x) g(x) \, dx\)</span> is <strong>not equal to</strong> <span class="math notranslate nohighlight">\(\left(\int f(x) \, dx\right) \left( \int g(x) \, dx\right)\)</span>.</p></li>
+</ul>
+</section>
 </section>
 <section id="introduction">
 <h2><span class="section-number">2.3.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
@@ -692,7 +707,11 @@ f(t) &amp;= \mathcal{L}^{-1} [\tilde{f}(s)](t)\\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.3.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">2.3.1. Preliminaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.3.1.1. Intended Learning Outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-pre-requisite-knowledge">2.3.1.2. Essential pre-requisite knowledge:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.3.2. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity-of-the-laplace-transform">2.3.3. Linearity of the Laplace Transform</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-of-the-laplace-transform">2.3.4. Uniqueness of the Laplace Transform</a></li>

@@ -436,7 +436,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.5.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">2.5.1. Preliminaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.5.1.1. Intended Learning Outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-pre-requisite-knowledge">2.5.1.2. Essential pre-requisite knowledge:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.5.2. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">2.5.3. Examples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.5.4. Self Test</a></li>
@@ -453,8 +457,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-s-shift">
 <h1><span class="section-number">2.5. </span>The <span class="math notranslate nohighlight">\(s\)</span>-shift<a class="headerlink" href="#the-s-shift" title="Link to this heading">#</a></h1>
+<p><strong>This text is still undergoing improvements:</strong>  Please report any errors or things that are unclear to <a class="github reference external" href="https://github.com/joelmiller/Laplace/issues">joelmiller/Laplace#issues</a></p>
+<section id="preliminaries">
+<h2><span class="section-number">2.5.1. </span>Preliminaries<a class="headerlink" href="#preliminaries" title="Link to this heading">#</a></h2>
 <section id="intended-learning-outcomes">
-<h2><span class="section-number">2.5.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">2.5.1.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h3>
 <p>By the end of this section, you should be able to:</p>
 <ul class="simple">
 <li><p>State and apply the <span class="math notranslate nohighlight">\(s\)</span>-shift theorem:</p></li>
@@ -468,7 +475,14 @@ document.write(`
 <li><p>Use the <span class="math notranslate nohighlight">\(s\)</span>-shift property to compute transforms like <span class="math notranslate nohighlight">\(\mathcal{L}[e^{-6t}t^2](s)\)</span> in terms of the transform of <span class="math notranslate nohighlight">\(\mathcal{L}[t^2](s)\)</span>.</p></li>
 <li><p>Apply the <span class="math notranslate nohighlight">\(s\)</span>-shift approach in reverse to find <span class="math notranslate nohighlight">\(f(t)\)</span> from functions of <span class="math notranslate nohighlight">\(s-a\)</span> for some <span class="math notranslate nohighlight">\(a\)</span>.</p></li>
 </ul>
-<p><strong>This text is still undergoing improvements:</strong>  Please report any errors or things that are unclear to <a class="github reference external" href="https://github.com/joelmiller/Laplace/issues">joelmiller/Laplace#issues</a></p>
+</section>
+<section id="essential-pre-requisite-knowledge">
+<h3><span class="section-number">2.5.1.2. </span>Essential pre-requisite knowledge:<a class="headerlink" href="#essential-pre-requisite-knowledge" title="Link to this heading">#</a></h3>
+<p>To follow this section, you should be comfortable with:</p>
+<ul class="simple">
+<li><p>Taking a function <span class="math notranslate nohighlight">\(f(x)\)</span> and finding <span class="math notranslate nohighlight">\(f(x-a)\)</span> for some constant value <span class="math notranslate nohighlight">\(a\)</span>.  For example, if <span class="math notranslate nohighlight">\(f(x) = x^2-3x\)</span>, then <span class="math notranslate nohighlight">\(f(x-2) = (x-2)^2-3(x-2)\)</span>.</p></li>
+</ul>
+</section>
 </section>
 <section id="introduction">
 <h2><span class="section-number">2.5.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
@@ -527,7 +541,7 @@ document.write(`
 </div><div class="proof example admonition" id="example:e2tsin3t">
 <p class="admonition-title"><span class="caption-number">Example 2.18 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}[e^{2t}\sin(3t)](s)\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>We will find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{2t}\sin(3t)](s)\)</span> <em>without</em> using the entry in the table for <span class="math notranslate nohighlight">\(e^{at}\sin(\omega t)\)</span>.  Instead we will use the <span class="math notranslate nohighlight">\(s\)</span>-shift and the fact that <span class="math notranslate nohighlight">\(\mathcal{L}[\sin(\omega t)] = \omega/(s^2+\omega^2)\)</span>, so <span class="math notranslate nohighlight">\(\mathcal{L}[\sin(3t)](s) = 3/ (s^2+3^2)\)</span>:</p>
+<p>We will find <span class="math notranslate nohighlight">\(\mathcal{L}[e^{2t}\sin(3t)](s)\)</span> <em>without</em> using the entry for <span class="math notranslate nohighlight">\(e^{at}\sin(\omega t)\)</span> in the table <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 2.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a>, which would tell us that <span class="math notranslate nohighlight">\(\mathcal{L}[t^n](s) = n!/s^{n+1}\)</span>.  Instead we will use the <span class="math notranslate nohighlight">\(s\)</span>-shift and the fact that <span class="math notranslate nohighlight">\(\mathcal{L}[\sin(\omega t)] = \omega/(s^2+\omega^2)\)</span>, so <span class="math notranslate nohighlight">\(\mathcal{L}[\sin(3t)](s) = 3/ (s^2+3^2)\)</span>:</p>
 <p>We have</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -547,22 +561,23 @@ document.write(`
 \end{align*}\]</div>
 </section>
 </div><div class="proof example admonition" id="example-4">
-<p class="admonition-title"><span class="caption-number">Example 2.20 </span> (Using the <span class="math notranslate nohighlight">\(s\)</span> shift to invert: <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[(s)/((s-2)^2+9)](t)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 2.20 </span> (Using the <span class="math notranslate nohighlight">\(s\)</span> shift to invert: <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{s}{(s-2)^2+9}\right](t)\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>To find <span class="math notranslate nohighlight">\(f(t)\)</span> if</p>
 <div class="math notranslate nohighlight">
 \[\tilde{f}(s) = \frac{s}{(s-2)^2+3^2}\]</div>
-<p>we could use the Laplace transform table entry for <span class="math notranslate nohighlight">\(e^{at}\cos(\omega t)\)</span> and <span class="math notranslate nohighlight">\(e^{at}\sin(\omega t)\)</span>.  However, let’s assume that we don’t have that, and instead we just have</p>
+<p>we could use the Laplace transform table  <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-numref">Section 2.10</span></a> <a class="reference internal" href="LaplaceTable.html#lap-table"><span class="std std-ref">A table of Laplace Transforms</span></a> entries for <span class="math notranslate nohighlight">\(e^{at}\cos(\omega t)\)</span> and <span class="math notranslate nohighlight">\(e^{at}\sin(\omega t)\)</span>.  However, let’s assume that we don’t have that, and instead we just have the two table entries:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathcal{L}[\cos(\omega t)](s) &amp;= \frac{s}{s^2+\omega^2}\\
 \mathcal{L}[\sin(\omega t)](s) &amp;= \frac{\omega}{s^2+\omega^2}
 \end{align*}\]</div>
-<p>To use the <span class="math notranslate nohighlight">\(s\)</span>-shift, we need every appearance of <span class="math notranslate nohighlight">\(s\)</span> to be in the form <span class="math notranslate nohighlight">\(s-a\)</span>.  The easiest way to do this is to take <span class="math notranslate nohighlight">\(a=2\)</span> and make the numerator of <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> into <span class="math notranslate nohighlight">\((s-2)+2\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[
-\tilde{f}(s) = \frac{s-2}{(s-2)^2 + 3^2} + \frac{2}{(s-2)^2+3^2}
-\]</div>
+<p>To use the <span class="math notranslate nohighlight">\(s\)</span>-shift, we need every appearance of <span class="math notranslate nohighlight">\(s\)</span> to be in the form <span class="math notranslate nohighlight">\(s-a\)</span>.  The easiest way to do this is to make the numerator of <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> into <span class="math notranslate nohighlight">\((s-a)+a\)</span>.  In this case, <span class="math notranslate nohighlight">\(a=2\)</span>, so we use</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\tilde{f}(s) &amp;= \frac{(s-2)+2}{(s-2)^2+3^2}\\
+&amp;=\frac{s-2}{(s-2)^2 + 3^2} + \frac{2}{(s-2)^2+3^2}
+\end{align*}\]</div>
 <p>Then the first term looks like the transform of <span class="math notranslate nohighlight">\(\cos(3t)\)</span> but with <span class="math notranslate nohighlight">\(s-2\)</span> everywhere <span class="math notranslate nohighlight">\(s\)</span> appears.  The second term can be made to look like the transform of <span class="math notranslate nohighlight">\(\sin(3t)\)</span> if we rewrite it as <span class="math notranslate nohighlight">\((2/3) \frac{3}{(s-2)^2+3^2}\)</span>.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -573,7 +588,7 @@ f(t) &amp;= \mathcal{L}^{-1}[\tilde{f}(s)](t)\\
 \end{align*}\]</div>
 <p>In
 <a class="reference internal" href="LaplacePF.html#sec-quadpf"><span class="std std-numref">Section 2.6</span></a>
-we will learn another way to get to <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{(s-2) + (2/3) 3}{(s-2)^2+3^2}\)</span>.</p>
+we will learn a more efficient way to get to <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{(s-2) + (2/3) 3}{(s-2)^2+3^2}\)</span>.</p>
 </section>
 </div></section>
 <section id="self-test">
@@ -651,7 +666,11 @@ we will learn another way to get to <span class="math notranslate nohighlight">\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.5.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">2.5.1. Preliminaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.5.1.1. Intended Learning Outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-pre-requisite-knowledge">2.5.1.2. Essential pre-requisite knowledge:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.5.2. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">2.5.3. Examples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.5.4. Self Test</a></li>

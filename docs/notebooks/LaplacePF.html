@@ -436,16 +436,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.6.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">2.6.1. Preliminaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.6.1.1. Intended Learning Outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-pre-requisite-knowledge">2.6.1.2. Essential pre-requisite knowledge:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.6.2. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-functions">2.6.3. Rational Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classifying-the-factorizations-of-q-s">2.6.4. Classifying the factorizations of <span class="math notranslate nohighlight">\(q(s)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classifying-the-factorizations-of-the-denominator-q-s">2.6.4. Classifying the factorizations of the denominator <span class="math notranslate nohighlight">\(q(s)\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-the-square">2.6.4.1. Completing the square</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-s-b">2.6.5. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)(s-b)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2">2.6.6. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2-omega-2">2.6.7. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2+\omega^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-left-frac-p-s-q-s-right-t-if-q-s-s-a-s-b">2.6.5. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{p(s)}{q(s)}\right](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)(s-b)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-left-frac-p-s-q-s-right-t-if-q-s-s-a-2">2.6.6. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{p(s)}{q(s)}\right](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-left-frac-p-s-q-s-right-t-if-q-s-s-a-2-omega-2">2.6.7. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{p(s)}{q(s)}\right](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2+\omega^2\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-functions-with-the-t-shift">2.6.8. Rational Functions with the <span class="math notranslate nohighlight">\(t\)</span>-shift</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.6.9. Self-Test</a></li>
 </ul>
@@ -461,8 +465,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="inverting-the-laplace-transform-with-partial-fractions-quadratic-denominators">
 <span id="sec-quadpf"></span><h1><span class="section-number">2.6. </span>Inverting the Laplace Transform with Partial Fractions — quadratic denominators<a class="headerlink" href="#inverting-the-laplace-transform-with-partial-fractions-quadratic-denominators" title="Link to this heading">#</a></h1>
+<p><strong>This text is still undergoing improvements:</strong>  Please report any errors or things that are unclear to <a class="github reference external" href="https://github.com/joelmiller/Laplace/issues">joelmiller/Laplace#issues</a></p>
+<section id="preliminaries">
+<h2><span class="section-number">2.6.1. </span>Preliminaries<a class="headerlink" href="#preliminaries" title="Link to this heading">#</a></h2>
 <section id="intended-learning-outcomes">
-<h2><span class="section-number">2.6.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">2.6.1.1. </span>Intended Learning Outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading">#</a></h3>
 <p>By the end of this section, you should be able to:</p>
 <ul class="simple">
 <li><p>Recognise when a Laplace-domain function <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{p(s)}{q(s)}\)</span> requires partial fraction decomposition for inversion.</p></li>
@@ -470,7 +477,7 @@ document.write(`
 </ul>
 <div class="math notranslate nohighlight">
 \[
-    (s-a)(s-b), \qquad (s-a)^2, \qquad \text{or} \quad (s-a) + \omega^2   
+    (s-a)(s-b), \qquad (s-a)^2, \qquad \text{or} \quad (s-a)^2 + \omega^2   
 \]</div>
 <ul class="simple">
 <li><p>Apply partial fraction decomposition tailored to each denominator type and solve for the unknown coefficients effectively.</p></li>
@@ -480,9 +487,33 @@ document.write(`
 <p>There are a few strategic steps in this section that you should follow in your own work to reduce algebra errors.</p>
 <ul class="simple">
 <li><p>We almost never expand a product of polynomials when working with partial fractions.  It will be very useful to be able to identify at a glance how a function factors.</p></li>
-<li><p>As we are doing the inverse transform, we take the time to write out <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[\dot](t)\)</span> at each step.  This prevents common errors that result from misapplying the <span class="math notranslate nohighlight">\(t\)</span>-shift or the <span class="math notranslate nohighlight">\(s\)</span>-shift.</p></li>
+<li><p>As we are doing the inverse transform, we take the time to write out <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[\cdot](t)\)</span> at each step.  This prevents common errors that result from misapplying the <span class="math notranslate nohighlight">\(t\)</span>-shift or the <span class="math notranslate nohighlight">\(s\)</span>-shift.</p></li>
 </ul>
-<p><strong>This text is still undergoing improvements:</strong>  Please report any errors or things that are unclear to <a class="github reference external" href="https://github.com/joelmiller/Laplace/issues">joelmiller/Laplace#issues</a></p>
+</section>
+<section id="essential-pre-requisite-knowledge">
+<h3><span class="section-number">2.6.1.2. </span>Essential pre-requisite knowledge:<a class="headerlink" href="#essential-pre-requisite-knowledge" title="Link to this heading">#</a></h3>
+<p>To follow this section, you should be comfortable with:</p>
+<ul>
+<li><p>Factoring a difference of squares:</p>
+<div class="math notranslate nohighlight">
+\[
+  a^2-b^2 = (a-b)(a+b)
+  \]</div>
+<p>We will see a more subtle version that resembles</p>
+<div class="math notranslate nohighlight">
+\[
+  (x+y)^2-z^2 = (x+y-z)(x+y+z)
+  \]</div>
+</li>
+<li><p>Finding the square of a sum:</p>
+<div class="math notranslate nohighlight">
+\[
+  (a+b)^2 = a^2 + 2ab+b^2
+  \]</div>
+</li>
+</ul>
+<p>It will be very helpful if you remember partial fractions from integration.</p>
+</section>
 </section>
 <section id="introduction">
 <h2><span class="section-number">2.6.2. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
@@ -507,8 +538,8 @@ f(x) = \frac{p(x)}{q(x)}
 <p>We will often need to find <span class="math notranslate nohighlight">\(f(t)\)</span> when <span class="math notranslate nohighlight">\(\tilde{f}(s) = \frac{p(s)}{q(s)}\)</span> where <span class="math notranslate nohighlight">\(p(s)\)</span> and <span class="math notranslate nohighlight">\(q(s)\)</span> are both polynomials and the highest degree of <span class="math notranslate nohighlight">\(p(s)\)</span> is less than the highest degree of <span class="math notranslate nohighlight">\(q(s)\)</span>.</p>
 <p>For our purposes, we will assume that the highest degree of <span class="math notranslate nohighlight">\(q(s)\)</span> is always larger than the highest degree of <span class="math notranslate nohighlight">\(p(s)\)</span>.</p>
 </section>
-<section id="classifying-the-factorizations-of-q-s">
-<span id="sec-classification"></span><h2><span class="section-number">2.6.4. </span>Classifying the factorizations of <span class="math notranslate nohighlight">\(q(s)\)</span><a class="headerlink" href="#classifying-the-factorizations-of-q-s" title="Link to this heading">#</a></h2>
+<section id="classifying-the-factorizations-of-the-denominator-q-s">
+<span id="sec-classification"></span><h2><span class="section-number">2.6.4. </span>Classifying the factorizations of the denominator <span class="math notranslate nohighlight">\(q(s)\)</span><a class="headerlink" href="#classifying-the-factorizations-of-the-denominator-q-s" title="Link to this heading">#</a></h2>
 <p>Consider</p>
 <div class="math notranslate nohighlight">
 \[
@@ -531,7 +562,7 @@ The next step is to determine the appropriate coefficients.  To find those candi
 <div class="proof example admonition" id="example:ssqp6sp13">
 <p class="admonition-title"><span class="caption-number">Example 2.21 </span> (Completing the square when <span class="math notranslate nohighlight">\(q\)</span> does not factor: <span class="math notranslate nohighlight">\(q(s) = s^2 + 6s + 13\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>We have <span class="math notranslate nohighlight">\(q(s) = s^2 + 6s+13\)</span>, and we want to write it in the form <span class="math notranslate nohighlight">\((s-a)^2 + \omega\)</span>.</p>
+<p>We have <span class="math notranslate nohighlight">\(q(s) = s^2 + 6s+13\)</span>, and we want to write it in the form <span class="math notranslate nohighlight">\((s-a)^2 + \omega^2\)</span>.</p>
 <p>We make the observation that <span class="math notranslate nohighlight">\((s-a)^2 = s^2 -2as + a^2\)</span>.  So for the coefficient of <span class="math notranslate nohighlight">\(s\)</span> to match, <span class="math notranslate nohighlight">\(-2a\)</span> must be <span class="math notranslate nohighlight">\(6\)</span>.  So <span class="math notranslate nohighlight">\(a=-3\)</span> and <span class="math notranslate nohighlight">\((s-(-3))^2 = s^2 - (-6s) + (-3)^2 = s^2 + 6s + 9\)</span>.</p>
 <p>We don’t have <span class="math notranslate nohighlight">\(s^2+6s+9\)</span>, we have <span class="math notranslate nohighlight">\(s^2 + 6s + 13\)</span>.  There are two ways you can continue from here.  Do whichever is easiest for you to remember.</p>
 <p>You can</p>
@@ -539,7 +570,7 @@ The next step is to determine the appropriate coefficients.  To find those candi
 <li><p>Replace <span class="math notranslate nohighlight">\(s^2+6s\)</span> by <span class="math notranslate nohighlight">\(s^2+6s+9-9\)</span> to give <span class="math notranslate nohighlight">\(s^2+6s+13 = s^2+6s+9-9+13= (s-(-3))^2 +4\)</span>.</p></li>
 <li><p>Or break <span class="math notranslate nohighlight">\(13\)</span> into <span class="math notranslate nohighlight">\(9+4\)</span> and join the <span class="math notranslate nohighlight">\(9\)</span> with <span class="math notranslate nohighlight">\(s^2+6s\)</span> to give <span class="math notranslate nohighlight">\(s^2+6s+9+4 = (s-(-3))^2+4\)</span></p></li>
 </ul>
-<p>In either case we now have <span class="math notranslate nohighlight">\(q(s) = (s+3)^2 + 4\)</span>.  We convert the <span class="math notranslate nohighlight">\(4\)</span> into a square and we have</p>
+<p>In either case we now have <span class="math notranslate nohighlight">\(q(s) = (s-(-3))^2 + 4\)</span>.  We convert the <span class="math notranslate nohighlight">\(4\)</span> into a square and we have</p>
 <div class="math notranslate nohighlight">
 \[
 q(s) = (s-(-3))^2 + 2^2
@@ -551,14 +582,14 @@ q(s) = (s-(-3))^2 + 2^2
 <section class="algorithm-content" id="proof-content">
 <p>The general process for completing the square for a quadratic polynomial of the form <span class="math notranslate nohighlight">\(q(s)=s^2 + cs + d\)</span> follows <a class="reference internal" href="#example:ssqp6sp13">Example 2.21</a>:</p>
 <ol class="arabic simple">
-<li><p>Find <span class="math notranslate nohighlight">\(a\)</span> so that the coefficient of <span class="math notranslate nohighlight">\(s\)</span> is <span class="math notranslate nohighlight">\(-2a=c\)</span>.</p></li>
+<li><p>Introduce a new constant <span class="math notranslate nohighlight">\(m\)</span> so that the coefficient of <span class="math notranslate nohighlight">\(s\)</span> is <span class="math notranslate nohighlight">\(-2m\)</span>.  So we must have <span class="math notranslate nohighlight">\(-2m=c\)</span> or <span class="math notranslate nohighlight">\(m=-c/2\)</span>.</p></li>
 <li><p>Then either (depending on which is most intuitive to you)</p>
 <ul class="simple">
-<li><p>replace <span class="math notranslate nohighlight">\(s^2+cs\)</span> in <span class="math notranslate nohighlight">\(q(s)\)</span> by <span class="math notranslate nohighlight">\(s^2+cs+(a^2-a^2) = (s-a)^2 -a^2\)</span> to get <span class="math notranslate nohighlight">\(q(s) = (s-a)^2 - a^2+d\)</span></p></li>
-<li><p>or break <span class="math notranslate nohighlight">\(d\)</span> into <span class="math notranslate nohighlight">\(a^2 + (d-a^2)\)</span> to get <span class="math notranslate nohighlight">\(q(s)=s^2 + cs+ a^2 + (d-a^2) = (s-a)^2 + d-a^2\)</span>.</p></li>
+<li><p>replace <span class="math notranslate nohighlight">\(s^2+cs\)</span> in <span class="math notranslate nohighlight">\(q(s)\)</span> by <span class="math notranslate nohighlight">\(s^2+cs+(m^2-m^2) = (s-m)^2 -m^2\)</span> to get <span class="math notranslate nohighlight">\(q(s) = (s-m)^2 - m^2+d\)</span></p></li>
+<li><p>or break <span class="math notranslate nohighlight">\(d\)</span> into <span class="math notranslate nohighlight">\(m^2 + (d-m^2)\)</span> to get <span class="math notranslate nohighlight">\(q(s)=s^2 + cs+ m^2 + (d-m^2) = (s-m)^2 + d-m^2\)</span>.</p></li>
 </ul>
 </li>
-<li><p>Once you have <span class="math notranslate nohighlight">\((s-a)^2 + K\)</span> where the constant <span class="math notranslate nohighlight">\(K = d-a^2\)</span>, then:</p>
+<li><p>Once you have <span class="math notranslate nohighlight">\((s-m)^2 + K\)</span> where the constant <span class="math notranslate nohighlight">\(K = d-m^2\)</span>, then:</p>
 <ul class="simple">
 <li><p>if <span class="math notranslate nohighlight">\(K&lt;0\)</span>, use a difference of squares to factor it.</p></li>
 <li><p>if <span class="math notranslate nohighlight">\(K=0\)</span>, it is factored already.</p></li>
@@ -567,12 +598,12 @@ q(s) = (s-(-3))^2 + 2^2
 </li>
 </ol>
 </section>
-</div><p>It is important to remember that <span class="math notranslate nohighlight">\((s-a)^2 = s^2-2as+a^2\)</span> and not <span class="math notranslate nohighlight">\(s^2+a^2\)</span>.</p>
-<p>In most examples below, we will use the first option and replace <span class="math notranslate nohighlight">\(s^2-2as\)</span> in <span class="math notranslate nohighlight">\(q(s)\)</span> by <span class="math notranslate nohighlight">\(s^2-cs+a^2-a^2\)</span>.</p>
+</div><p>It is important to remember that <span class="math notranslate nohighlight">\((s-m)^2 = s^2-2ms+m^2\)</span> and not <span class="math notranslate nohighlight">\(s^2+m^2\)</span>.</p>
+<p>In most examples below, we will use the first option and replace <span class="math notranslate nohighlight">\(s^2+cs\)</span> in <span class="math notranslate nohighlight">\(q(s)\)</span> by <span class="math notranslate nohighlight">\(s^2-cs+m^2-m^2\)</span>.</p>
 <div class="proof example admonition" id="example-3">
 <p class="admonition-title"><span class="caption-number">Example 2.22 </span> (Completing the square when <span class="math notranslate nohighlight">\(q\)</span> has two distinct factors: <span class="math notranslate nohighlight">\(q(s) = s^2-11s+28\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>To complete the square for <span class="math notranslate nohighlight">\(q(s) = s^2-11s+28\)</span>, we follow the steps again.  We see that <span class="math notranslate nohighlight">\(-2as = -11s\)</span>, so <span class="math notranslate nohighlight">\(a=11/2\)</span>.  Then</p>
+<p>To complete the square for <span class="math notranslate nohighlight">\(q(s) = s^2-11s+28\)</span>, we follow the steps again.  We see that <span class="math notranslate nohighlight">\(-2ms = -11s\)</span>, so <span class="math notranslate nohighlight">\(m=11/2\)</span>.  Then</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 q(s) &amp;= s^2 - 11s + (11/2)^2 - (11/2)^2 + 28\\
@@ -596,7 +627,7 @@ q(s) &amp;= \left( s- \frac{11}{2} - \frac{3}{2}\right) \left( s- \frac{11}{2} +
 </div><div class="proof example admonition" id="example:ssqm10sp25">
 <p class="admonition-title"><span class="caption-number">Example 2.23 </span> (Completing the square when <span class="math notranslate nohighlight">\(q\)</span> is a perfect square: <span class="math notranslate nohighlight">\(q(s) = s^2 - 10s+25\)</span>)</p>
 <section class="example-content" id="proof-content">
-<p>To complete the square for <span class="math notranslate nohighlight">\(q(s) = s^2 - 10s + 25\)</span> we follow the same basic steps.  We see that <span class="math notranslate nohighlight">\(-2as = -10s\)</span>. So <span class="math notranslate nohighlight">\(a=5\)</span>.  We replace <span class="math notranslate nohighlight">\(s^2 -10s\)</span> by <span class="math notranslate nohighlight">\(s^2-10s+25-25\)</span></p>
+<p>To complete the square for <span class="math notranslate nohighlight">\(q(s) = s^2 - 10s + 25\)</span> we follow the same basic steps.  We see that <span class="math notranslate nohighlight">\(-2ms = -10s\)</span>. So <span class="math notranslate nohighlight">\(m=5\)</span>.  We replace <span class="math notranslate nohighlight">\(s^2 -10s\)</span> by <span class="math notranslate nohighlight">\(s^2-10s+25-25\)</span></p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 q(s) &amp;= s^2 - 10s + 25\\
@@ -609,8 +640,8 @@ q(s) &amp;= s^2 - 10s + 25\\
 <p>Notice that in the case of two different real roots, we will call the final factorization <span class="math notranslate nohighlight">\((s-a)(s-b)\)</span>, even though during the completing the square steps we used the variable <span class="math notranslate nohighlight">\(a\)</span> to have a different meaning.  In the repeated root/complex root case, the variable <span class="math notranslate nohighlight">\(a\)</span> in <span class="math notranslate nohighlight">\((s-a)^2\)</span> is the same as was used in the completing the square step.</p>
 </section>
 </section>
-<section id="finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-s-b">
-<h2><span class="section-number">2.6.5. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)(s-b)\)</span><a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-s-b" title="Link to this heading">#</a></h2>
+<section id="finding-mathcal-l-1-left-frac-p-s-q-s-right-t-if-q-s-s-a-s-b">
+<h2><span class="section-number">2.6.5. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{p(s)}{q(s)}\right](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)(s-b)\)</span><a class="headerlink" href="#finding-mathcal-l-1-left-frac-p-s-q-s-right-t-if-q-s-s-a-s-b" title="Link to this heading">#</a></h2>
 <p>Now that we can classify <span class="math notranslate nohighlight">\(q(s)\)</span> based on its factorization, we will use partial fractions to break up <span class="math notranslate nohighlight">\(p(s)/q(s)\)</span> into the sum of two things that are in the Laplace Transform Table.  If <span class="math notranslate nohighlight">\(q(s)\)</span> has two real roots, we write:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -673,8 +704,8 @@ f(t) &amp;= \mathcal{L}^{-1}\left[\frac{2}{s-3} - \frac{1}{s-5}\right](t)\\
 </ol>
 </section>
 </div></section>
-<section id="finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2">
-<h2><span class="section-number">2.6.6. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2\)</span><a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2" title="Link to this heading">#</a></h2>
+<section id="finding-mathcal-l-1-left-frac-p-s-q-s-right-t-if-q-s-s-a-2">
+<h2><span class="section-number">2.6.6. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{p(s)}{q(s)}\right](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2\)</span><a class="headerlink" href="#finding-mathcal-l-1-left-frac-p-s-q-s-right-t-if-q-s-s-a-2" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[
 \frac{p(s)}{q(s)} = \frac{A}{(s-a)^2}  + \frac{B}{s-a}
@@ -721,7 +752,7 @@ f(t) = 2te^{-4t} + 3e^{-4t}
 \]</div>
 </section>
 </div><div class="proof algorithm admonition" id="algorithm-8">
-<p class="admonition-title"><span class="caption-number">Algorithm 2.5 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s) = (s-a)^2\)</span> and <span class="math notranslate nohighlight">\(p(s)\)</span> has degree at most <span class="math notranslate nohighlight">\(1\)</span>.)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 2.5 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{p(s)}{q(s)}\right](t)\)</span> when <span class="math notranslate nohighlight">\(q(s) = (s-a)^2\)</span> and <span class="math notranslate nohighlight">\(p(s)\)</span> has degree at most <span class="math notranslate nohighlight">\(1\)</span>.)</p>
 <section class="algorithm-content" id="proof-content">
 <ol class="arabic">
 <li><p>Write</p>
@@ -744,8 +775,8 @@ f(t) = 2te^{-4t} + 3e^{-4t}
 </section>
 </div><p>Note - in the step to find <span class="math notranslate nohighlight">\(B\)</span>, a more efficient approach is to look at the leading coefficient of <span class="math notranslate nohighlight">\(s\)</span>.  This gives <span class="math notranslate nohighlight">\(B\)</span> directly, but the approach won’t work as well when the denominator is not quadratic.</p>
 </section>
-<section id="finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2-omega-2">
-<h2><span class="section-number">2.6.7. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2+\omega^2\)</span><a class="headerlink" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2-omega-2" title="Link to this heading">#</a></h2>
+<section id="finding-mathcal-l-1-left-frac-p-s-q-s-right-t-if-q-s-s-a-2-omega-2">
+<h2><span class="section-number">2.6.7. </span>Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{p(s)}{q(s)}\right](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2+\omega^2\)</span><a class="headerlink" href="#finding-mathcal-l-1-left-frac-p-s-q-s-right-t-if-q-s-s-a-2-omega-2" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[
 \frac{p(s)}{q(s)} = \frac{A(s-a)}{(s-a)^2+\omega^2}  + \frac{B\cdot \omega}{(s-a)^2+\omega^2}
@@ -789,7 +820,7 @@ f(t) = 4e^{-2t}\cos(5t) - e^{-2t}\sin(5t)
 \]</div>
 </section>
 </div><div class="proof algorithm admonition" id="algorithm-10">
-<p class="admonition-title"><span class="caption-number">Algorithm 2.6 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> when <span class="math notranslate nohighlight">\(q(s) = (s-a)^2+\omega^2\)</span> and <span class="math notranslate nohighlight">\(p(s)\)</span> has degree at most <span class="math notranslate nohighlight">\(1\)</span>.)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 2.6 </span> (Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{p(s)}{q(s)}\right](t)\)</span> when <span class="math notranslate nohighlight">\(q(s) = (s-a)^2+\omega^2\)</span> and <span class="math notranslate nohighlight">\(p(s)\)</span> has degree at most <span class="math notranslate nohighlight">\(1\)</span>.)</p>
 <section class="algorithm-content" id="proof-content">
 <ol class="arabic">
 <li><p>Write</p>
@@ -1473,16 +1504,20 @@ f(t) &amp;= \mathcal{L}^{-1} \left[ \frac{1}{s+4} + \frac{2}{s-7}\right](t)\\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.6.1. Intended Learning Outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">2.6.1. Preliminaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">2.6.1.1. Intended Learning Outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-pre-requisite-knowledge">2.6.1.2. Essential pre-requisite knowledge:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.6.2. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-functions">2.6.3. Rational Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classifying-the-factorizations-of-q-s">2.6.4. Classifying the factorizations of <span class="math notranslate nohighlight">\(q(s)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classifying-the-factorizations-of-the-denominator-q-s">2.6.4. Classifying the factorizations of the denominator <span class="math notranslate nohighlight">\(q(s)\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-the-square">2.6.4.1. Completing the square</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-s-b">2.6.5. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)(s-b)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2">2.6.6. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-p-s-q-s-t-if-q-s-s-a-2-omega-2">2.6.7. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}[p(s)/q(s)](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2+\omega^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-left-frac-p-s-q-s-right-t-if-q-s-s-a-s-b">2.6.5. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{p(s)}{q(s)}\right](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)(s-b)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-left-frac-p-s-q-s-right-t-if-q-s-s-a-2">2.6.6. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{p(s)}{q(s)}\right](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-mathcal-l-1-left-frac-p-s-q-s-right-t-if-q-s-s-a-2-omega-2">2.6.7. Finding <span class="math notranslate nohighlight">\(\mathcal{L}^{-1}\left[\frac{p(s)}{q(s)}\right](t)\)</span> if <span class="math notranslate nohighlight">\(q(s) = (s-a)^2+\omega^2\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-functions-with-the-t-shift">2.6.8. Rational Functions with the <span class="math notranslate nohighlight">\(t\)</span>-shift</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-test">2.6.9. Self-Test</a></li>
 </ul>
